@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JSU - jslog Sample (by F. Levis)</title>
+	<!-- This sample -->
+	<link rel="stylesheet" type="text/css" href="../Sample.css">
+	<script type="text/javascript" src="./jslogSample.js" ></script>
+
+  <!-- JSUtility -->
+  <link rel="stylesheet" href="../../core/core.css" type="text/css">
+  <script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+  
+  <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../../core/about/about.css" type="text/css">
+  <script type="text/javascript" src="../../core/about/about.js" ></script>
+
+</head>
+<body>
+<div class="jsuLoading" id="jsuLoading"></div> 
+
+<!--  Table to download JSU.ZIP (common for all the sample) -->
+<table  width="100%">
+  <tr>
+  <td class="tipr">
+  <b>Download Options:</b> 
+  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button" class="downloadPay"     onclick="downloadPay()" />
+  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  </td></tr>
+</table>   
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label>
+            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
+    </tr>
+    <tr class="tiptitleBg2">
+      <th class="tiptitleBig2" colspan="4">JS Log - JSU <label class="jsuAPI">jslog.js API</label>
+              <input type="button" class="jsuHelp" onclick="jsuDocJSLog()" 
+             onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
+        <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
+        <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">
+            <option value="1">Show SAMPLE</option>
+            <option value="2">Show DESCRIPTION</option>
+            <option value="ALL" selected>Show ALL</option>
+        </select> 
+      </th>
+     </tr>
+    <tr class="tiptitleBig3">
+      <td width="50%" class="tipc">SAMPLE
+        <!--  To show all sample or only ONE   -->
+        <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
+            <option value="1">Show Sample_1: jslog API</option>
+            <option value="2">Show Sample_2: jslog as URL PARAMETER</option>
+            <option value="ALL" selected>Show ALL Samples</option>
+      
+      </td>
+      <td width="50%" class="tipc">DESCRIPTION</td>
+    </tr>
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1">
+       <td class="sample"  id="col_1_1">
+         <label class="sampleTitle">SAMPLE_1 - jslog API </label>
+         <table style="margin-top:5px" class="tipNoBorder" width="100%">
+           <tr>
+             <td width="25%">
+               <b>START/STOP jslog:</b> 
+             </td>
+             <td width="75%">
+         
+							<table style="margin-top:5px" BORDER="4" cellspacing="0" cellpadding="2">
+							<tr> 
+								<td>Level: </td>
+								<td>
+							    <select id="logLev1">
+									  <option value="0">0</option>
+									  <option value="1">1</option>
+									  <option value="2">2</option>
+									  <option value="3">3</option>
+									  <option value="4">4</option>
+									  <option value="5">5</option>
+									  <option value="6">6</option>
+									  <option value="7" selected>7</option>
+							    </select>	
+								</td>
+							  <td style="padding-left:10px">
+							    <select id="logTime">
+							      <option value="0" selected>NO Time Log</option>
+							      <option value="1">Log Time</option>
+							    </select> 
+								</td>
+							  <td style="padding-left:10px">
+							       <input type="button" value="Start jslog" onclick="sample1_jslogStart()">
+							  </td>
+								
+								<td style="padding-left:70px">
+							       <input type="button" value="End jslog" onclick="jslog_end()">
+								</td>
+							</tr>			
+							</table>         
+                 
+             </td>
+           </tr>
+          <tr>
+             <td>
+                <b>jslog API sample at various Level:</b>
+             </td>
+             <td>
+         
+								 <!--  debug hidden field, that can be displayed with jslog windows Buttons  -->
+								 <div class="debug" style="width:400px">
+								  <b>Debug Fields:</b>
+					         <table class="sampleNoBorder">
+									    <tr> 
+									      <td >Example of Debug Field 1:</td>   
+									      <td > <input value="1234567" ></td>
+									    </tr>     
+									    <tr> 
+									      <td >Example of Debug Field 2:</td>   
+									      <td > <input value="This was hidden" ></td>
+									    </tr>     
+									  </table>
+									<BR/>
+				        </div>    
+								<table class="tipNoBorder">	
+				    			  <tr> <td >
+									       <input type="button" value="Level1 log" onclick="jslog1()">
+									  </td>      
+									   <td>
+									       <input type="button" value="Level2 log JSON" onclick="jslog2()">
+									  </td>
+									  <td >
+									       <input type="button" value="Level4 log Object" onclick="jslog4()">
+									        <select id="logCompact" style="marging-left:10px">
+									          <option value="0" selected>NO Compact</option>
+									          <option value="1">Compact</option>
+									        </select> 
+									       
+									  </td>     
+									  </tr>  
+									  
+								</table>
+					            
+             </td>
+           </tr>           
+         </table>
+  
+ 
+					
+      </td>
+  
+      <!--    SAMPLE_1 DESCRIPTION -->
+      <td class="sampleDesc"  id="col_1_2" valign="top">
+        <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
+       
+         <table >
+           <tr><td>
+              <ul type="square">
+               <li><b>START jslog:</b> <input type="button" class="tipJSFixed" id="tipJS1jslogStart" onclick="TipJSFixedClicked (JS1_JSLOG_START,event);" />
+                   <label style="margin-left:30px;"><b>STOP jslog:</b></label> <input type="button" class="tipJSFixed" id="tipJS1jslogEnd" onclick="TipJSFixedClicked (JS1_JSLOG_END,event);" /></li>
+               <li><label style="margin-right:30px;"><b>jslog API sample at various Level</b></label>
+                  <b>Level1 log:</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipJSFixedClicked (JS1_LEV1,event,{iJSColNum:140});" />
+                   <label style="margin-left:30px;"><b>Level2 log:</b></label> <input type="button" class="tipJSFixed" id="tipJS1Lev2" onclick="TipJSFixedClicked (JS1_LEV2,event);" />
+                   <label style="margin-left:30px;"><b>Levl4 log:</b></label> <input type="button" class="tipJSFixed" id="tipJS1Lev4" onclick="TipJSFixedClicked (JS1_LEV4,event);" /></li>
+                </ul>
+           </td></tr>
+         </table>
+      </td>   
+  
+    </tr>
+
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr  id="tr_sample_2">
+       <td class="sample" id="col_2_1" >
+         <label class="sampleTitle">SAMPLE_2 -  jslog as URL PARAMETER</label>
+         <table style="margin-top:5px" class="tipNoBorder" width="100%">
+							<tr> 
+								<td align="left">You can Pass jslog URL parameter:
+                 <input style="margin-left:20px" type="button" disabled  value="JSlog Video Sample" onclick="aboutPopupVideojslog()" /> 
+								  
+							       
+	              </td>
+							</tr>			
+       </table>
+  
+ 
+					
+      </td>
+  
+      <!--    SAMPLE_2 DESCRIPTION -->
+      <td class="sampleDesc"  id="col_2_2" valign="top">
+         See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/jslog.html" target="_blank">JSU JSlog Documentation</a>
+      
+      </td>   
+  
+    </tr>
+
+
+
+</table>
+
+<br>
+
+
+</body>
+</html>

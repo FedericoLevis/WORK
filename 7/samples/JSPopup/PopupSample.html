@@ -1,0 +1,388 @@
+	
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JSU - JS Popup Sample (by F. Levis)</title>
+	<!-- This sample -->
+	<link rel="stylesheet" type="text/css" href="../Sample.css">
+	<script type="text/javascript" src="./PopupSample.js" ></script>
+
+  <!-- JSUtility with JSPopup and jq (jquery, jquery-ui)  -->
+  <link rel="stylesheet" href="../../externalPlugin/jquery/jquery-ui.css">
+  <link rel="stylesheet" href="../../core/core.css" type="text/css">
+  <link rel="stylesheet" href="../../core/Popup/Popup.css" type="text/css">
+  <script  data-main="../../plugin/jsu-jq.js" src="../../core/require.js"></script>
+  
+  <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../../core/about/about.css" type="text/css">
+  <script type="text/javascript" src="../../core/about/about.js" ></script>
+
+</head>
+<body>
+<div class="jsuLoading" id="jsuLoading"></div> 
+
+
+<!--  Table to download JSU.ZIP (common for all the sample) -->
+<table  width="100%">
+  <tr>
+  <td class="tipr">
+  <b>Download Options:</b> 
+  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button" class="downloadPay"     onclick="downloadPay()" />
+  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  </td></tr>
+</table>   
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label>
+            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
+    </tr>
+    <tr class="tiptitleBg2">
+      <th class="tiptitleBig2" colspan="4">JS Popup Sample - JSU <label class="jsuAPI">JSPopup/Popup.js API</label>
+        <input type="button" class="jsuHelp" onclick="jsuDocJSPopup()" 
+             onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
+        <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
+        <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">
+            <option value="1">Show SAMPLE</option>
+            <option value="2">Show DESCRIPTION</option>
+            <option value="ALL" selected>Show ALL</option>
+        </select> 
+     </th> 
+    </tr>
+    <tr class="tiptitleBig3">
+      <td width="50%" class="tipc">SAMPLE
+        <!--  To show all sample or only ONE   -->
+        <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
+            <option value="1">Show Sample_1: Text Popup</option>
+            <option value="2">Show Sample_2: HTML Popup</option>
+            <option value="3">Show Sample_3: Common Popup Option</option>
+            <option value="ALL" selected>Show ALL Samples</option>
+      </td>
+      <td width="50%" class="tipc">DESCRIPTION</td>
+    </tr>
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1">
+ 
+      <td class="sample"  id="col_1_1" >
+         <label class="sampleTitle">SAMPLE_1 - Text Popup:</label>
+         <table class="sampleNoBorder">
+         <tr>
+				    <td>
+				        <b>POPUP_TYPE:</b>
+				        <select id="popupType1" style="width:120px;margin-left:5px" onchange="onchange_sampleType1()" ></select>  
+                <input type="button" value="Show TEXT Popup" onclick="sample1()" />
+				    </td>
+				  </tr>  
+          </table>
+      </td>
+      
+      <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc"  id="col_1_2">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
+               <label id="labelSample1" style="font-weight:bold">POPUP_TYPE=Info</label>  
+               <input type="button" class="tipJSFixed" id="sample1JS" onclick="sample1JS(event);" />
+           </td></tr>
+         </table>
+      </td>
+        
+    </tr>
+
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr  id="tr_sample_2">
+      <td class="sample"  id="col_2_1" valign="top" >
+         <label class="sampleTitle">SAMPLE_2 - HTML Popup & Options for ChoicePopup and PromptPopup</label>
+        <table class="sampleNoBorder">
+         <tr>
+            <td><b>POPUP_TYPE: </b></td>
+            <td>
+                <select id="popupType2" style="width:120px" onchange="onchangeSample2()"></select>  
+                <input type="button" value="Show HTML Popup" onclick="sample2()"  />
+            </td>
+          </tr>
+        </table>
+        <table class="sampleNoBorder">
+          <!--=========================================   OPTION for Choice -->
+          <tr>
+            <td>
+              <div id="optChoice" style="display:none;">
+	              <table class="tip" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
+	                 <tr class="tiptitle">
+	                  <td colspan="4">OPTIONAL Options of Popup Choice</td>
+	                </tr>
+	                 <tr class="tiptitle2">
+	                  <td>OPTION</td>
+                    <td>Default</td>
+	                  <td>Value</td>
+	                  <td>Description</td>
+	                </tr>
+	                <tr>
+	                  <td class="tipcBold">bChoiceMultiSel</td>
+                    <td class="tipr">false</td>
+	                  <td class="tiprBold">
+	                    <select id="selectChoiceMultiSel" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
+	                                  <option value="FALSE" selected >false</option> 
+	                                  <option value="TRUE">true</option>
+	                   </select>                
+	                  </td>
+	                  <td class="tipl"><b>true:</b> Multiple Selection - <b>false:</b> Single Selection</td>
+	                </tr>
+	                <tr>
+	                  <td class="tipcBold">iChoiceMultiSize</td>
+                    <td class="tipr">10</td>
+	                  <td class="tiprBold">
+							        <div id="divChoiceSize" style="display:none">               
+							          <select id="selectChoiceSize" style="font-weight:bold;width:60px;margin-left:5px" >  
+							                          <option value="5">5</option> 
+							                          <option value="10" selected>10</option> 
+							                          <option value="15">15</option> 
+							                          <option value="20">20</option> 
+							          </select>
+							         </div> 
+	                  </td>
+	                  <td class="tipl"><b>Number of Item Visible</b> (Only for <b>bChoiceMultiSel=true</b>) </td>
+	                </tr>
+	              </table>
+              </div> 
+            </td>  
+          </tr>
+          <!--   OPTION for Prompt -->
+          <tr>
+            <td colspan="2">
+              <div id="optPrompt" style="display:none;">
+                <table class="tip" BORDER="2" width="600px" cellspacing="0" cellpadding="3">
+                   <tr class="tiptitle">
+                    <td colspan="4">OPTIONAL Options of Popup Prompt</td>
+                  </tr>
+                   <tr class="tiptitle2">
+                    <td>OPTION</td>
+                    <td>Default</td>
+                    <td>Value</td>
+                    <td>Description</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">szPromptLabel</td>
+                    <td class="tipr"></td>
+                    <td class="tiprBold">
+                      <input id="szPromptLabel" style="font-weight:bold;width:90px;" title="Label in front of the Prompt Item"/>
+                    </td>
+                    <td class="tipl"><b>Label</b> in front of the Prompt Item</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">szPromptType</td>
+                    <td class="tipr">number</td>
+                    <td class="tiprBold">
+							        <select id="szPromptType" style="font-weight:bold;width:90px;margin-left:10px">  
+							             <option value="number" selected>number</option> 
+							             <option value="string">string</option>
+							        </select>                
+                    </td>
+                    <td class="tipl">Prompt Type:<b>number</b> or <b>string</b></td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">iPromptMin</td>
+                    <td class="tipr"></td>
+                    <td class="tiprBold">
+                      <input id="iPromptMin" style="font-weight:bold;width:40px;"/>
+                    </td>
+                    <td class="tipl">if number: <b>Min Value</b> - if string: <b>Min Length</b></td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">iPromptMax</td>
+                    <td class="tipr"></td>
+                    <td class="tiprBold">
+                      <input id="iPromptMax" style="font-weight:bold;width:40px;"/>
+                    </td>
+                    <td class="tipl">if number: <b>Max Value</b> - if string: <b>Max Length</b></td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">szPromptValue</td>
+                    <td class="tipr"></td>
+                    <td class="tiprBold">
+                      <input id="szPromptValue" style="font-weight:bold;width:90px;" title="Default Prompt Value to Set"/>
+                    </td>
+                    <td class="tipl"><b>Default Prompt Value</b> to set in the Prompt Item</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">iPromptWidth</td>
+                    <td class="tipr"></td>
+                    <td class="tiprBold">
+                      <input id="iPromptWidth" style="font-weight:bold;width:90px;" />
+                    </td>
+                    <td class="tipl"><b>Width (px)</b> of the Prompt Item</td>
+                  </tr>
+                </table>
+              </div> 
+            </td>  
+          </tr>  
+          </table>
+      </td>
+    
+          <!--   SAMPLE DESCRIPTION -->
+      <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc"  id="col_2_2">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_2 is similar to SAMPLE_1:<ul>
+                 <li>Here we are using  <b>HTML message</b> instead of <i>Simple Text</i> message</li>
+                 <li>For Popup <b>Choice</b> and <b>Prompt</b> in this sample we also show how to set the relative <b>Popup Options</b></li>
+                </ul> 
+           </td></tr>
+         </table>
+      </td>
+     </tr>
+
+    <!--   ===================================== SAMPLE_3 ==============================================  -->
+    <tr  id="tr_sample_3">
+      <td class="sample"  id="col_3_1" valign="top" >
+       <label class="sampleTitle">SAMPLE_3 - Common Popup Option </label>
+        <table class="sampleNoBorder">
+         <tr>
+            <td><b>Popup Custom Option: </b></td>
+            <td>
+                <select id="type3" style="width:160px" onchange="onchangeSample3()">
+                       <option value="LAYOUT" >Custom Layout</option> 
+                       <option value="1BTN" selected >1 Custom Button</option>
+                       <option value="2BTN">2 Custom Button</option>
+                       <option value="3BTN">3 Custom Button</option>
+                </select>  
+                <input type="button" value="Show Popup with Custom Option" onclick="sample3()"  />
+            </td>
+          </tr>
+        </table>
+        <table class="sampleNoBorder">
+          <!--=========================================   OPTION for Custom Layout-->
+          <tr>
+            <td>
+              <div id="optLayout" style="display:none;">
+                <table class="tip" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
+                   <tr class="tiptitle">
+                    <td colspan="4">Example of some of the OPTIONAL Option to customize Popup Layout</td>
+                  </tr>
+                   <tr class="tiptitle2">
+                    <td>OPTION</td>
+                    <td>Default</td>
+                    <td>Value</td>
+                    <td>Description</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">bShowImg</td>
+                    <td class="tipr">true</td>
+                    <td class="tipcBold">
+                      <select id="bShowImg" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
+                          <option value="FALSE">false</option> 
+                          <option value="TRUE" selected >true</option>
+                     </select>                
+                    </td>
+                    <td class="tipl"><b>true:</b> Show Popup Default Image related to PopupType</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">bResize</td>
+                    <td class="tipr">true</td>
+                    <td class="tipcBold">
+                      <select id="bResize" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
+                          <option value="FALSE">false</option> 
+                          <option value="TRUE" selected >true</option>
+                     </select>                
+                    </td>
+                    <td class="tipl"><b>true:</b> Popup is resizable</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">bModal</td>
+                    <td class="tipr">true</td>
+                    <td class="tipcBold">
+                      <select id="bModal" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
+                          <option value="FALSE">false</option> 
+                          <option value="TRUE" selected >true</option>
+                     </select>                
+                    </td>
+                    <td class="tipl"><b>true:</b> Modal Popup   <b>false:</b> Not Modal Popup</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">szTitle</td>
+                    <td class="tipr"></td>
+                    <td class="tipcBold">
+                      <input id="szTitle" style="font-weight:bold;width:100px;"/>
+                    </td>
+                    <td class="tipl">Set a <b>Popup Title</b> different from default</td>
+                  </tr>
+                  <tr>
+                    <td class="tipcBold">iWidth</td>
+                    <td class="tipr">600</td>
+                    <td class="tipcBold">
+                      <select id="iWidth" style="font-weight:bold;width:60px" >  
+                        <option value="400">400</option> 
+                        <option value="600" selected>600</option>
+                        <option value="800">800</option>
+                        <option value="1000">1000</option>
+                        <option value="1200">1200</option>
+                      </select>                      
+                    </td>
+                    <td class="tipl">Initial Popup <b>Width (px)</b></td>
+                  </tr>
+                </table>
+              </div> 
+            </td>  
+          </tr>
+          </table>
+      </td>
+       <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc"  id="col_3_2">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_3: </label>
+               <input type="button" class="tipJSFixed" id="sample3JS" onclick="sample3JS(event);" />
+           </td></tr>
+         </table>
+      </td>    
+    
+    </tr>
+
+    <!--   ===================================== SAMPLE_4 ==============================================  -->
+    <tr>
+ 
+     <td class="sample" valign="top" >
+       <label class="sampleTitle">SAMPLE_4 - Advanced Popup </label>
+         <table class="sampleNoBorder">
+         <tr>
+            <td><b>Advanced Popup Samples: </b></td>
+            <td>
+                <select id="type4" style="width:160px" onchange="onchange_sampleType4()">
+                       <option value="VIDEO" >Popup with Video</option> 
+                       <option value="ABOUT" selected >About Popup</option>
+                </select>  
+                <input type="button" value="Show Popup" onclick="sample4()"  />
+            </td>
+          </tr>  
+          </table>
+      </td>
+      
+     <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_4 - </label>
+               <label id="labelSample4" style="font-weight:bold">About Popup</label>  
+               <input type="button" class="tipJSFixed" id="sample4JS" onclick="sample4JS(event);" />
+           </td></tr>
+         </table>
+      </td>      
+    </tr>
+
+
+
+</table>
+
+<br>
+
+
+</body>
+</html>
