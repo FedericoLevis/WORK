@@ -1,0 +1,8 @@
+/***************************************************************************/
+/*                                                                         */
+/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
+/*  Javascript Obfuscator Free Version can be downloaded here              */
+/*  http://javascriptobfuscator.com                                        */
+/*                                                                         */
+/***************************************************************************/
+var _$_f466=["URL","jslog","debug","../../images","undefined","-------------------- START","-------------------- END"," ============================= START"," ============================= END","iLogLev","bLogTime","szPathImg"];var JSLOG_ERR=0;var JSLOG_INFO=1;var JSLOG_DEBUG=2;var JSLOG_TEST=4;var JSLOG_DUMP=8;var JSLOG_CORE=16;var JSLOG_LEV_URL=_$_f466[0];var JSLOG_LEV_URL_PAR=_$_f466[1];var JSLOG_ID_DEBUG=_$_f466[2];var JSLOG_DEF_LOG_TIME=false;var JSLOG_DEF_PATH_IMG=_$_f466[3];if( typeof (JSU_PATH_IMG)!= _$_f466[4]){JSLOG_DEF_PATH_IMG= JSU_PATH_IMG};var JSLOG_FUN_START=_$_f466[5];var JSLOG_FUN_END=_$_f466[6];var JSLOG_FILE_START=_$_f466[7];var JSLOG_FILE_END=_$_f466[8];var jslogVar={iLogLev:0,bLogTime:JSLOG_DEF_LOG_TIME,szPathImg:JSLOG_DEF_PATH_IMG,console:null};function jslog_init(kN,z){}function jslogLevSet(kK){}function jslogGetLogLev(){return jslogVar[_$_f466[9]]}function jslogGetOpt(){return {iLogLev:jslogVar[_$_f466[9]],bLogTime:jslogVar[_$_f466[10]],szPathImg:jslogVar[_$_f466[11]]}}function jslogObj(kL,br,bV,lS){return 0}function jslogJson(kL,br,lQ){return 0}function jslogElapsedTime(kL,br,dP){return 0}function jslog(kL,br){return 0}function jslog_end(){return 0}
