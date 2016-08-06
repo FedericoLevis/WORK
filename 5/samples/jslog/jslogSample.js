@@ -84,18 +84,15 @@ function jslog4()
  * @param iLogLev
  */
 function jslog_sample2(iLogLev){
-	var szUrl = getSampleUrl(JSU_URL_SAMPLE_LOADING, JSU_ID_SAMPLE_LOADING);
+	var szUrl = getSampleUrl(JSU_URL_SAMPLE_VALIDATE, JSU_ID_SAMPLE_VALIDATE);
 	jslog (JSLOG_INFO,szUrl);
 	var szPar = JSLOG_LEV_URL_PAR + "=" + iLogLev;
 	jslog (JSLOG_INFO,"PASSING PARAMETER  ="+ szPar );
 	// Example: https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html?jslog=3
 	szUrl = szUrl +  "?" + JSLOG_LEV_URL_PAR + "=" + iLogLev;		
-	var aId = getElementById2("href_16");
+	var aId = getElementById2("href_validate");
 	aId.href = szUrl;
-	aId.target="_blank";
 	aId.click();
-	aId.target=null;
-	aId.href = "javascript:jslog_sample2(16)";
 	
 }
 
