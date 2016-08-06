@@ -25,7 +25,7 @@ requirejs.config({
 			  'core': '2/core',
 			  'loadingDiv': '4/core/loadingDiv',
 			  'cValidate': '6/core/cValidate',
-			  'lan': '2/locale/EN',
+			  'lan': '6/locale/EN',
         'popup': '4/JSPopup',
         'jquery': '7/externalPlugin/jquery' + externalPluginVersion
     },
