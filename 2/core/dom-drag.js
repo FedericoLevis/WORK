@@ -1,80 +1,8 @@
-/************************************************** * dom-drag.js * 09.25.2001 * www.youngpup.net * Script featured on Dynamic Drive (http://www.dynamicdrive.com) 12.08.2005 ************************************************** * 10.28.2001 - fixed minor bug where events * sometimes fired off the handle, not the root. **************************************************/
-var Drag = {	obj : null,	init : function(o, oRoot, minX, maxX, minY, maxY, bSwapHorzRef, bSwapVertRef, fXMapper, fYMapper)	{		o.onmousedown	= Drag.start;		o.hmode			= bSwapHorzRef ? false : true ;		o.vmode			= bSwapVertRef ? false : true ;		o.root = oRoot && oRoot != null ? oRoot : o ;		if (o.hmode  && isNaN(parseInt(o.root.style.left  ))) o.root.style.left   = "0px";		if (o.vmode  && isNaN(parseInt(o.root.style.top   ))) o.root.style.top    = "0px";
-		if (!o.hmode && isNaN(parseInt(o.root.style.right ))) o.root.style.right  = "0px";
-		if (!o.vmode && isNaN(parseInt(o.root.style.bottom))) o.root.style.bottom = "0px";
-		o.minX	= typeof minX != 'undefined' ? minX : null;
-		o.minY	= typeof minY != 'undefined' ? minY : null;
-		o.maxX	= typeof maxX != 'undefined' ? maxX : null;
-		o.maxY	= typeof maxY != 'undefined' ? maxY : null;
-		o.xMapper = fXMapper ? fXMapper : null;
-		o.yMapper = fYMapper ? fYMapper : null;
-		o.root.onDragStart	= new Function();
-		o.root.onDragEnd	= new Function();
-		o.root.onDrag		= new Function();
-	},	start : function(e)
-	{
-		var o = Drag.obj = this;
-		e = Drag.fixE(e);
-		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
-		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
-		o.root.onDragStart(x, y);
-		o.lastMouseX	= e.clientX;
-		o.lastMouseY	= e.clientY;
-		if (o.hmode) {
-			if (o.minX != null)	o.minMouseX	= e.clientX - x + o.minX;
-			if (o.maxX != null)	o.maxMouseX	= o.minMouseX + o.maxX - o.minX;
-		} else {
-			if (o.minX != null) o.maxMouseX = -o.minX + e.clientX + x;
-			if (o.maxX != null) o.minMouseX = -o.maxX + e.clientX + x;
-		}
-		if (o.vmode) {
-			if (o.minY != null)	o.minMouseY	= e.clientY - y + o.minY;
-			if (o.maxY != null)	o.maxMouseY	= o.minMouseY + o.maxY - o.minY;
-		} else {
-			if (o.minY != null) o.maxMouseY = -o.minY + e.clientY + y;
-			if (o.maxY != null) o.minMouseY = -o.maxY + e.clientY + y;
-		}
-		document.onmousemove	= Drag.drag;
-		document.onmouseup		= Drag.end;
-		return false;
-	},
-	drag : function(e)
-	{
-		e = Drag.fixE(e);
-		var o = Drag.obj;
-		var ey	= e.clientY;
-		var ex	= e.clientX;
-		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
-		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
-		var nx, ny;
-		if (o.minX != null) ex = o.hmode ? Math.max(ex, o.minMouseX) : Math.min(ex, o.maxMouseX);
-		if (o.maxX != null) ex = o.hmode ? Math.min(ex, o.maxMouseX) : Math.max(ex, o.minMouseX);
-		if (o.minY != null) ey = o.vmode ? Math.max(ey, o.minMouseY) : Math.min(ey, o.maxMouseY);
-		if (o.maxY != null) ey = o.vmode ? Math.min(ey, o.maxMouseY) : Math.max(ey, o.minMouseY);
-		nx = x + ((ex - o.lastMouseX) * (o.hmode ? 1 : -1));
-		ny = y + ((ey - o.lastMouseY) * (o.vmode ? 1 : -1));
-		if (o.xMapper)		nx = o.xMapper(y);
-		else if (o.yMapper)	ny = o.yMapper(x);
-		Drag.obj.root.style[o.hmode ? "left" : "right"] = nx + "px";
-		Drag.obj.root.style[o.vmode ? "top" : "bottom"] = ny + "px";
-		Drag.obj.lastMouseX	= ex;
-		Drag.obj.lastMouseY	= ey;
-		Drag.obj.root.onDrag(nx, ny);
-		return false;
-	},
-	end : function()
-	{
-		document.onmousemove = null;
-		document.onmouseup   = null;
-		Drag.obj.root.onDragEnd(	parseInt(Drag.obj.root.style[Drag.obj.hmode ? "left" : "right"]), 
-									parseInt(Drag.obj.root.style[Drag.obj.vmode ? "top" : "bottom"]));
-		Drag.obj = null;
-	},
-	fixE : function(e)
-	{
-		if (typeof e == 'undefined') e = window.event;
-		if (typeof e.layerX == 'undefined') e.layerX = e.offsetX;
-		if (typeof e.layerY == 'undefined') e.layerY = e.offsetY;
-		return e;
-	}
-};
+/***************************************************************************/
+/*                                                                         */
+/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
+/*  Javascript Obfuscator Free Version can be downloaded here              */
+/*  http://javascriptobfuscator.com                                        */
+/*                                                                         */
+/***************************************************************************/
+var _$_a75e=["onmousedown","start","hmode","vmode","root","left","style","0px","top","right","bottom","minX","undefined","minY","maxX","maxY","xMapper","yMapper","onDragStart","onDragEnd","onDrag","obj","fixE","lastMouseX","clientX","lastMouseY","clientY","minMouseX","maxMouseX","minMouseY","maxMouseY","onmousemove","drag","onmouseup","end","max","min","px","event","layerX","offsetX","layerY","offsetY"];var Drag={obj:null,init:function(co,dT,dR,dP,dS,dQ,dL,dM,dN,dO){co[_$_a75e[0]]= Drag[_$_a75e[1]];co[_$_a75e[2]]= dL?false:true;co[_$_a75e[3]]= dM?false:true;co[_$_a75e[4]]= dT&& dT!= null?dT:co;if(co[_$_a75e[2]]&& isNaN(parseInt(co[_$_a75e[4]][_$_a75e[6]][_$_a75e[5]]))){co[_$_a75e[4]][_$_a75e[6]][_$_a75e[5]]= _$_a75e[7]};if(co[_$_a75e[3]]&& isNaN(parseInt(co[_$_a75e[4]][_$_a75e[6]][_$_a75e[8]]))){co[_$_a75e[4]][_$_a75e[6]][_$_a75e[8]]= _$_a75e[7]};if(!co[_$_a75e[2]]&& isNaN(parseInt(co[_$_a75e[4]][_$_a75e[6]][_$_a75e[9]]))){co[_$_a75e[4]][_$_a75e[6]][_$_a75e[9]]= _$_a75e[7]};if(!co[_$_a75e[3]]&& isNaN(parseInt(co[_$_a75e[4]][_$_a75e[6]][_$_a75e[10]]))){co[_$_a75e[4]][_$_a75e[6]][_$_a75e[10]]= _$_a75e[7]};co[_$_a75e[11]]=  typeof dR!= _$_a75e[12]?dR:null;co[_$_a75e[13]]=  typeof dS!= _$_a75e[12]?dS:null;co[_$_a75e[14]]=  typeof dP!= _$_a75e[12]?dP:null;co[_$_a75e[15]]=  typeof dQ!= _$_a75e[12]?dQ:null;co[_$_a75e[16]]= dN?dN:null;co[_$_a75e[17]]= dO?dO:null;co[_$_a75e[4]][_$_a75e[18]]=  new Function();co[_$_a75e[4]][_$_a75e[19]]=  new Function();co[_$_a75e[4]][_$_a75e[20]]=  new Function()},start:function(dU){var co=Drag[_$_a75e[21]]= this;dU= Drag[_$_a75e[22]](dU);var bC=parseInt(co[_$_a75e[3]]?co[_$_a75e[4]][_$_a75e[6]][_$_a75e[8]]:co[_$_a75e[4]][_$_a75e[6]][_$_a75e[10]]);var dV=parseInt(co[_$_a75e[2]]?co[_$_a75e[4]][_$_a75e[6]][_$_a75e[5]]:co[_$_a75e[4]][_$_a75e[6]][_$_a75e[9]]);co[_$_a75e[4]][_$_a75e[18]](dV,bC);co[_$_a75e[23]]= dU[_$_a75e[24]];co[_$_a75e[25]]= dU[_$_a75e[26]];if(co[_$_a75e[2]]){if(co[_$_a75e[11]]!= null){co[_$_a75e[27]]= dU[_$_a75e[24]]- dV+ co[_$_a75e[11]]};if(co[_$_a75e[14]]!= null){co[_$_a75e[28]]= co[_$_a75e[27]]+ co[_$_a75e[14]]- co[_$_a75e[11]]}}else {if(co[_$_a75e[11]]!= null){co[_$_a75e[28]]= -co[_$_a75e[11]]+ dU[_$_a75e[24]]+ dV};if(co[_$_a75e[14]]!= null){co[_$_a75e[27]]= -co[_$_a75e[14]]+ dU[_$_a75e[24]]+ dV}};if(co[_$_a75e[3]]){if(co[_$_a75e[13]]!= null){co[_$_a75e[29]]= dU[_$_a75e[26]]- bC+ co[_$_a75e[13]]};if(co[_$_a75e[15]]!= null){co[_$_a75e[30]]= co[_$_a75e[29]]+ co[_$_a75e[15]]- co[_$_a75e[13]]}}else {if(co[_$_a75e[13]]!= null){co[_$_a75e[30]]= -co[_$_a75e[13]]+ dU[_$_a75e[26]]+ bC};if(co[_$_a75e[15]]!= null){co[_$_a75e[29]]= -co[_$_a75e[15]]+ dU[_$_a75e[26]]+ bC}};document[_$_a75e[31]]= Drag[_$_a75e[32]];document[_$_a75e[33]]= Drag[_$_a75e[34]];return false},drag:function(dU){dU= Drag[_$_a75e[22]](dU);var co=Drag[_$_a75e[21]];var dX=dU[_$_a75e[26]];var dW=dU[_$_a75e[24]];var bC=parseInt(co[_$_a75e[3]]?co[_$_a75e[4]][_$_a75e[6]][_$_a75e[8]]:co[_$_a75e[4]][_$_a75e[6]][_$_a75e[10]]);var dV=parseInt(co[_$_a75e[2]]?co[_$_a75e[4]][_$_a75e[6]][_$_a75e[5]]:co[_$_a75e[4]][_$_a75e[6]][_$_a75e[9]]);var dY,dZ;if(co[_$_a75e[11]]!= null){dW= co[_$_a75e[2]]?Math[_$_a75e[35]](dW,co[_$_a75e[27]]):Math[_$_a75e[36]](dW,co[_$_a75e[28]])};if(co[_$_a75e[14]]!= null){dW= co[_$_a75e[2]]?Math[_$_a75e[36]](dW,co[_$_a75e[28]]):Math[_$_a75e[35]](dW,co[_$_a75e[27]])};if(co[_$_a75e[13]]!= null){dX= co[_$_a75e[3]]?Math[_$_a75e[35]](dX,co[_$_a75e[29]]):Math[_$_a75e[36]](dX,co[_$_a75e[30]])};if(co[_$_a75e[15]]!= null){dX= co[_$_a75e[3]]?Math[_$_a75e[36]](dX,co[_$_a75e[30]]):Math[_$_a75e[35]](dX,co[_$_a75e[29]])};dY= dV+ ((dW- co[_$_a75e[23]])* (co[_$_a75e[2]]?1:-1));dZ= bC+ ((dX- co[_$_a75e[25]])* (co[_$_a75e[3]]?1:-1));if(co[_$_a75e[16]]){dY= co[_$_a75e[16]](bC)}else {if(co[_$_a75e[17]]){dZ= co[_$_a75e[17]](dV)}};Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[6]][co[_$_a75e[2]]?_$_a75e[5]:_$_a75e[9]]= dY+ _$_a75e[37];Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[6]][co[_$_a75e[3]]?_$_a75e[8]:_$_a75e[10]]= dZ+ _$_a75e[37];Drag[_$_a75e[21]][_$_a75e[23]]= dW;Drag[_$_a75e[21]][_$_a75e[25]]= dX;Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[20]](dY,dZ);return false},end:function(){document[_$_a75e[31]]= null;document[_$_a75e[33]]= null;Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[19]](parseInt(Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[6]][Drag[_$_a75e[21]][_$_a75e[2]]?_$_a75e[5]:_$_a75e[9]]),parseInt(Drag[_$_a75e[21]][_$_a75e[4]][_$_a75e[6]][Drag[_$_a75e[21]][_$_a75e[3]]?_$_a75e[8]:_$_a75e[10]]));Drag[_$_a75e[21]]= null},fixE:function(dU){if( typeof dU== _$_a75e[12]){dU= window[_$_a75e[38]]};if( typeof dU[_$_a75e[39]]== _$_a75e[12]){dU[_$_a75e[39]]= dU[_$_a75e[40]]};if( typeof dU[_$_a75e[41]]== _$_a75e[12]){dU[_$_a75e[41]]= dU[_$_a75e[42]]};return dU}}

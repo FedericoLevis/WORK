@@ -1,80 +1,8 @@
-//var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master/WORK";
-var JSU_PATH_BASE="../../..";  // WORK
-
-// ===================================== OPTION: JSU with Comment or Minified   
-//----- ExternalPlugin (jquery, jquery-ui)
-var externalPluginVersion = "/Minify";
-
-// ----------------------------------- FIXED
-var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
-var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/Popup/";
-//----------------------------------- FIXED 
-var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
-var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
-
-
-//Only for TEST during development
-//var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
-
-
-//----------------------------------- MODULE CONFIGURATION
-requirejs.config({
-    baseUrl: JSU_PATH_BASE,
-	// Path relative to baseUrl
-    paths: {
-			  'core': '2/core',
-			  'loadingDiv': '4/core/loadingDiv',
-			  'cValidate': '6/core/cValidate',
-			  'lan': '6/locale/EN',
-        'popup': '4/JSPopup',
-        'jquery': '7/externalPlugin/jquery' + externalPluginVersion
-    },
-    shim: {
-      'core/jslog': ['core/dom-drag'],
-      'jquery/jquery-ui': ['jquery/jquery']  
-    }    
-});
-
-
-
-require([ // First 3 always present
-         'lan/locale-core', 
-         'core/jslog',            
-         'core/util',							
-         'core/date',							
-         'core/tooltip',
-         'popup/Popup',
-         'loadingDiv',							
-         'cValidate',
-         'jquery/jquery-ui'
-		   ],
-    	   function()	{	
-							if (typeof (jslog_init) == "function"){
-								jslog_init(JSLOG_LEV_URL);
-							}
-							jsu_loaded_1();
-						} 
-   );
-
-
-
-
-
-var jsuLoadedTmo = null;   
-
-function jsu_loaded_1(){
-  if (typeof (JSU_LOADED_TMO_MS) == "undefined"){
-    if (typeof (jsu_loaded) != "undefined"){
-     return jsu_loaded();
-    }else {
-    	return;
-    }
-  }
-  jsuLoadedTmo = setTimeout(jsu_loaded_2, JSU_LOADED_TMO_MS); 
-}
-
-
-function jsu_loaded_2(){
-	clearTimeout (jsuLoadedTmo);
-	return jsu_loaded();
-}
+/***************************************************************************/
+/*                                                                         */
+/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
+/*  Javascript Obfuscator Free Version can be downloaded here              */
+/*  http://javascriptobfuscator.com                                        */
+/*                                                                         */
+/***************************************************************************/
+var _$_5469=["../../..","/Minify","https://rawgit.com/FedericoLevis/JSU/master/images/","https://rawgit.com/FedericoLevis/JSU/master/core/Popup/","https://rawgit.com/FedericoLevis/images/master/jsuAbout/","https://rawgit.com/FedericoLevis/JSUDoc/master/","2/core","4/core/loadingDiv","6/core/cValidate","6/locale/EN","4/JSPopup","7/externalPlugin/jquery","core/dom-drag","jquery/jquery","config","lan/locale-core","core/jslog","core/util","core/date","core/tooltip","popup/Popup","loadingDiv","cValidate","jquery/jquery-ui","function","undefined"];var JSU_PATH_BASE=_$_5469[0];var externalPluginVersion=_$_5469[1];var JSU_PATH_IMG=_$_5469[2];var JSU_PATH_POPUP_HTML=_$_5469[3];var JSU_PATH_ABOUT_IMG=_$_5469[4];var JSU_PATH_DOC=_$_5469[5];requirejs[_$_5469[14]]({baseUrl:JSU_PATH_BASE,paths:{"core":_$_5469[6],"loadingDiv":_$_5469[7],"cValidate":_$_5469[8],"lan":_$_5469[9],"popup":_$_5469[10],"jquery":_$_5469[11]+ externalPluginVersion},shim:{"core/jslog":[_$_5469[12]],"jquery/jquery-ui":[_$_5469[13]]}});require([_$_5469[15],_$_5469[16],_$_5469[17],_$_5469[18],_$_5469[19],_$_5469[20],_$_5469[21],_$_5469[22],_$_5469[23]],function(){if( typeof (jslog_init)== _$_5469[24]){jslog_init(JSLOG_LEV_URL)};jsu_loaded_1()});var jsuLoadedTmo=null;function jsu_loaded_1(){if( typeof (JSU_LOADED_TMO_MS)== _$_5469[25]){if( typeof (jsu_loaded)!= _$_5469[25]){return jsu_loaded()}else {return}};jsuLoadedTmo= setTimeout(jsu_loaded_2,JSU_LOADED_TMO_MS)}function jsu_loaded_2(){clearTimeout(jsuLoadedTmo);return jsu_loaded()}
