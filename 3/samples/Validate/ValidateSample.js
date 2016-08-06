@@ -54,21 +54,26 @@ var cValidateObj3 = null;
 * Called when jsu is loaded
 */
 function jsu_loaded(){
+	var fn = "[ValidateSample.js jsu_loaded()] ";
+	jslog (JSLOG_INFO,fn + JSLOG_FUN_START);
 	/* For sample that are NOT FREE like this one, we have to setup the State
    */
 	setupState(); 	
   // [Optional] Init jslog with JSLOG_LEV 
   // jslog_init(JSLOG_LEV);
-	jslogSetSize (JSLOG_SIZE.M); // Set Size
+	// jslogSetSize (JSLOG_SIZE.M); // Set Size
   populateCountry();
 	initValidate1();
 	initValidate2();
 	initValidate3();
 	loadingShow(false);
+	jslog (JSLOG_INFO,fn + JSLOG_FUN_END);
 }
 
 
 function populateCountry(){
+	var fn = "[ValidateSample.js populateCountry()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	// all the possible countries
   var arCountry =	[	["",""],["AF","Afghanistan"],["AL","Albania"],["DZ","Algeria"],["AS","American Samoa"],["AD","Andorra"],["AO","Angola"],["AI","Anguilla"],["AQ","Antarctica"],["AG","Antigua and Barbuda"],["AR","Argentina"],["AM","Armenia"],["AW","Aruba"],["AU","Australia"],["AT","Austria"],["AZ","Azerbaijan"],["BS","Bahamas"],["BH","Bahrain"],["BD","Bangladesh"],["BB","Barbados"],["BY","Belarus"],["BE","Belgium"],["BZ","Belize"],["BJ","Benin"],["BM","Bermuda"],["BT","Bhutan"],["BO","Bolivia"],["BA","Bosnia and Herzegovina"],["BW","Botswana"],["BV","Bouvet Island"],["BR","Brazil"],["IO","British Indian Ocean Territory"],["BN","Brunei Darussalam"],["BG","Bulgaria"],["BF","Burkina Faso"],["BI","Burundi"],["KH","Cambodia"],["CM","Cameroon"],["CA","Canada"],["CV","Cape Verde"],["KY","Cayman Islands"],["CF","Central African Republic"],["TD","Chad"],["CL","Chile"],["CN","China"],["CX","Christmas Island"],["CC","Cocos (Keeling) Islands"],["CO","Colombia"],["KM","Comoros"],["CG","Congo"],["CK","Cook Islands"],["CR","Costa Rica"],["CI","Cote D'ivoire"],["HR","Croatia"],["CU","Cuba"],["CY","Cyprus"],["CZ","Czech Republic"],["DK","Denmark"],["DJ","Djibouti"],["DM","Dominica"],["DO","Dominican Republic"],["EC","Ecuador"],["EG","Egypt"],["SV","El Salvador"],["GQ","Equatorial Guinea"],["ER","Eritrea"],["EE","Estonia"],["ET","Ethiopia"],["FK","Falkland Islands (Malvinas)"],["FO","Faroe Islands"],["FJ","Fiji"],["FI","Finland"],["FR","France"],["GF","French Guiana"],["PF","French Polynesia"],["TF","French Southern Territories"],["GA","Gabon"],["GM","Gambia"],["GE","Georgia"],["DE","Germany"],["GH","Ghana"],["GI","Gibraltar"],["GR","Greece"],["GL","Greenland"],["GD","Grenada"],["GP","Guadeloupe"],["GU","Guam"],["GT","Guatemala"],["GG","Guernsey"],["GN","Guinea"],["GW","Guinea-bissau"],["GY","Guyana"],["HT","Haiti"],["HM","Heard Island and Mcdonald Islands"],["VA","Holy See (Vatican City State)"],["HN","Honduras"],["HK","Hong Kong"],["HU","Hungary"],["IS","Iceland"],["IN","India"],["ID","Indonesia"],["IR","Iran, Islamic Republic of"],["IQ","Iraq"],["IE","Ireland"],["IM","Isle of Man"],["IL","Israel"],["IT","Italy"],["JM","Jamaica"],["JP","Japan"],["JE","Jersey"],["JO","Jordan"],["KZ","Kazakhstan"],["KE","Kenya"],["KI","Kiribati"],["KR","Korea, Republic of"],["KW","Kuwait"],["KG","Kyrgyzstan"],["LA","Lao People's Democratic Republic"],["LV","Latvia"],["LB","Lebanon"],["LS","Lesotho"],["LR","Liberia"],["LY","Libyan Arab Jamahiriya"],["LI","Liechtenstein"],["LT","Lithuania"],["LU","Luxembourg"],["MO","Macao"],["MK","Macedonia"],["MG","Madagascar"],["MW","Malawi"],["MY","Malaysia"],["MV","Maldives"],["ML","Mali"],["MT","Malta"],["MH","Marshall Islands"],["MQ","Martinique"],["MR","Mauritania"],["MU","Mauritius"],["YT","Mayotte"],["MX","Mexico"],["FM","Micronesia, Federated States of"],["MD","Moldova, Republic of"],["MC","Monaco"],["MN","Mongolia"],["ME","Montenegro"],["MS","Montserrat"],["MA","Morocco"],["MZ","Mozambique"],["MM","Myanmar"],["NA","Namibia"],["NR","Nauru"],["NP","Nepal"],["NL","Netherlands"],["AN","Netherlands Antilles"],["NC","New Caledonia"],["NZ","New Zealand"],["NI","Nicaragua"],["NE","Niger"],["NG","Nigeria"],["NU","Niue"],["NF","Norfolk Island"],["MP","Northern Mariana Islands"],["NO","Norway"],["OM","Oman"],["PK","Pakistan"],["PW","Palau"],["PS","Palestinian Territory, Occupied"],["PA","Panama"],["PG","Papua New Guinea"],["PY","Paraguay"],["PE","Peru"],["PH","Philippines"],["PN","Pitcairn"],["PL","Poland"],["PT","Portugal"],["PR","Puerto Rico"],["QA","Qatar"],["RE","Reunion"],["RO","Romania"],["RU","Russian Federation"],["RW","Rwanda"],["SH","Saint Helena"],["KN","Saint Kitts and Nevis"],["LC","Saint Lucia"],["PM","Saint Pierre and Miquelon"],["VC","Saint Vincent and The Grenadines"],["WS","Samoa"],["SM","San Marino"],["ST","Sao Tome and Principe"],["SA","Saudi Arabia"],["SN","Senegal"],["RS","Serbia"],["SC","Seychelles"],["SL","Sierra Leone"],["SG","Singapore"],["SK","Slovakia"],["SI","Slovenia"],["SB","Solomon Islands"],["SO","Somalia"],["ZA","South Africa"],["ES","Spain"],["LK","Sri Lanka"],["SD","Sudan"],["SR","Suriname"],["SJ","Svalbard and Jan Mayen"],["SZ","Swaziland"],["SE","Sweden"],["CH","Switzerland"],["SY","Syrian Arab Republic"],["TW","Taiwan, Province of China"],["TJ","Tajikistan"],["TZ","Tanzania, United Republic of"],["TH","Thailand"],["TL","Timor-leste"],["TG","Togo"],["TK","Tokelau"],["TO","Tonga"],["TT","Trinidad and Tobago"],["TN","Tunisia"],["TR","Turkey"],["TM","Turkmenistan"],["TC","Turks and Caicos Islands"],["TV","Tuvalu"],["UG","Uganda"],["UA","Ukraine"],["AE","United Arab Emirates"],["GB","United Kingdom"],["US","United States"],["UM","United States Minor Outlying Islands"],["UY","Uruguay"],["UZ","Uzbekistan"],["VU","Vanuatu"],["VE","Venezuela"],["VN","Viet Nam"],["VG","Virgin Islands, British"],["VI","Virgin Islands, U.S."],["WF","Wallis and Futuna"],["EH","Western Sahara"],["YE","Yemen"],["ZM","Zambia"],["ZW","Zimbabwe"]];
   
@@ -77,6 +82,7 @@ function populateCountry(){
   		var countryEl = arCountry[k];
   		appendOptionLast (selectCountry,countryEl[1],countryEl[0]);
   }
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 
@@ -86,6 +92,9 @@ function populateCountry(){
 
 // 1) Init cValidate with Item constraints, tips and options
 function initValidate1(){
+	var fn = "[ValidateSample.js initValidate1()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	
 	cValidateObj1 = new cValidate ({ 
 		email: { // Mandatory email  
 		  presence: true,	  email: true  
@@ -105,14 +114,18 @@ function initValidate1(){
 		{szErrSectId: "errSect1"}
 	);
 	// Now the item Validation is managed by cValidate.js
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 // 2)  At Submit Button Click: we Validate all the items
 function onclickSubmit1() {
+	var fn = "[ValidateSample.js onclickSubmit1()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	var retCode = cValidateObj1.validateApply();
 	if (retCode == VALIDATE_RETCODE.OK){
 		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_1"});
 	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 /*====================================================================
@@ -121,6 +134,8 @@ function onclickSubmit1() {
 
 //1) Init cValidate with Item constraints, tips and options
 function initValidate2(){
+	var fn = "[ValidateSample.js initValidate2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	cValidateObj2 = new cValidate ({ // Mandatory username len[3..20] 
 		username: {presence: true, tip: TIP_USER, length: { minimum: 3,  maximum: 20 },
 		  format: { // We allow only  a-z and 0-9, and we ignore (flags=i) if it is uppercase or lowercase 
@@ -140,16 +155,20 @@ function initValidate2(){
 		szErrSectId: "errSect2",		
 		bInstantFieldValidation:false, bOnErrShowLabel: false,		bOnErrShowSect:true	}
 	);
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 /**
  * onclick Sunbmit2: Validate SAMPLE_2
  */
 function onclickSubmit2() {
+	var fn = "[ValidateSample.js onclickSubmit2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	var retCode = cValidateObj2.validateApply();
 	if (retCode == VALIDATE_RETCODE.OK){
 		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_2"});
 	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 
@@ -159,6 +178,8 @@ function onclickSubmit2() {
 
 //1) Init cValidate with Item constraints, tips and options
 function initValidate3(){
+	var fn = "[ValidateSample.js initValidate2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	cValidateObj3 = new cValidate ({ // Mandatory size, choice exclude XS and S 
 			size: {	presence: true, tip: TIP_SIZE,	exclusion: {   within: ["XS","S"],    
 				message: "<b>XS and S</b> are not available at the moment"   }	  
@@ -174,16 +195,20 @@ function initValidate3(){
 		}
 	);
 	// Now the item Validation is managed by cValidate.js \n' + 
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 /**
  * onclick Sunbmit1: Validate SAMPLE_3
  */
 function onclickSubmit3() {
+	var fn = "[ValidateSample.js onclickSubmit3()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
 	var retCode = cValidateObj3.validateApply();
 	if (retCode == VALIDATE_RETCODE.OK){
 		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_1"});
 	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
 }
 
 //===================================================================================================
