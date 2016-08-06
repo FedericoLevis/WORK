@@ -57,6 +57,7 @@ function jsu_loaded(){
 	
   // [Optional] Init jslog with JSLOG_LEV 
   // jslog_init(JSLOG_LEV);
+	jslogSetSize (JSLOG_SIZE.M); // Set Size
   populateCountry();
 	initValidate1();
 	initValidate2();
