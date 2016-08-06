@@ -1,8 +1,1768 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_4da6=["INPUT","SELECT","TEXTAREA","OK","ERR","yyyy-MM-dd","yyyy-MM-dd hh:mm:ss","[cValidate.js cValidate()] ","IN [objOpt]=","constraints","SW ERROR key=","  is not a DOM id - return null from getElementById2(",")","tagName","SW ERROR for DOM item ","id"," with tagName=","\x0AAll the constraints items must refer to a DOM item having a Supported TAG","push","arValidateEl","validateOpt","bInstantFieldValidation","bOnErrShowLabel","bOnErrShowSect","bOnErrShowPopup","bOnErrShowAlarm","bEnphasizeItemBorder","szDateFmt","szDateTimeFmt","setOption","length","addAlarmImg","tip","Add tip for item=","input","createElement","validateInfo","type","button","onmouseover","onmouseout","appendChild","parentNode","presence","validateItemMandatory","addErrLabel","onfocus","fnOnFocusOrig","validateObj","datetime","validators","dateOnly","extend","setErrSection","prototype","[cSortTable.setOption] ","IN objOpt:","szErrSectId","CURRENT validateOpt:","Add EVENTs for INSTANT Validation","change","preventDefault","addEventListener","getOption","validateApply","[cSortTable.validateApply] ","Prepare objValues to Validate","value","selectedIndex","options","validate objValues","validate errors","showErrors","retCode=","[cValidate.js showErrors] ","",".validateErrLabel","querySelector","validateErr"," - ","Id="," set Err=","innerHTML","inline","enphasize Border for Error Item","validateItemErr",".jsuAlarmingImg","<li>","</li>","<ul type=\"square\">","</ul>","<table width=\"100%\"><tr>","  <td class=\"PopupImgWarning\" width=\"80px\"></td>","  <td><label class=\"validateErrPopup\">","</label></td>","</tr></table>","elErrSect","<label class=\"validateErrPopup\">","</label>","szErrPopupTitle","szTitle","WARN","[cValidate.js setErrSection()] ","There is SECT ERR with objOpt.szErrSectId=","validateErrSect","div","className","firstChild","body","insertBefore","[cValidate.js addErrLabel()] ","input.id=",".validateErrContainer","span","validateErrContainer","label","validateErrLabel","[cValidate.js addAlarmImg()] ","add the elAlarm ","img","jsuAlarmingImg","[cValidate.js validateItemOnChange()] ","el.id=","Nothing to do (bInstantFieldValidation=false) ","szErr="," bErr=","[cValidate.js clearError] ","undefined","call","use strict","runValidations","isPromise","Use validate.async if you want support for promises","processValidationResults","slice","development","%{major}.%{minor}.%{patch}","version","format","metadata","isEmpty","+","isDomElement","isJqueryElement","collectFormValues","getDeepObjectValue","result","Unknown validator %{name}","pruneEmptyErrors","expandMultipleErrors","convertErrorMessages","detailed","flattenErrorsToArray","flat","groupErrorsByAttribute","grouped","Unknown format %{format}","async","wrapErrors","cleanAttributes","then","waitForResults","Promise","single","error","Rejecting promises with the result is deprecated. Please use the resolve callback instead.","reduce","function","apply","number","isNumber","isFunction","jquery","isString","querySelectorAll","isObject","object","nodeType","nodeName","string","isDefined","test","EMPTY_STRING_REGEXP","isArray","isDate","FORMAT_REGEXP","%","%{","}","replace","toFixed","round",", ","join","prettify","map","toString","toLowerCase"," ","$1 $2","[object Array]","indexOf",".","\\","forEachKeyInKeypath","input[name], textarea[name]","item","data-ignored","getAttribute","sanitizeFormValue","checkbox","attributes","checked","name","radio","select[name]","trim","nullify","toUpperCase","filter","attribute","globalOptions","^","fullMessages","capitalize","stringifyValue","exports","validate","amd","warn","[validate.js] ","message","cantBeBlank","is","maximum","minimum","tokenizer","Attribute %{attr} has a non numeric value for `length`","notValid","has an incorrect length","wrongLength","wrongLen","tooShort","tooLong","noStrings","notNumber","onlyInteger","isInteger","notInteger","mustBeInteger","not","mustBeType","odd","notOdd","mustBeOdd","even","notEven","mustBeEven","parse","Both the parse and format functions needs to be set to use the datetime/date validator","swError","earliest","latest","validDate","tooEarly","notEarlierThanDate","tooLate","notLaterThanDate","isInvalid","pattern","flags","exec","within","contains","^%{value} is not included in the list","valueRestricted","notValidMail","PATTERN","notEqualToAttribute","notEmptyString","comparator","notValidUrl","schemes","http","https","allowLocal","(?:(?:","|","):\\/\\/)","(?:\\S+(?::\\S*)?@)?","(?:","(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)","(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*","(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))","(?:localhost|","(?!10(?:\\.\\d{1,3}){3})","(?!127(?:\\.\\d{1,3}){3})","(?!169\\.254(?:\\.\\d{1,3}){2})","(?!192\\.168(?:\\.\\d{1,3}){2})","(?!172","\\.(?:1[6-9]|2\\d|3[0-1])","(?:\\.\\d{1,3})","{2})","(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])","(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}","(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))","(?::\\d{2,5})?","(?:\\/[^\\s]*)?","$","i","exposeModule"];var VALIDATE_SUPPORTED_TAG=[_$_4da6[0],_$_4da6[1],_$_4da6[2]];var VALIDATE_RETCODE={OK:_$_4da6[3],ERR:_$_4da6[4]};var VALIDATE_DEF_OPT={bInstantFieldValidation:true,bOnErrShowLabel:true,bOnErrShowSect:false,bOnErrShowPopup:false,bOnErrShowAlarm:false,bEnphasizeItemBorder:true,szDateFmt:_$_4da6[5],szDateTimeFmt:_$_4da6[6]};cValidate= function(E,o){var g=_$_4da6[7];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);jslogObj(JSLOG_CORE,g+ _$_4da6[8],o);this[_$_4da6[9]]= E;var D= new Array();for(var J in E){var G=getElementById2(J);if(G== null){return showErr(g+ _$_4da6[10]+ J+ _$_4da6[11]+ J+ _$_4da6[12])};var K=G[_$_4da6[13]];if(checkArVal(G[_$_4da6[13]],VALIDATE_SUPPORTED_TAG,_$_4da6[14]+ G[_$_4da6[15]]+ _$_4da6[16]+ K+ _$_4da6[17])){return 1};D[_$_4da6[18]](G)};this[_$_4da6[19]]= D;this[_$_4da6[20]]= {bInstantFieldValidation:VALIDATE_DEF_OPT[_$_4da6[21]],bOnErrShowLabel:VALIDATE_DEF_OPT[_$_4da6[22]],bOnErrShowSect:VALIDATE_DEF_OPT[_$_4da6[23]],bOnErrShowPopup:VALIDATE_DEF_OPT[_$_4da6[24]],bOnErrShowAlarm:VALIDATE_DEF_OPT[_$_4da6[25]],bEnphasizeItemBorder:VALIDATE_DEF_OPT[_$_4da6[26]],szDateFmt:VALIDATE_DEF_OPT[_$_4da6[27]],szDateTimeFmt:VALIDATE_DEF_OPT[_$_4da6[28]]};this[_$_4da6[29]](o);for(var j=0;j< this[_$_4da6[19]][_$_4da6[30]];j++){var G=this[_$_4da6[19]][j];if(G[_$_4da6[13]]== _$_4da6[1]){this[_$_4da6[31]](G)};var F=E[G[_$_4da6[15]]];var L=F[_$_4da6[32]];if(L!= undefined){jslog(JSLOG_CORE,g+ _$_4da6[33]+ G[_$_4da6[15]]);var I=document[_$_4da6[35]](_$_4da6[34]);classAdd(I,_$_4da6[36],true);I[_$_4da6[37]]= _$_4da6[38];I[_$_4da6[32]]= L;I[_$_4da6[39]]= function(){Tip(this[_$_4da6[32]])};I[_$_4da6[40]]= function(){UnTip()};G[_$_4da6[42]][_$_4da6[41]](I)};if(this[_$_4da6[20]][_$_4da6[26]]&& F[_$_4da6[43]]== true){classAdd(G,_$_4da6[44],true)};this[_$_4da6[45]](G);var H=G[_$_4da6[46]];if(H!= undefined){G[_$_4da6[47]]= H};G[_$_4da6[46]]= validateItemOnFocus;G[_$_4da6[48]]= this};this[_$_4da6[19]]= D;validate[_$_4da6[52]](validate[_$_4da6[50]][_$_4da6[49]],{parse:function(P,N){var M=N[_$_4da6[51]]?N[_$_4da6[27]]:N[_$_4da6[28]];var O=getTimeFromFormat(P,M);return (O== 0)?undefined:O},format:function(P,N){var M=N[_$_4da6[51]]?N[_$_4da6[27]]:N[_$_4da6[28]];return getTimeFromFormat(P,M)},options:{szDateFmt:this[_$_4da6[20]][_$_4da6[27]],szDateTimeFmt:this[_$_4da6[20]][_$_4da6[28]]}});this[_$_4da6[53]]();jslog(JSLOG_CORE,g+ JSLOG_FUN_END)};cValidate[_$_4da6[54]][_$_4da6[29]]= function(o){var g=_$_4da6[55];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);if(o){jslogObj(JSLOG_CORE,g+ _$_4da6[56],o);var bm=this[_$_4da6[20]];if(o[_$_4da6[27]]!= undefined){bm[_$_4da6[27]]= o[_$_4da6[27]]};if(o[_$_4da6[28]]!= undefined){bm[_$_4da6[28]]= o[_$_4da6[28]]};if(o[_$_4da6[57]]!= undefined){bm[_$_4da6[57]]= o[_$_4da6[57]]};if(o[_$_4da6[21]]!= undefined){bm[_$_4da6[21]]= o[_$_4da6[21]]};if(o[_$_4da6[25]]!= undefined){bm[_$_4da6[25]]= o[_$_4da6[25]]};if(o[_$_4da6[22]]!= undefined){bm[_$_4da6[22]]= o[_$_4da6[22]]};if(o[_$_4da6[23]]!= undefined){bm[_$_4da6[23]]= o[_$_4da6[23]]};if(o[_$_4da6[24]]!= undefined){bm[_$_4da6[24]]= o[_$_4da6[24]]};if(o[_$_4da6[26]]!= undefined){bm[_$_4da6[26]]= o[_$_4da6[26]]};this[_$_4da6[20]]= bm;jslogObj(JSLOG_CORE,g+ _$_4da6[58],bm)};if(this[_$_4da6[20]][_$_4da6[21]]){jslog(JSLOG_CORE,g+ _$_4da6[59]);for(var j=0;j< this[_$_4da6[19]][_$_4da6[30]];j++){this[_$_4da6[19]][j][_$_4da6[62]](_$_4da6[60],function(bn){bn[_$_4da6[61]]();validateItemOnChange(this)})}};this[_$_4da6[53]]();for(var j=0;j< this[_$_4da6[19]][_$_4da6[30]];j++){var G=this[_$_4da6[19]][j];clearError(G);var F=this[_$_4da6[9]][G[_$_4da6[15]]];var bl=(this[_$_4da6[20]][_$_4da6[26]]&& F[_$_4da6[43]]== true);classAdd(G,_$_4da6[44],bl)};jslog(JSLOG_CORE,g+ JSLOG_FUN_END)};cValidate[_$_4da6[54]][_$_4da6[63]]= function(){return this[_$_4da6[20]]};cValidate[_$_4da6[54]][_$_4da6[64]]= function(){var g=_$_4da6[65];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);jslog(JSLOG_CORE,g+ _$_4da6[66]);var bA= new Object;for(var j=0;j< this[_$_4da6[19]][_$_4da6[30]];j++){el= this[_$_4da6[19]][j];var K=el[_$_4da6[13]];var P=null;if(K== _$_4da6[1]){P= el[_$_4da6[69]][el[_$_4da6[68]]][_$_4da6[67]]}else {if(K== _$_4da6[0]){P= el[_$_4da6[67]]}};bA[el[_$_4da6[15]]]= P};jslogObj(JSLOG_CORE,_$_4da6[70],bA);var bz=validate(bA,this[_$_4da6[9]]);jslogObj(JSLOG_CORE,g+ _$_4da6[71],bz);this[_$_4da6[72]](bz|| {});var bB=(bz)?VALIDATE_RETCODE[_$_4da6[4]]:VALIDATE_RETCODE[_$_4da6[3]];jslog(JSLOG_CORE,g+ _$_4da6[73]+ bB);jslog(JSLOG_CORE,g+ JSLOG_FUN_END);return bB};cValidate[_$_4da6[54]][_$_4da6[72]]= function(bz,bI){var g=_$_4da6[74];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);if(bI== undefined){bI= false};var bO=_$_4da6[75];var bH=false;var bm=this[_$_4da6[20]];for(var bM=0;bM< this[_$_4da6[19]][_$_4da6[30]];bM++){var G=this[_$_4da6[19]][bM];var X=G[_$_4da6[15]];var bK=G[_$_4da6[42]][_$_4da6[77]](_$_4da6[76]);var bL=bz&& bz[X];var bG=(bL!= null);if(bG){classAdd(G,_$_4da6[78],true);var bN=_$_4da6[75];for(iEr= 0;iEr< bL[_$_4da6[30]];iEr++){if(iEr> 0){bN+= _$_4da6[79]};bN+= bL[iEr]};if(bm[_$_4da6[22]]){jslog(JSLOG_CORE,g+ _$_4da6[80]+ X+ _$_4da6[81]+ bN);bK[_$_4da6[82]]= bN;elementShow(bK,true,_$_4da6[83])};if(bm[_$_4da6[26]]){jslog(JSLOG_CORE,g+ _$_4da6[84]);classAdd(G,_$_4da6[85],true)};if(!bI&& bm[_$_4da6[25]]){var K=G[_$_4da6[13]];if(K== _$_4da6[1]){var bJ=G[_$_4da6[42]][_$_4da6[77]](_$_4da6[86]);elementShow(bJ,true,_$_4da6[83])}else {alarmShowIn1El(G,true)}};bO+= _$_4da6[87]+ bN+ _$_4da6[88];bH= true}else {elementShow(bK,false)}};if(!bI){if(bH){bO= _$_4da6[89]+ bO+ _$_4da6[90];if(bm[_$_4da6[23]]){var bQ=_$_4da6[91]+ _$_4da6[92]+ _$_4da6[93]+ bO+ _$_4da6[94]+ _$_4da6[95];this[_$_4da6[96]][_$_4da6[82]]= bQ;elementShow(this[_$_4da6[96]],true)};if(bm[_$_4da6[24]]){var bP=_$_4da6[97]+ bO+ _$_4da6[98];var o= new Object();if(bm[_$_4da6[99]]){o[_$_4da6[100]]= bm[_$_4da6[99]]};Popup(POPUP_TYPE[_$_4da6[101]],bP,o)}}else {elementShow(this[_$_4da6[96]],false)}};jslog(JSLOG_CORE,g+ JSLOG_FUN_END)};cValidate[_$_4da6[54]][_$_4da6[53]]= function(){var g=_$_4da6[102];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);if(this[_$_4da6[20]]){if(this[_$_4da6[20]][_$_4da6[57]]){jslog(JSLOG_CORE,g+ _$_4da6[103]+ this[_$_4da6[20]][_$_4da6[57]]);this[_$_4da6[96]]= getElementById3(this[_$_4da6[20]][_$_4da6[57]],true,g)};if(this[_$_4da6[20]][_$_4da6[23]]){if(this[_$_4da6[96]]== undefined){var cb=getElementById2(_$_4da6[104]);if(cb== undefined){cb= document[_$_4da6[35]](_$_4da6[105]);cb[_$_4da6[106]]= _$_4da6[104];document[_$_4da6[108]][_$_4da6[109]](cb,document[_$_4da6[108]][_$_4da6[107]])}else {elementShow(cb,false)};this[_$_4da6[96]]= cb}}else {if(this[_$_4da6[96]]){elementShow(this[_$_4da6[96]],false)}}};jslog(JSLOG_CORE,g+ JSLOG_FUN_END)};cValidate[_$_4da6[54]][_$_4da6[45]]= function(I){var g=_$_4da6[110];jslog(JSLOG_CORE,g+ _$_4da6[111]+ I[_$_4da6[15]]);var cd=I[_$_4da6[42]][_$_4da6[77]](_$_4da6[112]);if(cd== undefined){cd= document[_$_4da6[35]](_$_4da6[113]);cd[_$_4da6[106]]= _$_4da6[114];I[_$_4da6[42]][_$_4da6[41]](cd);var bK=document[_$_4da6[35]](_$_4da6[115]);bK[_$_4da6[106]]= _$_4da6[116];bK[_$_4da6[15]]= _$_4da6[116];cd[_$_4da6[41]](bK)};clearError(I)};cValidate[_$_4da6[54]][_$_4da6[31]]= function(I){var g=_$_4da6[117];jslog(JSLOG_CORE,g+ JSLOG_FUN_START);jslog(JSLOG_CORE,g+ _$_4da6[111]+ I[_$_4da6[15]]);var bJ=I[_$_4da6[42]][_$_4da6[77]](_$_4da6[86]);if(bJ== undefined){jslog(JSLOG_CORE,g+ _$_4da6[118]);var ch=document[_$_4da6[35]](_$_4da6[113]);I[_$_4da6[42]][_$_4da6[41]](ch);bJ= document[_$_4da6[35]](_$_4da6[119]);bJ[_$_4da6[106]]= _$_4da6[120];ch[_$_4da6[41]](bJ)};jslog(JSLOG_CORE,g+ JSLOG_FUN_END)};function validateItemOnFocus(){clearError(this,this[_$_4da6[48]][_$_4da6[20]][_$_4da6[21]]);if(this[_$_4da6[47]]!= undefined){this[_$_4da6[47]]()}}function validateItemOnChange(G){var g=_$_4da6[121];jslog(JSLOG_CORE,g+ JSLOG_FUN_END);jslog(JSLOG_CORE,g+ _$_4da6[122]+ G[_$_4da6[15]]);var bA= new Object;var K=G[_$_4da6[13]];var rh=G[_$_4da6[48]];if(!rh[_$_4da6[20]][_$_4da6[21]]){return jslog(JSLOG_CORE,g+ _$_4da6[123]+ JSLOG_FUN_END)};var P=null;if(K== _$_4da6[1]){P= G[_$_4da6[69]][G[_$_4da6[68]]][_$_4da6[67]]}else {if(K== _$_4da6[0]){P= G[_$_4da6[67]]}};bA[G[_$_4da6[15]]]= P;jslogObj(JSLOG_CORE,_$_4da6[70],bA);var bz=validate(bA,rh[_$_4da6[9]]);var bN=bz[G[_$_4da6[15]]];var bG=(bN!= undefined);jslog(JSLOG_CORE,g+ _$_4da6[124]+ bN+ _$_4da6[125]+ bG);var bK=G[_$_4da6[42]][_$_4da6[77]](_$_4da6[76]);classAdd(G,_$_4da6[78],bG);var bm=rh[_$_4da6[20]];if(bm[_$_4da6[22]]){bK[_$_4da6[82]]= bN;elementShow(bK,bG,_$_4da6[83])};if(bm[_$_4da6[25]]){var K=input[_$_4da6[13]];if(K== _$_4da6[1]){var bJ=input[_$_4da6[42]][_$_4da6[77]](_$_4da6[86]);elementShow(bJ,bG,_$_4da6[83])}else {alarmShowIn1El(input,bG)}};if(bm[_$_4da6[26]]){jslog(JSLOG_CORE,g+ _$_4da6[84]);classAdd(G,_$_4da6[85],bG)};jslog(JSLOG_CORE,g+ JSLOG_FUN_END)}function clearError(G,iL){var g=_$_4da6[126];if(iL== undefined){iL= false};var K=G[_$_4da6[13]];if(K== _$_4da6[1]){var bJ=G[_$_4da6[42]][_$_4da6[77]](_$_4da6[86]);elementShow(bJ,false)}else {alarmShowIn1El(G,false)};if(!iL){classAdd(G,_$_4da6[78],false);var bK=G[_$_4da6[42]][_$_4da6[77]](_$_4da6[76]);elementShow(bK,false)};classAdd(G,_$_4da6[85],false)}(function(ck,cl,define){_$_4da6[129];var cn=function(cp,E,N){N= cm[_$_4da6[52]]({},cm[_$_4da6[69]],N);var cq=cm[_$_4da6[130]](cp,E,N),co,cr;for(co in cq){for(cr in cq[co]){if(cm[_$_4da6[131]](cq[co][cr])){throw  new Error(_$_4da6[132])}}};return cn[_$_4da6[133]](cq,N)};var cm=cn;cm[_$_4da6[52]]= function(ct){var cs=[][_$_4da6[134]][_$_4da6[128]](arguments,1);for(var j=0;j< cs[_$_4da6[30]];j++){var cu=cs[j];for(var co in cu){ct[co]= cu[co]}};return ct};cm[_$_4da6[52]](cn,{version:{major:0,minor:9,patch:0,metadata:_$_4da6[135],toString:function(){var cv=cm[_$_4da6[138]](_$_4da6[136],cm[_$_4da6[137]]);if(!cm[_$_4da6[140]](cm[_$_4da6[137]][_$_4da6[139]])){cv+= _$_4da6[141]+ cm[_$_4da6[137]][_$_4da6[139]]};return cv}},Promise: typeof Promise!== _$_4da6[127]?Promise:null,EMPTY_STRING_REGEXP:/^\s*$/,runValidations:function(cp,E,N){var cq=[],co,cx,P,cz,cr,cy,cw;if(cm[_$_4da6[142]](cp)|| cm[_$_4da6[143]](cp)){cp= cm[_$_4da6[144]](cp)};for(co in E){P= cm[_$_4da6[145]](cp,co);cz= cm[_$_4da6[146]](E[co],P,cp,co,N,E);for(cx in cz){cr= cm[_$_4da6[50]][cx];if(!cr){cw= cm[_$_4da6[138]](_$_4da6[147],{name:cx});throw  new Error(cw)};cy= cz[cx];cy= cm[_$_4da6[146]](cy,P,cp,co,N,E);if(!cy){continue};cq[_$_4da6[18]]({attribute:co,value:P,validator:cx,globalOptions:N,attributes:cp,options:cy,error:cr[_$_4da6[128]](cr,P,cy,co,cp,N)})}};return cq},processValidationResults:function(bz,N){var co;bz= cm[_$_4da6[148]](bz,N);bz= cm[_$_4da6[149]](bz,N);bz= cm[_$_4da6[150]](bz,N);switch(N[_$_4da6[138]]|| _$_4da6[155]){case _$_4da6[151]:break;case _$_4da6[153]:bz= cm[_$_4da6[152]](bz);break;case _$_4da6[155]:bz= cm[_$_4da6[154]](bz);for(co in bz){bz[co]= cm[_$_4da6[152]](bz[co])};break;default:throw  new Error(cm[_$_4da6[138]](_$_4da6[156],N))};return cm[_$_4da6[140]](bz)?undefined:bz},async:function(cp,E,N){N= cm[_$_4da6[52]]({},cm[_$_4da6[157]][_$_4da6[69]],N);var cA=N[_$_4da6[158]]|| function(bz){return bz};if(N[_$_4da6[159]]!== false){cp= cm[_$_4da6[159]](cp,E)};var cq=cm[_$_4da6[130]](cp,E,N);return  new cm[_$_4da6[162]](function(cC,cB){cm[_$_4da6[161]](cq)[_$_4da6[160]](function(){var bz=cm[_$_4da6[133]](cq,N);if(bz){cB( new cA(bz,N,cp,E))}else {cC(cp)}},function(bL){cB(bL)})})},single:function(P,E,N){N= cm[_$_4da6[52]]({},cm[_$_4da6[163]][_$_4da6[69]],N,{format:_$_4da6[153],fullMessages:false});return cm({single:P},{single:E},N)},waitForResults:function(cq){return cq[_$_4da6[166]](function(cD,cE){if(!cm[_$_4da6[131]](cE[_$_4da6[164]])){return cD};return cD[_$_4da6[160]](function(){return cE[_$_4da6[164]][_$_4da6[160]](function(cw){cE[_$_4da6[164]]= cw|| null},function(cw){if(cw instanceof  Error){throw cw};cm[_$_4da6[164]](_$_4da6[165]);cE[_$_4da6[164]]= cw})})}, new cm[_$_4da6[162]](function(cF){cF()}))},result:function(P){var cG=[][_$_4da6[134]][_$_4da6[128]](arguments,1);if( typeof P=== _$_4da6[167]){P= P[_$_4da6[168]](null,cG)};return P},isNumber:function(P){return  typeof P=== _$_4da6[169]&& !isNaN(P)},isFunction:function(P){return  typeof P=== _$_4da6[167]},isInteger:function(P){return cm[_$_4da6[170]](P)&& P% 1=== 0},isObject:function(ct){return ct=== Object(ct)},isDate:function(ct){return ct instanceof  Date},isDefined:function(ct){return ct!== null&& ct!== undefined},isPromise:function(cH){return !!cH&& cm[_$_4da6[171]](cH[_$_4da6[160]])},isJqueryElement:function(cI){return cI&& cm[_$_4da6[173]](cI[_$_4da6[172]])},isDomElement:function(cI){if(!cI){return false};if(!cm[_$_4da6[171]](cI[_$_4da6[174]])|| !cm[_$_4da6[171]](cI[_$_4da6[77]])){return false};if(cm[_$_4da6[175]](document)&& cI=== document){return true};if( typeof HTMLElement=== _$_4da6[176]){return cI instanceof  HTMLElement}else {return cI&&  typeof cI=== _$_4da6[176]&& cI!== null&& cI[_$_4da6[177]]=== 1&&  typeof cI[_$_4da6[178]]=== _$_4da6[179]}},isEmpty:function(P){var co;if(!cm[_$_4da6[180]](P)){return true};if(cm[_$_4da6[171]](P)){return false};if(cm[_$_4da6[173]](P)){return cm[_$_4da6[182]][_$_4da6[181]](P)};if(cm[_$_4da6[183]](P)){return P[_$_4da6[30]]=== 0};if(cm[_$_4da6[184]](P)){return false};if(cm[_$_4da6[175]](P)){for(co in P){return false};return true};return false},format:cm[_$_4da6[52]](function(cJ,cK){if(!cm[_$_4da6[173]](cJ)){return cJ};return cJ[_$_4da6[189]](cm[_$_4da6[138]][_$_4da6[185]],function(cL,cM,cN){if(cM=== _$_4da6[186]){return _$_4da6[187]+ cN+ _$_4da6[188]}else {return String(cK[cN])}})},{FORMAT_REGEXP:/(%?)%\{([^\}]+)\}/g}),prettify:function(cJ){if(cm[_$_4da6[170]](cJ)){if((cJ* 100)% 1=== 0){return _$_4da6[75]+ cJ}else {return parseFloat(Math[_$_4da6[191]](cJ* 100)/ 100)[_$_4da6[190]](2)}};if(cm[_$_4da6[183]](cJ)){return cJ[_$_4da6[195]](function(cO){return cm[_$_4da6[194]](cO)})[_$_4da6[193]](_$_4da6[192])};if(cm[_$_4da6[175]](cJ)){return cJ[_$_4da6[196]]()};cJ= _$_4da6[75]+ cJ;return cJ[_$_4da6[189]](/([^\s])\.([^\s])/g,_$_4da6[199])[_$_4da6[189]](/\\+/g,_$_4da6[75])[_$_4da6[189]](/[_-]/g,_$_4da6[198])[_$_4da6[189]](/([a-z])([A-Z])/g,function(cL,cM,cN){return _$_4da6[75]+ cM+ _$_4da6[198]+ cN[_$_4da6[197]]()})[_$_4da6[197]]()},stringifyValue:function(P){return cm[_$_4da6[194]](P)},isString:function(P){return  typeof P=== _$_4da6[179]},isArray:function(P){return {}[_$_4da6[196]][_$_4da6[128]](P)=== _$_4da6[200]},contains:function(ct,P){if(!cm[_$_4da6[180]](ct)){return false};if(cm[_$_4da6[183]](ct)){return ct[_$_4da6[201]](P)!==  -1};return P in  ct},forEachKeyInKeypath:function(cS,cR,cP){if(!cm[_$_4da6[173]](cR)){return undefined};var J=_$_4da6[75],j,cQ=false;for(j= 0;j< cR[_$_4da6[30]];++j){switch(cR[j]){case _$_4da6[202]:if(cQ){cQ= false;J+= _$_4da6[202]}else {cS= cP(cS,J,false);J= _$_4da6[75]};break;case _$_4da6[203]:if(cQ){cQ= false;J+= _$_4da6[203]}else {cQ= true};break;default:cQ= false;J+= cR[j];break}};return cP(cS,J,true)},getDeepObjectValue:function(ct,cR){if(!cm[_$_4da6[175]](ct)){return undefined};return cm[_$_4da6[204]](ct,cR,function(ct,J){if(cm[_$_4da6[175]](ct)){return ct[J]}})},collectFormValues:function(cT,N){var cV={},j,I,cU,P;if(cm[_$_4da6[143]](cT)){cT= cT[0]};if(!cT){return cV};N= N|| {};cU= cT[_$_4da6[174]](_$_4da6[205]);for(j= 0;j< cU[_$_4da6[30]];++j){I= cU[_$_4da6[206]](j);if(cm[_$_4da6[180]](I[_$_4da6[208]](_$_4da6[207]))){continue};P= cm[_$_4da6[209]](I[_$_4da6[67]],N);if(I[_$_4da6[37]]=== _$_4da6[169]){P= P?+P:null}else {if(I[_$_4da6[37]]=== _$_4da6[210]){if(I[_$_4da6[211]][_$_4da6[67]]){if(!I[_$_4da6[212]]){P= cV[I[_$_4da6[213]]]|| null}}else {P= I[_$_4da6[212]]}}else {if(I[_$_4da6[37]]=== _$_4da6[214]){if(!I[_$_4da6[212]]){P= cV[I[_$_4da6[213]]]|| null}}}};cV[I[_$_4da6[213]]]= P};cU= cT[_$_4da6[174]](_$_4da6[215]);for(j= 0;j< cU[_$_4da6[30]];++j){I= cU[_$_4da6[206]](j);P= cm[_$_4da6[209]](I[_$_4da6[69]][I[_$_4da6[68]]][_$_4da6[67]],N);cV[I[_$_4da6[213]]]= P};return cV},sanitizeFormValue:function(P,N){if(N[_$_4da6[216]]&& cm[_$_4da6[173]](P)){P= P[_$_4da6[216]]()};if(N[_$_4da6[217]]!== false&& P=== _$_4da6[75]){return null};return P},capitalize:function(cJ){if(!cm[_$_4da6[173]](cJ)){return cJ};return cJ[0][_$_4da6[218]]()+ cJ[_$_4da6[134]](1)},pruneEmptyErrors:function(bz){return bz[_$_4da6[219]](function(cw){return !cm[_$_4da6[140]](cw[_$_4da6[164]])})},expandMultipleErrors:function(bz){var cY=[];if( typeof (bz)!= _$_4da6[127]){for(var j=0;j< bz[_$_4da6[30]];j++){var cw=bz[j];if(cm[_$_4da6[183]](cw[_$_4da6[164]])){var cs=cw[_$_4da6[164]];for(var cW=0;cW< cs[_$_4da6[30]];cW++){var cX=cs[cW];cY[_$_4da6[18]](cm[_$_4da6[52]]({},cw,{error:cX}))}}else {cY[_$_4da6[18]](cw)}}};return cY},convertErrorMessages:function(bz,N){N= N|| {};var cY=[];if( typeof (bz)!= _$_4da6[127]){for(var j=0;j< bz[_$_4da6[30]];j++){var cZ=bz[j];var cw=cm[_$_4da6[146]](cZ[_$_4da6[164]],cZ[_$_4da6[67]],cZ[_$_4da6[220]],cZ[_$_4da6[69]],cZ[_$_4da6[211]],cZ[_$_4da6[221]]);if(!cm[_$_4da6[173]](cw)){cY[_$_4da6[18]](cZ);return};if(cw[0]=== _$_4da6[222]){cw= cw[_$_4da6[134]](1)}else {if(N[_$_4da6[223]]!== false){cw= cm[_$_4da6[224]](cm[_$_4da6[194]](cZ[_$_4da6[220]]))+ _$_4da6[198]+ cw}};cw= cw[_$_4da6[189]](/\\\^/g,_$_4da6[222]);cw= cm[_$_4da6[138]](cw,{value:cm[_$_4da6[225]](cZ[_$_4da6[67]])});cY[_$_4da6[18]](cm[_$_4da6[52]]({},cZ,{error:cw}))}};return cY},groupErrorsByAttribute:function(bz){var cY={};if( typeof (bz)!= _$_4da6[127]){for(var j=0;j< bz[_$_4da6[30]];j++){var cw=bz[j];var da=cY[cw[_$_4da6[220]]];if(da){da[_$_4da6[18]](cw)}else {cY[cw[_$_4da6[220]]]= [cw]}}};return cY},flattenErrorsToArray:function(bz){return bz[_$_4da6[195]](function(cw){return cw[_$_4da6[164]]})},cleanAttributes:function(cp,de){function df(ct,J,dk){if(cm[_$_4da6[175]](ct[J])){return ct[J]};return (ct[J]= dk?true:{})}function db(de){var dh={},dg,co;for(co in de){if(!de[co]){continue};cm[_$_4da6[204]](dh,co,df)};return dh}function dc(cp,de){if(!cm[_$_4da6[175]](cp)){return cp};var cY=cm[_$_4da6[52]]({},cp),dj,di;for(di in cp){dj= de[di];if(cm[_$_4da6[175]](dj)){cY[di]= dc(cY[di],dj)}else {if(!dj){delete cY[di]}}};return cY}if(!cm[_$_4da6[175]](de)|| !cm[_$_4da6[175]](cp)){return {}};de= db(de);return dc(cp,de)},exposeModule:function(cn,dl,ck,cl,define){if(ck){if(cl&& cl[_$_4da6[226]]){ck= cl[_$_4da6[226]]= cn};ck[_$_4da6[227]]= cn}else {dl[_$_4da6[227]]= cn;if(cn[_$_4da6[171]](define)&& define[_$_4da6[228]]){define([],function(){return cn})}}},warn:function(cX){if( typeof console!== _$_4da6[127]&& console[_$_4da6[229]]){console[_$_4da6[229]](_$_4da6[230]+ cX)}},error:function(cX){var bP=_$_4da6[230]+ cX;if( typeof console!== _$_4da6[127]&& console[_$_4da6[164]]){console[_$_4da6[164]](bP)}},swError:function(cX){var bP=_$_4da6[230]+ cX;showErr(bP);throw  new Error(bP)}});cn[_$_4da6[50]]= {tip:function(P,N){return},presence:function(P,N){N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);if(cm[_$_4da6[140]](P)){return N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[232]]}},length:function(P,N,di){if(cm[_$_4da6[140]](P)){return};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var dm=N[_$_4da6[233]],dp=N[_$_4da6[234]],dq=N[_$_4da6[235]],dr=N[_$_4da6[236]]|| function(ds){return ds},bL,bz=[];P= dr(P);var dn=P[_$_4da6[30]];if(!cm[_$_4da6[170]](dn)){cm[_$_4da6[164]](cm[_$_4da6[138]](_$_4da6[237],{attr:di}));return N[_$_4da6[231]]|| this[_$_4da6[238]]|| _$_4da6[239]};if(cm[_$_4da6[170]](dm)&& dn!== dm){bL= N[_$_4da6[240]]|| this[_$_4da6[240]]|| VALIDATE_MSG[_$_4da6[241]];bz[_$_4da6[18]](cm[_$_4da6[138]](bL,{count:dm}))};if(cm[_$_4da6[170]](dq)&& dn< dq){bL= N[_$_4da6[242]]|| this[_$_4da6[242]]|| VALIDATE_MSG[_$_4da6[242]];bz[_$_4da6[18]](cm[_$_4da6[138]](bL,{count:dq}))};if(cm[_$_4da6[170]](dp)&& dn> dp){bL= N[_$_4da6[243]]|| this[_$_4da6[243]]|| VALIDATE_MSG[_$_4da6[243]];bz[_$_4da6[18]](cm[_$_4da6[138]](bL,{count:dp}))};if(bz[_$_4da6[30]]> 0){return N[_$_4da6[231]]|| bz}},numericality:function(P,N){if(cm[_$_4da6[140]](P)){return};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var bz=[],dv,du,dt={greaterThan:function(cm,dw){return cm> dw},greaterThanOrEqualTo:function(cm,dw){return cm>= dw},equalTo:function(cm,dw){return cm=== dw},lessThan:function(cm,dw){return cm< dw},lessThanOrEqualTo:function(cm,dw){return cm<= dw}};if(N[_$_4da6[244]]!== true&& cm[_$_4da6[173]](P)){P=  +P};if(!cm[_$_4da6[170]](P)){return N[_$_4da6[231]]|| N[_$_4da6[238]]|| this[_$_4da6[238]]|| VALIDATE_MSG[_$_4da6[245]]};if(N[_$_4da6[246]]&& !cm[_$_4da6[247]](P)){return N[_$_4da6[231]]|| N[_$_4da6[248]]|| this[_$_4da6[248]]|| VALIDATE_MSG[_$_4da6[249]]};for(dv in dt){du= N[dv];if(cm[_$_4da6[170]](du)&& !dt[dv](P,du)){var J=_$_4da6[250]+ cm[_$_4da6[224]](dv);var cX=N[J]|| this[J]|| VALIDATE_MSG[_$_4da6[251]];bz[_$_4da6[18]](cm[_$_4da6[138]](cX,{count:du,type:cm[_$_4da6[194]](dv)}))}};if(N[_$_4da6[252]]&& P% 2!== 1){bz[_$_4da6[18]](N[_$_4da6[253]]|| this[_$_4da6[253]]|| VALIDATE_MSG[_$_4da6[254]])};if(N[_$_4da6[255]]&& P% 2!== 0){bz[_$_4da6[18]](N[_$_4da6[256]]|| this[_$_4da6[256]]|| VALIDATE_MSG[_$_4da6[257]])};if(bz[_$_4da6[30]]){return N[_$_4da6[231]]|| bz}},datetime:cm[_$_4da6[52]](function(P,N){if(!cm[_$_4da6[171]](this[_$_4da6[258]])|| !cm[_$_4da6[171]](this[_$_4da6[138]])){cm[_$_4da6[260]](_$_4da6[259])};if(cm[_$_4da6[140]](P)){return};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var bL,bz=[],dx=N[_$_4da6[261]]?this[_$_4da6[258]](N[_$_4da6[261]],N):NaN,dy=N[_$_4da6[262]]?this[_$_4da6[258]](N[_$_4da6[262]],N):NaN;P= this[_$_4da6[258]](P,N);if(isNaN(P)){return N[_$_4da6[231]]|| this[_$_4da6[238]]|| VALIDATE_MSG[_$_4da6[263]]};if(!isNaN(dx)&& P< dx){bL= this[_$_4da6[264]]|| VALIDATE_MSG[_$_4da6[265]];bL= cm[_$_4da6[138]](bL,{date:this[_$_4da6[138]](dx,N)});bz[_$_4da6[18]](bL)};if(!isNaN(dy)&& P> dy){bL= this[_$_4da6[266]]|| VALIDATE_MSG[_$_4da6[267]];bL= cm[_$_4da6[138]](bL,{date:this[_$_4da6[138]](dy,N)});bz[_$_4da6[18]](bL)};if(bz[_$_4da6[30]]){return N[_$_4da6[231]]|| bz}},{parse:null,format:null}),date:function(P,N){N= cm[_$_4da6[52]]({},N,{dateOnly:true});return cm[_$_4da6[50]][_$_4da6[49]][_$_4da6[128]](cm[_$_4da6[50]][_$_4da6[49]],P,N)},format:function(P,N){if(cm[_$_4da6[173]](N)|| (N instanceof  RegExp)){N= {pattern:N}};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[268]],dB=N[_$_4da6[269]],dz;if(cm[_$_4da6[140]](P)){return};if(!cm[_$_4da6[173]](P)){return dA};if(cm[_$_4da6[173]](dB)){dB=  new RegExp(N[_$_4da6[269]],N[_$_4da6[270]])};dz= dB[_$_4da6[271]](P);if(!dz|| dz[0][_$_4da6[30]]!= P[_$_4da6[30]]){return dA}},inclusion:function(P,N){if(cm[_$_4da6[140]](P)){return};if(cm[_$_4da6[183]](N)){N= {within:N}};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);if(cm[_$_4da6[273]](N[_$_4da6[272]],P)){return};var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| _$_4da6[274];return cm[_$_4da6[138]](dA,{value:P})},exclusion:function(P,N){if(cm[_$_4da6[140]](P)){return};if(cm[_$_4da6[183]](N)){N= {within:N}};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);if(!cm[_$_4da6[273]](N[_$_4da6[272]],P)){return};var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[275]];return cm[_$_4da6[138]](dA,{value:P})},email:cm[_$_4da6[52]](function(P,N){N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[276]];if(cm[_$_4da6[140]](P)){return};if(!cm[_$_4da6[173]](P)){return dA};if(!this[_$_4da6[277]][_$_4da6[271]](P)){return dA}},{PATTERN:/^[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i}),equality:function(P,N,di,cp){if(cm[_$_4da6[140]](P)){return};if(cm[_$_4da6[173]](N)){N= {attribute:N}};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[278]];if(cm[_$_4da6[140]](N[_$_4da6[220]])|| !cm[_$_4da6[173]](N[_$_4da6[220]])){throw  new Error(VALIDATE_MSG[_$_4da6[279]])};var dD=cm[_$_4da6[145]](cp,N[_$_4da6[220]]),dC=N[_$_4da6[280]]|| function(dE,dF){return dE=== dF};if(!dC(P,dD,N,di,cp)){return cm[_$_4da6[138]](dA,{attribute:cm[_$_4da6[194]](N[_$_4da6[220]])})}},url:function(P,N){if(cm[_$_4da6[140]](P)){return};N= cm[_$_4da6[52]]({},this[_$_4da6[69]],N);var dA=N[_$_4da6[231]]|| this[_$_4da6[231]]|| VALIDATE_MSG[_$_4da6[281]],dK=N[_$_4da6[282]]|| this[_$_4da6[282]]|| [_$_4da6[283],_$_4da6[284]],dG=N[_$_4da6[285]]|| this[_$_4da6[285]]|| false;if(!cm[_$_4da6[173]](P)){return dA};var dJ=_$_4da6[222]+ _$_4da6[286]+ dK[_$_4da6[193]](_$_4da6[287])+ _$_4da6[288]+ _$_4da6[289];dJ+= _$_4da6[290];var dH=_$_4da6[291]+ _$_4da6[292]+ _$_4da6[293];if(dG){dH= _$_4da6[294]+ dH+ _$_4da6[12]}else {dJ+= _$_4da6[295]+ _$_4da6[296]+ _$_4da6[297]+ _$_4da6[298]+ _$_4da6[299]+ _$_4da6[300]+ _$_4da6[301]+ _$_4da6[302]};dJ+= _$_4da6[303]+ _$_4da6[304]+ _$_4da6[305]+ _$_4da6[287]+ dH+ _$_4da6[306]+ _$_4da6[307]+ _$_4da6[308];var dI= new RegExp(dJ,_$_4da6[309]);if(!dI[_$_4da6[271]](P)){return dA}}};cn[_$_4da6[310]](cn,this,ck,cl,define)})[_$_4da6[128]](this, typeof exports!== _$_4da6[127]?exports:null, typeof module!== _$_4da6[127]?module:null, typeof define!== _$_4da6[127]?define:null)
+
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/cValidate.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>Validate Doc:</b>   For Validate Documentation see:<ul>
+                          <li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html" target="_blank">JSU Validate Documentation</a> </li>
+                          <li><a href="http://validatejs.org" target="_blank">validate.js</a> </li>
+                        </ul>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>      Validate Class <BR/>   
+<b>REQUIRE:</b>          JSU: jsu.js   <BR/>
+<b>First Version:</b>    ver 1.0 - Feb 2015  <BR/>
+<b>Current Version:</b>  ver 3.3 - Jul 2016  <BR/>
+<b>NOTES:</b> <BR/>
+  1) Incorporated and Modified validate.js by Nicklas Ansman http://validatejs.org: <BR/>
+     -  add LOCALE Support. <BR/>
+     -  add supoort for tip<BR/>
+     - showErr instead of throw  <BR/>
+  2)  We have added many other features, described in JSU documentation <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+
+//**************************************************************************
+//			    GLOBAL CONSTANT
+//**************************************************************************
+
+
+//**************************************************************************
+//			    LOCAL CONSTANT
+//**************************************************************************
+
+var VALIDATE_SUPPORTED_TAG = ["INPUT","SELECT","TEXTAREA"];
+
+//**************************************************************************
+//			    GLOBAL SETTINGS
+//**************************************************************************
+
+/**
+ * Validate Return Codes
+ */
+var VALIDATE_RETCODE =
+{
+		OK: "OK",
+		ERR: "ERR"
+};	
+
+
+/**
+ * Validate Default Option
+ */
+var VALIDATE_DEF_OPT ={
+  bInstantFieldValidation: true,  //  {Boolean}: [true] Instant Validation at item onchange event 
+	bOnErrShowLabel: true,	// {Boolean}: [true] true: On Validate Error shows an error label on the right of the Item
+	bOnErrShowSect:  false,	//	{Boolean}: [false] show a section on the Top of Page with all the Errors
+	bOnErrShowPopup:  false,	//	{Boolean}: [false] show a Popup with all the Errors
+  bOnErrShowAlarm: false,  //  {Boolean}: [false] true: On Validate Error show an alarm gif in the item	
+  bEnphasizeItemBorder: true,  //  {Boolean}: [true] Enphasize Border item for Mandatory or Error Item
+	szDateFmt:  "yyyy-MM-dd",   // see date.js
+	szDateTimeFmt:  "yyyy-MM-dd hh:mm:ss"   // see date.js
+};
+
+
+
+
+//**************************************************************************
+//GLOBAL CONSTRUCTOR (N.B. at the Top of the file)
+//**************************************************************************
+
+/** 
+@class cValidate 
+
+@param  contraints {Object}   constraints described in <a href="http://validatejs.org" target="_blank">validate.js</a>
+@param  [objOpt]		Options:	 <BR/>
+									  - szDateFmt {String} default is "YYYY-MM-DD" <BR/>
+									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
+									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
+									-------- Possible Option for validation Error case:				 <BR/>
+									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
+									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
+									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
+									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
+									--------  <BR/>
+  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
+									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
+									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/>
+@example
+	cValidateObj1 = new cValidate ({ 
+		email: { // Mandatory email  
+		  presence: true,	  email: true  
+		},
+		duration: { // Mandatory Integer in range [1..10] with a tip explaining it
+			presence: true, tip: TIP_DURATION, 
+	    numericality: {
+	      onlyInteger: true,
+	      greaterThanOrEqualTo: 1,
+	      lessThanOrEqualTo: 10
+	    }
+		},
+		birthdate: { // Optional Birthaday in date default format (YYYY-MM-DD)
+			date: {}
+		}},
+		// OPTION: Id of div to use in case of bOnErrShowSect:true
+		{szErrSectId: "errSect1"}
+	);
+	// Now the item Validation is automatically managed by this class: 
+	//  for example Validate Errors, if present, are automatically displayed at validate Event of single Items
+	// ...
+	// To validate all the items, for example in the onclick event of button <b>Validate</b>
+	cValidateObj1.validateApply() 
+*/
+cValidate = function (constraints,objOpt) {
+	var Fn = "[cValidate.js cValidate()] ";
+	  
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_START);
+  // jslogObj (JSLOG_CORE, Fn + "IN constraints=",constraints);
+  jslogObj (JSLOG_CORE, Fn + "IN [objOpt]=",objOpt);
+	// Init Global Var
+  this.constraints = constraints;
+	// Init arValidateEl 
+  var arValidateEl = new Array();
+  for (var key in constraints) {
+    var el = getElementById2(key);
+    if (el == null){
+      return showErr (Fn + "SW ERROR key=" + key + "  is not a DOM id - return null from getElementById2(" + key + ")");
+    }
+    // check if item supported
+		var szTag = el.tagName;
+		if (checkArVal(el.tagName,VALIDATE_SUPPORTED_TAG,"SW ERROR for DOM item " + el.id + " with tagName=" + szTag + "\nAll the constraints items must refer to a DOM item having a Supported TAG")){
+			return 1;
+		}
+    arValidateEl.push(el);
+  }
+  this.arValidateEl = arValidateEl;
+  // Option
+  this.validateOpt = {
+  	  bInstantFieldValidation: VALIDATE_DEF_OPT.bInstantFieldValidation,  //  {Boolean}: [false] Online Validation when the item loose Focus
+  		bOnErrShowLabel: VALIDATE_DEF_OPT.bOnErrShowLabel,	// {Boolean}: [true] true: On Validate Error shows an error label on the right of the Item
+  		bOnErrShowSect:  VALIDATE_DEF_OPT.bOnErrShowSect,	//	{Boolean}: [false] show a section on the Top of Page with all the Errors
+  		bOnErrShowPopup:  VALIDATE_DEF_OPT.bOnErrShowPopup,	//	{Boolean}: [false] show a Popup with all the Errors
+  	  bOnErrShowAlarm: VALIDATE_DEF_OPT.bOnErrShowAlarm,  //  {Boolean}: [false] true: On Validate Error show an alarm gif in the item	
+  	  bEnphasizeItemBorder: VALIDATE_DEF_OPT.bEnphasizeItemBorder,  //  {Boolean}: [true] Enphasize Border item for Mandatory or Error Item
+  		szDateFmt:  VALIDATE_DEF_OPT.szDateFmt,   // see date.js
+  		szDateTimeFmt:  VALIDATE_DEF_OPT.szDateTimeFmt   // see date.js
+  }; 
+  this.setOption(objOpt);
+  // add Img, ErrLabel, tip, set Class for Mandatory if bEnphasizeItemBorder
+	for (var i=0; i< this.arValidateEl.length; i++){
+      var el = this.arValidateEl[i];
+  		if (el.tagName == "SELECT"){
+  			// add the img for bOnErrShowAlarm case (particular case for select)
+  			this.addAlarmImg (el);
+  		}
+      // ------------ tip if required
+      var constrEl  = constraints[el.id]; 
+    	// jslogObj (JSLOG_CORE,"id=" + el.id + " ADD tip if required for constrEl", constrEl);
+    	var szTip = constrEl.tip;
+      if (szTip != undefined){
+      	jslog (JSLOG_CORE,Fn + "Add tip for item=" + el.id);
+        var input = document.createElement("input");
+        classAdd (input,"validateInfo",true);
+        input.type = "button";
+        input.tip = szTip;
+        input.onmouseover=function(){ Tip (this.tip);      }; 
+        input.onmouseout=function(){ 	UnTip();    }; 
+        el.parentNode.appendChild(input);
+      }
+      // -----
+      if (this.validateOpt.bEnphasizeItemBorder && constrEl.presence == true){
+      	// enphasize Border for mandatory fields
+      	classAdd (el,"validateItemMandatory",true);
+      }
+      //-------------- add always errLabel (for possible change of validateOpt)
+      this.addErrLabel(el);
+      // Define onfocus to clear Error state
+      var fnOnFocusOrig = el.onfocus;
+      if (fnOnFocusOrig != undefined){
+      	el.fnOnFocusOrig = fnOnFocusOrig;
+      }
+      el.onfocus = validateItemOnFocus;
+      el.validateObj = this;
+  }
+  this.arValidateEl = arValidateEl;
+
+  validate.extend(validate.validators.datetime, {
+    // Check that the format is correct
+    parse: function(value, options) {
+      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
+      var retValue = getTimeFromFormat(value,format);
+      // return undefine dif it is not a Date in the required Format 
+      return (retValue==0) ? undefined : retValue;
+    },
+    format: function(value, options) {
+      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
+      return getTimeFromFormat(value,format);
+    },
+    // these will be added to option passed to parse and format 
+    options: {
+    	szDateFmt: this.validateOpt.szDateFmt, 
+    	szDateTimeFmt : this.validateOpt.szDateTimeFmt
+    } 
+  });
+	this.setErrSection();
+	
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_END);
+};
+
+
+/*****************************************************************************************************
+******************************************************************************************************
+					GLOBAL FUNCTIONS
+******************************************************************************************************
+*****************************************************************************************************/
+
+/** 
+ * 
+ * Set Validate Option (that can also be set  in class constructor)
+ * @param  objOpt		Options:	 <BR/>
+									  - szDateFmt {String} default is "YYYY-MM-DD" <BR/>
+									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
+									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
+									-------- Possible Option for validation Error case:				 <BR/>
+									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
+									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
+									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
+									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
+									--------  <BR/>
+  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
+									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
+									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/>
+
+ */
+cValidate.prototype.setOption = function (objOpt) {
+  var Fn = "[cSortTable.setOption] ";
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_START);
+  if (objOpt){
+  	jslogObj(JSLOG_CORE,Fn + "IN objOpt:", objOpt);
+    var validateOpt = this.validateOpt;
+    // IF Option are present we change default value
+    if (objOpt.szDateFmt != undefined){ validateOpt.szDateFmt = objOpt.szDateFmt;}
+    if (objOpt.szDateTimeFmt != undefined){ validateOpt.szDateTimeFmt = objOpt.szDateTimeFmt;}
+    if (objOpt.szErrSectId != undefined){ validateOpt.szErrSectId = objOpt.szErrSectId;}
+    if (objOpt.bInstantFieldValidation != undefined){ validateOpt.bInstantFieldValidation = objOpt.bInstantFieldValidation ;}
+    if (objOpt.bOnErrShowAlarm != undefined){ validateOpt.bOnErrShowAlarm = objOpt.bOnErrShowAlarm;}
+    if (objOpt.bOnErrShowLabel != undefined){ validateOpt.bOnErrShowLabel = objOpt.bOnErrShowLabel;}
+    if (objOpt.bOnErrShowSect != undefined){ validateOpt.bOnErrShowSect = objOpt.bOnErrShowSect;}
+    if (objOpt.bOnErrShowPopup != undefined){ validateOpt.bOnErrShowPopup = objOpt.bOnErrShowPopup;}
+    if (objOpt.bEnphasizeItemBorder != undefined){ validateOpt.bEnphasizeItemBorder = objOpt.bEnphasizeItemBorder;}
+    this.validateOpt = validateOpt;
+  	jslogObj(JSLOG_CORE,Fn + "CURRENT validateOpt:", validateOpt);
+  }
+  
+	if (this.validateOpt.bInstantFieldValidation){
+		jslog(JSLOG_CORE,Fn + "Add EVENTs for INSTANT Validation");
+		for (var i=0; i< this.arValidateEl.length; i++){
+			this.arValidateEl[i].addEventListener("change", function(ev) {
+        ev.preventDefault();
+        validateItemOnChange(this);
+        }); 
+		}  
+	}
+  
+	this.setErrSection();
+	for (var i=0; i< this.arValidateEl.length; i++){
+		var el = this.arValidateEl[i];
+		clearError(el);
+    var constrEl  = this.constraints[el.id];
+    var bEnphasize = (this.validateOpt.bEnphasizeItemBorder && constrEl.presence == true);
+    classAdd (el,"validateItemMandatory",bEnphasize);
+	}  
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_END);
+};
+
+
+/** 
+ * Get current validateOption
+@return validateOpt 
+ */
+cValidate.prototype.getOption = function () {
+  return this.validateOpt;
+};
+
+
+/** 
+ * Apply the Validate constraints. For example call this method in the onclick of "Validate" Button
+@return  VALIDATE_RETCODE.OK  or VALIDATE_RETCODE.ERR 
+ */
+cValidate.prototype.validateApply = function () {
+  var Fn = "[cSortTable.validateApply] ";
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_START);
+	
+  // var errors = validate(this.form, this.constraints);
+  jslog (JSLOG_CORE,Fn + "Prepare objValues to Validate"); 
+	var objValues = new Object;
+	for (var i=0; i< this.arValidateEl.length; i++){
+		el = this.arValidateEl[i];
+		var szTag = el.tagName;
+		var value = null;
+		if (szTag == "SELECT"){
+			// DAFARE FUTURE provare multi se va
+			value = el.options[el.selectedIndex].value;
+		}else	if (szTag == "INPUT"){
+			value = el.value;
+		}
+		objValues [el.id] = value;
+	}
+	jslogObj (JSLOG_CORE,"validate objValues", objValues);
+  var errors = validate(objValues, this.constraints);
+	jslogObj (JSLOG_CORE, Fn + "validate errors", errors);
+  // then we update the form to reflect the results
+  this.showErrors(errors || {});
+  var retCode = (errors) ? VALIDATE_RETCODE.ERR : VALIDATE_RETCODE.OK; 	
+	jslog(JSLOG_CORE,Fn + "retCode=" + retCode);
+	jslog(JSLOG_CORE,Fn + JSLOG_FUN_END);
+  return retCode;
+};
+
+
+//**************************************************************************
+//**************************************************************************
+//LOCAL FUNCTIONS  (N.B prototype and using this)
+//**************************************************************************
+//**************************************************************************
+
+
+/*
+ * Show Error if present, basing on Current settings
+ * @param errors
+ * @param [bOnlyLabel] {Boolean} [false]  if true we consider onlyLabelErr
+ * @returns
+ */
+cValidate.prototype.showErrors= function (errors, bOnlyLabel) {
+	var Fn = "[cValidate.js showErrors] ";
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_START);
+	
+	if (bOnlyLabel == undefined){
+		bOnlyLabel = false;
+	}
+	var szErrAll = "";
+	var bErrAll = false;
+	var validateOpt = this.validateOpt;
+	// We loop through all the inputs and show the errors for that input
+	for (var iEl=0; iEl< this.arValidateEl.length; iEl++){
+		var el = this.arValidateEl[iEl];
+		var szId = el.id;
+	  var  elErrLabel = el.parentNode.querySelector(".validateErrLabel");
+	  var err = errors && errors[szId]; // the error of one el 
+	  var bErr = (err != null);
+	  if (bErr){
+	  	classAdd (el,"validateErr",true); // add class "validateErr"
+	  	// prepare szErr with all the Errors of the same el
+	  	var szErr = "";
+	    for (iEr=0; iEr< err.length; iEr++){
+	    	if (iEr > 0){
+	    		szErr += " - ";
+	    	}
+	    	szErr += err[iEr];
+	    }
+			if (validateOpt.bOnErrShowLabel){
+				jslog (JSLOG_CORE, Fn + "Id=" + szId + " set Err=" + szErr);
+				elErrLabel.innerHTML = szErr;
+			  elementShow (elErrLabel,true,"inline");
+			}
+			if (validateOpt.bEnphasizeItemBorder){
+				jslog (JSLOG_CORE, Fn + "enphasize Border for Error Item");
+				classAdd (el,"validateItemErr",true);
+			}	
+			if (!bOnlyLabel && validateOpt.bOnErrShowAlarm){
+				var szTag = el.tagName;
+				if (szTag == "SELECT"){
+				  var elAlarm = el.parentNode.querySelector(".jsuAlarmingImg");
+				  elementShow (elAlarm,true,"inline");
+				}else {
+					alarmShowIn1El (el,true);
+				}
+			}
+			szErrAll += '<li>' + szErr + '</li>';
+			bErrAll = true;
+	  }else{
+		  elementShow (elErrLabel,false);
+	  }
+	}
+	if (!bOnlyLabel){
+		if (bErrAll){
+			szErrAll = '<ul type="square">' + szErrAll + '</ul>';
+			if (validateOpt.bOnErrShowSect){
+				var szSectMsg = '<table width="100%"><tr>' +
+			  '  <td class="PopupImgWarning" width="80px"></td>' +
+			  '  <td><label class="validateErrPopup">' + szErrAll + '</label></td>' +
+			  '</tr></table>';
+				this.elErrSect.innerHTML = szSectMsg;
+				elementShow (this.elErrSect,true);
+			}	
+			if (validateOpt.bOnErrShowPopup){
+				var szMsg = '<label class="validateErrPopup">' + szErrAll + '</label>';
+				var objOpt = new Object();
+				if (validateOpt.szErrPopupTitle){
+					objOpt.szTitle = validateOpt.szErrPopupTitle;
+				}
+				Popup (POPUP_TYPE.WARN,szMsg, objOpt);
+			}	
+		}else {
+			elementShow (this.elErrSect,false);
+		}
+	}
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+};
+
+/*
+ * Set the presence/absence of the optional errSection 
+ */
+cValidate.prototype.setErrSection= function () {
+	var Fn = "[cValidate.js setErrSection()] ";
+	
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_START);
+	if (this.validateOpt){
+		if (this.validateOpt.szErrSectId){
+			jslog (JSLOG_CORE,Fn + "There is SECT ERR with objOpt.szErrSectId=" + this.validateOpt.szErrSectId);
+			this.elErrSect = getElementById3 (this.validateOpt.szErrSectId,true,Fn);
+		}	
+		if (this.validateOpt.bOnErrShowSect){
+			if (this.elErrSect == undefined){
+				// we create the sectionErr
+				// check if not already present 
+			  var elErrSect = getElementById2("validateErrSect");
+			  if (elErrSect == undefined){
+			    // add the validateErrSect (default not Visible)
+			  	elErrSect = document.createElement("div");
+			  	elErrSect.className = "validateErrSect";
+			  	document.body.insertBefore(elErrSect, document.body.firstChild);
+			  }else {
+			  	elementShow (elErrSect,false);
+			  }
+		  	this.elErrSect = elErrSect; 
+			}
+		}else {
+			// if it was present before we hide it
+	  	if (this.elErrSect){
+	  		elementShow (this.elErrSect,false);
+	  	} 
+		}
+	} 
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+};
+
+
+/*
+ * Add (if not already present) the section for the errLabel of input
+ * @param input
+ * @returns
+ */
+cValidate.prototype.addErrLabel= function (input) {
+	var Fn = "[cValidate.js addErrLabel()] ";
+	// jslog (JSLOG_CORE, Fn + JSLOG_FUN_START);
+	jslog (JSLOG_CORE, Fn + "input.id=" + input.id );
+	// check if not already present the span validateErrContainer
+  var elErrContainer = input.parentNode.querySelector(".validateErrContainer");
+  if (elErrContainer == undefined){
+    // add the validateErrLabel (default not Visible)
+  	elErrContainer = document.createElement("span");
+  	elErrContainer.className = "validateErrContainer";
+    input.parentNode.appendChild(elErrContainer);
+  	var elErrLabel = document.createElement("label");
+  	elErrLabel.className = "validateErrLabel";
+  	elErrLabel.id = "validateErrLabel";
+  	elErrContainer.appendChild(elErrLabel);
+  }
+  clearError (input);
+	// jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+};
+
+
+
+/*
+ * Add (if not already present) the Img for Alarm (use donly for select)
+ * @param input
+ * @returns
+ */
+cValidate.prototype.addAlarmImg= function (input) {
+	var Fn = "[cValidate.js addAlarmImg()] ";
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_START);
+	jslog (JSLOG_CORE, Fn + "input.id=" + input.id );
+	// check if not already present the span validateErrContainer
+  var elAlarm = input.parentNode.querySelector(".jsuAlarmingImg");
+  if (elAlarm == undefined){
+  	jslog (JSLOG_CORE, Fn + "add the elAlarm ");
+  	var span= document.createElement("span");
+    input.parentNode.appendChild(span);
+  	elAlarm = document.createElement("img");
+  	elAlarm.className = "jsuAlarmingImg";
+    span.appendChild(elAlarm);
+  }
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+};
+
+
+//**************************************************************************
+//   LOCAL FUNCTION 
+//**************************************************************************
+
+/*
+ * 
+ */
+function validateItemOnFocus(){
+	// If Instannt Validation we clear only alarm
+	clearError(this, this.validateObj.validateOpt.bInstantFieldValidation);
+  if (this.fnOnFocusOrig != undefined)  {
+  	this.fnOnFocusOrig();
+  }
+}
+
+/*
+ * 
+ */
+function validateItemOnChange(el){
+	var Fn = "[cValidate.js validateItemOnChange()] ";
+	jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+	jslog (JSLOG_CORE, Fn + "el.id=" + el.id);
+	
+	var objValues = new Object;
+	var szTag = el.tagName;
+	var validateObj = el.validateObj;
+	// Check if bInstantFieldValidation is still enable (maybe it has been change later
+	if (!validateObj.validateOpt.bInstantFieldValidation){
+		return jslog (JSLOG_CORE, Fn + "Nothing to do (bInstantFieldValidation=false) " + JSLOG_FUN_END);
+		
+	}
+	
+	var value = null;
+	if (szTag == "SELECT"){
+		value = el.options[el.selectedIndex].value;
+	}else	if (szTag == "INPUT"){
+		value = el.value;
+	}
+	objValues [el.id] = value;
+  jslogObj (JSLOG_CORE,"validate objValues", objValues);
+  // we prefer to validate everything to get the same error of cumulative validate (it has salso the label)
+  var errors = validate (objValues, validateObj.constraints);
+  // Get only the errors of this el.id
+  var szErr = errors[el.id]; // the error this id
+  var bErr = (szErr != undefined);
+  jslog (JSLOG_CORE, Fn + "szErr=" + szErr + " bErr="+ bErr);
+  var  elErrLabel = el.parentNode.querySelector(".validateErrLabel");
+  classAdd (el,"validateErr",bErr); // add/remove class "validateErr"
+  var validateOpt = validateObj.validateOpt;
+  if (validateOpt.bOnErrShowLabel){
+  	elErrLabel.innerHTML = szErr;
+  	elementShow (elErrLabel,bErr,"inline");
+  }
+  if (validateOpt.bOnErrShowAlarm){
+  	var szTag = input.tagName;
+  	if (szTag == "SELECT"){
+  		var elAlarm = input.parentNode.querySelector(".jsuAlarmingImg");
+  		elementShow (elAlarm,bErr,"inline");
+  	}else {
+  		alarmShowIn1El (input,bErr);
+  	}
+  }	
+  if (validateOpt.bEnphasizeItemBorder){
+  	jslog (JSLOG_CORE, Fn + "enphasize Border for Error Item");
+  	classAdd (el,"validateItemErr",bErr);
+  }	
+  	
+  jslog (JSLOG_CORE, Fn + JSLOG_FUN_END);
+}
+
+
+
+
+/*
+ * Clear Error State from input
+ * @param el
+ * @param [bOnlyAlarm] {Boolean} [false]  if true we clear only Alarm
+ */
+function clearError(el, bOnlyAlarm){
+	var Fn = "[cValidate.js clearError] ";
+	if (bOnlyAlarm == undefined){
+		bOnlyAlarm = false;
+	}
+	var szTag = el.tagName;
+	if (szTag == "SELECT"){
+	  var elAlarm = el.parentNode.querySelector(".jsuAlarmingImg");
+	  elementShow (elAlarm,false);
+	}else{
+		alarmShowIn1El(el,false);
+	}
+	if (!bOnlyAlarm){
+		classAdd (el,"validateErr",false); // remove class "validateErr"
+	  var elErrLabel = el.parentNode.querySelector(".validateErrLabel");
+		elementShow (elErrLabel,false);	
+	}
+	classAdd (el,"validateItemErr",false);
+	
+}
+
+
+//**************************************************************************
+//    validate.js by Nicklas Ansman http://validatejs.org/
+// Modified By F.Levius to add locale support 
+//**************************************************************************
+
+
+
+(function(exports, module, define) {
+  "use strict";
+
+  // The main function that calls the validators specified by the constraints.
+  // The options are the following:
+  //   - format (string) - An option that controls how the returned value is formatted
+  //     * flat - Returns a flat array of just the error messages
+  //     * grouped - Returns the messages grouped by attribute (default)
+  //     * detailed - Returns an array of the raw validation data
+  //   - fullMessages (boolean) - If `true` (default) the attribute name is prepended to the error.
+  //
+  // Please note that the options are also passed to each validator.
+  var validate = function(attributes, constraints, options) {
+    options = v.extend({}, v.options, options);
+
+    var results = v.runValidations(attributes, constraints, options)
+      , attr
+      , validator;
+
+    for (attr in results) {
+      for (validator in results[attr]) {
+        if (v.isPromise(results[attr][validator])) {
+          throw new Error("Use validate.async if you want support for promises");
+        }
+      }
+    }
+    return validate.processValidationResults(results, options);
+  };
+
+  var v = validate;
+
+  // Copies over attributes from one or more sources to a single destination.
+  // Very much similar to underscore's extend.
+  // The first argument is the target object and the remaining arguments will be
+  // used as sources.
+  v.extend = function(obj) {
+    /* FL replace to support also old version of IE (e.g Cognos in compatibilty mode) */  
+  	/*
+    [].slice.call(arguments, 1).forEach(function(source) {
+      for (var attr in source) {
+        obj[attr] = source[attr];
+      }
+    });
+    */
+  	var ar = [].slice.call(arguments, 1);
+  	for (var i=0; i< ar.length; i++){
+  		var source = ar[i];
+  		for (var attr in source) {
+          obj[attr] = source[attr];
+      }
+  	}
+    return obj;
+  };
+
+  v.extend(validate, {
+    // This is the version of the library as a semver.
+    // The toString function will allow it to be coerced into a string
+    version: {
+      major: 0,
+      minor: 9,
+      patch: 0,
+      metadata: "development",
+      toString: function() {
+        var version = v.format("%{major}.%{minor}.%{patch}", v.version);
+        if (!v.isEmpty(v.version.metadata)) {
+          version += "+" + v.version.metadata;
+        }
+        return version;
+      }
+    },
+
+    // Below is the dependencies that are used in validate.js
+
+    // The constructor of the Promise implementation.
+    // If you are using Q.js, RSVP or any other A+ compatible implementation
+    // override this attribute to be the constructor of that promise.
+    // Since jQuery promises aren't A+ compatible they won't work.
+    Promise: typeof Promise !== "undefined" ? Promise : /* istanbul ignore next */ null,
+
+    EMPTY_STRING_REGEXP: /^\s*$/,
+
+    // Runs the validators specified by the constraints object.
+    // Will return an array of the format:
+    //     [{attribute: "<attribute name>", error: "<validation result>"}, ...]
+    runValidations: function(attributes, constraints, options) {
+      var results = []
+        , attr
+        , validatorName
+        , value
+        , validators
+        , validator
+        , validatorOptions
+        , error;
+
+      if (v.isDomElement(attributes) || v.isJqueryElement(attributes)) {
+        attributes = v.collectFormValues(attributes);
+      }
+
+      // Loops through each constraints, finds the correct validator and run it.
+      for (attr in constraints) {
+        value = v.getDeepObjectValue(attributes, attr);
+        // This allows the constraints for an attribute to be a function.
+        // The function will be called with the value, attribute name, the complete dict of
+        // attributes as well as the options and constraints passed in.
+        // This is useful when you want to have different
+        // validations depending on the attribute value.
+        validators = v.result(constraints[attr], value, attributes, attr, options, constraints);
+
+        for (validatorName in validators) {
+          validator = v.validators[validatorName];
+
+          if (!validator) {
+            error = v.format("Unknown validator %{name}", {name: validatorName});
+            throw new Error(error);
+          }
+
+          validatorOptions = validators[validatorName];
+          // This allows the options to be a function. The function will be
+          // called with the value, attribute name, the complete dict of
+          // attributes as well as the options and constraints passed in.
+          // This is useful when you want to have different
+          // validations depending on the attribute value.
+          validatorOptions = v.result(validatorOptions, value, attributes, attr, options, constraints);
+          if (!validatorOptions) {
+            continue;
+          }
+          results.push({
+            attribute: attr,
+            value: value,
+            validator: validatorName,
+            globalOptions: options,
+            attributes: attributes,
+            options: validatorOptions,
+            error: validator.call(validator,
+                value,
+                validatorOptions,
+                attr,
+                attributes,
+                options)
+          });
+        }
+      }
+
+      return results;
+    },
+
+    // Takes the output from runValidations and converts it to the correct
+    // output format.
+    processValidationResults: function(errors, options) {
+      var attr;
+
+      errors = v.pruneEmptyErrors(errors, options);
+      errors = v.expandMultipleErrors(errors, options);
+      errors = v.convertErrorMessages(errors, options);
+
+      switch (options.format || "grouped") {
+        case "detailed":
+          // Do nothing more to the errors
+          break;
+
+        case "flat":
+          errors = v.flattenErrorsToArray(errors);
+          break;
+
+        case "grouped":
+          errors = v.groupErrorsByAttribute(errors);
+          for (attr in errors) {
+            errors[attr] = v.flattenErrorsToArray(errors[attr]);
+          }
+          break;
+
+        default:
+          throw new Error(v.format("Unknown format %{format}", options));
+      }
+
+      return v.isEmpty(errors) ? undefined : errors;
+    },
+
+    // Runs the validations with support for promises.
+    // This function will return a promise that is settled when all the
+    // validation promises have been completed.
+    // It can be called even if no validations returned a promise.
+    async: function(attributes, constraints, options) {
+      options = v.extend({}, v.async.options, options);
+
+      var WrapErrors = options.wrapErrors || function(errors) {
+        return errors;
+      };
+
+      // Removes unknown attributes
+      if (options.cleanAttributes !== false) {
+        attributes = v.cleanAttributes(attributes, constraints);
+      }
+
+      var results = v.runValidations(attributes, constraints, options);
+
+      return new v.Promise(function(resolve, reject) {
+        v.waitForResults(results).then(function() {
+          var errors = v.processValidationResults(results, options);
+          if (errors) {
+            reject(new WrapErrors(errors, options, attributes, constraints));
+          } else {
+            resolve(attributes);
+          }
+        }, function(err) {
+          reject(err);
+        });
+      });
+    },
+
+    single: function(value, constraints, options) {
+      options = v.extend({}, v.single.options, options, {
+        format: "flat",
+        fullMessages: false
+      });
+      return v({single: value}, {single: constraints}, options);
+    },
+
+    // Returns a promise that is resolved when all promises in the results array
+    // are settled. The promise returned from this function is always resolved,
+    // never rejected.
+    // This function modifies the input argument, it replaces the promises
+    // with the value returned from the promise.
+    waitForResults: function(results) {
+      // Create a sequence of all the results starting with a resolved promise.
+      return results.reduce(function(memo, result) {
+        // If this result isn't a promise skip it in the sequence.
+        if (!v.isPromise(result.error)) {
+          return memo;
+        }
+
+        return memo.then(function() {
+          return result.error.then(
+            function(error) {
+              result.error = error || null;
+            },
+            function(error) {
+              if (error instanceof Error) {
+                throw error;
+              }
+              v.error("Rejecting promises with the result is deprecated. Please use the resolve callback instead.");
+              result.error = error;
+            }
+          );
+        });
+      }, new v.Promise(function(r) { r(); })); // A resolved promise
+    },
+
+    // If the given argument is a call: function the and: function return the value
+    // otherwise just return the value. Additional arguments will be passed as
+    // arguments to the function.
+    // Example:
+    // ```
+    // result('foo') // 'foo'
+    // result(Math.max, 1, 2) // 2
+    // ```
+    result: function(value) {
+      var args = [].slice.call(arguments, 1);
+      if (typeof value === 'function') {
+        value = value.apply(null, args);
+      }
+      return value;
+    },
+
+    // Checks if the value is a number. This function does not consider NaN a
+    // number like many other `isNumber` functions do.
+    isNumber: function(value) {
+      return typeof value === 'number' && !isNaN(value);
+    },
+
+    // Returns false if the object is not a function
+    isFunction: function(value) {
+      return typeof value === 'function';
+    },
+
+    // A simple check to verify that the value is an integer. Uses `isNumber`
+    // and a simple modulo check.
+    isInteger: function(value) {
+      return v.isNumber(value) && value % 1 === 0;
+    },
+
+    // Uses the `Object` function to check if the given argument is an object.
+    isObject: function(obj) {
+      return obj === Object(obj);
+    },
+
+    // Simply checks if the object is an instance of a date
+    isDate: function(obj) {
+      return obj instanceof Date;
+    },
+
+    // Returns false if the object is `null` of `undefined`
+    isDefined: function(obj) {
+      return obj !== null && obj !== undefined;
+    },
+
+    // Checks if the given argument is a promise. Anything with a `then`
+    // function is considered a promise.
+    isPromise: function(p) {
+      return !!p && v.isFunction(p.then);
+    },
+
+    isJqueryElement: function(o) {
+      return o && v.isString(o.jquery);
+    },
+
+    isDomElement: function(o) {
+      if (!o) {
+        return false;
+      }
+
+      if (!v.isFunction(o.querySelectorAll) || !v.isFunction(o.querySelector)) {
+        return false;
+      }
+
+      if (v.isObject(document) && o === document) {
+        return true;
+      }
+
+      // http://stackoverflow.com/a/384380/699304
+      /* istanbul ignore else */
+      if (typeof HTMLElement === "object") {
+        return o instanceof HTMLElement;
+      } else {
+        return o &&
+          typeof o === "object" &&
+          o !== null &&
+          o.nodeType === 1 &&
+          typeof o.nodeName === "string";
+      }
+    },
+
+    isEmpty: function(value) {
+      var attr;
+
+      // Null and undefined are empty
+      if (!v.isDefined(value)) {
+        return true;
+      }
+
+      // functions are non empty
+      if (v.isFunction(value)) {
+        return false;
+      }
+
+      // Whitespace only strings are empty
+      if (v.isString(value)) {
+        return v.EMPTY_STRING_REGEXP.test(value);
+      }
+
+      // For arrays we use the length property
+      if (v.isArray(value)) {
+        return value.length === 0;
+      }
+
+      // Dates have no attributes but aren't empty
+      if (v.isDate(value)) {
+        return false;
+      }
+
+      // If we find at least one property we consider it non empty
+      if (v.isObject(value)) {
+        for (attr in value) {
+          return false;
+        }
+        return true;
+      }
+
+      return false;
+    },
+
+    // Formats the specified strings with the given values like so:
+    // ```
+    // format("Foo: %{foo}", {foo: "bar"}) // "Foo bar"
+    // ```
+    // If you want to write %{...} without having it replaced simply
+    // prefix it with % like this `Foo: %%{foo}` and it will be returned
+    // as `"Foo: %{foo}"`
+    format: v.extend(function(str, vals) {
+      if (!v.isString(str)) {
+        return str;
+      }
+      return str.replace(v.format.FORMAT_REGEXP, function(m0, m1, m2) {
+        if (m1 === '%') {
+          return "%{" + m2 + "}";
+        } else {
+          return String(vals[m2]);
+        }
+      });
+    }, {
+      // Finds %{key} style patterns in the given string
+      FORMAT_REGEXP: /(%?)%\{([^\}]+)\}/g
+    }),
+
+    // "Prettifies" the given string.
+    // Prettifying means replacing [.\_-] with spaces as well as splitting
+    // camel case words.
+    prettify: function(str) {
+      if (v.isNumber(str)) {
+        // If there are more than 2 decimals round it to two
+        if ((str * 100) % 1 === 0) {
+          return "" + str;
+        } else {
+          return parseFloat(Math.round(str * 100) / 100).toFixed(2);
+        }
+      }
+
+      if (v.isArray(str)) {
+        return str.map(function(s) { return v.prettify(s); }).join(", ");
+      }
+
+      if (v.isObject(str)) {
+        return str.toString();
+      }
+
+      // Ensure the string is actually a string
+      str = "" + str;
+
+      return str
+        // Splits keys separated by periods
+        .replace(/([^\s])\.([^\s])/g, '$1 $2')
+        // Removes backslashes
+        .replace(/\\+/g, '')
+        // Replaces - and - with space
+        .replace(/[_-]/g, ' ')
+        // Splits camel cased words
+        .replace(/([a-z])([A-Z])/g, function(m0, m1, m2) {
+          return "" + m1 + " " + m2.toLowerCase();
+        })
+        .toLowerCase();
+    },
+
+    stringifyValue: function(value) {
+      return v.prettify(value);
+    },
+
+    isString: function(value) {
+      return typeof value === 'string';
+    },
+
+    isArray: function(value) {
+      return {}.toString.call(value) === '[object Array]';
+    },
+
+    contains: function(obj, value) {
+      if (!v.isDefined(obj)) {
+        return false;
+      }
+      if (v.isArray(obj)) {
+        return obj.indexOf(value) !== -1;
+      }
+      return value in obj;
+    },
+
+    forEachKeyInKeypath: function(object, keypath, callback) {
+      if (!v.isString(keypath)) {
+        return undefined;
+      }
+
+      var key = ""
+        , i
+        , escape = false;
+
+      for (i = 0; i < keypath.length; ++i) {
+        switch (keypath[i]) {
+          case '.':
+            if (escape) {
+              escape = false;
+              key += '.';
+            } else {
+              object = callback(object, key, false);
+              key = "";
+            }
+            break;
+
+          case '\\':
+            if (escape) {
+              escape = false;
+              key += '\\';
+            } else {
+              escape = true;
+            }
+            break;
+
+          default:
+            escape = false;
+            key += keypath[i];
+            break;
+        }
+      }
+
+      return callback(object, key, true);
+    },
+
+    getDeepObjectValue: function(obj, keypath) {
+      if (!v.isObject(obj)) {
+        return undefined;
+      }
+
+      return v.forEachKeyInKeypath(obj, keypath, function(obj, key) {
+        if (v.isObject(obj)) {
+          return obj[key];
+        }
+      });
+    },
+
+    // This returns an object with all the values of the form.
+    // It uses the input name as key and the value as value
+    // So for example this:
+    // <input type="text" name="email" value="foo@bar.com" />
+    // would return:
+    // {email: "foo@bar.com"}
+    collectFormValues: function(form, options) {
+      var values = {}
+        , i
+        , input
+        , inputs
+        , value;
+
+      if (v.isJqueryElement(form)) {
+        form = form[0];
+      }
+
+      if (!form) {
+        return values;
+      }
+
+      options = options || {};
+
+      inputs = form.querySelectorAll("input[name], textarea[name]");
+      for (i = 0; i < inputs.length; ++i) {
+        input = inputs.item(i);
+
+        if (v.isDefined(input.getAttribute("data-ignored"))) {
+          continue;
+        }
+
+        value = v.sanitizeFormValue(input.value, options);
+        if (input.type === "number") {
+          value = value ? +value : null;
+        } else if (input.type === "checkbox") {
+          if (input.attributes.value) {
+            if (!input.checked) {
+              value = values[input.name] || null;
+            }
+          } else {
+            value = input.checked;
+          }
+        } else if (input.type === "radio") {
+          if (!input.checked) {
+            value = values[input.name] || null;
+          }
+        }
+        values[input.name] = value;
+      }
+
+      inputs = form.querySelectorAll("select[name]");
+      for (i = 0; i < inputs.length; ++i) {
+        input = inputs.item(i);
+        value = v.sanitizeFormValue(input.options[input.selectedIndex].value, options);
+        values[input.name] = value;
+      }
+
+      return values;
+    },
+
+    sanitizeFormValue: function(value, options) {
+      if (options.trim && v.isString(value)) {
+        value = value.trim();
+      }
+
+      if (options.nullify !== false && value === "") {
+        return null;
+      }
+      return value;
+    },
+
+    capitalize: function(str) {
+      if (!v.isString(str)) {
+        return str;
+      }
+      return str[0].toUpperCase() + str.slice(1);
+    },
+
+    // Remove all errors who's error attribute is empty (null or undefined)
+    pruneEmptyErrors: function(errors) {
+      return errors.filter(function(error) {
+        return !v.isEmpty(error.error);
+      });
+    },
+
+    // In
+    // [{error: ["err1", "err2"], ...}]
+    // Out
+    // [{error: "err1", ...}, {error: "err2", ...}]
+    //
+    // All attributes in an error with multiple messages are duplicated
+    // when expanding the errors.
+    expandMultipleErrors: function(errors) {
+      var ret = [];
+      /* FL Replaced for compatibility issue */
+      /*
+      errors.forEach(function(error) {
+        // Removes errors without a message
+        if (v.isArray(error.error)) {
+          error.error.forEach(function(msg) {
+            ret.push(v.extend({}, error, {error: msg}));
+          });
+        } else {
+          ret.push(error);
+        }
+      });
+      */
+      if (typeof (errors) != "undefined"){
+	      for (var i=0; i< errors.length; i++){
+	      	var error = errors[i];
+	        // Removes errors without a message
+	        if (v.isArray(error.error)) {
+	        	var ar = error.error;
+	        	for (var k=0; k < ar.length; k++){
+	        		var msg = ar[k];
+	            ret.push(v.extend({}, error, {error: msg}));
+	        	}
+	        } else {
+	          ret.push(error);
+	        }
+	      }
+      } 
+      
+      return ret;
+    },
+
+    // Converts the error mesages by prepending the attribute name unless the
+    // message is prefixed by ^
+    convertErrorMessages: function(errors, options) {
+      options = options || {};
+      var ret = [];
+      /* FL Replaced for compatibility */
+      /*
+      errors.forEach(function(errorInfo) {
+        var error = v.result(errorInfo.error,
+            errorInfo.value,
+            errorInfo.attribute,
+            errorInfo.options,
+            errorInfo.attributes,
+            errorInfo.globalOptions);
+
+        if (!v.isString(error)) {
+          ret.push(errorInfo);
+          return;
+        }
+
+        if (error[0] === '^') {
+          error = error.slice(1);
+        } else if (options.fullMessages !== false) {
+          error = v.capitalize(v.prettify(errorInfo.attribute)) + " " + error;
+        }
+        error = error.replace(/\\\^/g, "^");
+        error = v.format(error, {value: v.stringifyValue(errorInfo.value)});
+        ret.push(v.extend({}, errorInfo, {error: error}));
+      });
+      */
+      if (typeof(errors) != "undefined"){
+	      for (var i=0; i< errors.length; i++){
+	        var errorInfo = errors[i];	
+	        var error = v.result(errorInfo.error,
+	            errorInfo.value,
+	            errorInfo.attribute,
+	            errorInfo.options,
+	            errorInfo.attributes,
+	            errorInfo.globalOptions);
+	
+	        if (!v.isString(error)) {
+	          ret.push(errorInfo);
+	          return;
+	        }
+	
+	        if (error[0] === '^') {
+	          error = error.slice(1);
+	        } else if (options.fullMessages !== false) {
+	          error = v.capitalize(v.prettify(errorInfo.attribute)) + " " + error;
+	        }
+	        error = error.replace(/\\\^/g, "^");
+	        error = v.format(error, {value: v.stringifyValue(errorInfo.value)});
+	        ret.push(v.extend({}, errorInfo, {error: error}));
+	      }
+      }
+      return ret;
+    },
+
+    // In:
+    // [{attribute: "<attributeName>", ...}]
+    // Out:
+    // {"<attributeName>": [{attribute: "<attributeName>", ...}]}
+    groupErrorsByAttribute: function(errors) {
+      var ret = {};
+      /* FL Replaced
+      errors.forEach(function(error) {
+        var list = ret[error.attribute];
+        if (list) {
+          list.push(error);
+        } else {
+          ret[error.attribute] = [error];
+        }
+      });
+      */
+      if (typeof(errors) != "undefined"){
+	      for (var i=0; i< errors.length; i++){
+	        var error = errors[i];	
+	        var list = ret[error.attribute];
+	        if (list) {
+	          list.push(error);
+	        } else {
+	          ret[error.attribute] = [error];
+	        }
+	      }
+      }  
+      return ret;
+    },
+
+    // In:
+    // [{error: "<message 1>", ...}, {error: "<message 2>", ...}]
+    // Out:
+    // ["<message 1>", "<message 2>"]
+    flattenErrorsToArray: function(errors) {
+      return errors.map(function(error) { return error.error; });
+    },
+
+    cleanAttributes: function(attributes, whitelist) {
+      function whitelistCreator(obj, key, last) {
+        if (v.isObject(obj[key])) {
+          return obj[key];
+        }
+        return (obj[key] = last ? true : {});
+      }
+
+      function buildObjectWhitelist(whitelist) {
+        var ow = {}
+          , lastObject
+          , attr;
+        for (attr in whitelist) {
+          if (!whitelist[attr]) {
+            continue;
+          }
+          v.forEachKeyInKeypath(ow, attr, whitelistCreator);
+        }
+        return ow;
+      }
+
+      function cleanRecursive(attributes, whitelist) {
+        if (!v.isObject(attributes)) {
+          return attributes;
+        }
+
+        var ret = v.extend({}, attributes)
+          , w
+          , attribute;
+
+        for (attribute in attributes) {
+          w = whitelist[attribute];
+
+          if (v.isObject(w)) {
+            ret[attribute] = cleanRecursive(ret[attribute], w);
+          } else if (!w) {
+            delete ret[attribute];
+          }
+        }
+        return ret;
+      }
+
+      if (!v.isObject(whitelist) || !v.isObject(attributes)) {
+        return {};
+      }
+
+      whitelist = buildObjectWhitelist(whitelist);
+      return cleanRecursive(attributes, whitelist);
+    },
+
+    exposeModule: function(validate, root, exports, module, define) {
+      if (exports) {
+        if (module && module.exports) {
+          exports = module.exports = validate;
+        }
+        exports.validate = validate;
+      } else {
+        root.validate = validate;
+        if (validate.isFunction(define) && define.amd) {
+          define([], function () { return validate; });
+        }
+      }
+    },
+
+    warn: function(msg) {
+      if (typeof console !== "undefined" && console.warn) {
+        console.warn("[validate.js] " + msg);
+      }
+    },
+    // validate Error (only to log)
+    error: function(msg) {
+    	var szMsg = "[validate.js] " + msg;
+      if (typeof console !== "undefined" && console.error) {
+        console.error(szMsg);
+      }
+    },
+    swError: function(msg) {
+    	var szMsg = "[validate.js] " + msg;
+      showErr (szMsg);
+      throw new Error (szMsg);
+    }
+  });
+
+  validate.validators = {
+  	/* Levis: tip does not need validator, is a field used to add tip */
+    tip: function(value, options) {
+  			 return;	
+    },	
+  		
+    // Presence validates that the value isn't empty
+    presence: function(value, options) {
+      options = v.extend({}, this.options, options);
+      if (v.isEmpty(value)) {
+        return options.message || this.message || VALIDATE_MSG.cantBeBlank;
+      }
+    },
+    length: function(value, options, attribute) {
+      // Empty values are allowed
+      if (v.isEmpty(value)) {
+        return;
+      }
+
+      options = v.extend({}, this.options, options);
+
+      var is = options.is
+        , maximum = options.maximum
+        , minimum = options.minimum
+        , tokenizer = options.tokenizer || function(val) { return val; }
+        , err
+        , errors = [];
+
+      value = tokenizer(value);
+      var length = value.length;
+      if(!v.isNumber(length)) {
+        v.error(v.format("Attribute %{attr} has a non numeric value for `length`", {attr: attribute}));
+        return options.message || this.notValid || "has an incorrect length";
+      }
+
+      // Is checks
+      if (v.isNumber(is) && length !== is) {
+        err = options.wrongLength ||
+          this.wrongLength ||  VALIDATE_MSG.wrongLen ;
+        errors.push(v.format(err, {count: is}));
+      }
+
+      if (v.isNumber(minimum) && length < minimum) {
+        err = options.tooShort ||
+          this.tooShort || VALIDATE_MSG.tooShort ;
+        errors.push(v.format(err, {count: minimum}));
+      }
+
+      if (v.isNumber(maximum) && length > maximum) {
+        err = options.tooLong ||
+          this.tooLong ||  VALIDATE_MSG.tooLong;
+        errors.push(v.format(err, {count: maximum}));
+      }
+
+      if (errors.length > 0) {
+        return options.message || errors;
+      }
+    },
+    numericality: function(value, options) {
+      // Empty values are fine
+      if (v.isEmpty(value)) {
+        return;
+      }
+
+      options = v.extend({}, this.options, options);
+
+      var errors = []
+        , name
+        , count
+        , checks = {
+            greaterThan:          function(v, c) { return v > c; },
+            greaterThanOrEqualTo: function(v, c) { return v >= c; },
+            equalTo:              function(v, c) { return v === c; },
+            lessThan:             function(v, c) { return v < c; },
+            lessThanOrEqualTo:    function(v, c) { return v <= c; }
+          };
+
+      // Coerce the value to a number unless we're being strict.
+      if (options.noStrings !== true && v.isString(value)) {
+        value = +value;
+      }
+
+      // If it's not a number we shouldn't continue since it will compare it.
+      if (!v.isNumber(value)) {
+        return options.message || options.notValid || this.notValid || VALIDATE_MSG.notNumber;
+      }
+
+      // Same logic as above, sort of. Don't bother with comparisons if this
+      // doesn't pass.
+      if (options.onlyInteger && !v.isInteger(value)) {
+        return options.message || options.notInteger || this.notInteger  || VALIDATE_MSG.mustBeInteger ;
+      }
+
+      for (name in checks) {
+        count = options[name];
+        if (v.isNumber(count) && !checks[name](value, count)) {
+          // This picks the default message if specified
+          // For example the greaterThan check uses the message from
+          // this.notGreaterThan so we capitalize the name and prepend "not"
+          var key = "not" + v.capitalize(name);
+          var msg = options[key] || this[key] || VALIDATE_MSG.mustBeType;
+
+          errors.push(v.format(msg, {
+            count: count,
+            type: v.prettify(name)
+          }));
+        }
+      }
+
+      if (options.odd && value % 2 !== 1) {
+        errors.push(options.notOdd || this.notOdd ||  VALIDATE_MSG.mustBeOdd );
+      }
+      if (options.even && value % 2 !== 0) {
+        errors.push(options.notEven || this.notEven || VALIDATE_MSG.mustBeEven);
+      }
+
+      if (errors.length) {
+        return options.message || errors;
+      }
+    },
+    datetime: v.extend(function(value, options) {
+      if (!v.isFunction(this.parse) || !v.isFunction(this.format)) {
+      	v.swError ("Both the parse and format functions needs to be set to use the datetime/date validator");
+      }
+
+      // Empty values are fine
+      if (v.isEmpty(value)) {
+        return;
+      }
+
+      options = v.extend({}, this.options, options);
+
+      var err
+        , errors = []
+        , earliest = options.earliest ? this.parse(options.earliest, options) : NaN
+        , latest = options.latest ? this.parse(options.latest, options) : NaN;
+
+      value = this.parse(value, options);
+
+      if (isNaN(value)) {
+        return options.message || this.notValid ||   VALIDATE_MSG.validDate ;
+      }
+
+      if (!isNaN(earliest) && value < earliest) {
+        err = this.tooEarly ||  VALIDATE_MSG.notEarlierThanDate ;
+        err = v.format(err, {date: this.format(earliest, options)});
+        errors.push(err);
+      }
+
+      if (!isNaN(latest) && value > latest) {
+        err = this.tooLate ||  VALIDATE_MSG.notLaterThanDate;
+        err = v.format(err, {date: this.format(latest, options)});
+        errors.push(err);
+      }
+
+      if (errors.length) {
+        return options.message || errors;
+      }
+    }, {
+      parse: null,
+      format: null
+    }),
+    date: function(value, options) {
+      options = v.extend({}, options, {dateOnly: true});
+      return v.validators.datetime.call(v.validators.datetime, value, options);
+    },
+    format: function(value, options) {
+      if (v.isString(options) || (options instanceof RegExp)) {
+        options = {pattern: options};
+      }
+
+      options = v.extend({}, this.options, options);
+
+      var message = options.message || this.message || VALIDATE_MSG.isInvalid
+        , pattern = options.pattern
+        , match;
+
+      // Empty values are allowed
+      if (v.isEmpty(value)) {
+        return;
+      }
+      if (!v.isString(value)) {
+        return message;
+      }
+
+      if (v.isString(pattern)) {
+        pattern = new RegExp(options.pattern, options.flags);
+      }
+      match = pattern.exec(value);
+      if (!match || match[0].length != value.length) {
+        return message;
+      }
+    },
+    inclusion: function(value, options) {
+      // Empty values are fine
+      if (v.isEmpty(value)) {
+        return;
+      }
+      if (v.isArray(options)) {
+        options = {within: options};
+      }
+      options = v.extend({}, this.options, options);
+      if (v.contains(options.within, value)) {
+        return;
+      }
+      var message = options.message ||
+        this.message ||
+        "^%{value} is not included in the list";
+      return v.format(message, {value: value});
+    },
+    exclusion: function(value, options) {
+      // Empty values are fine
+      if (v.isEmpty(value)) {
+        return;
+      }
+      if (v.isArray(options)) {
+        options = {within: options};
+      }
+      options = v.extend({}, this.options, options);
+      if (!v.contains(options.within, value)) {
+        return;
+      }
+      var message = options.message || this.message || VALIDATE_MSG.valueRestricted ;
+      return v.format(message, {value: value});
+    },
+    email: v.extend(function(value, options) {
+      options = v.extend({}, this.options, options);
+      var message = options.message || this.message || VALIDATE_MSG.notValidMail;
+      // Empty values are fine
+      if (v.isEmpty(value)) {
+        return;
+      }
+      if (!v.isString(value)) {
+        return message;
+      }
+      if (!this.PATTERN.exec(value)) {
+        return message;
+      }
+    }, {
+      PATTERN: /^[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9\u007F-\uffff!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i
+    }),
+    equality: function(value, options, attribute, attributes) {
+      if (v.isEmpty(value)) {
+        return;
+      }
+
+      if (v.isString(options)) {
+        options = {attribute: options};
+      }
+      options = v.extend({}, this.options, options);
+      var message = options.message ||
+        this.message ||  VALIDATE_MSG.notEqualToAttribute;
+
+      if (v.isEmpty(options.attribute) || !v.isString(options.attribute)) {
+        throw new Error(VALIDATE_MSG.notEmptyString);
+      }
+
+      var otherValue = v.getDeepObjectValue(attributes, options.attribute)
+        , comparator = options.comparator || function(v1, v2) {
+          return v1 === v2;
+        };
+
+      if (!comparator(value, otherValue, options, attribute, attributes)) {
+        return v.format(message, {attribute: v.prettify(options.attribute)});
+      }
+    },
+
+    // A URL validator that is used to validate URLs with the ability to
+    // restrict schemes and some domains.
+    url: function(value, options) {
+      if (v.isEmpty(value)) {
+        return;
+      }
+
+      options = v.extend({}, this.options, options);
+
+      var message = options.message || this.message ||  VALIDATE_MSG.notValidUrl 
+        , schemes = options.schemes || this.schemes || ['http', 'https']
+        , allowLocal = options.allowLocal || this.allowLocal || false;
+
+      if (!v.isString(value)) {
+        return message;
+      }
+
+      // https://gist.github.com/dperini/729294
+      var regex =
+        "^" +
+          // schemes
+          "(?:(?:" + schemes.join("|") + "):\\/\\/)" +
+          // credentials
+          "(?:\\S+(?::\\S*)?@)?";
+
+      regex += "(?:";
+
+      var hostname =
+          "(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)" +
+          "(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*" +
+          "(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))";
+
+      // This ia a special case for the localhost hostname
+      if (allowLocal) {
+        hostname = "(?:localhost|" + hostname + ")";
+      } else {
+          // private & local addresses
+          regex +=
+              "(?!10(?:\\.\\d{1,3}){3})" +
+              "(?!127(?:\\.\\d{1,3}){3})" +
+              "(?!169\\.254(?:\\.\\d{1,3}){2})" +
+              "(?!192\\.168(?:\\.\\d{1,3}){2})" +
+              "(?!172" +
+                "\\.(?:1[6-9]|2\\d|3[0-1])" +
+                "(?:\\.\\d{1,3})" +
+              "{2})";
+      }
+
+      // reserved addresses
+      regex +=
+          "(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])" +
+          "(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}" +
+          "(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))" +
+        "|" +
+          hostname +
+          // port number
+          "(?::\\d{2,5})?" +
+          // path
+          "(?:\\/[^\\s]*)?" +
+        "$";
+
+      var PATTERN = new RegExp(regex, 'i');
+      if (!PATTERN.exec(value)) {
+        return message;
+      }
+    }
+  };
+
+  validate.exposeModule(validate, this, exports, module, define);
+}).call(this,
+        typeof exports !== 'undefined' ? /* istanbul ignore next */ exports : null,
+        typeof module !== 'undefined' ? /* istanbul ignore next */ module : null,
+        typeof define !== 'undefined' ? /* istanbul ignore next */ define : null);
+
+
+
+
+
+

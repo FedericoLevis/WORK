@@ -1,8 +1,508 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_5379=["January","February","March","April","May","June","July","August","September","October","November","December","Jan","Feb","Mar","Apr","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sun","Mon","Tue","Wed","Thu","Fri","Sat","","0","[compareDates] ","IN szDate1=","  szDate2=","   szFormat=","length","\x0A\x0A","[szDateChangeFmt] ","  szFmt1="," szFmt2=","OUT: szDate2=","setTime","[formatDate] ","getYear","getMonth","getDate","getDay","getHours","getMinutes","getSeconds","y","yyyy","yy","substring","M","MM","MMM","NNN","d","dd","E","EE","H","HH","h","hh","K","k","KK","kk","a","PM","AM","m","mm","s","ss","charAt","1234567890","indexOf","[getTimeFromFormat] "," ","  ","toLowerCase","am","pm","LEN ERROR","getTime","y-M-d","MMM d, y","MMM d,y","y-MMM-d","d-MMM-y","MMM d","M/d/y","M-d-y","M.d.y","MMM-d","M/d","M-d","d/M/y","d-M-y","d.M.y","d-MMM","d/M","d-M","generalFormats","dateFirst","monthFirst"];var MONTH_NAMES= new Array(_$_5379[0],_$_5379[1],_$_5379[2],_$_5379[3],_$_5379[4],_$_5379[5],_$_5379[6],_$_5379[7],_$_5379[8],_$_5379[9],_$_5379[10],_$_5379[11],_$_5379[12],_$_5379[13],_$_5379[14],_$_5379[15],_$_5379[4],_$_5379[16],_$_5379[17],_$_5379[18],_$_5379[19],_$_5379[20],_$_5379[21],_$_5379[22]);var DAY_NAMES= new Array(_$_5379[23],_$_5379[24],_$_5379[25],_$_5379[26],_$_5379[27],_$_5379[28],_$_5379[29],_$_5379[30],_$_5379[31],_$_5379[32],_$_5379[33],_$_5379[34],_$_5379[35],_$_5379[36]);function LZ(dV){return (dV< 0|| dV> 9?_$_5379[37]:_$_5379[38])+ dV}function isDate(jT,iP){var kG=getTimeFromFormat(jT,iP);if(kG== 0){return false};return true}function compareDates(iN,iO,iP,iM){var g=_$_5379[39];var bu=0;jslog(JSLOG_TEST,g+ _$_5379[40]+ iN+ _$_5379[41]+ iO+ _$_5379[42]+ iP);if(iN[_$_5379[43]]== 0&& iO[_$_5379[43]]== 0){return 0};if(iN[_$_5379[43]]== 0){return 2};if(iO[_$_5379[43]]== 0){return 1};var bx=getTimeFromFormat(iN,iP);if(bx== 0){if(iM){showErr(iN+ _$_5379[44]+ ERR_DATE_FMT+ iP,-2)};return -2};var by=getTimeFromFormat(iO,iP);if(by== 0){if(iM){showErr(iO+ _$_5379[44]+ ERR_DATE_FMT+ iP,-2)};return -2};if(bx> by){return 1};if(bx< by){return 2};return 0}function szDateChangeFmt(iN,pA,pB,iM){var g=_$_5379[45];var iO=_$_5379[37];jslog(JSLOG_TEST,g+ JSLOG_FUN_START);jslog(JSLOG_TEST,g+ _$_5379[40]+ iN+ _$_5379[46]+ pA+ _$_5379[47]+ pB);if(pA== pB){return iN};if(iN[_$_5379[43]]== 0){jslog(JSLOG_TEST,_$_5379[48]+ iO);return iO};var bx=getTimeFromFormat(iN,pA);if(bx== 0){if(iM){showErr(iN+ _$_5379[44]+ ERR_DATE_FMT+ pA,1)};jslog(JSLOG_TEST,_$_5379[48]+ iO);return iO};var pz= new Date();pz[_$_5379[49]](bx);var iO=formatDate(pz,pB);jslog(JSLOG_TEST,_$_5379[48]+ iO);jslog(JSLOG_TEST,g+ JSLOG_FUN_END);return iO}function formatDate(iW,jM){var g=_$_5379[50];jM= jM+ _$_5379[37];var cE=_$_5379[37];var jC=0;var dw=_$_5379[37];var hI=_$_5379[37];var bk=iW[_$_5379[51]]()+ _$_5379[37];var jH=iW[_$_5379[52]]()+ 1;var jw=iW[_$_5379[53]]();var jx=iW[_$_5379[54]]();var jz=iW[_$_5379[55]]();var jG=iW[_$_5379[56]]();var cO=iW[_$_5379[57]]();var jO,jN,jK,jJ,iZ,jA,jy,jI,jL,jv,jB,jz,jF,jD,jE,cW;var P= new Object();if(bk[_$_5379[43]]< 4){bk= _$_5379[37]+ (bk- 0+ 1900)};P[_$_5379[58]]= _$_5379[37]+ bk;P[_$_5379[59]]= bk;P[_$_5379[60]]= bk[_$_5379[61]](2,4);P[_$_5379[62]]= jH;P[_$_5379[63]]= LZ(jH);P[_$_5379[64]]= MONTH_NAMES[jH- 1];P[_$_5379[65]]= MONTH_NAMES[jH+ 11];P[_$_5379[66]]= jw;P[_$_5379[67]]= LZ(jw);P[_$_5379[68]]= DAY_NAMES[jx+ 7];P[_$_5379[69]]= DAY_NAMES[jx];P[_$_5379[70]]= jz;P[_$_5379[71]]= LZ(jz);if(jz== 0){P[_$_5379[72]]= 12}else {if(jz> 12){P[_$_5379[72]]= jz- 12}else {P[_$_5379[72]]= jz}};P[_$_5379[73]]= LZ(P[_$_5379[72]]);if(jz> 11){P[_$_5379[74]]= jz- 12}else {P[_$_5379[74]]= jz};P[_$_5379[75]]= jz+ 1;P[_$_5379[76]]= LZ(P[_$_5379[74]]);P[_$_5379[77]]= LZ(P[_$_5379[75]]);if(jz> 11){P[_$_5379[78]]= _$_5379[79]}else {P[_$_5379[78]]= _$_5379[80]};P[_$_5379[81]]= jG;P[_$_5379[82]]= LZ(jG);P[_$_5379[83]]= cO;P[_$_5379[84]]= LZ(cO);while(jC< jM[_$_5379[43]]){dw= jM[_$_5379[85]](jC);hI= _$_5379[37];while((jM[_$_5379[85]](jC)== dw)&& (jC< jM[_$_5379[43]])){hI+= jM[_$_5379[85]](jC++)};if(P[hI]!= null){cE= cE+ P[hI]}else {cE= cE+ hI}};return cE}function _isInteger(ds){var hJ=_$_5379[86];for(var j=0;j< ds[_$_5379[43]];j++){if(hJ[_$_5379[87]](ds[_$_5379[85]](j))==  -1){return false}};return true}function _getInt(cJ,j,hH,hG){for(var dV=hG;dV>= hH;dV--){var hI=cJ[_$_5379[61]](j,j+ dV);if(hI[_$_5379[43]]< hH){return null};if(_isInteger(hI)){return hI}};return null}function getTimeFromFormat(jT,M){var g=_$_5379[88];jT= jT+ _$_5379[37];var kv=jT[_$_5379[43]];var kr=false;for(var j=jT[_$_5379[43]]- 1;!kr&& j--;j>= 0){var kA=jT[_$_5379[85]](j);if(kA!= _$_5379[89]){kr= true}else {kv--}};M= M+ _$_5379[37];if(kv< 2){return 0};var ku=0;var kt=0;var dw=_$_5379[37];var hI=_$_5379[37];var kB=_$_5379[37];var dV,bk;var kz= new Date();var kC=kz[_$_5379[51]]();var kw=kz[_$_5379[52]]()+ 1;var iW=1;var jA=0,jI=0,jL=0;var jv=_$_5379[37];var kq=false;while(kt< M[_$_5379[43]]&&  !kq){dw= M[_$_5379[85]](kt);hI= _$_5379[37];while((M[_$_5379[85]](kt)== dw)&& (kt< M[_$_5379[43]])){hI+= M[_$_5379[85]](kt++)};if((ku== kv)&& (hI== _$_5379[89]|| hI== _$_5379[90]|| hI== _$_5379[71]|| hI== _$_5379[70]|| hI== _$_5379[71]|| hI== _$_5379[70]|| hI== _$_5379[76]|| hI== _$_5379[74]|| hI== _$_5379[77]|| hI== _$_5379[75]|| hI== _$_5379[82]|| hI== _$_5379[81]|| hI== _$_5379[84]|| hI== _$_5379[83]|| hI== _$_5379[78])){kq= true}else {if(hI== _$_5379[59]|| hI== _$_5379[60]|| hI== _$_5379[58]){if(hI== _$_5379[59]){dV= 4;bk= 4};if(hI== _$_5379[60]){dV= 2;bk= 2};if(hI== _$_5379[58]){dV= 2;bk= 4};kC= _getInt(jT,ku,dV,bk);if(kC== null){return 0};ku+= kC[_$_5379[43]];if(kC[_$_5379[43]]== 2){if(kC> 70){kC= 1900+ (kC- 0)}else {kC= 2000+ (kC- 0)}}}else {if(hI== _$_5379[64]|| hI== _$_5379[65]){kw= 0;for(var j=0;j< MONTH_NAMES[_$_5379[43]];j++){var kx=MONTH_NAMES[j];if(jT[_$_5379[61]](ku,ku+ kx[_$_5379[43]])[_$_5379[91]]()== kx[_$_5379[91]]()){if(hI== _$_5379[64]|| (hI== _$_5379[65]&& j> 11)){kw= j+ 1;if(kw> 12){kw-= 12};ku+= kx[_$_5379[43]];break}}};if((kw< 1)|| (kw> 12)){return 0}}else {if(hI== _$_5379[69]|| hI== _$_5379[68]){for(var j=0;j< DAY_NAMES[_$_5379[43]];j++){var ks=DAY_NAMES[j];if(jT[_$_5379[61]](ku,ku+ ks[_$_5379[43]])[_$_5379[91]]()== ks[_$_5379[91]]()){ku+= ks[_$_5379[43]];break}}}else {if(hI== _$_5379[63]|| hI== _$_5379[62]){kw= _getInt(jT,ku,hI[_$_5379[43]],2);if(kw== null|| (kw< 1)|| (kw> 12)){return 0};ku+= kw[_$_5379[43]]}else {if(hI== _$_5379[67]|| hI== _$_5379[66]){iW= _getInt(jT,ku,hI[_$_5379[43]],2);if(iW== null|| (iW< 1)|| (iW> 31)){return 0};ku+= iW[_$_5379[43]]}else {if(hI== _$_5379[73]|| hI== _$_5379[72]){jA= _getInt(jT,ku,hI[_$_5379[43]],2);if(jA== null|| (jA< 1)|| (jA> 12)){return 0};ku+= jA[_$_5379[43]]}else {if(hI== _$_5379[71]|| hI== _$_5379[70]){jA= _getInt(jT,ku,hI[_$_5379[43]],2);if(jA== null|| (jA< 0)|| (jA> 23)){return 0};ku+= jA[_$_5379[43]]}else {if(hI== _$_5379[76]|| hI== _$_5379[74]){jA= _getInt(jT,ku,hI[_$_5379[43]],2);if(jA== null|| (jA< 0)|| (jA> 11)){return 0};ku+= jA[_$_5379[43]]}else {if(hI== _$_5379[77]|| hI== _$_5379[75]){jA= _getInt(jT,ku,hI[_$_5379[43]],2);if(jA== null|| (jA< 1)|| (jA> 24)){return 0};ku+= jA[_$_5379[43]];jA--}else {if(hI== _$_5379[82]|| hI== _$_5379[81]){jI= _getInt(jT,ku,hI[_$_5379[43]],2);if(jI== null|| (jI< 0)|| (jI> 59)){return 0};ku+= jI[_$_5379[43]]}else {if(hI== _$_5379[84]|| hI== _$_5379[83]){jL= _getInt(jT,ku,hI[_$_5379[43]],2);if(jL== null|| (jL< 0)|| (jL> 59)){return 0};ku+= jL[_$_5379[43]]}else {if(hI== _$_5379[78]){if(jT[_$_5379[61]](ku,ku+ 2)[_$_5379[91]]()== _$_5379[92]){jv= _$_5379[80]}else {if(jT[_$_5379[61]](ku,ku+ 2)[_$_5379[91]]()== _$_5379[93]){jv= _$_5379[79]}else {return 0}};ku+= 2}else {if(jT[_$_5379[61]](ku,ku+ hI[_$_5379[43]])!= hI){jslog(JSLOG_INFO,_$_5379[94]);return 0}else {ku+= hI[_$_5379[43]]}}}}}}}}}}}}}}};if(ku!= kv){return 0};if(kw== 2){if(((kC% 4== 0)&& (kC% 100!= 0))|| (kC% 400== 0)){if(iW> 29){return 0}}else {if(iW> 28){return 0}}};if((kw== 4)|| (kw== 6)|| (kw== 9)|| (kw== 11)){if(iW> 30){return 0}};if(jA< 12&& jv== _$_5379[79]){jA= jA- 0+ 12}else {if(jA> 11&& jv== _$_5379[80]){jA-= 12}};var ky= new Date(kC,kw- 1,iW,jA,jI,jL);return ky[_$_5379[95]]()}function parseDate(ds){var mI=(arguments[_$_5379[43]]== 2)?arguments[1]:false;generalFormats=  new Array(_$_5379[96],_$_5379[97],_$_5379[98],_$_5379[99],_$_5379[100],_$_5379[101]);monthFirst=  new Array(_$_5379[102],_$_5379[103],_$_5379[104],_$_5379[105],_$_5379[106],_$_5379[107]);dateFirst=  new Array(_$_5379[108],_$_5379[109],_$_5379[110],_$_5379[111],_$_5379[112],_$_5379[113]);var mG= new Array(_$_5379[114],mI?_$_5379[115]:_$_5379[116],mI?_$_5379[116]:_$_5379[115]);var jw=null;for(var j=0;j< mG[_$_5379[43]];j++){var mH=window[mG[j]];for(var bX=0;bX< mH[_$_5379[43]];bX++){jw= getTimeFromFormat(ds,mH[bX]);if(jw!= 0){return  new Date(jw)}}};return null}function getDateFromFormat(jT,jM){return getTimeFromFormat(jT,jM)}
+/* =========================================================================================
+File:     					date.js
+Author:   					Federico Levis
+Last Modification:  Jan 2016   
+Description: Common js date utilty for Cognos Report Studio or also for generic JS use 
+
+DISCLAIMER
+Copyright by Federico Levis http://federicolevis.wix.com/cognos Cognos Tips & Solutions
+All rights reserved: UNAUTHORIZED COPYING, REPRODUCTION, REPUBLISHING, UPLOADING, POSTING, TRANSMITTING OR DUPLICATING IS PROHIBITED
+========================================================================================= */
+
+// ------------------------------------------------------------------
+// These functions use the same 'format' strings as the 
+// java.text.SimpleDateFormat class, with minor exceptions.
+// The format string consists of the following abbreviations:
+// 
+// Field        | Full Form          | Short Form
+// -------------+--------------------+-----------------------
+// Year         | yyyy (4 digits)    | yy (2 digits), y (2 or 4 digits)
+// Month        | MMM (name or abbr.)| MM (2 digits), M (1 or 2 digits)
+//              | NNN (abbr.)        |
+// Day of Month | dd (2 digits)      | d (1 or 2 digits)
+// Day of Week  | EE (name)          | E (abbr)
+// Hour (1-12)  | hh (2 digits)      | h (1 or 2 digits)
+// Hour (0-23)  | HH (2 digits)      | H (1 or 2 digits)
+// Hour (0-11)  | KK (2 digits)      | K (1 or 2 digits)
+// Hour (1-24)  | kk (2 digits)      | k (1 or 2 digits)
+// Minute       | mm (2 digits)      | m (1 or 2 digits)
+// Second       | ss (2 digits)      | s (1 or 2 digits)
+// AM/PM        | a                  |
+//
+//  ----- Examples
+//   NNN dd, yyyy HH:mm:ss
+//   yyyy-MM-dd
+//
+// NOTE THE DIFFERENCE BETWEEN MM and mm! Month=MM, not mm!
+// Examples:
+//  "MMM d, y" matches: January 01, 2000
+//                      Dec 1, 1900
+//                      Nov 20, 00
+//  "M/d/yy"   matches: 01/20/00
+//                      9/2/00
+//  "MMM dd, yyyy hh:mm:ssa" matches: "January 01, 2000 12:30:45AM"
+// ------------------------------------------------------------------
+
+var MONTH_NAMES=new Array('January','February','March','April','May','June','July','August','September','October','November','December','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+var DAY_NAMES=new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+
+
+
+function LZ(x) {return(x<0||x>9?"":"0")+x;}
+
+/* ------------------------------------------------------------------
+        PAR
+szDate          in        e.g "10-25-2008 10:00"
+szFormat       in        e.g "MM-dd-yyyy HH:mm"
+      RETURN
+true      it is a Date in the specified format
+false     it is not a Date in the specified format
+      NOTE
+hour minutes and seconds are not mandatory.
+  e.g
+szDate          in       "10-25-2008"
+szFormat       in        "MM-dd-yyyy HH:mm"
+  RETURN 
+true
+ ------------------------------------------------------------------*/
+function isDate(szDate,szFormat) {
+  // var Fn = "[isDate] ";
+  // jslog(JSLOG_TEST,Fn + " IN szDate=" + szDate+ " szFormat=" + szFormat);  
+
+	var iTime=getTimeFromFormat(szDate,szFormat);
+	if (iTime==0) { return false; }
+	return true;
+}
+
+/* ------------------------------------------------------------------
+Compare two date strings to see which is greater. Both date must be NOT Empty
+      PAR
+szDate1        in        e.g "10-25-2008 10:00"
+szDate2        in        e.g "10-26-2008 10:00"
+szFormat       in        e.g "MM-dd-yyyy HH:mm"
+bShowErr       in     if True and there is an Error, Show Error
+      RETURN
+1 szDate1 > szDate2      (szDate1 is more recent)
+0 if they are the same
+2 szDate1 < szDate2
+-1 ERROR: invalid format
+ ------------------------------------------------------------------*/
+function compareDates(szDate1,szDate2,szFormat,bShowErr) {
+  var Fn = "[compareDates] ";
+  var iRet = 0;
+  jslog(JSLOG_TEST,Fn + "IN szDate1=" + szDate1 + "  szDate2=" + szDate2  + "   szFormat=" +szFormat);
+
+  if (szDate1.length == 0  && szDate2.length == 0) {
+    return 0;  // No Problem: one or Both are empty
+  }
+  if (szDate1.length == 0) {
+    return 2;  // No Problem: First is Empty
+  }
+  if (szDate2.length == 0) {
+    return 1;  // No Problem: Second is Empty
+  }
+
+	var iTime1=getTimeFromFormat(szDate1,szFormat);
+  if (iTime1 == 0){
+    if (bShowErr){
+      showErr (szDate1 + "\n\n" + ERR_DATE_FMT + szFormat,-2);
+    }
+    return -2;   // Invalid Format  
+  }
+	var iTime2=getTimeFromFormat(szDate2,szFormat);
+  if (iTime2 == 0){
+    if (bShowErr){
+      showErr (szDate2 + "\n\n" + ERR_DATE_FMT + szFormat,-2);
+    }
+    return -2;   // Invalid Format  
+  }
+	if (iTime1 > iTime2) {
+	  return 1;  
+	}
+	if (iTime1 < iTime2) {
+	  return 2;  
+	}
+  return 0;  // They are equal
+}
+
+
+/* ------------------------------------------------------------------
+Change the Format if a date
+      PAR
+szDate1    in        e.g "25-10-2008" 
+szFmt1    in        e.g "dd-MM-yyyy"
+szFmt2    in        e.g "MM-dd-yyyy HH:mm"
+bShowErr  in        if true show errore if any
+      RETURN
+szDate (as string with szFmt2 format. e.g:  "10-25-2008 00:00")
+ ------------------------------------------------------------------*/
+function szDateChangeFmt(szDate1,szFmt1,szFmt2,bShowErr) {
+  var Fn = "[szDateChangeFmt] ";
+  var szDate2="";
+  jslog(JSLOG_TEST, Fn + JSLOG_FUN_START);
+  jslog(JSLOG_TEST,Fn + "IN szDate1=" + szDate1 + "  szFmt1=" + szFmt1 + " szFmt2=" +szFmt2);
+
+  if (szFmt1 == szFmt2){
+    return szDate1; // The format is the same, return szDate1
+  }
+  // I have to change Format
+  if (szDate1.length == 0){
+    jslog(JSLOG_TEST, "OUT: szDate2=" + szDate2);
+    return szDate2;  // OK Empty String
+  }
+
+	var iTime1=getTimeFromFormat(szDate1,szFmt1);
+  if (iTime1 == 0){
+    if (bShowErr){
+      showErr (szDate1 + "\n\n" + ERR_DATE_FMT + szFmt1,1);
+    }
+    jslog(JSLOG_TEST, "OUT: szDate2=" + szDate2);
+    return szDate2;
+  }
+  var Date1 = new Date();
+  Date1.setTime(iTime1);
+  var szDate2= formatDate (Date1,szFmt2);
+  jslog(JSLOG_TEST, "OUT: szDate2=" + szDate2);
+  jslog(JSLOG_TEST, Fn + JSLOG_FUN_END);
+
+  return szDate2;
+
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------
+ formatDate (date_object, format)
+ Returns a date in the output format specified.
+ The format string uses the same abbreviations as in getTimeFromFormat()
+      PAR
+date    in        date type variable
+format  in        e.g "MM-dd-yyyy HH:mm"
+      RETURN
+szDate (as string with format. e.g:  "10-25-2008 10:00")
+ ------------------------------------------------------------------*/
+function formatDate(date,szFmt) {
+
+  var Fn = "[formatDate] ";
+  // jslog(JSLOG_TEST, Fn + JSLOG_FUN_START);
+  // jslog(JSLOG_TEST,Fn + "IN date=" + date + "  szFmt=" + szFmt);
+
+
+	szFmt=szFmt+"";
+	var result="";
+	var i_szFmt=0;
+	var c="";
+	var token="";
+	var y=date.getYear()+"";
+	var M=date.getMonth()+1;
+	var d=date.getDate();
+	var E=date.getDay();
+	var H=date.getHours();
+	var m=date.getMinutes();
+	var s=date.getSeconds();
+
+  // jslog(JSLOG_TEST,"y=" + y + " M=" + M + " d=" + d + " E=" + E + " H=" +H + " m=" + m + " s=" + s);
+
+
+	var yyyy,yy,MMM,MM,dd,hh,h,mm,ss,ampm,HH,H,KK,K,kk,k;
+	// Convert real date parts into szFmtted versions
+	var value=new Object();
+	if (y.length < 4) {y=""+(y-0+1900);}
+	value["y"]=""+y;
+	value["yyyy"]=y;
+	value["yy"]=y.substring(2,4);
+	value["M"]=M;
+	value["MM"]=LZ(M);
+	value["MMM"]=MONTH_NAMES[M-1];
+	value["NNN"]=MONTH_NAMES[M+11];
+	value["d"]=d;
+	value["dd"]=LZ(d);
+	value["E"]=DAY_NAMES[E+7];
+	value["EE"]=DAY_NAMES[E];
+	value["H"]=H;
+	value["HH"]=LZ(H);
+	if (H==0){value["h"]=12;}
+	else if (H>12){value["h"]=H-12;}
+	else {value["h"]=H;}
+	value["hh"]=LZ(value["h"]);
+	if (H>11){value["K"]=H-12;} else {value["K"]=H;}
+	value["k"]=H+1;
+	value["KK"]=LZ(value["K"]);
+	value["kk"]=LZ(value["k"]);
+	if (H > 11) { value["a"]="PM"; }
+	else { value["a"]="AM"; }
+	value["m"]=m;
+	value["mm"]=LZ(m);
+	value["s"]=s;
+	value["ss"]=LZ(s);
+	while (i_szFmt < szFmt.length) {
+		c=szFmt.charAt(i_szFmt);
+		token="";
+		while ((szFmt.charAt(i_szFmt)==c) && (i_szFmt < szFmt.length)) {
+			token += szFmt.charAt(i_szFmt++);
+			}
+      // jslog(JSLOG_TEST,"token=" + token);
+		if (value[token] != null) { result=result + value[token]; }
+		else { result=result + token; }
+		}
+  // jslog(JSLOG_TEST, Fn + JSLOG_FUN_END);
+	return result;
+}
+	
+// ------------------------------------------------------------------
+// Utility functions for parsing in getTimeFromFormat()
+// ------------------------------------------------------------------
+function _isInteger(val) {
+	var digits="1234567890";
+	for (var i=0; i < val.length; i++) {
+		if (digits.indexOf(val.charAt(i))==-1) { return false; }
+		}
+	return true;
+	}
+
+
+
+/* ------------------------------------------------------------------
+------------------------------------------------------------------*/
+function _getInt(str,i,minlength,maxlength) {
+	for (var x=maxlength; x>=minlength; x--) {
+		var token=str.substring(i,i+x);
+		if (token.length < minlength) { return null; }
+		if (_isInteger(token)) { return token; }
+		}
+	return null;
+	}
+
+
+
+
+	
+/* ------------------------------------------------------------------
+ This function takes a date string and a format string. It matches
+ If the date string matches the format string, it returns the 
+ getTime() of the date. If it does not match, it returns 0.
+
+      PAR
+szDate    in        e.g "10-25-2008 10:00"
+format  in        e.g "MM-dd-yyyy HH:mm"
+      RETURN
+0   if date is not in format or date is empty...      
+Time  (date.getTime())
+
+      NOTE
+Time (hour minutes and seconds) are not mandatory
+  e.g
+szDate          in       "10-25-2008"
+szFormat       in        "MM-dd-yyyy HH:mm"
+  RETURN 
+Time   (as it was "10-25-2008 00:00")
+------------------------------------------------------------------*/
+function getTimeFromFormat(szDate,format) {
+  var Fn = "[getTimeFromFormat] ";
+  //jslog(JSLOG_TEST,Fn + JSLOG_FUN_START);
+  //jslog(JSLOG_TEST,"IN: szDate=" + szDate + " (Len=" + szDate.length  + ")   format=" + format);
+
+
+	szDate=szDate+"";
+  var iDateLen =	 szDate.length;
+  // Skip possible Blank at the end of szDate
+  var bEnd=false;
+  for (var i= szDate.length-1; !bEnd && i--; i>=0){
+    var szChar = szDate.charAt(i);
+    if (szChar != " "){
+      bEnd = true;
+    }else {
+      iDateLen--;
+    }
+  } 
+
+	format=format+"";
+
+	if (iDateLen < 2) {return 0;}
+
+
+	var iDate=0;
+	var i_format=0;
+	var c="";
+	var token="";
+	var token2="";
+	var x,y;
+	var now=new Date();
+	var year=now.getYear();
+	var month=now.getMonth()+1;
+	var date=1;
+	var hh=0, mm=0, ss=0;
+	var ampm="";
+  var bDateWithoutTime = false;
+	
+	while (i_format < format.length && !bDateWithoutTime) {
+		// Get next token from format string
+		c=format.charAt(i_format);
+		token="";
+		while ((format.charAt(i_format)==c) && (i_format < format.length)) {
+			token += format.charAt(i_format++);
+			}
+		// Extract contents of szDate based on format token
+    //jslog(JSLOG_TEST,"token=" + token + " iDate=" + iDate + " iDateLen=" + iDateLen);
+    // if it is a Token Relative to Time Part (or a blank separator) and Date has ended, it is OK and we use hh=0, mm=0, ss=0;
+		if  ((iDate == iDateLen) &&  (token==" " || token=="  " ||  token=="HH"||token=="H" || token=="HH"||token=="H" || token=="KK"||token=="K" || token=="kk"||token=="k" ||
+		                               token=="mm"||token=="m" || token=="ss"||token=="s" || token=="a")) {
+      bDateWithoutTime = true;
+    } else {     
+		  if (token=="yyyy" || token=="yy" || token=="y") {
+			  if (token=="yyyy") { x=4;y=4; }
+			  if (token=="yy")   { x=2;y=2; }
+			  if (token=="y")    { x=2;y=4; }
+			  year=_getInt(szDate,iDate,x,y);
+			  if (year==null) { return 0; }
+			  iDate += year.length;
+			  if (year.length==2) {
+				  if (year > 70) { year=1900+(year-0); }
+				  	else { year=2000+(year-0); }
+				  }
+		    //jslog(JSLOG_TEST,"year = " + year);
+			  }
+		  else if (token=="MMM"||token=="NNN"){
+			  month=0;
+			  for (var i=0; i<MONTH_NAMES.length; i++) {
+				  var month_name=MONTH_NAMES[i];
+				  if (szDate.substring(iDate,iDate+month_name.length).toLowerCase()==month_name.toLowerCase()) {
+					  if (token=="MMM"||(token=="NNN"&&i>11)) {
+						  month=i+1;
+						  if (month>12) { month -= 12; }
+						  	iDate += month_name.length;
+						  break;
+						  }
+					  }
+				  }
+		    //jslog(JSLOG_TEST,"month  = " + month );
+			  if ((month < 1)||(month>12)){return 0;}
+			  }
+		  else if (token=="EE"||token=="E"){
+			  for (var i=0; i<DAY_NAMES.length; i++) {
+				  var day_name=DAY_NAMES[i];
+				  if (szDate.substring(iDate,iDate+day_name.length).toLowerCase()==day_name.toLowerCase()) {
+					  iDate += day_name.length;
+					  break;
+					  }
+				  }
+			  }
+		  else if (token=="MM"||token=="M") {
+				month=_getInt(szDate,iDate,token.length,2);
+				if(month==null||(month<1)||(month>12)){return 0;}
+				iDate+=month.length;
+		    //jslog(JSLOG_TEST,"month=" + month );
+			  }
+		  else if (token=="dd"||token=="d") {
+			  date=_getInt(szDate,iDate,token.length,2);
+			  if(date==null||(date<1)||(date>31)){return 0;}
+			  iDate+=date.length;
+			  }
+		  else if (token=="hh"||token=="h") {
+			  hh=_getInt(szDate,iDate,token.length,2);
+			  if(hh==null||(hh<1)||(hh>12)){return 0;}
+			  iDate+=hh.length;
+		    //jslog(JSLOG_TEST,"hh=" + hh);
+			  }
+		  else if (token=="HH"||token=="H") {
+			  hh=_getInt(szDate,iDate,token.length,2);
+			  if(hh==null||(hh<0)||(hh>23)){return 0;}
+			  iDate+=hh.length;
+		    //jslog(JSLOG_TEST,"hh=" + hh);
+			  }
+		  else if (token=="KK"||token=="K") {
+			  hh=_getInt(szDate,iDate,token.length,2);
+			  if(hh==null||(hh<0)||(hh>11)){return 0;}
+			  iDate+=hh.length;}
+		  else if (token=="kk"||token=="k") {
+			  hh=_getInt(szDate,iDate,token.length,2);
+			  if(hh==null||(hh<1)||(hh>24)){return 0;}
+			  iDate+=hh.length;hh--;}
+		  else if (token=="mm"||token=="m") {
+			  mm=_getInt(szDate,iDate,token.length,2);
+			  if(mm==null||(mm<0)||(mm>59)){return 0;}
+			  iDate+=mm.length;
+		    //jslog(JSLOG_TEST,"mm=" + mm);
+			  }
+		  else if (token=="ss"||token=="s") {
+			  ss=_getInt(szDate,iDate,token.length,2);
+			  if(ss==null||(ss<0)||(ss>59)){return 0;}
+			  iDate+=ss.length;}
+		  else if (token=="a") {
+			  if (szDate.substring(iDate,iDate+2).toLowerCase()=="am") {ampm="AM";}
+			  else if (szDate.substring(iDate,iDate+2).toLowerCase()=="pm") {ampm="PM";}
+			  else {return 0;}
+			  iDate+=2;}
+		  else {
+			  if (szDate.substring(iDate,iDate+token.length)!=token) {
+			    jslog(JSLOG_INFO,"LEN ERROR");
+			  	return 0;
+			  }
+			  else {iDate+=token.length;}
+			  }
+      }
+		} // end while
+	// If there are any trailing characters left in the szDate, it doesn't match
+  //jslog(JSLOG_TEST,"month=" + month + "  date=" + date + " year=" +year);
+	if (iDate != iDateLen) { return 0; }
+	// Is date szDateid for month?
+	if (month==2) {
+		// Check for leap year
+		if ( ( (year%4==0)&&(year%100 != 0) ) || (year%400==0) ) { // leap year
+			if (date > 29){ return 0; }
+			}
+		else { if (date > 28) { return 0; } }
+		}
+	if ((month==4)||(month==6)||(month==9)||(month==11)) {
+		if (date > 30) { return 0; }
+		}
+	// Correct hours szDateue
+	if (hh<12 && ampm=="PM") { hh=hh-0+12; }
+	else if (hh>11 && ampm=="AM") { hh-=12; }
+	var newdate=new Date(year,month-1,date,hh,mm,ss);
+  //jslog(JSLOG_TEST,"OUT  newdate=" + newdate);
+  //jslog(JSLOG_TEST,Fn + JSLOG_FUN_END);
+	return newdate.getTime();
+	}
+
+// ------------------------------------------------------------------
+// parseDate( date_string [, prefer_euro_format] )
+//
+// This function takes a date string and tries to match it to a
+// number of possible date formats to get the value. It will try to
+// match against the following international formats, in this order:
+// y-M-d   MMM d, y   MMM d,y   y-MMM-d   d-MMM-y  MMM d
+// M/d/y   M-d-y      M.d.y     MMM-d     M/d      M-d
+// d/M/y   d-M-y      d.M.y     d-MMM     d/M      d-M
+// A second argument may be passed to instruct the method to search
+// for formats like d/M/y (european format) before M/d/y (American).
+// Returns a Date object or null if no patterns match.
+// ------------------------------------------------------------------
+function parseDate(val) {
+	var preferEuro=(arguments.length==2)?arguments[1]:false;
+	generalFormats=new Array('y-M-d','MMM d, y','MMM d,y','y-MMM-d','d-MMM-y','MMM d');
+	monthFirst=new Array('M/d/y','M-d-y','M.d.y','MMM-d','M/d','M-d');
+	dateFirst =new Array('d/M/y','d-M-y','d.M.y','d-MMM','d/M','d-M');
+	var checkList=new Array('generalFormats',preferEuro?'dateFirst':'monthFirst',preferEuro?'monthFirst':'dateFirst');
+	var d=null;
+	for (var i=0; i<checkList.length; i++) {
+		var l=window[checkList[i]];
+		for (var j=0; j<l.length; j++) {
+			d=getTimeFromFormat(val,l[j]);
+			if (d!=0) { return new Date(d); }
+			}
+		}
+	return null;
+	}
+
+
+// 
+function getDateFromFormat(szDate,szFmt)
+{
+  return getTimeFromFormat(szDate,szFmt);
+}  
+
+
