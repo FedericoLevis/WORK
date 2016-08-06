@@ -14,6 +14,7 @@ function jsu_loaded(){
 	setupState(); 
   // [Optional] Init jslog with JSLOG_LEV 
   // jslog_init(JSLOG_LEV);
+	manage_par_opt(); // manage optional PAR show_opt, only for developer
   sampleInit();  
 	loadingShow(false);
   

@@ -62,6 +62,7 @@ function jsu_loaded(){
   // [Optional] Init jslog with JSLOG_LEV 
   // jslog_init(JSLOG_LEV);
 	// jslogSetSize (JSLOG_SIZE.M); // Set Size
+	manage_par_opt(); // manage optional PAR show_opt, only for developer
   populateCountry();
 	initValidate1();
 	initValidate2();
