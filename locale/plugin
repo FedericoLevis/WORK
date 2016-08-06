@@ -22,10 +22,10 @@ requirejs.config({
     baseUrl: JSU_PATH_BASE,
 	// Path relative to baseUrl
     paths: {
-        'core': '2/core',
-        'loadingDiv': '4/core/loadingDiv',
-        'cValidate': '6/core/cValidate',
-        'lan': '6/locale/EN',
+			  'core': '2/core',
+			  'loadingDiv': '4/core/loadingDiv',
+			  'cValidate': '6/core/cValidate',
+			  'lan': '2/locale/EN',
         'popup': '4/JSPopup',
         'jquery': '7/externalPlugin/jquery' + externalPluginVersion
     },
@@ -66,6 +66,8 @@ function jsu_loaded_1(){
   if (typeof (JSU_LOADED_TMO_MS) == "undefined"){
     if (typeof (jsu_loaded) != "undefined"){
      return jsu_loaded();
+    }else {
+    	return;
     }
   }
   jsuLoadedTmo = setTimeout(jsu_loaded_2, JSU_LOADED_TMO_MS); 
@@ -108,8 +110,8 @@ requirejs.config({
         'core': '2/core',
         'loadingDiv': '4/core/loadingDiv',
         'cValidate': '6/core/cValidate',
-        'lan': '6/locale/EN',
-        'popup': '4/core/Popup'
+        'lan': '2/locale/EN',
+        'popup': '2/core/Popup'
     },
     shim: {
       'core/jslog': ['core/dom-drag']
@@ -143,6 +145,8 @@ function jsu_loaded_1(){
   if (typeof (JSU_LOADED_TMO_MS) == "undefined"){
     if (typeof (jsu_loaded) != "undefined"){
      return jsu_loaded();
+    }else {
+    	return;
     }
   }
   jsuLoadedTmo = setTimeout(jsu_loaded_2, JSU_LOADED_TMO_MS); 
