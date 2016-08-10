@@ -31,8 +31,8 @@
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" />
-  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
 </table>   
 
@@ -55,16 +55,17 @@
         </select> 
      </th> 
     </tr>
-    <tr class="tiptitleBig3">
-      <td width="50%" class="tipc">SAMPLE
+    <tr id="tr_sample_0" class="tiptitleBig3">
+      <td id="col_0_1" width="50%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
-            <option value="1">Show Sample_1: Text Popup</option>
-            <option value="2">Show Sample_2: HTML Popup</option>
-            <option value="3">Show Sample_3: Common Popup Option</option>
-            <option value="ALL" selected>Show ALL Samples</option>
+            <option value="1">Show SAMPLE_1: Text Popup</option>
+            <option value="2">Show SAMPLE_2: HTML Popup</option>
+            <option value="3">Show SAMPLE_3: Common Popup Option</option>
+            <option value="4">Show SAMPLE_4: Advanced Popup</option>
+            <option value="ALL" selected>Show ALL SAMPLES</option>
       </td>
-      <td width="50%" class="tipc">DESCRIPTION</td>
+      <td id="col_0_2" width="50%" class="tipc">DESCRIPTION</td>
     </tr>
 
     <!--   ===================================== SAMPLE_1 ==============================================  -->
@@ -88,7 +89,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
-               <label id="labelSample1" style="font-weight:bold">POPUP_TYPE=Info</label>  
+                <select id="popupType1Desc" style="width:120px;margin-left:5px""></select>  
                <input type="button" class="tipJSFixed" id="sample1JS" onclick="sample1JS(event);" />
            </td></tr>
          </table>
@@ -347,9 +348,8 @@
     </tr>
 
     <!--   ===================================== SAMPLE_4 ==============================================  -->
-    <tr>
- 
-     <td class="sample" valign="top" >
+    <tr  id="tr_sample_4">
+      <td class="sample"  id="col_4_1" valign="top" >
        <label class="sampleTitle">SAMPLE_4 - Advanced Popup </label>
          <table class="sampleNoBorder">
          <tr>
@@ -366,11 +366,14 @@
       </td>
       
      <!--   SAMPLE DESCRIPTION -->
-      <td class="sampleDesc">
+      <td class="sampleDesc" id="col_4_2">
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_4 - </label>
-               <label id="labelSample4" style="font-weight:bold">About Popup</label>  
+                <select id="type4Desc" style="width:160px" >
+                       <option value="VIDEO" >Popup with Video</option> 
+                       <option value="ABOUT" selected >About Popup</option>
+                </select>  
                <input type="button" class="tipJSFixed" id="sample4JS" onclick="sample4JS(event);" />
            </td></tr>
          </table>

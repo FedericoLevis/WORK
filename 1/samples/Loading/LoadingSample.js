@@ -270,7 +270,7 @@ function tmoElapsedLoading3States () {
 //  BELOW CODE is not strictly related to this JSU feature, but it is ONLY Related to JS Code 
 //===========================================================================================
 
-var JS_LOADING1= '//Only 2 JSU calls are requires:\n' +  
+var JS_LOADING1= '//Only 2 JSU calls are required:\n' +  
 '//   - loadingDivShow(objOpt) : Show the LoadingDiv with optional objOpt\n' +  
 '//   - loadingDivHide()       : Hide the LoadingDiv\n\n' +  
 '// 1) We Show LoadingDiv (with default Options)\n' +

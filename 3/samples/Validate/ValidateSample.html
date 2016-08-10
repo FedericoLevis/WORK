@@ -29,8 +29,8 @@
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" />
-  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
 </table>   
 
@@ -53,17 +53,17 @@
         </select> 
       </th>
       </tr>
-    <tr class="tiptitleBig3">
-      <td width="50%" class="tipc">SAMPLE
+    <tr id="tr_sample_0" class="tiptitleBig3">
+      <td width="50%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
-            <option value="1">Show Sample_1: DEFAULT cValidate OPTION</option>
-            <option value="2">Show Sample_2: OPTION to Show Section with ERRORS</option>
-            <option value="3">Show Sample_3: OPTION to Show Popup with ERRORS</option>
-            <option value="ALL" selected>Show ALL Samples</option>
+            <option value="1">Show SAMPLE_1: DEFAULT cValidate OPTION</option>
+            <option value="2">Show SAMPLE_2: OPTION to Show Section with ERRORS</option>
+            <option value="3">Show SAMPLE_3: OPTION to Show Popup with ERRORS</option>
+            <option value="ALL" selected>Show ALL SAMPLES</option>
       
       </td>
-      <td width="50%" class="tipc">DESCRIPTION</td>
+      <td width="50%"  id="col_0_2" class="tipc">DESCRIPTION</td>
     </tr>
     <!--   ===================================== SAMPLE_1 ==============================================  -->
     <tr  id="tr_sample_1">
@@ -74,9 +74,9 @@
         <div>
 	        <!--  DIV for ERR Section -->
 	        <div id="errSect1" class="validateErrSect"></div>
-	         <table class="sampleNoBorder">
-              <tr> <td><label>Email</label></td>    <td><input id="email" type="email" ></td> </tr>
-              <tr> <td><label>Duration</label></td>      <td><input id="duration" type="text" >  </td>           </tr>
+	         <table class="sampleNoBorder" >
+              <tr> <td><label>Email</label></td>    <td ><input id="email" type="email" ></td> </tr>
+              <tr> <td><label>Duration</label></td>      <td ><input id="duration" type="text" >  </td>           </tr>
               <tr> <td><label>Birthdate</label></td> <td><input id="birthdate" type="text" placeholder="YYYY-MM-DD"></td></tr> 
               <tr> <td></td><td align="left"> <input type="button" onclick="onclickSubmit1();" value="Submit"/>  </td> </tr>
             </table>
@@ -86,9 +86,9 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate1" onclick="TipJSFixedClicked (JS_CODE_VALIDATE1,event);" /><BR/><BR/>
-               <label><b>DEFAULT OPTIONS:</b> Items are Validated istantly (at onchange event) - Validate Error Label for each Item.</label>
-               <ul type="square">
+               <input type="button" class="tipJSFixed" id="tipJSValidate1" onclick="sample1Js(event);" /><BR/><BR/>
+               <label><b>DEFAULT Validate OPTIONS:</b> Items are Validated istantly (at onchange event) - Validate Error Label for each Item.</label>
+               <i></i><b>constraints</b></i> of this Sample:<ul type="square">
                <li>Email: <b>Mandatory email</b></li>
                <li>Duration: <b>Mandatory</b> duration in <b>range [1..10]</b> - <b>tip</b></li>
                <li>Birthday: <b>Optional</b>, if present it must be a <b>date in format YYYY-MM-DD</b></li>
@@ -120,8 +120,8 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate2" onclick="TipJSFixedClicked (JS_CODE_VALIDATE2,event,{iJSColNum:130,iJSMaxHeight:450});" /><BR/><BR/>
-               <label><b>OPTIONS:</b> Validate all items only at <label class="jsuAPI">validateApply</label> (Submit button) - <b>Error Section</b> on the Top</label>
+               <input type="button" class="tipJSFixed" id="tipJSValidate2" onclick="sample2Js(event);" /><BR/><BR/>
+               <label><b>OPTIONS of This SAMPLE:</b> Validate all items only at <label class="jsuAPI">validateApply</label> (Submit button) - <b>Error Section</b> on the Top</label>
                <ul type="square">
                <li>Username: <b>Mandatory</b> username with <b>constraints</b> explained in the <b>tip</b></li>
                <li>Password: <b>Mandatory</b> password with <b>constraints</b> explained in the <b>tip</b></li>
@@ -157,7 +157,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_3: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate3" onclick="TipJSFixedClicked (JS_CODE_VALIDATE3,event,{iJSColNum:120,iJSMaxHeight:300});" /><BR/><BR/>
+               <input type="button" class="tipJSFixed" id="tipJSValidate3" onclick="sample3Js(event);" /><BR/><BR/>
                <label><b>OPTIONS:</b> Validate all items only at <label class="jsuAPI">validateApply</label> (Submit button) - <b>Popup Error</b> and <b>Alarm</b> in Items</label>
                <ul type="square">
                <li>Size: <b>Mandatory</b>, the choice <b>exclude XS or S</b> - <b>tip</b> </li>

@@ -425,3 +425,40 @@ function applyValidateOption(iSample){
 }
 
 
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample1Js(event){
+	var bParOpt = is_par_opt(); 
+	var iJSColNum = (bParOpt) ? 90: 130;
+	var iJSRowNum = (bParOpt) ? 26 : 20;
+	var iJSMaxHeight = (bParOpt) ? 610 : 500; 
+	TipJSFixedClicked (JS_CODE_VALIDATE1,event,{iJSColNum:iJSColNum,iJSRowNum:iJSRowNum,iJSMaxHeight:iJSMaxHeight});	
+}
+
+
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample2Js(event){
+	var bParOpt = is_par_opt(); 
+	var iJSColNum = (bParOpt) ? 92: 130;
+	var iJSRowNum = (bParOpt) ? 28 : 20;
+	var iJSMaxHeight = (bParOpt) ? 450 : 450; 
+	TipJSFixedClicked (JS_CODE_VALIDATE2,event,{iJSColNum:iJSColNum,iJSRowNum:iJSRowNum,iJSMaxHeight:iJSMaxHeight});	
+}
+
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample3Js(event){
+	var bParOpt = is_par_opt(); 
+	var iJSColNum = (bParOpt) ? 92: 120;
+	var iJSRowNum = (bParOpt) ? 28 : 20;
+	var iJSMaxHeight = (bParOpt) ? 400 : 300; 
+	TipJSFixedClicked (JS_CODE_VALIDATE3,event,{iJSColNum:iJSColNum,iJSRowNum:iJSRowNum,iJSMaxHeight:iJSMaxHeight});	
+}
+

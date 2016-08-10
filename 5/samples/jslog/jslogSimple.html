@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JSU - jslog Very Simple Sample (by F. Levis)</title>
+	<!-- This sample -->
+	<link rel="stylesheet" type="text/css" href="../Sample.css">
+
+  <!-- JSUtility -->
+  <link rel="stylesheet" href="../../core/core.css" type="text/css">
+  <script type="text/javascript" src="../../core/dom-drag.js" ></script>
+  <script type="text/javascript" src="../../core/jslog.js" ></script>
+
+  <!-- This sample -->
+  <script type="text/javascript" src="./jslogSimple.js" ></script>
+  
+  
+</head>
+<body onload="sampleInit()">
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBg2">
+      <th class="tiptitleBig2" colspan="4">Very SIMPLE SAMPLE: JS Log - JSU <label class="jsuAPI">jslog.js API</label> 
+              <input type="button" class="jsuHelp" onclick="jsuDocJSLog()"  />
+      </th>
+     </tr>
+
+   <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1">
+       <td class="sample"  id="col_1_1">
+         <label class="sampleTitle">SAMPLE_1 - jslog API </label>
+         <table style="margin-top:5px" class="tipNoBorder" width="100%">
+           <tr>
+             <td width="25%">
+               <b>START/CLOSE JSlog:</b> 
+             </td>
+             <td width="75%">
+         
+              <table style="margin-top:5px" BORDER="4" cellspacing="0" cellpadding="2">
+              <tr> 
+                <td>Level: </td>
+                <td>
+                    <select id="logLev">
+                    </select> 
+                </td>
+                <td style="padding-left:10px">
+                  <select id="logTime">
+                    <option value="0" selected>NO Time Log</option>
+                    <option value="1">Log Time</option>
+                  </select> 
+                </td>
+                <td style="padding-left:10px">
+                     <input type="button" value="Start JSlog" onclick="sample1_jslogStart()">
+                </td>
+                
+                <td style="padding-left:70px">
+                     <input type="button" value="CLOSE JSlog" onclick="jslog_end()">
+                </td>
+              </tr>     
+              </table>         
+                 
+             </td>
+           </tr>
+          <tr>
+             <td valign="top"">
+                <b>JSlog API sample at various Level:</b>
+             </td>
+             <td>
+         
+                 <!--  debug hidden field, that can be displayed with jslog windows Buttons  -->
+                 <div class="debug" style="width:400px">
+                  <b>Debug Fields:</b>
+                   <table class="sampleNoBorder">
+                      <tr> 
+                        <td >Example of Debug Field 1:</td>   
+                        <td > <input value="1234567" ></td>
+                      </tr>     
+                      <tr> 
+                        <td >Example of Debug Field 2:</td>   
+                        <td > <input value="This was hidden" ></td>
+                      </tr>     
+                    </table>
+                  <BR/>
+                </div>    
+                <table class="tipNoBorder" >  
+                    <tr> 
+                      <td align="left"> <input type="button" value="Log Message at Level=1 (JSLOG_INFO)" onclick="jslog1()"> </td>
+                    </tr>
+                    <tr>        
+                     <td align="left">  <input type="button" value="Log JSON at Level=2 (JSLOG_DEBUG)" onclick="jslog2()">
+                    </td>
+                    </tr>
+                    <tr>        
+                      <td align="left">
+                         <input type="button" value="Log OBJECT at Level=4 (JSLOG_TRACE)" onclick="jslog4()">
+                          <select id="logCompact" style="marging-left:10px">
+                            <option value="0" selected>NO Compact</option>
+                            <option value="1">Compact</option>
+                          </select> 
+                         
+                      </td>     
+                    </tr>  
+                    
+                </table>
+                      
+             </td>
+           </tr>           
+         </table>
+  
+ 
+          
+      </td>
+  
+    </tr>
+
+
+
+</table>
+
+<br>
+
+
+</body>
+</html>

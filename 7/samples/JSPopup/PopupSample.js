@@ -110,17 +110,15 @@ function sample1(){
 }
 
 /**
- * Align labelSample1 to Type Sample1 selected
+ * Align popupType1Desc to popupType1 selected
  */
 function onchange_sampleType1(){
 	var Fn = "[onchange_sampleType1()] ";
 	
-  var szAlertType =  selectGetSelText(getElementById2('popupType1'));
-	jslog (JSLOG_DEBUG,Fn + "szAlertType=" + szAlertType);
-  var label = getElementById2('labelSample1');
-  label.innerHTML = "POPUP_TYPE=" + szAlertType;
+  var szAlertType =  selectGetSelVal(getElementById2('popupType1'));
+	jslog (JSLOG_DEBUG,Fn + "szAlertType=" + szAlertType + "  select same AlertType into popupType1");
+	selectSelValue(getElementById2('popupType1Desc'), szAlertType);
 }
-
 
 /* ============================================================================
  *             CALLBACK (used by SAMPLE_1, SAMPLE_2)
@@ -645,15 +643,14 @@ function sample4(){
 }
 
 /**
- * Align labelSample4 to Type Sample4 selected
+ * Align type4Desc to type4 selected
  */
 function onchange_sampleType4(){
 	var Fn = "[onchange_sampleType4()] ";
 	
-  var szType =  selectGetSelText(getElementById2('type4'));
-	jslog (JSLOG_DEBUG,Fn + "szType=" + szType);
-  var label = getElementById2('labelSample4');
-  label.innerHTML =  szType;
+  var szType =  selectGetSelVal(getElementById2('type4'));
+	jslog (JSLOG_DEBUG,Fn + "szAlertType=" + szType + "  select same AlertType into type4");
+	selectSelValue(getElementById2('type4Desc'), szType);
 }
 
 
@@ -795,7 +792,7 @@ var JS4_ABOUT= '// 1) Show Popup with About\n' +
  */
 function sample1JS(event){
   // Get the szAlertType set by User 
-  var szAlertType =  selectGetSelVal(getElementById2('popupType1'));
+  var szAlertType =  selectGetSelVal(getElementById2('popupType1Desc'));
   var szTip="";
   
   if (szAlertType == POPUP_TYPE.CHOICE){
@@ -829,8 +826,8 @@ function sample3JS(event){
  */
 function sample4JS(event){
   // Get the szAlertType set by User 
-  var szType =  selectGetSelVal(getElementById2('type4'));
-  var szTypeText =  selectGetSelText(getElementById2('type4'));
+  var szType =  selectGetSelVal(getElementById2('type4Desc'));
+  var szTypeText =  selectGetSelText(getElementById2('type4Desc'));
   var szTip="";
   
   if (szType == "VIDEO"){

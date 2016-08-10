@@ -29,8 +29,8 @@
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" />
-  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
 </table>   
 
@@ -41,7 +41,7 @@
             <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
       </th>
     </tr>
-    <tr class="tiptitleBg2">
+    <tr class="tiptitleBg2" >
       <th class="tiptitleBig2" colspan="4">loadingDiv API Sample - JSU <label class="jsuAPI">loadingDiv API</label>
               <input type="button" class="jsuHelp" onclick="jsuDocLoading()" 
              onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
@@ -53,17 +53,17 @@
         </select> 
       </th>
       </tr>
-    <tr class="tiptitleBig3">
-      <td width="65%" class="tipc">SAMPLE
+    <tr class="tiptitleBig3" id="tr_sample_0">
+      <td width="65%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
-            <option value="1">Show Sample_1: DEFAULT loadingDiv API</option>
-            <option value="2">Show Sample_2: loadingDiv API OPTIONS</option>
-            <option value="3">Show Sample_3: CUSTOM loadingDiv API</option>
+            <option value="1">Show SAMPLE_1: DEFAULT loadingDiv API</option>
+            <option value="2">Show SAMPLE_2: loadingDiv API OPTIONS</option>
+            <option value="3">Show SAMPLE_3: CUSTOM loadingDiv API</option>
             <option value="ALL" selected>Show ALL Samples</option>
       
       </td>
-      <td width="35%" class="tipc">DESCRIPTION</td>
+      <td width="35%" id="col_0_2" class="tipc">DESCRIPTION</td>
     </tr>
 
     <!--   ===================================== SAMPLE_1 ==============================================  -->

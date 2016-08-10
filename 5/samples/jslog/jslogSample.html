@@ -20,14 +20,15 @@
 
 </head>
 <body>
+
 <!--  Table to download JSU.ZIP (common for all the sample) -->
 <table  width="100%">
   <tr>
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" />
-  <input type="button" class="downloadFree"    onclick="downloadFree();" />
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
 </table>   
 
@@ -69,46 +70,38 @@
          <table style="margin-top:5px" class="tipNoBorder" width="100%">
            <tr>
              <td width="25%">
-               <b>START/CLOSE jslog:</b> 
+               <b>START/CLOSE JSlog:</b> 
              </td>
              <td width="75%">
-         
-							<table style="margin-top:5px" BORDER="4" cellspacing="0" cellpadding="2">
-							<tr> 
-								<td>Level: </td>
-								<td>
-							    <select id="logLev1">
-									  <option value="0">0</option>
-									  <option value="1">1</option>
-									  <option value="2">2</option>
-									  <option value="3">3</option>
-									  <option value="4">4</option>
-									  <option value="5">5</option>
-									  <option value="6">6</option>
-									  <option value="7" selected>7</option>
-							    </select>	
-								</td>
-							  <td style="padding-left:10px">
-							    <select id="logTime">
-							      <option value="0" selected>NO Time Log</option>
-							      <option value="1">Log Time</option>
-							    </select> 
-								</td>
-							  <td style="padding-left:10px">
-							       <input type="button" value="Start jslog" onclick="sample1_jslogStart()">
-							  </td>
-								
-								<td style="padding-left:70px">
-							       <input type="button" value="CLOSE jslog" onclick="jslog_end()">
-								</td>
-							</tr>			
-							</table>         
-                 
+              <div id="divJsLogStartStop">
+								<table style="margin-top:5px" BORDER="4" cellspacing="0" cellpadding="2" >
+								<tr> 
+									<td>Level: </td>
+									<td>
+								    <select id="logLev">
+								    </select>	
+									</td>
+								  <td style="padding-left:10px">
+								    <select id="logTime">
+								      <option value="0" selected>NO Time Log</option>
+								      <option value="1">Log Time</option>
+								    </select> 
+									</td>
+								  <td style="padding-left:10px">
+								       <input type="button" value="Start JSlog" onclick="sample1_jslogStart()">
+								  </td>
+									
+									<td style="padding-left:70px">
+								       <input type="button" value="CLOSE JSlog" onclick="jslog_end()">
+									</td>
+								</tr>			
+								</table>         
+              </div>                 
              </td>
            </tr>
           <tr>
-             <td>
-                <b>jslog API sample at various Level:</b>
+             <td valign="top"">
+                <b>JSlog API sample at various Level:</b>
              </td>
              <td>
          
@@ -127,25 +120,33 @@
 									  </table>
 									<BR/>
 				        </div>    
-								<table class="tipNoBorder">	
-				    			  <tr> <td >
-									       <input type="button" value="Level1 log" onclick="jslog1()">
-									  </td>      
-									   <td>
-									       <input type="button" value="Level2 log JSON" onclick="jslog2()">
-									  </td>
-									  <td >
-									       <input type="button" value="Level4 log Object" onclick="jslog4()">
-									        <select id="logCompact" style="marging-left:10px">
-									          <option value="0" selected>NO Compact</option>
-									          <option value="1">Compact</option>
-									        </select> 
-									       
-									  </td>     
-									  </tr>  
-									  
-								</table>
-					            
+				        <div id="divLogBtn">
+									<table class="tipNoBorder" width="400px">	
+					    			  <tr> 
+					    			    <td align="left"> <input type="button" value="Log Message at Level=1 (JSLOG_INFO)" onclick="jslog1()"> </td>
+					    			  </tr>
+					    			  <tr>        
+										   <td align="left">  <input type="button" value="Log JSON at Level=2 (JSLOG_DEBUG)" onclick="jslog2()"> </td>
+	                    </tr>
+	                    <tr align="left">        
+										    <td align="left">
+										       <table>
+										         <tr>
+										           <td> <input type="button" value="Log OBJECT at Level=4 (JSLOG_TRACE)" onclick="jslog4()"></td>
+											         <td> <select id="logCompact" style="marging-left:10px">
+											            <option value="0" selected>NO Compact</option>
+											            <option value="1">Compact</option>
+											           </select>
+											         </td>
+											       </tr>     
+                          </table>
+										    </td>     
+										  </tr>  
+                      <tr>        
+                       <td align="left">  <input type="button" value="Log two DOM Elements at Level=8 (JSLOG_TEST)" onclick="jslog8()"> </td>
+                      </tr>
+									</table>
+                </div>					            
              </td>
            </tr>           
          </table>
@@ -162,11 +163,12 @@
            <tr><td>
               <ul type="square">
                <li><b>START jslog:</b> <input type="button" class="tipJSFixed" id="tipJS1jslogStart" onclick="TipJSFixedClicked (JS1_JSLOG_START,event);" />
-                   <label style="margin-left:30px;"><b>STOP jslog:</b></label> <input type="button" class="tipJSFixed" id="tipJS1jslogEnd" onclick="TipJSFixedClicked (JS1_JSLOG_END,event);" /></li>
-               <li><label style="margin-right:30px;"><b>jslog API sample at various Level</b></label>
-                  <b>Level1 log:</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipJSFixedClicked (JS1_LEV1,event,{iJSColNum:140});" />
-                   <label style="margin-left:30px;"><b>Level2 log:</b></label> <input type="button" class="tipJSFixed" id="tipJS1Lev2" onclick="TipJSFixedClicked (JS1_LEV2,event);" />
-                   <label style="margin-left:30px;"><b>Levl4 log:</b></label> <input type="button" class="tipJSFixed" id="tipJS1Lev4" onclick="TipJSFixedClicked (JS1_LEV4,event);" /></li>
+                   <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipJSFixed" id="tipJS1jslogEnd" onclick="TipJSFixedClicked (JS1_JSLOG_END,event);" /></li><BR/>
+               <li><label style="margin-right:30px;"><b>JSlog API sample at various Level: </b></label><BR/><BR/>
+                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipJSFixedClicked (JS1_LEV1,event,{iJSColNum:140});" /><BR/><BR/>
+                   <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipJSFixed" id="tipJS1Lev2" onclick="TipJSFixedClicked (JS1_LEV2,event);" /> <BR/><BR/>
+                   <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipJSFixed" id="tipJS1Lev4" onclick="TipJSFixedClicked (JS1_LEV4,event);" /><BR/><BR/>
+                   <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipJSFixed" id="tipJS1Lev8" onclick="TipJSFixedClicked (JS1_LEV8,event);" /></li>
                 </ul>
            </td></tr>
          </table>
@@ -190,7 +192,7 @@
                       <a id="href_1" style="margin-left:20px" href="javascript:jslog_sample2(1);">
                         https://...../Validate/ValidateSample.html?jslog=1</a> 
 								    </li>
-                    <li><b>jslog=3</b> Log INFO and DEBUG: <b>JSLOG_INFO=1 JSLOG_INFO=2</b> 
+                    <li><b>jslog=3</b> Log INFO and DEBUG: <b>JSLOG_INFO=1 JSLOG_DEBUG=2</b> 
                       <a id="href_3" style="margin-left:20px"   href="javascript:jslog_sample2(3);">
                         https://...../Validate/ValidateSample.html?jslog=3</a> 
                     </li>
