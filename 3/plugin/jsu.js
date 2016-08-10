@@ -1,8 +1,83 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_2b8a=["../../..","/Minify","https://rawgit.com/FedericoLevis/JSU/master/images/","https://rawgit.com/FedericoLevis/WORK/master/core/Popup/","https://rawgit.com/FedericoLevis/images/master/jsuAbout/","https://rawgit.com/FedericoLevis/JSUDoc/master/","2/core","4/core/loadingDiv","6/core/cValidate","6/locale/EN","2/core/Popup","core/dom-drag","config","lan/locale-core","core/jslog","core/util","core/date","core/tooltip","popup/Popup","loadingDiv","cValidate","function","undefined"];var JSU_PATH_BASE=_$_2b8a[0];var externalPluginVersion=_$_2b8a[1];var JSU_PATH_IMG=_$_2b8a[2];var JSU_PATH_POPUP_HTML=_$_2b8a[3];var JSU_PATH_ABOUT_IMG=_$_2b8a[4];var JSU_PATH_DOC=_$_2b8a[5];requirejs[_$_2b8a[12]]({baseUrl:JSU_PATH_BASE,paths:{"core":_$_2b8a[6],"loadingDiv":_$_2b8a[7],"cValidate":_$_2b8a[8],"lan":_$_2b8a[9],"popup":_$_2b8a[10]},shim:{"core/jslog":[_$_2b8a[11]]}});require([_$_2b8a[13],_$_2b8a[14],_$_2b8a[15],_$_2b8a[16],_$_2b8a[17],_$_2b8a[18],_$_2b8a[19],_$_2b8a[20]],function(){if( typeof (jslog_init)== _$_2b8a[21]){jslog_init(JSLOG_LEV_URL)};jsu_loaded_1()});var jsuLoadedTmo=null;function jsu_loaded_1(){if( typeof (JSU_LOADED_TMO_MS)== _$_2b8a[22]){if( typeof (jsu_loaded)!= _$_2b8a[22]){return jsu_loaded()}else {return}};jsuLoadedTmo= setTimeout(jsu_loaded_2,JSU_LOADED_TMO_MS)}function jsu_loaded_2(){clearTimeout(jsuLoadedTmo);return jsu_loaded()}
+
+var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master/WORK";
+//var JSU_PATH_BASE="../../..";  // WORK
+
+
+
+// ===================================== OPTION: JSU with Comment or Minified   
+//----- ExternalPlugin (jquery, jquery-ui)
+var externalPluginVersion = "/Minify";
+
+// ----------------------------------- FIXED
+var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
+var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/WORK/master/core/Popup/";
+
+
+//----------------------------------- FIXED 
+var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
+var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
+
+
+//Only for TEST during development
+//var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
+
+
+//----------------------------------- MODULE CONFIGURATION
+requirejs.config({
+    baseUrl: JSU_PATH_BASE,
+	// Path relative to baseUrl
+    paths: {
+        'core': '2/core',
+        'loadingDiv': '4/core/loadingDiv',
+        'cValidate': '6/core/cValidate',
+        'lan': '6/locale/EN',
+        'popup': '2/core/Popup'
+    },
+    shim: {
+      'core/jslog': ['core/dom-drag']
+    }    
+});
+
+
+
+require([ // First 3 always present
+         'lan/locale-core', 
+         'core/jslog',            
+         'core/util',							
+         'core/date',							
+         'core/tooltip',
+         'popup/Popup',
+         'loadingDiv',							
+         'cValidate'        
+		   ],
+    	   function()	{	
+							if (typeof (jslog_init) == "function"){
+								jslog_init(JSLOG_LEV_URL);
+							}
+							jsu_loaded_1();
+						} 
+   );
+
+
+var jsuLoadedTmo = null;   
+
+function jsu_loaded_1(){
+  if (typeof (JSU_LOADED_TMO_MS) == "undefined"){
+    if (typeof (jsu_loaded) != "undefined"){
+     return jsu_loaded();
+    }else {
+    	return;
+    }
+  }
+  jsuLoadedTmo = setTimeout(jsu_loaded_2, JSU_LOADED_TMO_MS); 
+}
+
+
+function jsu_loaded_2(){
+   clearTimeout (jsuLoadedTmo);
+   return jsu_loaded();
+}
+
+
+
+   

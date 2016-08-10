@@ -1,8 +1,2871 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_9179=["EN","ITA",".","-1","SELECT","selectList","jsuLoading","Netscape","Microsoft Internet Explorer",",","1","0","IE","FIREFOX","OTHER","stringify","\x0A","<BR/>","    ","&nbsp;&nbsp;","replace","\x0A<ul"," \u2022 "," \u2022 <li ","\x0A<th ","\x0A<th>","\x0A \u2024 <tr ","\x0A \u2024 "," - ","","a","A","e","E","u","U","o","O","i","I","grave","acute","tilde","dierese","length","&",";","`","function","INFO","WARN","ERR","[Popup.js PopupGetBrowser] ","appName","undefined","userAgent","exec","Trident/.*rv:([0-9]{1,}[.0-9]{0,})","szBrowser="," -  navigator.appCodeName=","appCodeName","  navigator.appName=","cookie","=","document.cookie=","split","substring","charAt"," ","indexOf","getElementById","SW ERROR [util.js getElementById2] NOT FOUND Id=","SW ERROR [util.js getElementById3] NOT FOUND Id=","[util.js getFieldset2] ","FIELDSET","getElementsByTagName","NOT FOUND FiledSet in Block=","toLowerCase","button","[util.js getElementBySpanId2] "," NOT FOUND SpanId="," NOT FOUND Elements with Tag="," for SpanId=","[util.js getElementOfClassBySpanId2] ","className"," and Class=","[util.js getBlockBySpanId2] ","firstChild","[util.js getButtonBySpanId2] ","IN: SpanId=","\"","INPUT","BUTTON"," NOT FOUND Elements with Tag=INPUT/BUTTON for SpanId=","type","OUT: El  Id=","id","  Name=","name"," NOT FOUND Button for SpanId=","tagName","LEGEND","innerHTML","FOUND  Caption="," in textContent=","NOT FOUND Caption=","[util.js localeGetGroupSep] ","toLocaleString","2","GroupSeparetor=","[util.js localeGetDecimalSep] ","DecimalSeparetor NOT found. Used default = ","DecimalSeparetor=","toString","join","[util.js html2Str] ","&nbsp;","charCodeAt","parse","[util.js objFromURI]","?","substr","[util.js selectGetFirstIndWithVal] "," Select is NULL!","options","value"," Value=","  First contained in opt[","]","  is not contained in any opt of select","[util.js select2ar] ","pop","text","[util.js select2arFromInd] "," IN iSelectStartInd="," RETURN _ArOpt.length="," IN iSelectEndInd=","[util.js selectGetSelectedNum] ","selected","[util.js selectGetTextFromValue] "," Select is NULL - RETURN DefText=","Value=","  FOUND - RETURN Text=","  NOT FOUND - RETURN DefText=","[util.js selectSelValue] ","selectedIndex"," NOT FOUND Value=","  in ","[util.js selectRemoveValue] "," Found Value=","   Text=","\x0A SelInd=","      NOW REMOVING IT","[util.js selectRemoveAll] ","[util.js selectIsMulti] ","multiple","childNodes","----","match","remove","hasLabel","removeAttribute","Succesfully Removed 2 Extra Items from Select ","[util.js selectSelText] "," SELECT Found Text=","\x0AValue=","\x0ARETURN SelInd="," NOT FOUND Text=","[util.js selectGetTextOfValue] ","Select is NULL"," NOT FOUND","[util.js selectGetValueOfText] "," Found Text=","   Value=","name: ","\x0A\x0Atext      value\x0A\x0A","     ","dv","[util.js selectGetList] ","Select =0 NOTHING to DO","[util.js selectGetSelList] ","[util.js selectGetSelNum] ","  return  iSelNum=","[util.js selectGetOptNum ] ","Select =0  return 0","[util.js selectGetNumFilterEl] ","iSelNNum=","  return  iNumFilterEl=",", ","[util.js selectGetSelValues] ","'","[util.js selectGetValues] ","[util.js selectDeselectAll] ","[util.js selectSelectAll] ","[util.js selectGetSelVal] ","[util.js selectGetSelText] "," AND ","[util.js selectAddFilterCond] ","IN: szFilter="," = "," IN (",")","OUT: szFilter=","[util.js getSelAllEl] ","IN szBlockId="," NOT FOUND BlockId="," NOT FOUND the 2 Elements with Tag A for BlockId=","[util.js filterSelAllEl2R] ","IN szFilterNameId=","blockFilter","spanSelectAll","spanDeselectAll","appendChild","fontSize","style","8pt","wait","default","cursor","body","IMG","TD","jsuLoadingEl","jsuAlarmingEl","[util.js classAdd] ","string","innerText","nodeValue","nodeType","[util.js elementShowBySpan ]","[util.js elementIsVisibleBySpan ]","visibility","hidden","[util.js elementShow ]","block","visible","display","none","getBoundingClientRect","documentElement","pageYOffset","scrollTop","pageXOffset","scrollLeft","clientTop","clientLeft","top","left","round","clientHeight","clientWidth","onload","getTime","setTime","; expires=","toGMTString","; path=/","\\]","\\[","[util.js \\?&]","=([^&#]*)","href","location","push","szSpanId=","  NOT FOUND","[util.js spanSetText] ","[util.js blockSetPad] ","NOT Find szBlock=","padding","[util.js blockRangeReset] "," IN: szBlock="," NOT FOUND szBlock="," NOT FOUND Elements with Tag INPUT for szBlock=","radio"," Found "," RB  and "," TEXT"," Wrong Number of RB or TEXT, cannot continue","checked","[util.js ar2List] ",".length = ","[util.js ","] = ","[util.js filterCheckNumItem] ","Fn="," Select is null","select-multiple","NOTHING to CHECK: szFilterName="," Is Not select-multiple. (select has select.type=","0 Selected - We set iSel = NumOfOptions=","szFilterName="," iSelNum="," iMinItem="," iMaxItem=","..","SPAN","DIV","showDebugFields bShow=","debug","SW ERROR: "," undefined","ERROR:\x0A ","\x0AIS NOT one of the Possible Values: [ "," , "," ]","\x0A\x0A","[util.js sqlCondSelect] ","OUT szSql: ","[util.js sqlCondFromTo] "," >= TO_DATE('","','YYYY-MM-DD')"," <= TO_DATE('","return szSql=","search","[?&]","=([^&]*)","[util.js utilSetLanMsg] ","lan_msg=","getFullYear","-01-01","-12-31","getMonth","getDate","-","[util.arPmtFromSelect] ","iOptNum=","szId1","szId2","szTxt2","return arAll.length= ","[util.arPmt2Select] ","IN szId1=","  arPmt with Len=","Clear selectPmt bTutti="," iPreserveFirstN=","INSERT Entry matching szId1=","[","]="," - ADDED: "," - NOT ADDED: ","disabled"," NOT FOUND in the List of Possible Values [ ","getelementsByTagName","onmouseover","tip","onmouseout"];var SW_DEBUG_ENABLE=0;var LAN_MSG_EN=_$_9179[0];var LAN_MSG_ITA=_$_9179[1];var lan_msg=LAN_MSG_EN;var SELECT_VALUE_ID_SEP=_$_9179[2];var SELECT_NOVALUE_SEL=_$_9179[3];var TAG_SELECT=_$_9179[4];var ID_PREFIX_SELECT=_$_9179[5];var ID_DIV_LOADING_IMG=_$_9179[6];var APP_NAME_FIREFOX=_$_9179[7];var APP_NAME_IE=_$_9179[8];var NBSP_CODE=160;var DEF_COGNOS_GROUP_SEP=_$_9179[9];var DEF_COGNOS_DECIMAL_SEP=_$_9179[2];var VAL_CB_CHECKED=_$_9179[10];var VAL_CB_UNCHECKED=_$_9179[11];var BROWSER_TYPE={IE:_$_9179[12],FIREFOX:_$_9179[13],OTHER:_$_9179[14]};function obj2Html(cg){var mL=JSON[_$_9179[15]](cg,null,4);mL= replaceAll(mL,_$_9179[16],_$_9179[17]);return replaceAll(mL,_$_9179[18],_$_9179[19])}function msgHtml2Str(mr){var bs=mr[_$_9179[20]](/<BR\/>/gi,_$_9179[16]);bs= bs[_$_9179[20]](/<ul/gi,_$_9179[21]);bs= bs[_$_9179[20]](/<li>/gi,_$_9179[22]);bs= bs[_$_9179[20]](/<li /gi,_$_9179[23]);bs= bs[_$_9179[20]](/<\/li>/gi,_$_9179[16]);bs= bs[_$_9179[20]](/<\/ul>/gi,_$_9179[16]);bs= bs[_$_9179[20]](/<th /gi,_$_9179[24]);bs= bs[_$_9179[20]](/<th>/gi,_$_9179[25]);bs= bs[_$_9179[20]](/<tr /gi,_$_9179[26]);bs= bs[_$_9179[20]](/<tr>/gi,_$_9179[27]);bs= bs[_$_9179[20]](/<\/td>/gi,_$_9179[28]);bs= bs[_$_9179[20]](/<[^>]*>?/gm,_$_9179[29]);var mF=[_$_9179[30],_$_9179[31],_$_9179[32],_$_9179[33],_$_9179[34],_$_9179[35],_$_9179[36],_$_9179[37],_$_9179[38],_$_9179[39]];var mG=[_$_9179[40],_$_9179[41],_$_9179[42],_$_9179[43]];for(var mH=0;mH< mF[_$_9179[44]];mH++){for(var mI=0;mI< mG[_$_9179[44]];mI++){var mJ=_$_9179[45]+ mF[mH]+ mG[mI]+ _$_9179[46];var mK=mF[mH]+ _$_9179[47];bs= strReplaceAll(bs,mJ,mK)}};return bs}function popupIsDefined(){return ( typeof (Popup)== _$_9179[48])}function showAlert(mr,pq){alert(msgHtml2Str(mr));return pq}function showInfo(mr,A){jslog(JSLOG_INFO,mr);if(popupIsDefined()){Popup(POPUP_TYPE[_$_9179[49]],mr,A)}else {showAlert(mr,0)}}function showWarn(mr,pq,A){jslog(JSLOG_INFO,mr);if(popupIsDefined()){Popup(POPUP_TYPE[_$_9179[50]],mr,A)}else {showAlert(mr,pq)};return pq}function showErr(mr,pq,A){jslog(JSLOG_ERR,mr);if(pq== undefined){pq= 1};if(popupIsDefined()){Popup(POPUP_TYPE[_$_9179[51]],mr,A)}else {showAlert(mr,pq)};return pq}function showErrIfRequired(iR,pr,pq){if(iR){showErr(pr,pq)};return pq}function getBrowser(){var s=_$_9179[52];var jW=navigator[_$_9179[53]];var jX=BROWSER_TYPE[_$_9179[14]];if( typeof InstallTrigger!== _$_9179[54]){jX= BROWSER_TYPE[_$_9179[13]]}else {if((navigator[_$_9179[53]]== APP_NAME_IE)|| ((navigator[_$_9179[53]]== APP_NAME_IE_11)&& ( new RegExp(_$_9179[57])[_$_9179[56]](navigator[_$_9179[55]])!= null))){jX= BROWSER_TYPE[_$_9179[12]]}};jslog(JSLOG_TEST,s+ _$_9179[58]+ jX+ _$_9179[59]+ navigator[_$_9179[60]]+ _$_9179[61]+ navigator[_$_9179[53]]);return jX}function isFirefox(){return (getBrowser()== BROWSER_TYPE[_$_9179[13]])}function isIE(){return (getBrowser()== BROWSER_TYPE[_$_9179[12]])}function cookieSetVar(iX,iY){document[_$_9179[62]]= iX+ _$_9179[63]+ iY;alert(_$_9179[64]+ document[_$_9179[62]])}function cookieGetVar(iX){var dg=iX+ _$_9179[63];alert(_$_9179[64]+ document[_$_9179[62]]);var iW=document[_$_9179[62]][_$_9179[65]](_$_9179[46]);for(var u=0;u< iW[_$_9179[44]];u++){var dh=iW[u];while(dh[_$_9179[67]](0)== _$_9179[68]){dh= dh[_$_9179[66]](1)};if(dh[_$_9179[69]](dg)== 0){return dh[_$_9179[66]](dg[_$_9179[44]],dh[_$_9179[44]])}};return _$_9179[29]}function getElementById2(ka,iR){if(iR== undefined){iR= true};var N=document[_$_9179[70]](ka);if(N== null){if(iR&& SW_DEBUG_ENABLE){alert(_$_9179[71]+ ka)};return 0};return N}function getElementById3(ka,iR,s){var N=document[_$_9179[70]](ka);if(N== null){if(iR){showErr(_$_9179[72]+ ka)};return 0};return N}function getElementByTag2(R,jV,iR){return getElementBySpanId2(jV,R,iR)}function getFirstFsByBlock(iG,iR){var s=_$_9179[73];var ki=getElementById2(iG,iR);if(!ki){return 0};try{var kj=ki[_$_9179[75]](_$_9179[74]);if(!kj[_$_9179[44]]){return 0};return kj[0]}catch(e){};if(iR){jslog(WARNING,s+ _$_9179[76]+ iG)}}function getElementBySpanId2(jV,R,iR){if(R[_$_9179[77]]()== _$_9179[78]){var kb=getButtonBySpanId2(jV,iR);if(kb){return kb}};var s=_$_9179[79];var jY=document[_$_9179[70]](jV);if(jY== null){return showErrIfRequired(iR,s+ _$_9179[80]+ jV,0)};var iD=jY[_$_9179[75]](R);if(iD== null|| !iD[_$_9179[44]]){return showErrIfRequired(iR,s+ _$_9179[81]+ R+ _$_9179[82]+ jV,0)};var ea=iD[iD[_$_9179[44]]- 1];return ea}function getElementOfClassBySpanId2(jV,R,iO,iR){var s=_$_9179[83];var jY=document[_$_9179[70]](jV);if(jY== null){return showErrIfRequired(iR,s+ _$_9179[80]+ jV,0)};var iD=jY[_$_9179[75]](R);if(iD== null|| !iD[_$_9179[44]]){return showErrIfRequired(iR,s+ _$_9179[81]+ R+ _$_9179[82]+ jV,0)};var kc=false;var ea=0;for(var u=0;!kc&& u< iD[_$_9179[44]];u++){ea= iD[u];if(ea[_$_9179[84]]== iO){kc= true}};if(!kc){return showErrIfRequired(iR,s+ _$_9179[81]+ R+ _$_9179[85]+ iO+ _$_9179[82]+ jV,0)};return ea}function getBlockBySpanId2(jV,iR){var s=_$_9179[86];var bE=getElementById2(jV,iR);if(!bE){return 0};return bE[_$_9179[87]]}function getButtonBySpanId2(jV,iR){var s=_$_9179[88];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[89]+ jV+ _$_9179[90]);var jY=document[_$_9179[70]](jV);if(jY== null){return showErrIfRequired(iR,s+ _$_9179[80]+ jV,0)};var iD=jY[_$_9179[75]](_$_9179[91]);if(iD== null|| !iD[_$_9179[44]]){iD= jY[_$_9179[75]](_$_9179[92])};if(iD== null|| !iD[_$_9179[44]]){return showErrIfRequired(iR,s+ _$_9179[93]+ jV,0)};for(var u=0;u< iD[_$_9179[44]];u++){try{if(iD[u][_$_9179[94]][_$_9179[77]]()== _$_9179[78]){jslog(JSLOG_JSU,s+ _$_9179[95]+ iD[u][_$_9179[96]]+ _$_9179[97]+ iD[u][_$_9179[98]]);return iD[u]}}catch(err){}};showErrIfRequired(iR,s+ _$_9179[99]+ jV,0);return 0}function getFieldset2(kf,iR){var s=_$_9179[73];try{var k=document[_$_9179[75]](_$_9179[74]);for(var u=0;u< k[_$_9179[44]];u++){var N=k[u];var kh=N[_$_9179[87]];if(kh){var dZ=kh[_$_9179[100]];if(dZ== _$_9179[101]){var kg=String(kh[_$_9179[102]]);if(kg[_$_9179[65]](kf)[_$_9179[44]]> 1){jslog(JSLOG_JSU,s+ _$_9179[103]+ kf+ _$_9179[104]+ kg);return k[u]}}}}}catch(e){};if(iR){jslog(WARNING,s+ _$_9179[105]+ kf)};return 0}function getFieldset(kf){return getFieldset2(kf,false)}function localeGetGroupSep(){var s=_$_9179[106];var mt=1234;var mu=mt[_$_9179[107]]();var mv=mu[_$_9179[67]](1);if(mv== _$_9179[108]){mv= _$_9179[29]};jslog(JSLOG_JSU,s+ _$_9179[109]+ mv);return mv}function localeGetDecimalSep(){var s=_$_9179[110];var mt=1.23;var mu=mt[_$_9179[107]]();var mv=mu[_$_9179[67]](1);if(mv== _$_9179[108]){mv= _$_9179[2];jslog(JSLOG_ERR,s+ _$_9179[111]+ mv)};jslog(JSLOG_JSU,s+ _$_9179[112]+ mv);return mv}function strReplaceAll(pM,mJ,mK){var pL=pM;while(pL[_$_9179[69]](mJ)>= 0){pL= pL[_$_9179[20]](mJ,mK)};return pL}function str2Num(mu,pK,pJ){NumStr2= mu;if( typeof (pK)!= _$_9179[54]&& pK[_$_9179[44]]){while(NumStr2[_$_9179[69]](pK)>  -1){NumStr2= NumStr2[_$_9179[20]](pK,_$_9179[29])}};if( typeof (pJ)!= _$_9179[54]&& pJ!= _$_9179[2]){NumStr2= NumStr2[_$_9179[20]](pJ,_$_9179[2])};Num= parseFloat(NumStr2);if(isNaN(Num)){Num= 0};return Num}function num2StrPad(lP,iI,lO){var lQ=lO- lP[_$_9179[113]]()[_$_9179[44]]+ 1;return Array(+(lQ> 0&& lQ))[_$_9179[114]](_$_9179[11])+ lP}function html2Str(hX){var s=_$_9179[115];var kL= new String(_$_9179[29]);hX= strReplaceAll(hX,_$_9179[116],_$_9179[68]);for(var u=0;u< hX[_$_9179[44]];u++){var kK=hX[_$_9179[117]](u);var kJ=hX[_$_9179[67]](u);if(kK== NBSP_CODE){kJ= _$_9179[68]};kL= kL+ kJ};return kL}function objSerialize(cg){return JSON[_$_9179[15]](cg,null,0)}function objDeserialize(mN){var cg;if(mN== undefined|| mN[_$_9179[44]]== 0){cg=  new Object()}else {cg= JSON[_$_9179[118]](mN)};return cg}function obj2URI(cg){return encodeURIComponent(objSerialize(cg))}function objFromURI(mM){var s=_$_9179[119];var cg;var mN=mM;if(mN== undefined|| mN[_$_9179[44]]== 0){cg=  new Object()}else {var mN=decodeURIComponent(mM);cg= objDeserialize(mN)};return cg}function obj2URIQueryString(cg){var mM=encodeURIComponent(objSerialize(cg));if(mM[_$_9179[44]]){return _$_9179[120]+ mM}else {return _$_9179[29]}}function objFromURIQueryString(mO){var cg;if(mO[_$_9179[44]]){return objFromURI(mO[_$_9179[121]](1))}else {return null}}function selectGetFirstIndWithVal(hW,ja){var s=_$_9179[122];if(!hW){jslog(JSLOG_JSU,s+ _$_9179[123]);return -1};for(i= 0;i< hW[_$_9179[124]][_$_9179[44]];i++){Opt= hW[i];if(Opt[_$_9179[125]][_$_9179[69]](ja)>  -1){jslog(JSLOG_JSU,s+ _$_9179[126]+ ja+ _$_9179[127]+ i+ _$_9179[128]);return i}};jslog(JSLOG_JSU,s+ _$_9179[126]+ ja+ _$_9179[129]);return -1}function select2ar(hW,oE){var s=_$_9179[130];for(i= 0;i< oE[_$_9179[44]];i++){oE[_$_9179[131]]()};if(!hW){jslog(JSLOG_JSU,s+ _$_9179[123]);return -1};for(i= 0;i< hW[_$_9179[124]][_$_9179[44]];i++){Opt= hW[i];oE[i]=  new cOpt(Opt[_$_9179[132]],Opt[_$_9179[125]])};return oE[_$_9179[44]]}function select2arFromInd(hW,oG,oF){var s=_$_9179[133];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[134]+ oG);for(i= 0;i< oF[_$_9179[44]];i++){oF[_$_9179[131]]()};if(!hW){jslog(JSLOG_JSU,s+ _$_9179[123]);return -1};for(iAr= 0,i= oG;i< hW[_$_9179[124]][_$_9179[44]];i++,iAr++){Opt= hW[i];oF[iAr]=  new cOpt(Opt[_$_9179[132]],Opt[_$_9179[125]])};jslog(JSLOG_JSU,s+ _$_9179[135]+ oF[_$_9179[44]]);jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return oF[_$_9179[44]]}function select2arTillInd(hW,oH,oF){var s=_$_9179[133];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[136]+ oH);for(i= 0;i< oF[_$_9179[44]];i++){oF[_$_9179[131]]()};if(!hW){jslog(JSLOG_JSU,s+ _$_9179[123]);return -1};for(iAr= 0,i= 0;(i< hW[_$_9179[124]][_$_9179[44]]&& i<= oH);i++,iAr++){Opt= hW[i];oF[iAr]=  new cOpt(Opt[_$_9179[132]],Opt[_$_9179[125]])};jslog(JSLOG_JSU,s+ _$_9179[135]+ oF[_$_9179[44]]);jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return oF[_$_9179[44]]}function selectGetSelectedNum(hW){var s=_$_9179[137];if(!hW){jslog(WARNING,s+ _$_9179[123]);return -1};var oQ=0;var ir=hW[_$_9179[124]][_$_9179[44]];for(var u=0;u< ir;u++){var hV=hW[u];if(hV[_$_9179[138]]){oQ++}};return oQ}function selectGetTextFromValue(hW,hY,ph){var s=_$_9179[139];if(!hW){jslog(JSLOG_JSU,s+ _$_9179[140]+ ph);return ph};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var oT=html2Str(hW[u][_$_9179[125]]);if(oT== hY){var pg=html2Str(hW[u][_$_9179[132]]);jslog(JSLOG_JSU,s+ _$_9179[141]+ hY+ _$_9179[142]+ pg);return pg}};jslog(JSLOG_JSU,s+ _$_9179[126]+ hY+ _$_9179[143]+ ph);return ph}function selectRemoveAllOption(hW){if(hW!= 0){for(i= hW[_$_9179[44]]- 1;i>= 0;i--){hW[i]= null}}}function selectRemoveOption(hW,ij){if(hW!= 0){for(i= hW[_$_9179[44]]- 1;i>= ij;i--){hW[i]= null}}}function selectSelValue(hW,hY){var s=_$_9179[144];if(!hW){jslog(WARNING,s+ _$_9179[123]);return -1};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var oT=html2Str(hV[_$_9179[125]]);if(oT== hY){hV[_$_9179[138]]= true;hW[_$_9179[145]]= u;return u}};jslog(JSLOG_JSU,s+ _$_9179[146]+ hY+ _$_9179[147]+ hW[_$_9179[98]]);return -1}function selectRemoveCognosEl(hW){removeExtraItems(hW)}function selectRemoveValue(hW,hY){var s=_$_9179[148];if(!hW){jslog(WARNING,s+ _$_9179[123]);return -1};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var oT=html2Str(hV[_$_9179[125]]);if(oT== hY){jslog(JSLOG_JSU,s+ _$_9179[149]+ hY+ _$_9179[147]+ hW[_$_9179[98]]+ _$_9179[150]+ hV[_$_9179[132]]+ _$_9179[151]+ u+ _$_9179[152]);hW[u]= null;return u}};jslog(JSLOG_JSU,s+ _$_9179[146]+ hY+ _$_9179[147]+ hW[_$_9179[98]]);return -1}function selectRemoveAll(hW){var s=_$_9179[153];var u=0;if(!hW){jslog(WARNING,s+ _$_9179[123]);return -1};for(u= hW[_$_9179[44]]- 1;u>= 0;u--){hW[u]= null}}function selectIsMulti(hW){var s=_$_9179[154];return hW[_$_9179[155]]}function selectRemoveExtraItems(hW){var s=_$_9179[139];if(!hW|| hW[_$_9179[124]][_$_9179[44]]< 1){return};try{var iZ=hW[_$_9179[156]][1][_$_9179[132]];if(iZ[_$_9179[158]](_$_9179[157])){hW[_$_9179[159]](1);hW[_$_9179[159]](0);hW[_$_9179[161]](_$_9179[160]);jslog(JSLOG_JSU,s+ _$_9179[162]+ hW[_$_9179[98]]);return}}catch(err){}}function selectSelText(hW,hX){var s=_$_9179[163];if(!hW){jslog(WARNING,s+ _$_9179[123]);return -1};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var pg=html2Str(hV[_$_9179[132]]);if(pg== hX){jslog(JSLOG_JSU,s+ _$_9179[164]+ hX+ _$_9179[147]+ hW[_$_9179[98]]+ _$_9179[165]+ hV[_$_9179[125]]+ _$_9179[166]+ u);hV[_$_9179[138]]= true;return u}};jslog(JSLOG_JSU,s+ _$_9179[167]+ hX+ _$_9179[147]+ hW[_$_9179[98]]);return -1}function selectGetTextOfValue(hW,hY){var s=_$_9179[168];if(!hW){jslog(WARNING,s+ _$_9179[123]);return _$_9179[169]};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var oT=html2Str(hV[_$_9179[125]]);if(oT== hY){var hX=html2Str(hV[_$_9179[132]]);jslog(JSLOG_JSU,s+ _$_9179[149]+ hY+ _$_9179[150]+ hX);return hX}};return hY+ _$_9179[170]}function selectGetValueOfText(hW,hX){var pi=html2Str(hX);var s=_$_9179[171];if(!hW){jslog(WARNING,s+ _$_9179[123]);return _$_9179[169]};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var pg=html2Str(hV[_$_9179[132]]);if(pg== pi){var hY=html2Str(hV[_$_9179[125]]);jslog(JSLOG_JSU,s+ _$_9179[172]+ pi+ _$_9179[173]+ hY);return hY}};return hX+ _$_9179[170]}function selectGelSelectedStatus(hW,hY){var s=_$_9179[144];var oU=false;if(!hW){jslog(WARNING,s+ _$_9179[123]);return oU};for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var oT=html2Str(hV[_$_9179[125]]);if(oT== hY){return hV[_$_9179[138]]}};return oU}function selectGetDesc(hW){var oV= new String(_$_9179[174]+ hW[_$_9179[98]]+ _$_9179[175]);for(var u=0;u< hW[_$_9179[124]][_$_9179[44]];u++){var hV=hW[u];var oW= new String(_$_9179[16]+ hV[_$_9179[132]]+ _$_9179[176]+ hV[_$_9179[125]]);oV+= oW};return oV}function appendOptionLast(hW,hX,hY){var hV= new Option(hX,hY);hW[hW[_$_9179[44]]]= hV;hV[_$_9179[177]]= hX}function appendOptionSelLast(hW,hX,hY,hZ){appendOptionLast(hW,hX,hY);if(hZ){var hV=hW[hW[_$_9179[44]]- 1];hV[_$_9179[138]]= true}}function selectGetList(hW,oX){var s=_$_9179[178];if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};oX[_$_9179[44]]= 0;var v=0;for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];oX[v++]= hV[_$_9179[125]]};return oX[_$_9179[44]]}function selectGetSelList(hW,pb){var s=_$_9179[180];if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};pb[_$_9179[44]]= 0;var v=0;for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];if(hV[_$_9179[138]]){pb[v++]= hV[_$_9179[125]]}};return pb[_$_9179[44]]}function selectGetSelNum(hW){var s=_$_9179[181];var oQ=0;if(!hW){jslog(JSLOG_JSU,s+ _$_9179[179]);return 0};for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];if(hV[_$_9179[138]]){oQ++}};jslog(JSLOG_JSU,s+ _$_9179[182]+ oQ);return oQ}function selectGetOptNum(hW){var s=_$_9179[183];if(!hW){jslog(JSLOG_JSU,s+ _$_9179[184]);return 0};return hW[_$_9179[124]][_$_9179[44]]}function selectGetNumFilterEl(hW){var s=_$_9179[185];var oQ=selectGetSelNum(hW);if(oQ< 0){return 0};var oY=(oQ> 0)?oQ:hW[_$_9179[124]][_$_9179[44]];jslog(JSLOG_JSU,s+ _$_9179[186]+ oQ+ _$_9179[187]+ oY);return oY}function selectGetSelLabels(hW){var s=_$_9179[180];var pa=_$_9179[29];var oZ=true;if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];if(hV[_$_9179[138]]){if(oZ){pa= hV[_$_9179[132]];oZ= false}else {pa= pa+ _$_9179[188]+ hV[_$_9179[132]]}}};return pa}function selectGetSelValues(hW,pd){var s=_$_9179[189];var pf=_$_9179[29];var oZ=true;if(pd== undefined){pd= false};if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];if(hV[_$_9179[138]]){var pe=hV[_$_9179[125]];if(pd){pe= _$_9179[190]+ pe+ _$_9179[190]};if(oZ){pf= pe;oZ= false}else {pf= pf+ _$_9179[188]+ pe}}};return pf}function selectGetValues(hW){var s=_$_9179[191];var pf=_$_9179[29];var oZ=true;if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];if(oZ){pf= hV[_$_9179[125]];oZ= false}else {pf= pf+ _$_9179[188]+ hV[_$_9179[125]]}};return pf}function selectDeselectAll(hW){var s=_$_9179[192];if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};if(hW[_$_9179[145]]!=  -1){hW[_$_9179[145]]=  -1}}function selectSelectAll(hW){var s=_$_9179[193];if(!hW){return jslog(JSLOG_JSU,s+ _$_9179[179])};for(var iq=0;iq< hW[_$_9179[124]][_$_9179[44]];iq++){var hV=hW[_$_9179[124]][iq];hV[_$_9179[138]]= true}}function selectGetSelVal(hW,pd){var s=_$_9179[194];var pe=SELECT_NOVALUE_SEL;if(pd== undefined){pd= false};if(!hW){return pe};var bI=hW[_$_9179[145]];if(bI< 0){return pe};pe= html2Str(hW[_$_9179[124]][bI][_$_9179[125]]);if(pd){if(pe[_$_9179[44]]){pe= _$_9179[190]+ pe+ _$_9179[190]}};return pe}function selectGetSelText(hW){var s=_$_9179[195];var pc=SELECT_NOVALUE_SEL;if(!hW){return pc};var bI=hW[_$_9179[145]];if(bI< 0){return pc};return html2Str(hW[_$_9179[124]][bI][_$_9179[132]])}function selectPopulate(pj,lo,pe){for(var u=0;u< lo[_$_9179[44]];u++){var N=lo[u];var hZ=(N[0]== pe);appendOptionSelLast(pj,N[1],N[0],hZ)}}function selectAddFilterCond(hW,oK,oL){var oM=(oL[_$_9179[44]]< 4)?_$_9179[68]:_$_9179[196];var s=_$_9179[197];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[198]+ oL);var oI= new Array();var ia= new Array();var oJ=selectGetSelList(hW,oI);if(oJ== 1){oL+= oM+ oK+ _$_9179[199]+ oI[0]}else {if(oJ> 1){oL+= oM+ oK+ _$_9179[200]+ ar2List(oI)+ _$_9179[201]}};jslog(JSLOG_JSU,s+ _$_9179[202]+ oL);jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return oL}function getSelAllEl(ks,kr,iC){var s=_$_9179[203];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[204]+ ks);var bJ=0;var iB=document[_$_9179[70]](ks);if(iB== null){return showErrIfRequired(iC,s+ _$_9179[205]+ ks,1)};ElList= iB[_$_9179[75]](_$_9179[31]);if(ElList== null|| ElList[_$_9179[44]]!= 2){return showErrIfRequired(iC,s+ _$_9179[206]+ ks,1)};kr[bJ++]= ElList[0];kr[bJ++]= ElList[1];jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return 0}function filterSelAllEl2R(jA,iC){var s=_$_9179[207];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[208]+ jA);var jx= new Array();getSelAllEl(_$_9179[209]+ jA,jx,iC);var jy= new Array(_$_9179[210]+ jA,_$_9179[211]+ jA);for(iAr= 0;iAr< 2;iAr++){var jz=getElementById2(jy[iAr],iC);jz[_$_9179[212]](jx[iAr]);jx[iAr][_$_9179[214]][_$_9179[213]]= _$_9179[215]};return 0}function setCursorWait(pl){var pm=pl?_$_9179[216]:_$_9179[217];document[_$_9179[219]][_$_9179[214]][_$_9179[218]]= pm;var po= new Array(_$_9179[220],_$_9179[221],_$_9179[91],_$_9179[92],_$_9179[4]);for(var pk=0;pk< po[_$_9179[44]];pk++){var pn=po[pk];var k=document[_$_9179[75]](pn);for(var u=0;u< k[_$_9179[44]];u++){var N=k[u];N[_$_9179[214]][_$_9179[218]]= pm}}}function loadingShowIn1ElId(C,hU){var N=getElementById2(C,true);loadingShowIn1El(N,hU)}function loadingShowIn1El(N,hU){if(N){classAdd(N,_$_9179[222],hU)}}function loadingGetEl(){return getElementById2(ID_DIV_LOADING_IMG,false)}function loadingShowByEl(N,hU){if(N){classAdd(N,_$_9179[6],hU);elementShow(N,hU)}}function loadingShow(hU){var N=getElementById2(ID_DIV_LOADING_IMG,false);if(N){classAdd(N,_$_9179[6],hU);elementShow(N,hU)}}function alarmShowIn1ElId(C,hU){var N=getElementById2(C,true);return alarmShowIn1El(N,hU)}function alarmShowIn1El(N,hU){if(N){classAdd(N,_$_9179[223],hU)};return 1}function classAdd(N,iO,ig){var s=_$_9179[224];var iP=N[_$_9179[84]];if(iP== undefined){iP= _$_9179[29]};var iN=iP[_$_9179[69]](iO)>= 0;if(ig){if(!iN){if(iP== _$_9179[29]){iP= iO}else {iP= iP+ _$_9179[68]+ iO}}}else {iP= iP[_$_9179[20]](_$_9179[68]+ iO,_$_9179[29]);iP= iP[_$_9179[20]](iO,_$_9179[29])};N[_$_9179[84]]= iP}function ts_getInnerText(N){if( typeof N== _$_9179[225]){return N};if( typeof N== _$_9179[54]){return N};if(N[_$_9179[226]]){return N[_$_9179[226]]};var cv=_$_9179[29];var lS=N[_$_9179[156]];var mV=lS[_$_9179[44]];for(var u=0;u< mV;u++){switch(lS[u][_$_9179[228]]){case 1:cv+= ts_getInnerText(lS[u]);break;case 3:cv+= lS[u][_$_9179[227]];break}};return cv}function elementShowBySpan(jv,hU){var s=_$_9179[229];var ea=getElementById2(jv,false);if(ea){elementShow(ea,hU)}}function elementIsVisibleBySpan(jv){var s=_$_9179[230];var bH=false;var ea=getElementById2(jv,false);if(ea){bH= (ea[_$_9179[214]][_$_9179[231]]!= _$_9179[232])};return bH}function elementShow(ea,hU,jw){var s=_$_9179[233];if(ea== 0|| ea== undefined){return};if(jw== undefined){jw= _$_9179[234]};if(hU){ea[_$_9179[214]][_$_9179[231]]= _$_9179[235];ea[_$_9179[214]][_$_9179[236]]= jw}else {ea[_$_9179[214]][_$_9179[231]]= _$_9179[232];ea[_$_9179[214]][_$_9179[236]]= _$_9179[237]}}function elementGetWinCoords(jq){var jm=jq[_$_9179[238]]();var jl=document[_$_9179[219]];var jp=document[_$_9179[239]];var jt=window[_$_9179[240]]|| jp[_$_9179[241]]|| jl[_$_9179[241]];var js=window[_$_9179[242]]|| jp[_$_9179[243]]|| jl[_$_9179[243]];var jo=jp[_$_9179[244]]|| jl[_$_9179[244]]|| 0;var jn=jp[_$_9179[245]]|| jl[_$_9179[245]]|| 0;var ju=jm[_$_9179[246]]+ jt- jo;var jr=jm[_$_9179[247]]+ js- jn;return {top:Math[_$_9179[248]](ju),left:Math[_$_9179[248]](jr),height:jq[_$_9179[249]],width:jq[_$_9179[250]]}}function addLoadEvent(fp){var hT=window[_$_9179[251]];if( typeof window[_$_9179[251]]!= _$_9179[48]){window[_$_9179[251]]= fp}else {window[_$_9179[251]]= function(){hT();fp()}}}function createCookie(dg,W,jc){var jd=_$_9179[29];if(jc){var jb= new Date();jb[_$_9179[253]](jb[_$_9179[252]]()+ (jc* 24* 60* 60* 1000));jd= _$_9179[254]+ jb[_$_9179[255]]()};try{document[_$_9179[62]]= dg+ _$_9179[63]+ W+ jd+ _$_9179[256]}catch(err){}}function readCookie(dg){var oD=dg+ _$_9179[63];try{var iW=document[_$_9179[62]][_$_9179[65]](_$_9179[46]);for(var u=0;u< iW[_$_9179[44]];u++){var dh=iW[u];while(dh[_$_9179[67]](0)== _$_9179[68]){dh= dh[_$_9179[66]](1,dh[_$_9179[44]])};if(dh[_$_9179[69]](oD)== 0){return dh[_$_9179[66]](oD[_$_9179[44]],dh[_$_9179[44]])}}}catch(err){};return null}function eraseCookie(dg){createCookie(dg,_$_9179[29],-1)}function getRequestParameter(dg){dg= dg[_$_9179[20]](/[\[]/,_$_9179[258])[_$_9179[20]](/[\]]/,_$_9179[257]);var ko=_$_9179[259]+ dg+ _$_9179[260];var dv= new RegExp(ko);var kn=unescape(window[_$_9179[262]][_$_9179[261]]);var cd=dv[_$_9179[56]](kn);if(cd== null){return _$_9179[29]}else {return cd[1]}}function getElementsWithSameId(ft){var kd=[];var ke=document[_$_9179[70]](ft);while(ke){kd[_$_9179[263]](ke);ke[_$_9179[96]]= _$_9179[29];ke= document[_$_9179[70]](ft)};for(var I=0;I< kd[_$_9179[44]];I++){kd[I][_$_9179[96]]= ft};return kd}function spanSetTextById(jV,iZ,iR){var pv=getElementById2(jV,iR);if(pv){spanSetText(pv,iZ)}}function spanGetTextById(jV,iR){var pv=getElementById2(jV,iR);if(pv){return spanGetText(pv)}else {return (_$_9179[264]+ jV+ _$_9179[265])}}function spanSetText(jz,iZ){var s=_$_9179[266];if(jz){jz[_$_9179[87]][_$_9179[102]]= iZ}}function spanGetText(jz){if(jz== 0|| jz[_$_9179[87]]== 0){return _$_9179[29]};var iZ=jz[_$_9179[87]][_$_9179[102]];return iZ[_$_9179[20]](_$_9179[116],_$_9179[29])}function blockSetPad(iG,iI){var s=_$_9179[267];var iH=getBlockBySpanId2(iG,true);if(iH== 0){return showErr(s+ _$_9179[268]+ iG,1)};iH[_$_9179[214]][_$_9179[269]]= iI;return 0}function blockRangeReset(iG,iC){var s=_$_9179[270];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);jslog(JSLOG_JSU,s+ _$_9179[271]+ iG);var iB=document[_$_9179[70]](iG);if(iB== null){return showErrIfRequired(iC,s+ _$_9179[272]+ iG,1)};var iD=iB[_$_9179[75]](_$_9179[91]);if(iD== null|| !iD[_$_9179[44]]){return showErrIfRequired(iC,s+ _$_9179[273]+ iG,1)};var bJ=iD[_$_9179[44]]- 1;var iz= new Array();var iA= new Array();var iE=0,iF=0;for(var bo=0;bo< iD[_$_9179[44]];bo++){var ea=iD[bo];if(ea[_$_9179[94]]== _$_9179[274]){iz[iE++]= ea}else {if(ea[_$_9179[94]]== _$_9179[132]){iA[iF++]= ea}}};jslog(JSLOG_JSU,s+ _$_9179[275]+ iE+ _$_9179[276]+ iF+ _$_9179[277]);if((iE!= 4)|| (iF!= 2)){jslog(JSLOG_JSU,s+ _$_9179[278]);return 1};iz[1][_$_9179[279]]= true;iz[3][_$_9179[279]]= true;iA[0][_$_9179[125]]= _$_9179[29];iA[1][_$_9179[125]]= _$_9179[29];jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return 0}function ar2List(ia){var s=_$_9179[280];var ic=_$_9179[29];var ib=ia[_$_9179[44]];if(!ib){return ic};ic= ia[0];for(var u=1;u< ib;u++){ic+= (_$_9179[9]+ ia[u])};return ic}function arTrace(ix,iw,iy){var ib=iw[_$_9179[44]];jslog(ix,iy+ _$_9179[281]+ ib);for(var v=0;v< ib;v++){jslog(ix,iy+ _$_9179[282]+ v+ _$_9179[283]+ iw[v])}}function selectCheckNumItem(oS,oR,hW,oP,oO,oN){var s=_$_9179[284];jslog(JSLOG_JSU,s+ JSLOG_FUN_START);if(hW== 0){return showErr(_$_9179[285]+ s+ _$_9179[286],1)};var G=hW[_$_9179[94]];if(G== _$_9179[54]|| G!= _$_9179[287]){jslog(JSLOG_JSU,s+ _$_9179[288]+ oS+ _$_9179[289]+ G+ _$_9179[201]);return 0};var oQ=selectGetSelectedNum(hW);if(oQ== 0&& oN){oQ= hW[_$_9179[124]][_$_9179[44]];jslog(JSLOG_JSU,s+ _$_9179[290]+ oQ)};jslog(JSLOG_JSU,_$_9179[291]+ oS+ _$_9179[292]+ oQ+ _$_9179[293]+ oP+ _$_9179[294]+ oO);if(oQ> oO|| oQ< oP){var iK=ERR_FILTER_MAX_ITEM_1+ oQ+ ERR_FILTER_MAX_ITEM_2+ oS+ ERR_FILTER_MAX_ITEM_3+ oP+ _$_9179[295]+ oO+ _$_9179[128];if(oP== 0){iK+= ERR_FILTER_MAX_ITEM_4+ oS+ ERR_FILTER_MAX_ITEM_5+ oR+ ERR_FILTER_MAX_ITEM_6};return showErr(iK,1)};jslog(JSLOG_JSU,s+ JSLOG_FUN_END);return 0}function cOpt(iZ,ja){this[_$_9179[132]]= iZ;this[_$_9179[125]]= ja}function showDebugFields(hU){var lB=[_$_9179[296],_$_9179[297]];jslog(JSLOG_INFO,_$_9179[298]+ hU);for(var ly=0;ly< lB[_$_9179[44]];ly++){var iD=document[_$_9179[75]](lB[ly]);for(var u=0;u< iD[_$_9179[44]];u++){var ea=iD[u];if(ea[_$_9179[96]]== _$_9179[299]|| ea[_$_9179[84]]== _$_9179[299]){elementShow(ea,hU)}}}}function checkObjDefined(cg,iM){if(cg){return 0}else {return showErr(_$_9179[300]+ iM+ _$_9179[301],1)}}function checkArVal(iL,iJ,iK){for(var u=0;u< iJ[_$_9179[44]];u++){if(iL== iJ[u]){return 0}};var bs=_$_9179[302]+ _$_9179[141]+ iL+ _$_9179[303];for(var u=0;u< iJ[_$_9179[44]];u++){bs+= iJ[u];if(u< (iJ[_$_9179[44]]- 1)){bs+= _$_9179[304]}};bs+= _$_9179[305];if(iK!= undefined){bs+= _$_9179[306]+ iK};return showErr(bs,1)}function sqlCondSelect(pC,pj,pd){var s=_$_9179[307];var pE=_$_9179[29];if(selectIsMulti(pj)){pE= selectGetSelValues(pj,pd)}else {pE= selectGetSelVal(pj,pd)};if(pE[_$_9179[44]]){var pI=pE[_$_9179[69]](_$_9179[9])> 0;if(pI){pE= pC+ _$_9179[200]+ pE+ _$_9179[201]}else {pE= pC+ _$_9179[199]+ pE}};jslog(JSLOG_JSU,s+ _$_9179[308]+ pE);return pE}function sqlCondFromToDate(pC,pA,pB){var s=_$_9179[309];var pE=_$_9179[29];jslog(JSLOG_TEST,s+ JSLOG_FUN_START);var pD=promptDateGetVal(pA);var pH=promptDateGetVal(pB);var py=(pD[_$_9179[44]]> 0);var pz=(pH[_$_9179[44]]> 0);var pF=_$_9179[29];if(py){pF= pC+ _$_9179[310]+ pD+ _$_9179[311]};var pG=_$_9179[29];if(pz){pG= pC+ _$_9179[312]+ pH+ _$_9179[311]};if(py&& pz){pE= pF+ _$_9179[196]+ pG}else {if(py){pE= pF}else {if(pz){pE= pG}}};jslog(JSLOG_TEST,s+ _$_9179[313]+ pE);jslog(JSLOG_TEST,s+ JSLOG_FUN_END);return pE}function sqlAddCond(px,pw,pd){if(px[_$_9179[44]]> 0&& pw[_$_9179[44]]> 0){return px+ _$_9179[196]+ pw}else {if(pw[_$_9179[44]]> 0){return pw}else {return px}}}function urlGetParVal(rr){var rq;if(rq= ( new RegExp(_$_9179[315]+ encodeURIComponent(rr)+ _$_9179[316]))[_$_9179[56]](location[_$_9179[314]])){return decodeURIComponent(rq[1])}else {return _$_9179[29]}}function utilSetLanMsg(rs){var s=_$_9179[317];lan_msg= rs;jslog(JSLOG_INFO,s+ _$_9179[318]+ lan_msg)}function dateIsoGetFirstDayCurYear(){var je= new Date();return je[_$_9179[319]]()+ _$_9179[320]}function dateIsoGetLastDayLastYear(){var je= new Date();return (je[_$_9179[319]]()- 1)+ _$_9179[321]}function dateIsoGetCurDay(){var je= new Date();var jg=je[_$_9179[322]]()+ 1;var ji=(jg>= 10)?(_$_9179[29]+ jg):(_$_9179[11]+ jg);var jf=je[_$_9179[323]]();var jh=(jf>= 10)?(_$_9179[29]+ jf):(_$_9179[11]+ jf);return je[_$_9179[319]]()+ _$_9179[324]+ ji+ _$_9179[324]+ jh}function arPmtFromSelect(iv){var s=_$_9179[325];jslog(JSLOG_JSU,s+ JSLOG_FILE_START);var ir=iv[_$_9179[124]][_$_9179[44]];jslog(JSLOG_JSU,s+ _$_9179[326]+ ir);var io= new Array();for(var iq=0;iq< ir;iq++){var iu=iv[_$_9179[124]][iq];var ik= new Object();var ip=iu[_$_9179[125]][_$_9179[65]](SELECT_VALUE_ID_SEP);ik[_$_9179[327]]= ip[0];ik[_$_9179[328]]= ip[1];ik[_$_9179[329]]= iu[_$_9179[132]];io[_$_9179[263]](ik)};jslog(JSLOG_JSU,s+ _$_9179[330]+ io[_$_9179[44]]);jslog(JSLOG_JSU,s+ JSLOG_FILE_END);return io}function arPmt2Select(ie,im,il,ih){var s=_$_9179[331];jslog(JSLOG_JSU,s+ JSLOG_FILE_START);var ii=ie[_$_9179[44]];jslog(JSLOG_JSU,s+ _$_9179[332]+ im+ _$_9179[333]+ ii);var ij=(ih)?2:0;jslog(JSLOG_JSU,s+ _$_9179[334]+ ih+ _$_9179[335]+ ij);selectRemoveOption(il,ij);jslog(JSLOG_JSU,s+ _$_9179[336]+ im);for(var u=0;u< ii;u++){var ik=ie[u];var ig=(ik[_$_9179[327]]== im);if(ig){jslog(JSLOG_JSU,s+ _$_9179[337]+ u+ _$_9179[338]+ ik[_$_9179[327]]+ _$_9179[339]+ ik[_$_9179[328]]+ _$_9179[68]+ ik[_$_9179[329]]);appendOptionLast(il,ik[_$_9179[329]],ik[_$_9179[328]])}else {jslog(JSLOG_TRACE,s+ _$_9179[337]+ u+ _$_9179[338]+ ik[_$_9179[327]]+ _$_9179[340]+ ik[_$_9179[328]]+ _$_9179[68]+ ik[_$_9179[329]])}};il[_$_9179[145]]= 0;il[_$_9179[341]]= false;jslog(JSLOG_JSU,s+ JSLOG_FILE_END)}function mapVal1ToVal2(mz,mB,iC){var mD=null;var kc=false;var mA=_$_9179[29];for(var u=0;!kc&& u< mz[_$_9179[44]];u++){var mC=mz[u][0];var mE=mz[u][1];if(mC== mB){mD= mE;kc= 1}else {if(u> 0){mA+= _$_9179[304]};mA+= mE}};if(!kc&& iC){showErr(_$_9179[300]+ mB+ _$_9179[342]+ mA+ _$_9179[305],-1)};return mD}function tipAddEvent(pU){var pX=[_$_9179[220],_$_9179[91]];for(var ly=0;ly< pX[_$_9179[44]];ly++){var pV=document[_$_9179[343]](pX[ly]);for(var pW=0;pW< pV[_$_9179[44]];pW++){var N=pV[pW];var iO=N[_$_9179[84]];var kc=false;for(var u=0;!kc&& u< pU[_$_9179[44]];u++){if(iO== iO[u]){kc= true}};if(kc){N[_$_9179[344]]= function(){Tip(this[_$_9179[345]])};N[_$_9179[346]]= function(){UnTip()}}}}}
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/util.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>LoadingDiv Doc:</b>   <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html" target="_blank">JSU LoadingDiv Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     common JSU utility API:<ul> 
+                            <li> select*    API for select </li>
+                            <li> .....    other common API  </li>
+                          </ul>  
+<b>REQUIRE:</b>            JSU: jslog.js dom-drag.js   <BR/>
+<b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+// ================================================= LANGUAGE For alert of User Error   (SW ERROR are always in English)
+// can be change with utilSetLanMsg
+
+var SW_DEBUG_ENABLE = 0;  // 1 during SW DEBUG 
+
+var LAN_MSG_EN = "EN";
+var LAN_MSG_ITA = "ITA";
+var lan_msg = LAN_MSG_EN; 
+
+
+// per funzioni arPmt
+var SELECT_VALUE_ID_SEP = ".";  // separator between ID in a select
+var SELECT_NOVALUE_SEL = "-1";
+//------------
+var TAG_SELECT = "SELECT";
+
+//Prefix used by Cognos
+var ID_PREFIX_SELECT  = "selectList";
+
+// Optionally you can add a Div with a loading Image, that you can show/hide during long operation with setLoading API
+var ID_DIV_LOADING_IMG = "jsuLoading";
+
+//navigator.appName  values
+var APP_NAME_FIREFOX="Netscape";   // FIREFOX
+var APP_NAME_IE="Microsoft Internet Explorer";   // IE
+
+
+//'&nbsp;'    CODE
+var NBSP_CODE = 160;
+
+// Default number separators
+var DEF_COGNOS_GROUP_SEP = ",";
+var DEF_COGNOS_DECIMAL_SEP = ".";
+
+//Used in inputxxxxChecked ,..
+var VAL_CB_CHECKED = "1";
+var VAL_CB_UNCHECKED = "0";
+
+
+var BROWSER_TYPE ={
+	IE: "IE",
+	FIREFOX: "FIREFOX",
+	OTHER: "OTHER"
+};
+
+
+
+//**************************************************************************
+//			    ERROR WARN  FUNCTIONS
+//**************************************************************************
+
+
+function obj2Html(obj){
+	var szHtml = JSON.stringify(obj,null,4);	
+	szHtml = replaceAll (szHtml,"\n","<BR/>");
+	return replaceAll (szHtml,"    ","&nbsp;&nbsp;");
+	
+}
+
+
+
+
+/**
+ * 
+ * @param szMsgHtml
+ * @returns  szMsg in Text Format, that can be displayed by alert
+ */
+function msgHtml2Str(szMsgHtml){
+
+  // -------  \n   instead of specific TAG  
+  var szMsg=  szMsgHtml.replace(/<BR\/>/gi, '\n'); 
+  szMsg=  szMsg.replace(/<ul/gi, '\n<ul');
+  // BUllet
+  szMsg=  szMsg.replace(/<li>/gi, ' \u2022 '); 
+  szMsg=  szMsg.replace(/<li /gi, ' \u2022 <li '); 
+  szMsg=  szMsg.replace(/<\/li>/gi, '\n'); 
+  szMsg=  szMsg.replace(/<\/ul>/gi, '\n'); 
+  // Table
+  // Table Header
+  szMsg=  szMsg.replace(/<th /gi, '\n<th '); 
+  szMsg=  szMsg.replace(/<th>/gi, '\n<th>'); 
+  // Table Row
+  szMsg=  szMsg.replace(/<tr /gi, '\n \u2024 <tr '); 
+  szMsg=  szMsg.replace(/<tr>/gi, '\n \u2024 '); 
+  szMsg=  szMsg.replace(/<\/td>/gi, ' - '); 
+  // var szMsg=  szMsg.replace(/<(?:.|\n)*?>/gm, ''); 
+  szMsg=  szMsg.replace(/<[^>]*>?/gm, '');
+  
+  var arLetter = ['a','A','e','E','u','U','o','O','i','I'];
+  var arType =["grave", "acute", "tilde", "dierese"];
+  for (var iLetter=0; iLetter < arLetter.length; iLetter ++){
+    for (var iType=0; iType < arType.length; iType ++){
+  	  var szFrom = "&" + arLetter[iLetter] + arType[iType] + ';';
+  	  var szTo = arLetter[iLetter] + "`";
+  	  //  E.G: szMsg=  strReplaceAll(szMsg,"&ograve;", "o`");
+  	  szMsg =  strReplaceAll (szMsg,szFrom, szTo);
+    }  
+  }
+  return szMsg;
+}
+
+
+
+
+/**
+ * Replace strange char to allow display as Text
+ * 
+ * @param szStr
+ * @returns  szStr without Strange Char
+ */
+/*  UNDER WORK
+ *  
+function str2DisplayText(szStr){
+	var szStr2 =szStr;
+	var ar2Replace = [[/À/g,"\A`"], [/à/g,"a`"],
+							[/[ÀÁÂÃÅ]/g,"\A`"],
+	                  [/è/g,"e`"],
+	                  [/ì/g,"i`"],
+	                  [/ò/g,"o`"],
+	                  [/ù/g,"u`"] 
+	                  ];
+	for (var i=0;i<ar2Replace.length; i++){
+	  var szPatt = new RegExp(ar2Replace[i][0]);
+		szStr2 = szStr2.replace (szPatt,ar2Replace[i][1]);
+	}
+  return szStr2;
+}
+*/
+
+
+
+/*-----------------------------------------------------------
+Check if Popup function is defined (e.g IEPopup.js is loaded) 
+      RETURN
+true if Popup function is defined      
+-----------------------------------------------------------*/
+function popupIsDefined (){
+
+  return (typeof (Popup) == 'function'); 
+}
+
+
+/*-----------------------------------------------------------
+Show an alert and return iRetVal
+      PAR
+szMsgHtml  in    Msg to show  Can contain also Html Tag
+iRetVal    in 
+      RETURN
+iRetVal
+-----------------------------------------------------------*/
+function showAlert(szMsgHtml, iRetVal){
+	alert (msgHtml2Str(szMsgHtml));
+	return iRetVal;
+}
+
+
+/*-----------------------------------------------------------
+Show a Info 
+@param szMsgHtml  in    Msg to show  Can contain also Html Tag
+@param [objOpt]  {Object}   Optional Object for Popup API if used    
+-----------------------------------------------------------*/
+function showInfo (szMsgHtml, objOpt){
+    jslog(JSLOG_INFO,szMsgHtml) ;
+    if (popupIsDefined()){
+    	Popup (POPUP_TYPE.INFO,szMsgHtml,objOpt);
+    }else {
+     	showAlert (szMsgHtml,0);
+    }
+}
+
+
+/*-----------------------------------------------------------
+Show a Warning and return iRetVal
+@param szMsgHtml  in    Msg to show  Can contain also Html Tag
+@param iRetVal   in    Value to Return
+@param [objOpt]  {Object}   Optional Object for Popup API if used    
+@return iRetVal
+-----------------------------------------------------------*/
+function showWarn (szMsgHtml,iRetVal, objOpt){
+    jslog(JSLOG_INFO,szMsgHtml) ;
+    if (popupIsDefined()){
+    	Popup (POPUP_TYPE.WARN,szMsgHtml, objOpt);
+    }else {
+     	showAlert (szMsgHtml,iRetVal);
+    }
+    return iRetVal;
+}
+
+
+
+
+/*-----------------------------------------------------------
+Show an Error and return iRetVal
+      PAR
+@param szMsgHtml  in    Msg to show  Can contain also Html Tag
+@param [iRetVal] {NUmber}  [1]  in    Value to Return
+@param [objOpt]  {Object}   Optional Object for Popup API if used    
+@return iRetVal
+-----------------------------------------------------------*/
+function showErr (szMsgHtml, iRetVal, objOpt){
+  jslog(JSLOG_ERR,szMsgHtml) ;
+  if (iRetVal == undefined){
+  	iRetVal =1;
+  }
+  if (popupIsDefined()){
+  	Popup (POPUP_TYPE.ERR,szMsgHtml,objOpt);
+  }else {
+   	showAlert (szMsgHtml,iRetVal);
+  }
+  return iRetVal;
+}
+
+
+
+/*-----------------------------------------------------------
+8.4 Show an Error if required (bShowErr = true)
+      PAR
+bShowErr  in    true if I want to show Error
+                false if don't want to show Error
+szMsgErr  in    Msg to show
+iRetVal   in    Value to Return
+      RETURN
+iRetVal
+-----------------------------------------------------------*/
+function showErrIfRequired (bShowErr,szMsgErr,iRetVal){
+    if (bShowErr){
+        showErr (szMsgErr,iRetVal);
+    }
+    return iRetVal;
+}
+
+
+
+
+
+/**
+ * TBD: TO BE VERIFIED for Chroom
+ * @returns {String}    BROWSER_TYPE.IE, BROWSER_TYPE.FIREFOX, BROWSER_TYPE.OTHER
+ */
+function getBrowser(){
+  var Fn = "[Popup.js PopupGetBrowser] ";
+  
+  var szAppName = navigator.appName;
+  var szBrowser = BROWSER_TYPE.OTHER; 
+  // if (navigator.appName == APP_NAME_FIREFOX ){
+  if	(typeof InstallTrigger !== 'undefined'){
+    szBrowser = BROWSER_TYPE.FIREFOX;
+  } else  if  ((navigator.appName == APP_NAME_IE) || 
+      ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
+    szBrowser = BROWSER_TYPE.IE;
+  }  
+  jslog(JSLOG_TEST,Fn + "szBrowser=" + szBrowser + " -  navigator.appCodeName=" + navigator.appCodeName + "  navigator.appName=" + navigator.appName);
+  return szBrowser;
+}
+
+
+
+/*-----------------------------------------------------------
+Check if the Current Browser is  Firefox
+      RETURN
+true  is Mozilla Firefox
+false it is not Mozilla Firefox
+-----------------------------------------------------------*/
+function isFirefox()
+{
+  return (getBrowser() == BROWSER_TYPE.FIREFOX);
+}
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------
+Check if the Current Browser is  IE
+      RETURN
+true  is IE
+false it is not IE
+-----------------------------------------------------------*/
+function isIE()
+{
+
+  return (getBrowser() == BROWSER_TYPE.IE);
+}
+
+
+//DAFARE portare in util.js e mettere warining se non c'e` la var con Popup che dice NOn supportata nella Demo versione
+//fare anche quella che fa Object
+function cookieSetVar(szCookieName, szCookieValue) {
+document.cookie = szCookieName + "=" + szCookieValue;
+alert ("document.cookie=" + document.cookie);
+}
+
+function cookieGetVar(szCookieName) {
+var name = szCookieName + "=";
+alert ("document.cookie=" + document.cookie);
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++) {
+   var c = ca[i];
+   while (c.charAt(0)==' ') c = c.substring(1);
+   if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+}
+return "";
+}
+
+//**************************************************************************
+//			    Get Element
+//**************************************************************************
+
+/*-----------------------------------------------------------
+Get Element By ID and Show Error if required
+      PAR
+Id        in
+[bShowErr]  in   true (default) if I want to show Error
+                false if don't want to show Error
+      RETURN
+el  if founded
+0   if not founded
+-----------------------------------------------------------*/
+function getElementById2(Id,bShowErr)
+{
+	if (bShowErr == undefined){
+		bShowErr = true;
+	}
+    var el = 	document.getElementById(Id);
+    if (el == null) {
+        if (bShowErr && SW_DEBUG_ENABLE){
+        	// TODO some problem with IE Debugger
+          alert("SW ERROR [util.js getElementById2] NOT FOUND Id=" +  Id) ;
+        }
+        return 0;  // Not Found
+    }
+    return el;
+}
+
+
+
+/*-----------------------------------------------------------
+Get Element By ID and Show Error if required
+      PAR
+Id        in
+bShowErr  in    true if I want to show Error
+                false if don't want to show Error
+Fn     	in      Fn calling, to be added in ErrMsg         
+      RETURN
+el  if founded
+0   if not founded
+-----------------------------------------------------------*/
+function getElementById3(Id,bShowErr,Fn)
+{
+    var el = document.getElementById (Id);
+    if (el == null) {
+        if (bShowErr){
+            showErr("SW ERROR [util.js getElementById3] NOT FOUND Id=" +  Id) ;
+        }
+        return 0;  // Not Found
+    }
+    return el;
+}
+
+
+
+
+
+/*
+8.4 return el or 0 if not found and show Error if it not found
+*/
+/*
+function getElementById(Id)
+{
+    return getElementById2(Id,true);
+}
+*/
+
+function getElementByTag2(szTag,szSpanId,bShowErr)
+{
+    return getElementBySpanId2(szSpanId,szTag,bShowErr);
+}
+
+
+
+function getFirstFsByBlock(szBlock,bShowErr)
+{
+    var Fn = "[util.js getFieldset2] ";
+    var block = getElementById2 (szBlock,bShowErr);
+    if (!block){
+    	return 0;
+    }
+    // Get List of all elements with tag
+    try {
+        var fsList = block.getElementsByTagName("FIELDSET");
+        if (!fsList.length){
+        	return 0;
+        }
+        return fsList[0];
+        } catch (e){}
+  if (bShowErr) {
+    jslog(WARNING,Fn + "NOT FOUND FiledSet in Block=" + szBlock);
+  }
+}
+
+
+
+/*-----------------------------------------------------------
+Get a DOM element of a specific Tag using the SpanId of the Span that is before the element
+      PAR
+szSpanId    in
+szTag       in    e.g "INPUT", "SELECT",..
+bShowErr  in    true if I want to show Error
+                false if don't want to show Error
+      RETURN
+DomEl  if found
+0   if not found
+
+-----------------------------------------------------------*/
+function getElementBySpanId2(szSpanId, szTag, bShowErr)
+{
+    if(szTag.toLowerCase()=="button"){
+	    var button = getButtonBySpanId2(szSpanId, bShowErr);
+		if(button) return button;
+	}
+    var Fn = "[util.js getElementBySpanId2] ";
+    // jslog(JSLOG_JSU, Fn + JSLOG_FUN_START);
+    var SpanEl = document.getElementById (szSpanId);
+    if (SpanEl == null) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND SpanId=" +  szSpanId,0);
+    }
+    // Get List of all elements with tag
+    var ElList = SpanEl.getElementsByTagName(szTag);
+
+    if (ElList == null  || !ElList.length) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND Elements with Tag=" + szTag +  " for SpanId=" +  szSpanId,0);
+    }
+    var El = ElList[ElList.length-1];
+    // jslog(JSLOG_JSU, Fn + "IN: SpanId=" + szSpanId + " Tag=\"" + szTag + "\"" +  "  OUT: El  Id=" + El.id  + "  Name=" + El.name);
+    // jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+    return El;
+}
+
+/*-----------------------------------------------------------
+Get a DOM element of a specific Tag and Clas using the SpanId of the Span that is before the element
+      PAR
+szSpanId    in
+szTag       in    e.g "INPUT", "SELECT",..
+szClass     in    e.g 'clsSelectDateEditBox'    to get the INPUT that show the Date in a pickdateControl
+bShowErr  in    true if I want to show Error
+                false if don't want to show Error
+      RETURN
+DomEl  if found
+0   if not found
+
+-----------------------------------------------------------*/
+function getElementOfClassBySpanId2(szSpanId, szTag, szClass, bShowErr)
+{
+    var Fn = "[util.js getElementOfClassBySpanId2] ";
+    // jslog(JSLOG_JSU, Fn + JSLOG_FUN_START);
+    var SpanEl = document.getElementById (szSpanId);
+    if (SpanEl == null) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND SpanId=" +  szSpanId,0);
+    }
+    // Get List of all elements with tag
+    var ElList = SpanEl.getElementsByTagName(szTag);
+
+    if (ElList == null  || !ElList.length) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND Elements with Tag=" + szTag +  " for SpanId=" +  szSpanId,0);
+    }
+    // look for class
+    var bFound = false;
+    var El = 0;
+    for (var i=0; !bFound && i< ElList.length; i++){
+      El = ElList[i];
+      if (El.className == szClass){
+      	bFound = true;
+      }
+    }
+    if (!bFound){
+      return showErrIfRequired (bShowErr,Fn + " NOT FOUND Elements with Tag=" + szTag +  " and Class=" + szClass + " for SpanId=" +  szSpanId,0);
+    }
+    // jslog(JSLOG_JSU, Fn + "IN: SpanId=" + szSpanId + " Tag=\"" + szTag + "\"" +  "  OUT: El  Id=" + El.id  + "  Name=" + El.name);
+    // jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+    return El;
+}
+
+
+/*-----------------------------------------------------------
+Get a Block using the SpanId of the Span that is before the element
+      PAR
+szSpanId    in
+bShowErr  in    true if I want to show Error
+                        false if don't want to show Error
+      RETURN
+BlockEl  if founded
+0   if not founded
+-----------------------------------------------------------*/
+function getBlockBySpanId2(szSpanId, bShowErr)
+{
+  var Fn = "[util.js getBlockBySpanId2] ";
+
+  var span = getElementById2(szSpanId, bShowErr);
+  if (!span ){
+    return 0;
+  }
+  return span.firstChild;	
+}
+
+
+
+function getButtonBySpanId2(szSpanId,  bShowErr)
+{
+    var Fn = "[util.js getButtonBySpanId2] ";
+    jslog(JSLOG_JSU, Fn + JSLOG_FUN_START);
+    jslog(JSLOG_JSU, Fn + "IN: SpanId=" + szSpanId +  "\"");
+    var SpanEl = document.getElementById (szSpanId);
+    if (SpanEl == null) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND SpanId=" +  szSpanId,0);
+    }
+    // Get List of all elements with tag
+	
+    var ElList = SpanEl.getElementsByTagName("INPUT");
+    if (ElList == null  || !ElList.length) {
+	   ElList = SpanEl.getElementsByTagName("BUTTON");
+    }
+
+    if (ElList == null  || !ElList.length) {
+        return showErrIfRequired (bShowErr,Fn + " NOT FOUND Elements with Tag=INPUT/BUTTON for SpanId=" +  szSpanId,0);
+    }
+	for(var i = 0; i < ElList.length; i++)
+    {
+        try{
+            if(ElList[i].type.toLowerCase() == "button"){
+                jslog(JSLOG_JSU,Fn + "OUT: El  Id=" + ElList[i].id  + "  Name=" + ElList[i].name);
+                return ElList[i];
+            }
+        }
+        catch(err){
+        }
+    }
+    showErrIfRequired (bShowErr,Fn + " NOT FOUND Button for SpanId=" +  szSpanId,0);
+    return 0;	
+}
+
+
+/*
+ * @param Caption
+ * @param bShowErr
+ * @returns
+ */
+function getFieldset2(Caption,bShowErr)
+{
+    var Fn = "[util.js getFieldset2] ";
+    // Get List of all elements with tag
+    try {
+        var o = document.getElementsByTagName("FIELDSET");
+        // jslog(JSLOG_JSU,Fn + "getFieldset o.length=" + o.length);
+        for (var i=0; i<o.length; i++) {
+            var el = o[i];
+            var firstChild = el.firstChild;  //legend
+            if (firstChild) {
+                // Look for  "fieldSetCaption" "LEGEND"
+                var TagName = firstChild.tagName;
+                if (TagName == "LEGEND"){
+                    // var TextContent = String(firstChild.textContent);
+                    var CurCaption = String(firstChild.innerHTML);
+                    if (CurCaption.split(Caption).length > 1) {
+                        jslog(JSLOG_JSU,Fn + "FOUND  Caption=" + Caption +  " in textContent=" + CurCaption) ;
+                        return o[i];   // N.B: if return el is wrong, all point to the same!
+                    }
+                }
+            }
+
+        }
+    } catch (e){}
+    if (bShowErr) {
+        jslog(WARNING,Fn + "NOT FOUND Caption=" + Caption);
+    }
+    return 0;
+}
+
+
+/**
+ * get FieldSet by Caption
+ * @param Caption
+ * @returns {Object}
+ */
+function getFieldset(Caption)
+{
+    return getFieldset2(Caption,false);
+
+}
+
+//**************************************************************************
+//			locale
+//**************************************************************************
+
+
+
+/*-------------------------------------------------------------
+Return Group Separator  used for Current locale
+    RETURN
+e.g    ","
+--------------------------------------------------------------*/
+function localeGetGroupSep()  {
+    var Fn = "[util.js localeGetGroupSep] ";
+    //jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+    var Num=1234;
+    var NumStr=Num.toLocaleString();
+    var Sep = NumStr.charAt(1);
+    if (Sep == "2"){
+        Sep = ""; // Group separator can be absent
+    }
+    jslog(JSLOG_JSU,Fn + "GroupSeparetor=" + Sep);
+    return Sep;
+
+}
+
+
+
+/*-------------------------------------------------------------
+Return Decimal Separator t used for Current locale
+    RETURN
+e.g    "."
+--------------------------------------------------------------*/
+function localeGetDecimalSep()  {
+    var Fn = "[util.js localeGetDecimalSep] ";
+    var Num=1.23;   // this is always a number with decimal
+    var NumStr=Num.toLocaleString();
+    var Sep = NumStr.charAt(1);
+    if (Sep == "2"){
+        Sep = "."; //default
+        jslog(JSLOG_ERR,Fn + "DecimalSeparetor NOT found. Used default = " + Sep);
+    }
+    jslog(JSLOG_JSU,Fn + "DecimalSeparetor=" + Sep);
+    return Sep;
+}
+
+//**************************************************************************
+//			Conversion
+//**************************************************************************
+
+
+
+
+/*-------------------------------------------------------------
+Replace all occurrences of from with to
+@param szOrig in
+@param from in   e.g  "&nbsp;"
+@param to   in   e.g " " 
+@return 
+--------------------------------------------------------------*/
+function strReplaceAll (szOrig,szFrom,szTo){
+	var szNew = szOrig;
+	while (szNew.indexOf(szFrom) >=0){
+		szNew = szNew.replace (szFrom,szTo);
+	}
+	return szNew;	
+}
+
+
+
+
+
+
+/*-------------------------------------------------------------
+8.4
+    PARAMETER
+NumStr        in    e.g  "1,234.56"
+GroupSep      in    e.g  ","
+DecimalSep    in    e.g  "."
+    RETURN
+Float       e.g 1234.55
+--------------------------------------------------------------*/
+function str2Num(NumStr,GroupSep,DecimalSep)
+{
+    NumStr2 = NumStr;
+    if (typeof(GroupSep) != 'undefined'  &&  GroupSep.length){
+        while (NumStr2.indexOf(GroupSep) > -1){
+            NumStr2 = NumStr2.replace(GroupSep,"");
+        }
+    }
+
+    // Replace DecimalSeparetor with "."
+    if (typeof(DecimalSep) != 'undefined'  && DecimalSep != "."){
+        NumStr2 = NumStr2.replace(DecimalSep,".");
+    }
+    Num = parseFloat(NumStr2);
+    if (isNaN(Num)) Num = 0;
+    return Num;
+}
+
+
+
+/**
+ * @param iNum 			e.g    123
+ * @param szPad			"0"
+ * @param iLenWithPad	5 
+ * @returns  "00123
+ */
+function num2StrPad(iNum,szPad, iLenWithPad) {
+  var iZeroPad = iLenWithPad - iNum.toString().length + 1;
+  return Array(+(iZeroPad > 0 && iZeroPad)).join("0") + iNum;
+}	  
+
+
+
+/*-------------------------------------------------------------
+8.4  Get String from Cognos Text.
+For example convert "&nbsp;" into " "
+&nbsp; is the entity used to represent a non-breaking space
+    PAR
+Text        in    e.g  "NNN&nbsp;dd,&nbsp;yyyy&nbsp;HH:mm"
+
+    RETURN
+String       e.g "NNN dd, yyyy HH:mm"
+--------------------------------------------------------------*/
+function html2Str(Text)
+{
+    var Fn = "[util.js html2Str] ";
+    var Text2 = new String("");
+    // replace "&nbsp;" with " "
+
+    
+    // First we try with String
+    Text=strReplaceAll(Text,"&nbsp;"," ");
+    // Second: Try to Replace The Single CODE
+    for (var i=0; i < Text.length; i++){
+        var Code = Text.charCodeAt(i);
+        var Ch= Text.charAt(i);
+        if (Code == NBSP_CODE){
+          // jslog(JSLOG_JSU,Fn + "Found " + Code+ "  at pos=" + i);
+            // it is '&nbsp;'
+          Ch=' ';
+        }
+        Text2 = Text2 + Ch;
+    }
+    // jslog(JSLOG_JSU,Fn + "IN=" + Text + "  OUT=" + Text2);
+    return Text2;
+}
+
+
+
+/* ====================================================================================================================
+ *  							Object  Serialize - Deserialize
+ ==================================================================================================================== */
+
+/*-----------------------------------------------------------
+Serialize an object into a String
+NOTE: Use objDeserialize to get the object from String
+@param obj		{Object}   in   The object to serialize
+		EXAMPLE
+obj.objFilterR.bTensioneDis=false 
+obj.objFilterR.iBloccoEnNum=1 
+obj.objFilterR.szIsoDataDa":"2016-01-01"
+
+obj will be serialized as: {"objFilterR":{"bTensioneDis":false,"iBloccoEnNum":1,"szIsoDataA":"2016-02-23"}}
+------------------------------------------------------------*/
+function objSerialize(obj) {
+	
+	return JSON.stringify(obj,null,0);
+}
+
+
+/*-----------------------------------------------------------
+Deserialize an object that was serialized  with objSerialize 
+@param    szObj {String} in		Example: {"objFilterR":{"bTensioneDis":false,"iBloccoEnNum":1,"szIsoDataA":"2016-02-23"}}
+@return 	obj		{Object} The object that was serialized into szobj
+------------------------------------------------------------*/
+function objDeserialize(szObj) {
+	var obj;
+	
+	if (szObj == undefined || szObj.length == 0){
+		obj = new Object(); // Empty Object
+	}else {
+		obj = JSON.parse(szObj);
+	}
+	return obj;
+}
+
+/*-----------------------------------------------------------
+Serialize an object into a String and then Encode it into URI 
+NOTE: Use objFromURI to get the object from URI
+@param obj		{Object}   in   The object to serialize  Es  {szAlertType='Info',.....}
+@return szObjURIQueryString   es ?%7B%22szAlertType%22%3A%22Info.......
+------------------------------------------------------------*/
+function obj2URI(obj) {
+	
+	return  encodeURIComponent(objSerialize(obj));
+}
+
+
+/*-----------------------------------------------------------
+Deserialize an object that was serialized and Encoded into URI  with obj2URI 
+@param    szObj {String} in		Example: '{"szAlertType"="Info",.....}' 
+@return 	obj		{Object} The object that was serialized into szobj.   Ex: {szAlertType='Info',.....}
+------------------------------------------------------------*/
+function objFromURI(szObjURI) {
+	var Fn = "[util.js objFromURI]";
+	var obj;
+	
+	var szObj = szObjURI;
+	if (szObj == undefined || szObj.length == 0){
+		obj = new Object(); // Empty Object
+	}else {
+		var szObj = decodeURIComponent(szObjURI);
+		obj = objDeserialize(szObj);
+	}
+	// alert (Fn + "obj=" + JSON.stringify(obj,null,0));
+	return obj;
+}
+
+
+/*-----------------------------------------------------------
+Serialize an object into a String and Encode it into URI QuesryString 
+NOTES: 
+  - like obj2URI with also ? added ad the beginning
+  - Use objFromURIQueryString to Get the Object
+@param obj		{Object}   in   The object to serialize  Es  {szAlertType='Info',.....}
+@return szObjURIQueryString   e.g. ?%7B%22szAlertType%22%3A%22Info.......
+------------------------------------------------------------*/
+function obj2URIQueryString(obj) {
+	
+	var szObjURI = encodeURIComponent(objSerialize(obj));
+	if (szObjURI.length){
+		return "?" + szObjURI; 
+	}else {
+		return ""; 
+	}
+}
+
+
+/*-----------------------------------------------------------
+Deserialize an object that was serialized and Encoded into URI  with obj2URI 
+@param    szObjURIQueryString   e.g. ?%7B%22szAlertType%22%3A%22Info.......
+@return 	obj		{Object} The object that was serialized into szobj.   Ex: {szAlertType='Info',.....}	
+								null if Error or szObjURIQueryString Empty 
+------------------------------------------------------------*/
+function objFromURIQueryString(szURIQueryString) {
+	var obj;
+	
+	if (szURIQueryString.length){
+		return objFromURI(szURIQueryString.substr(1));
+	}else{
+		return null; 
+	}
+}
+
+
+
+//**************************************************************************
+//				SELECT FUNCTION
+//**************************************************************************
+
+
+/* --------------------------------------------------------------------------------
+Get Index of First Opt with Value Containing szValue
+   PAR
+Select      in    
+szValue     in value to Find
+   RETURN 
+-1   if Not Found Not Found (or Error)
+0.. Index of First Opt Containing Value
+-------------------------------------------------------------------------------- */
+function selectGetFirstIndWithVal(Select,szValue)
+{
+  var Fn = "[util.js selectGetFirstIndWithVal] ";
+  if (!Select){
+    jslog(JSLOG_JSU,Fn + " Select is NULL!");
+    return -1;
+  }
+
+  for (i=0; i < Select.options.length ;  i++) {
+    Opt = Select[i];
+    if (Opt.value.indexOf(szValue) > -1){
+      jslog(JSLOG_JSU,Fn + " Value=" + szValue + "  First contained in opt[" + i + "]");
+      return i;  
+    }
+  }
+  jslog(JSLOG_JSU,Fn + " Value=" + szValue + "  is not contained in any opt of select");
+  return -1;  
+}
+
+/* --------------------------------------------------------------------------------
+populate ArOpt with all the Option of a select 
+   PAR
+Select      in    
+ArOpt      in/out Array of cOpt
+   RETURN 
+-1   if Not Found Not Found (or Error)
+N  Number of Optiion (ArOpt Size)
+-------------------------------------------------------------------------------- */
+function select2ar(Select,ArOpt)
+{
+  var Fn = "[util.js select2ar] ";
+  // Clear ArOpt
+  for (i = 0; i < ArOpt.length; i++){
+    ArOpt.pop();
+  }  
+  if (!Select){
+    jslog(JSLOG_JSU,Fn + " Select is NULL!");
+    return -1;
+  }
+  for (i=0; i < Select.options.length  ; i++) {
+    Opt = Select[i];
+    ArOpt[i] = new cOpt(Opt.text,Opt.value);
+  }  
+  return  ArOpt.length;
+}
+
+
+/* --------------------------------------------------------------------------------
+populate ArOpt with the Option of a select starting from iStartInd
+   PAR
+Select          in    
+iSelectStartInd in 
+_ArOpt          out Array of cOpt
+   RETURN 
+-1   if Not Found Not Found (or Error)
+N  Number of Option (ArOpt Size)
+-------------------------------------------------------------------------------- */
+function select2arFromInd(Select,iSelectStartInd,_ArOpt)
+{
+  var Fn = "[util.js select2arFromInd] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + " IN iSelectStartInd=" + iSelectStartInd);
+  // Clear ArOpt
+  for (i = 0; i < _ArOpt.length; i++){
+    _ArOpt.pop();
+  }  
+  if (!Select){
+    jslog(JSLOG_JSU,Fn + " Select is NULL!");
+    return -1;
+  }
+  for (iAr=0, i=iSelectStartInd; i < Select.options.length  ; i++, iAr++) {
+    Opt = Select[i];
+    _ArOpt[iAr] = new cOpt(Opt.text,Opt.value);
+    
+  }  
+  jslog(JSLOG_JSU,Fn + " RETURN _ArOpt.length=" + _ArOpt.length);
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return  _ArOpt.length;
+}
+
+/* --------------------------------------------------------------------------------
+populate ArOpt with the Option of a select Till iEndInd  (With also iSelectEndInd)
+   PAR
+Select          in    
+iSelectEndInd 	in 
+_ArOpt          out Array of cOpt
+   RETURN 
+-1   if Not Found Not Found (or Error)
+N  Number of Option (ArOpt Size)
+-------------------------------------------------------------------------------- */
+function select2arTillInd(Select,iSelectEndInd,_ArOpt)
+{
+  var Fn = "[util.js select2arFromInd] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + " IN iSelectEndInd=" + iSelectEndInd);
+  // Clear ArOpt
+  for (i = 0; i < _ArOpt.length; i++){
+    _ArOpt.pop();
+  }  
+  if (!Select){
+    jslog(JSLOG_JSU,Fn + " Select is NULL!");
+    return -1;
+  }
+  for (iAr=0, i=0; (i < Select.options.length && i <= iSelectEndInd)  ; i++, iAr++) {
+    Opt = Select[i];
+    _ArOpt[iAr] = new cOpt(Opt.text,Opt.value);
+    
+  }  
+  jslog(JSLOG_JSU,Fn + " RETURN _ArOpt.length=" + _ArOpt.length);
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return  _ArOpt.length;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------------------
+Get Number of Selected Items in Select
+   PAR
+Select in    
+   RETURN 
+N    Number of Itemns selected
+0    No Items Selected
+-1   if Select Not Found (or Error)
+-------------------------------------------------------------------------------- */
+function selectGetSelectedNum(Select)
+{
+  var Fn = "[util.js selectGetSelectedNum] ";
+  if (!Select){
+    jslog(WARNING,Fn + " Select is NULL!");
+    return -1;
+  }
+  var iSelNum=0;
+  var iOptNum=Select.options.length;
+  for (var i=0; i < iOptNum; i++) {
+    var Opt = Select[i];
+    if (Opt.selected){ 
+      iSelNum++;
+ 	  }
+  }
+  return iSelNum;
+}
+
+
+/*
+Look for value in select and return relative text. If not found set to DefText
+      PAR
+Select    i     sel object
+Value     i     String that identify value
+DefText   i     Default Value to return if not found Value
+*/
+function selectGetTextFromValue(Select,Value,DefText)
+{
+    var Fn = "[util.js selectGetTextFromValue] ";
+    //jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+    if (!Select){
+        jslog(JSLOG_JSU,Fn + " Select is NULL - RETURN DefText=" + DefText);
+        return DefText;
+    }
+    // jslog(JSLOG_JSU,"[util.js selectGetTextFromValue]  size=" + Select.options.length);
+    for (var i=0; i < Select.options.length; i++) {
+        var CurValue = html2Str (Select[i].value);
+        if (CurValue == Value) {
+            var CurText = html2Str (Select[i].text);
+            jslog(JSLOG_JSU,Fn + "Value=" +Value + "  FOUND - RETURN Text=" + CurText);
+            return CurText;
+        }
+    }
+    // It is not an Error, it is allowed. return DefText
+    jslog(JSLOG_JSU,Fn + " Value=" +Value + "  NOT FOUND - RETURN DefText=" + DefText);
+    return DefText;
+
+}
+
+
+
+
+/*==================================================================
+Remove All Option (Items)
+==================================================================*/
+function selectRemoveAllOption(Select)
+{
+  if (Select != 0){
+    for (i = Select.length - 1; i >= 0; i--) {
+       Select[i] = null;
+    }
+  }
+}  
+
+
+/*==================================================================
+Remove All Option (Items), preserving First N
+==================================================================*/
+function selectRemoveOption(Select,iPreserveFirstN)
+{
+  if (Select != 0){
+    for (i = Select.length - 1; i >= iPreserveFirstN; i--) {
+       Select[i] = null;
+    }
+  }
+}  
+
+
+/* 8.4
+Look for first occurence of Value in a select and select it if found
+   RETURN
+SelIndex  if found and selected
+-1   if Not Found
+*/
+function selectSelValue(Select,Value)
+{
+    var Fn = "[util.js selectSelValue] ";
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return -1;
+    }
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurValue = html2Str (Opt.value );
+        if (CurValue == Value) {
+            // jslog(JSLOG_JSU,Fn + " Found Value=" + Value + "  in " + Select.name + "   Text=" + Opt.text + "\nRETURN SelInd=" + i);
+            Opt.selected = true;
+            Select.selectedIndex = i;
+            return i;
+        }
+    }
+    // This is not an Error: if I try to select a value not present I simply trace it and return -1
+    jslog(JSLOG_JSU,Fn + " NOT FOUND Value=" + Value + "  in " + Select.name);
+    return -1;
+}
+
+
+// if Select != 0 Remove first 2 elements (dded by Cognos), only if they are present
+function selectRemoveCognosEl(Select)
+{
+    removeExtraItems(Select);
+    /*
+    if (Select){
+        Select.remove(1);
+        Select.remove(0);        
+        Select.removeAttribute("hasLabel");       
+    }
+    */
+}
+
+/* 8.4
+Look for first occurrence of Value in a select and remove it if found
+   RETURN
+SelIndex  if found
+-1   if Not Found
+*/
+function selectRemoveValue(Select,Value)
+{
+    var Fn = "[util.js selectRemoveValue] ";
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return -1;
+    }
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurValue = html2Str (Opt.value );
+        if (CurValue == Value) {
+            jslog(JSLOG_JSU,Fn + " Found Value=" + Value + "  in " + Select.name + "   Text=" + Opt.text + "\n SelInd=" + i + "      NOW REMOVING IT");
+            Select[i]=null;
+            return i;
+        }
+    }
+    jslog(JSLOG_JSU,Fn + " NOT FOUND Value=" + Value + "  in " + Select.name);
+    return -1;
+}
+
+/* ---------------------------------------------------
+Remove All Options of a Select
+ ---------------------------------------------------*/
+function selectRemoveAll(Select)
+{
+   var Fn = "[util.js selectRemoveAll] ";
+   
+   var i=0;
+   if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return -1;
+  }
+  for (i = Select.length - 1; i >= 0; i--) {
+        Select[i] = null;
+  }
+}
+
+
+/* ---------------------------------------------------
+		RETURN
+TRUE  selet is MultiSelect
+FALSE selet is NOT MultiSelect		
+ ---------------------------------------------------*/
+function selectIsMulti(Select)
+{
+   var Fn = "[util.js selectIsMulti] ";
+   
+   return Select.multiple;
+}
+
+
+
+/* ---------------------------------------------------
+if they are present We remove the 2 Extra items added to the beggining of the 
+select by Cognos
+e.g. 
+   FilterTimeMode
+   ---------------
+
+    PAR
+Select  in
+--------------------------------------------------- */
+function selectRemoveExtraItems(Select)
+{
+  var Fn = "[util.js selectGetTextFromValue] ";
+
+  if(!Select || Select.options.length < 1) {
+     return;
+  }
+
+  // jslog(JSLOG_JSU,Fn + "Removing 2 Extra Items from Select" + Select.name);
+  try{
+        var szText = Select.childNodes[1].text;
+        if(szText.match("----")){
+            Select.remove(1);
+            Select.remove(0);
+            Select.removeAttribute("hasLabel");
+            jslog(JSLOG_JSU,Fn + "Succesfully Removed 2 Extra Items from Select " + Select.name);
+            return;
+        }
+  }
+  catch(err){
+    //ignore it
+  }
+
+}
+
+
+
+
+
+
+/*
+Look for first occurence of Text in a select and select it if found
+   RETURN
+SelIndex  if found and selected
+-1   if Not Found
+*/
+function selectSelText(Select,Text)
+{
+    var Fn = "[util.js selectSelText] ";
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return -1;
+    }
+    // jslog(JSLOG_JSU,Fn + Select.name + "  len=" + Select.options.length);
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurText = html2Str (Opt.text);
+        // jslog(JSLOG_JSU,Fn + " CurText=" + CurText + "  len= " + CurText.length + ")     Looking for Text=" + Text + " (len=" + Text.length + ")");
+        if (CurText == Text) {
+            jslog(JSLOG_JSU,Fn + " SELECT Found Text=" + Text  + "  in " + Select.name + "\nValue=" + Opt.value+ "\nRETURN SelInd=" + i);
+            Opt.selected = true;
+            return i;
+        }
+    }
+    jslog(JSLOG_JSU,Fn + " NOT FOUND Text=" + Text + "  in " + Select.name);
+    return -1;
+}
+
+
+
+/*
+Get Text of Opt with Value
+    PAR
+Select 	in
+Value		in 	
+    RETURN
+Text related to Opt with Value
+*/
+function selectGetTextOfValue(Select,Value)
+{
+    var Fn = "[util.js selectGetTextOfValue] ";
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return "Select is NULL";
+    }
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurValue = html2Str (Opt.value);
+        if (CurValue == Value) {
+            var Text = html2Str (Opt.text);
+            jslog(JSLOG_JSU,Fn + " Found Value=" + Value + "   Text=" + Text);
+            return Text;
+        }
+    }
+    return Value + " NOT FOUND";
+
+}
+
+
+/*
+Get value of Opt with Text
+    PAR
+Select 	in
+Text		in 	
+    RETURN
+Value related to Opt with Text
+*/
+function selectGetValueOfText(Select,Text)
+{
+    var szText1 = html2Str (Text);
+    var Fn = "[util.js selectGetValueOfText] ";
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return "Select is NULL";
+    }
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurText = html2Str (Opt.text);
+       
+        if (CurText == szText1) {
+            var Value = html2Str (Opt.value);
+            jslog(JSLOG_JSU,Fn + " Found Text=" + szText1+ "   Value=" + Value);
+            return Value;
+        }
+    }
+    return Text + " NOT FOUND";
+}
+
+
+
+
+/*
+Get Sel Status of OPt with value=Value
+    PAR
+Select 	in
+Value		in 	
+    RETURN
+SelStatus (true or false)
+*/
+function selectGelSelectedStatus(Select,Value)
+{
+    var Fn = "[util.js selectSelValue] ";
+    var SelectedStatus = false;
+    if (!Select){
+        jslog(WARNING,Fn + " Select is NULL!");
+        return SelectedStatus;
+    }
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var CurValue = html2Str (Opt.value );
+        if (CurValue == Value) {
+            //jslog(JSLOG_JSU,Fn + " Found Value=" + Value + "  in " + Select.name + "   Text=" + Opt.text + "    Selected=" + Opt.selected);
+            return Opt.selected;
+        }
+    }
+    return SelectedStatus;
+}
+
+
+/*
+Get a String with the List of text   values of a select (useful for Debug)
+*/
+function selectGetDesc(Select)
+{
+    var Desc = new String("name: " + Select.name + "\n\ntext      value\n\n");
+
+    for (var i=0; i < Select.options.length; i++) {
+        var Opt = Select[i];
+        var Line = new String("\n" + Opt.text + "     " + Opt.value);
+        Desc += Line;
+    }
+    return Desc;
+}
+
+
+function appendOptionLast(Select,Text,Value)
+{
+   var Opt = new Option(Text, Value);
+   Select[Select.length] = Opt;
+   Opt.dv = Text;
+}
+
+
+function appendOptionSelLast(Select,Text,Value,bSel)
+{
+    appendOptionLast(Select,Text,Value);
+    if (bSel){
+        var Opt = Select[Select.length-1];
+        Opt.selected = true;
+    }
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Get the List of Elements of a Multi Select
+	PAR
+Select	in
+_ArId	out	Array with the IDs (value) 
+	RETURN
+_ArId.length	
+----------------------------------------------------------------------------------------------*/
+function selectGetList (Select,_ArId){
+  var Fn = "[util.js selectGetList] ";
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  _ArId.length=0;
+  var iAr=0;
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+    _ArId[iAr++] = Opt.value;
+  }
+  // jslog(JSLOG_JSU,Fn + " return  _ArId.length=" +_ArId.length + "  " +  JSLOG_FUN_START);
+  return _ArId.length;
+}
+
+/*----------------------------------------------------------------------------------------------
+Get the List of Elements Selected in a Multi Select
+	PAR
+Select	in
+_ArSelId	out	Array with the IDs (value) selected
+	RETURN
+_ArSelId.length	   (Number of Element Selected)
+----------------------------------------------------------------------------------------------*/
+function selectGetSelList (Select,_ArSelId){
+  var Fn = "[util.js selectGetSelList] ";
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  _ArSelId.length=0;
+  var iAr=0;
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  if (Opt.selected){
+       _ArSelId[iAr++] = Opt.value;
+	  }  
+  }
+  // jslog(JSLOG_JSU,Fn + " return  _ArSelId.length=" +_ArSelId.length + "  " +  JSLOG_FUN_START);
+  return _ArSelId.length;
+}
+
+/*----------------------------------------------------------------------------------------------
+Get the Number of Elements Selected
+	PAR
+Select	in
+	RETURN
+iSelNum 
+-1 ERR
+----------------------------------------------------------------------------------------------*/
+function selectGetSelNum (Select){
+  var Fn = "[util.js selectGetSelNum] ";
+  var iSelNum = 0;
+  if (!Select){
+    jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+    return 0;
+  }
+  
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  if (Opt.selected){
+	  	iSelNum ++;
+	  }  
+  }
+  jslog(JSLOG_JSU,Fn + "  return  iSelNum=" + iSelNum);
+  return iSelNum;
+}  
+
+/*----------------------------------------------------------------------------------------------
+Get the Number of Items (Options) in Select
+	PAR
+Select	in
+	RETURN
+iItemNum 
+-1 ERR
+----------------------------------------------------------------------------------------------*/
+function selectGetOptNum (Select){
+  var Fn = "[util.js selectGetOptNum ] ";
+
+  if (!Select){
+    jslog(JSLOG_JSU,Fn +  "Select =0  return 0");
+    return 0;
+  }
+  return Select.options.length; 
+}  
+
+
+
+/*----------------------------------------------------------------------------------------------
+Get the Number of Elements that will be considered in Filter basing on current selection:
+	PAR
+Select	in
+	RETURN
+iNumFilterEl:	
+- if iSelNum > 0 : iNumFilterEl = iSelNum
+- if iSelNum=0  : iNumFilterEl = iNumItem  (ALL entries will be considered in Filter)
+----------------------------------------------------------------------------------------------*/
+function selectGetNumFilterEl (Select){
+  var Fn = "[util.js selectGetNumFilterEl] ";
+  var iSelNum = selectGetSelNum (Select);
+  if (iSelNum < 0) {
+  	return 0;
+  }
+  var iNumFilterEl = (iSelNum > 0) ? iSelNum : Select.options.length; 
+  jslog(JSLOG_JSU,Fn + "iSelNNum=" + iSelNum + "  return  iNumFilterEl=" +iNumFilterEl);
+  return iNumFilterEl;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Get the Labels of the Elements Selected in a Multi Select. They can be displayed in Report Heading
+	PAR
+Select	in
+	RETURN
+  e.g     2degrees - GSM 900/1800 - NEW ZEALAND,  3 - 3G 2100 - SWEDEN
+----------------------------------------------------------------------------------------------*/
+function selectGetSelLabels (Select){
+  var Fn = "[util.js selectGetSelList] ";
+  var szSelLabels = "";
+  var bFirst  = true;
+  
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  if (Opt.selected){
+       if (bFirst){
+         szSelLabels = Opt.text;
+         bFirst = false;
+       } else {
+         szSelLabels = szSelLabels + ", " + Opt.text;
+       }
+	  }  
+  }
+  return szSelLabels;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Get the values of the Elements Selected in a Multi Select. 
+e.g. They can be used in a Where condition or to find a Value
+	PAR
+Select	in
+bValueAsString in   [false] true if the values must be considered as String, adding ''  
+
+	RETURN
+  e.g  bValueAsString=false   1, 4, 12
+  e.g  bValueAsString=false   MT, BT
+  e.g  bValueAsString=true   'MT', 'BT'
+  
+----------------------------------------------------------------------------------------------*/
+function selectGetSelValues (Select,bValueAsString){
+  var Fn = "[util.js selectGetSelValues] ";
+  var szSelValues = "";
+  var bFirst  = true;
+  
+  if (bValueAsString == undefined){
+  	bValueAsString = false;
+  }
+  
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  if (Opt.selected){
+   	   var szSelVal = Opt.value;
+    	 if (bValueAsString){
+         szSelVal = "'" + szSelVal + "'";
+    	 }  
+       if (bFirst){
+         szSelValues = szSelVal;
+         bFirst = false;
+       } else {
+         szSelValues = szSelValues + ", " + szSelVal;
+       }
+	  }  
+  }
+  return szSelValues;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Get the values of the Elements in a Multi Select. 
+e.g. They can be used in a Where condition or to find a Value
+	PAR
+Select	in
+	RETURN
+  e.g     Sig1, Sig4, Sig-12
+----------------------------------------------------------------------------------------------*/
+function selectGetValues (Select){
+  var Fn = "[util.js selectGetValues] ";
+  var szSelValues = "";
+  var bFirst  = true;
+  
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  if (bFirst){
+         szSelValues = Opt.value;
+         bFirst = false;
+      } else {
+         szSelValues = szSelValues + ", " + Opt.value;
+      }	    
+  }
+  return szSelValues;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Deselect All Item in a Multi Select 
+	PAR
+Select	in
+----------------------------------------------------------------------------------------------*/
+function selectDeselectAll (Select){
+  var Fn = "[util.js selectDeselectAll] ";
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  if (Select.selectedIndex != -1){
+    Select.selectedIndex = -1;
+  }
+  /*
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  Opt.selected = false;
+  }
+  */
+}
+
+/*----------------------------------------------------------------------------------------------
+select All Item in a Multi Select 
+	PAR
+Select	in
+----------------------------------------------------------------------------------------------*/
+function selectSelectAll (Select){
+  var Fn = "[util.js selectSelectAll] ";
+  if (!Select){
+    return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
+  }
+  for (var iOpt=0; iOpt < Select.options.length; iOpt ++){
+    var Opt = Select.options[iOpt];
+	  Opt.selected = true;
+  }
+}
+
+
+/*----------------------------------------------------------------------------------------------
+Get the Value Selected in selectedIndex 
+	PAR
+Select	in
+bValueAsString in   [false] true if the values must be considered as String, adding ''  
+	RETURN
+SelValue	  or "-1" if Nothing Selected  (SELECT_NOVALUE_SEL)
+Es:     bValueAsString=true      "'MT'"
+Es:     bValueAsString=true      ""     (ALL Item selected)
+----------------------------------------------------------------------------------------------*/
+function selectGetSelVal (Select,bValueAsString){
+  var Fn = "[util.js selectGetSelVal] ";
+  var szSelVal = SELECT_NOVALUE_SEL;
+  
+  if (bValueAsString == undefined){
+  	bValueAsString = false;
+  }
+  if (!Select){
+    return szSelVal;
+  }
+  var iSelInd = Select.selectedIndex;
+  if (iSelInd < 0){
+    return szSelVal;
+  }
+  szSelVal = html2Str(Select.options[iSelInd].value);
+  if (bValueAsString){
+		// NOTE: if "" it is ALL item. we mantain it without adding ' 
+  	if (szSelVal.length){
+      szSelVal = "'" + szSelVal + "'";
+  	}
+  }  
+  return szSelVal;
+} 
+
+
+/*----------------------------------------------------------------------------------------------
+Get the Value Selected in a Single select
+	PAR
+Select	in
+	RETURN
+SelValue	  or "-1" if Nothing Selected  (SELECT_NOVALUE_SEL)
+----------------------------------------------------------------------------------------------*/
+function selectGetSelText (Select){
+  var Fn = "[util.js selectGetSelText] ";
+  var szSelText = SELECT_NOVALUE_SEL;
+  
+  if (!Select){
+    return szSelText;
+  }
+  var iSelInd = Select.selectedIndex;
+  if (iSelInd < 0){
+    return szSelText;
+  }
+  return html2Str(Select.options[iSelInd].text);
+} 
+
+
+
+/**
+ * Populate an empty select
+ * @param select
+ * @param arOpt
+ * @param szSelVal 
+ */
+function selectPopulate(select, arOpt, szSelVal){
+ for (var i=0; i< arOpt.length; i++){
+  	var el = arOpt[i];
+  	var bSel = (el[0] == szSelVal);
+  	appendOptionSelLast (select,el[1],el[0],bSel);
+  }  
+}
+
+
+/*-----------------------------------------------------------
+Read Select and if it has Items selected, it Adds "AND condition" 
+      PAR
+Select	in
+szDbId	in	e.g "ROAMINGTYPE"
+szFilter	in	Current Filter e.g  "PLMNCARRIERID=1001 AND DIRECTION = 1"
+    RETURN
+szFilter   (with the new condition)	
+e.g  "PLMNCARRIERID=1001 AND DIRECTION = 1 ANd ROAMINGTYPE IN (1,2)"
+------------------------------------------------------------*/
+function selectAddFilterCond(Select,szDbId,szFilter) {
+  var szFilterAnd = (szFilter.length < 4) ? " " : " AND "; 
+  var Fn = "[util.js selectAddFilterCond] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + "IN: szFilter=" + szFilter);
+  var ArSelId= new Array();
+  var ArId= new Array();
+
+  var iFilterNum = selectGetSelList (Select,ArSelId);
+  if  (iFilterNum == 1){
+    szFilter += szFilterAnd  + szDbId + " = " + ArSelId[0];  
+  } else if  (iFilterNum > 1){
+    szFilter += szFilterAnd + szDbId +" IN (" + ar2List(ArSelId) + ")";  
+  } 
+  jslog(JSLOG_JSU,Fn + "OUT: szFilter=" + szFilter);
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return szFilter;
+}  
+
+
+
+
+/*-----------------------------------------------------------
+Get the Select All and Deselect All Elements in a Block having a Select List
+	PAR
+szBlockId		in 		Span containing the Block with the select
+_ArSelAllEl		out 		Array with [SelectAll,DeselectAll]
+bShowEr		in
+	RETURN
+0		OK	
+Other	Error
+------------------------------------------------------------*/
+function getSelAllEl(szBlockId,_ArEl,bShowEr) {
+  var Fn = "[util.js getSelAllEl] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + "IN szBlockId=" + szBlockId);
+  var iSize = 0;
+  var BlockEl = document.getElementById (szBlockId);
+  if (BlockEl == null) {
+    return showErrIfRequired (bShowEr,Fn + " NOT FOUND BlockId=" +  szBlockId,1);
+  }
+  // Get List of all elements with tag 'A'  ("Select All" "Delect All"), Present only if it is a MultiSelect
+  ElList = BlockEl.getElementsByTagName("A");
+  if (ElList == null  || ElList.length != 2) {
+    return showErrIfRequired (bShowEr,Fn + " NOT FOUND the 2 Elements with Tag A for BlockId=" +  szBlockId,1);
+  }
+  _ArEl[iSize++] = ElList[0];
+  _ArEl[iSize++] = ElList[1];
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return 0; // OK 
+}  
+
+
+
+/*-----------------------------------------------------------
+Move the Select/Deselect All object of a filter to the Right (instead of below)
+	PAR
+szFilterNameId	in		e.g "TrType"  --> "blockFilterTrType", "spanSelectAllTrType","spanDeselectAllTrType"	
+bShowEr		in
+	RETURN
+0		OK	
+Other	Error
+------------------------------------------------------------*/
+function filterSelAllEl2R(szFilterNameId,bShowEr) {
+  var Fn = "[util.js filterSelAllEl2R] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + "IN szFilterNameId=" + szFilterNameId);
+
+  var ArSelEl = new Array();
+  // Get "Select All" and "Deselect All" Object
+  getSelAllEl ("blockFilter" + szFilterNameId,ArSelEl,bShowEr);
+  // Move the object into the spans on the right
+  var ArSpanEl = new Array("spanSelectAll" + szFilterNameId,"spanDeselectAll" + szFilterNameId);
+  for (iAr=0; iAr < 2;iAr++){
+    var Span = getElementById2(ArSpanEl[iAr],bShowEr);
+    Span.appendChild (ArSelEl [iAr]);
+    ArSelEl [iAr].style.fontSize = "8pt";
+  }
+  return 0; // OK
+}
+
+
+
+//**************************************************************************
+//   Loading and Cursor Wait
+//**************************************************************************
+
+
+
+function setCursorWait(bWait)
+{
+	  // jslog(JSLOG_JSU,"setCursorWait " + bWait);
+    var Cursor = bWait ? 'wait' : 'default';
+
+    document.body.style.cursor = Cursor;
+
+    // ------------------------ set Wait cursor also for all the elements
+    var TagAr = new Array("IMG","TD","INPUT","BUTTON","SELECT");
+    for (var ArInd=0; ArInd < TagAr.length; ArInd++)
+    {
+        var Tag = TagAr[ArInd];
+        var o = document.getElementsByTagName(Tag);
+        for (var i=0; i<o.length; i++) {
+            var el = o[i];
+            el.style.cursor = Cursor;
+        }
+    }
+}
+
+
+
+/**
+ * Show/Hide the Load Image into a specific element, on its right
+ * @param szElId {String}   e.g   "inputEl1"
+ * @param bShow {Boolean}  true to set Loading Image		
+ */
+function loadingShowIn1ElId(szElId,bShow){
+	var el = getElementById2(szElId,true);
+	loadingShowIn1El (el,bShow);
+}	  
+  
+
+/**
+ * Show/Hide the Load Image into a specific element, on its right
+ * @param el {Object}   e.g   
+ * @param bShow {Boolean}  true to set Loading Image		
+ */
+function loadingShowIn1El(el,bShow){
+	if (el){
+		classAdd (el,'jsuLoadingEl',bShow);
+	}
+}	  
+
+
+
+/**
+ * @return {Object}  The Loading Div or 0 if Not present		
+ */
+function loadingGetEl(){
+	return getElementById2(ID_DIV_LOADING_IMG,false);
+}
+
+
+/**
+ * Show/Hide the Loading Div Image
+ * @param el {Object}    the div with the Loading Image 
+ * @param bShow {Boolean}  true to set Loading Image		
+ */
+function loadingShowByEl(el,bShow){
+	if (el){
+		classAdd (el,'jsuLoading',bShow);
+		elementShow(el,bShow);
+	}
+}	  
+
+
+/**
+ * Show/Hide the Loading Div Image
+ * @param bShow {Boolean}  true to set Loading Image		
+ */
+function loadingShow(bShow){
+	var el = getElementById2(ID_DIV_LOADING_IMG,false);
+	if (el){
+		classAdd (el,'jsuLoading',bShow);
+		elementShow(el,bShow);
+	}
+}	  
+
+
+
+
+/**
+ * Show/Hide the Alarm Image into a specific element, on its right
+ * @param szElId {String}   e.g   "inputEl1"
+ * @param bLoading {Boolean}  true to set Loading Image		
+ * @return 1		
+ */
+function alarmShowIn1ElId(szElId,bShow){
+	var el = getElementById2(szElId,true);
+	return alarmShowIn1El (el,bShow);
+}	  
+  
+
+/**
+ * Show/Hide the Alarm Image into a specific element, on its right
+ * @param el {Object}   e.g   
+ * @param bShow {Boolean}  true to set Loading Image
+ * @return 1		
+ */
+function alarmShowIn1El(el,bShow){
+	if (el){
+		classAdd (el,'jsuAlarmingEl',bShow);
+	}
+	return 1;
+}	  
+
+
+
+
+
+
+/**
+ * @param el {Object}				DOM el
+ * @param szClass {String}		Class To add or remove
+ * @param bAdd {Boolean} true=Add   false=remove		
+ */
+function classAdd (el, szClass, bAdd){
+	var Fn = "[util.js classAdd] ";
+	var szClassCur = el.className;
+	if (szClassCur == undefined){
+		szClassCur = "";
+	}
+	var bPresent = szClassCur.indexOf (szClass) >=0;
+	if (bAdd){
+		if (!bPresent){
+			// we have to add it
+			if (szClassCur == ""){
+				szClassCur = szClass;
+			}else{
+				szClassCur = szClassCur + " " + szClass; 
+			}
+		}
+	}else {
+			// Remove
+		szClassCur = szClassCur.replace(" " + szClass, "");
+		szClassCur = szClassCur.replace(szClass, "");
+	}
+	el.className = szClassCur;
+	// jslog (JSLOG_TEST,Fn + "IN szClass=" + szClass + " bAdd=" + bAdd + "  - el.id=" + el.id + " class SET FROM + '" + szClassCur + "' TO '" + el.className + "'");
+}
+
+
+
+function ts_getInnerText(el) {
+    if (typeof el == "string") return el;
+    if (typeof el == "undefined") {
+        return el;
+    }
+    if (el.innerText) return el.innerText;	//Not needed but it is faster
+    var str = "";
+
+    var cs = el.childNodes;
+    var l = cs.length;
+    for (var i = 0; i < l; i++) {
+        switch (cs[i].nodeType) {
+            case 1: //ELEMENT_NODE
+                str += ts_getInnerText(cs[i]);
+                break;
+            case 3:	//TEXT_NODE
+                str += cs[i].nodeValue;
+                break;
+        }
+    }
+    return str;
+}
+
+
+/*-----------------------------------------------------------
+Show/Hide an Element (and its Children)
+      PAR
+szSpan       in  e.g 'sectFilterIntPrev'
+bShow in    true if I want to show it
+            false if I want to hide it
+------------------------------------------------------------*/
+function elementShowBySpan(szSpan,bShow) {
+  var Fn = "[util.js elementShowBySpan ]";
+
+   var El = getElementById2 (szSpan,false);
+   // jslog(JSLOG_JSU,Fn + "szSpan=" + szSpan + " bShow=" +bShow + "  getElementById2 return El=" + El +  "   (NOTE: El can be 0, in this case nothing to do)");
+   if (El){
+     elementShow(El,bShow);
+   } 
+}   
+
+/*-----------------------------------------------------------
+Check if an Element is Visible
+      PAR
+szSpan       in  e.g 'sectFilterIntPrev'
+			RETURN
+ true if it is visible
+ false if it is not visible
+------------------------------------------------------------*/
+function elementIsVisibleBySpan(szSpan) {
+  var Fn = "[util.js elementIsVisibleBySpan ]";
+
+  var bVisible = false;
+  var El = getElementById2 (szSpan,false);
+  if (El){
+  	bVisible = (El.style.visibility != "hidden");
+  } 
+  return bVisible;
+  
+}  
+
+
+/*-----------------------------------------------------------
+Show/Hide an Element (and its Children)
+      PAR
+El    in  Object
+bShow in    true if I want to show it
+            false if I want to hide it
+------------------------------------------------------------*/
+/**
+ * @param El
+ * @param bShow
+ * @param [szDisplayIfVisible] {String}  display to set if bShow=true e.g "inline" (default= "block")  
+ */
+function elementShow(El,bShow,szDisplayIfVisible) {
+  var Fn = "[util.js elementShow ]";
+  
+  if (El == 0 || El == undefined){
+    return;
+  }
+  if (szDisplayIfVisible == undefined){
+  	szDisplayIfVisible = "block";
+  }
+  if (bShow){
+  	El.style.visibility="visible";
+    /* El.style.display="block"; */
+    El.style.display=szDisplayIfVisible;
+  }else {
+    El.style.visibility="hidden";
+    El.style.display="none";
+  }
+}
+
+
+/**
+ * @param elem
+ * @returns {Object} .top .left .height .width 
+ */
+function elementGetWinCoords(elem) { // crossbrowser version
+  var box = elem.getBoundingClientRect();
+
+  var body = document.body;
+  var docEl = document.documentElement;
+
+  var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+  var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+  var clientTop = docEl.clientTop || body.clientTop || 0;
+  var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+  var top  = box.top +  scrollTop - clientTop;
+  var left = box.left + scrollLeft - clientLeft;
+  return { 
+  	top: Math.round(top), 
+  	left: Math.round(left),
+  	height: elem.clientHeight,
+  	width: elem.clientWidth
+  };
+}
+
+
+/***
+* add on page load events
+*/
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            oldonload();
+            func();
+        };
+    }
+}
+
+/***
+ * set cookie for a page
+ *
+ * @parameter: name: the name of the cookie
+ * @parameter: days: days of expiration
+ */
+function createCookie(name,value,days) {
+	var expires = "";
+    if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		expires = "; expires="+date.toGMTString();
+	}
+    try{
+        document.cookie = name+"="+value+expires+"; path=/";
+    }catch(err){
+        // ignore it
+    }
+}
+
+/***
+ * read the cookie of a page
+ * @parameter: name: the name of the cookie
+ * @return: the value of the cookie
+ */
+function readCookie(name) {
+	var nameEQ = name + "=";
+    try{
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+    }catch(err){
+        // ignore it
+    }
+	return null;
+}
+
+/***
+ * erase the cookie of a page
+ * @parameter: name: the name of the cookie
+ */
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+/***
+ * get the paramter from the url query string
+ * @parmater name: the name of the paramter
+ * @return: the value in the url (the first one)
+ */
+function getRequestParameter( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[util.js \\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var plainString = unescape(window.location.href);
+  var results = regex.exec( plainString );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+
+
+
+
+/**
+ * Find all elements with same id ( which exists on static view report)
+ * paramter id: the element id
+ * return array of elements with the same id
+ */
+function getElementsWithSameId(id){
+  var nodes = [];
+  var tmpNode = document.getElementById(id);
+  while(tmpNode){
+    nodes.push(tmpNode);
+    tmpNode.id = "";
+    tmpNode = document.getElementById(id);
+  }
+  for(var x=0; x<nodes.length; x++){
+    nodes[x].id = id;
+  }
+  return nodes;
+}
+
+
+/*-----------------------------------------------------------
+Set Text in a Span
+      PAR
+Span    in
+szText  in
+-----------------------------------------------------------*/
+function spanSetTextById(szSpanId,szText,bShowErr)
+{
+
+  var SpanId = getElementById2 (szSpanId,bShowErr);
+  if (SpanId){
+    spanSetText(SpanId, szText);
+  }
+} 
+
+
+/*-----------------------------------------------------------
+Get Text from a Span
+      PAR
+Span    in
+		RETURN
+szText  
+-----------------------------------------------------------*/
+function spanGetTextById(szSpanId,bShowErr)
+{
+
+  var SpanId = getElementById2 (szSpanId,bShowErr);
+  if (SpanId){
+    return spanGetText(SpanId);
+  } else {
+  	return ("szSpanId=" + szSpanId + "  NOT FOUND");
+  }
+} 
+
+
+
+
+/*-----------------------------------------------------------
+Set Text in a Span
+      PAR
+Span    in
+szText  in
+-----------------------------------------------------------*/
+function spanSetText(Span,szText)
+{
+  var Fn = "[util.js spanSetText] ";
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  // jslog(JSLOG_JSU,Fn +  "IN szTxt=" + szText);
+
+  if (Span){
+    // Span.firstChild.textContent=szText;
+    Span.firstChild.innerHTML = szText;
+  }
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+}
+
+
+/*-----------------------------------------------------------
+Get Text From a Span
+      PAR
+Span    in
+      RETURN
+szText  
+-----------------------------------------------------------*/
+function spanGetText(Span)
+{
+  if (Span == 0 || Span.firstChild == 0){
+    return "";
+  }
+  var szText =  Span.firstChild.innerHTML;
+  return szText.replace ("&nbsp;","");
+}
+
+
+
+
+/***************************************************************************************************************
+			BLOCK FUNCTION
+***************************************************************************************************************/
+
+
+/*-----------------------------------------------------------
+Set Padding to a Block
+	PAR
+szBlock         in 		span identifying the Block  e.g "blockFilterService"
+szPAD	 IN             pADDING Top   Right  Bottom Left"		
+bShowEr		in
+	RETURN
+0		OK	
+Other	Error
+------------------------------------------------------------*/
+function blockSetPad(szBlock,szPad) {
+  var Fn = "[util.js blockSetPad] ";
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  // jslog(JSLOG_JSU,Fn + " IN: szBlock=" + szBlock + " szPad=" + szPad);
+  var Block = getBlockBySpanId2(szBlock,true);
+  if (Block == 0){
+    // ERROR
+    return showErr(Fn + "NOT Find szBlock=" + szBlock,1); 
+  }
+  Block.style.padding=szPad;
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return 0; // OK 
+
+}  
+
+/* -------------------------------------------------------------------------
+Reset a TextBox contained in the Block identified by szBlockName
+    PAR
+szBlock   in    e.g. "blockKpiVal"
+bShowEr		in		
+------------------------------------------------------------------------- */
+function blockRangeReset(szBlock,bShowEr) 
+{
+  var Fn = "[util.js blockRangeReset] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  jslog(JSLOG_JSU,Fn + " IN: szBlock=" + szBlock);
+  
+  var BlockEl = document.getElementById (szBlock);
+  if (BlockEl == null) {
+    return showErrIfRequired (bShowEr,Fn + " NOT FOUND szBlock=" +  szBlock,1);
+  }
+  // Get List of all elements with tag 'INPUT'  
+  var ElList = BlockEl.getElementsByTagName("INPUT");
+  if (ElList == null  || !ElList.length) {
+    return showErrIfRequired (bShowEr,Fn + " NOT FOUND Elements with Tag INPUT for szBlock=" +  szBlock,1);
+  }
+  var iSize = ElList.length - 1;
+  var ArRb = new Array();
+  var ArText = new Array();
+  var iArRb = 0, iArText = 0;
+  for (var iEl=0; iEl < ElList.length; iEl++){
+    var El = ElList[iEl];
+    if (El.type == "radio"){
+    	ArRb[iArRb++]=El;
+    } else if (El.type == "text"){
+    	ArText[iArText++]=El;
+    }
+  }
+  jslog(JSLOG_JSU,Fn + " Found " + iArRb + " RB  and " + iArText + " TEXT");
+  if ((iArRb != 4) || (iArText != 2)){
+    jslog(JSLOG_JSU,Fn + " Wrong Number of RB or TEXT, cannot continue");
+    return 1;
+  }
+  ArRb[1].checked = true;
+  ArRb[3].checked = true;
+  ArText[0].value = "";
+  ArText[1].value = "";
+  
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return 0; // OK 
+
+}  
+
+
+
+
+
+//**************************************************************************
+//**************************************************************************
+//				Array Functions
+//**************************************************************************
+//**************************************************************************
+
+
+/*-----------------------------------------------------------
+From an Array of IDs to the List of IDs
+		PAR
+ArId		in	e.g   [11,15,76]		
+      RETURN
+szList	e.g   '11,15,76'	  
+------------------------------------------------------------*/
+function ar2List(ArId) {
+  var Fn = "[util.js ar2List] ";
+  var szList = "";
+  var iLen = ArId.length;
+  
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
+  if (!iLen){
+    return szList;
+  }
+  szList = ArId[0];
+  for (var i=1; i < iLen; i++){
+    szList += ("," + ArId[i]);
+  }
+  // jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
+  return szList;
+}
+
+/*-----------------------------------------------------------
+Trace an Array of "Single Element" that can be traced 
+		PAR
+ iTrLev         in      TraceLev                                   
+Ar		in	e.g   [11,15,76]	
+                                e.g   ["elem1","elem2"]	
+szArName    in      e.g "ArSel"                                
+------------------------------------------------------------*/
+function arTrace(iTrLev,Ar,szArName) {
+  var iLen = Ar.length;
+  
+  
+  jslog(iTrLev,szArName + ".length = " + iLen);
+  for (var iAr=0; iAr < iLen; iAr++){
+    jslog(iTrLev,szArName + "[util.js " + iAr + "] = " + Ar[iAr]);
+  }
+}
+
+
+
+
+/***************************************************************************************************************
+			CHECK FUNCTION
+***************************************************************************************************************/
+
+/*-----------------------------------------------------------
+Check that a Filter doesn't contain more than iMaxItem selected
+-  If there are more Items selected an Error is displayed and the function return 1
+-  Else if OK it return 0
+For example with ORACLE:
+    - ORA-01704 (string literal too long ) with String longer than 4000
+   - MaxItem was 1000  in the IN Clause (Maybe now it have been removed, but we should verify that Cognos doesn't crash)
+   
+NOTE: check only select-multiple Filters, if single is not required
+      PAR
+szFilterName    in    e.g "COUNTRY"
+szFilterItemsName    in    e.g "Countries"
+Select          in
+iMinItem        in    e.g 0  or 1...
+iMaxItem        in    e.g 200
+bNoSelLikeAllSel     in    if true 0 sel is considered like All Selected
+      RETURN
+0   OK
+1   Err
+-----------------------------------------------------------*/
+function selectCheckNumItem (szFilterName,szFilterItemsName,Select,iMinItem,iMaxItem,bNoSelLikeAllSel)
+{
+  var Fn = "[util.js filterCheckNumItem] ";
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);  
+  if (Select == 0){
+    return showErr ("Fn=" + Fn + " Select is null",1);
+  }
+  // if it is MultiSelect
+  var szType = Select.type;
+  if (szType  == 'undefined' || szType != "select-multiple"){
+    jslog(JSLOG_JSU,Fn + "NOTHING to CHECK: szFilterName=" + szFilterName + " Is Not select-multiple. (select has select.type=" + szType + ")");
+    return 0;
+  }
+  var iSelNum = selectGetSelectedNum (Select);   
+  if (iSelNum == 0 && bNoSelLikeAllSel){
+  	iSelNum = Select.options.length;
+    jslog(JSLOG_JSU,Fn + "0 Selected - We set iSel = NumOfOptions=" + iSelNum );
+  }
+  jslog(JSLOG_JSU,"szFilterName=" + szFilterName + " iSelNum=" + iSelNum + " iMinItem=" + iMinItem + " iMaxItem=" + iMaxItem);
+  if (iSelNum > iMaxItem || iSelNum < iMinItem){
+  	var szEr = ERR_FILTER_MAX_ITEM_1 + iSelNum + ERR_FILTER_MAX_ITEM_2 + szFilterName + ERR_FILTER_MAX_ITEM_3 + iMinItem +  ".." + iMaxItem + "]";
+    if (iMinItem == 0){
+    	 szEr += ERR_FILTER_MAX_ITEM_4 + szFilterName + ERR_FILTER_MAX_ITEM_5+ szFilterItemsName + ERR_FILTER_MAX_ITEM_6;
+    }
+    return showErr (szEr,1);
+  }
+  jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);  
+  return 0;  // OK
+}
+
+
+/* -----------------------------------------------------
+Contain text and Value of an Option of a select
+        PAR
+szText       text of select       
+szValue      value of select       
+    Calling Example
+var cOptEl = new cOpt(Opt.text,Opt.value);
+----------------------------------------------------- */
+function cOpt(szText, szValue) {
+  this.text = szText;
+  this.value = szValue;
+}
+
+
+/* ------------------------------------------------------------------------------------
+Show all the SPAN or DIV fields"    having class="debug" or id="debug"  
+	@param bShow   (Boolean}  in true=show   false=hide
+------------------------------------------------------------------------------------ */
+function showDebugFields(bShow)
+{
+  var TAG_DEBUG = ["SPAN","DIV"];
+	jslog(JSLOG_INFO, "showDebugFields bShow=" + bShow);
+  
+  for (var iTag=0; iTag < TAG_DEBUG.length; iTag++){
+  	var ElList = document.getElementsByTagName(TAG_DEBUG[iTag]);
+  	for (var i=0; i < ElList.length; i++){
+  		var El = ElList [i];
+  		if (El.id == "debug" || El.className == "debug"){
+  			elementShow (El,bShow);
+  		}	
+		}
+	}
+	
+}
+
+
+/**
+ * Check that obj is defined
+ * @param obj				it must be differenbt form undefined or 0
+ * @param objName	  label to show  in case of Error
+ */
+function checkObjDefined(obj,objName)
+{
+	if (obj){
+		return 0;  // OK
+	}else{
+		return showErr ("SW ERROR: " + objName + " undefined",1);
+	}
+}
+
+
+/**
+ * Check that szVal is one of  the Values of arVal.
+ * ShowEr if not present
+ * @param szVal			
+ * @param arVal
+ * @param [szEr] Optional additional ErMsg
+ * @returns {Number}  0 OK   1 ERR
+ */
+function checkArVal(szVal,arVal,szEr)
+{
+	for (var i=0; i< arVal.length; i++){
+		if (szVal == arVal[i]){
+			return 0; //OK
+		}
+	}
+	// ERROR
+	var szMsg = "ERROR:\n " + "Value=" + szVal + "\nIS NOT one of the Possible Values: [ ";
+	// Prepare szEr if there will be an Error
+	for (var i=0; i< arVal.length; i++){
+		szMsg += arVal[i];
+		if (i< (arVal.length-1)){
+			szMsg += " , ";
+		}
+	}
+	szMsg += " ]";
+  if (szEr != undefined){
+  	szMsg += "\n\n" + szEr;
+  }	
+	return showErr(szMsg,1);
+}
+
+
+
+/*-----------------------------------------------------------
+Get SQL Condition for The select, using the useValues selected in select
+select can be either multiSElect or singleSelect
+IF NO SElection (MUltiSelect) or Selected the First Cognos Item for ALL we return ""
+	PAR
+szDbCol   in      DB Col Name (e.g. COD_CATEG_BLOCCO)	
+select		in 			select DOM object
+bValueAsString in   true if Value get from CB are String (else they are Number) 
+  RETURN
+
+Example for   		bValueAsString=true
+---------------------------------------------     
+e.g (ALL is Selected)     ""
+e.g (1 Item Selected)     "TENSIONE  = 'AM'"
+e.g (2 Items Selected)    "TENSIONE  IN ('AM','MT')"
+
+Example for   		bValueAsString=false
+---------------------------------------------     
+e.g (0 Item Selected)     ""
+e.g (1 Item Selected)     "TENSIONE  = 1"
+e.g (3 Items Selected)    "TENSIONE  IN (1,4)"
+
+------------------------------------------------------------*/
+function sqlCondSelect(szDbCol,select,bValueAsString) {
+  var Fn = "[util.js sqlCondSelect] ";
+  var szSql = "";
+  
+  // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_START);
+  if (selectIsMulti (select)){
+  	szSql = selectGetSelValues (select,bValueAsString);
+  }else {
+  	szSql = selectGetSelVal (select,bValueAsString);
+  }
+  if (szSql.length){
+  	var bInCond = szSql.indexOf(',') > 0;
+  	if (bInCond){
+  		szSql = szDbCol + " IN (" + szSql + ")";
+  	}else{
+  		szSql = szDbCol + " = " + szSql;
+  	}
+  }
+  jslog(JSLOG_JSU,Fn + "OUT szSql: " + szSql);
+  // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_END);
+  return szSql;
+}
+
+
+
+
+/*---------------------------------------------------------------------
+Get SQL Condition for From..To Cognos Pickdate Prompt Controls
+	PAR
+szDbCol   in      DB Col Name (e.g. COD_BLOCCO)	
+pmtDateFrom in      Cognos Prompt for DateFrom	
+pmtDateFrom in      Cognos Prompt for DateTo	
+  RETURN
+e.g      "COD_BLOCCO >= TO_DATE('2016-01-26','YYYY-MM-DD') AND COD_BLOCCO <= TO_DATE('2016-04-17','YYYY-MM-DD')"
+e.g      ""     if no Value is set
+------------------------------------------------------------*/
+function sqlCondFromToDate (szDbCol,pmtDateFrom,pmtDateTo){
+  var Fn = "[util.js sqlCondFromTo] ";
+  var szSql = "";
+
+  jslog(JSLOG_TEST,Fn + JSLOG_FUN_START);
+
+  // eg. Get  '2016-01-26'   or ''
+  var szFromDateVal = promptDateGetVal(pmtDateFrom);
+  var szToDateVal = promptDateGetVal(pmtDateTo);
+  //--
+  var bFrom = (szFromDateVal.length > 0);
+  var bTo = (szToDateVal.length > 0);
+  var szSqlFrom = "";
+  if (bFrom){
+  	szSqlFrom  = szDbCol + " >= TO_DATE('" + szFromDateVal +  "','YYYY-MM-DD')";
+  }
+  var szSqlTo = "";
+  if (bTo){
+  	szSqlTo  = szDbCol + " <= TO_DATE('" + szToDateVal +  "','YYYY-MM-DD')";
+  }
+  if (bFrom && bTo){
+  	szSql = szSqlFrom + " AND " + szSqlTo;
+  }else	if (bFrom){
+  	szSql = szSqlFrom;
+  }else	if (bTo){
+  	szSql = szSqlTo;
+  }
+  jslog(JSLOG_TEST,Fn + "return szSql=" + szSql);
+  jslog(JSLOG_TEST,Fn + JSLOG_FUN_END);
+  return szSql;
+}
+
+
+
+
+/*-----------------------------------------------------------
+Add a New SqlCondition managing the need of adding or NOT AND
+	PAR
+szCurCond in      Current Sql Condition	
+szCond		in 			Sql Condition to Add
+  RETURN
+NewSqlCond
+
+ Example
+szCurCond													szCond					RETURN
+--------------------------------------------------------------
+''															"COL1 = 10"				"COL1=10"
+"COL0 IN (1,2)"									"COL1 = 10"				"COL0 IN (1,2) AND COL1=10"
+------------------------------------------------------------*/
+function sqlAddCond(szCurCond,szCond,bValueAsString) {
+  // var Fn = "[util.js sqlAddCond] ";
+  
+	
+	if (szCurCond.length > 0 && szCond.length > 0){
+		return szCurCond + " AND " + szCond;
+	}else	if (szCond.length > 0){
+		return szCond;
+	}else	{
+		return szCurCond;
+	}	
+ 
+}
+
+
+
+
+/**
+ * get URL ParVal if present 
+ * @param szParName  ParName. e.g jslog
+ * @returns value of szParName if present in the URL. Else return ""
+ */
+function urlGetParVal(szParName){
+	var szName;
+  if(szName=(new RegExp('[?&]'+encodeURIComponent(szParName)+'=([^&]*)')).exec(location.search)){
+ 	 return decodeURIComponent(szName[1]);
+  }
+  else{
+  	return "";
+  }
+}
+
+
+
+
+/*---------------------------------------------------------------------
+Change Language for User Error Msg (e.g validation). Default is LAN_MSG_EN  
+@param szLanMsg in     LAN_MSG_ITA for Italian 
+												LAN_MSG_EN for English (Default)	
+	GLOBAL
+lan_msg out      LAN_MSG_ITA, LAN_MSG_EN	
+------------------------------------------------------------*/
+function utilSetLanMsg (szLanMsg){
+  var Fn = "[util.js utilSetLanMsg] ";
+
+	lan_msg = szLanMsg; 
+  jslog (JSLOG_INFO,Fn + "lan_msg=" + lan_msg);
+
+}
+
+
+
+/*---------------------------------------------------------------------
+Get dateIso:  First Day of Current YEar
+		RETURN
+Example:  "2016-01-01"		
+------------------------------------------------------------*/
+function dateIsoGetFirstDayCurYear(){
+	var dd = new Date();
+	// Format ISO:  YYYY-M-D
+	return dd.getFullYear()+"-01-01";
+}
+
+/*---------------------------------------------------------------------
+Get dateIso:  Last Day of Last YEar
+		RETURN
+Example:  "2016-01-01"		
+------------------------------------------------------------*/
+function dateIsoGetLastDayLastYear(){
+	var dd = new Date();
+	// Format ISO:  YYYY-M-D
+	return (dd.getFullYear() -1 )+"-12-31";
+}
+
+
+
+/*---------------------------------------------------------------------
+Get dateIso:  First Day of Current YEar
+		RETURN
+Example:  "2016-07-27"		
+------------------------------------------------------------*/
+function dateIsoGetCurDay(){
+  var dd = new Date();
+  // getMonth  return 0..11
+  var iMonth = dd.getMonth() + 1;
+  var szMonth = (iMonth >=10) ? ("" + iMonth) : ("0" + iMonth);
+  var iDay = dd.getDate();
+  var szDay = (iDay >=10) ? ("" + iDay) : ("0" + iDay);
+	return dd.getFullYear()+ "-" + szMonth + "-" + szDay;
+}
+
+
+
+/**
+ * Get array of prompt  from Select
+ * @param selectAll  contains value = szId1.szId2   text=...
+ * @returns {Array}		Array of obj for dynamic prompt 
+ * @example 
+ *   { 
+ *    "szId1": "DD01",
+ *    "szId2": "DH",
+ *    "szTxt2": "DH - Dip. Emilia Romagna - Marche"
+ *    }
+ */
+function arPmtFromSelect(selectAll) {
+  var Fn = "[util.arPmtFromSelect] ";
+  
+  jslog(JSLOG_JSU,Fn + JSLOG_FILE_START);
+  var iOptNum = selectAll.options.length;
+  jslog(JSLOG_JSU,Fn + "iOptNum=" + iOptNum);
+  var arAll = new Array();
+  for (var iOpt=0; iOpt < iOptNum; iOpt ++){
+    var opt = selectAll.options[iOpt];
+    var objPmt = new Object();
+    // split di value  nei 2 ID
+    var arId = opt.value.split(SELECT_VALUE_ID_SEP);
+    // ricavo obj da usare per i Prompt dinamici
+    objPmt.szId1 = arId[0];
+    objPmt.szId2 = arId[1];
+    objPmt.szTxt2 = opt.text;
+    // jslog (JSLOG_TRACE,Fn + "[" + iOpt + "]=" + objPmt.szId1 + " " + objPmt.szId2 + " " + objPmt.szTxt2);
+    arAll.push(objPmt);
+  }
+  jslog(JSLOG_JSU,Fn + "return arAll.length= " + arAll.length);
+  jslog(JSLOG_JSU,Fn + JSLOG_FILE_END);
+  return arAll;
+}
+
+/*
+ * @param arPmt 		{Array} array of objec to populate selectPmt  
+ *   {
+ *    "szId1": "DD01",
+ *    "szId2": "DH",
+ *    "szTxt2": "DH - Dip. Emilia Romagna - Marche"
+ *    }
+ *    ...
+ *   {
+ *    "szId1": "DEVA",
+ *    "szId2": "VV",
+ *    "szTxt2": "VV - Dip. DEVAL S.p.A.(Val d'aosta)" 
+ *    }    
+ * @param szId1        filter for arPmt. Only  el with szId1 will be used  . Es: "DD01" 
+ * @param selectPmt  select da Popolare con szId2 e szTxt2 used
+ * @param bTutti     true se sono presenti le 2 Entries iniziali (Tutti  "----"), da preservare  
+ *    
+ */
+function arPmt2Select(arPmt,szId1,selectPmt,bTutti) {
+  var Fn = "[util.arPmt2Select] ";
+  
+  jslog(JSLOG_JSU,Fn + JSLOG_FILE_START);
+  var iArLen = arPmt.length;
+  jslog(JSLOG_JSU,Fn + "IN szId1=" + szId1 + "  arPmt with Len=" + iArLen);
+  var iPreserveFirstN = (bTutti) ? 2 : 0;
+  jslog(JSLOG_JSU,Fn + "Clear selectPmt bTutti=" + bTutti + " iPreserveFirstN=" + iPreserveFirstN);
+  selectRemoveOption(selectPmt,iPreserveFirstN);
+  //-------
+  jslog(JSLOG_JSU,Fn + "INSERT Entry matching szId1=" + szId1);
+  for (var i=0; i < iArLen; i ++){
+    var objPmt = arPmt[i];
+    var bAdd = (objPmt.szId1 == szId1);
+    if (bAdd){
+      jslog (JSLOG_JSU,Fn + "[" + i + "]=" + objPmt.szId1 + " - ADDED: " + objPmt.szId2 + " " +  objPmt.szTxt2);
+    	appendOptionLast(selectPmt,objPmt.szTxt2,objPmt.szId2);
+    }else{
+      jslog (JSLOG_TRACE,Fn + "[" + i + "]=" + objPmt.szId1 + " - NOT ADDED: " + objPmt.szId2 + " " +  objPmt.szTxt2);
+    }
+  }
+  selectPmt.selectedIndex = 0;
+	selectPmt.disabled = false;
+  jslog(JSLOG_JSU,Fn + JSLOG_FILE_END);
+}
+
+/**
+ * @param arMap			eg [["name1",1],["name_7",23]]     couple of values (either string or int)
+ * @param val1			eg  "name_7"
+ * @param bShowEr	
+ * @returns 		eg 23    null if not found 
+ */
+function mapVal1ToVal2(arMap, val1, bShowEr){
+	var val2 = null;
+	var bFound = false;
+	var szListVal1 = "";
+	
+	for (var i=0; !bFound && i < arMap.length; i++){
+		var val1Cur = arMap[i][0];
+		var val2Cur = arMap[i][1];
+		if (val1Cur == val1){
+			val2 = val2Cur;
+			bFound = 1;
+		}else {
+			if (i>0){
+				szListVal1 += " , ";
+			}
+			szListVal1 += val2Cur;
+		}
+	}
+	if (!bFound && bShowEr){
+		showErr ("SW ERROR: " + val1 + " NOT FOUND in the List of Possible Values [ " + szListVal1 + " ]",-1);
+	}
+	return val2;
+}
+
+
+
+function tipAddEvent (arClass){
+  var TAG_TIP = ["IMG","INPUT"];
+
+  for (var iTag=0; iTag < TAG_TIP.length; iTag++){
+  	var elList = document.getelementsByTagName(TAG_TIP[iTag]);
+  	for (var iel=0; iel < elList.length; iel++){
+  		var el = elList [iel];
+  		var szClass = el.className;
+  		// check if el ha className in arClass
+  		var bFound = false;
+    	for (var i=0; !bFound && i < arClass.length; i++){
+    		if (szClass == szClass[i]){
+    			bFound = true;
+    		} 
+    	}
+    	if (bFound){
+    		// add Event
+        el.onmouseover=function(){ Tip (this.tip); }; 
+        el.onmouseout=function(){ 	UnTip();    }; 
+    	}
+		}
+  }  
+}
+
+
+
+
+

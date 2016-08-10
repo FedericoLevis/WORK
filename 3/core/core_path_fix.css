@@ -31,7 +31,7 @@ This file may be freely distributed under the MIT license.   <BR/>
 ```
 */
 .jsuAlarmingEl {
-  background:url('../images/alarming.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }
@@ -49,7 +49,7 @@ This file may be freely distributed under the MIT license.   <BR/>
 ```
 */
 img.jsuAlarmingImg {
-  background:url('../images/alarming.gif') no-repeat;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
   background-size: contain;
   height: 26px;
   vertical-align: text-top;
@@ -69,7 +69,7 @@ img.jsuAlarmingImg {
 ```
 */
 .jsuLoadingEl {
-  background:url('../images/FillingRing.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }
@@ -87,7 +87,7 @@ div.jsuLoadingEl Div with Loading Gif
 ```
 */
 div.jsuLoading {
-  background:url('../images/FillingRing.gif') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
   /* background-size: contain; */
    height: 80px;  /*  
   progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
@@ -220,7 +220,7 @@ td.loadingDivFooter { /* Footer with Elapsed sec */
 div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
   width: 110px;
 	height: 110px;
-	background: url('../images/Disk.gif') no-repeat center center;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
 	z-index: 110;  
 }
 
@@ -241,7 +241,7 @@ input.jsuInfo Tip img with 'i'
 ```
 */
 img.jsuInfo, input.jsuInfo{ /* Info img  */
-  background:url('../images/info.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
   background-color: #19E4DD;
   height: 14px;
   width: 5px;
@@ -269,7 +269,7 @@ input.jsuTipTip img with QuestionMark
 
 */
 img.jsuTip, input.jsuTip{
-  background:url('../images/tip.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center center;
   height: 20x;
   width: 20x;
   marging-left: 5px;
@@ -314,7 +314,7 @@ label.validateErr{ /* item in error State  */
 }	
 
 input.validateInfo{ /* Info img  */
-  background:url('../images/info.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
   background-color: #19E4DD;
   height: 14px;
   width: 5px;
@@ -373,7 +373,7 @@ Tip API and JSU Button
 ```
 */
 img.tipJSFixed{ /* tip JS Fixed img with Button Down */
-  background:url('../images/tipJSFixed.png') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png') center top;
   /* background-size: contain; */
   height: 23px;
   width: 16px;
@@ -381,7 +381,7 @@ img.tipJSFixed{ /* tip JS Fixed img with Button Down */
 }
 
 img.tipJSFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('../images/tipJSFixedUp.png') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png') center top;
   /* background-size: contain; */ 
   height: 24px;
   width: 17px;
@@ -389,14 +389,14 @@ img.tipJSFixedUp{ /* tip JS Fixed img with Button Up */
 }
 
 img.tipArrowFixed{ /* tip Arrow Fixed img with Button Down */
-  background:url('../images/tipArrowFixed.png') center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
 }
 
 img.tipArrowFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('../images/tipArrowFixedUp.png') center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
@@ -420,11 +420,11 @@ input.tipJSFixed, input.tipJSFixedUp{
 }
 
 input.tipJSFixed{
-    background: #E0E0E0 url(../images/tipJSFixed.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png) no-repeat center center;
 }
 
 input.tipJSFixedUp{
-    background: #E0E0E0 url(../images/tipJSFixedUp.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png) no-repeat center center;
 }
 
 input.tipFixed, input.tipFixedUp{
@@ -438,18 +438,18 @@ input.tipFixed, input.tipFixedUp{
 
 
 input.tipFixed{
-    background: #E0E0E0 url(../images/tipFixed.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
 }
 
 input.tipFixedUp{
-    background: #E0E0E0 url(../images/tipFixedUp.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
 }
 
 input.tipArrowFixed {
-    background: #E0E0E0 url(../images/tipArrowFixed.png) no-repeat right center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png) no-repeat right center;
 }
 input.tipArrowFixedUp {
-    background: #E0E0E0 url(../images/tipArrowFixedUp.png) no-repeat right center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png) no-repeat right center;
 }
 
 input.jsuHelp{	/* Help Button */  
@@ -458,7 +458,7 @@ input.jsuHelp{	/* Help Button */
     border: 1px solid #000;
     cursor: pointer;
     margin-left: 4px; 
-    background: #E0E0E0 url(../images/help.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
     
 }
 
@@ -476,19 +476,19 @@ input.downloadFree, input.downloadPay {
 input.downloadFree {
     height: 27px;
     width: 210px;
-    background: Yellow url(../images/downloadFree.png) no-repeat center center;
+    background: Yellow url(https://raw.github.com/FedericoLevis/JSU/master/images/downloadFree.png) no-repeat center center;
 }
 
 input.downloadPay {
     height: 27px;
     width: 165px;
-    background: cyan url(../images/downloadPay.png) no-repeat right center;
+    background: cyan url(https://raw.github.com/FedericoLevis/JSU/master/images/downloadPay.png) no-repeat right center;
 }
 
 
 
 img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
-  background:url('../images/tipFixedUp.jpg') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.jpg') center top;
   background-size: contain;
   height: 20px;
   width: 15px;
@@ -496,7 +496,7 @@ img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
 }
 
 img.tipFixedBig{ /* Big */
-  background:url('../images/tipFixedBig.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBig.jpg') no-repeat center bottom;
   height: 30px;
   width: 20px;
   margin-left: 5px;
@@ -504,7 +504,7 @@ img.tipFixedBig{ /* Big */
 
 
 img.tipFixedBigUp{ /*  after click : img with Button Up */
-  background:url('../images/tipFixedBigUp.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBigUp.jpg') no-repeat center bottom;
   height: 30px;
   width: 20px;
   margin-left: 5px;
@@ -512,7 +512,7 @@ img.tipFixedBigUp{ /*  after click : img with Button Up */
 
 
 img.jsuSample{ /* Sample img  */
-  background:url('../images/sample.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/sample.jpg') no-repeat center bottom;
   align: bottom;
   width: 100px;  
   height: 20px;  
@@ -563,11 +563,6 @@ tr.tiptitle,th.tiptitle{
 tr.tiptitleBig,th.tiptitleBig{
   font-size: 13pt;
 }
-
-tr.tiptitleVeryBig,th.tiptitleVeryBig{
-  font-size: 20pt;
-}
-
 
 
 label.tiptitle {

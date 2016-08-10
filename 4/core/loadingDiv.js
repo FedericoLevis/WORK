@@ -1,8 +1,321 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_a273=["","szTitle","bShowGif","szDiffUrlGif","bShowElapsedSec","bResetElapsedSec","szDiffMsgHtml","iDivWidth","iGifWidth","bShowCancel","szBackgroundColor","<div id=\"loadingDivContainer\" class=\"loadingDivContainer\" >","  <table width=\"100%\" height=\"100%\">","    <tr> <td align=\"center\">","      <div  id=\"loadingDiv\" class=\"loadingDiv\">","         <table id=\"loadingDivTable\" class=\"loadingDiv\" width=\"100%\"  style=\"z-index: 110;\">","            <tr class=\"loadingDivTitle\">","              <td colspan=\"2\" id=\"loadingDivTitle\" class=\"loadingDivTitle\" >Title Test</td>","            </tr>","            <tr> ","              <td id=\"loadingDivTdGif\" align=\"left\" width=\"80px\">","                <div id=\"loadingDivGif\" class=\"loadingDivGif\"> </div>","              </td> ","              <td id=\"loadingDivMsg\" class=\"loadingDivMsg\" align=\"left\" style=\"padding-left:0px\">","                 <b>Working</b></BR>Please Wait...","              </td>","            <tr>","               <td colspan=\"2\" align=\"center\" class=\"loadingDivBtn\" id=\"loadingDivBtnTd\"  >","                 <input type=\"button\" class=\"loadingDivBtn\" id=\"loadingDivBtn\" value=\"Stop\" onclick=\"loadingDivCancel();\" />","               </td>","               <td colspan=\"2\" id=\"loadingDivFooter\" class=\"loadingDivFooter\" style=\"display:none\">","                 Elapsed Time: 10 sec","        </table>","      </div>","    </td> </tr>","  </table>","</div>","[util.js loading_elementShow ]","block","visibility","style","visible","display","hidden","none","getElementById","SW ERROR [loading_getElementById2] NOT FOUND Id=","function","fnCancelCallback","getTime","iStartTime","round","innerHTML","elFooter","startTime","szStartTime","elapsed","sec","[util.js loadingDivStart()] ","-------------------","tmoElapsedSec","szTitleHtml","objOpt","loadingDivMain","removeChild","body","add JSU_LOADING_DIV to document.body","div","createElement","id","appendChild","loadingDiv","width","px","Set Visible element depending on objOpt","loadingDivTitle","loadingDivMsg","working","loadingDivBtn","value","cancelBtn","loadingDivBtnTd","loadingDivGif","backgroundImage","url('","')","loadingDivTdGif","backgroundColor","loadingDivFooter","Start Timeout for Elapsedsec","getHours","0",":","getMinutes","getSeconds","loadingDivContainer"];var LOADING_DIV_DEF={szTitleHtml:_$_a273[0],bShowGif:true,szDiffUrlGif:_$_a273[0],bShowElapsedSec:false,bResetElapsedSec:true,iDivWidth:null,iGifWidth:null,bShowCancel:false,szBackgroundColor:null,szDiffMsgHtml:_$_a273[0]};var LOADING_DIV_DEF_OPT={szTitleHtml:LOADING_DIV_DEF[_$_a273[1]],bShowGif:LOADING_DIV_DEF[_$_a273[2]],szDiffUrlGif:LOADING_DIV_DEF[_$_a273[3]],bShowElapsedSec:LOADING_DIV_DEF[_$_a273[4]],bResetElapsedSec:LOADING_DIV_DEF[_$_a273[5]],szDiffMsgHtml:LOADING_DIV_DEF[_$_a273[6]],iDivWidth:LOADING_DIV_DEF[_$_a273[7]],iGifWidth:LOADING_DIV_DEF[_$_a273[8]],bShowCancel:LOADING_DIV_DEF[_$_a273[9]],szBackgroundColor:LOADING_DIV_DEF[_$_a273[10]],fnCancelCallback:null};var JSU_LOADING_DIV=_$_a273[11]+ _$_a273[12]+ _$_a273[13]+ _$_a273[14]+ _$_a273[15]+ _$_a273[16]+ _$_a273[17]+ _$_a273[18]+ _$_a273[19]+ _$_a273[20]+ _$_a273[21]+ _$_a273[22]+ _$_a273[23]+ _$_a273[24]+ _$_a273[25]+ _$_a273[18]+ _$_a273[26]+ _$_a273[27]+ _$_a273[28]+ _$_a273[29]+ _$_a273[18]+ _$_a273[26]+ _$_a273[30]+ _$_a273[31]+ _$_a273[29]+ _$_a273[18]+ _$_a273[32]+ _$_a273[33]+ _$_a273[34]+ _$_a273[35]+ _$_a273[36];var var_loading_div={elFooter:null,tmoElapsedSec:null,iElapsedSec:0,fnCancelCallback:null};function loading_elementShow(ea,hU,jw){var s=_$_a273[37];if(ea== 0|| ea== undefined){return};if(jw== undefined){jw= _$_a273[38]};if(hU){ea[_$_a273[40]][_$_a273[39]]= _$_a273[41];ea[_$_a273[40]][_$_a273[42]]= jw}else {ea[_$_a273[40]][_$_a273[39]]= _$_a273[43];ea[_$_a273[40]][_$_a273[42]]= _$_a273[44]}}function loading_getElementById2(ka,iR){if(iR== undefined){iR= false};var N=document[_$_a273[45]](ka);if(N== null){if(iR){alert(_$_a273[46]+ ka)};return 0};return N}function loading_log(cJ){if( typeof (jslog)== _$_a273[47]){jslog(JSLOG_JSU,cJ)}}function loading_logObj(cJ,cg){if( typeof (jslogObj)== _$_a273[47]){jslogObj(JSLOG_JSU,cJ,cg)}}function loadingDivCancel(){loadingDivHide();if(var_loading_div[_$_a273[48]]!= undefined){var_loading_div[_$_a273[48]]()}}function loadingDivTmo(){var lX= new Date();var ms=Math[_$_a273[51]]((lX[_$_a273[49]]()- var_loading_div[_$_a273[50]])/ 1000);var_loading_div[_$_a273[53]][_$_a273[52]]= LOADING_DIV_MSG[_$_a273[54]]+ var_loading_div[_$_a273[55]]+ LOADING_DIV_MSG[_$_a273[56]]+ ms+ LOADING_DIV_MSG[_$_a273[57]]}function loadingDivShow(A){var s=_$_a273[58];loading_log(s+ _$_a273[59]);if(var_loading_div[_$_a273[60]]){clearTimeout(var_loading_div[_$_a273[60]])};if(A== undefined){var A=LOADING_DIV_DEF_OPT}else {if(A[_$_a273[61]]== undefined){A[_$_a273[61]]= LOADING_DIV_DEF[_$_a273[61]]};if(A[_$_a273[2]]== undefined){A[_$_a273[2]]= LOADING_DIV_DEF[_$_a273[2]]};if(A[_$_a273[3]]== undefined){A[_$_a273[3]]= LOADING_DIV_DEF[_$_a273[3]]};if(A[_$_a273[4]]== undefined){A[_$_a273[4]]= LOADING_DIV_DEF[_$_a273[4]]};if(A[_$_a273[5]]== undefined){A[_$_a273[5]]= LOADING_DIV_DEF[_$_a273[5]]};if(A[_$_a273[7]]== undefined){A[_$_a273[7]]= LOADING_DIV_DEF[_$_a273[7]]};if(A[_$_a273[8]]== undefined){A[_$_a273[8]]= LOADING_DIV_DEF[_$_a273[8]]};if(A[_$_a273[10]]== undefined){A[_$_a273[10]]= LOADING_DIV_DEF[_$_a273[10]]};if(A[_$_a273[9]]== undefined){A[_$_a273[9]]= LOADING_DIV_DEF[_$_a273[9]]};if(A[_$_a273[6]]== undefined){A[_$_a273[6]]= LOADING_DIV_DEF[_$_a273[6]]}};var_loading_div[_$_a273[48]]= A[_$_a273[48]];loading_logObj(s+ _$_a273[62],A);var mk=loading_getElementById2(_$_a273[63],false);if(mk){document[_$_a273[65]][_$_a273[64]](mk)};loading_log(s+ _$_a273[66]);mk= document[_$_a273[68]](_$_a273[67]);mk[_$_a273[69]]= _$_a273[63];mk[_$_a273[52]]= JSU_LOADING_DIV;document[_$_a273[65]][_$_a273[70]](mk);var mq=loading_getElementById2(_$_a273[71]);if(A[_$_a273[7]]!= null){mq[_$_a273[40]][_$_a273[72]]= A[_$_a273[7]]+ _$_a273[73]};loading_log(s+ _$_a273[74]);var mp=loading_getElementById2(_$_a273[75]);var mj=(A[_$_a273[61]]&& A[_$_a273[61]]!= _$_a273[0]);loading_elementShow(mp,mj,_$_a273[0]);if(mj){mp[_$_a273[52]]= A[_$_a273[61]]};var mo=loading_getElementById2(_$_a273[76],false);if(!mo){return};var mr=LOADING_DIV_MSG[_$_a273[77]];if(A[_$_a273[6]]&& A[_$_a273[6]]!= _$_a273[0]){mr= A[_$_a273[6]]};mo[_$_a273[52]]= mr;var ml=loading_getElementById2(_$_a273[78]);ml[_$_a273[79]]= LOADING_DIV_MSG[_$_a273[80]];loading_elementShow(loading_getElementById2(_$_a273[81]),A[_$_a273[9]],_$_a273[0]);var mn=loading_getElementById2(_$_a273[82]);if(A[_$_a273[3]]!= undefined&& A[_$_a273[3]]!= _$_a273[0]){mn[_$_a273[40]][_$_a273[83]]= _$_a273[84]+ A[_$_a273[3]]+ _$_a273[85]};if(A[_$_a273[7]]!= null){mn[_$_a273[40]][_$_a273[72]]= A[_$_a273[8]]+ _$_a273[73]};loading_elementShow(loading_getElementById2(_$_a273[86]),A[_$_a273[2]],_$_a273[0]);if(A[_$_a273[10]]&& A[_$_a273[10]]!= _$_a273[0]){mq[_$_a273[40]][_$_a273[87]]= A[_$_a273[10]];loading_getElementById2(_$_a273[76])[_$_a273[40]][_$_a273[87]]= A[_$_a273[10]];loading_getElementById2(_$_a273[86])[_$_a273[40]][_$_a273[87]]= A[_$_a273[10]];loading_getElementById2(_$_a273[81])[_$_a273[40]][_$_a273[87]]= A[_$_a273[10]]};var mi=(A[_$_a273[4]]!= undefined&& A[_$_a273[4]]);loading_elementShow(mp,mj,_$_a273[0]);var_loading_div[_$_a273[53]]= loading_getElementById2(_$_a273[88]);loading_elementShow(var_loading_div[_$_a273[53]],mi,_$_a273[0]);if(mi){if(A[_$_a273[5]]){loading_log(s+ _$_a273[89]);var dQ= new Date();var_loading_div[_$_a273[50]]= dQ[_$_a273[49]]();var_loading_div[_$_a273[55]]= num2StrPad(dQ[_$_a273[90]](),_$_a273[91],2)+ _$_a273[92]+ num2StrPad(dQ[_$_a273[93]](),_$_a273[91],2)+ _$_a273[92]+ num2StrPad(dQ[_$_a273[94]](),_$_a273[91],2)};loadingDivTmo();var_loading_div[_$_a273[60]]= setInterval(loadingDivTmo,1000)};loading_elementShow(mk,true)}function loadingDivHide(){if(var_loading_div[_$_a273[60]]){clearTimeout(var_loading_div[_$_a273[60]])};var mh=loading_getElementById2(_$_a273[95],false);loading_elementShow(mh,false)}
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/loadingDiv.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>LoadingDiv Doc:</b>   <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html" target="_blank">JSU LoadingDiv Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>    JSU LoadingDiv API:  loadingDivShow loadingDivHide <BR/>
+<b>REQUIRE:</b>          JSU core/core.css <BR/>  
+<b>OPTIONAL:</b>         jslog.js, dom-drag.js to use also jslog <BR/>
+<b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+/*==========================================================================
+ * 							loadingDiv API
+========================================================================== */
+
+/*
+ * LoadingDiv DEFAULT 
+ */
+var LOADING_DIV_DEF = {
+		szTitleHtml:  "",	//	{String}: [""] if != "" Show a Title Section with szTitle 
+		bShowGif:  true,	//	{Boolean}: [true] show the Loading Gif 
+		szDiffUrlGif:  "",	//	{String Url}: [null] if different form null use this URL instead of CSS default	
+		bShowElapsedSec: false, // {Boolean} [false[ if true show a Footer with Elapsed Time (sec)
+		bResetElapsedSec: true, // {Boolean} [true] if true reset timer
+		iDivWidth: null, // if different from null, set this Div Width instead of using Default Width (CSS)
+		iGifWidth: null, // if different from null, set this Gif  Width instead of using Default Width (CSS)
+		bShowCancel:  false,	//	{Boolean}: [false] show the Cancel Btn 
+		szBackgroundColor: null, // {String} Div BackgroundColor, if different from null or "", 
+		szDiffMsgHtml: "" // {String} if different from null or '', we show this Msg (HTML) instead of Default 
+};
+
+var LOADING_DIV_DEF_OPT ={
+		szTitleHtml:  LOADING_DIV_DEF.szTitle,	//	{String}: [""] if != "" Show Title 
+		bShowGif:  LOADING_DIV_DEF.bShowGif,	//	{Boolean}: [true] show the Loading Gif 
+		szDiffUrlGif:  LOADING_DIV_DEF.szDiffUrlGif,	//	{String Url}: [null] if different form null use this URL instead of CSS default	
+		bShowElapsedSec: LOADING_DIV_DEF.bShowElapsedSec, // {Boolean} [false] if true show a Footer with Elapsed Time (sec)
+		bResetElapsedSec: LOADING_DIV_DEF.bResetElapsedSec, // {Boolean} [true] if true reset timer
+		szDiffMsgHtml: LOADING_DIV_DEF.szDiffMsgHtml,  // {String} if different from null, show this Msg (HTML) instead of Default
+		iDivWidth: LOADING_DIV_DEF.iDivWidth, // if different from null, set this Div Width instead of using DEfault Width (CSS)
+		iGifWidth: LOADING_DIV_DEF.iGifWidth, // if different from null, set this Gif Width instead of using DEfault Width (CSS)
+		bShowCancel:  LOADING_DIV_DEF.bShowCancel,	//	{Boolean}: [false] show the Cancel Btn
+		szBackgroundColor: LOADING_DIV_DEF.szBackgroundColor, // {String} Div BackgroundColor, if different from null or "", 
+		fnCancelCallback: null  // called when click Cancel
+};
+
+var JSU_LOADING_DIV = '<div id="loadingDivContainer" class="loadingDivContainer" >' + 
+'  <table width="100%" height="100%">' + 
+'    <tr> <td align="center">' + 
+'      <div  id="loadingDiv" class="loadingDiv">' + 
+'         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">' + 
+'            <tr class="loadingDivTitle">' + 
+'              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>' + 
+'            </tr>' + 
+'            <tr> ' + 
+'              <td id="loadingDivTdGif" align="left" width="80px">' + 
+'                <div id="loadingDivGif" class="loadingDivGif"> </div>' + 
+'              </td> ' + 
+'              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">' + 
+'                 <b>Working</b></BR>Please Wait...' + 
+'              </td>' + 
+'            </tr>' + 
+'            <tr>' + 
+'               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >' + 
+'                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />' + 
+'               </td>' + 
+'            </tr>' + 
+'            <tr>' + 
+'               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter" style="display:none">' + 
+'                 Elapsed Time: 10 sec' + 
+'               </td>' + 
+'            </tr>' + 
+'        </table>' + 
+'      </div>' + 
+'    </td> </tr>' + 
+'  </table>' + 
+'</div>'; 
+
+
+var var_loading_div = {
+		elFooter: null, // td el with Footer
+		tmoElapsedSec : null,  // tmo for loading_div to update ElapsedSec
+		iElapsedSec : 0,  // elapsed sec
+		fnCancelCallback: null  // called when click Cancel
+};
+
+
+/*==========================================================================
+ * 							PRIVATE 
+========================================================================== */
+
+/*
+Show/Hide an Element (and its Children)
+ * @param El
+ * @param bShow  true if I want to show it -false if I want to hide it
+ * @param [szDisplayIfVisible] {String}  display to set if bShow=true e.g "inline" (default= "block")  
+ */
+function loading_elementShow(El,bShow,szDisplayIfVisible) {
+  var Fn = "[util.js loading_elementShow ]";
+  
+  if (El == 0 || El == undefined){
+    return;
+  }
+  if (szDisplayIfVisible == undefined){
+  	szDisplayIfVisible = "block";
+  }
+  if (bShow){
+  	El.style.visibility="visible";
+    /* El.style.display="block"; */
+    El.style.display=szDisplayIfVisible;
+  }else {
+    El.style.visibility="hidden";
+    El.style.display="none";
+  }
+}
+
+
+/*-----------------------------------------------------------
+Get Element By ID and Show Error if required
+      PAR
+Id        in
+[bShowErr]  in   true (default) if I want to show Error
+                false if don't want to show Error
+      RETURN
+el  if founded
+0   if not founded
+-----------------------------------------------------------*/
+function loading_getElementById2(Id,bShowErr)
+{
+	if (bShowErr == undefined){
+		// bShowErr = true;
+		bShowErr = false;
+	}
+    var el = 	document.getElementById(Id);
+    if (el == null) {
+        if (bShowErr){
+          alert("SW ERROR [loading_getElementById2] NOT FOUND Id=" +  Id) ;
+        }
+        return 0;  // Not Found
+    }
+    return el;
+}
+
+
+
+/*
+ * call jslog if it is defined
+ * @param msg
+ */
+function loading_log(msg){
+	if (typeof(jslog) == "function"){
+		jslog (JSLOG_JSU, msg);
+	}
+	//	alert (msg);
+}
+
+/*
+ * call jslogObj if it is defined
+ * @param msg
+ */
+function loading_logObj(msg,obj){
+	if (typeof(jslogObj) == "function"){
+		jslogObj (JSLOG_JSU, msg,obj);
+	}
+}
+
+
+
+/*
+ * Click on Cancel
+ */
+function loadingDivCancel(){
+	loadingDivHide();	
+	if (var_loading_div.fnCancelCallback != undefined){
+		var_loading_div.fnCancelCallback();
+	}
+}
+
+/*
+ * Tmo elapsed
+ */
+function loadingDivTmo(){
+	
+	var dEnd = new Date();  	
+	var iElapsedSec= Math.round((dEnd.getTime() - var_loading_div.iStartTime)/1000);
+	var_loading_div.elFooter.innerHTML = LOADING_DIV_MSG.startTime + var_loading_div.szStartTime +  LOADING_DIV_MSG.elapsed + iElapsedSec + LOADING_DIV_MSG.sec;
+	
+}	  
+
+
+/*==========================================================================
+ * 							loadingDiv API
+========================================================================== */
+
+/**
+  Show loadingDiv
+  @param [objOpt] 	{Object} Optional Option: <BR/>
+		- szTitleHtml:  {String}: [""] if != "" Show Title  <BR/>
+		- bShowGif:   		{Boolean}: [true] show the Loading Gif  <BR/>
+		- szDiffUrlGif:  	 {String Url}: [null] if different form null use this URL instead of CSS default	 <BR/>
+		- bShowElapsedSec: 	{Boolean} [false] if true show a Footer with Elapsed Time (sec) <BR/>
+		- bResetElapsedSec: {Boolean} [false] if true reset timer <BR/>
+		- szDiffMsgHtml: 	{String} if different from null, show this Msg (HTML) instead of Default <BR/>
+		- iDivWidth: 	 {Number} if different from null, set this Div Width instead of using DEfault Width (CSS) <BR/>
+		- iGifWidth: 		 {Number} if different from null, set this Gif Width instead of using DEfault Width (CSS) <BR/>
+		- bShowCancel:  	{Boolean}: [false] show the Cancel Btn <BR/>
+		- szBackgroundColor:{String} Div BackgroundColor, if different from null or "",  <BR/>
+		- fnCancelCallback: {function} [null]  called when Cancel button is clicked <BR/>
+ */
+function loadingDivShow(objOpt){
+	var Fn = "[util.js loadingDivStart()] ";
+	loading_log(Fn + "-------------------");
+	if (var_loading_div.tmoElapsedSec){
+		clearTimeout (var_loading_div.tmoElapsedSec);
+	}
+  if (objOpt == undefined){
+  	var objOpt = LOADING_DIV_DEF_OPT; 
+  }else {
+  	if (objOpt.szTitleHtml == undefined) {objOpt.szTitleHtml = LOADING_DIV_DEF.szTitleHtml;}
+  	if (objOpt.bShowGif == undefined) {objOpt.bShowGif = LOADING_DIV_DEF.bShowGif;}
+  	if (objOpt.szDiffUrlGif == undefined) {objOpt.szDiffUrlGif = LOADING_DIV_DEF.szDiffUrlGif;}
+  	if (objOpt.bShowElapsedSec == undefined) {objOpt.bShowElapsedSec = LOADING_DIV_DEF.bShowElapsedSec;}
+  	if (objOpt.bResetElapsedSec == undefined) {objOpt.bResetElapsedSec = LOADING_DIV_DEF.bResetElapsedSec;}
+  	if (objOpt.iDivWidth == undefined) {objOpt.iDivWidth = LOADING_DIV_DEF.iDivWidth;}
+  	if (objOpt.iGifWidth == undefined) {objOpt.iGifWidth = LOADING_DIV_DEF.iGifWidth;}
+  	if (objOpt.szBackgroundColor == undefined) {objOpt.szBackgroundColor = LOADING_DIV_DEF.szBackgroundColor;}
+  	if (objOpt.bShowCancel== undefined) {objOpt.bShowCancel = LOADING_DIV_DEF.bShowCancel;}
+  	if (objOpt.szDiffMsgHtml == undefined) {objOpt.szDiffMsgHtml = LOADING_DIV_DEF.szDiffMsgHtml;}
+  }	
+  var_loading_div.fnCancelCallback = objOpt.fnCancelCallback; 
+	loading_logObj(Fn + "objOpt",objOpt);
+	var divMain = loading_getElementById2 ("loadingDivMain",false);
+	if (divMain){
+		document.body.removeChild (divMain);
+	}	
+	loading_log(Fn + "add JSU_LOADING_DIV to document.body");
+	divMain = document.createElement("div");
+  divMain.id = "loadingDivMain";		
+	divMain.innerHTML = JSU_LOADING_DIV;
+	document.body.appendChild(divMain);
+	var loadingDiv = loading_getElementById2 ("loadingDiv");
+	if (objOpt.iDivWidth != null){
+		loadingDiv.style.width = objOpt.iDivWidth + "px";  
+	}
+	loading_log( Fn + "Set Visible element depending on objOpt");
+	var elTitle = loading_getElementById2 ("loadingDivTitle");
+	var bTitle = (objOpt.szTitleHtml && objOpt.szTitleHtml != ""); 
+	loading_elementShow (elTitle,bTitle,"");
+	if (bTitle){elTitle.innerHTML = objOpt.szTitleHtml;}
+	//------
+	var elMsgHtml = loading_getElementById2 ("loadingDivMsg",false);
+	if (!elMsgHtml){
+		return; // WorkAround
+	}
+	var szMsgHtml = LOADING_DIV_MSG.working;
+	if (objOpt.szDiffMsgHtml && objOpt.szDiffMsgHtml != ""){
+		szMsgHtml = objOpt.szDiffMsgHtml; 
+	}
+	elMsgHtml.innerHTML = szMsgHtml;
+	//------
+	var elCancelBtn = loading_getElementById2 ("loadingDivBtn");
+	elCancelBtn.value = LOADING_DIV_MSG.cancelBtn;
+	loading_elementShow (loading_getElementById2 ("loadingDivBtnTd"),objOpt.bShowCancel,"");
+	//------
+	var elGif = loading_getElementById2 ("loadingDivGif");
+	if (objOpt.szDiffUrlGif != undefined && objOpt.szDiffUrlGif != ""){
+		elGif.style.backgroundImage = "url('" + objOpt.szDiffUrlGif + "')"; 
+	}
+	if (objOpt.iDivWidth != null){
+		elGif.style.width = objOpt.iGifWidth + "px";  
+	}
+	
+	loading_elementShow (loading_getElementById2 ("loadingDivTdGif"),objOpt.bShowGif,"");
+	//------
+	if (objOpt.szBackgroundColor && objOpt.szBackgroundColor != ""){
+		loadingDiv.style.backgroundColor = objOpt.szBackgroundColor; 
+		loading_getElementById2 ("loadingDivMsg").style.backgroundColor = objOpt.szBackgroundColor;
+		loading_getElementById2 ("loadingDivTdGif").style.backgroundColor = objOpt.szBackgroundColor;
+		loading_getElementById2 ("loadingDivBtnTd").style.backgroundColor = objOpt.szBackgroundColor;		
+	}	
+	//------------------
+	var bShowElapsedSec = (objOpt.bShowElapsedSec != undefined && objOpt.bShowElapsedSec); 
+	loading_elementShow (elTitle,bTitle,"");
+	var_loading_div.elFooter = loading_getElementById2 ("loadingDivFooter");
+	loading_elementShow (var_loading_div.elFooter ,bShowElapsedSec,"");
+	if (bShowElapsedSec){
+		if (objOpt.bResetElapsedSec){
+			loading_log( Fn + "Start Timeout for Elapsedsec");
+			var dStart = new Date();  	
+			var_loading_div.iStartTime = dStart.getTime();
+			var_loading_div.szStartTime = num2StrPad(dStart.getHours(),'0',2) + ":" + 
+		   num2StrPad(dStart.getMinutes(),'0',2) + ":" +  num2StrPad(dStart.getSeconds(),'0',2); 
+		}
+		loadingDivTmo(); // simulate Tmo to show currente Elapsed Time
+		var_loading_div.tmoElapsedSec =  setInterval(loadingDivTmo,1000);
+	}
+	loading_elementShow (divMain,true);
+
+}	  
+
+/**
+ * Hide loadindgDiv
+ */
+function loadingDivHide(){
+	
+	if (var_loading_div.tmoElapsedSec){
+		clearTimeout (var_loading_div.tmoElapsedSec);
+	}
+	var divContainer = loading_getElementById2 ("loadingDivContainer",false);
+	loading_elementShow (divContainer,false);
+}	  
+

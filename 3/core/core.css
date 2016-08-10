@@ -11,6 +11,10 @@
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
 This file may be freely distributed under the MIT license.   <BR/>
+<b> NOTE:</b> You can choose between 2 version of this file: <ul>
+  <li> core.css: with relative path (so you can modify the images locally)- e.g background:url('../images/alarming.gif')  </li>
+  <li> core_path_fix.css: with absolute path - e.g background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif')  </li>
+</ul>
 ========================================================================================= <BR/> 
 */
 
@@ -221,16 +225,50 @@ div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
 }
 
 
-
-/* Tip img with 'i' */
-img.jsuInfo{
-  background:url('../images/info.jpg') no-repeat center bottom;
-  height: 15px;
-  marging-left: 5px;
+/*---
+input.jsuInfo Tip img with 'i'   
+---
+<b>CSS:</b> ``img.jsuInfo`` ``input.jsuInfo``  usually used with JSU Tooltip API Tip() UnTip()  
+<BR/>For cross browser compatibility we recommend using input.jsuInfo. img.jsuInfo can be used  only in IE. 
+<BR/><BR/><b>Examples:</b>
+```javascript
+<input class="jsuInfo" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"/>
+```
+```html
+<input class="jsuInfo" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"
+  style="background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.jpg') no-repeat center bottom; height:14px;width: 5px;" 
+/>
+```
+*/
+img.jsuInfo, input.jsuInfo{ /* Info img  */
+  background:url('../images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
 }
 
-/* Tip img with QuestionMark */
-img.jsuTip{
+
+
+/*---
+input.jsuTipTip img with QuestionMark    
+---
+<b>CSS:</b> ``img.jsuTip`` ``input.jsuTip``  usually used with JSU Tooltip API Tip() UnTip()  
+<BR/>For cross browser compatibility we recommend using input.jsuInfo. img.jsuInfo can be used  only in IE. 
+<BR/><BR/><b>Examples:</b>
+```javascript
+<input class="jsuTip" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"/>
+```
+```html
+<input class="jsuTip" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"
+  style="background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center bottom" 
+/>
+```
+
+*/
+img.jsuTip, input.jsuTip{
   background:url('../images/tip.png') no-repeat center center;
   height: 20x;
   width: 20x;
@@ -283,7 +321,6 @@ input.validateInfo{ /* Info img  */
   margin-left: 2px; 
   cursor: pointer;
   border: 1px solid #000;
-  
 }
 
 
@@ -307,8 +344,8 @@ input.validateInfo{ /* Info img  */
 }
 
 
-/* Error Label in Popup */
-.validateErrPopup{
+
+.validateErrPopup{ /* Error Label in Popup */
   font-weight: normal;
   color: red; /* */
 }
@@ -527,6 +564,11 @@ tr.tiptitleBig,th.tiptitleBig{
   font-size: 13pt;
 }
 
+tr.tiptitleVeryBig,th.tiptitleVeryBig{
+  font-size: 20pt;
+}
+
+
 
 label.tiptitle {
   font-family: Verdana;
@@ -709,6 +751,19 @@ a.tipLink:hover {
  cursor: pointer;
  color: #1E90FF; // dodgerblue
 }
+
+
+a.tipLinkJsLog{  /* to be used in JsLog where background is black */
+ font-weight: bold;
+ text-decoration: underline; 
+ color: cyan; // 
+}
+
+a.tipLinkJsLog:hover {
+ cursor: pointer;
+ color:   #E0FFFF; 
+}
+
 
 
 
