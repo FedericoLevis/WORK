@@ -155,8 +155,8 @@ loadingDivXXX API
 
 div.loadingDivContainer { /* The Main DivContainer */
   progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
-  height: 100%; 
-  width: 100%; 
+  height: 110%;  /* DEFAULT */
+  width: 110%; 
   z-index: 100; 
   background-color: white; 
   position: absolute; 
@@ -171,6 +171,7 @@ div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
   border-style:groove;
   border-width:5px;
   background-color: #EBEBEB; 
+  display: none;
 }
 
 table.loadingDiv{ /* The Main loadingDiv Table  */

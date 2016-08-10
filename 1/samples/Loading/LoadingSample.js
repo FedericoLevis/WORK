@@ -31,9 +31,13 @@ function jsu_loaded(){
 	manage_par_opt(); // manage optional PAR show_opt, only for developer
 	populateDuration();
 	populateUrlGif();
-	// Set DEfault 
-	getElementById2("szTitleHtml").value = "Loading Title <i>Example</i>";
-	getElementById2("szDiffMsgHtml").value = "<b>Loading could require <i>some seconds</i></b><BR/><BR/>Please Wait...";
+	// Set DEfault
+	try{  // use try catch beacuse we use this file also from HTML doc
+		getElementById2("szTitleHtml").value = "Loading Title <i>Example</i>";
+		getElementById2("szDiffMsgHtml").value = "<b>Loading could require <i>some seconds</i></b><BR/><BR/>Please Wait...";
+	}catch (e){
+		;
+	}
 	loadingShow(false);
 }
 
