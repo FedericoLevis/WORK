@@ -215,11 +215,13 @@ var video_opt = VIDEO_OPT.YOU_TUBE;  //default
  * JSU About Popup Example
  */
 function showJsuPopupAbout(){
+	var szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "disabled");
+
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="700px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src=https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
   '     </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2_MSG + '</td></tr> ' +
+  '  <tr class="jsuAboutMsg"><td class="tipl" >' + szTipSect2 + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   '    <td ><table class="tipNoBorder" width="100%"><tr>' +
   '      <td align="right" width="40%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
@@ -243,9 +245,13 @@ function aboutTipJSU(event,bShowAllSample){
 	if (bShowAllSample == undefined){
 		bShowAllSample = true;
 	}
+	// for JSUDoc we disable the choice
+	var szLocation = window.location + ""; 
+	var bJSUDoc = szLocation.indexOf ("JSUDoc") > 0;
+	
 	// depending on BRowser we enable or disable videoOpt 
 	var szTipSect2 = "";
-	if (isIE() || isFirefox()){
+	if (isIE() || isFirefox() || bJSUDoc){
 		// We can show Video also in Popup
 		// select.disabled = false;
 		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "");
@@ -917,7 +923,7 @@ function showJSUVideo(szVideoFrame,szTitle,iWidth){
 }
 
 function showJSUVideoTip(){
-	showJSUVideo (JSU_VIDEO_FRAME_TIP,"JSU Tooltip Sample",770);
+	showJSUVideo (JSU_VIDEO_FRAME_TIP,"JSU Tooltip Sample",800);
 }
 
 
