@@ -29,7 +29,7 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
  */ 
 var SORT_TYPE = {
 		NONE:'NONE',    // NO Sort for This column
-		STRING:'STRING',    // Default (idf not indicate the column is sorted as STRING)
+		STRING:'STRING',    // Default (used when it is not indicate the SORT_TYPE	)
 		NUMBER:'NUMBER',
 		DATETIME:'DATETIME'  // can be used for Date, DateTime, Time. For Format see date.js
 };

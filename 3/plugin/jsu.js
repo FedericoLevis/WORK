@@ -18,7 +18,7 @@ var externalPluginVersion = "/Minify";
 
 // ----------------------------------- FIXED
 var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
-var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/WORK/master/core/Popup/";
+var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/Popup/";
 
 
 //----------------------------------- FIXED 

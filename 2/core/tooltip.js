@@ -5,8 +5,8 @@
 <b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>     JSU Tip API:   Tip* UnTip*   <BR/>   
-<b>REQUIRED:</b>        JSU:  core/core.css locale/EN/locale-core.js (or OTHER language insteda of EN)<ul>
-<b>OPTIONAL:</b>        JSU: core/jslog.js core/dom-drag.js if you want to use jslog 
+<b>REQUIRED:</b>        JSU:  core/core.css locale/EN/locale-core.js (or OTHER language instead of <i>EN</i>)
+<b>OPTIONAL:</b>        JSU: core/jslog.js core/dom-drag.js if you want to use jslog <BR/> 
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>

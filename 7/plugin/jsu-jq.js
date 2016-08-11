@@ -1,5 +1,11 @@
-var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master";
-//var JSU_PATH_BASE="../../..";  // WORK
+/* the BASE Path: Path of ..../jsu folder. 
+ a) Fixed 
+ b) relative Path (relative to HTML including this file)
+*/  
+
+if (typeof (JSU_PATH_BASE) == "undefined"){
+  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master";
+}
 
 // ===================================== OPTION: JSU with Comment or Minified   
 //----- ExternalPlugin (jquery, jquery-ui)
@@ -7,7 +13,7 @@ var externalPluginVersion = "/Minify";
 
 // ----------------------------------- FIXED
 var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
-var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/WORK/master/core/Popup/";
+var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/Popup/";
 //----------------------------------- FIXED 
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";

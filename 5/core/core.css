@@ -520,7 +520,7 @@ img.jsuSample{ /* Sample img  */
 }
 
 
-table.tip {
+table.tip, table.jsuHeader, table.jsuFooter {
 	text-align: center;
 	font-family: Verdana;
 	font-weight: normal;
@@ -534,18 +534,23 @@ table.tip {
   border-spacing: 2px; 	
 }
 
-table.tipNoBorder {
-	text-align: center;
-	font-family: Verdana;
-	font-weight: normal;
-	font-size: 11px;
-	color: black; /* Black */
-	background-color: #fafafa;
-	/* White Gray: default backgound, used for Td */
-	border: 0px; /* Dark Gray */
+table.tipNoBorder,table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #fafafa;
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /* Dark Gray */
   border-collapse: separate;
-  border-spacing: 5px; 	
+  border-spacing: 5px;  
 }
+
+
+table.jsuHeaderNoBorder,table.jsuFooterNoBorder { /* used for Header and Footer in Documentation*/ 
+    border-spacing: 1px;  
+  }
 
 
 tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {
@@ -566,7 +571,7 @@ tr.tiptitleBig,th.tiptitleBig{
 }
 
 tr.tiptitleVeryBig,th.tiptitleVeryBig{
-  font-size: 20pt;
+  font-size: 30pt;
 }
 
 
