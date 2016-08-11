@@ -1,6 +1,14 @@
 
-var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master";
-//var JSU_PATH_BASE="../../..";  // WORK
+
+
+/* the BASE Path: Path of ..../jsu folder. 
+ a) Fixed 
+ b) relative Path (relative to HTML including this file)
+*/  
+
+if (typeof (JSU_PATH_BASE) == "undefined"){
+  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master";
+}
 
 
 

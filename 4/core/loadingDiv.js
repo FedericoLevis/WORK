@@ -104,6 +104,28 @@ var var_loading_div = {
 /*==========================================================================
  * 							PRIVATE 
 ========================================================================== */
+var LOADING_APP_NAME_IE="Microsoft Internet Explorer";   // IE
+var LOADING_APP_NAME_IE_11="Netscape";   // IE 11
+
+
+/*
+ * Different object to be used if IE/Firefox or Chrome
+ */
+function loading_getScrollEl(){
+	var Fn = "[loadingDiv.js loading_getScrollEl()] ";
+	// For Firefox or IE
+	if  ((typeof InstallTrigger !== 'undefined')  ||
+			 (navigator.appName == LOADING_APP_NAME_IE) || 
+      ((navigator.appName == LOADING_APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
+		loading_log(Fn + "Firefox/IE");
+		return document.documentElement;
+  } else { // NOT Firefox/IE (e.g CHROME)
+  	loading_log(Fn + "NOT Firefox/IE (e.g CHROME)");
+  	return document.body;
+  } 	
+}
+
+
 
 /*
 Show/Hide an Element (and its Children)
@@ -315,8 +337,9 @@ function loadingDivShow(objOpt){
 	// Set the Size
 	var divContainer = loading_getElementById2 ("loadingDivContainer",true);
 	
-	var bd = document.body;
-	// Sroll = total dimensione, also if some is not bvisible
+	var bd = loading_getScrollEl();
+
+	// Scroll = total dimensione, also if some is not bvisible
 	var hScroll= bd.scrollHeight;
 	var wScroll= bd.scrollWidth;
 	var xScroll= bd.scrollLeft;
@@ -370,7 +393,7 @@ function loadingDivHide(){
 	if (var_loading_div.tmoElapsedSec){
 		clearTimeout (var_loading_div.tmoElapsedSec);
 	}
-	var bd = document.body;
+	var bd = loading_getScrollEl(); 
 	if (var_loading_div.prev.scrollLeft != -1){
 		loading_log(Fn + "RESTORE scrollLeft=" + var_loading_div.prev.scrollLeft);
 		bd.scrollLeft = var_loading_div.prev.scrollLeft;
