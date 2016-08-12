@@ -986,7 +986,9 @@ function jsuGoToURL(szUrl,bNewWindow){
 	}
 	var aId = getElementById2("href_hidden");
 	aId.href = szUrl;
-	aId.target = (bNewWindow)? "_blank" : "_self";
+	// DAFARE
+	// aId.target = (bNewWindow)? "_blank" : "_self";
+	aId.target = "_self";
 	aId.click();
 }
 
