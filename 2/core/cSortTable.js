@@ -119,10 +119,10 @@ var SORT_CLASSNAME = "sortimg";
 /**
  @class cSortTable 
   
-  @param	{string} szElId  in  Id of TABLE if HTML - If bCognos: spanId including TABLE 
-	@param	{array} arSortCol  in  Array with the SortCol (See EXample later)
+  @param	{string} szElId      Id of the HTML TABLE to sort - If bCognos=true szElId=spanId that enclose the Cognos List to Sort 
+	@param	{array} arSortCol  Array with the SortCol (See Example below)
 	@param objOpt {Object}   Options: <BR/>
-					- iRowSortHeader {Number}  Default =1   index [1,2,..] of the Row Header, where we will put the SortIcons <BR/>
+					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Rows in Header. We will put the SortIcons into iRowSortHeader row  <BR/>
 					- szSortCol	{String}		Current Sort Col to be set.	 <BR/>
 																Default. Par is absent and First Col is Set, without applying the Sort (we suppose Table already Sorted) <BR/>
 																	a) bCognos=false: First Col is Set  <BR/>
@@ -131,13 +131,13 @@ var SORT_CLASSNAME = "sortimg";
 																Default: par is absent and we use: <BR/>
 																	a) bCognos=false: SORT_DIR.ASC <BR/>
 																	b) bCognos=true: Current Dir is taken by selectSortDir <BR/>
-					- bSortApply {Boolean}	Def=false if true apply the current SortCol/ SortDir 											 <BR/>
-	  			- szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the one confifured in conf.js <BR/>
+					- bSortApply {Boolean}	Default=false If true apply the current SortCol/ SortDir 											 <BR/>
+	  			- szFmtDatetime (String}  Fmt to be used for Datetime if the Info is passed for the DATETIME Columns into szSortCol .fmt parameter	 <BR/>
+	  			- szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the default image Path <BR/>
 	  			- iTblRowPerPage {Number}   If present is the limit of Rows displayed in the Table. For Cognos is the Setting of the List properties RowPerPage <BR/>
 	  																When not present (default), we consider all the Table always displayed <BR/>
-	  			- szFmtDatetime (String}  Fmt to be used for Datetime if Info is not defined								 <BR/>
 	  			- szClassFooter {String}    class that identity the TR and/OR TD Footer rows					 <BR/>
-					- bCognos				{Boolean}     default=false Cognos Sort: szElId identify the span in front of the Table <BR/>
+					- bCognos				{Boolean}     default=false . true for Cognos  Sort: in this case szElId identifies the span in front of the Table <BR/>
 					- bCognosGlobalSort {Boolean} Default=false. Only for bCognos=true <BR/>
 																			When The Table is displayed and More than one Page is present we cannot make Local Sort: <BR/>
 																			  a) bCognosGlobalSort=false  LocalSort is Disable (Gray icons) <BR/>
@@ -146,8 +146,9 @@ var SORT_CLASSNAME = "sortimg";
 
 	@example
  
+  // First 3 colums have default type: SORT_TYPE.STRING that is set when .type is not present 
 	var arSortCol = [  {col: 'Country'},   
-					{col: 'Last Name'}, 
+					{col: 'Last Name'},        
 					{col: 'Email'}, 
 	        {col:'Payment', type: SORT_TYPE.DATETIME, fmt: 'yyyy/MM/dd HH:mm'}, 
 	        {col: 'Amount', type: SORT_TYPE.NUMBER, groupSep:',', decimalSep:'.'}] 

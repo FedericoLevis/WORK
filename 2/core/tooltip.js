@@ -6,6 +6,7 @@
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>     JSU Tip API:   Tip* UnTip*   <BR/>   
 <b>REQUIRED:</b>        JSU:  core/core.css locale/EN/locale-core.js (or OTHER language instead of <i>EN</i>)
+<b>OPTIONAL:</b>        JSU:  core/prettify: prettify-jsu.js prettify-jsu.css if you want shw JS Hightlighted with TipJSFixedClick <BR/> 
 <b>OPTIONAL:</b>        JSU: core/jslog.js core/dom-drag.js if you want to use jslog <BR/> 
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
@@ -43,8 +44,8 @@ var TIP_FIXED_POS={
 };
 
 var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
-var TIP_DEF_JS_COL_NUM = 100; // default: 100 col for JS
-var TIP_DEF_JS_ROW_NUM = 20; // default: 25 rows for JS
+var TIP_DEF_COL_NUM = 100; // default: 100 col for TextBox
+var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextBox
 
 /*=========================================================================================
  * 					CONFIG CONST
@@ -195,6 +196,13 @@ config. Footer			= '';		// Default Footer text applied to all tips (no default t
 config. Width			= 0;			// Tooltip width; 0 for automatic adaption to tooltip content; < -1 (e.g. -240) for a maximum width for that automatic adaption;
 									// -1: tooltip width confined to the width required for the titlebar
 //=======  END OF TOOLTIP CONFIG, DO NOT CHANGE ANYTHING BELOW  ==============//
+var tt_aElt = new Array(10), // Container DIV, outer title & body DIVs, inner title & body TDs, closebutton SPAN, shadow DIVs, and IFRAME to cover windowed elements in IE
+tt_aV = new Array(),	// Caches and enumerates config data for currently active tooltip
+tt_sContent,			// Inner tooltip text or HTML
+tt_t2t, tt_t2tDad,		// Tag converted to tip, and its DOM parent element
+tt_musX, tt_musY,
+tt_over,
+tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed tooltip
 
 
 
@@ -279,17 +287,20 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
   		bDivScroll = true;
   	} 
   	var szDivHTML = "";
-  	if (bDivScroll){
-  		// Add Div for scroll
-  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
-  		tipMsgHtml = "<div style='" + szMaxHeight + szMaxWidth +    " border: 1px solid; overflow: auto;'>" +
-  		    tipMsgHtml + '</div>';
-  	}
+  	if (!bDivScroll){
+  		szMaxWidth = 'max-width: ' + tt_w + 'px;';
+  	}	
+  	
+ 		// Add Div for scroll
+ 		// e.g "<div style='max-height: 200px;overflow: auto;'>"
+ 		tipMsgHtml = "<div style='" + szMaxHeight + szMaxWidth +    " border: 1px solid; overflow: auto; background-color: white;'>" +
+ 		    tipMsgHtml + '</div>';
+  	
   	
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="UnTip(event)" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="UnTip(event)" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
@@ -419,75 +430,19 @@ function UnTipFixed(event){
 
 
 
-/**
- * Create a FixedTip for a Code Sample: a Table with JScode, a Gif and optional Link
- * 
- * @param event
- * @param szTitle {String}  The Title of the CodeSample
- * @param jsCode
- * @param videoEmbedUrl {String}
- * @param [objOpt] Option  <BR/>    
- *                            - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom) <BR/> 
- *                            - iJSMaxWidth {Number}  MaxWidth of the JSCode Section default: 500  <BR/>
- *                            - iJSMaxHeight {Number} MaxHeight of the JSCode Section  default: 400  <BR/>
- * 														- arObjUrl:  example <BR/> 
- * 																				arObjUrl:[{title:"Try Sort Sample", href:JSU_URL_SORT_SAMPLE_SIMPLE}, <BR/>
- *                                                  {..........}   <BR/>
- *																						     ] <BR/>
- * 														- tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER  <BR/> 
- */
-function TipFixedCodeSample(event, jsCode,videoEmbedUrl, objOpt){
-	var Fn = "[tooltip.js TipCodeSample] ";
-	tt_init(); // init, if not already done
-	if (objOpt == undefined){
-		objOpt = new Object();
-	}
-	if (objOpt.bCloseBtn == undefined) {objOpt.bCloseBtn =true;}
-	if (objOpt.iJSMaxWidth == undefined) {objOpt.iJSMaxWidth =600;}
-	if (objOpt.iJSMaxHeight == undefined) {objOpt.iJSMaxHeight =600;}
-	
-  //----- Optional URL List
-	var szTrUrl = "";
-  if (objOpt&& objOpt.arObjUrl && objOpt.arObjUrl.length){
-  	var arObjUrl = objOpt.arObjUrl;
-	  if (arObjUrl && arObjUrl.length){
-	    szTrUrl = '<tr><td align="left"> <ul type="square">';
-	  	for (var i=0; i< arObjUrl.length; i++){
-	  		var objUrl = arObjUrl[i];
-	  		szTrUrl += '<li><a class="tipLink" target="_blank" href="' + objUrl.href  + '">' + objUrl.title + '</a></li>';
-	  	}
-	  	szTrUrl +='</ul></td></tr>';
-	  }
-  }  
-	objOpt.bMsgHtml = false;
-	var szTable  =  '<table class="tip" BORDER="2" cellspacing="0">';
-  var szTip = szTable +
-	  '  <tr class="tiptitle">' +
-	  '    <td class="tiptitle">' + "JS CODE SAMPLE" + '</td>' + 
-	  '    <td class="tiptitle">' + "VIDEO SAMPLE" + '</td>' + 
-	  '  </tr>' +
-	  '  <tr>' +
-	  '    <td align="left">' +
-	  '      <table width="100%" class="tipNoBorder" >' + 
-	  '        <tr><td align="left"><textarea rows="30" cols="100" readonly>' + jsCode + '</textarea>' + '</td></tr>' + szTrUrl +
-	  '      </table>' +
-	  '    <td align="center">' + videoEmbedUrl + '</td>' +
-	  '  </tr></table>'; 
-	TipFixedClicked(szTip,event,objOpt);
-}
-
-
 
 /**
+ * Display a Fixed Tip with JS Code. <ul>
+ *   <li> a) if prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
+ *   <li> b) if prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipTextBoxFixedClicked</li> 
+ * </ul>
  * @param jsCode  {String}  jsCode to display, with \n for newline
  * @param event
  * @param [objOpt] {Object} Option: <BR/>   
  *                           - szTitle{String}  default: 'JS Source Code'  <BR/>
- *                           - iJSColNum{Number}  default=100 Number of Column for JSText <BR/>
- *                           - iJSRowNum{Number}  default=20 Number of Rows for JSText (if more rows are present, scrollbar will be created) <BR/>
  *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
- * 													 - iJSMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL <BR/> 
- * 													 - iJSMaxWidth {Number}:  Max Width  of the div that contain the JS         (with autoscroll). Default =0 NO SCROLL  <BR/>
+ * 													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL <BR/> 
+ * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS         (with autoscroll). Default =0 NO SCROLL  <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
@@ -499,15 +454,53 @@ function TipJSFixedClicked(jsCode, event, objOpt){
 	}
 	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.iJSColNum == undefined){	objOpt.iJSColNum = TIP_DEF_JS_COL_NUM; }
-	if (objOpt.iJSRowNum == undefined){	objOpt.iJSRowNum = TIP_DEF_JS_ROW_NUM; }
 	tt_init(); // init, if not already done
-	// prepare szJsTxt 
-	var szJsTxt='<textarea rows="' + objOpt.iJSRowNum + '" cols="' + objOpt.iJSColNum  + '" readonly>' + jsCode + '</textarea>';
-	objOpt.bMsgHtml = false;
+	var bPrettify =  (typeof(prettyPrint) != "undefined");
+	tt_log (Fn + "bPrettify=" + bPrettify);
+	var szJsTxt="";
+	if (bPrettify){
+		tt_log (Fn + "prepare Prettify szJsTxt");
+		var szJsTxt = '<div id="divTipJS" class="prettyfy"> <pre class="prettyprint"><code>' + jsCode + '</code></pre></div>';
+		TipFixedClicked (szJsTxt,event,objOpt);
+		prettyPrint();  // Hightlight <pre> with prettyprint
+	}else{
+		TipTextBoxFixedClicked(jsCode, event, objOpt);
+	}
+	tt_log (Fn + "--- END");
+}
+
+
+/**
+ * Display a Text in a TextBox of a FixedTip. For Example this function is used to display mixed JS and HTML code  <ul>
+ * @param szTxt  {String}  szTxt to display, with \n for newline
+ * @param event
+ * @param [objOpt] {Object} Option: <BR/>   
+ *                           - szTitle{String}  default: 'Text'  <BR/>
+ *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
+ *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
+ *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
+ * 													 - iMaxHeight {Number}:  Max Height (px) of the MAIN Tip div, that contain the TextBox   (with autoscroll). Default =0 NO SCROLL <BR/> 
+ * 													 - iMaxWidth {Number}:  Max Width  of the MAIN Tip div, that contain the TextBox        (with autoscroll). Default =0 NO SCROLL  <BR/>
+ * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
+ * 														     
+ */
+function TipTextBoxFixedClicked(jsCode, event, objOpt){
+	var Fn = "[tooltip.js TipTextBoxFixedClicked] ";
+	tt_log (Fn + "--- START");
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
+	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = TIP_DEF_ROW_NUM; }
+	tt_init(); // init, if not already done
+	var szJsTxt='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + jsCode + '</textarea><BR/>';
+  objOpt.bMsgHtml = false;
 	TipFixedClicked (szJsTxt,event,objOpt);
 	tt_log (Fn + "--- END");
 }
+
 
 
 //==================  LOCAL FUNCTION	 =====================================//
@@ -605,13 +598,6 @@ function TagToTip()
 
 
 
-var tt_aElt = new Array(10), // Container DIV, outer title & body DIVs, inner title & body TDs, closebutton SPAN, shadow DIVs, and IFRAME to cover windowed elements in IE
-tt_aV = new Array(),	// Caches and enumerates config data for currently active tooltip
-tt_sContent,			// Inner tooltip text or HTML
-tt_t2t, tt_t2tDad,		// Tag converted to tip, and its DOM parent element
-tt_musX, tt_musY,
-tt_over,
-tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed tooltip
 
 
 

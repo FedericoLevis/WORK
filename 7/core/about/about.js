@@ -247,11 +247,11 @@ function aboutTipJSU(event,bShowAllSample){
 	}
 	// for JSUDoc we disable the choice
 	var szLocation = window.location + ""; 
-	var bJSUDoc = szLocation.indexOf ("JSUDoc") > 0;
+	var bJSUDoc = szLocation.indexOf ("JSUDoc") >= 0;
 	
 	// depending on BRowser we enable or disable videoOpt 
 	var szTipSect2 = "";
-	if (isIE() || isFirefox() || bJSUDoc){
+	if (!bJSUDoc && (isIE() || isFirefox())){
 		// We can show Video also in Popup
 		// select.disabled = false;
 		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "");
@@ -537,19 +537,6 @@ var JS_CODE_TIP= '//Define in JS the HTML Tip Msg: \n'+
 '//Add onmouseover="Tip()" and onmouseout="UnTip()" \n'+	
 '<input type="text" value="HTML Tip" style="width:60px;" \n' +
 'onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event)" />'; 
-
-
-/**
- * Show JS Code and Video Sample
- * 
- * @param event
- */
-/*
-function codeSampleValidate(event){
-  TipFixedCodeSample (event,JS_CODE_VALIDATE,JSU_VIDEO_FRAME_VALIDATE,
-  		      {szTitle:"JSU Validate", arObjUrl: JSU_AR_VALIDATE_SAMPLE_URL});
-}
-*/
 
 
 

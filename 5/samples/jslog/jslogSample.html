@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="../../core/about/about.css" type="text/css">
   <script type="text/javascript" src="../../core/about/about.js" ></script>
 
+  <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
+  <link rel="stylesheet" href="../../core/prettify/prettify-jsu.css" type="text/css">
+  <script type="text/javascript" src="../../core/prettify/prettify-jsu.js" ></script>
+
 </head>
 <body>
 
@@ -165,7 +169,7 @@
                <li><b>START jslog:</b> <input type="button" class="tipJSFixed" id="tipJS1jslogStart" onclick="TipJSFixedClicked (JS1_JSLOG_START,event);" />
                    <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipJSFixed" id="tipJS1jslogEnd" onclick="TipJSFixedClicked (JS1_JSLOG_END,event);" /></li><BR/>
                <li><label style="margin-right:30px;"><b>JSlog API sample at various Level: </b></label><BR/><BR/>
-                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipJSFixedClicked (JS1_LEV1,event,{iJSColNum:140});" /><BR/><BR/>
+                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipJSFixedClicked (JS1_LEV1,event,{iMaxWidth:800});" /><BR/><BR/>
                    <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipJSFixed" id="tipJS1Lev2" onclick="TipJSFixedClicked (JS1_LEV2,event);" /> <BR/><BR/>
                    <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipJSFixed" id="tipJS1Lev4" onclick="TipJSFixedClicked (JS1_LEV4,event);" /><BR/><BR/>
                    <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipJSFixed" id="tipJS1Lev8" onclick="TipJSFixedClicked (JS1_LEV8,event);" /></li>
