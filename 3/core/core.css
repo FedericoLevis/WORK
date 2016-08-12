@@ -464,29 +464,6 @@ input.jsuHelp{	/* Help Button */
 }
 
 
-input.downloadFree, input.downloadPay {
-  margin-left:20px;
-  border: 1px solid #000;
-  font-weight: bold;
-  cursor: pointer;
-  margin-right: 0px; 	
-  align:left;
-}
-
-
-input.downloadFree {
-    height: 27px;
-    width: 210px;
-    background: Yellow url(../images/downloadFree.png) no-repeat center center;
-}
-
-input.downloadPay {
-    height: 27px;
-    width: 165px;
-    background: cyan url(../images/downloadPay.png) no-repeat right center;
-}
-
-
 
 img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
   background:url('../images/tipFixedUp.jpg') center top;
@@ -526,7 +503,7 @@ table.tip, table.jsuHeader, table.jsuFooter {
 	font-weight: normal;
 	font-size: 11px;
 	color: black; 
-	background-color: #fafafa;
+	background-color: #ffffff;
 	/* White Gray: default backgound, used for Td */
 	border: 3px solid #858585; /* Dark Gray */
 	border-spacing: 0px;
@@ -540,9 +517,9 @@ table.tipNoBorder,table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
   font-weight: normal;
   font-size: 11px;
   color: black; /* Black */
-  background-color: #fafafa;
+  background-color: #ffffff;
   /* White Gray: default backgound, used for Td */
-  border: 0px; /* Dark Gray */
+  border: 0px; /*  */
   border-collapse: separate;
   border-spacing: 5px;  
 }
@@ -570,8 +547,9 @@ tr.tiptitleBig,th.tiptitleBig{
   font-size: 13pt;
 }
 
-tr.tiptitleVeryBig,th.tiptitleVeryBig{
+.tiptitleVeryBig{
   font-size: 30pt;
+  font-weight: bold;  
 }
 
 
@@ -620,7 +598,7 @@ th.tip,td.tip {
 	padding: .5em;
 	color: #00;
 	border: 1px solid #404040; /* Black */
-	background-color: #fcfcfc;
+	background-color: #ffffff;
 }
 
 

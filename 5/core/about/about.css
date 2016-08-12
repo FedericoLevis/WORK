@@ -109,3 +109,92 @@ label.aboutSourceJSUAPI{
 }
 
 
+input.downloadFree, input.downloadPay {
+  margin-left:20px;
+  border: 1px solid #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0px;  
+  align:left;
+}
+
+
+input.downloadFree {
+    height: 27px;
+    width: 210px;
+    cursor: pointer;
+    background: Yellow url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/DownloadFree.png) no-repeat center center;
+}
+
+input.downloadPay {
+    height: 27px;
+    width: 165px;
+  cursor: pointer;
+    background: cyan url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadPay.png) no-repeat right center;
+}
+
+
+input.downloadPageFree {
+    height: 80px;
+    width: 485px;
+  cursor: pointer;
+    background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadPageFree.png) no-repeat right center;
+}
+
+.jsuFeatPresent{ /* FREE */
+  font-family: Verdana;
+  color: #000000;
+  background-color: #66FF66;    
+}
+
+.jsuFeatPresentBig{ /* FREE */
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  background-color: #66FF66;    
+}
+
+
+.jsuFeatAbsent{ /* NOT FREE */
+  font-family: Verdana;
+  color: #FFD700;
+  background-color: black;    
+}
+
+.jsuFeatAbsentBig{ /* NOT FREE */
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFD700;
+  background-color: black;    
+}
+
+
+.jsuFeatPresent{ /* FREE */
+  font-family: Verdana;
+  color: #000000;
+  background-color: #66FF66;    
+}
+
+.jsuFeatPresentBig{ /* FREE */
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+  background-color: #66FF66;    
+}
+
+
+.jsuFeatAbsent{ /* NOT FREE */
+  font-family: Verdana;
+  color: #FFD700;
+  background-color: black;    
+}
+
+.jsuFeatBig{ 
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px !important;
+}
+
