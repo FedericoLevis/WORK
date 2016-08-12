@@ -345,7 +345,14 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
         N = /\S/,
         // JSU
         O = u({
-            keywords: [F, H, w, "cSortTable,Popup,alert,caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END" +
+            keywords: [F, H, w, "cValidate,cValidate.setOption,cValidate.validateApply," +
+                       "cSortTable,cSortTable.setSort,cSortTable.getSort,cSortTable.sortApply" +
+                       "jslog,jslog_init,jslog_end,jslogObj,jslogDomEl,jslogDomElById,jslogElapsedTime," +
+                       "loadingDivShow,loadingDivHide" +
+                       "Tp,UnTip,TipFixedClick,TipJSFixedClick,TipTextBoxFixedClick," +
+                       "Popup," +
+                       "alert,"+
+                       "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END" +
                 I, J, v
             ],
             hashComments: !0,

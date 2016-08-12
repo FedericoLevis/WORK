@@ -29,11 +29,16 @@ var VIDEO_OPT={
 };
 
 
-var JSU_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
+//var JSU_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
+var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
 var JSU_EMAIL = "federico.levis@virgilio.it";  
-var JSU_COGNOS = "http://federicolevis.wix.com/cognos";
-var JSU_GITHUB = "https://github.com/FedericoLevis/JSU";
-var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
+// var JSU_COGNOS = "http://federicolevis.wix.com/cognos";
+var JSU_COGNOS = "http://goo.gl/JZJSPn";
+//var JSU_GITHUB = "https://github.com/FedericoLevis/JSU";
+var JSU_GITHUB = "https://goo.gl/LYDepH";
+//var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
+var JSU_PLSQL = "https://goo.gl/OI3eIo";
+
 
 var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png";
 
@@ -41,7 +46,9 @@ var JSU_SORT_CODE_H = 220;
 
 var JSU_DISABLED = 'javascript:function() { return false; }';
 
-var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
+//var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
+var JSU_GITHUB_DOWNLOAD = "https://goo.gl/03hvSQ";
+
 var JSU_BUY = JSU_DISABLED; // DAFARE
 var URL_PAR_OPT="opt"; // Optional PAR only for debugger 
 var SAMPLE_MAX_NUM=4; // Max sample per Feature
@@ -59,14 +66,35 @@ var JSU_VIDEO_FRAME_BLOCKPOPUP  =	'<iframe width="600" height="500" src="https:/
 var JSU_VIDEO_FRAME_JSPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 
 // Samples
-var JSU_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
-var JSU_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
-var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
-var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+// var JSU_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
+var JSU_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
+//var JSU_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
+var JSU_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
+
+//var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+var JSU_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
+//var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
+var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
+// --------------- FEATURE NOT FREE URL run-time calculated  
+var URL_OPT_GOOGLE = true;
 var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
+//var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.html";
+
+var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
+//var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html";
+
 var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/jslog/jslogSample.html";
-var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
+//var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/jslog/jslogSample.html";
+
 var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSPopup/PopupSample.html";
+//var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/JSPopup/PopupSample.html";
+
+//----------- goo.gl
+//var JSU_URL_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
+//var JSU_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
+//var JSU_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
+//var JSU_URL_SAMPLE_JSPOPUP  =	"https://goo.gl/WwL7hp";
+
 var JSU_URL_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/samples/Misc/SampleNotFree.html'
 // ID sample NOt FREE (see WORK dir)
 var JSU_ID_SAMPLE_LOADING  =	1;
@@ -789,8 +817,23 @@ function is_par_opt (){
  * @return e.g:  https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html 
  */
 function getSampleUrl(szUrl,iId){
-  return szUrl.replace("JSU/master",URL_1 + URL_SEP + URL_2 + URL_SEP + 
-     	           (iId + ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "" : "3")));
+	if (URL_OPT_GOOGLE){
+    if (iId == JSU_ID_SAMPLE_LOADING){
+   	  return "https://goAALl/j0HZDG".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_VALIDATE){
+     	  return "https://goAALl/F3r4lP".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_JSLOG){
+   	  return "https://goAALl/OfC2Pf".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_JSPOPUP){
+   	  return "https://goAALl/WwL7hp".replace ("AAL","o.g");
+    }		
+	}else{
+	  return szUrl.replace("JSU/master",URL_1 + URL_SEP + URL_2 + URL_SEP + 
+         (iId + ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "" : "3")));
+	}
+  
+  
+  
 }
 
 

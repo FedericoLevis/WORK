@@ -47,6 +47,9 @@ var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
 var TIP_DEF_COL_NUM = 100; // default: 100 col for TextBox
 var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextBox
 
+
+var TIP_DEF_MAX_WIDTH = 800; // For BRowser different form IE (IE make autosize)
+
 /*=========================================================================================
  * 					CONFIG CONST
  ========================================================================================= */
@@ -251,7 +254,7 @@ function Tip(tipMsgHtml,tipType,objOpt)
  *                            - szTitle{String}  default: ''   <BR/>
  *                            - bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  <BR/>
  * 														- iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 														- iMaxWidth {Number}:  Max Width  of the div that contain the JS         (with autoscroll). Default =0 NO SCROLL   <BR/>
+ * 														- iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
  * 														- tipFixedPos:  TIP_FIXED_POS.CENTER,... n (e.g -100)   default=TIP_FIXED_POS.CENTER  <BR/>
  * 													  - bMsgHtml= [true]  if false it is not converted to HTML 
  * 		GLOBAL
@@ -261,6 +264,7 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 {
 	var Fn = "[tooltip.js TipFixedClicked] ";
 	tt_log ( Fn + TIPLOG_FUN_START);
+	tt_logObj (Fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
 	if (objOpt == undefined){
 		var objOpt = {bMsgHtml: true};
@@ -282,7 +286,11 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
   		  szMaxHeight = 'max-height: ' +objOpt.iMaxHeight + 'px;';
   		  bDivScroll = true;
   	} 
-  	if (objOpt.iMaxWidth){
+  	if ((objOpt.iMaxWidth == undefined || objOpt.iMaxWidth == 0) && !tt_is_IE() ){
+  		tt_log ( Fn + "NOT IE and objOpt.iMaxWidth undefined. Set objOpt.iMaxWidth=" + TIP_DEF_MAX_WIDTH);
+  		objOpt.iMaxWidth=  TIP_DEF_MAX_WIDTH;
+  	}	
+  	if (objOpt.iMaxWidth != undefined  && objOpt.iMaxWidth > 0){
   	  szMaxWidth = 'max-width: ' +objOpt.iMaxWidth + 'px;';
   		bDivScroll = true;
   	} 
@@ -290,6 +298,7 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
   	if (!bDivScroll){
   		szMaxWidth = 'max-width: ' + tt_w + 'px;';
   	}	
+		tt_log ( Fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
@@ -479,14 +488,15 @@ function TipJSFixedClicked(jsCode, event, objOpt){
  *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
  *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
  *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
- * 													 - iMaxHeight {Number}:  Max Height (px) of the MAIN Tip div, that contain the TextBox   (with autoscroll). Default =0 NO SCROLL <BR/> 
- * 													 - iMaxWidth {Number}:  Max Width  of the MAIN Tip div, that contain the TextBox        (with autoscroll). Default =0 NO SCROLL  <BR/>
+ *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
+ * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
-function TipTextBoxFixedClicked(jsCode, event, objOpt){
+function TipTextBoxFixedClicked(szTxt, event, objOpt){
 	var Fn = "[tooltip.js TipTextBoxFixedClicked] ";
 	tt_log (Fn + "--- START");
+	tt_logObj (Fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -495,9 +505,9 @@ function TipTextBoxFixedClicked(jsCode, event, objOpt){
 	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
 	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = TIP_DEF_ROW_NUM; }
 	tt_init(); // init, if not already done
-	var szJsTxt='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + jsCode + '</textarea><BR/>';
+	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
   objOpt.bMsgHtml = false;
-	TipFixedClicked (szJsTxt,event,objOpt);
+	TipFixedClicked (szTxtBox,event,objOpt);
 	tt_log (Fn + "--- END");
 }
 
@@ -1956,5 +1966,16 @@ function getMouseXY(e, obj) {
 }
 
 
+function tt_is_IE(){
+	var APP_NAME_IE="Microsoft Internet Explorer";   // IE
+	var APP_NAME_IE_11="Netscape";   // IE 11
+	
+  if  ((navigator.appName == APP_NAME_IE) || 
+    ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
+    return true;
+  }else {
+  	return false;
+  }	
+}  
 
 
