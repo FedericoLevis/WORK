@@ -44,10 +44,15 @@ var JSU_DISABLED = 'javascript:function() { return false; }';
 
 var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
 
-var JSU_BUY = JSU_DISABLED; // DAFARE
-var URL_PAR_OPT="opt"; // Optional PAR only for debugger 
-var URL_PAR_GOOGLE="google"; // Optional PAR only for debugger to enable Test Google 
-var SAMPLE_MAX_NUM=4; // Max sample per Feature
+var JSU_BUY = JSU_DISABLED; 
+//-------------------------- Optional PAR only for debugger 
+var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column in Test
+// -- Test google, used only by AllSamples.html
+var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
+var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
+
+// ---------------------------------------
+var SAMPLE_MAX_NUM=4; // Max sample per Feature in the samples
 var SAMPLE_COL_ALL="ALL";
 
 // NOTE: embed is visible in the Ember Tab of Youtube Video  
@@ -62,10 +67,6 @@ var JSU_VIDEO_FRAME_BLOCKPOPUP  =	'<iframe width="600" height="500" src="https:/
 var JSU_VIDEO_FRAME_JSPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 
 // Samples
-// var JSU_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
-//var JSU_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
-//var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
-//var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
 // --------------- FEATURE NOT FREE URL run-time calculated  
 var URL_SHORT_GOOGLE = true;  // Use Google Short URL
 var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
@@ -80,7 +81,13 @@ var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples
 var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSPopup/PopupSample.html";
 //var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/JSPopup/PopupSample.html";
 
-//var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
+
+// ------------------
+var JSU_LONG_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
+var JSU_LONG_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
+var JSU_LONG_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
+var JSU_LONG_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+var JSU_LONG_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
 
 //----------- goo.gl of FREE Features
 var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
@@ -93,8 +100,8 @@ var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
 //var JSU_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
 //var JSU_URL_SAMPLE_JSPOPUP  =	"https://goo.gl/WwL7hp";
 var JSU_URL_DOC  =	"https://goo.gl/JzIXW0";
-var JSU_COGNOS = "http://goo.gl/JZJSPn";
 var JSU_GITHUB = "https://goo.gl/LYDepH";
+var JSU_COGNOS = "http://goo.gl/JZJSPn";
 var JSU_PLSQL = "https://goo.gl/OI3eIo";
 var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
 //---------------------
@@ -112,7 +119,7 @@ var JSU_ID_SAMPLE_JSPOPUP  =	7;
 //var JSU_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
 
 
-//var JSU_URL_API_DOC  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html";
+var JSU_LONG_URL_API_DOC  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html";
 //var JSU_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
 //var JSU_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html";
 //var JSU_URL_DOC_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html";
@@ -253,6 +260,10 @@ var b_par_opt = false;
 
 // option to show Video
 var video_opt = VIDEO_OPT.YOU_TUBE;  //default
+
+// For Test of Google Analytics
+var par_test = 100;
+var par_period = 60;
 
 /* =============================================================================================
 									GLOBAL API
@@ -799,11 +810,13 @@ function onchange_sample(){
 }
 
 
+
+
 /*
  * Manage optional URL PAR show_opt, useful only for developers. Called by all samples
  * 
  * GLOBAL
- *  b_par_opt   set to TRUE if there is URL par opt=1
+ *  b_par_opt   set to TRUE if there is URL par opt=1   if 1 we see Optional Columns used to Show/Hide Column in Test
  */
 function manage_par_opt(){
 	var fn = "manage_par_opt() ";
@@ -825,12 +838,26 @@ function manage_par_opt(){
 		  window.resizeTo(800+35, 620+170);
 		}
 	}	
-	var szParGoogle = urlGetParVal (URL_PAR_GOOGLE);
-	jslog (JSLOG_JSU,fn + "URL GOOGLE " + URL_PAR_GOOGLE + "=" + szParGoogle);
-	b_par_google = (szParGoogle != "");
-	if (b_par_google){
-		elementShow(getElementById2("testGoogle",false), true);
+	// var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
+	// var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60
+	try {
+		var iParTest = urlGetParVal (URL_PAR_TEST);
+		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_TEST + "=" + iParTest);
+		var bTest = (iParTest != undefined &&  iParTest != "");
+		jslog (JSLOG_JSU,fn + "bTest=" + bTest);
+		elementShow(getElementById2("testGoogle",true), bTest);
+		if (bTest){
+			par_test = parseInt(iParTest);
+		}
+		var iParPeriod = urlGetParVal (URL_PAR_PERIOD);
+		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_PERIOD + "=" + iParPeriod );
+		if (iParPeriod != undefined &&  iParPeriod != ""){
+			par_period = parseInt(iParPeriod);
+		}
+	}catch (e) {
+		jslog (JSLOG_ERR,fn + "Exception: " + e.message);
 	}
+	
 	//
 }
 
@@ -1061,6 +1088,7 @@ function jsuGoogleAnal (event){
 	var Fn = "[about.js jsuGoogleAnal()] ";
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
   UnTip(event);	
+  /*
 	var szMsg = '<div style="padding:5px 5px 5px 5px; width="400">Click following Links to see the <b>Google Analytics of the Main JSU URLs</b>:<ul>' +
 	'<li><a class="tipLink" href="'+ JSU_URL_DOWNLOAD_PAGE_FREE +'.info" target="_blank">Number of Download: JSU.ZIP FREE (Obfuscated)</a></li>  </BR>' +
 	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_ALL +'.info" target="_blank">Number of Access to Main JSU Sample</a>   </li></BR>' +
@@ -1074,6 +1102,19 @@ function jsuGoogleAnal (event){
 	'</div>';
 
  	TipFixedClicked (szMsg,event,{szTitle:"JSU Google Analytics"});
+ 	*/
+  
+  // Only shortUrl is mandatory
+  var arObjGoogleAnal = [
+       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , desc:'Download <b>JSU.ZIP FREE</b> Obfuscated'},
+       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL, desc:'JSU SAMPLE: <b>Main JSU Sample<b> '},
+       {shortUrl: JSU_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP, desc:'JSU SAMPLE: <b>Tooltip<b> '},
+       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, desc:'JSU SAMPLE: <b>SortTable<b> '},
+       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, desc:'JSU SAMPLE: <b>Blocking Popup<b> '}
+     ];
+  
+  
+  
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
 	
 }
@@ -1099,24 +1140,21 @@ function showAllGoogleAnal (){
 	jsuGoToURL(JSU_URL_SAMPLE_BLOCKPOPUP + '.info', true);
 }
 
-//----------------------- TEST
 
-
-
-var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE,JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT,JSU_URL_SAMPLE_BLOCKPOPUP];
-var iTest = 0;
-var iTestMax = 300;
-var iPeriodRandom = 100;
+/* ---------------------------------------------------------------------------------------------------------------------
+ * 					TEST GOOGLE ANALYTICS
+--------------------------------------------------------------------------------------------------------------------- */
 var tmoTest = null;
 // arTestUrl.length;
+var test_cur = 0;
 
 /**
- * Show a FixedTip with the Link to JSU Google Analytics
+ * Test Google
  * @param event
  */
-function showAllGoogleShort (){
-	var Fn = "[showAllGoogleShort()] ";
-	iTest =0;
+function onclickTestGoogle(){
+	var Fn = "[about.js  showAllGoogleShort()] ";
+	test_cur =0;
 	var iSec = Math.floor((Math.random() * 10) + 1);
 	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
 	tmoTest = setTimeout (testGoogle,iSec * 1000);
@@ -1125,18 +1163,23 @@ function showAllGoogleShort (){
 
 
 function testGoogle(){
-	var Fn = "[testGoogle()] ";
-	var i = iTest % arTestUrl.length;
-	jslog (JSLOG_DEBUG,Fn + "iTest=" + iTest +  "  i=" + i);
+	var Fn = "[about.js testGoogle()] ";
+	// URL under TEST
+	var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE,JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT,
+	                 JSU_URL_SAMPLE_BLOCKPOPUP,JSU_URL_API_DOC,JSU_URL_DOC];
+	
+	
+	var i = test_cur % arTestUrl.length;
+	jslog (JSLOG_DEBUG,Fn + "test_cur=" + test_cur +  "  i=" + i);
 	var szUrl = arTestUrl[i];
-	jslog (JSLOG_DEBUG,Fn + "szUrl=" + szUrl);
+	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
 	jsuGoToURL(szUrl, true);
 	clearTimeout (testGoogle);
 	
-	if (++iTest > iTestMax){
-		alert ("FINE");
+	if (++test_cur > par_test){
+		alert ("FINE Test Executed=" + par_test);
 	}else {
-		var iSec = Math.floor((Math.random() * iPeriodRandom) + 1);
+		var iSec = Math.floor((Math.random() * par_period) + 1);
 		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
 		tmoTest = setTimeout (testGoogle,iSec * 1000);
 	}

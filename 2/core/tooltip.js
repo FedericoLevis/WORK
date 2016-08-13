@@ -489,7 +489,7 @@ function TipFixedJS(jsCode, event, objOpt){
 
 
 /**
- * Display a Text in a TextBox of a FixedTip. For Example this function is used to display mixed JS and HTML code  <ul>
+ * Display whatever Text (also HTML TAGs) in a TextBox of a FixedTip. For Example this function is used to display mixed JS and HTML code  
  * @param szTxt  {String}  szTxt to display, with \n for newline
  * @param event
  * @param [objOpt] {Object} Option: <BR/>   
@@ -500,7 +500,24 @@ function TipFixedJS(jsCode, event, objOpt){
  *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
  * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
- * 														     
+ * 	@example
+ 
+		//This is an example of MIXED Code: JS and also HTML.  
+		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextBoxFixedClick()   
+		
+		//--------------------------------------------------------- JS CODE  
+		var JS_CODE_SORT_SAMPLE=...;  
+		//<input> object with:  
+		//  - class="tipFixed" type="button"   
+		//  - value=Text to display in the button 	
+		//  - set whatever unique id   
+		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
+		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
+		
+		//--------------------------------------------------------- CODE with HTML TAGs  
+		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
+		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; 
+														     
  */
 function TipFixedTextBox(szTxt, event, objOpt){
 	var Fn = "[tooltip.js TipFixedTextBox] ";
@@ -519,6 +536,54 @@ function TipFixedTextBox(szTxt, event, objOpt){
 	TipFixedClicked (szTxtBox,event,objOpt);
 	tt_log (Fn + "--- END");
 }
+
+
+/**
+ * Display in a FixedTip a Table with the Link to Google Analytics . 
+ * @param arObjGoogleAnal  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
+ * @param event
+ * @param [objOpt] {Object} Option: <BR/>   
+ *                           - szTitle{String}  default: 'Text'  <BR/>
+ *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
+ *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
+ *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
+ *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
+ * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
+ * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
+ * 	@example
+ 
+// JS Code		
+		var JS_CODE_SORT_SAMPLE=...;  
+		//<input> object with:  
+		//  - class="tipFixed" type="button"   
+		//  - value=Text to display in the button 	
+		//  - set whatever unique id   
+		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
+		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
+		
+		//--------------------------------------------------------- CODE with HTML TAGs  
+		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
+		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; 
+														     
+ */
+function TipFixedGoogleAnal(szTxt, event, objOpt){
+	var Fn = "[tooltip.js TipFixedTextBox] ";
+	tt_log (Fn + "--- START");
+	tt_logObj (Fn + "IN objOpt", objOpt);
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
+	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = TIP_DEF_ROW_NUM; }
+	tt_init(); // init, if not already done
+	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
+  objOpt.bMsgHtml = false;
+	TipFixedClicked (szTxtBox,event,objOpt);
+	tt_log (Fn + "--- END");
+}
+
 
 
 
