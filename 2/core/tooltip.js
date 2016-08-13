@@ -31,7 +31,8 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
  */
 var TIP_TYPE={
 		Floating: "Floating",  // Floating
-		Fixed: "Fixed"  // Fixed
+		Fixed: "Fixed",  // Fixed
+		NONE: "NONE"  // NO Tip diaplayed
 };
 
 /**
@@ -130,13 +131,13 @@ var APP_NAME_IE_11="Netscape";   // IE 11
 var config = new Object();
 var tip_img_fixed = null; // Current tip Img Fixed
 
-var TIPLOG_FUN_START = "------------- START";
-var TIPLOG_FUN_END = "------------- END";
+var TIPLOG_FUN_START = " ------------- START";
+var TIPLOG_FUN_END = " ------------- END";
 
 //===================  GLOBAL TOOLTIP CONFIGURATION  =========================//
 var tt_init_done=false;
+var tip_type = TIP_TYPE.NONE; // Current Tip displayed
 
-var tip_type = TIP_TYPE.Floating;
 
 var tt_Enabled	= true;	// Allows to (temporarily) suppress tooltips, e.g. by providing the user with a button that sets this global variable to false
 var TagsToTip	= true;	// false or true - if true, HTML elements to be converted to tooltips via TagToTip() are automatically hidden;
@@ -220,11 +221,12 @@ tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed too
 
 
 /**
- * Display a Floating tooltip<BR/>
- * Call Untip() to Hide the tooltip
- * 
+ * GLOBAL USE: Display a FloatingTip. Called by User only with tipType = TIP_TYPE.Floating to disaplay a Floating Tip<BR/>
+ * Call Untip() to Hide the tooltip <BR/>
+ * NOTE: it is also used internally with other tipType 
+ *  
  * @param tipMsgHtml {String}   
- * @param [tipType] {String}   [TIP_TYPE.Floating]
+ * @param [tipType] {String}   [TIP_TYPE.Floating] when called by User
  * @param [objOpt] Option: <BR/>
  *                         - bMsgHtml [true]  if false is not converted to HTML
  * 
@@ -233,7 +235,14 @@ tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed too
  */
 function Tip(tipMsgHtml,tipType,objOpt)
 {
+	var Fn = "[tooltip.js Tip()] ";
+	tt_log ( Fn + TIPLOG_FUN_START);
+	
 	tt_init(); // init, if not already done
+	if (tip_type == TIP_TYPE.Fixed){
+		return tt_log ( Fn + "Nothing to do: a TipFixed is currently diaplyed" + TIPLOG_FUN_END);
+	}	
+	
 	if (objOpt == undefined){
 		var objOpt = {bMsgHtml: true};
 	}
@@ -245,11 +254,14 @@ function Tip(tipMsgHtml,tipType,objOpt)
 		tipType = TIP_TYPE.Floating; 
 	}
 	tip_type = tipType;
+	tt_log (Fn + "SET tip_type=" + tip_type);
 	//---------- set config Option
 	var objCfg = (tip_type == TIP_TYPE.Fixed) ? TIP_CFG_FIXED : TIP_CFG_FLOATING;
 	tt_SetCfg (objCfg);
 	//---------------------
 	tt_showTip(tipMsgHtml);
+	tip_type = tipType; // workaround. we have to set again this global var because tt_Hide has resetted it
+	tt_log ( Fn + TIPLOG_FUN_END);
 }
 
 /**
@@ -314,11 +326,11 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="UnTip(event)" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFixed()" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
-	var bShow = true;
+	var bShow = true; // see if the TipFixed is already disalyed. In this case we Close it because the user has click again t close it
 	var tipFixedPos = TIP_FIXED_POS.CENTER; // default
 	if (objOpt != undefined && objOpt.tipFixedPos != undefined){
 		tipFixedPos = objOpt.tipFixedPos;
@@ -363,9 +375,10 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 		tt_log ( Fn + "SET New classname=" + className);
 		tipImg.className = className;
 	}
+	tt_log ( Fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
 		// To manage the case of switch beween different Fixed img
-		UnTip();
+		tt_UnTipFixed();
 	}
 	
 	if (bShow && tipImg){
@@ -374,29 +387,11 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 		tt_logObj ( Fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
 		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
 	}else {
-		UnTip();
+		tt_UnTipFixed();
 	}
 	tt_log ( Fn + TIPLOG_FUN_END);
 }
 
-
-/**
- * Call this function to Hide the Tip after Tip() Call 
- */
-function UnTip()
-{
-	var Fn = "[tooltip.js UnTip] ";
-	tt_log ( Fn + " Called");
-	tt_init(); // init, if not already done
-	tt_SetCfg(TIP_CFG_FLOATING);
-	tt_OpReHref();
-	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
-		tt_tDurt.Timer("tt_HideInit()", -tt_aV[DURATION], true);
-	else if(!(tt_aV[STICKY] && (tt_iState & 0x2)))
-		tt_HideInit();
-	tt_RestoreImgFixed();
-
-}
 
 
 /**
@@ -412,8 +407,7 @@ function TipFixedMouseOver(tipMsgHtml,event)
 	var tipImg = event.target || event.srcElement;
 	if (tipImg != undefined){
 		var className = tipImg.className;
-		if (className == TIP_CLASS_JS_FIXED.Up  || className == TIP_CLASS_FIXED.Up  || 
-				className == TIP_CLASS_ARROW_FIXED.Up || className == TIP_CLASS_BIG_FIXED.Up || className == TIP_CLASS_GOOGLE_FIXED.Up){
+		if (tt_isClassFixed(className)){
 			bTip=false;
 		} 
 		tt_log ( Fn + "classname=" + className + " --> Call  Tip()=" + bTip);
@@ -426,25 +420,30 @@ function TipFixedMouseOver(tipMsgHtml,event)
 
 
 /**
- * You can call this function to Explicity Untip the tooltip after TipFixed() Call. <BR/>
- * usaully you do not need it because you Untip it with Button or ESC  
+ * Call this function to Hide the Tip after Tip() Call <BR/>
+ * If currently a TipFixed is displayed, it is not closed (to manage both TipFixed at Click and Tip/Untip
+ *  
+ * GLOBAL 
+ * tip_type Set it to TIP_TYPE.NONE 
  */
-function UnTipFixed(event){
-	var Fn = "[tooltip.js UnTipFixed] ";
-	
+function UnTip()
+{
+	var Fn = "[tooltip.js UnTip()] ";
+	tt_log ( Fn + TIPLOG_FUN_START);
+  tt_log(Fn + "CURRENT tip_type=" + tip_type);
+  if (tip_type == TIP_TYPE.Fixed){
+  	return tt_log ( Fn + "Nothing to do: a TipFixed is still displayed" +  TIPLOG_FUN_END);
+  }
 	tt_init(); // init, if not already done
-	var event = event || window.event;
-	var tipImg = event.target || event.srcElement;
-	if (tipImg != undefined){
-		var className = tipImg.className;
-		// Only if we are not in Fixed Mode we Untip
-		var bUnTip = (className != TIP_CLASS_JS_FIXED.Up  && className != TIP_CLASS_FIXED.Up  && 
-				className != TIP_CLASS_ARROW_FIXED.Up && className != TIP_CLASS_BIG_FIXED.Up && className != TIP_CLASS_GOOGLE_FIXED.Up);
-		tt_log ( Fn + "classname=" + className + " --> Call UnTip:" + bUnTip);
-		if	(bUnTip){
-		  UnTip();
-		}		
-	}	
+	tt_SetCfg(TIP_CFG_FLOATING);
+	tt_OpReHref();
+	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
+		tt_tDurt.Timer("tt_HideInit()", -tt_aV[DURATION], true);
+	else if(!(tt_aV[STICKY] && (tt_iState & 0x2)))
+		tt_HideInit();
+	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
+	tip_type = TIP_TYPE.NONE;
+	tt_log ( Fn + TIPLOG_FUN_END);
 }
 
 
@@ -453,7 +452,7 @@ function UnTipFixed(event){
 /**
  * Display a Fixed Tip with JS Code. <ul>
  *   <li> a) if prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
- *   <li> b) if prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipTextBoxFixedClicked</li> 
+ *   <li> b) if prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipFixedTextBox</li> 
  * </ul>
  * @param jsCode  {String}  jsCode to display, with \n for newline
  * @param event
@@ -465,9 +464,9 @@ function UnTipFixed(event){
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
-function TipJSFixedClicked(jsCode, event, objOpt){
-	var Fn = "[tooltip.js TipJSFixedClicked] ";
-	tt_log (Fn + "--- START");
+function TipFixedJS(jsCode, event, objOpt){
+	var Fn = "[tooltip.js TipFixedJS] ";
+	tt_log (Fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -483,9 +482,9 @@ function TipJSFixedClicked(jsCode, event, objOpt){
 		TipFixedClicked (szJsTxt,event,objOpt);
 		prettyPrint();  // Hightlight <pre> with prettyprint
 	}else{
-		TipTextBoxFixedClicked(jsCode, event, objOpt);
+		TipFixedTextBox(jsCode, event, objOpt);
 	}
-	tt_log (Fn + "--- END");
+	tt_log (Fn + TIPLOG_FUN_END);
 }
 
 
@@ -503,8 +502,8 @@ function TipJSFixedClicked(jsCode, event, objOpt){
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
-function TipTextBoxFixedClicked(szTxt, event, objOpt){
-	var Fn = "[tooltip.js TipTextBoxFixedClicked] ";
+function TipFixedTextBox(szTxt, event, objOpt){
+	var Fn = "[tooltip.js TipFixedTextBox] ";
 	tt_log (Fn + "--- START");
 	tt_logObj (Fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
@@ -525,11 +524,52 @@ function TipTextBoxFixedClicked(szTxt, event, objOpt){
 
 //==================  LOCAL FUNCTION	 =====================================//
 
+
+/*
+ * Internal Use:   call this function to UnTip after TipFixedxx(). E.g in Close Button, ESC,... <BR/>
+ * 
+ */
+function tt_UnTipFixed(){
+	var Fn = "[tooltip.js tt_UnTipFixed()] ";
+	
+	tt_log ( Fn + TIPLOG_FUN_START);
+  tt_log(Fn + "CURRENT tip_type=" + tip_type)
+	tt_init(); // init, if not already done
+	tt_SetCfg(TIP_CFG_FLOATING);
+	tt_OpReHref();
+	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
+		tt_tDurt.Timer("tt_HideInit()", -tt_aV[DURATION], true);
+	else if(!(tt_aV[STICKY] && (tt_iState & 0x2)))
+		tt_HideInit();
+	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
+	tip_type = TIP_TYPE.NONE;
+	tt_log ( Fn + TIPLOG_FUN_END);
+
+}
+
+
+/*
+ * Check if szClass is a TipFixed Class
+ * @param szClass
+ */
+function tt_isClassFixed(szClass){
+  var bTipFixed = false;	
+	var Fn="[tooltip.js tt_isClassFixed()] ";
+	if (szClass == TIP_CLASS_JS_FIXED.Up  || szClass == TIP_CLASS_FIXED.Up  || 
+			szClass == TIP_CLASS_ARROW_FIXED.Up || szClass == TIP_CLASS_BIG_FIXED.Up || 
+			szClass == TIP_CLASS_GOOGLE_FIXED.Up){
+		bTipFixed = true;
+	}
+	tt_log (Fn + "IN: szClass=" + szClass + "  OUT bTipFixed=" + bTipFixed);
+  return bTipFixed;	
+	
+}
+
 /*
  *  Restore the Original Image class (From Up to down) if tip_img_fixed != null 
  */
 function tt_RestoreImgFixed() {
-	var Fn="[tooltip.js tt_RestoreImgFixed] ";
+	var Fn="[tooltip.js tt_RestoreImgFixed()] ";
 	if (tip_img_fixed != null){
 		var szClass = "";
 		// Change img of tip_fixed if present
@@ -545,7 +585,7 @@ function tt_RestoreImgFixed() {
 			szClass = TIP_CLASS_JS_FIXED.Down;
 		}
 		if (szClass != ""){
-			tt_log (Fn + "Restore className=" + szClass);
+			tt_log (Fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
 			tip_img_fixed.className = szClass;
 		}
 		tip_img_fixed = null;
@@ -608,7 +648,10 @@ function tt_logObj(msg,obj){
 
 function tt_showTip()
 {
+	var Fn = "[tooltip.js tt_showTip()] ";
+	tt_log ( Fn + TIPLOG_FUN_START);
 	tt_Tip(arguments, null);
+	tt_log ( Fn + TIPLOG_FUN_END);
 }
 
 function TagToTip()
@@ -719,6 +762,9 @@ function tt_HideInit()
 
 function tt_Hide()
 {
+	var Fn = "[tooltip.js tt_tt_Hide()] ";
+	tt_log (Fn + TIPLOG_FUN_START);
+	
 	if(tt_db && tt_iState)
 	{
 		tt_OpReHref();
@@ -749,7 +795,7 @@ function tt_Hide()
 		if(tt_aElt[tt_aElt.length - 1])
 			tt_aElt[tt_aElt.length - 1].style.display = "none";
 	}
-	tt_RestoreImgFixed(); // Restore Img Fixed if present
+	tt_log (Fn + TIPLOG_FUN_END);
 	
 }
 function tt_GetElt(id)
@@ -848,10 +894,10 @@ function tt_init()
 		return; // already done
 	}
 	tt_log (Fn + "Init tooltip.js");
-	// ESC is considered as UnTip
+	// ESC is considered as UnTip of TipFixed
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
-        UnTip();
+        tt_UnTipFixed();
     }
   };	
 	
@@ -979,10 +1025,13 @@ function tt_GetMainDivRefs()
 }
 function tt_ResetMainDiv()
 {
+	var Fn = "[tooltip.js tt_ResetMainDiv()] ";
+	// tt_log (Fn + "Called");
 	tt_SetTipPos(0, 0);
 	tt_aElt[0].innerHTML = "";
 	tt_aElt[0].style.width = "0px";
 	tt_h = 0;
+
 }
 function tt_IsW3cBox()
 {
@@ -1207,7 +1256,7 @@ function tt_MkTipSubDivs()
 				+ ';text-align:right;">'
 				+ '<span id="WzClOsE" style="position:relative;left:2px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
-				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_HideInit()">'
+				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFixed()">'
 				+ tt_aV[CLOSEBTNTEXT]
 				+ '</span></td>')
 				: '')

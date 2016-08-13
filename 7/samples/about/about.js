@@ -16,42 +16,90 @@ This file may be freely distributed under the MIT license.
 ============================================================================================= */
 
 
+var DOWNLOAD_TIP_TYPE={
+		INFO: "INFO",
+		FREE: "FREE",
+		PAY: "PAY"
+};
 
-var JSU_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
+// DO NOT CHANGE:  they are "manually set in videoOpt Options"
+var VIDEO_OPT={
+	YOU_TUBE: "YOU_TUBE",
+	POPUP: "POPUP"
+};
+
+
+//var JSU_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
 var JSU_EMAIL = "federico.levis@virgilio.it";  
-var JSU_COGNOS = "http://federicolevis.wix.com/cognos";
-var JSU_GITHUB = "https://github.com/FedericoLevis/JSU";
-var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
+// var JSU_COGNOS = "http://federicolevis.wix.com/cognos";
+//var JSU_GITHUB = "https://github.com/FedericoLevis/JSU";
+//var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
 
+
+var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png";
 
 var JSU_SORT_CODE_H = 220;
 
 var JSU_DISABLED = 'javascript:function() { return false; }';
 
 var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
+
 var JSU_BUY = JSU_DISABLED; // DAFARE
 var URL_PAR_OPT="opt"; // Optional PAR only for debugger 
+var URL_PAR_GOOGLE="google"; // Optional PAR only for debugger to enable Test Google 
 var SAMPLE_MAX_NUM=4; // Max sample per Feature
 var SAMPLE_COL_ALL="ALL";
 
+// NOTE: embed is visible in the Ember Tab of Youtube Video  
+
+var JSU_VIDEO_FRAME_TIP  =	'<iframe width="750" height="600" src="https://www.youtube.com/embed/wpo2oM_L3ds?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 //DAFARE
-var JSU_VIDEO_VALIDATE  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_SORT  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_TIP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_LOADING  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_JSLOG  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_BLOCKPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_JSPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_VALIDATE  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_SORT  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_LOADING  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_JSLOG  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_BLOCKPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_JSPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 
 // Samples
-var JSU_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
-var JSU_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
-var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
-var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+// var JSU_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
+//var JSU_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
+//var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+//var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
+// --------------- FEATURE NOT FREE URL run-time calculated  
+var URL_SHORT_GOOGLE = true;  // Use Google Short URL
 var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
+//var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.html";
+
+var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
+//var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html";
+
 var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/jslog/jslogSample.html";
-var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
+//var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/jslog/jslogSample.html";
+
 var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSPopup/PopupSample.html";
+//var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/JSPopup/PopupSample.html";
+
+//var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
+
+//----------- goo.gl of FREE Features
+var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
+var JSU_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
+var JSU_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
+var JSU_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
+var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
+//var JSU_URL_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
+//var JSU_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
+//var JSU_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
+//var JSU_URL_SAMPLE_JSPOPUP  =	"https://goo.gl/WwL7hp";
+var JSU_URL_DOC  =	"https://goo.gl/JzIXW0";
+var JSU_COGNOS = "http://goo.gl/JZJSPn";
+var JSU_GITHUB = "https://goo.gl/LYDepH";
+var JSU_PLSQL = "https://goo.gl/OI3eIo";
+var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
+//---------------------
+
+
 var JSU_URL_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/samples/Misc/SampleNotFree.html'
 // ID sample NOt FREE (see WORK dir)
 var JSU_ID_SAMPLE_LOADING  =	1;
@@ -61,37 +109,44 @@ var JSU_ID_SAMPLE_JSPOPUP  =	7;
 	
 	
 //DOC
-var JSU_URL_API_DOC  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html";
-var JSU_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
-var JSU_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/index.html";
-var JSU_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html";
-var JSU_URL_DOC_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html";
-var JSU_URL_DOC_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html";
-var JSU_URL_DOC_JSLOG  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/index.html";
-var JSU_URL_DOC_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/BlockPopup.js/index.html";
-var JSU_URL_DOC_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSPopup.js/index.html";
+//var JSU_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
+
+
+//var JSU_URL_API_DOC  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html";
+//var JSU_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
+//var JSU_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html";
+//var JSU_URL_DOC_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html";
+//var JSU_URL_DOC_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html";
+//var JSU_URL_DOC_JSLOG  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/jslog.html";
+//var JSU_URL_DOC_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/BlockPopup.html";
+//var JSU_URL_DOC_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html";
+// ---- ggo.gl
+var JSU_URL_API_DOC  ="https://goo.gl/0PGnZl"
+var JSU_URL_DOC_TIP  =	"https://goo.gl/AGKlpQ";
+var JSU_URL_DOC_SORT  =	"https://goo.gl/aKR7b2";
+var JSU_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
+var JSU_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
+var JSU_URL_DOC_JSLOG  =	"https://goo.gl/Iobg3a";
+var JSU_URL_DOC_BLOCKPOPUP  =	"https://goo.gl/iWW5cz";
+var JSU_URL_DOC_JSPOPUP  =	"https://goo.gl/5KKGYv";
+
 
 // used as Link for JSU in about
-var JSU_SITE = JSU_URL_DOC; // DAFARE
+var JSU_SITE = JSU_URL_DOC; 
 
-
-var JSU_AR_VALIDATE_SAMPLE_URL = [ {title:"Validate Sample", href:JSU_URL_SAMPLE_VALIDATE}];
-var JSU_AR_TIP_SAMPLE_URL = [ {title:"Tooltip Sample", href:JSU_URL_SAMPLE_TIP}];
-var JSU_AR_SORT_SAMPLE_URL = [ {title:"Sort Sample", href:JSU_URL_SAMPLE_SORT}];
-var JSU_AR_LOADING_SAMPLE_URL = [ {title:"LoadingDiv Sample", href:JSU_URL_SAMPLE_LOADING}];
-var JSU_AR_JSLOG_SAMPLE_URL = [ {title:"jslog Sample", href:JSU_URL_SAMPLE_JSLOG}];
-var JSU_AR_BLOCKPOPUP_SAMPLE_URL = [ {title:"Blocking Popup Sample", href:JSU_URL_SAMPLE_BLOCKPOPUP}];
-var JSU_AR_JSPOPUP_SAMPLE_URL = [ {title:"JS Popup Sample", href:JSU_URL_SAMPLE_JSPOPUP}];
 	
 var JSU_TIP_CUR_FEATURE="Click to Show a new Window with the <b>JSDoc HTML</b> of this feature";
 
 // COMMON for all samples
-var SAMPLE_MAX_NUM=3; // MAX Number of Sample
+var SAMPLE_MAX_NUM=4; // MAX Number of Sample
 var SAMPLE_ALL="ALL";
 
 var URL_1 = "WORK";
 var URL_2 = "master";
 var URL_SEP = "/";
+
+var JSU_GOOGLE_ANAL_TIP='<div style="width:250px;" align="left">Click to show a Box to choose the <BR/><b>JSU Google Analytics</b> to display</div>';
+
 
 /* =============================================================================================
     			MAIN JSU TIP:  JSU_TIP_SECT2 
@@ -107,56 +162,61 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td width="90px" class="tipc">Feature Documentation</td>' +
 '		  <td width="370px" class="tipc">Description</td>' +
 '		  <td width="60px" class="tipc">Plugin Required</td>' +
-'		  <td width="60px" class="tipc">Video Sample</td>' +
+'		  <td width="60px" class="tipc">Video Sample  ' +
+'        <select id="videoOpt" onchange="onchangeVideoOpt();" class="videoOpt" VIDEO_OPT_DISABLED> ' +
+'           <option value="YOU_TUBE" selected>Show in YouTube</option> ' +
+'           <option value="POPUP" >Show in Popup</option> ' +
+'        </select> ' +
+'     </td>' +
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
 '		  <td class="tipl">Flexible/Powerful HTML Tooltips: Floating/Fixed Tips with otptional GIF, Video, JS Code, ...   </td>' + 
-'		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoTip()" /> </td>' + 
-'		  <td class="tipc"><a class="tipLink" href="' + JSU_URL_SAMPLE_TIP +'" target="_blank">Tip Sample</a></td>' +
+'		  <td class="tipc"><b>-</b></td>' +
+'     <td class="tipc"><a href="javascript:showJSUVideoTip()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Tooltip Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_LOADING +'" target="_blank">LoadingDiv</a> </td>' +
 '		  <td class="tipl"><b>Loading Div</b> for Long Operation with Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoLoading()" /> </td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideoLoading()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU LoadingDiv Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_VALIDATE +'" target="_blank">Validate</a> </td>' +
 '		  <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoValidate()" /> </td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideoValidate()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Validate Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
 '		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoSort()" /> </td>' + 
-'		  <td class="tipc"><a class="tipLink" href="' + JSU_URL_SAMPLE_SORT + '" target="_blank">Sort Sample</a></td>' +
+'     <td class="tipc"><a href="javascript:showJSUVideoSort()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU SortTable Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JSLOG +'" target="_blank">jslog</a> </td>' +
 '		  <td class="tipl"><b>Log from JS Code into an optional Window: log Object, JSON, ...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideojslog()" /> </td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideojslog()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JSlog Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_BLOCKPOPUP +'" target="_blank">Blocking Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Blocking Popup</b> designed specially for <b>IE</b><BR/><b>Blocking Code</b>, based on <i>ShowModalDialog</i> (fully supported only by IE) </td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoBlockPopup()" /> </td>' + 
-'		  <td class="tipc"><a class="tipLink" href="' + JSU_URL_SAMPLE_BLOCKPOPUP + '" target="_blank">Blocking Popup Sample</a></td>' +
+'     <td class="tipc"><a href="javascript:showJSUVideoBlockPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Blocking Popup Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleBlockPopup();">BlockingPopup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JSPOPUP +'" target="_blank">JS Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
 '		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
-'		  <td class="tipc"><input type="button" disabled  value="Video" onclick="aboutPopupVideoJSPopup()" /> </td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideoJSPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JS Popup Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSPopup();">JS Popup Sample</a></td>' +
 '	  </tr>' +
 '</table>';
@@ -188,17 +248,28 @@ var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:1
 /* =============================================================================================
    						GLOBAL VAR
 ============================================================================================= */
+//TRUE if there is URL par opt=1
+var b_par_opt = false;
+
+// option to show Video
+var video_opt = VIDEO_OPT.YOU_TUBE;  //default
+
+/* =============================================================================================
+									GLOBAL API
+============================================================================================= */
 
 
 /**
  * JSU About Popup Example
  */
 function showJsuPopupAbout(){
+	var szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "disabled");
+
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="700px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
-  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutTitle.png"/></td> ' +
+  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src=https://rawgit.com/FedericoLevis/images/master/jsuAboutTitle.png"/></td> ' +
   '     </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2_MSG + '</td></tr> ' +
+  '  <tr class="jsuAboutMsg"><td class="tipl" >' + szTipSect2 + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   '    <td ><table class="tipNoBorder" width="100%"><tr>' +
   '      <td align="right" width="40%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
@@ -222,6 +293,20 @@ function aboutTipJSU(event,bShowAllSample){
 	if (bShowAllSample == undefined){
 		bShowAllSample = true;
 	}
+	// for JSUDoc we disable the choice
+	var szLocation = window.location + ""; 
+	var bJSUDoc = szLocation.indexOf ("JSUDoc") >= 0;
+	
+	// depending on BRowser we enable or disable videoOpt 
+	var szTipSect2 = "";
+	if (!bJSUDoc && (isIE() || isFirefox())){
+		// We can show Video also in Popup
+		// select.disabled = false;
+		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "");
+	}else{
+		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "disabled");
+	}	
+	videoOpt = VIDEO_OPT.YOU_TUBE; // INIT
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="1300px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '    <td >' +
@@ -252,10 +337,10 @@ function aboutTipJSU(event,bShowAllSample){
   '      </table>' +
   '    </td>' +
   '  </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl">' + JSU_TIP_SECT2 + '</td></tr> ' +
+  '  <tr class="jsuAboutMsg"><td class="tipl">' + szTipSect2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFixedClicked (szMsg,event,{bCloseBtn:true, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFixedClicked (szMsg,event,{iMaxWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**
@@ -309,8 +394,8 @@ function aboutTipSortInfo(){
 	Tip (szTip);
 }
 
-function aboutPopupVideoSort(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_SORT,
+function showJSUVideoSort(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_SORT,
       {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Sort Table Sample"});
 }
 
@@ -398,8 +483,8 @@ function onclickValidateFeature(event, bShowTrySample){
 	TipFixedClicked (szMsg,event,{szTitle:"JSU cValidate", iMaxWidth: 1000,bCloseBtn: true});
 }
 
-function aboutPopupVideoValidate(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_VALIDATE,
+function showJSUVideoValidate(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_VALIDATE,
       {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Validate Table Sample"});
 }
 
@@ -449,58 +534,6 @@ function onclickLoadingFeature(event, bShowTrySample){
 	TipFixedClicked (szMsg,event,{szTitle:"JSU cLoading", iMaxWidth: 1000,bCloseBtn: true});
 }
 
-function aboutPopupVideoLoading(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_LOADING,
-    {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Loading Table Sample"});
-}
-
-
-
-/**
- * Tip Info for SortTable
- */
-function aboutTipSortInfo(){
-	// DAFARE
-	var szTip ="<b>OK DAFARE</b>";
-	Tip (szTip);
-}
-
-function aboutPopupVideoSort(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_SORT,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Sort Table Sample"});
-}
-
-
-function aboutPopupVideoTip(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_TIP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Tip Table Sample"});
-}
-
-/**
- * Tip Info for jslog
- */
-function aboutTipjslogInfo(){
-	// DAFARE
-	var szTip ="<b>OK DAFARE</b>";
-	Tip (szTip);
-}
-
-function aboutPopupVideojslog(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_JSLOG,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU jslog Sample"});
-}
-
-
-
-function aboutPopupVideoJSPopup(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_JSPOPUP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU JSPopup Sample"});
-}
-
-function aboutPopupVideoBlockPopup(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_BLOCKPOPUP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Blocking Popup Sample"});
-}
 
 
 /* ========================================================================= 
@@ -554,39 +587,6 @@ var JS_CODE_TIP= '//Define in JS the HTML Tip Msg: \n'+
 'onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event)" />'; 
 
 
-/**
- * Show JS Code and Video Sample
- * 
- * @param event
- */
-function codeSampleValidate(event){
-  TipFixedCodeSample (event,JS_CODE_VALIDATE,JSU_VIDEO_VALIDATE,
-  		      {szTitle:"JSU Validate", arObjUrl: JSU_AR_VALIDATE_SAMPLE_URL});
-}
-
-/**
- * Show JS Code and Video Sample
- * 
- * @param event
- */
-function codeSampleTip(event){
-  TipFixedCodeSample (event,JS_CODE_TIP,JSU_VIDEO_TIP,
-  		      {szTitle:"JSU Tooltip", arObjUrl: JSU_AR_TIP_SAMPLE_URL});
-}
-
-
-/**
- * Show JS Code and Video Sample
- * 
- * @param event
- */
-function codeSampleSort(event){
-  TipFixedCodeSample (event,JS_CODE_SORT,JSU_VIDEO_SORT,
-  		      {szTitle:"JSU Table Sort", arObjUrl: JSU_AR_SORT_SAMPLE_URL});
-}
-
-
-
 
 /**
  * dwonload All JSU
@@ -597,25 +597,70 @@ function downloadPay(){
   Popup (POPUP_TYPE.INFO,'This Feature is still UNDER WORK: it will be available in few weeks');
 }
 
+/**
+ * download BTN in all Pages
+ * We redirect to downloadTageFree
+ */
 function downloadFree(){
 	UnTip();
-  location.href=JSU_GITHUB_DOWNLOAD;
+  jsuGoToURL(JSU_URL_DOWNLOAD_PAGE_FREE,false);
 }
 
+/**
+* Tip for Button Download Free
+* 
+* @param event
+*/
+function downloadTipFree(event){
+	downloadTip(event,DOWNLOAD_TIP_TYPE.FREE);
+}
+
+/**
+* Tip for Button Download Pay
+* 
+* @param event
+*/
+function downloadTipPay(event){
+	downloadTip(event,DOWNLOAD_TIP_TYPE.PAY);
+}
+
+/**
+* Tip for Button Download Free: make the download
+* 
+* @param event
+*/
+function downloadPageFree(event){
+	UnTip();
+  location.href=JSU_GITHUB_DOWNLOAD;
+	
+}
 
 
 /**
 * Tip for Downloading Options
 * 
 * @param event
-* @param [bFloating] true 
+* @param [szDownloadTipType] default DOWNLOAD_TIP_TYPE.INFO . DOWNLOAD_TIP_TYPE.FREE, DOWNLOAD_TIP_TYPE.PAY 
 */
-function downloadTip(event,bFloating){
-	
-	if (bFloating == undefined){
-		bFloating = false;
+function downloadTip(event,szDownloadTipType){
+	var Fn = "[about.js downloadTip()] ";
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
+	jslog (JSLOG_JSU,Fn + "IN szDownloadTipType=" + szDownloadTipType);
+	var szMsg = "";
+	var bTipInfo = false;
+	if (szDownloadTipType == undefined){
+		szDownloadTipType = DOWNLOAD_TIP_TYPE.INFO;
+		bTipInfo = true;
 	}
-	var szMsg = '<div style="padding:5px 5px 5px 5px">There are 2 DOWLOAD Options: <ul>' +
+	if (!bTipInfo){
+		if (szDownloadTipType == DOWNLOAD_TIP_TYPE.FREE){
+			szMsg = 'Click to Go to the <b>Download Page of the FREE Version of JSU.ZIP</b> <label class="tipwarn">(JS Code Obfuscated - Available only Tooltip, SortTable, BlockingPopup Features)</label><BR/><BR/>';
+		}else	{
+			szMsg = 'Click to Go to the <b>Download Page of the <label class="tipGood">FULL Version of JSU.ZIP</label></b><BR/><BR/>';
+		}	
+	}
+	
+	var szMsg = szMsg + '<div style="padding:5px 5px 5px 5px">There are 2 DOWLOAD Options: <ul>' +
 	'<li><label class="tipGood">JSU.ZIP FULL:</label> Full access to source code, documentation, samples. Required if you want yo modify/customize/investigate JSU code</li>' +
 	'<li><label class="tipwarn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipwarn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
 	'</ul></div>' +
@@ -624,11 +669,11 @@ function downloadTip(event,bFloating){
 	'		  <th class="tiptitle" colspan="6">JSU.ZIP DOWLOAD OPTIONS</th>' +
 	'	  </tr>' +
 	'	  <tr class="tiptitle2">' +
-	'		  <td width="15%" class="tipc">DOWNLOAD OPTION</td>' +
-	'		  <td width="32%" class="tipc">JSU Features</td>' +
-	'		  <td width="20%" class="tipc">JSU and Samples<BR/>JS Source Code</td>' +
-	'		  <td width="20%" class="tipc">JSU Documentation</td>' +
-	'		  <td width="13%" class="tipc">Price</td>' +
+	'		  <td width="18%" class="tipc">DOWNLOAD OPTION</td>' +
+	'		  <td width="34%" class="tipc">JSU Features</td>' +
+	'		  <td width="18%" class="tipc">JSU and Samples<BR/>JS Source Code</td>' +
+	'		  <td width="18%" class="tipc">JSU Documentation</td>' +
+	'		  <td width="12%" class="tipc">Price</td>' +
 	'	  </tr>' +
 	'	  <tr>' +
 	'		  <td class="tiptitle"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
@@ -640,20 +685,22 @@ function downloadTip(event,bFloating){
 	'	  <tr>' +
 	'		  <td class="tiptitle"><input type="button" class="downloadFree"  ' +
 	'         onclick="location.href=\'https://github.com/FedericoLevis/JSU/archive/master.zip\';" /></td>' +
-	'		  <td class="tipl"><ul><li>AVAILABLE: Tip, LoadingDiv, BlockingPopup, SortTable</li>' +
-	'                          <li><label class="tipErr">NOT AVAILABLE: Validate, JSLog, JSPopup</label></li></ul> </td>' +
+	'		  <td class="tipl"><ul><li>AVAILABLE: Tip, SortTable, BlockingPopup</li>' +
+	'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JSPopup</label></li></ul> </td>' +
 	'		  <td class="tipErr">JS Obfuscated and without any comments</td>' +
 	'		  <td>JSDoc HTML available, but <label class="tipErr">NO reference to code</label></td>' +
 	'		  <td style="background-color:#008B45; color:white; font-weight:bold;font-size:16">FREE</td>' +
 	'	  </tr>' +
 	'</table>';
 
-  if (bFloating){
-  	Tip (szMsg);  	
-  }else {
+  if (szDownloadTipType == DOWNLOAD_TIP_TYPE.INFO){
   	TipFixedClicked (szMsg,event,{szTitle:"DOWLOAD OPTIONS", bCloseBtn: true});
+  }else {
+  	Tip (szMsg);  	
   }
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
 }
+
 
 
 /*=======================================================================================
@@ -664,45 +711,45 @@ function downloadTip(event,bFloating){
  * Open window with Validate Documentation
  */
 function jsuDocValidate(){
-	window.open(JSU_URL_DOC_VALIDATE, '_blank');
+	jsuGoToURL(JSU_URL_DOC_VALIDATE);
 }
 
 /**
  * Open window with Tip Documentation
  */
 function jsuDocTip(){
-	window.open(JSU_URL_DOC_TIP, '_blank');
+	jsuGoToURL(JSU_URL_DOC_TIP);
 }
 /**
  * Open window with SortTable Documentation
  */
 function jsuDocSort(){
-	window.open(JSU_URL_DOC_SORT, '_blank');
+	jsuGoToURL(JSU_URL_DOC_SORT);
 }
 /**
  * Open window with Loading Documentation
  */
 function jsuDocLoading(){
-	window.open(JSU_URL_DOC_LOADING, '_blank');
+	jsuGoToURL(JSU_URL_DOC_LOADING);
 }
 
 /**
  * Open window with JSLOG Documentation
  */
 function jsuDocJSLog(){
-	window.open(JSU_URL_DOC_JSLOG, '_blank');
+	jsuGoToURL(JSU_URL_DOC_JSLOG);
 }
 /**
  * Open window with BlockPopup Documentation
  */
 function jsuDocBlockPopup(){
-	window.open(JSU_URL_DOC_BLOCKPOPUP, '_blank');
+	jsuGoToURL(JSU_URL_DOC_BLOCKPOPUP);
 }
 /**
  * Open window with JSPopup Documentation
  */
 function jsuDocJSPopup(){
-	window.open(JSU_URL_DOC_JSPOPUP, '_blank');
+	jsuGoToURL(JSU_URL_DOC_JSPOPUP);
 }
 
 
@@ -734,38 +781,67 @@ function onchangeShowCol(){
 }
 
 /*
- * Manage optional URL PAR show_opt, useful only for developers
- */
-function manage_par_opt(){
-	var fn = "manage_par_opt() ";
-	var szParOpt = urlGetParVal (URL_PAR_OPT);
-	jslog (JSLOG_DEBUG,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
-	var bShowOpt = (szParOpt != ""); 
-	if (bShowOpt){
-		jslog (JSLOG_DEBUG,fn + "show selectShowCol");
-		elementShow (getElementById2("selectShowCol"),true,"");
-	}	
-		
-}
-
-
-/*
  * show only the sample selected
  */
 function onchange_sample(){
 	var fn = "onchange_sample ";
 	var szVal = selectGetSelVal(getElementById2("selectSample"));
-	jslog (JSLOG_DEBUG, fn + "szVal=" + szVal);
+	jslog (JSLOG_JSU, fn + "szVal=" + szVal);
 	for (var i=1; i<=SAMPLE_MAX_NUM; i++){
 		var bShow = (szVal == SAMPLE_ALL ||  szVal == i+"");
 		var elTr = getElementById2("tr_sample_" + i, false);
 		if (elTr){
-			jslog (JSLOG_DEBUG, fn + "tr i=" + i + "  bShow=" + bShow);
+			jslog (JSLOG_JSU, fn + "tr i=" + i + "  bShow=" + bShow);
 			elTr.style.display = (bShow) ? "" : "none";
 			elTr.style.visibility = bShow;
 		}
 	}
 }
+
+
+/*
+ * Manage optional URL PAR show_opt, useful only for developers. Called by all samples
+ * 
+ * GLOBAL
+ *  b_par_opt   set to TRUE if there is URL par opt=1
+ */
+function manage_par_opt(){
+	var fn = "manage_par_opt() ";
+	var szParOpt = urlGetParVal (URL_PAR_OPT);
+	jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
+	b_par_opt = (szParOpt != ""); 
+	if (b_par_opt){
+		jslog (JSLOG_JSU,fn + "show selectShowCol");
+		elementShow (getElementById2("selectShowCol"),true,"");
+		// URL
+		var szLocation = window.location + ""; 
+		var bJsLog = szLocation.indexOf ("jslogSample") > 0;
+		// set preferred size to prepare YouTube Video 
+		if (bJsLog){
+		  window.moveTo(85, 34);
+		  window.resizeTo(1200, 800);
+		}else{
+		  window.moveTo(85, 34);
+		  window.resizeTo(800+35, 620+170);
+		}
+	}	
+	var szParGoogle = urlGetParVal (URL_PAR_GOOGLE);
+	jslog (JSLOG_JSU,fn + "URL GOOGLE " + URL_PAR_GOOGLE + "=" + szParGoogle);
+	b_par_google = (szParGoogle != "");
+	if (b_par_google){
+		elementShow(getElementById2("testGoogle",false), true);
+	}
+	//
+}
+
+/**
+ * 
+ * @returns  b_par_opt {Boolean}  TRUE if there is URL par opt=1
+ */
+function is_par_opt (){
+	return b_par_opt;
+}
+
 
 /*===================================================================================
  *  FOR SAMPLES NOT FREE
@@ -782,8 +858,23 @@ function onchange_sample(){
  * @return e.g:  https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html 
  */
 function getSampleUrl(szUrl,iId){
-  return szUrl.replace("JSU/master",URL_1 + URL_SEP + URL_2 + URL_SEP + 
-     	           (iId + ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "" : "3")));
+	if (URL_SHORT_GOOGLE){
+    if (iId == JSU_ID_SAMPLE_LOADING){
+   	  return "https://goAALl/j0HZDG".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_VALIDATE){
+     	  return "https://goAALl/F3r4lP".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_JSLOG){
+   	  return "https://goAALl/OfC2Pf".replace ("AAL","o.g");
+    }else if (iId == JSU_ID_SAMPLE_JSPOPUP){
+   	  return "https://goAALl/WwL7hp".replace ("AAL","o.g");
+    }		
+	}else{
+	  return szUrl.replace("JSU/master",URL_1 + URL_SEP + URL_2 + URL_SEP + 
+         (iId + ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "" : "3")));
+	}
+  
+  
+  
 }
 
 
@@ -803,6 +894,25 @@ function showSampleValidate(){
 }
 
 
+/*
+ * 
+ */
+function showSampleSort(){
+	jsuGoToURL(JSU_URL_SAMPLE_SORT);
+}
+/*
+ * 
+ */
+function showSampleTip(){
+	jsuGoToURL(JSU_URL_SAMPLE_TIP);
+}
+/*
+ * 
+ */
+function showSampleBlockPopup(){
+	jsuGoToURL(JSU_URL_SAMPLE_BLOCKPOPUP);
+}
+
 
 /*
  * 
@@ -820,26 +930,218 @@ function showSampleJSPopup(){
 }
 
 /*
+ * Show a Window with a Sample, to manage NOT FREE JS FEatures
+ * 
  * @param szUrl e.g: "https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html"
  * @param iId   1 ,3, 5, 7
  * 
  */
 function showSampleWindow(szUrl,iId){
-  window.open(getSampleUrl(szUrl,iId),	"_blank","menubar=1,resizable=1,menubar=1,width=100,height=100");
+	var bTest = false;
+	// To manage Mobile, where window.open seems to work
+	var bSmallWindow = window.innerWidth <= 800;
+	var ua = navigator.userAgent;
+	var bMobile = ( ua.match(/Android/i) || ua.match(/webOS/i) || ua.match(/iPhone/i)	 || ua.match(/iPad/i) || 
+			 ua.match(/iPod/i) || ua.match(/BlackBerry/i) || ua.match(/Windows Phone/i) );
+	
+	if (bSmallWindow || bMobile || bTest){
+		// start with URL
+		jsuGoToURL (getSampleUrl(szUrl,iId));
+	}else {
+	  window.open(getSampleUrl(szUrl,iId),	"_blank","menubar=1,resizable=1,menubar=1,width=100,height=100");
+    window.moveTo(10, 20);
+	}
+
 }
 
 /*
  * Only for samples that are not FREE we have to setup location 
  */
 function setupState(){
+	// URK
 	var szLocation = window.location + ""; 
-	var iPos = szLocation.indexOf ("FedericoLevis");
-	var bRawGit = iPos > 0;
+	var bRawGit = szLocation.indexOf ("FedericoLevis") > 0;
 	if (bRawGit){
 	  history.replaceState(null, null,JSU_URL_SAMPLE_NOTFREE);
 	}  
-  window.moveTo(10, 10);
-  window.resizeTo(screen.width-20, screen.height-20);	
+  window.moveTo(10, 20);
+  window.resizeTo(screen.width-20, screen.height-30);
 }
+
+
+/*===================================================================================
+ *  show Video
+===================================================================================*/
+
+/**
+ * onchange for select videoOpt
+ * 
+ * GLOBAL   OUT: video_opt used by showJSUVideo..
+ */
+function onchangeVideoOpt(){
+	video_opt = selectGetSelVal (getElementById2("videoOpt"));
+}
+
+
+/**
+ * WE use an Hidden a tag, for compatibility with MObile (instead of using window.open)
+ * 
+ * @param szUrl
+ * @param [bNewWindow] {Boolean} default true
+ * @returns
+ */
+function jsuGoToURL(szUrl,bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	var aId = getElementById2("href_hidden");
+	aId.href = szUrl;
+	aId.target = (bNewWindow)? "_blank" : "_self";
+	aId.click();
+}
+
+
+/**
+ * 
+ * @param szVideoFrame
+ * @param szTitle
+ * @param iWidth
+ * @returns
+ */
+function showJSUVideo(szVideoFrame,szTitle,iWidth){
+	if (video_opt == VIDEO_OPT.POPUP){
+	  Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
+	}else{
+		jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
+	}
+
+}
+
+function showJSUVideoTip(){
+	showJSUVideo (JSU_VIDEO_FRAME_TIP,"JSU Tooltip Sample",800);
+}
+
+
+function showJSUVideoLoading(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_LOADING,
+    {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Loading Table Sample"});
+}
+
+
+function showJSUVideoSort(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_SORT,
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Sort Table Sample"});
+}
+
+
+
+
+function showJSUVideojslog(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSLOG,
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU jslog Sample"});
+}
+
+
+
+function showJSUVideoJSPopup(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSPOPUP,
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU JSPopup Sample"});
+}
+
+function showJSUVideoBlockPopup(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_BLOCKPOPUP,
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Blocking Popup Sample"});
+}
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function jsuGoogleAnal (event){
+	var Fn = "[about.js jsuGoogleAnal()] ";
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
+  UnTip(event);	
+	var szMsg = '<div style="padding:5px 5px 5px 5px; width="400">Click following Links to see the <b>Google Analytics of the Main JSU URLs</b>:<ul>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_DOWNLOAD_PAGE_FREE +'.info" target="_blank">Number of Download: JSU.ZIP FREE (Obfuscated)</a></li>  </BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_ALL +'.info" target="_blank">Number of Access to Main JSU Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_TIP +'.info" target="_blank">Number of Access to JSU Tip Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_SORT +'.info" target="_blank">Number of Access to JSU SortTable Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_BLOCKPOPUP +'.info" target="_blank">Number of Access to JSU BlockingPopup Sample</a>   </li>' +
+	'</ul>' +
+	'<BR/>' +
+	'<input type="button" value="Show all Previous JSU Google Analytics" onclick="showAllGoogleAnal();" />' +
+	'<BR/><BR/>' +
+	'</div>';
+
+ 	TipFixedClicked (szMsg,event,{szTitle:"JSU Google Analytics"});
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
+	
+}
+
+/**
+ * Show GoogleAnalytic FloatingTip
+ * @param event
+ */
+function jsuGoogleAnalTip (event){
+	Tip (JSU_GOOGLE_ANAL_TIP);
+}
+
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function showAllGoogleAnal (){
+	jsuGoToURL(JSU_URL_DOWNLOAD_PAGE_FREE + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_ALL + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_TIP + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_SORT + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_BLOCKPOPUP + '.info', true);
+}
+
+//----------------------- TEST
+
+
+
+var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE,JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT,JSU_URL_SAMPLE_BLOCKPOPUP];
+var iTest = 0;
+var iTestMax = 300;
+var iPeriodRandom = 100;
+var tmoTest = null;
+// arTestUrl.length;
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function showAllGoogleShort (){
+	var Fn = "[showAllGoogleShort()] ";
+	iTest =0;
+	var iSec = Math.floor((Math.random() * 10) + 1);
+	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+	tmoTest = setTimeout (testGoogle,iSec * 1000);
+}
+
+
+
+function testGoogle(){
+	var Fn = "[testGoogle()] ";
+	var i = iTest % arTestUrl.length;
+	jslog (JSLOG_DEBUG,Fn + "iTest=" + iTest +  "  i=" + i);
+	var szUrl = arTestUrl[i];
+	jslog (JSLOG_DEBUG,Fn + "szUrl=" + szUrl);
+	jsuGoToURL(szUrl, true);
+	clearTimeout (testGoogle);
+	
+	if (++iTest > iTestMax){
+		alert ("FINE");
+	}else {
+		var iSec = Math.floor((Math.random() * iPeriodRandom) + 1);
+		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+		tmoTest = setTimeout (testGoogle,iSec * 1000);
+	}
+		
+}
+
 
 

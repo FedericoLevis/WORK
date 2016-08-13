@@ -36,7 +36,7 @@ var JSU_EMAIL = "federico.levis@virgilio.it";
 //var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
 
 
-var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master//PlayVideo.png";
+var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png";
 
 var JSU_SORT_CODE_H = 220;
 
@@ -144,6 +144,9 @@ var SAMPLE_ALL="ALL";
 var URL_1 = "WORK";
 var URL_2 = "master";
 var URL_SEP = "/";
+
+var JSU_GOOGLE_ANAL_TIP='<div style="width:250px;" align="left">Click to show a Box to choose the <BR/><b>JSU Google Analytics</b> to display</div>';
+
 
 /* =============================================================================================
     			MAIN JSU TIP:  JSU_TIP_SECT2 
@@ -1057,7 +1060,7 @@ function showJSUVideoBlockPopup(){
 function jsuGoogleAnal (event){
 	var Fn = "[about.js jsuGoogleAnal()] ";
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
-	
+  UnTip(event);	
 	var szMsg = '<div style="padding:5px 5px 5px 5px; width="400">Click following Links to see the <b>Google Analytics of the Main JSU URLs</b>:<ul>' +
 	'<li><a class="tipLink" href="'+ JSU_URL_DOWNLOAD_PAGE_FREE +'.info" target="_blank">Number of Download: JSU.ZIP FREE (Obfuscated)</a></li>  </BR>' +
 	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_ALL +'.info" target="_blank">Number of Access to Main JSU Sample</a>   </li></BR>' +
@@ -1074,6 +1077,15 @@ function jsuGoogleAnal (event){
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
 	
 }
+
+/**
+ * Show GoogleAnalytic FloatingTip
+ * @param event
+ */
+function jsuGoogleAnalTip (event){
+	Tip (JSU_GOOGLE_ANAL_TIP);
+}
+
 
 /**
  * Show a FixedTip with the Link to JSU Google Analytics

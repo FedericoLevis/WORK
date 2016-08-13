@@ -349,7 +349,7 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                        "cSortTable,cSortTable.setSort,cSortTable.getSort,cSortTable.sortApply" +
                        "jslog,jslog_init,jslog_end,jslogObj,jslogDomEl,jslogDomElById,jslogElapsedTime," +
                        "loadingDivShow,loadingDivHide" +
-                       "Tp,UnTip,TipFixedClick,TipJSFixedClick,TipTextBoxFixedClick," +
+                       "Tip,UnTip,TipFixed,TipFixedJS,TipFixedTextBox,TipFixedGoogleAnal," +
                        "Popup," +
                        "alert,"+
                        "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END" +
