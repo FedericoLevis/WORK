@@ -453,6 +453,25 @@ input.tipArrowFixedUp {
     background: #E0E0E0 url(../images/tipArrowFixedUp.png) no-repeat right center;
 }
 
+
+
+input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button for Google Analytics */
+    height: 20px;
+    width: 155px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+input.tipGoogleAnal {
+    background: #FEFEFE url(../images/tipGoogleAnal.png) no-repeat center center;
+}
+input.tipGoogleAnalUp {
+    background: #FEFEFE url(../images/tipGoogleAnalUp.png) no-repeat center center;
+}
+
+
+
+
 input.jsuHelp{	/* Help Button */  
     height: 18px;
     width: 18px;

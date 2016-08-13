@@ -46,6 +46,7 @@ var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.z
 
 var JSU_BUY = JSU_DISABLED; // DAFARE
 var URL_PAR_OPT="opt"; // Optional PAR only for debugger 
+var URL_PAR_GOOGLE="google"; // Optional PAR only for debugger to enable Test Google 
 var SAMPLE_MAX_NUM=4; // Max sample per Feature
 var SAMPLE_COL_ALL="ALL";
 
@@ -66,7 +67,7 @@ var JSU_VIDEO_FRAME_JSPOPUP  =	'<iframe width="600" height="500" src="https://ww
 //var JSU_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
 //var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
 // --------------- FEATURE NOT FREE URL run-time calculated  
-var URL_OPT_GOOGLE = true;
+var URL_SHORT_GOOGLE = true;  // Use Google Short URL
 var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
 //var JSU_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.html";
 
@@ -81,7 +82,8 @@ var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/sampl
 
 //var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
 
-//----------- goo.gl
+//----------- goo.gl of FREE Features
+var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
 var JSU_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
 var JSU_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
 var JSU_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
@@ -95,7 +97,6 @@ var JSU_COGNOS = "http://goo.gl/JZJSPn";
 var JSU_GITHUB = "https://goo.gl/LYDepH";
 var JSU_PLSQL = "https://goo.gl/OI3eIo";
 var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
-var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
 //---------------------
 
 
@@ -821,6 +822,12 @@ function manage_par_opt(){
 		  window.resizeTo(800+35, 620+170);
 		}
 	}	
+	var szParGoogle = urlGetParVal (URL_PAR_GOOGLE);
+	jslog (JSLOG_JSU,fn + "URL GOOGLE " + URL_PAR_GOOGLE + "=" + szParGoogle);
+	b_par_google = (szParGoogle != "");
+	if (b_par_google){
+		elementShow(getElementById2("testGoogle",false), true);
+	}
 	//
 }
 
@@ -848,7 +855,7 @@ function is_par_opt (){
  * @return e.g:  https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html 
  */
 function getSampleUrl(szUrl,iId){
-	if (URL_OPT_GOOGLE){
+	if (URL_SHORT_GOOGLE){
     if (iId == JSU_ID_SAMPLE_LOADING){
    	  return "https://goAALl/j0HZDG".replace ("AAL","o.g");
     }else if (iId == JSU_ID_SAMPLE_VALIDATE){
@@ -986,9 +993,7 @@ function jsuGoToURL(szUrl,bNewWindow){
 	}
 	var aId = getElementById2("href_hidden");
 	aId.href = szUrl;
-	// DAFARE
-	// aId.target = (bNewWindow)? "_blank" : "_self";
-	aId.target = "_self";
+	aId.target = (bNewWindow)? "_blank" : "_self";
 	aId.click();
 }
 
@@ -1044,4 +1049,87 @@ function showJSUVideoBlockPopup(){
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_BLOCKPOPUP,
       {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU Blocking Popup Sample"});
 }
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function jsuGoogleAnal (event){
+	var Fn = "[about.js jsuGoogleAnal()] ";
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
+	
+	var szMsg = '<div style="padding:5px 5px 5px 5px; width="400">Click following Links to see the <b>Google Analytics of the Main JSU URLs</b>:<ul>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_DOWNLOAD_PAGE_FREE +'.info" target="_blank">Number of Download: JSU.ZIP FREE (Obfuscated)</a></li>  </BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_ALL +'.info" target="_blank">Number of Access to Main JSU Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_TIP +'.info" target="_blank">Number of Access to JSU Tip Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_SORT +'.info" target="_blank">Number of Access to JSU SortTable Sample</a>   </li></BR>' +
+	'<li><a class="tipLink" href="'+ JSU_URL_SAMPLE_BLOCKPOPUP +'.info" target="_blank">Number of Access to JSU BlockingPopup Sample</a>   </li>' +
+	'</ul>' +
+	'<BR/>' +
+	'<input type="button" value="Show all Previous JSU Google Analytics" onclick="showAllGoogleAnal();" />' +
+	'<BR/><BR/>' +
+	'</div>';
+
+ 	TipFixedClicked (szMsg,event,{szTitle:"JSU Google Analytics"});
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
+	
+}
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function showAllGoogleAnal (){
+	jsuGoToURL(JSU_URL_DOWNLOAD_PAGE_FREE + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_ALL + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_TIP + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_SORT + '.info', true);
+	jsuGoToURL(JSU_URL_SAMPLE_BLOCKPOPUP + '.info', true);
+}
+
+//----------------------- TEST
+
+
+
+var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE,JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT,JSU_URL_SAMPLE_BLOCKPOPUP];
+var iTest = 0;
+var iTestMax = 300;
+var iPeriodRandom = 100;
+var tmoTest = null;
+// arTestUrl.length;
+
+/**
+ * Show a FixedTip with the Link to JSU Google Analytics
+ * @param event
+ */
+function showAllGoogleShort (){
+	var Fn = "[showAllGoogleShort()] ";
+	iTest =0;
+	var iSec = Math.floor((Math.random() * 10) + 1);
+	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+	tmoTest = setTimeout (testGoogle,iSec * 1000);
+}
+
+
+
+function testGoogle(){
+	var Fn = "[testGoogle()] ";
+	var i = iTest % arTestUrl.length;
+	jslog (JSLOG_DEBUG,Fn + "iTest=" + iTest +  "  i=" + i);
+	var szUrl = arTestUrl[i];
+	jslog (JSLOG_DEBUG,Fn + "szUrl=" + szUrl);
+	jsuGoToURL(szUrl, true);
+	clearTimeout (testGoogle);
+	
+	if (++iTest > iTestMax){
+		alert ("FINE");
+	}else {
+		var iSec = Math.floor((Math.random() * iPeriodRandom) + 1);
+		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+		tmoTest = setTimeout (testGoogle,iSec * 1000);
+	}
+		
+}
+
+
 

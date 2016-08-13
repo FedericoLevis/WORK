@@ -96,7 +96,7 @@ var TIP_CFG_FIXED={
  ========================================================================================= */
 
 
-// ------------------------------ Like core.css
+// ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
 var TIP_CLASS_JS_FIXED = {
 		Down: "tipJSFixed",
 		Up: "tipJSFixedUp"
@@ -113,6 +113,11 @@ var TIP_CLASS_BIG_FIXED = {
 		Down: "tipFixedBig",
 		Up: "tipFixedBigUp"
 };
+var TIP_CLASS_GOOGLE_FIXED = {
+		Down: "tipGoogleAnal",
+		Up: "tipGoogleAnalUp"
+};
+
 
 
 var TIP_X_MIN = 10;
@@ -344,6 +349,11 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 			bShow = false;
 		}else	if (className == TIP_CLASS_BIG_FIXED.Down ){
 			className = TIP_CLASS_BIG_FIXED.Up;
+		}else	if (className == TIP_CLASS_GOOGLE_FIXED.Up){
+			className = TIP_CLASS_GOOGLE_FIXED.Down;
+			bShow = false;
+		}else	if (className == TIP_CLASS_GOOGLE_FIXED.Down ){
+			className = TIP_CLASS_GOOGLE_FIXED.Up;
 		}else	if (className == TIP_CLASS_JS_FIXED.Up){
 			className = TIP_CLASS_JS_FIXED.Down;
 			bShow = false;
@@ -403,7 +413,7 @@ function TipFixedMouseOver(tipMsgHtml,event)
 	if (tipImg != undefined){
 		var className = tipImg.className;
 		if (className == TIP_CLASS_JS_FIXED.Up  || className == TIP_CLASS_FIXED.Up  || 
-				className == TIP_CLASS_ARROW_FIXED.Up || className == TIP_CLASS_BIG_FIXED.Up){
+				className == TIP_CLASS_ARROW_FIXED.Up || className == TIP_CLASS_BIG_FIXED.Up || className == TIP_CLASS_GOOGLE_FIXED.Up){
 			bTip=false;
 		} 
 		tt_log ( Fn + "classname=" + className + " --> Call  Tip()=" + bTip);
@@ -429,7 +439,7 @@ function UnTipFixed(event){
 		var className = tipImg.className;
 		// Only if we are not in Fixed Mode we Untip
 		var bUnTip = (className != TIP_CLASS_JS_FIXED.Up  && className != TIP_CLASS_FIXED.Up  && 
-				className != TIP_CLASS_ARROW_FIXED.Up && className != TIP_CLASS_BIG_FIXED.Up);
+				className != TIP_CLASS_ARROW_FIXED.Up && className != TIP_CLASS_BIG_FIXED.Up && className != TIP_CLASS_GOOGLE_FIXED.Up);
 		tt_log ( Fn + "classname=" + className + " --> Call UnTip:" + bUnTip);
 		if	(bUnTip){
 		  UnTip();
@@ -529,6 +539,8 @@ function tt_RestoreImgFixed() {
 			szClass = TIP_CLASS_ARROW_FIXED.Down;
 		}	else if (tip_img_fixed.className == TIP_CLASS_BIG_FIXED.Up){
 			szClass = TIP_CLASS_BIG_FIXED.Down;
+		}	else if (tip_img_fixed.className == TIP_CLASS_GOOGLE_FIXED.Up){
+			szClass = TIP_CLASS_GOOGLE_FIXED.Down;
 		}	else if (tip_img_fixed.className == TIP_CLASS_JS_FIXED.Up){
 			szClass = TIP_CLASS_JS_FIXED.Down;
 		}
