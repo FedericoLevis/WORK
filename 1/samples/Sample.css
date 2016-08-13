@@ -80,6 +80,13 @@ td.sample{
   padding-right:5px;
 }
 
+.videoOpt{ /* for select videoOpt */
+  font-family: Calibri;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
 label.sampleBrown{ /* Brown Bold */
   font-family: Calibri;
   font-weight: bold;
@@ -242,5 +249,4 @@ select.bold{
   display: none; 
 
 }
-
 
