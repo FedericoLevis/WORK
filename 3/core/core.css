@@ -634,16 +634,16 @@ td.tipc,td.tipcBold {
   text-align: center!important;
 }
 
-td.tipcBold,td.tiprBold {
+td.tipcBold,td.tiprBold,td.tiplBold{
   font-weight: bold!important;
 }
 
-td.tipr,td.tiprBold {
+td.tipr,td.tiprBold{
 	text-align: right !important;
 }
 
 
-td.tipl {
+td.tipl,td.detl,td.tiplBold {
 	text-align: left !important;
 }
 
@@ -795,8 +795,8 @@ table.detNoBorder {
 
 
 tr.detTitle,th.detTitle, tr.detTitleBig,th.detTitleBig { /* Detail Table (e.g GoogleAnalytics */
-  background-color: #8B8989; /* Dark Gray */
-  color: #FFFFFF; /* White */
+  background-color: #606060; /* Dark Gray */
+  color: #FFFFFF; /*#CCFFFF cyan */
   text-align: center;
   border: 0px;
   font-family: Verdana;
@@ -804,11 +804,11 @@ tr.detTitle,th.detTitle, tr.detTitleBig,th.detTitleBig { /* Detail Table (e.g Go
 }
 
 tr.detTitle,th.detTitle{
-  font-size: 11pt;
+  font-size: 10pt;
   padding: 2px;
 }
 tr.detTitleBig,th.detTitleBig{
-  font-size: 13pt;
+  font-size: 12pt;
 }
 
 .detTitleVeryBig{

@@ -45,11 +45,14 @@ var TIP_FIXED_POS={
 };
 
 var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
+var TIP_DEF_GOOGLE_ALL_BTN = true; // default: Present the button to display alla the page of Google analytics together
 var TIP_DEF_COL_NUM = 100; // default: 100 col for TextBox
 var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextBox
 
 
 var TIP_DEF_MAX_WIDTH = 800; // For BRowser different form IE (IE make autosize)
+
+var TIP_DEF_GOOGLE_WIDTH = 1300; /// DEfaulr width og Google Analytics Table
 
 /*=========================================================================================
  * 					CONFIG CONST
@@ -92,6 +95,8 @@ var TIP_CFG_FIXED={
 		OffsetY: 0   //  it will be set run-time
 };
 
+
+var tt_arObjGoogleAnal = null; //used  by onclickBtnAllGoogle
 /*=========================================================================================
  * 					LOCAL CONST
  ========================================================================================= */
@@ -505,7 +510,7 @@ function TipFixedJS(jsCode, event, objOpt){
 		//This is an example of MIXED Code: JS and also HTML.  
 		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextBoxFixedClick()   
 		
-		//--------------------------------------------------------- JS CODE  
+		//--------------------------------------------------------- JS   
 		var JS_CODE_SORT_SAMPLE=...;  
 		//<input> object with:  
 		//  - class="tipFixed" type="button"   
@@ -514,7 +519,7 @@ function TipFixedJS(jsCode, event, objOpt){
 		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
 		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
 		
-		//--------------------------------------------------------- CODE with HTML TAGs  
+		//--------------------------------------------------------- HTML   
 		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
 		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; 
 														     
@@ -543,44 +548,108 @@ function TipFixedTextBox(szTxt, event, objOpt){
  * @param arObjGoogleAnal  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
  * @param event
  * @param [objOpt] {Object} Option: <BR/>   
- *                           - szTitle{String}  default: 'Text'  <BR/>
- *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
- *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
+ *                           - szTitle{String}  default: 'Google Analytics'  <BR/>
+ *													 - iTblWidth {Number}:  Width of the Google Table (px) Default =TIP_DEF_GOOGLE_WIDTH  <BR/>
+ *                           - bAllBtn {Boolean} [true] se true visualizza anche il bottone per mostrare tutte insieme le pagine con le Google Analityics 
+ *                           - szHeader {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
+ *                           - szFooter {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
  *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
  *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
  * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 	@example
- 
-// JS Code		
-		var JS_CODE_SORT_SAMPLE=...;  
-		//<input> object with:  
-		//  - class="tipFixed" type="button"   
-		//  - value=Text to display in the button 	
-		//  - set whatever unique id   
-		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
-		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
-		
-		//--------------------------------------------------------- CODE with HTML TAGs  
-		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
-		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; 
-														     
+	//--------------------------------------------------------- JS
+	function jsuGoogleAnalTip(event){   
+	  // Prepare arObjGoogleAnal: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
+	  // In this case we populate all fields
+	  var arObjGoogleAnal = [
+	       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE ,
+	      	              cat:"FREE JSU",desc:'N&ordm; Download <b>JSU.ZIP FREE</b> Obfuscated'},
+	       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:"FREE JSU", desc:'Main JSU Sample'},
+	       {shortUrl: JSU_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:"FREE JSU", desc:'Tooltip Sample'},
+	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
+	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
+	     ];
+	  TipFixedGoogleAnal(arObjGoogleAnal,event,{
+	  	szTitle:'JSU Google Analitycs',
+	  	iTblWidth: 1200,
+	  	bBtnAll:true    // Show the Btn to display all the Page Together
+	  });
+	}	
+ //--------------------------------------------------------- HTML   
+	 <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" /> 
+													     
  */
-function TipFixedGoogleAnal(szTxt, event, objOpt){
+function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
 	var Fn = "[tooltip.js TipFixedTextBox] ";
 	tt_log (Fn + "--- START");
+	tt_logObj (Fn + "IN arObjGoogleAnal", arObjGoogleAnal);
+	tt_arObjGoogleAnal = arObjGoogleAnal; // save in global (use by onclickBtnAllGoogle)
 	tt_logObj (Fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_GOOGLE_TITLE; }
+	if (objOpt.bAllBtn == undefined){	objOpt.bAllBtn = TIP_DEF_GOOGLE_ALL_BTN; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
-	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = TIP_DEF_ROW_NUM; }
+	if (objOpt.szHeader == undefined){	objOpt.szHeader = TIP_DEF_GOOGLE_HEADER; }
+	if (objOpt.szFooter == undefined){	objOpt.szFooter = TIP_DEF_GOOGLE_FOOTER; }
+	
+	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_DEF_GOOGLE_WIDTH; }
+	if (objOpt.iMaxWidth == undefined){	objOpt.iMaxWidth= objOpt.iGoogleTblWidth + 30; }
+	
 	tt_init(); // init, if not already done
-	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
-  objOpt.bMsgHtml = false;
-	TipFixedClicked (szTxtBox,event,objOpt);
+	// Prepare 
+	var szMsg = '<table class="detNoBorder">';
+	if (objOpt.szHeader != undefined){
+		szMsg += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szHeader + '<BR/></td></tr>';
+  }
+	 szMsg += '<tr><td><table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="' + objOpt.iGoogleTblWidth + '">'; 
+	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
+	var szTblHea = '<tr class="detTitle" >' +
+	  '<td class="tipc" width="13%">' + TIP_GOOGLE_SHORT_URL + '</td> '+
+	  '<td class="tipc" width="40%">' + TIP_GOOGLE_LONG_URL + '</td> '+
+	  '<td class="tipc" width="15%">' + TIP_GOOGLE_CAT + '</td> '+
+	  '<td class="tipc" width="20%">' + TIP_GOOGLE_DESC + '</td> '+
+	  '<td class="tipc" width="12%">' + TIP_GOOGLE_ANAL + '</td> '+
+	'</tr>';
+	szMsg += szTblHea;	
+	for (var i=0; i< arObjGoogleAnal.length; i++){
+		var objGoogle = arObjGoogleAnal[i];
+		var szId = "googleAnal_" + i;
+		var szTr = '<tr>' + 
+		  '<td class="tipc">' + objGoogle.shortUrl + '</td> '+
+		  '<td class="tipl">' + objGoogle.longUrl + '</td> '+
+		  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
+		  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
+		  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ objGoogle.shortUrl +'.info" target="_blank">Google Analitycs</a></td> '+
+ 	  '</tr>';
+	  szMsg += szTr;	
+	}
+	szMsg += '</table></td></tr>';
+	if (objOpt.bAllBtn){
+		szMsg += '<tr style="padding-top:10px;padding-bottom:10px;"><td class="tipc">' + 
+		 '<input type="button" value="' + TIP_GOOGLE_BTN_ALL + '" title="' + 
+		 arObjGoogleAnal.length + TIP_GOOGLE_BTN_ALL_TITLE + '" ' +
+		  'onclick="onclickBtnAllGoogle();" />' +
+		 '</td></tr>';
+  }
+	if (objOpt.szFooter != undefined){
+		szMsg += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szFooter + '</td></tr>';
+  }
+	szMsg += '</table>';
+	TipFixedClicked (szMsg,event,objOpt);
+	// Create Sort if cSortTable is loaded
+	if (typeof (cSortTable) != "undefined"){
+		tt_log (Fn,"Create SortTable");
+		var arSortCol = [  {col: TIP_GOOGLE_SHORT_URL},   
+			         					{col: TIP_GOOGLE_LONG_URL},        
+			         					{col: TIP_GOOGLE_CAT}, 
+			         	        {col:TIP_GOOGLE_DESC}, 
+			         	        {col: TIP_GOOGLE_ANAL}]; 
+		var cSortTbl1 = new cSortTable("tblGoogle",arSortCol,{bNoStartupSortIco:true}); 
+	}
+	
 	tt_log (Fn + "--- END");
 }
 
@@ -589,6 +658,20 @@ function TipFixedGoogleAnal(szTxt, event, objOpt){
 
 //==================  LOCAL FUNCTION	 =====================================//
 
+/*
+ * Open all the Google analytics pages
+ */
+function onclickBtnAllGoogle(){
+	var Fn = "[tooltip.js onclickBtnAllGoogle()] ";
+
+	tt_log (Fn + TIPLOG_FUN_START);
+	for (var i=0; i< tt_arObjGoogleAnal.length; i++){
+		tt_log (Fn + "simulate Click on href=" + tt_arObjGoogleAnal[i].shortUrl + ".info"); 
+		var aEl = document.getElementById ("googleAnal_" + i);
+		aEl.click();
+	}
+	tt_log (Fn + TIPLOG_FUN_START);
+}
 
 /*
  * Internal Use:   call this function to UnTip after TipFixedxx(). E.g in Close Button, ESC,... <BR/>
@@ -598,7 +681,7 @@ function tt_UnTipFixed(){
 	var Fn = "[tooltip.js tt_UnTipFixed()] ";
 	
 	tt_log ( Fn + TIPLOG_FUN_START);
-  tt_log(Fn + "CURRENT tip_type=" + tip_type)
+  tt_log(Fn + "CURRENT tip_type=" + tip_type);
 	tt_init(); // init, if not already done
 	tt_SetCfg(TIP_CFG_FLOATING);
 	tt_OpReHref();

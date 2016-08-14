@@ -125,6 +125,7 @@ var SORT_CLASSNAME = "sortimg";
 					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Rows in Header. We will put the SortIcons into iRowSortHeader row  <BR/>
 					- szSortCol	{String}		Current Sort Col to be set.	 <BR/>
 																Default. Par is absent and First Col is Set, without applying the Sort (we suppose Table already Sorted) <BR/>
+																To init without any SortCol, pass szSortCol = ""
 																	a) bCognos=false: First Col is Set  <BR/>
 																	b) bCognos=true: Current Col is taken by selectSortCol <BR/>
 					- szSortDir	{String}		Current SortDir: SORT_DIR.ASC, SORT_DIR.DESC, SORT_DIR.NONE . <BR/>
@@ -137,6 +138,7 @@ var SORT_CLASSNAME = "sortimg";
 	  			- iTblRowPerPage {Number}   If present is the limit of Rows displayed in the Table. For Cognos is the Setting of the List properties RowPerPage <BR/>
 	  																When not present (default), we consider all the Table always displayed <BR/>
 	  			- szClassFooter {String}    class that identity the TR and/OR TD Footer rows					 <BR/>
+	  			- bNoStartupSortIco {Boolean} [false] true to avoid setting a default ico sort at startup (in the First col)
 					- bCognos				{Boolean}     default=false . true for Cognos  Sort: in this case szElId identifies the span in front of the Table <BR/>
 					- bCognosGlobalSort {Boolean} Default=false. Only for bCognos=true <BR/>
 																			When The Table is displayed and More than one Page is present we cannot make Local Sort: <BR/>
@@ -156,7 +158,7 @@ var SORT_CLASSNAME = "sortimg";
 	var LIST_ROWS_PER_PAGE=1000; // RowPerPage properties: till 1000 Rec we can make FastSort 
  
 	// Cognos Table with 1000 RowsPerPage. Enable GlobalSort if the Table has More than 1000 Rec 
-	var cSortTbl1 = new cSortTable("tblSort",arSortTest,{bCognos=true,bCognosGlobalSort=true,iTblRowPerPage=LIST_ROWS_PER_PAGE); 
+	var cSortTbl1 = new cSortTable("tblSort",arSortCol,{bCognos=true,bCognosGlobalSort=true,iTblRowPerPage=LIST_ROWS_PER_PAGE); 
 	
 */
 cSortTable = function (szElId, arSortCol,objOpt) {
@@ -186,6 +188,8 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 	this.iSortColInd=SORT_DEF_IND;   // index corrent sort
 	this.szSortDir=SORT_DEF_DIR;  // Default
 	this.szSortCol=""; // Default
+	this.bNoStartupSortIco = false;
+	
 	if (arSortCol.length > 0){
 		this.szSortCol=   (arSortCol[0].col != undefined) ? arSortCol[0].col : "" ;    
 	} 
@@ -200,7 +204,7 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 	
 	if (objOpt != undefined){
 		jslogObj(JSLOG_DEBUG,Fn + "objOpt", objOpt);
-		
+		// Only if objOpt.szSortCol="" we set false
 		
 		if (objOpt.iRowSortHeader != undefined){
 			this.iRowSortHeader = objOpt.iRowSortHeader; 
@@ -230,6 +234,11 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 			this.szClassFooter=objOpt.szClassFooter;
 			jslog(JSLOG_DEBUG,Fn + "OPTION: szClassFooter=" + this.szClassFooter);
 		}	
+		if (objOpt.bNoStartupSortIco != undefined){
+			this.bNoStartupSortIco=objOpt.bNoStartupSortIco;
+			jslog(JSLOG_DEBUG,Fn + "OPTION: bNoStartupSortIco=" + this.bNoStartupSortIco);
+		}	
+		
 	}
 	this.tmoSortApply=null;
 	if (this.bCognos){
@@ -402,7 +411,7 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 
 /* 
 Set SortCol and SortDir and Apply It
-@param szSortCol {string} in
+@param szSortCol {string} 
 @param szSortDir {string} in SORT_DIR.ASC or SORT_DIR.DESC
 @param [bResortTable] {Boolean} in Default=true    if true the Sort is Resort basing on szSortCol/SzSortDir
  																									 if false the Sort is only aplied to the SortIcon. 
@@ -619,7 +628,7 @@ cSortTable.prototype.sortInit = function () {
 		var CurDir=this.szSortDir;
 		var CurHint=this.szSortHintDesc;  // LIke it is Desc, because clicking it will become Asc   
 		var CurImgPath=this.szSortPathNone;
-		if (i == this.iSortColInd)
+		if (i == this.iSortColInd && !this.bNoStartupSortIco)
 		{
 			this.imgSortCur = SortImg;  // Global Var
 			// Current Sort Column
@@ -635,6 +644,7 @@ cSortTable.prototype.sortInit = function () {
 		else {
 			CurDir=SORT_DIR.NONE;
 		}
+		this.bNoStartupSortIco = false; // only at startup we want this flag
 		SortImg.setAttribute(SORT_ATTR_SORT_DIR, CurDir);
 		SortImg.setAttribute("src", CurImgPath);
 		SortImg.setAttribute("title", CurHint);
