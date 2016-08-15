@@ -122,7 +122,10 @@ var SORT_CLASSNAME = "sortimg";
   @param	{string} szElId      Id of the HTML TABLE to sort - If bCognos=true szElId=spanId that enclose the Cognos List to Sort 
 	@param	{array} arSortCol  Array with the SortCol (See Example below)
 	@param objOpt {Object}   Options: <BR/>
-					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Rows in Header. We will put the SortIcons into iRowSortHeader row  <BR/>
+					- iRowHeader {Number}  Default =1   Number [1,2,..] of Row Header <BR/>
+					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Row where we have to put the Sort Icon. e.g 2 if we have 2 row header and we want to put icon in the second row<BR/>
+					   NOTE: you can also define only one of previous. if you set only iRowHeader=2 also iRowSortHeader will be 2 <BR/>
+					   you can define both for particular cases (e.g iRowHeader=2 iRowSortHeader=1 for Filter presence) <BR/> 
 					- szSortCol	{String}		Current Sort Col to be set.	 <BR/>
 																Default. Par is absent and First Col is Set, without applying the Sort (we suppose Table already Sorted) <BR/>
 																To init without any SortCol, pass szSortCol = ""
@@ -167,7 +170,8 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 	jslog(JSLOG_INFO,Fn + JSLOG_FILE_START);
 	// Init Global Var
 	this.iTblRowPerPage = 0;
-	this.iRowSortHeader = 1; // Default
+	this.iRowSortHeader = 1; // Default. position [1..] of Sort in Header
+	this.iRowHeader = 1; // Default. 1 row for Header
 	this.bCognos = SORT_DEF_COGNOS;
 	this.bCognosGlobalSort=SORT_DEF_COGNOS_GLOBAL_SORT_EN;
 	this.bSortEn = true;
@@ -206,9 +210,20 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 		jslogObj(JSLOG_DEBUG,Fn + "objOpt", objOpt);
 		// Only if objOpt.szSortCol="" we set false
 		
+		if (objOpt.iRowHeader != undefined){
+			this.iRowHeader = objOpt.iRowHeader; 
+			jslog(JSLOG_DEBUG,Fn + "OPTION: iRowHeader=" + this.iRowHeader);
+			if (objOpt.iRowSortHeader == undefined){
+				objOpt.iRowSortHeader = objOpt.iRowHeader; 
+			} 
+		} 
 		if (objOpt.iRowSortHeader != undefined){
 			this.iRowSortHeader = objOpt.iRowSortHeader; 
 			jslog(JSLOG_DEBUG,Fn + "OPTION: iRowSortHeader=" + this.iRowSortHeader);
+			if (objOpt.iRowHeader == undefined){
+				objOpt.iRowHeader = objOpt.iRowSortHeader;
+				this.iRowHeader = objOpt.iRowHeader; 
+			} 
 		} 
 		if (objOpt.iTblRowPerPage != undefined){
 			this.iTblRowPerPage = objOpt.iTblRowPerPage; 
@@ -292,7 +307,7 @@ cSortTable = function (szElId, arSortCol,objOpt) {
 				this.iTblFooterRec++;
 			}
 		}
-		jslog(JSLOG_TEST,Fn + "TABLE iTblRecNum=" + iTblRecNum + " - iRowSortHeader=" + this.iRowSortHeader + "  iTblFooterRec=" + this.iTblFooterRec + "  (rows=" + this.tblSort.rows.length +  ")");
+		jslog(JSLOG_TEST,Fn + "TABLE iTblRecNum=" + iTblRecNum + " - iRowHeader=" + this.iRowHeader + " iRowSortHeader=" + this.iRowSortHeader + "  iTblFooterRec=" + this.iTblFooterRec + "  (rows=" + this.tblSort.rows.length +  ")");
 		// For Cognos: check if MultiPage
 		if (this.bCognos){
 			// bMultiPage true: if we find the Link for Top Down (isMultiPage), or if there are more row that the one of the List
@@ -590,14 +605,14 @@ cSortTable.prototype.sortInit = function () {
 	jslog(JSLOG_TEST,"CURRENT SORT: iSortColInd=" + this.iSortColInd +  "  szSortColCur=" + this.szSortCol + "  szSortDirCur=" + this.szSortDir);
 	// this.tblSort.rows = object with all the rows of the this.tblSort. The first row is Header
 	if (this.tblSort.rows && this.tblSort.rows.length >= this.iRowSortHeader) {
-	   var firstRow = this.tblSort.rows[this.iRowSortHeader-1];
+	   var sortRow = this.tblSort.rows[this.iRowSortHeader-1];
 	}
-	if (!firstRow) {
+	if (!sortRow) {
 	  jslog(JSLOG_TEST,Fn + "Table without Rows to Sort. iRowSortHeader=" + this.iRowSortHeader + "  NumRow=" + this.tblSort.rows.length);
 	  return;
 	}
 	//---------  manage click on Header when the cell is selected
-	var iColVis = firstRow.childNodes.length;
+	var iColVis = sortRow.childNodes.length;
 	var numColHidden = 0;
 	if (this.inputSortHiddenCol){
 	  //when number of visible column > number of sort column 
@@ -616,7 +631,7 @@ cSortTable.prototype.sortInit = function () {
 	
 	jslog(JSLOG_TEST,Fn + " Prepare icons (arSortImg), events and set Current Sort");
 	for (var i=0;i<iColSort;i++) {
-		var CurCell = firstRow.cells[i];
+		var CurCell = sortRow.cells[i];
 		// var txt = ts_getInnerText(CurCell);
 		var TextSep = this.tempTextSep.cloneNode(false);
 		//
@@ -930,7 +945,7 @@ cSortTable.prototype.resortTable = function (SortImg) {
   var td = SortImg.parentNode;
   var iNewSortCol = td.cellIndex;  // current Column  [0,1...]
   jslog(JSLOG_TEST,"Clicked on column=" + iNewSortCol  + "  Previous SortCol=" + this.iSortColInd);
-  if (iNewSortCol != this.iSortColInd  && this.imgSortCur != 0){
+  if (iNewSortCol != this.iSortColInd  && this.imgSortCur != 0 && this.imgSortCur != undefined){
     jslog(JSLOG_TEST,"Changed Sort column from " + this.iSortColInd + " to "  + iNewSortCol + "   --> Reset Previous Img");
     this.imgSortCur.setAttribute(SORT_ATTR_SORT_DIR,SORT_DIR.NONE);
     this.imgSortCur.setAttribute("title",this.szSortHintDesc);  // like it is Desc because clicking it will be ASC 
@@ -1059,8 +1074,8 @@ cSortTable.prototype.sortApply = function () {
   var newRows = new Array();
   var headerRows = new Array();
   // ---------------------------------- Header
-  jslog (JSLOG_TEST,Fn + "Prepare newRow with the Row to Sort - We skip First HEADER Rows=" + cSortTableEl.iRowSortHeader);
-  for (var j=cSortTableEl.iRowSortHeader, i=0;j<tblSort.rows.length ;j++, i++) {
+  jslog (JSLOG_TEST,Fn + "Prepare newRow with the Row to Sort - We skip First HEADER Rows=" + cSortTableEl.iRowHeader);
+  for (var j=cSortTableEl.iRowHeader, i=0;j<tblSort.rows.length ;j++, i++) {
   	newRows[i] = tblSort.rows[j]; 
   }
   

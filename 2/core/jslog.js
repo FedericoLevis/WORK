@@ -87,7 +87,7 @@ var JSLOG_DELIMITER= '<span style="color: #f00">--------------------------------
 
 // For jslogDomEl
 var JSLOG_DEF_DOM_EL_COL_NUM = 150;
-var JSLOG_MAX_DOM_EL_ROW_NUM = 10; // Max, then we will use scrollbar
+var JSLOG_MAX_TEXT_BOX_ROW_NUM = 10; // Max, then we will use scrollbar
 
 
 //------------------------ POSITION
@@ -224,7 +224,7 @@ function jslog_init(jsLogLev,objOpt)
   }else {
   	iLogLev = parseInt(jsLogLev);
   }
-	jslogConsoleStart(iLogLev,objOpt);
+	jj_consoleStart(iLogLev,objOpt);
 }	
 
 
@@ -332,6 +332,57 @@ function jslogObj(Level,szMsg, obj, bLogCompact)
 }
 
 
+/**
+ * LOG HTML: log a Text contanint HTML. We log it into a TextBox <BR/>
+ * If jslog CONSOLE is Present, Log main szHtml into a TextArea of the jslog CONSOLE if Level is enable <BR/>
+ * If jslog was initialized with Level=0 or if iLogLev is not enabled, this function does not log 
+ * @param iLogLev {Number} JSLOG_INFO, ..
+ * @param szMsg  {String} Initial Message
+ * @param szHtml  {String} Message To log that can contain HTML TAGs
+ * @param [objOpt]  {Object}	  Optional Options: <ul> 
+ *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
+ *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
+ *   											</ul> 
+ * @returns 0
+ 
+ * @example
+   jslogHTML (JSLOG_TEST,'selectTest',getElementById('selectTest').innerHTML);  
+
+  LOGGED:
+
+selectTest:  
+<select class="detFilter" id="googleAnalType" title="Initial Analytics TYPE displayed. Then it can be changed form Google Analitycs page"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" >
+<option class="detFilter" value="all" selected >All Time</option> 
+<option class="detFilter" value="month"  >Last Month</option> 
+<option class="detFilter" value="week"  >Last Week</option> 
+<option class="detFilter" value="day"  >Last Day</option> 
+<option class="detFilter" value="two_hours"  >Last 2 Hours</option> 
+  
+ */
+function jslogHtml(iLogLev,szMsg,szHtml, objOpt)
+{
+
+	// WE make the Check here to avoid executing JSON.stringify when Level is not Enable
+  if(!isLogLevEnable(iLogLev) || jslogVar.console == undefined){
+  	return;
+  }
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.iColNum == undefined){	objOpt.iColNum = JSLOG_DEF_DOM_EL_COL_NUM; }
+	if (objOpt.iRowNum == undefined){	
+		// if not passed objOpt.iRowNum, we use the number of /n inserted. 
+		objOpt.iRowNum = jj_getHtmlRowNum(szHtml);
+	}
+
+	// prepare szTxtArea 
+	var szTxtArea= szMsg + ":<BR\>" + '<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szHtml + '</textarea><BR\>';
+	jslog (iLogLev,szTxtArea);
+	return 0;
+
+}
+
+
 
 /**
  * LOG DOM ELEMENT: log main fields (nodeName, attributes,...) of DOM Element <BR/>
@@ -342,7 +393,7 @@ function jslogObj(Level,szMsg, obj, bLogCompact)
  * @param el  {Object} DOM OBJECT To log
  * @param [objOpt]  {Object}	  Optional Options: <ul> 
  *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
- *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_DOM_EL_ROW_NUM) </li>
+ *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
  *    												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>
  *   											</ul> 
  * @returns 0
@@ -388,7 +439,7 @@ function jslogDomEl(iLogLev,szMsg, el, objOpt)
   	var attr = el.attributes[i];
   	szEl += attr.name + "=" + attr.value + "\n";
   }
-  szEl += "outerHTML=" +  _replaceAll(el.outerHTML,"><",">\n<");
+  szEl += "outerHTML=" +  jj_replaceAll(el.outerHTML,"><",">\n<");
   
   if (objOpt.style != JSLOG_OPT.NONE ){
     var st = el.style;
@@ -426,10 +477,7 @@ function jslogDomEl(iLogLev,szMsg, el, objOpt)
   
 	if (objOpt.iRowNum == undefined){	
 		// if not passed objOpt.iRowNum, we use the number of /n inserted. 
-		objOpt.iRowNum = 1 + (szEl.match(/\n/g) || []).length;
-		if (objOpt.iRowNum > JSLOG_MAX_DOM_EL_ROW_NUM){
-			objOpt.iRowNum = JSLOG_MAX_DOM_EL_ROW_NUM;
-		} 
+		objOpt.iRowNum = jj_getHtmlRowNum(szEl);
 	}
 	
 	// prepare szTxtArea 
@@ -449,7 +497,7 @@ function jslogDomEl(iLogLev,szMsg, el, objOpt)
  * @param el  {Object} DOM OBJECT To log
  * @param [objOpt]  {Object}	  Optional Options: <ul> 
  *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
- *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_DOM_EL_ROW_NUM) </li>
+ *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
  *    												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>
  *   											</ul> 
  * @returns 0
@@ -491,10 +539,10 @@ String for jslog
 function json2jslogStr(json)
 {
   // N.B: devo cambiare qualcosa nei replace o si inluppa
-	var szJson = _replaceAll(JSON.stringify(json),"},","} ,\n  ");
-	szJson = _replaceAll (szJson,":[",":\n[\n  ");
-	szJson = _replaceAll (szJson,"[{","[\n  {");
-	return  _replaceAll (szJson,"}]","}\n]\n  ");
+	var szJson = jj_replaceAll(JSON.stringify(json),"},","} ,\n  ");
+	szJson = jj_replaceAll (szJson,":[",":\n[\n  ");
+	szJson = jj_replaceAll (szJson,"[{","[\n  {");
+	return  jj_replaceAll (szJson,"}]","}\n]\n  ");
 
 }
 
@@ -606,6 +654,18 @@ function isLogLevEnable(iLogLev)
  * 																				PRIVATE
  ******************************************************************************************************/
 
+
+
+function jj_getHtmlRowNum(szHtml){
+	var iRowNum =  1 + (szHtml.match(/\n/g) || []).length;
+	if (iRowNum > JSLOG_MAX_TEXT_BOX_ROW_NUM){
+		iRowNum	= JSLOG_MAX_TEXT_BOX_ROW_NUM;
+  } 
+	return iRowNum;
+	
+}
+
+
 /*
  * 
  * Replace in str di tutte le occorrenze di strFrom, che vengono sostituite con strTo 
@@ -614,7 +674,7 @@ function isLogLevEnable(iLogLev)
  * @param strTo			es: "Paperino"
  * @returns str 		es: "questa frase contiene Paperino 2 volte perche` alla fine ripeto Paperino"
  */
-function _replaceAll(str,strFrom,strTo)
+function jj_replaceAll(str,strFrom,strTo)
 {  
   if (typeof(str) == "undefined"){
     return "";
@@ -632,7 +692,7 @@ function _replaceAll(str,strFrom,strTo)
  * @param iLogLev	{Number} LogLev   see 
  * @param [objOpt] {Object} see jslog_init
  */
-function jslogConsoleStart(iLogLev,objOpt){		
+function jj_consoleStart(iLogLev,objOpt){		
 	var szLogSize = JSLOG_SIZE_DEF;
 	jslog_end(); // End previous jslogVar.console if present
 	jslogVar.iLogLev = iLogLev;

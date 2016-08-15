@@ -1,0 +1,446 @@
+/* 
+========================================================================================= <BR/> 
+<b>File:</b> 			core/Popup.css <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     CSS for Popup Features (BlockPopup, JQPopup)   <BR/>   
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<b> NOTE:</b> The url path points to https://raw.github.com/FedericoLevis/JSU/master/images/ <BR/>
+If you want to the local jsu/images directory (e.g. to modify images) you have to replace: <BR/>
+    https://raw.github.com/FedericoLevis/JSU/master/images/     <BR/>
+  with          <BR/>
+    ../images         <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+========================================================================================= <BR/> 
+*/
+
+
+.PopupDialog{
+}	
+
+/*---
+td.PopupImgXXX: Popup Image 
+---
+<b>CSS:</b> ``td.PopupImgInfo``, ``td.PopupImgWarning``, ``td.PopupImgError``,...  
+<BR/><b>Examples:</b>
+```html
+<table><tr><td class="PopupImgInfo" width="50px" height="50px" ></td></tr><table>
+<table><tr><td class="PopupImgWarning" width="50px" height="50px" ></td></tr><table>
+<table><tr><td class="PopupImgError" width="50px" height="50px" ></td></tr><table>
+<table><tr><td class="PopupImgConfirm" width="50px" height="50px" ></td></tr><table>
+<table><tr><td class="PopupImgQuestion" width="50px" height="50px" ></td></tr><table>
+<table><tr><td class="PopupImgChoice" width="50px" height="50px" ></td></tr><table>
+```
+*/
+td.PopupImgInfo { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupInfo.png') center center no-repeat;
+}
+td.PopupImgWarning { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupWarning.png') center center no-repeat;
+}
+td.PopupImgError { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupError.png') center center no-repeat;
+}
+td.PopupImgConfirm { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupConfirm.png') center center no-repeat;
+}
+td.PopupImgQuestion, td.PopupImgPrompt { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupQuestion.png') center center no-repeat;
+}
+td.PopupImgChoice { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupChoice.png') center center no-repeat;
+}
+td.PopupImgAlarm { 
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupAlarm.gif') center center no-repeat;
+}
+
+/*---
+table.PopupTitleXXX: Popup Title 
+---
+<b>CSS:</b> ``td.PopupTitleInfo``, ``td.PopupTitleWarning`` , , ``td.PopupTitleError``, ...
+<BR/><b>Examples:</b>
+```html
+<table class="PopupTitleInfo"><tr><td>Example of Info Title</td></tr></table> <BR/>
+<table class="PopupTitleWarning"><tr><td>Example of Warning Title</td></tr></table><BR/>
+<table class="PopupTitleError"><tr><td>Example of Error Title</td></tr></table><BR/>
+<table class="PopupTitleConfirm"><tr><td>Example of Confirm Title</td></tr></table><BR/>
+<table class="PopupTitleQuestion"><tr><td>Example of Question Title</td></tr></table><BR/>
+<table class="PopupTitleChoice"><tr><td>Example of Choice Title</td></tr></table><BR/>
+```
+*/
+
+table.PopupTitleInfo, table.PopupTitleError, table.PopupTitleWarning, table.PopupTitleConfirm, table.PopupTitleQuestion, table.PopupTitleChoice  
+{
+  border: 0px ; /* No Border */
+  border-collapse: collapse;
+  border-spacing: 0px;
+  text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+  border-style: solid;
+  border-width: 2px 2px 0px 2px; /* Top left bottom right*/
+}
+
+td.PopupTitle
+{
+	padding-top: 2px;   
+	padding-bottom: 2px;   
+}
+
+.PopupTitleInfo, .PopupTitleChoice{  /* Particular Setting for Info and Choice */
+	font-family: Arial;
+	font-size: 15px;
+  text-align: center;
+	font-weight: bold;
+	color: black; /*  */
+  border-color: #1874CD; /* Same color of  PopupTblMsgInfo */
+  background-color: #AFEEEE; /*  For Browser that do no support linear-gradient */
+  background-color: linear-gradient(#AFEEEE, #63B8FF); /* Standard syntax (must be last) */
+}
+
+.PopupTitleWarning{
+	font-family: Arial;
+	font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: black; 
+  background-color: #FFFF00; 
+}
+
+.PopupTitleError, .PopupTitleAlarm{
+	font-family: Arial;
+	font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: white; 
+  background-color: red; 
+}
+.PopupTitleConfirm{
+	font-family: Arial;
+	font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: black; 
+  background-color: #90EE90; /*  For Browser that do no support linear-gradient */
+  background-color: linear-gradient(#90EE90, #00FF7F); /* Standard syntax (must be last) */
+}
+.PopupTitleQuestion, .PopupTitlePrompt{
+	font-family: Arial;
+	font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+	color: black; 
+  background-color: #AFEEEE; /*  cyan  For Browser that do no support linear-gradient */
+  background-color: linear-gradient(#AFEEEE, #63B8FF); /* Standard syntax (must be last) */
+}
+
+/*---
+table.PopupTblMsgXXX: Popup Msg Section 
+---
+<b>CSS:</b> ``table.PopupTblMsgInfo``, ``table.PopupTblMsgWarning``,  ``table.PopupTblMsgError`` ...
+<BR/><b>Examples:</b>
+```html
+<table class="PopupTblMsgInfo"><tr><td>Example of Info Message</td></tr></table> <BR/>
+<table class="PopupTblMsgWarning"><tr><td>Example of Warning Message</td></tr></table><BR/>
+<table class="PopupTblMsgError"><tr><td>Example of Error Message</td></tr></table><BR/>
+```
+*/
+table.PopupTblMsgInfo, table.PopupTblMsgError, table.PopupTblMsgWarning, table.PopupTblMsgConfirm, 
+table.PopupTblMsgQuestion, table.PopupTblMsgPrompt, table.PopupTblMsgChoice, table.PopupTblMsgAlarm  
+{
+  color: #404040; /* Black */
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table.PopupTblMsgInfo, table.PopupTblMsgChoice{ /*  Border around the TblMsg Table for Info, Choice   */
+  border: 2px solid #1874CD; /* Blue*/
+}
+table.PopupTblMsgQuestion, table.PopupTblMsgPrompt{
+  border: 2px solid Black; /* Black*/
+}
+table.PopupTblMsgConfirm{
+  border: 2px solid #009900; /* Green*/
+}
+
+table.PopupTblMsgWarning{
+  border: 2px solid #EEC900; /* Yellow*/
+} 
+table.PopupTblMsgError, table.PopupTblMsgAlarm{
+  border: 2px solid #8B0000 /* Red*/
+} 
+
+
+table.PopupMsg  {  /* Table with only the Msg (no Img) */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+td.PopupMsg{
+  text-align: left;
+}	
+
+/*---
+td.PopupPrompt: Prompt with Label & Input 
+---
+<b>CSS:</b> ``td.PopupPrompt`` used for POPUP_TYPE.PROMPT
+*/
+td.PopupPrompt
+{
+  color: black; /* Black */
+  background-color: #ffffff;
+  border: 0px ; /* No Border */
+  border-collapse: collapse;
+  border-spacing: 0px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label.PopupPrompt
+{
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 14px;
+}	
+
+input.PopupPrompt, input.PopupPromptError
+{
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  width: 200px;
+}
+
+/*---
+input.PopupPromptError: Prompt Input Error 
+---
+<b>CSS:</b> ``input.PopupPromptError`` used for POPUP_TYPE.PROMPT. When there is a validation Erroror, show an alarm gif on the right of the input
+<BR/><b>Examples:</b>
+```html
+<input class="PopupPromptError" width="20px" />
+```
+*/
+input.PopupPromptError
+{
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupValidationError.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*---
+label.PopupPromptError: Validation Error Label 
+---
+<b>CSS:</b> ``label.PopupPromptError`` used for POPUP_TYPE.PROMPT in case of Validation Error
+*/
+label.PopupPromptError
+{
+  color: red; 
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 14px;
+  width: 200px;
+  display: none;
+}
+
+
+/*---
+td.PopupChoiceXXX: PopupChoice 
+---
+<b>CSS:</b> ``td.PopupChoiceSingle``, ``td.PopupChoiceMulti`` used for POPUP_TYPE.CHOICE 
+*/
+td.PopupChoiceSingle,td.PopupChoiceMulti 
+{
+  color: #404040; /* Black */
+  background-color: #ffffff;
+  border: 0px ; /* No Border */
+  border-collapse: collapse;
+  border-spacing: 0px;
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+fieldSet.PopupChoiceMulti 
+{
+	margin-top: 10px;
+  border: 1px solid black;
+}	
+
+label.PopupChoiceSingle,legend.PopupChoiceMulti
+{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 14px;
+}	
+
+select.PopupChoiceSingle, select.PopupChoiceMulti 
+{
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 13px;
+} 
+
+
+a.Popup, a.ui-widget-content { /*   Used for SelectAll DeselectAll   or other URL. NOTE: we also overwrite a.ui-widget-content */
+ font-weight: bold;
+ font-size: 13px;
+ text-decoration: underline; 
+ color: blue; // 
+}
+
+a.Popup:hover {
+ cursor: pointer;
+ color: #1E90FF; // dodgerblue
+}
+
+
+
+input.PopupBtn{ /* Button OK */
+  font-family: Arial;
+	font-weight: bold !important;
+  font-size: 14px !important;
+	width: 100px;
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+  margin-left:20px !important;	
+  margin-right:20px !important;
+  background-color: #CACACA !important; 
+}
+
+input.PopupBtn:hover{
+  background-color: #DBDBDB !important; 
+  border: 2px solid blue !important;;  
+  border-style: ridge !important;; 
+}	
+
+
+body.Popup, html.Popup {
+  height: 100%;
+  background-color: #BABABA;  /* Gray*/    
+}
+
+
+div.Popup{ /* The container of everything in Dlg: define here the font. */
+  width: 100%;
+  height: 100%;
+	text-align: left;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+div.PopupBtn{ /* The Last Section with Buttons */
+	color: black; 
+	background-color: #ECECEC !important;
+	width: 100%;
+  height : 40px;
+  margin-left : 0px;	
+  margin-bottom : 2px;	
+}
+
+td.Popup{
+  text-align: left;
+}
+
+
+table.Popup /* a table that can be used inside Msg */
+{
+  color: #000000; /* Black */
+  background-color: #fcfcfc;
+  border: 1px solid #404040; /* Black */  
+  border-collapse: collapse;
+  border-spacing: 3px;
+}
+
+
+tr.PopupTitle,th.PopupTitle {
+	background-color: #0033FF; /* Blue */
+	color: #FFFFFF; /* White */
+  border: 1px solid #404040; /* Black */  
+	text-align: center;
+	padding: .5em;
+	border: 1px;
+	font-weight: bold;
+}
+
+th.Popup{
+	text-align: center;
+	padding: .5em;
+  border: 1px solid #404040; /* Black */  
+}
+
+td.PopupLeft,td.PopupRight,td.PopupCenter{
+	padding-left: 5px;
+  border: 1px solid #404040; /* Black */  
+}
+td.PopupLeft{
+  text-align: left;
+}
+td.PopupRight{
+  text-align: right;
+}
+td.PopupCenter{
+  text-align: center;
+}
+
+
+
+th.PopupHea,td.PopupHea { /* Header */
+	background: #B8B8B8; /* Gray */
+  border: 1px solid #404040; /* Black */
+	text-align: center;
+	font-weight: bold;
+}
+
+
+th.PopupSep { /* Row separator between SubTables*/
+	background: #FFFFCC; /* Yellow*/
+	height: 8pt;
+	border-style: none;
+	text-align: left;
+	color: #404040;
+}
+
+
+/*---
+.PopupOk, .PopupWarning to enpasize Ok, Warning,..
+---
+<b>CSS:</b> ``td.PopupOk``, ``label.PopupOk``, ``td.PopupWarning``,... 
+<BR/><b>Examples:</b>
+```html
+<label class="PopupOk">Example of .PopupOk</label><BR/>
+<label class="PopupWarning">Example of .PopupWarning</label><BR/>
+<label class="PopupError">Example of .PopupError</label><BR/>
+```
+*/
+
+
+td.PopupOk,label.PopupOk {
+	color: #009900; /* Green */
+	font-weight: bold;
+}
+
+td.PopupWarning, label.PopupWarning {
+	background: #FFFFAA; /* Yellow */
+	font-weight: bold;
+	color: red;
+}
+
+td.PopupGood, label.PopupGood { /* to enphasize something very good in Green and Boold */
+	font-weight: bold;
+	color: #008B45; /* Dark Green */
+}
+
+td.PopupError,label.PopupError{
+  font-weight: bold;
+  color: red; /* */
+}
+
+

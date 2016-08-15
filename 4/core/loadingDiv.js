@@ -53,6 +53,8 @@ var LOADING_DIV_DEF_OPT ={
 		fnCancelCallback: null  // called when click Cancel
 };
 
+
+
 var JSU_LOADING_DIV = '<div id="loadingDivContainer" class="loadingDivContainer" >' + 
 '  <table width="100%" height="100%">' + 
 '    <tr> <td align="center" valign="center">' + 
@@ -379,6 +381,8 @@ function loadingDivShow(objOpt){
 	
 	loading_elementShow (divMain,true);
 	loading_elementShow (loadingDiv,true);
+
+	
 	loading_log(Fn + "------------------- END");
 
 }	  

@@ -5,15 +5,15 @@
 
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JSU - JS Popup Sample (by F. Levis)</title>
+  <title>JSU - JQ Popup Sample (by F. Levis)</title>
 	<!-- This sample -->
 	<link rel="stylesheet" type="text/css" href="../Sample.css">
 	<script type="text/javascript" src="./PopupSample.js" ></script>
 
-  <!-- JSUtility with JSPopup and jq (jquery, jquery-ui)  -->
+  <!-- JSUtility with JQPopup and jq (jquery, jquery-ui)  -->
   <link rel="stylesheet" href="../../externalPlugin/jquery/jquery-ui.css">
   <link rel="stylesheet" href="../../core/core.css" type="text/css">
-  <link rel="stylesheet" href="../../core/Popup/Popup.css" type="text/css">
+  <link rel="stylesheet" href="../../core/Popup.css" type="text/css">
   <script  data-main="../../plugin/jsu-jq.js" src="../../core/require.js"></script>
   
   <!-- ONLY FOR About -->
@@ -30,9 +30,12 @@
 <div class="jsuLoading" id="jsuLoading"></div> 
 
 
-<!--  Table to download JSU.ZIP (common for all the sample) -->
+<!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
 <table  width="100%">
   <tr>
+  <td class=tipl"">
+     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
+  </td>
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
@@ -49,8 +52,8 @@
       </th>
     </tr>
     <tr class="tiptitleBg2">
-      <th class="tiptitleBig2" colspan="4">JS Popup Sample - JSU <label class="jsuAPI">JSPopup/Popup.js API</label>
-        <input type="button" class="jsuHelp" onclick="jsuDocJSPopup()" 
+      <th class="tiptitleBig2" colspan="4">JQ Popup Sample - JSU <label class="jsuAPI">JQPopup.js API</label>
+        <input type="button" class="jsuHelp" onclick="jsuDocJQPopup()" 
              onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
         <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">

@@ -346,7 +346,8 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
         // JSU
         O = u({
             keywords: [F, H, w, "cValidate,cValidate.setOption,cValidate.validateApply," +
-                       "cSortTable,cSortTable.setSort,cSortTable.getSort,cSortTable.sortApply" +
+                       "cSortTable,setSort,getSortCol,getSortDir,sortApply," +
+                       "cValidate,validateApply,setOption," +
                        "jslog,jslog_init,jslog_end,jslogObj,jslogDomEl,jslogDomElById,jslogElapsedTime," +
                        "loadingDivShow,loadingDivHide" +
                        "Tip,UnTip,TipFixed,TipFixedJS,TipFixedTextBox,TipFixedGoogleAnal," +
@@ -484,7 +485,7 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                     for (o = n.parentNode; o; o = o.parentNode)
                         if ((o.tagName === "pre" || o.tagName === "code" || o.tagName === "xmp") && o.className && o.className.indexOf("prettyprint") >= 0) {
                             b = !0;
-                            break
+                            break;
                         }
                     b || ((b = (b = n.className.match(/\blinenums\b(?::(\d+))?/)) ? b[1] && b[1].length ? +b[1] : !0 : !1) && D(n, b), d = {
                         g: k,

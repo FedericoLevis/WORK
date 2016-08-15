@@ -45,14 +45,16 @@ var TIP_FIXED_POS={
 };
 
 var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
-var TIP_DEF_GOOGLE_ALL_BTN = true; // default: Present the button to display alla the page of Google analytics together
+var TIP_DEF_GOOGLE_ALL_LINK = true; // default: Present the Link to display all the pages of Google analytics together
+var TIP_DEF_WIDTH = 800; // default
 var TIP_DEF_COL_NUM = 100; // default: 100 col for TextBox
 var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextBox
 
 
-var TIP_DEF_MAX_WIDTH = 800; // For BRowser different form IE (IE make autosize)
-
-var TIP_DEF_GOOGLE_WIDTH = 1300; /// DEfaulr width og Google Analytics Table
+// Default GOOGLE 
+var TIP_DEF_GOOGLE_WIDTH = 1300; 
+var TIP_DEF_GOOGLE_SHORT_URL = true;
+var TIP_DEF_GOOGLE_LONG_URL = true;
 
 /*=========================================================================================
  * 					CONFIG CONST
@@ -95,8 +97,25 @@ var TIP_CFG_FIXED={
 		OffsetY: 0   //  it will be set run-time
 };
 
+// Google Analytics parameter
+var GOOGLE_ANAL_PAR_TYPE={
+		all_time:'all_time',
+		month: 'month',
+		week: 'week',
+		day: 'day',
+		two_hours: 'two_hours'
+};
 
-var tt_arObjGoogleAnal = null; //used  by onclickBtnAllGoogle
+// For GoogleAnal
+var tt_googleAnal = {
+		arObjGoogleAnal: null,   // arObjGoogleAnal received as PAR
+		iWidth: 800,
+		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
+		iSelFilterCat: 0 , // Current FilterCat
+		iSelFilterType: 0,  // Current FilterType
+		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time  // Current FilterType
+};
+
 /*=========================================================================================
  * 					LOCAL CONST
  ========================================================================================= */
@@ -240,12 +259,12 @@ tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed too
  */
 function Tip(tipMsgHtml,tipType,objOpt)
 {
-	var Fn = "[tooltip.js Tip()] ";
-	tt_log ( Fn + TIPLOG_FUN_START);
+	var fn = "[tooltip.js Tip()] ";
+	tt_log ( fn + TIPLOG_FUN_START);
 	
 	tt_init(); // init, if not already done
 	if (tip_type == TIP_TYPE.Fixed){
-		return tt_log ( Fn + "Nothing to do: a TipFixed is currently diaplyed" + TIPLOG_FUN_END);
+		return tt_log ( fn + "Nothing to do: a TipFixed is currently diaplyed" + TIPLOG_FUN_END);
 	}	
 	
 	if (objOpt == undefined){
@@ -259,14 +278,14 @@ function Tip(tipMsgHtml,tipType,objOpt)
 		tipType = TIP_TYPE.Floating; 
 	}
 	tip_type = tipType;
-	tt_log (Fn + "SET tip_type=" + tip_type);
+	tt_log (fn + "SET tip_type=" + tip_type);
 	//---------- set config Option
 	var objCfg = (tip_type == TIP_TYPE.Fixed) ? TIP_CFG_FIXED : TIP_CFG_FLOATING;
 	tt_SetCfg (objCfg);
 	//---------------------
 	tt_showTip(tipMsgHtml);
 	tip_type = tipType; // workaround. we have to set again this global var because tt_Hide has resetted it
-	tt_log ( Fn + TIPLOG_FUN_END);
+	tt_log ( fn + TIPLOG_FUN_END);
 }
 
 /**
@@ -276,7 +295,7 @@ function Tip(tipMsgHtml,tipType,objOpt)
  *                            - szTitle{String}  default: ''   <BR/>
  *                            - bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  <BR/>
  * 														- iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 														- iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
+ * 													  - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
  * 														- tipFixedPos:  TIP_FIXED_POS.CENTER,... n (e.g -100)   default=TIP_FIXED_POS.CENTER  <BR/>
  * 													  - bMsgHtml= [true]  if false it is not converted to HTML 
  * 		GLOBAL
@@ -284,9 +303,9 @@ function Tip(tipMsgHtml,tipType,objOpt)
  */
 function TipFixedClicked(tipMsgHtml,event, objOpt)
 {
-	var Fn = "[tooltip.js TipFixedClicked] ";
-	tt_log ( Fn + TIPLOG_FUN_START);
-	tt_logObj (Fn + "IN objOpt", objOpt);
+	var fn = "[tooltip.js TipFixedClicked] ";
+	tt_log ( fn + TIPLOG_FUN_START);
+	tt_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
 	if (objOpt == undefined){
 		var objOpt = {bMsgHtml: true};
@@ -308,19 +327,16 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
   		  szMaxHeight = 'max-height: ' +objOpt.iMaxHeight + 'px;';
   		  bDivScroll = true;
   	} 
-  	if ((objOpt.iMaxWidth == undefined || objOpt.iMaxWidth == 0) && !tt_is_IE() ){
-  		tt_log ( Fn + "NOT IE and objOpt.iMaxWidth undefined. Set objOpt.iMaxWidth=" + TIP_DEF_MAX_WIDTH);
-  		objOpt.iMaxWidth=  TIP_DEF_MAX_WIDTH;
+  	if (objOpt.iWidth == undefined ){
+  		objOpt.iWidth=  TIP_DEF_WIDTH;
   	}	
-  	if (objOpt.iMaxWidth != undefined  && objOpt.iMaxWidth > 0){
-  	  szMaxWidth = 'max-width: ' +objOpt.iMaxWidth + 'px;';
-  		bDivScroll = true;
-  	} 
+ 	  szMaxWidth = 'max-width: ' +objOpt.iWidth + 'px;';
+ 		bDivScroll = true;
   	var szDivHTML = "";
   	if (!bDivScroll){
   		szMaxWidth = 'max-width: ' + tt_w + 'px;';
   	}	
-		tt_log ( Fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
+		tt_log ( fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
@@ -340,7 +356,7 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 	if (objOpt != undefined && objOpt.tipFixedPos != undefined){
 		tipFixedPos = objOpt.tipFixedPos;
 	}
-	tt_log ( Fn + "IN: tipFixedPos=" + tipFixedPos);
+	tt_log ( fn + "IN: tipFixedPos=" + tipFixedPos);
 	var event = event || window.event;
 	var tipImg = event.target || event.srcElement;
 	// var deltaY = 35; // Default
@@ -348,9 +364,9 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 		var className = tipImg.className;
 		var szId = tipImg.id; 
 		if (szId == undefined || szId.length == 0){
-			return tt_Err(Fn + "SW ERROR tipImg has id=null \n tipImg used with TipFixedClicked must have an id");
+			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFixedClicked must have an id");
 		}
-		tt_log ( Fn + "classname=" + className);
+		tt_log ( fn + "classname=" + className);
 		if (className == TIP_CLASS_FIXED.Down ){
 			className = TIP_CLASS_FIXED.Up;
 		}else	if (className == TIP_CLASS_FIXED.Up){
@@ -377,10 +393,10 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 		}else	if (className == TIP_CLASS_JS_FIXED.Down ){
 			className = TIP_CLASS_JS_FIXED.Up;
 		}	
-		tt_log ( Fn + "SET New classname=" + className);
+		tt_log ( fn + "SET New classname=" + className);
 		tipImg.className = className;
 	}
-	tt_log ( Fn + "bShow=" + bShow);
+	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
 		// To manage the case of switch beween different Fixed img
 		tt_UnTipFixed();
@@ -389,12 +405,12 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 	if (bShow && tipImg){
 		tip_img_fixed = tipImg; // save in global
 		TIP_CFG_FIXED.Fix = [tipImg.id,tipFixedPos,5];
-		tt_logObj ( Fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
+		tt_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
 		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
 	}else {
 		tt_UnTipFixed();
 	}
-	tt_log ( Fn + TIPLOG_FUN_END);
+	tt_log ( fn + TIPLOG_FUN_END);
 }
 
 
@@ -405,7 +421,7 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
  */
 function TipFixedMouseOver(tipMsgHtml,event)
 {
-	var Fn = "[tooltip.js TipFixedMouseOver] ";
+	var fn = "[tooltip.js TipFixedMouseOver] ";
 	tt_init(); // init, if not already done
 	var bTip = true;
 	var event = event || window.event;
@@ -415,9 +431,9 @@ function TipFixedMouseOver(tipMsgHtml,event)
 		if (tt_isClassFixed(className)){
 			bTip=false;
 		} 
-		tt_log ( Fn + "classname=" + className + " --> Call  Tip()=" + bTip);
+		tt_log ( fn + "classname=" + className + " --> Call  Tip()=" + bTip);
 	}
-	//tt_log ( Fn + "bShow=" + bShow);
+	//tt_log ( fn + "bShow=" + bShow);
 	if (bTip){
 		Tip(tipMsgHtml,TIP_TYPE.Floating);
 	}
@@ -433,11 +449,11 @@ function TipFixedMouseOver(tipMsgHtml,event)
  */
 function UnTip()
 {
-	var Fn = "[tooltip.js UnTip()] ";
-	tt_log ( Fn + TIPLOG_FUN_START);
-  tt_log(Fn + "CURRENT tip_type=" + tip_type);
+	var fn = "[tooltip.js UnTip()] ";
+	tt_log ( fn + TIPLOG_FUN_START);
+  tt_log(fn + "CURRENT tip_type=" + tip_type);
   if (tip_type == TIP_TYPE.Fixed){
-  	return tt_log ( Fn + "Nothing to do: a TipFixed is still displayed" +  TIPLOG_FUN_END);
+  	return tt_log ( fn + "Nothing to do: a TipFixed is still displayed" +  TIPLOG_FUN_END);
   }
 	tt_init(); // init, if not already done
 	tt_SetCfg(TIP_CFG_FLOATING);
@@ -448,7 +464,7 @@ function UnTip()
 		tt_HideInit();
 	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
 	tip_type = TIP_TYPE.NONE;
-	tt_log ( Fn + TIPLOG_FUN_END);
+	tt_log ( fn + TIPLOG_FUN_END);
 }
 
 
@@ -463,33 +479,34 @@ function UnTip()
  * @param event
  * @param [objOpt] {Object} Option: <BR/>   
  *                           - szTitle{String}  default: 'JS Source Code'  <BR/>
- *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
+ * 													 - iWidth {Number}:  Width of the Tip - Default: TIP_DEF_WIDTH (800)  <BR/>
  * 													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL <BR/> 
- * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS         (with autoscroll). Default =0 NO SCROLL  <BR/>
+ *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
 function TipFixedJS(jsCode, event, objOpt){
-	var Fn = "[tooltip.js TipFixedJS] ";
-	tt_log (Fn + TIPLOG_FUN_START);
+	var fn = "[tooltip.js TipFixedJS] ";
+	tt_log (fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
 	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	if (objOpt.iWidth == undefined){	objOpt.iWidth = TIP_DEF_WIDTH; }
 	tt_init(); // init, if not already done
 	var bPrettify =  (typeof(prettyPrint) != "undefined");
-	tt_log (Fn + "bPrettify=" + bPrettify);
+	tt_log (fn + "bPrettify=" + bPrettify);
 	var szJsTxt="";
 	if (bPrettify){
-		tt_log (Fn + "prepare Prettify szJsTxt");
-		var szJsTxt = '<div id="divTipJS" class="prettyfy"> <pre class="prettyprint"><code>' + jsCode + '</code></pre></div>';
+		tt_log (fn + "prepare Prettify szJsTxt");
+		var szJsTxt = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iWidth + '"px;"> <pre class="prettyprint"><code>' + jsCode + '</code></pre></div>';
 		TipFixedClicked (szJsTxt,event,objOpt);
 		prettyPrint();  // Hightlight <pre> with prettyprint
 	}else{
 		TipFixedTextBox(jsCode, event, objOpt);
 	}
-	tt_log (Fn + TIPLOG_FUN_END);
+	tt_log (fn + TIPLOG_FUN_END);
 }
 
 
@@ -502,8 +519,8 @@ function TipFixedJS(jsCode, event, objOpt){
  *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
  *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
  *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
+ * 													 - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
  *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 	@example
  
@@ -525,9 +542,9 @@ function TipFixedJS(jsCode, event, objOpt){
 														     
  */
 function TipFixedTextBox(szTxt, event, objOpt){
-	var Fn = "[tooltip.js TipFixedTextBox] ";
-	tt_log (Fn + "--- START");
-	tt_logObj (Fn + "IN objOpt", objOpt);
+	var fn = "[tooltip.js TipFixedTextBox] ";
+	tt_log (fn + "--- START");
+	tt_logObj (fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -539,7 +556,7 @@ function TipFixedTextBox(szTxt, event, objOpt){
 	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
   objOpt.bMsgHtml = false;
 	TipFixedClicked (szTxtBox,event,objOpt);
-	tt_log (Fn + "--- END");
+	tt_log (fn + "--- END");
 }
 
 
@@ -547,16 +564,17 @@ function TipFixedTextBox(szTxt, event, objOpt){
  * Display in a FixedTip a Table with the Link to Google Analytics . 
  * @param arObjGoogleAnal  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
  * @param event
- * @param [objOpt] {Object} Option: <BR/>   
- *                           - szTitle{String}  default: 'Google Analytics'  <BR/>
- *													 - iTblWidth {Number}:  Width of the Google Table (px) Default =TIP_DEF_GOOGLE_WIDTH  <BR/>
- *                           - bAllBtn {Boolean} [true] se true visualizza anche il bottone per mostrare tutte insieme le pagine con le Google Analityics 
- *                           - szHeader {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
- *                           - szFooter {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
- *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
- *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 													 - iMaxWidth {Number}:  Max Width  of the div that contain the JS     with autoscroll). Default =0 NO SCROLL and Autosize for IE, 900 for Other Browser   <BR/>
- * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
+ * @param [objOpt] {Object} Option: <ul>   
+ *                           <li> szTitle{String}  default: 'Google Analytics'  </li> 
+ *                           <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
+ *                           <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
+ *                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
+ *                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ * 													 <li> iWidth {Number}:  TipWidth <li> Default = DEF_TIP_WIDTH = 800 </li> 
+ *													 <li> iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  </li>  
+ * 													 <li> tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   </li>
+ *                         </ul> 
  * 	@example
 	//--------------------------------------------------------- JS
 	function jsuGoogleAnalTip(event){   
@@ -572,8 +590,7 @@ function TipFixedTextBox(szTxt, event, objOpt){
 	     ];
 	  TipFixedGoogleAnal(arObjGoogleAnal,event,{
 	  	szTitle:'JSU Google Analitycs',
-	  	iTblWidth: 1200,
-	  	bBtnAll:true    // Show the Btn to display all the Page Together
+	  	iWidth: 1200
 	  });
 	}	
  //--------------------------------------------------------- HTML   
@@ -581,96 +598,279 @@ function TipFixedTextBox(szTxt, event, objOpt){
 													     
  */
 function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
-	var Fn = "[tooltip.js TipFixedTextBox] ";
-	tt_log (Fn + "--- START");
-	tt_logObj (Fn + "IN arObjGoogleAnal", arObjGoogleAnal);
-	tt_arObjGoogleAnal = arObjGoogleAnal; // save in global (use by onclickBtnAllGoogle)
-	tt_logObj (Fn + "IN objOpt", objOpt);
+	var fn = "[tooltip.js TipFixedTextBox] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	tt_logObj (fn + "IN arObjGoogleAnal", arObjGoogleAnal);
+	tt_logObj (fn + "IN objOpt", objOpt);
+	tt_init(); // init, if not already done
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
 	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_GOOGLE_TITLE; }
-	if (objOpt.bAllBtn == undefined){	objOpt.bAllBtn = TIP_DEF_GOOGLE_ALL_BTN; }
+	if (objOpt.bAllGoogleAnalLink == undefined){	objOpt.bAllBtn = TIP_DEF_GOOGLE_ALL_LINK; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.szHeader == undefined){	objOpt.szHeader = TIP_DEF_GOOGLE_HEADER; }
-	if (objOpt.szFooter == undefined){	objOpt.szFooter = TIP_DEF_GOOGLE_FOOTER; }
+	if (objOpt.szHeaderTxt == undefined){	objOpt.szHeaderTxt = TIP_DEF_GOOGLE_HEADER; }
+	if (objOpt.szFooterTxt == undefined){	objOpt.szFooterTxt = TIP_DEF_GOOGLE_FOOTER; }
+	if (objOpt.bShortUrl == undefined){	objOpt.bShortUrl= TIP_DEF_GOOGLE_SHORT_URL; }
+	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = TIP_DEF_GOOGLE_LONG_URL; }
 	
 	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_DEF_GOOGLE_WIDTH; }
-	if (objOpt.iMaxWidth == undefined){	objOpt.iMaxWidth= objOpt.iGoogleTblWidth + 30; }
-	
-	tt_init(); // init, if not already done
-	// Prepare 
-	var szMsg = '<table class="detNoBorder">';
-	if (objOpt.szHeader != undefined){
-		szMsg += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szHeader + '<BR/></td></tr>';
-  }
-	 szMsg += '<tr><td><table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="' + objOpt.iGoogleTblWidth + '">'; 
-	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
-	var szTblHea = '<tr class="detTitle" >' +
-	  '<td class="tipc" width="13%">' + TIP_GOOGLE_SHORT_URL + '</td> '+
-	  '<td class="tipc" width="40%">' + TIP_GOOGLE_LONG_URL + '</td> '+
-	  '<td class="tipc" width="15%">' + TIP_GOOGLE_CAT + '</td> '+
-	  '<td class="tipc" width="20%">' + TIP_GOOGLE_DESC + '</td> '+
-	  '<td class="tipc" width="12%">' + TIP_GOOGLE_ANAL + '</td> '+
-	'</tr>';
-	szMsg += szTblHea;	
+	if (objOpt.iWidth == undefined){	objOpt.iWidth= TIP_DEF_WIDTH; }
+	tt_googleAnal.iTblWidth = objOpt.iWidth - 30; // -20 for some laterla space
+	tt_googleAnal.bShortUrl = objOpt.bShortUrl;
+	tt_googleAnal.bLongUrl = objOpt.bLongUrl;
+	tt_googleAnal.arObjGoogleAnal = arObjGoogleAnal; // Set in Global
+	// Get the possible categories, for filter
+	var arCat = new Array();
+	arCat.push (TIP_GOOGLE_FILTER_CAT_ALL);
 	for (var i=0; i< arObjGoogleAnal.length; i++){
-		var objGoogle = arObjGoogleAnal[i];
-		var szId = "googleAnal_" + i;
-		var szTr = '<tr>' + 
-		  '<td class="tipc">' + objGoogle.shortUrl + '</td> '+
-		  '<td class="tipl">' + objGoogle.longUrl + '</td> '+
-		  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
-		  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
-		  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ objGoogle.shortUrl +'.info" target="_blank">Google Analitycs</a></td> '+
- 	  '</tr>';
-	  szMsg += szTr;	
+		var szCat = arObjGoogleAnal[i].cat
+		var bPresent = false;
+		for (var k=0;k < arCat.length && !bPresent; k++){
+			if (arCat[k] == szCat){
+				bPresent = true;
+			}
+		}
+		tt_log (fn + "szCat=" + szCat + "  bPresent=" + bPresent);
+		if (!bPresent){
+			arCat.push(szCat);
+		}
 	}
-	szMsg += '</table></td></tr>';
-	if (objOpt.bAllBtn){
-		szMsg += '<tr style="padding-top:10px;padding-bottom:10px;"><td class="tipc">' + 
-		 '<input type="button" value="' + TIP_GOOGLE_BTN_ALL + '" title="' + 
-		 arObjGoogleAnal.length + TIP_GOOGLE_BTN_ALL_TITLE + '" ' +
-		  'onclick="onclickBtnAllGoogle();" />' +
-		 '</td></tr>';
+	tt_logObj (fn + "arCat=", arCat);
+	tt_googleAnal.arFilterCat = arCat;
+	tt_googleAnal.iSelFilterCat = 0; // ALL
+	tt_googleAnal.iSelFilterType = 0; // all_time
+	tt_googleAnal.szSelFilterType = GOOGLE_ANAL_PAR_TYPE.all_time;
+	var szTbl = '<table class="detNoBorder">';
+	if (objOpt.szHeaderTxt != undefined){
+		szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szHeaderTxt + '<BR/></td></tr>';
   }
-	if (objOpt.szFooter != undefined){
-		szMsg += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szFooter + '</td></tr>';
+	// Prepare the div that will contain the GoogleTable
+	szTbl += '<tr><td><div id="divTblGoogle" style="width:' + tt_googleAnal.iTblWidth + 'px;"></div></td></tr>';
+	if (objOpt.szFooterTxt != undefined){
+		szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl googleAnalFooter">' + objOpt.szFooterTxt + '</td></tr>';
   }
-	szMsg += '</table>';
-	TipFixedClicked (szMsg,event,objOpt);
-	// Create Sort if cSortTable is loaded
-	if (typeof (cSortTable) != "undefined"){
-		tt_log (Fn,"Create SortTable");
-		var arSortCol = [  {col: TIP_GOOGLE_SHORT_URL},   
-			         					{col: TIP_GOOGLE_LONG_URL},        
-			         					{col: TIP_GOOGLE_CAT}, 
-			         	        {col:TIP_GOOGLE_DESC}, 
-			         	        {col: TIP_GOOGLE_ANAL}]; 
-		var cSortTbl1 = new cSortTable("tblGoogle",arSortCol,{bNoStartupSortIco:true}); 
-	}
-	
-	tt_log (Fn + "--- END");
+	szTbl += '</table>';
+	// Show Tip With Empty Table
+	TipFixedClicked (szTbl,event,objOpt);
+	tt_googleAnalTblShow();
+	tt_log (fn + TIPLOG_FUN_END);
 }
-
 
 
 
 //==================  LOCAL FUNCTION	 =====================================//
 
 /*
+ * Show the Table with the Link to GoogleAnalytics, basing on current Filter
+ * GLOBAL tt_googleAnal
+ */
+function tt_googleAnalTblShow (){
+	var fn = "[tooltip.js tt_googleAnalTblShow()] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	var bSort = typeof (cSortTable) != "undefined"; // can we add cSortTable? Is It Loaded?
+	var szClassFooter = "detFooter"; // defined in css
+	
+	var szTbl = '<table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="100%">'; 
+	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
+	var szTblHea = '<tr class="detTitle" >';
+	if (tt_googleAnal.bShortUrl){
+		szTblHea += '<td class="tipc detTitle" width="13%">' + TIP_GOOGLE_SHORT_URL + '</td> ';
+	}
+	if (tt_googleAnal.bLongUrl){
+		szTblHea += '<td class="tipc detTitle" width="34%">' + TIP_GOOGLE_LONG_URL + '</td> ';
+	}	
+	szTblHea +=  '<td class="tipc detTitle" width="13%">' + TIP_GOOGLE_CAT + '</td> '+
+	  '<td class="tipc detTitle" width="18%">' + TIP_GOOGLE_DESC + '</td> '+
+	  '<td class="tipc detTitle" width="18%">' + TIP_GOOGLE_ANAL + '</td> '+
+	'</tr>';
+	szTbl += szTblHea;
+	
+	// -------------------------- HEADER_2 with Filter e AnalMode 
+	iRowHeader = 2;
+	var szSelectFilter = '<select class="detFilter" id="googleAnalCat" title="' + TIP_GOOGLE_FILTER_CAT_TITLE  + '"  style="width:100%;" onchange="tt_onchangeGoogleAnalCat();">';
+	var arCat = tt_googleAnal.arFilterCat;
+	for (var i=0;i<arCat.length; i++){
+		var szCat = arCat[i];
+		var szSelected = (i == tt_googleAnal.iSelFilterCat) ? "selected" : "";
+		var szOpt = '\n<option class="detFilter"  value="' + szCat +'" ' + szSelected + ' >' + szCat + '</option>';
+		szSelectFilter +=szOpt;		
+	}
+	szSelectFilter += '\n</select>';
+	//--- Filter for GoogleAnal Type (day,...)
+	var szSelectType = '<select class="detFilter" id="googleAnalType" title="' + TIP_GOOGLE_FILTER_TYPE_TITLE  + '"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" > ';
+	var arTypeOpt = [{value: GOOGLE_ANAL_PAR_TYPE.all_time, text:TIP_GOOGLE_FILTER_TYPE_ALL},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.month, text:TIP_GOOGLE_FILTER_TYPE_MONTH},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.week, text:TIP_GOOGLE_FILTER_TYPE_WEEK},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.day, text:TIP_GOOGLE_FILTER_TYPE_DAY},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.two_hours,  text:TIP_GOOGLE_FILTER_TYPE_2HOURS}
+	                 ]; 
+	for (var i=0; i<arTypeOpt.length; i++){
+		var objOpt = arTypeOpt[i];
+		var szSelected = (i == tt_googleAnal.iSelFilterType) ? "selected" : "";
+		var szOpt = '\n<option class="detFilter" 	value="' + objOpt.value +'" ' + szSelected + ' >' + objOpt.text + '</option> ';
+		szSelectType +=szOpt;		
+	}
+	szSelectType += '\n</select>';
+	// tt_logHtml (fn + "szSelectType",szSelectType);
+	// ------------------------ add FilterCat
+	var iColUrl = 0;
+	if (tt_googleAnal.bShortUrl){ iColUrl++;}
+	if (tt_googleAnal.bLongUrl){ iColUrl++;}
+	var szTr = '<tr class="detFilter">';
+	if (iColUrl > 0){
+		szTr += '<td class="detFilter" colSpan="' + iColUrl + '" align="right" style="font-weight:normal;padding-right:5px;">' + 
+		//  TIP_GOOGLE_FILTER_CAT_HEADER + 
+		'</td>';   
+	}
+	szTr += '<td class="detFilter">' + szSelectFilter + '</td>' +   
+	'<td class="detFilter" align="right"  font-weight:normal;style="padding-right:5px;">' + 
+	//  TIP_GOOGLE_FILTER_TYPE_HEADER + 
+	'</td>' +   
+	'<td class="detFilter">' + szSelectType + '</td>' +   
+	'</tr>';
+	szTbl += szTr;	
+	
+  // --------------------------------------------- Insert the Link Rows 
+	// Inser only if Filter Match and SET Global .iVisibleLink 	
+	tt_googleAnal.iVisibleLink = 0; // Global
+	tt_logObj (fn , "iSelFilterCat =" + tt_googleAnal.iSelFilterCat);
+	var arObj = tt_googleAnal.arObjGoogleAnal;
+	var szCatSel = tt_googleAnal.arFilterCat[tt_googleAnal.iSelFilterCat];
+	tt_logObj (fn + "szCatSel=" + szCatSel + " arFilterCat=", tt_googleAnal.arFilterCat);
+	for (var i=0; i< arObj.length; i++){
+		var objGoogle = arObj[i];
+		var szCat = objGoogle.cat;
+		// Check if we haev to show this cat: bFilterCat must be set and the cat must match the Filter (iSelFilterCat=0 means ALL Categories FILTER)  
+		var bShow = (tt_googleAnal.iSelFilterCat == 0 || szCat == szCatSel); 
+		tt_log (fn + "FilterSel=" + szCatSel + "  Cur cat=" + szCat + " --> bShow=" + bShow);
+		if (bShow){
+			var szId = "googleAnal_" + tt_googleAnal.iVisibleLink;
+			// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
+	    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + tt_googleAnal.szSelFilterType;
+			var szTr = '<tr>';
+			if (tt_googleAnal.bShortUrl){
+				szTr += '<td class="tipc">' + objGoogle.shortUrl + '</td> '; 
+			}
+			if (tt_googleAnal.bShortUrl){
+				szTr += '<td class="tipl">' + objGoogle.longUrl + '</td> '; 
+			}
+			szTr +=	  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
+			  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
+			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref +'" target="_blank">' + TIP_GOOGLE_ANAL + '</a></td> '+
+	 	  '</tr>';
+		  szTbl += szTr;	
+			tt_googleAnal.iVisibleLink ++;
+		}
+	}
+	if (tt_googleAnal.iVisibleLink > 1){
+		// add TableFooter for All Google Analytics
+		var szFooter = TIP_GOOGLE_ALL_TITLE.replace ('GOOGLE_ANAL_NUM',tt_googleAnal.iVisibleLink);
+		var iColSpan = iColUrl + 2;
+		var szTr = '<tr class="' + szClassFooter + '">' +
+	       '<td class="tipr ' + szClassFooter + '" colSpan="' + iColSpan  + '">' + szFooter + '</td>' +   
+  			  '<td class="tipc ' + szClassFooter + '"><a id="googleAll" class="tipLink" href="javascript:tt_onclickGoogleAnalAll();">' + TIP_GOOGLE_ANAL_ALL + '</a></td> '+
+		 '</tr>';
+	  szTbl += szTr;	
+  }
+	szTbl += '</table></td></tr>';
+	var div = document.getElementById('divTblGoogle');
+	div.innerHTML = szTbl;
+	
+	// Create Sort only if cSortTable is loaded
+	if (bSort){
+		tt_log (fn + "Create SortTable bShortUrl=" + tt_googleAnal.bShortUrl + " tt_googleAnal.bLongUrl=" + tt_googleAnal.bLongUrl);
+		var arSortCol = new Array();
+		/*
+		var arSortCol = [  {col: TIP_GOOGLE_SHORT_URL},   
+			         					{col: TIP_GOOGLE_LONG_URL},        
+			         					{col: TIP_GOOGLE_CAT}, 
+			         	        {col:TIP_GOOGLE_DESC}, 
+			         	        {col: TIP_GOOGLE_ANAL}];
+		*/
+		if (tt_googleAnal.bShortUrl){
+			arSortCol.push({col: TIP_GOOGLE_SHORT_URL});
+		}	
+		if (tt_googleAnal.bLongUrl){
+			arSortCol.push({col: TIP_GOOGLE_LONG_URL});
+		}	
+		arSortCol.push({col: TIP_GOOGLE_CAT});
+		arSortCol.push({col: TIP_GOOGLE_DESC});
+		arSortCol.push({col: TIP_GOOGLE_ANAL});
+		
+
+		var cSortTbl1 = new cSortTable("tblGoogle",arSortCol,{
+			   iRowHeader:2,
+			   iRowSortHeader:1,
+			   bNoStartupSortIco:true,
+			   szClassFooter:szClassFooter
+			   }); 
+	}
+	
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+
+
+/*
+ * onchange in GoogleAnalytics FilterCat
+ * Re design the Table of Google Analitycs basing on the FilterCat selected 
+ */
+function tt_onchangeGoogleAnalCat(){
+	var fn = "[tooltip.js tt_onchangeGoogleAnalCat] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	var select = document.getElementById ("googleAnalCat");
+	tt_googleAnal.iSelFilterCat = select.selectedIndex;
+	tt_log (fn + "iSelFilterCat=" + tt_googleAnal.iSelFilterCat);
+	tt_googleAnalTblShow();
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+/*
+ * onchange in GoogleAnalytics FilterType
+ * Change global var and align href of the GoogleAnal Links 
+ */
+function tt_onchangeGoogleAnalType(){
+	var fn = "[tooltip.js tt_onchangeGoogleAnalTypet] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	var select = document.getElementById ("googleAnalType");
+	tt_googleAnal.iSelFilterType = select.selectedIndex;
+	// e.g week
+	tt_googleAnal.szSelFilterType = select[select.selectedIndex].value;
+	tt_log (fn + "iSelFilterType=" + tt_googleAnal.iSelFilterType + " value=" + tt_googleAnal.szSelFilterType);
+  //--------------- align href
+	var arObj = tt_googleAnal.arObjGoogleAnal;
+	tt_log (fn + "SET href for the " + arObj.length + " URLs");
+	for (var i=0; i< arObj.length; i++){
+		var objGoogle = arObj[i];
+		var szId = "googleAnal_" + i;
+		var aEl = document.getElementById (szId);
+		// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
+    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + tt_googleAnal.szSelFilterType;
+    aEl.href = szHref;
+	}	
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+
+/*
  * Open all the Google analytics pages
  */
-function onclickBtnAllGoogle(){
-	var Fn = "[tooltip.js onclickBtnAllGoogle()] ";
+function tt_onclickGoogleAnalAll(){
+	var fn = "[tooltip.js tt_onclickGoogleAnalAll()] ";
 
-	tt_log (Fn + TIPLOG_FUN_START);
-	for (var i=0; i< tt_arObjGoogleAnal.length; i++){
-		tt_log (Fn + "simulate Click on href=" + tt_arObjGoogleAnal[i].shortUrl + ".info"); 
-		var aEl = document.getElementById ("googleAnal_" + i);
+	tt_log (fn + TIPLOG_FUN_START);
+	for (var i=0; i< tt_googleAnal.iVisibleLink; i++){
+		var szId = "googleAnal_" + i;
+		var aEl = document.getElementById (szId);
+		tt_log (fn + "simulate Click on <a> with id=" + szId + " - href=" + aEl.href); 
 		aEl.click();
 	}
-	tt_log (Fn + TIPLOG_FUN_START);
+	tt_log (fn + TIPLOG_FUN_END);
 }
 
 /*
@@ -678,10 +878,10 @@ function onclickBtnAllGoogle(){
  * 
  */
 function tt_UnTipFixed(){
-	var Fn = "[tooltip.js tt_UnTipFixed()] ";
+	var fn = "[tooltip.js tt_UnTipFixed()] ";
 	
-	tt_log ( Fn + TIPLOG_FUN_START);
-  tt_log(Fn + "CURRENT tip_type=" + tip_type);
+	tt_log ( fn + TIPLOG_FUN_START);
+  tt_log(fn + "CURRENT tip_type=" + tip_type);
 	tt_init(); // init, if not already done
 	tt_SetCfg(TIP_CFG_FLOATING);
 	tt_OpReHref();
@@ -691,7 +891,7 @@ function tt_UnTipFixed(){
 		tt_HideInit();
 	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
 	tip_type = TIP_TYPE.NONE;
-	tt_log ( Fn + TIPLOG_FUN_END);
+	tt_log ( fn + TIPLOG_FUN_END);
 
 }
 
@@ -702,13 +902,13 @@ function tt_UnTipFixed(){
  */
 function tt_isClassFixed(szClass){
   var bTipFixed = false;	
-	var Fn="[tooltip.js tt_isClassFixed()] ";
+	var fn="[tooltip.js tt_isClassFixed()] ";
 	if (szClass == TIP_CLASS_JS_FIXED.Up  || szClass == TIP_CLASS_FIXED.Up  || 
 			szClass == TIP_CLASS_ARROW_FIXED.Up || szClass == TIP_CLASS_BIG_FIXED.Up || 
 			szClass == TIP_CLASS_GOOGLE_FIXED.Up){
 		bTipFixed = true;
 	}
-	tt_log (Fn + "IN: szClass=" + szClass + "  OUT bTipFixed=" + bTipFixed);
+	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFixed=" + bTipFixed);
   return bTipFixed;	
 	
 }
@@ -717,7 +917,7 @@ function tt_isClassFixed(szClass){
  *  Restore the Original Image class (From Up to down) if tip_img_fixed != null 
  */
 function tt_RestoreImgFixed() {
-	var Fn="[tooltip.js tt_RestoreImgFixed()] ";
+	var fn="[tooltip.js tt_RestoreImgFixed()] ";
 	if (tip_img_fixed != null){
 		var szClass = "";
 		// Change img of tip_fixed if present
@@ -733,7 +933,7 @@ function tt_RestoreImgFixed() {
 			szClass = TIP_CLASS_JS_FIXED.Down;
 		}
 		if (szClass != ""){
-			tt_log (Fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
+			tt_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
 			tip_img_fixed.className = szClass;
 		}
 		tip_img_fixed = null;
@@ -792,14 +992,23 @@ function tt_logObj(msg,obj){
 	}
 }
 
+/*
+ * call jslogHtml if it is defined
+ * @param msg
+ */
+function tt_logHtml(msg,szHtml){
+	if (typeof(jslogHtml) == "function"){
+		jslogHtml (JSLOG_JSU, msg,szHtml);
+	}
+}
 
 
 function tt_showTip()
 {
-	var Fn = "[tooltip.js tt_showTip()] ";
-	tt_log ( Fn + TIPLOG_FUN_START);
+	var fn = "[tooltip.js tt_showTip()] ";
+	tt_log ( fn + TIPLOG_FUN_START);
 	tt_Tip(arguments, null);
-	tt_log ( Fn + TIPLOG_FUN_END);
+	tt_log ( fn + TIPLOG_FUN_END);
 }
 
 function TagToTip()
@@ -852,11 +1061,11 @@ function tt_Extension()
  */
 function tt_SetTipPos(x, y)
 {
-	var Fn = "[tooltip.js tt_SetTipPos] ";
+	var fn = "[tooltip.js tt_SetTipPos] ";
 	var css = tt_aElt[0].style;
 	//if x is too left or to right to set porperly the tip,  we adljust it
 	if (x <TIP_X_MIN){
-		tt_log (Fn + "change x from" + x + " to xMin=" + TIP_X_MIN);
+		tt_log (fn + "change x from" + x + " to xMin=" + TIP_X_MIN);
 		x = TIP_X_MIN;
 	}else {
 		var xRight = x + tt_w -20;
@@ -867,7 +1076,7 @@ function tt_SetTipPos(x, y)
 			if (x <TIP_X_MIN){
 				x = TIP_X_MIN;
 			}
-			tt_log (Fn + "x was too on the right. Set x=" + x);
+			tt_log (fn + "x was too on the right. Set x=" + x);
 		}
 	}
 	
@@ -910,8 +1119,8 @@ function tt_HideInit()
 
 function tt_Hide()
 {
-	var Fn = "[tooltip.js tt_tt_Hide()] ";
-	tt_log (Fn + TIPLOG_FUN_START);
+	var fn = "[tooltip.js tt_tt_Hide()] ";
+	tt_log (fn + TIPLOG_FUN_START);
 	
 	if(tt_db && tt_iState)
 	{
@@ -943,7 +1152,7 @@ function tt_Hide()
 		if(tt_aElt[tt_aElt.length - 1])
 			tt_aElt[tt_aElt.length - 1].style.display = "none";
 	}
-	tt_log (Fn + TIPLOG_FUN_END);
+	tt_log (fn + TIPLOG_FUN_END);
 	
 }
 function tt_GetElt(id)
@@ -1037,11 +1246,11 @@ tt_u = "undefined";
 
 function tt_init()
 {
-	var Fn = "[tooltip.js tt_init] ";
+	var fn = "[tooltip.js tt_init] ";
 	if (tt_init_done){
 		return; // already done
 	}
-	tt_log (Fn + "Init tooltip.js");
+	tt_log (fn + "Init tooltip.js");
 	// ESC is considered as UnTip of TipFixed
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
@@ -1173,8 +1382,8 @@ function tt_GetMainDivRefs()
 }
 function tt_ResetMainDiv()
 {
-	var Fn = "[tooltip.js tt_ResetMainDiv()] ";
-	// tt_log (Fn + "Called");
+	var fn = "[tooltip.js tt_ResetMainDiv()] ";
+	// tt_log (fn + "Called");
 	tt_SetTipPos(0, 0);
 	tt_aElt[0].innerHTML = "";
 	tt_aElt[0].style.width = "0px";
@@ -1445,7 +1654,7 @@ function tt_GetSubDivRefs()
  */
 function tt_FormatTip()
 {
-	var Fn = "[tooltip.js tt_FormatTip] ";
+	var fn = "[tooltip.js tt_FormatTip] ";
 	var css, w, h, pad = tt_aV[PADDING], padT, wBrd = tt_aV[BORDERWIDTH],
 	iOffY, iOffSh, iAdd = (pad + wBrd) << 1;
 
@@ -1828,7 +2037,7 @@ function tt_Pos(iDim)
 
 function tt_PosDef(iDim)
 {
-	var Fn = "[tooltip.js tt_PosDef] ";
+	var fn = "[tooltip.js tt_PosDef] ";
 	
 	if(iDim)
 		tt_bJmpVert = tt_aV[ABOVE];
@@ -1846,7 +2055,7 @@ function tt_PosAlt(iDim)
 }
 function tt_CalcPosDef(iDim)
 {
-	var Fn = "[tooltip.js tt_CalcPosDef] ";
+	var fn = "[tooltip.js tt_CalcPosDef] ";
 	
   var iRet = iDim ? (tt_musY + tt_aV[OFFSETY]) : (tt_musX + tt_aV[OFFSETX]);
 	return iRet;
@@ -1866,7 +2075,7 @@ function tt_CalcPosAlt(iDim)
  */
 function tt_PosFix()
 {
-	var Fn = "[tooltip.js tt_PosFix] ";
+	var fn = "[tooltip.js tt_PosFix] ";
 	var iX=0, iY;
 	var iXPos;
 	var bXPosRelative = false;
@@ -1886,7 +2095,7 @@ function tt_PosFix()
 			el = tt_aV[FIX][0];
 		iXPos = tt_aV[FIX][1];
 		bXPosRelative = (iXPos == TIP_FIXED_POS.LEFT || iXPos == TIP_FIXED_POS.CENTER || iXPos == TIP_FIXED_POS.RIGHT);  
-		tt_log (Fn + "iXPos=" + iXPos + " bXPosRelative=" + bXPosRelative);
+		tt_log (fn + "iXPos=" + iXPos + " bXPosRelative=" + bXPosRelative);
 		if (!bXPosRelative){
 			iX=iXPos;
 		}
@@ -1901,7 +2110,7 @@ function tt_PosFix()
 		}
 		//
 		if (bXPosRelative){
-			tt_log (Fn + "iXPos=" + iXPos + " Calculate new iX From iX=" + iX+ " tt_w=" + tt_w);
+			tt_log (fn + "iXPos=" + iXPos + " Calculate new iX From iX=" + iX+ " tt_w=" + tt_w);
 			// +25 for workaround to align better
 			if (iXPos == TIP_FIXED_POS.LEFT){
 				iX = iX -tt_w + 25;
@@ -1909,7 +2118,7 @@ function tt_PosFix()
 				iX = iX - (tt_w/2) + 20;
 			}
 		}
-		tt_log (Fn + "SET New iX=" + iX);
+		tt_log (fn + "SET New iX=" + iX);
 	}
 	// For a fixed tip positioned above the mouse, use the bottom edge as anchor
 	// (recommended by Christophe Rebeschini, 31.1.2008)

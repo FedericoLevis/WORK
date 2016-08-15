@@ -155,8 +155,8 @@ var URL_1 = "WORK";
 var URL_2 = "master";
 var URL_SEP = "/";
 
-var JSU_GOOGLE_ANAL_TIP='<div style="width:400px;" align="left">Click to show a Box to choose the '+
-  '<b>JSU Google Analytics</b> to display: <BR/>Number of Download, number of access to Samples,...</div>';
+var JSU_GOOGLE_ANAL_TIP='<div style="width:400px;" align="left">Click to show a Box with Links to the '+
+  '<b>JSU Google Analytics</b>: <BR/>Number of <b>JSU Downloads</b>, Number of <b>access to Samples, Documentation,</b> ...</div>';
 
 
 /* =============================================================================================
@@ -354,7 +354,7 @@ function aboutTipJSU(event,bShowAllSample){
   '  <tr class="jsuAboutMsg"><td class="tipl">' + szTipSect2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFixedClicked (szMsg,event,{iMaxWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFixedClicked (szMsg,event,{iWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**
@@ -494,7 +494,7 @@ function onclickValidateFeature(event, bShowTrySample){
 	   szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="javascript:showSampleValidate();" target="_blank">Try JSU cValidate Sample</a><BR/>&nbsp; ';
 	}
 	
-	TipFixedClicked (szMsg,event,{szTitle:"JSU cValidate", iMaxWidth: 1000,bCloseBtn: true});
+	TipFixedClicked (szMsg,event,{szTitle:"JSU cValidate", iWidth: 1000,bCloseBtn: true});
 }
 
 function showJSUVideoValidate(){
@@ -545,7 +545,7 @@ function onclickLoadingFeature(event, bShowTrySample){
 		szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="' + JSU_URL_SAMPLE_LOADING + '" target="_blank">Try JSU cLoading Sample</a><BR/>&nbsp; ';
 	}
 
-	TipFixedClicked (szMsg,event,{szTitle:"JSU cLoading", iMaxWidth: 1000,bCloseBtn: true});
+	TipFixedClicked (szMsg,event,{szTitle:"JSU cLoading", iWidth: 1000,bCloseBtn: true});
 }
 
 
@@ -678,11 +678,11 @@ function downloadTip(event,szDownloadTipType){
 	'<li><label class="tipGood">JSU.ZIP FULL:</label> Full access to source code, documentation, samples. Required if you want yo modify/customize/investigate JSU code</li>' +
 	'<li><label class="tipwarn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipwarn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
 	'</ul></div>' +
-	'<table style="padding:5px 5px 5px 5px" class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1000px">' +
-	'	  <tr class="tiptitle">' +
-	'		  <th class="tiptitle" colspan="6">JSU.ZIP DOWLOAD OPTIONS</th>' +
+	'<table style="padding:5px 5px 5px 5px" class="det" BORDER="2" cellspacing="0" cellpadding="2" width="1000px">' +
+	'	  <tr class="detTitle">' +
+	'		  <th class="detTitle" colspan="6">JSU.ZIP DOWLOAD OPTIONS</th>' +
 	'	  </tr>' +
-	'	  <tr class="tiptitle2">' +
+	'	  <tr class="detTitle2">' +
 	'		  <td width="18%" class="tipc">DOWNLOAD OPTION</td>' +
 	'		  <td width="34%" class="tipc">JSU Features</td>' +
 	'		  <td width="18%" class="tipc">JSU and Samples<BR/>JS Source Code</td>' +
@@ -690,14 +690,14 @@ function downloadTip(event,szDownloadTipType){
 	'		  <td width="12%" class="tipc">Price</td>' +
 	'	  </tr>' +
 	'	  <tr>' +
-	'		  <td class="tiptitle"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
+	'		  <td class="detTitle"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
 	'		  <td class="tipGood">Full access: ALL JSU Features available</td>' +
 	'		  <td class="tipGood">Full access: Code visible with all comments</td>' +
 	'		  <td class="tipGood">Full access: JSDoc HTML with reference to code</td>' +
 	'		  <td class="tipErr">FUTURE (Not still available)</td>' +
 	'	  </tr>' +
 	'	  <tr>' +
-	'		  <td class="tiptitle"><input type="button" class="downloadFree"  ' +
+	'		  <td class="detTitle"><input type="button" class="downloadFree"  ' +
 	'         onclick="location.href=\'https://github.com/FedericoLevis/JSU/archive/master.zip\';" /></td>' +
 	'		  <td class="tipl"><ul><li>AVAILABLE: Tip, SortTable, BlockingPopup</li>' +
 	'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JSPopup</label></li></ul> </td>' +
@@ -708,7 +708,7 @@ function downloadTip(event,szDownloadTipType){
 	'</table>';
 
   if (szDownloadTipType == DOWNLOAD_TIP_TYPE.INFO){
-  	TipFixedClicked (szMsg,event,{szTitle:"DOWLOAD OPTIONS", bCloseBtn: true});
+  	TipFixedClicked (szMsg,event,{szTitle:"DOWLOAD OPTIONS", iWidth:1000});
   }else {
   	Tip (szMsg);  	
   }
@@ -1112,11 +1112,20 @@ function jsuGoogleAnal (event){
        {shortUrl: JSU_URL_DOC_BLOCKPOPUP, longUrl: JSU_LONG_URL_DOC_BLOCKPOPUP, cat:GA_CAT_DOC,desc:'JSU Blocking Popup Doc'},
        {shortUrl: JSU_URL_DOC_JSPOPUP, longUrl: JSU_LONG_URL_DOC_JSPOPUP, cat:GA_CAT_DOC,desc:'JSU JS Popup Doc'}
      ];
-  TipFixedGoogleAnal(arObjGoogleAnal,event,{
-  	szTitle:'JSU Google Analitycs',
-  	iTableWidth: 1200,  // Width of the Table
-  	bBtnAll:true    // Show the Btn to display all the Page Together
-  });
+  var bUrl = false;
+  if (bUrl){
+    TipFixedGoogleAnal(arObjGoogleAnal,event,{
+    	szTitle:'JSU Google Analitycs',
+    	iWidth: 1200  // Tip Width 
+    });
+  }else{
+    TipFixedGoogleAnal(arObjGoogleAnal,event,{
+    	bShortUrl: false,
+    	bLongUrl: false,
+    	szTitle:'JSU Google Analitycs',
+    	iWidth: 800  // Tip Width 
+    });
+  }
   
   
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
@@ -1157,14 +1166,14 @@ function onclickTestGoogle(){
 function testGoogle(){
 	var Fn = "[about.js testGoogle()] ";
 	// URL under TEST
-	var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE,
+	var arTestUrl = [JSU_URL_API_DOC,
 	                 JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT, JSU_URL_SAMPLE_BLOCKPOPUP,
-	                 JSU_URL_API_DOC,
+	                 JSU_URL_DOWNLOAD_PAGE_FREE,
 	                 JSU_URL_DOC,JSU_URL_DOC_TIP,JSU_URL_DOC_LOADING,JSU_URL_DOC_SORT,JSU_URL_DOC_VALIDATE,
 	                 JSU_URL_DOC_JSLOG,,JSU_URL_DOC_BLOCKPOPUP,JSU_URL_DOC_JSPOPUP
 	                 ];
 	var iTestUrlNum = arTestUrl.length;
-	var i = Math.floor((Math.random() * arTestUrl.length));
+	var i = Math.floor(Math.random() * arTestUrl.length);
 	jslog (JSLOG_DEBUG,Fn + "test_cur=" + test_cur +  " Index under Test i=" + i);
 	var szUrl = arTestUrl[i];
 	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
