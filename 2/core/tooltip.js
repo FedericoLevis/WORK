@@ -116,32 +116,21 @@ var tt_googleAnal = {
 		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time  // Current FilterType
 };
 
+
+
+
 /*=========================================================================================
  * 					LOCAL CONST
  ========================================================================================= */
 
 
 // ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
-var TIP_CLASS_JS_FIXED = {
-		Down: "tipJSFixed",
-		Up: "tipJSFixedUp"
-};
-var TIP_CLASS_FIXED = {
-		Down: "tipFixed",
-		Up: "tipFixedUp"
-};
-var TIP_CLASS_ARROW_FIXED = {
-		Down: "tipArrowFixed",
-		Up: "tipArrowFixedUp"
-};
-var TIP_CLASS_BIG_FIXED = {
-		Down: "tipFixedBig",
-		Up: "tipFixedBigUp"
-};
-var TIP_CLASS_GOOGLE_FIXED = {
-		Down: "tipGoogleAnal",
-		Up: "tipGoogleAnalUp"
-};
+var TIP_CLASS_FIXED = {	Down: "tipFixed",		Up: "tipFixedUp"};
+var TIP_CLASS_ARROW_FIXED = {		Down: "tipArrowFixed",		Up: "tipArrowFixedUp"};
+var TIP_CLASS_BIG_FIXED = {		Down: "tipFixedBig",		Up: "tipFixedBigUp"};
+var TIP_CLASS_GOOGLE_FIXED = {		Down: "tipGoogleAnal",		Up: "tipGoogleAnalUp"};
+var TIP_CLASS_FIXED_JS = {	Down: "tipFixedJS",	Up: "tipFixedJSUp"};
+var TIP_CLASS_FIXED_CODE = {	Down: "tipFixedCode",	Up: "tipFixedCodeUp"};
 
 
 
@@ -238,6 +227,8 @@ tt_over,
 tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed tooltip
 
 
+// Only for LICENSE Check
+var tt_a2="pe", tt_a1="ty", tt_a3="of";
 
 
 //=====================  PUBLIC  =============================================//
@@ -301,9 +292,9 @@ function Tip(tipMsgHtml,tipType,objOpt)
  * 		GLOBAL
  * Set tip_type = tipType
  */
-function TipFixedClicked(tipMsgHtml,event, objOpt)
+function TipFixed(tipMsgHtml,event, objOpt)
 {
-	var fn = "[tooltip.js TipFixedClicked] ";
+	var fn = "[tooltip.js TipFixed] ";
 	tt_log ( fn + TIPLOG_FUN_START);
 	tt_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
@@ -364,7 +355,7 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 		var className = tipImg.className;
 		var szId = tipImg.id; 
 		if (szId == undefined || szId.length == 0){
-			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFixedClicked must have an id");
+			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFixed must have an id");
 		}
 		tt_log ( fn + "classname=" + className);
 		if (className == TIP_CLASS_FIXED.Down ){
@@ -387,11 +378,16 @@ function TipFixedClicked(tipMsgHtml,event, objOpt)
 			bShow = false;
 		}else	if (className == TIP_CLASS_GOOGLE_FIXED.Down ){
 			className = TIP_CLASS_GOOGLE_FIXED.Up;
-		}else	if (className == TIP_CLASS_JS_FIXED.Up){
-			className = TIP_CLASS_JS_FIXED.Down;
+		}else	if (className == TIP_CLASS_FIXED_JS.Up){
+			className = TIP_CLASS_FIXED_JS.Down;
 			bShow = false;
-		}else	if (className == TIP_CLASS_JS_FIXED.Down ){
-			className = TIP_CLASS_JS_FIXED.Up;
+		}else	if (className == TIP_CLASS_FIXED_JS.Down ){
+			className = TIP_CLASS_FIXED_JS.Up;
+		}else	if (className == TIP_CLASS_FIXED_CODE.Up){
+			className = TIP_CLASS_FIXED_CODE.Down;
+			bShow = false;
+		}else	if (className == TIP_CLASS_FIXED_CODE.Down ){
+			className = TIP_CLASS_FIXED_CODE.Up;
 		}	
 		tt_log ( fn + "SET New classname=" + className);
 		tipImg.className = className;
@@ -471,11 +467,17 @@ function UnTip()
 
 
 /**
- * Display a Fixed Tip with JS Code. <ul>
- *   <li> a) if prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
- *   <li> b) if prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipFixedTextBox</li> 
+ * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+ * See prettify-jsu.js for the detail of supported languages <BR/>
+ *   
+ *   NOTE:  <ul>
+ *   <li> a) if core/prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
+ *   <li> b) if core/prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipFixedTextBox</li> 
  * </ul>
- * @param jsCode  {String}  jsCode to display, with \n for newline
+ * @param szCode  {String}  jsCode to display, with \n for newline. <BR/>
+ *                          <label class="tipgood">szCode with HTML is not supported by this function. Instead you can use TipFixedCodeMulti or TipFixedTextBox</label>
+ *                          <label class="tipwarn">szCode with HTML is not supported by this function. Instead you can use TipFixedCodeMulti or TipFixedTextBox</label>
  * @param event
  * @param [objOpt] {Object} Option: <BR/>   
  *                           - szTitle{String}  default: 'JS Source Code'  <BR/>
@@ -485,8 +487,8 @@ function UnTip()
  * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
  * 														     
  */
-function TipFixedJS(jsCode, event, objOpt){
-	var fn = "[tooltip.js TipFixedJS] ";
+function TipFixedCode(jsCode, event, objOpt){
+	var fn = "[tooltip.js TipFixedCode] ";
 	tt_log (fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
@@ -495,14 +497,20 @@ function TipFixedJS(jsCode, event, objOpt){
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
 	if (objOpt.iWidth == undefined){	objOpt.iWidth = TIP_DEF_WIDTH; }
 	tt_init(); // init, if not already done
-	var bPrettify =  (typeof(prettyPrint) != "undefined");
-	tt_log (fn + "bPrettify=" + bPrettify);
+	// LICENSE check 
+	var bPrettify =  (eval( tt_a1 + tt_a2 + tt_a3 + 
+	   '(' + tt_a3 + 
+	     ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "2" : "7") + 
+	   tt_a1 + 
+	     ((((Math.floor((Math.random() * 100) + 7) > 5) ? 1 : 0) == 0) ? "2" : "7") + 
+	   ')').indexOf ('un') == 1);
 	var szJsTxt="";
 	if (bPrettify){
-		tt_log (fn + "prepare Prettify szJsTxt");
+		/* ONLY_IN_FULL_JSU_START */
 		var szJsTxt = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iWidth + '"px;"> <pre class="prettyprint"><code>' + jsCode + '</code></pre></div>';
-		TipFixedClicked (szJsTxt,event,objOpt);
-		prettyPrint();  // Hightlight <pre> with prettyprint
+		TipFixed (szJsTxt,event,objOpt);
+		prettyPrint();  // Hightlight with with prettyPrint the code between <pre> </pre> 
+		/* ONLY_IN_FULL_JSU_END */
 	}else{
 		TipFixedTextBox(jsCode, event, objOpt);
 	}
@@ -555,7 +563,7 @@ function TipFixedTextBox(szTxt, event, objOpt){
 	tt_init(); // init, if not already done
 	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
   objOpt.bMsgHtml = false;
-	TipFixedClicked (szTxtBox,event,objOpt);
+	TipFixed (szTxtBox,event,objOpt);
 	tt_log (fn + "--- END");
 }
 
@@ -653,7 +661,7 @@ function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
   }
 	szTbl += '</table>';
 	// Show Tip With Empty Table
-	TipFixedClicked (szTbl,event,objOpt);
+	TipFixed (szTbl,event,objOpt);
 	tt_googleAnalTblShow();
 	tt_log (fn + TIPLOG_FUN_END);
 }
@@ -903,7 +911,8 @@ function tt_UnTipFixed(){
 function tt_isClassFixed(szClass){
   var bTipFixed = false;	
 	var fn="[tooltip.js tt_isClassFixed()] ";
-	if (szClass == TIP_CLASS_JS_FIXED.Up  || szClass == TIP_CLASS_FIXED.Up  || 
+	if (szClass == TIP_CLASS_FIXED_JS.Up  || szClass == TIP_CLASS_FIXED.Up  ||
+			szClass == TIP_CLASS_FIXED_CODE.Up  ||
 			szClass == TIP_CLASS_ARROW_FIXED.Up || szClass == TIP_CLASS_BIG_FIXED.Up || 
 			szClass == TIP_CLASS_GOOGLE_FIXED.Up){
 		bTipFixed = true;
@@ -929,8 +938,10 @@ function tt_RestoreImgFixed() {
 			szClass = TIP_CLASS_BIG_FIXED.Down;
 		}	else if (tip_img_fixed.className == TIP_CLASS_GOOGLE_FIXED.Up){
 			szClass = TIP_CLASS_GOOGLE_FIXED.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_JS_FIXED.Up){
-			szClass = TIP_CLASS_JS_FIXED.Down;
+		}	else if (tip_img_fixed.className == TIP_CLASS_FIXED_JS.Up){
+			szClass = TIP_CLASS_FIXED_JS.Down;
+		}	else if (tip_img_fixed.className == TIP_CLASS_FIXED_CODE.Up){
+			szClass = TIP_CLASS_FIXED_CODE.Down;
 		}
 		if (szClass != ""){
 			tt_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);

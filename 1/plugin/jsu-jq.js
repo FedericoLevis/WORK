@@ -32,7 +32,7 @@ requirejs.config({
 			  'loadingDiv': '4/core/loadingDiv',
 			  'cValidate': '6/core/cValidate',
 			  'lan': '6/locale/EN',
-        'popup': '4/JSPopup',
+        'popup': '4/JQPopup',
         'jquery': '7/externalPlugin/jquery' + externalPluginVersion
     },
     shim: {

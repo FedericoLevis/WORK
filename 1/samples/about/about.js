@@ -64,7 +64,7 @@ var JSU_VIDEO_FRAME_SORT  =	'<iframe width="600" height="500" src="https://www.y
 var JSU_VIDEO_FRAME_LOADING  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 var JSU_VIDEO_FRAME_JSLOG  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 var JSU_VIDEO_FRAME_BLOCKPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_JSPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+var JSU_VIDEO_FRAME_JQPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 
 // Samples
 // --------------- FEATURE NOT FREE URL run-time calculated  
@@ -78,8 +78,8 @@ var JSU_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/sampl
 var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/jslog/jslogSample.html";
 //var JSU_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/jslog/jslogSample.html";
 
-var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSPopup/PopupSample.html";
-//var JSU_URL_SAMPLE_JSPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/JSPopup/PopupSample.html";
+var JSU_URL_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JQPopup/PopupSample.html";
+//var JSU_URL_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/JQPopup/PopupSample.html";
 
 
 // ------------------
@@ -98,9 +98,9 @@ var JSU_URL_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
 //var JSU_URL_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
 //var JSU_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
 //var JSU_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
-//var JSU_URL_SAMPLE_JSPOPUP  =	"https://goo.gl/WwL7hp";
+//var JSU_URL_SAMPLE_JQPOPUP  =	"https://goo.gl/WwL7hp";
 var JSU_GITHUB = "https://goo.gl/LYDepH";
-var JSU_COGNOS = "http://goo.gl/JZJSPn";
+var JSU_COGNOS = "http://goo.gl/JZJQPn";
 var JSU_PLSQL = "https://goo.gl/OI3eIo";
 var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
 //---------------------
@@ -111,7 +111,7 @@ var JSU_URL_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/sample
 var JSU_ID_SAMPLE_LOADING  =	1;
 var JSU_ID_SAMPLE_VALIDATE  =	3;
 var JSU_ID_SAMPLE_JSLOG  =	5;
-var JSU_ID_SAMPLE_JSPOPUP  =	7;
+var JSU_ID_SAMPLE_JQPOPUP  =	7;
 	
 	
 //DOC
@@ -126,7 +126,7 @@ var JSU_LONG_URL_DOC_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML
 var JSU_LONG_URL_DOC_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html";
 var JSU_LONG_URL_DOC_JSLOG  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/jslog.html";
 var JSU_LONG_URL_DOC_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/BlockPopup.html";
-var JSU_LONG_URL_DOC_JSPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html";
+var JSU_LONG_URL_DOC_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JQPopup.html";
 
 var JSU_URL_API_DOC  ="https://goo.gl/0PGnZl"
 
@@ -138,7 +138,7 @@ var JSU_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
 var JSU_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
 var JSU_URL_DOC_JSLOG  =	"https://goo.gl/Iobg3a";
 var JSU_URL_DOC_BLOCKPOPUP  =	"https://goo.gl/iWW5cz";
-var JSU_URL_DOC_JSPOPUP  =	"https://goo.gl/5KKGYv";
+var JSU_URL_DOC_JQPOPUP  =	"https://goo.gl/iPqUqL";
 
 
 // used as Link for JSU in about
@@ -166,10 +166,10 @@ var JSU_GOOGLE_ANAL_TIP='<div style="width:400px;" align="left">Click to show a 
 //allowed:   Popup call
  
 var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="700">' +
-'	  <tr class="tiptitle">' +
-'		  <th class="tiptitle" colspan="5">JSU FEATURES</th>' +
+'	  <tr class="tipTitle">' +
+'		  <th class="tipTitle" colspan="5">JSU FEATURES</th>' +
 '	  </tr>' +
-'	  <tr class="tiptitle2">' +
+'	  <tr class="tipTitle2">' +
 '		  <td width="90px" class="tipc">Feature Documentation</td>' +
 '		  <td width="370px" class="tipc">Description</td>' +
 '		  <td width="60px" class="tipc">Plugin Required</td>' +
@@ -224,11 +224,11 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleBlockPopup();">BlockingPopup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JSPOPUP +'" target="_blank">JS Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JQPOPUP +'" target="_blank">JS Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
 '		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
-'     <td class="tipc"><a href="javascript:showJSUVideoJSPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JS Popup Video" width="100" height="20" border="2" /></a></td> ' +  
-'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSPopup();">JS Popup Sample</a></td>' +
+'     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JS Popup Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JS Popup Sample</a></td>' +
 '	  </tr>' +
 '</table>';
 
@@ -303,8 +303,8 @@ function showJsuPopupAbout(){
  * @param event
  * @param [bShowAllSample] {Boolean} def true
  */
-function aboutTipJSU(event,bShowAllSample){
-	var Fn = "[about.js aboutTipJSU] ";
+function aboutTipFixedJSU(event,bShowAllSample){
+	var Fn = "[about.js aboutTipFixedJSU] ";
 	if (bShowAllSample == undefined){
 		bShowAllSample = true;
 	}
@@ -354,7 +354,7 @@ function aboutTipJSU(event,bShowAllSample){
   '  <tr class="jsuAboutMsg"><td class="tipl">' + szTipSect2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFixedClicked (szMsg,event,{iWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFixed (szMsg,event,{iWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**
@@ -365,28 +365,28 @@ function aboutTipAuthor(event){
   '  <tr>' +
   '    <td width="250px" align="left"> <img width="290px" src="'  + JSU_PATH_ABOUT_IMG + 'FedericoLevis.jpg"/></td> ' +
   '    <td ><table class="tipNoBorder" width="100%">' +
-  '      <tr><td align="left"><label class="tiptitleBig">Federico Levis</label></td><tr/>' +
+  '      <tr><td align="left"><label class="tipTitleBig">Federico Levis</label></td><tr/>' +
   '      <tr><td align="left">SW Engineer - Developer, Architect & Team Leader specialist in:<BR/>' +
   '              Java, JS, DB, SQL, PL/SQL, Cognos, C++, Perl & Unix Script</td><tr/>' +
   '      <tr><td ><table class="tipNoBorder" width="100%">' +
   '        <tr>' +
-  '          <td width="180px" class="tipl"><label class="tiptitle">Linkedin CV: </label></td>'+
+  '          <td width="180px" class="tipl"><label class="tipTitle">Linkedin CV: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="' +  JSU_LINKEDIN  + '" target="_blank">' + JSU_LINKEDIN +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
-  '          <td class="tipl"><label class="tiptitle">Email: </label></td>'+
+  '          <td class="tipl"><label class="tipTitle">Email: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="mailto:' +  JSU_EMAIL  + '" target="_blank">' + JSU_EMAIL +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
-  '          <td class="tipl"><label class="tiptitle">JSU GitHub: </label></td>'+
+  '          <td class="tipl"><label class="tipTitle">JSU GitHub: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="' +  JSU_GITHUB  + '" target="_blank">' + JSU_GITHUB +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
-  '          <td class="tipl"><label class="tiptitle">Cognos CEL Plugin: </label></td>'+
+  '          <td class="tipl"><label class="tipTitle">Cognos CEL Plugin: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="' +  JSU_COGNOS  + '" target="_blank">' + JSU_COGNOS +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
-  '          <td class="tipl"><label class="tiptitle">PL/SQL LOG Package: </label></td>'+
+  '          <td class="tipl"><label class="tipTitle">PL/SQL LOG Package: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href=" 	' +  JSU_PLSQL  + '" target="_blank">' + JSU_PLSQL +  '</a> </td>'+
   '        <tr/>' +
   '      </table></td></tr>' +
@@ -395,7 +395,7 @@ function aboutTipAuthor(event){
   '  </table> ';
 	
 	
-	TipFixedClicked (szTip,event,{szTitle:'JSU AUTHOR'});	
+	TipFixed (szTip,event,{szTitle:'JSU AUTHOR'});	
 }
 
 
@@ -419,8 +419,8 @@ function showJSUVideoSort(){
 ================================================================================== */ 
 
 var JSU_TABLE_VALIDATE_OPT = '	 <table class="tip" BORDER="2" cellpadding="2" width="900px">'+
-'				  <tr class="tiptitle"><td colspan="4">cValidate OPTION</td></tr>'+
-'				  <tr class="tiptitle2">'+
+'				  <tr class="tipTitle"><td colspan="4">cValidate OPTION</td></tr>'+
+'				  <tr class="tipTitle2">'+
 '				  <td width ="10%">OPTION</td>'+
 '				  <td width ="10%">DEFAULT</td>'+
 '				  <td width ="80%">DESCRIPTION</td>'+
@@ -494,7 +494,7 @@ function onclickValidateFeature(event, bShowTrySample){
 	   szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="javascript:showSampleValidate();" target="_blank">Try JSU cValidate Sample</a><BR/>&nbsp; ';
 	}
 	
-	TipFixedClicked (szMsg,event,{szTitle:"JSU cValidate", iWidth: 1000,bCloseBtn: true});
+	TipFixed (szMsg,event,{szTitle:"JSU cValidate", iWidth: 1000,bCloseBtn: true});
 }
 
 function showJSUVideoValidate(){
@@ -545,7 +545,7 @@ function onclickLoadingFeature(event, bShowTrySample){
 		szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="' + JSU_URL_SAMPLE_LOADING + '" target="_blank">Try JSU cLoading Sample</a><BR/>&nbsp; ';
 	}
 
-	TipFixedClicked (szMsg,event,{szTitle:"JSU cLoading", iWidth: 1000,bCloseBtn: true});
+	TipFixed (szMsg,event,{szTitle:"JSU cLoading", iWidth: 1000,bCloseBtn: true});
 }
 
 
@@ -668,7 +668,7 @@ function downloadTip(event,szDownloadTipType){
 	}
 	if (!bTipInfo){
 		if (szDownloadTipType == DOWNLOAD_TIP_TYPE.FREE){
-			szMsg = 'Click to Go to the <b>Download Page of the FREE Version of JSU.ZIP</b> <label class="tipwarn">(JS Code Obfuscated - Available only Tooltip, SortTable, BlockingPopup Features)</label><BR/><BR/>';
+			szMsg = 'Click to Go to the <b>Download Page of the FREE Version of JSU.ZIP</b> <label class="tipWarnn">(JS Code Obfuscated - Available only Tooltip, SortTable, BlockingPopup Features)</label><BR/><BR/>';
 		}else	{
 			szMsg = 'Click to Go to the <b>Download Page of the <label class="tipGood">FULL Version of JSU.ZIP</label></b><BR/><BR/>';
 		}	
@@ -676,7 +676,7 @@ function downloadTip(event,szDownloadTipType){
 	
 	var szMsg = szMsg + '<div style="padding:5px 5px 5px 5px">There are 2 DOWLOAD Options: <ul>' +
 	'<li><label class="tipGood">JSU.ZIP FULL:</label> Full access to source code, documentation, samples. Required if you want yo modify/customize/investigate JSU code</li>' +
-	'<li><label class="tipwarn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipwarn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
+	'<li><label class="tipWarnn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipWarnn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
 	'</ul></div>' +
 	'<table style="padding:5px 5px 5px 5px" class="det" BORDER="2" cellspacing="0" cellpadding="2" width="1000px">' +
 	'	  <tr class="detTitle">' +
@@ -700,7 +700,7 @@ function downloadTip(event,szDownloadTipType){
 	'		  <td class="detTitle"><input type="button" class="downloadFree"  ' +
 	'         onclick="location.href=\'https://github.com/FedericoLevis/JSU/archive/master.zip\';" /></td>' +
 	'		  <td class="tipl"><ul><li>AVAILABLE: Tip, SortTable, BlockingPopup</li>' +
-	'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JSPopup</label></li></ul> </td>' +
+	'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JQPopup</label></li></ul> </td>' +
 	'		  <td class="tipErr">JS Obfuscated and without any comments</td>' +
 	'		  <td>JSDoc HTML available, but <label class="tipErr">NO reference to code</label></td>' +
 	'		  <td style="background-color:#008B45; color:white; font-weight:bold;font-size:16">FREE</td>' +
@@ -708,7 +708,7 @@ function downloadTip(event,szDownloadTipType){
 	'</table>';
 
   if (szDownloadTipType == DOWNLOAD_TIP_TYPE.INFO){
-  	TipFixedClicked (szMsg,event,{szTitle:"DOWLOAD OPTIONS", iWidth:1000});
+  	TipFixed (szMsg,event,{szTitle:"DOWLOAD OPTIONS", iWidth:1000});
   }else {
   	Tip (szMsg);  	
   }
@@ -760,10 +760,10 @@ function jsuDocBlockPopup(){
 	jsuGoToURL(JSU_URL_DOC_BLOCKPOPUP);
 }
 /**
- * Open window with JSPopup Documentation
+ * Open window with JQPopup Documentation
  */
-function jsuDocJSPopup(){
-	jsuGoToURL(JSU_URL_DOC_JSPOPUP);
+function jsuDocJQPopup(){
+	jsuGoToURL(JSU_URL_DOC_JQPOPUP);
 }
 
 
@@ -895,7 +895,7 @@ function getSampleUrl(szUrl,iId){
      	  return "https://goAALl/F3r4lP".replace ("AAL","o.g");
     }else if (iId == JSU_ID_SAMPLE_JSLOG){
    	  return "https://goAALl/OfC2Pf".replace ("AAL","o.g");
-    }else if (iId == JSU_ID_SAMPLE_JSPOPUP){
+    }else if (iId == JSU_ID_SAMPLE_JQPOPUP){
    	  return "https://goAALl/WwL7hp".replace ("AAL","o.g");
     }		
 	}else{
@@ -955,8 +955,8 @@ function showSampleJSlog(){
 /*
  * 
  */
-function showSampleJSPopup(){
-  showSampleWindow(JSU_URL_SAMPLE_JSPOPUP, JSU_ID_SAMPLE_JSPOPUP);
+function showSampleJQPopup(){
+  showSampleWindow(JSU_URL_SAMPLE_JQPOPUP, JSU_ID_SAMPLE_JQPOPUP);
 }
 
 /*
@@ -1073,9 +1073,9 @@ function showJSUVideojslog(){
 
 
 
-function showJSUVideoJSPopup(){
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSPOPUP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU JSPopup Sample"});
+function showJSUVideoJQPopup(){
+  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JQPOPUP,
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSU JQPopup Sample"});
 }
 
 function showJSUVideoBlockPopup(){
@@ -1110,7 +1110,7 @@ function jsuGoogleAnal (event){
        {shortUrl: JSU_URL_DOC_VALIDATE, longUrl: JSU_LONG_URL_DOC_VALIDATE, cat:GA_CAT_DOC,desc:'JSU Validate Doc'},
        {shortUrl: JSU_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC,desc:'JSU JSLog Doc'},
        {shortUrl: JSU_URL_DOC_BLOCKPOPUP, longUrl: JSU_LONG_URL_DOC_BLOCKPOPUP, cat:GA_CAT_DOC,desc:'JSU Blocking Popup Doc'},
-       {shortUrl: JSU_URL_DOC_JSPOPUP, longUrl: JSU_LONG_URL_DOC_JSPOPUP, cat:GA_CAT_DOC,desc:'JSU JS Popup Doc'}
+       {shortUrl: JSU_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC,desc:'JSU JS Popup Doc'}
      ];
   var bUrl = false;
   if (bUrl){
@@ -1170,7 +1170,7 @@ function testGoogle(){
 	                 JSU_URL_SAMPLE_ALL,JSU_URL_SAMPLE_TIP,JSU_URL_SAMPLE_SORT, JSU_URL_SAMPLE_BLOCKPOPUP,
 	                 JSU_URL_DOWNLOAD_PAGE_FREE,
 	                 JSU_URL_DOC,JSU_URL_DOC_TIP,JSU_URL_DOC_LOADING,JSU_URL_DOC_SORT,JSU_URL_DOC_VALIDATE,
-	                 JSU_URL_DOC_JSLOG,,JSU_URL_DOC_BLOCKPOPUP,JSU_URL_DOC_JSPOPUP
+	                 JSU_URL_DOC_JSLOG,,JSU_URL_DOC_BLOCKPOPUP,JSU_URL_DOC_JQPOPUP
 	                 ];
 	var iTestUrlNum = arTestUrl.length;
 	var i = Math.floor(Math.random() * arTestUrl.length);

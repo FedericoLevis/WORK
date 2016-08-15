@@ -298,8 +298,8 @@ var JS_CODE_VALIDATE3= '//1) Init cValidate with Item constraints, tips and opti
 ========================================================================================= */
 
 var CHANGE_VALIDATE_OPT = '	 <table class="tip" BORDER="2" cellpadding="2" width="600px">'+
-'				  <tr class="tiptitle"><td colspan="4">cValidate OPTION</td></tr>'+
-'				  <tr class="tiptitle2">'+
+'				  <tr class="tipTitle"><td colspan="4">cValidate OPTION</td></tr>'+
+'				  <tr class="tipTitle2">'+
 '				  <td width ="10%">OPTION</td>'+
 '				  <td width ="10%">DEFAULT</td>'+
 '				  <td width ="10%">VALUE</td>'+
@@ -399,7 +399,7 @@ function tipChangeValidateOpt(iSample,event){
     szMsg = szMsg.replace (key + 'FALSE_SEL',optVal ? '' : 'selected');
   }
 	
-	TipFixedClicked (szMsg,event,{bCloseBtn:false});
+	TipFixed (szMsg,event,{bCloseBtn:false});
 }
 
 /**
@@ -433,7 +433,7 @@ function sample1Js(event){
 	var bParOpt = is_par_opt(); 
 	var iWidth = (bParOpt) ? 600: 700;
 	var iMaxHeight = (bParOpt) ? 610 : 500; 
-	TipJSFixedClicked (JS_CODE_VALIDATE1,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	TipFixedJS (JS_CODE_VALIDATE1,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
 }
 
 
@@ -445,7 +445,7 @@ function sample2Js(event){
 	var bParOpt = is_par_opt(); 
 	var iWidth = (bParOpt) ? 500: 600;
 	var iMaxHeight = (bParOpt) ? 500 : 400; 
-	TipJSFixedClicked (JS_CODE_VALIDATE2,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	TipFixedJS (JS_CODE_VALIDATE2,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
 }
 
 /**
@@ -456,6 +456,6 @@ function sample3Js(event){
 	var bParOpt = is_par_opt(); 
 	var iWidth = (bParOpt) ? 500: 600;
 	var iMaxHeight = (bParOpt) ? 500 : 400; 
-	TipJSFixedClicked (JS_CODE_VALIDATE3,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	TipFixedJS (JS_CODE_VALIDATE3,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
 }
 

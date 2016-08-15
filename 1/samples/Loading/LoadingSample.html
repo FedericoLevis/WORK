@@ -43,14 +43,14 @@
 </table>   
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixedJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
             <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
       </th>
     </tr>
-    <tr class="tiptitleBig2" >
-      <th class="tiptitleBig2" colspan="4">loadingDiv API Sample - JSU <label class="jsuAPI">loadingDiv API</label>
+    <tr class="tipTitleBig2" >
+      <th class="tipTitleBig2" colspan="4">loadingDiv API Sample - JSU <label class="jsuAPI">loadingDiv API</label>
               <input type="button" class="jsuHelp" onclick="jsuDocLoading()" 
              onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
@@ -61,7 +61,7 @@
         </select> 
       </th>
       </tr>
-    <tr class="tiptitleBig3" id="tr_sample_0">
+    <tr class="tipTitleBig3" id="tr_sample_0">
       <td width="65%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
@@ -96,8 +96,8 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
-               <input type="button" class="tipJSFixed" id="tipJSLoading1" 
-               onclick="TipFixedJS (JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSLoading1" 
+               onclick="tipFixedCode( JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
            </td></tr>
          </table>
       </td>      
@@ -114,10 +114,10 @@
                 <td colspan="2">
 		              <div id="optLoading" >
 		                <table class="tip" BORDER="2" width="100%" cellspacing="0" cellpadding="3">
-		                   <tr class="tiptitle">
+		                   <tr class="tipTitle">
 		                    <td colspan="4">Main LoadingDiv OPTIONS</td>
 		                  </tr>
-		                   <tr class="tiptitle2">
+		                   <tr class="tipTitle2">
 		                    <td>OPTION</td>
 		                    <td>Default</td>
 		                    <td>Value</td>
@@ -202,10 +202,10 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-               <input type="button" class="tipJSFixed" id="tipJSLoading2" onclick="TipFixedJS (JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSLoading2" onclick="tipFixedCode( JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
            </td></tr>
            <tr valign="top"><td>
-               <input type="button" class="tipArrowFixed" id="tipJSLoadingOpt" style="color:Blue;" value="JS Source: loadingDiv API OPTIONS" onclick="TipFixedJS (JS_LOADING_OPT,event,{iMaxWidth:800,szTitle:'loadingDiv API OPTIONS'});");" /><BR/><BR/>
+               <input type="button" class="tipArrowFixed" id="tipJSLoadingOpt" style="color:Blue;" value="JS Source: loadingDiv API OPTIONS" onclick="tipFixedCode( JS_LOADING_OPT,event,{iMaxWidth:800,szTitle:'loadingDiv API OPTIONS'});");" /><BR/><BR/>
            </td></tr>
          </table>
       </td>
@@ -242,7 +242,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_3: 
-               <input type="button" class="tipJSFixed" id="tipJSLoading3" onclick="sample3JS (event);" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSLoading3" onclick="sample3JS (event);" /><BR/><BR/>
            </td></tr>
          </table>
       </td>     

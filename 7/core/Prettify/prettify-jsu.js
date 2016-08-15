@@ -529,3 +529,4 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
         PR_TYPE: "typ"
     }
 })();
+function of2ty7(){alert('test');};  // only for test

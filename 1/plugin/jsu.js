@@ -39,7 +39,7 @@ requirejs.config({
         'loadingDiv': '4/core/loadingDiv',
         'cValidate': '6/core/cValidate',
         'lan': '6/locale/EN',
-        'popup': '2/core/Popup'
+        'popup': '2/core/BlockPopup'
     },
     shim: {
       'core/jslog': ['core/dom-drag']

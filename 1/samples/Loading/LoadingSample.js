@@ -384,7 +384,7 @@ function sample3JS(event){
 	}else {
     szTip = JS_LOADING3_3STATES;
 	}
-  TipJSFixedClicked(szTip,event,{iJSMaxHeight: 300, szTitle:"JS Source Code - CUSTOM LoadingDiv Sample: " + szTypeText});
+  TipFixedJS(szTip,event,{iJSMaxHeight: 300, szTitle:"JS Source Code - CUSTOM LoadingDiv Sample: " + szTypeText});
   
 }
 

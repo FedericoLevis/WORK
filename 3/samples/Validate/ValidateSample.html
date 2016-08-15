@@ -42,14 +42,14 @@
 </table>   
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixedJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
             <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
       </th>
     </tr>
-    <tr class="tiptitleBg2">
-      <th class="tiptitleBig2" colspan="4">Validate Sample - JSU <label class="jsuAPI">cValidate</label>
+    <tr class="tipTitleBg2">
+      <th class="tipTitleBig2" colspan="4">Validate Sample - JSU <label class="jsuAPI">cValidate</label>
               <input type="button" class="jsuHelp" onclick="jsuDocValidate()" 
              onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
@@ -60,7 +60,7 @@
         </select> 
       </th>
       </tr>
-    <tr id="tr_sample_0" class="tiptitleBig3">
+    <tr id="tr_sample_0" class="tipTitleBig3">
       <td width="50%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
@@ -93,7 +93,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate1" onclick="sample1Js(event);" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSValidate1" onclick="sample1Js(event);" /><BR/><BR/>
                <label><b>DEFAULT Validate OPTIONS:</b> Items are Validated istantly (at onchange event) - Validate Error Label for each Item.</label>
                <i></i><b>constraints</b></i> of this Sample:<ul type="square">
                <li>Email: <b>Mandatory email</b></li>
@@ -127,7 +127,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate2" onclick="sample2Js(event);" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSValidate2" onclick="sample2Js(event);" /><BR/><BR/>
                <label><b>OPTIONS of This SAMPLE:</b> Validate all items only at <label class="jsuAPI">validateApply</label> (Submit button) - <b>Error Section</b> on the Top</label>
                <ul type="square">
                <li>Username: <b>Mandatory</b> username with <b>constraints</b> explained in the <b>tip</b></li>
@@ -164,7 +164,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_3: 
-               <input type="button" class="tipJSFixed" id="tipJSValidate3" onclick="sample3Js(event);" /><BR/><BR/>
+               <input type="button" class="tipFixedJS" id="tipJSValidate3" onclick="sample3Js(event);" /><BR/><BR/>
                <label><b>OPTIONS:</b> Validate all items only at <label class="jsuAPI">validateApply</label> (Submit button) - <b>Popup Error</b> and <b>Alarm</b> in Items</label>
                <ul type="square">
                <li>Size: <b>Mandatory</b>, the choice <b>exclude XS or S</b> - <b>tip</b> </li>

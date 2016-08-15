@@ -360,28 +360,28 @@ Tip API and JSU Button -
    <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
 ---
 <b>CSS:</b> (For Browser compatibility we recommend using input instead of img when both are present)<ul>
- <li>``img.tipJSFixed`` ``input.tipJSFixed``    tip JS Fixed img with Button Down </li>
- <li>``img.tipJSFixedUp`` ``input.tipJSFixedUp``  tip JS Fixed img with Button Up </li>
+ <li>``img.tipFixedJS`` ``input.tipFixedJS``    tip JS Fixed img with Button Down </li>
+ <li>``img.tipFixedJSUp`` ``input.tipFixedJSUp``  tip JS Fixed img with Button Up </li>
  <li>``input.jsuHelp``  JSU help Button </li>
  <li>...
 </ul> 
 <BR/><b>Examples:</b>
 ```html
-<input type="button" class="tipJSFixed" />
+<input type="button" class="tipFixedJS" />
 <input type="button" class="tipJSUp" />
 <input type="button" class="jsuHelp" />
 ```
 */
-img.tipJSFixed{ /* tip JS Fixed img with Button Down */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png') center top;
+img.tipFixedJS{ /* tip JS Fixed img with Button Down */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJS.png') center top;
   /* background-size: contain; */
   height: 23px;
   width: 16px;
   margin-left: 5px;
 }
 
-img.tipJSFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png') center top;
+img.tipFixedJSUp{ /* tip JS Fixed img with Button Up */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJSUp.png') center top;
   /* background-size: contain; */ 
   height: 24px;
   width: 17px;
@@ -410,7 +410,7 @@ input.tipArrowFixed, input.tipArrowFixedUp {
     cursor: pointer;
 }
 
-input.tipJSFixed, input.tipJSFixedUp{
+input.tipFixedJS, input.tipFixedJSUp{
     height: 21px;
     width: 16px;
     border: 1px solid #000;
@@ -419,13 +419,34 @@ input.tipJSFixed, input.tipJSFixedUp{
     margin-left: 4px; 
 }
 
-input.tipJSFixed{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png) no-repeat center center;
+input.tipFixedJS{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJS.png) no-repeat center center;
 }
 
-input.tipJSFixedUp{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png) no-repeat center center;
+input.tipFixedJSUp{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJSUp.png) no-repeat center center;
 }
+
+input.tipFixedCode, input.tipFixedCodeUp{
+    height: 26px;
+    width: 35px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 4px; 
+}
+
+input.tipFixedCode{
+    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCode.png) no-repeat center center; */
+    background: #E0E0E0 url(../images/tipFixedCode.png) no-repeat center center;
+}
+
+input.tipFixedCodeUp{
+    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCodeUp.png) no-repeat center center; */
+    background: #E0E0E0 url(../images/tipFixedCodeUp.png) no-repeat center center; 
+}
+
+
 
 input.tipFixed, input.tipFixedUp{
     height: 20px;
@@ -548,7 +569,7 @@ table.jsuHeaderNoBorder,table.jsuFooterNoBorder { /* used for Header and Footer 
   }
 
 
-tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {
+tr.tipTitle,th.tipTitle, tr.tipTitleBig,th.tipTitleBig {
   background-color: #0033FF; /* Blue */
   color: #FFFFFF; /* White */
   text-align: center;
@@ -557,34 +578,34 @@ tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {
   font-weight: bold;
 }
 
-tr.tiptitle,th.tiptitle{
+tr.tipTitle,th.tipTitle{
   font-size: 9pt;
   padding: 2px;
 }
-tr.tiptitleBig,th.tiptitleBig{
+tr.tipTitleBig,th.tipTitleBig{
   font-size: 13pt;
 }
 
-.tiptitleVeryBig{
+.tipTitleVeryBig{
   font-size: 30pt;
   font-weight: bold;  
 }
 
 
 
-label.tiptitle {
+label.tipTitle {
   font-family: Verdana;
   font-weight: bold;	
 	font-size: 10pt;
 }
 
-label.tiptitleBig {
+label.tipTitleBig {
   font-family: Verdana;
   font-weight: bold;	
 	font-size: 16pt;
 }
 
-tr.tiptitle2,th.tiptitle2, tr.tiptitleBig2,th.tiptitleBig2 {
+tr.tipTitle2,th.tipTitle2, tr.tipTitleBig2,th.tipTitleBig2 {
   background-color: #66B2FF; 
   color: black; 
   text-align: center;
@@ -595,7 +616,7 @@ tr.tiptitle2,th.tiptitle2, tr.tiptitleBig2,th.tiptitleBig2 {
   font-size: 9pt;
 }
 
-tr.tiptitle3,th.tiptitle3, tr.tiptitleBig3,th.tiptitleBig3 {
+tr.tipTitle3,th.tipTitle3, tr.tipTitleBig3,th.tipTitleBig3 {
   background-color: #A9C6FC; 
   color: black; 
   text-align: center;
@@ -606,7 +627,7 @@ tr.tiptitle3,th.tiptitle3, tr.tiptitleBig3,th.tiptitleBig3 {
   font-size: 9pt;
 }
 
-tr.tiptitleBig2,th.tiptitleBig2,tr.tiptitleBig3,th.tiptitleBig3 {
+tr.tipTitleBig2,th.tipTitleBig2,tr.tipTitleBig3,th.tipTitleBig3 {
   font-size: 11pt !important;
 }
 
@@ -634,7 +655,7 @@ th.tip { /* Header */
 }
 
 
-th.tipsep { /* Row separator between SubTables*/
+th.tipSep { /* Row separator between SubTables*/
 	background: #FFFFCC; /* Yellow*/
 	height: 8pt;
 	border-style: none;
@@ -644,7 +665,7 @@ th.tipsep { /* Row separator between SubTables*/
 	color: #404040;
 }
 
-td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipalr, td.tipok, , td.tipGood, , td.tipErr{
+td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipAlr, td.tipOk, , td.tipGood, , td.tipErr{
 	padding-right: 5px;
 	border: 1px solid #404040; /* Black */
 }
@@ -672,12 +693,12 @@ td.tiplNoPad {
 	text-align: left;
 }
 
-td.tipalr,label.tipalr {
+td.tipAlr,label.tipAlr {
 	color: #CD3333; /* Red */
 	font-weight: bold;
 }
 
-td.tipok,label.tipok {
+td.tipOk,label.tipOk {
 	color: #009900; /* Green */
 	font-weight: bold;
 }
@@ -695,7 +716,7 @@ td.tipNotPresent,label.tipNotPresent{ /* e.g for JSU Feature not present */
 }
 
 
-td.tipfooter {
+td.tipFooter {
 	text-align: left;
 	font-family: Verdana;
 	font-weight: normal;

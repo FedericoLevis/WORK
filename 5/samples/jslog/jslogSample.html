@@ -40,14 +40,14 @@
 </table>   
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixedJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
             <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
       </th>
     </tr>
-    <tr class="tiptitleBg2">
-      <th class="tiptitleBig2" colspan="4">JS Log - JSU <label class="jsuAPI">jslog.js API</label>
+    <tr class="tipTitleBg2">
+      <th class="tipTitleBig2" colspan="4">JS Log - JSU <label class="jsuAPI">jslog.js API</label>
               <input type="button" class="jsuHelp" onclick="jsuDocJSLog()" 
              onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
@@ -58,7 +58,7 @@
         </select> 
       </th>
      </tr>
-    <tr class="tiptitleBig3">
+    <tr class="tipTitleBig3">
       <td width="55%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
@@ -169,13 +169,13 @@
          <table >
            <tr><td>
               <ul type="square">
-               <li><b>START jslog:</b> <input type="button" class="tipJSFixed" id="tipJS1jslogStart" onclick="TipFixedJS (JS1_JSLOG_START,event);" />
-                   <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipJSFixed" id="tipJS1jslogEnd" onclick="TipFixedJS (JS1_JSLOG_END,event);" /></li><BR/>
+               <li><b>START jslog:</b> <input type="button" class="tipFixedJS" id="tipJS1jslogStart" onclick="tipFixedCode( JS1_JSLOG_START,event);" />
+                   <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipFixedJS" id="tipJS1jslogEnd" onclick="tipFixedCode( JS1_JSLOG_END,event);" /></li><BR/>
                <li><label style="margin-right:30px;"><b>JSlog API sample at various Level: </b></label><BR/><BR/>
-                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipJSFixed" id="tipJS1Lev1" onclick="TipFixedJS (JS1_LEV1,event,{iMaxWidth:800});" /><BR/><BR/>
-                   <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipJSFixed" id="tipJS1Lev2" onclick="TipFixedJS (JS1_LEV2,event);" /> <BR/><BR/>
-                   <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipJSFixed" id="tipJS1Lev4" onclick="TipFixedJS (JS1_LEV4,event);" /><BR/><BR/>
-                   <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipJSFixed" id="tipJS1Lev8" onclick="TipFixedJS (JS1_LEV8,event);" /></li>
+                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipFixedJS" id="tipJS1Lev1" onclick="tipFixedCode( JS1_LEV1,event,{iMaxWidth:800});" /><BR/><BR/>
+                   <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipFixedJS" id="tipJS1Lev2" onclick="tipFixedCode( JS1_LEV2,event);" /> <BR/><BR/>
+                   <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipFixedJS" id="tipJS1Lev4" onclick="tipFixedCode( JS1_LEV4,event);" /><BR/><BR/>
+                   <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipFixedJS" id="tipJS1Lev8" onclick="tipFixedCode( JS1_LEV8,event);" /></li>
                 </ul>
            </td></tr>
          </table>
@@ -228,7 +228,7 @@
       <!--    SAMPLE_2 DESCRIPTION -->
       <td class="sampleDesc"  id="col_2_2" valign="top">
         <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-         <input type="button" class="tipJSFixed" id="tipJS2Start" onclick="TipFixedJS (JS2_START,event);" />
+         <input type="button" class="tipFixedJS" id="tipJS2Start" onclick="tipFixedCode( JS2_START,event);" />
  
       </td>   
   
