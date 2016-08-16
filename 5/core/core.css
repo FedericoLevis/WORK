@@ -879,6 +879,16 @@ tr.detFilter,th.detFilter { /* e.g. Header2 with Filter in GoogleAnalytics */
   font-size: 9pt;
 }
 
+tr.detSep, th.detSep,td.detSep { /* Row separator between SubTables*/
+  height: 1px;
+  border-style: none;
+  border: 0px; 
+  padding: 0px;
+  border-collapse: separate;
+  font-size: 1px;
+}
+
+
 td.googleAnalFooter, label.googleAnalFooter {
 	font-weight: italic !important;
   font-family: Calibri;

@@ -47,9 +47,13 @@ var TIP_FIXED_POS={
 var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
 var TIP_DEF_GOOGLE_ALL_LINK = true; // default: Present the Link to display all the pages of Google analytics together
 var TIP_DEF_WIDTH = 800; // default
-var TIP_DEF_COL_NUM = 100; // default: 100 col for TextBox
-var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextBox
+var TIP_DEF_COL_NUM = 100; // default: 100 col for TextArea
+var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextArea
+var TIP_DEF_MAXH_MCODE = 400; //for MultiCode
+var TIP_DEF_MCODE_TITLE = "Code";
+var TIP_DEF_TEXTBOX_TITLE = "Source Code";
 
+var TIP_MAX_TEXT_BOX_ROW_NUM = 20; // if more there will be scrollbar
 
 // Default GOOGLE 
 var TIP_DEF_GOOGLE_WIDTH = 1300; 
@@ -109,7 +113,7 @@ var GOOGLE_ANAL_PAR_TYPE={
 // For GoogleAnal
 var tt_googleAnal = {
 		arObjGoogleAnal: null,   // arObjGoogleAnal received as PAR
-		iWidth: 800,
+		iTipWidth: 800,
 		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
 		iSelFilterCat: 0 , // Current FilterCat
 		iSelFilterType: 0,  // Current FilterType
@@ -243,7 +247,7 @@ var tt_a2="pe", tt_a1="ty", tt_a3="of";
  * @param tipMsgHtml {String}   
  * @param [tipType] {String}   [TIP_TYPE.Floating] when called by User
  * @param [objOpt] Option: <BR/>
- *                         - bMsgHtml [true]  if false is not converted to HTML
+ *                         - bNL2BR [true]  if true convert NewLine to <BR/>
  * 
  * 		GLOBAL
  * Set tip_type = tipType
@@ -259,10 +263,10 @@ function Tip(tipMsgHtml,tipType,objOpt)
 	}	
 	
 	if (objOpt == undefined){
-		var objOpt = {bMsgHtml: true};
+		var objOpt = {bNL2BR: true};
 	}
-	if (objOpt.bMsgHtml == undefined || objOpt.bMsgHtml){
-		tipMsgHtml = tt_str2Html (tipMsgHtml);  // Replace /n with <BR/>,...
+	if (objOpt.bNL2BR == undefined || objOpt.bNL2BR){
+		tipMsgHtml = tt_NL2BR (tipMsgHtml);  // Replace /n with <BR/>,...
 	}
 	var bShow = true;
 	if (tipType == undefined){
@@ -282,13 +286,14 @@ function Tip(tipMsgHtml,tipType,objOpt)
 /**
  * @param tipMsgHtml {String}   
  * @param event
- * @param [objOpt] {Object}   Option: <BR/>
- *                            - szTitle{String}  default: ''   <BR/>
- *                            - bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  <BR/>
- * 														- iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 													  - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
- * 														- tipFixedPos:  TIP_FIXED_POS.CENTER,... n (e.g -100)   default=TIP_FIXED_POS.CENTER  <BR/>
- * 													  - bMsgHtml= [true]  if false it is not converted to HTML 
+ * @param [objOpt] {Object}   Option: <ul>
+ *                            <li> szTitle{String}  default: ''   </li> 
+ *                            <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
+ * 														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+ * 													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ * 														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
+ * 													  <li> bNL2BR= [true]  if true /n are converted to </li> 
+ *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
  */
@@ -299,10 +304,10 @@ function TipFixed(tipMsgHtml,event, objOpt)
 	tt_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
 	if (objOpt == undefined){
-		var objOpt = {bMsgHtml: true};
+		var objOpt = {bNL2BR: true};
 	}
-	if (objOpt.bMsgHtml == undefined || objOpt.bMsgHtml){
-		tipMsgHtml = tt_str2Html (tipMsgHtml);  // Replace /n with <BR/>,...
+	if (objOpt.bNL2BR == undefined || objOpt.bNL2BR){
+		tipMsgHtml = tt_NL2BR (tipMsgHtml);  // Replace /n with <BR/>,...
 	}
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
 	
@@ -314,19 +319,25 @@ function TipFixed(tipMsgHtml,event, objOpt)
   	}
   	var szMaxHeight = "", szMaxWidth = "";
   	var bDivScroll = false;
-  	if (objOpt.iMaxHeight){
-  		  szMaxHeight = 'max-height: ' +objOpt.iMaxHeight + 'px;';
+  	if (objOpt.iTipMaxHeight){
+  		  szMaxHeight = 'max-height: ' +objOpt.iTipMaxHeight + 'px;';
   		  bDivScroll = true;
   	} 
-  	if (objOpt.iWidth == undefined ){
-  		objOpt.iWidth=  TIP_DEF_WIDTH;
+  	if (objOpt.iTipWidth == undefined ){
+  		// in this case we set only max-width but we do not set width: so it is automatically set basing on content
+   	  szMaxWidth = 'max-width: ' +TIP_DEF_WIDTH+ 'px;';
+  	}else {
+  		// only if explicitly required, we se also  width 
+   	  szMaxWidth = 'max-width: ' +objOpt.iTipWidth+ 'px; width:' +objOpt.iTipWidth + 'px;';
   	}	
- 	  szMaxWidth = 'max-width: ' +objOpt.iWidth + 'px;';
+  	
  		bDivScroll = true;
   	var szDivHTML = "";
+  	/*
   	if (!bDivScroll){
   		szMaxWidth = 'max-width: ' + tt_w + 'px;';
   	}	
+  	*/
 		tt_log ( fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
   	
  		// Add Div for scroll
@@ -472,68 +483,165 @@ function UnTip()
  * See prettify-jsu.js for the detail of supported languages <BR/>
  *   
  *   NOTE:  <ul>
- *   <li> a) if core/prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
- *   <li> b) if core/prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipFixedTextBox</li> 
+ *   <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+ *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
  * </ul>
  * @param szCode  {String}  jsCode to display, with \n for newline. <BR/>
- *                          <label class="tipgood">szCode with HTML is not supported by this function. Instead you can use TipFixedCodeMulti or TipFixedTextBox</label>
- *                          <label class="tipwarn">szCode with HTML is not supported by this function. Instead you can use TipFixedCodeMulti or TipFixedTextBox</label>
+ *                          <label class="tipWarn">szCode with HTML is not supported by this function. To show HTML Code you can use TipFixedMultiCode or TipFixedTextArea</label>
  * @param event
- * @param [objOpt] {Object} Option: <BR/>   
- *                           - szTitle{String}  default: 'JS Source Code'  <BR/>
- * 													 - iWidth {Number}:  Width of the Tip - Default: TIP_DEF_WIDTH (800)  <BR/>
- * 													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL <BR/> 
- *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
- * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
- * 														     
+ * @param [objOpt] {Object} Option: <ul>    
+ *                           <li> szTitle{String}  default:  TIP_DEF_CODE_TITLE   </li> 
+ * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ * 													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL </li>  
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
+ * 													</ul>	     
  */
-function TipFixedCode(jsCode, event, objOpt){
+function TipFixedCode(szCode, event, objOpt){
 	var fn = "[tooltip.js TipFixedCode] ";
 	tt_log (fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_CODE_TITLE; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.iWidth == undefined){	objOpt.iWidth = TIP_DEF_WIDTH; }
+	// if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth = TIP_DEF_WIDTH; }
 	tt_init(); // init, if not already done
-	// LICENSE check 
-	var bPrettify =  (eval( tt_a1 + tt_a2 + tt_a3 + 
-	   '(' + tt_a3 + 
-	     ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "2" : "7") + 
-	   tt_a1 + 
-	     ((((Math.floor((Math.random() * 100) + 7) > 5) ? 1 : 0) == 0) ? "2" : "7") + 
-	   ')').indexOf ('un') == 1);
-	var szJsTxt="";
-	if (bPrettify){
-		/* ONLY_IN_FULL_JSU_START */
-		var szJsTxt = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iWidth + '"px;"> <pre class="prettyprint"><code>' + jsCode + '</code></pre></div>';
-		TipFixed (szJsTxt,event,objOpt);
+	// Check if prettify is enabled 
+	if (tt_isPrettifyEn()){
+		/* FULL_JSU_START */
+		var szCodeDiv = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
+		TipFixed (szCodeDiv,event,objOpt);
 		prettyPrint();  // Hightlight with with prettyPrint the code between <pre> </pre> 
-		/* ONLY_IN_FULL_JSU_END */
+		/* FULL_JSU_END */
 	}else{
-		TipFixedTextBox(jsCode, event, objOpt);
+		TipFixedTextArea(szCode, event, objOpt);
 	}
 	tt_log (fn + TIPLOG_FUN_END);
 }
 
 
 /**
- * Display whatever Text (also HTML TAGs) in a TextBox of a FixedTip. For Example this function is used to display mixed JS and HTML code  
+ * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+ * See prettify-jsu.js for the detail of supported languages <BR/>
+ *   
+ *   NOTE:  <ul>
+ *   <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+ *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
+ * </ul>
+ * @param arObjCode  {Array}  Array of Obj with the info of the code display. See Example below <BR/>
+ * @param event
+ * @param [objOpt] {Object} Option: <ul>   
+ *                           <li> szTitle{String}  default: 'Source Code'  <li/>
+ * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ * 													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
+ * 													</ul>	  
+ * 
+ *    @example
+ *    
+ *    DAFARE
+ */
+function TipFixedMultiCode(arObjCode, event, objOpt){
+	var fn = "[tooltip.js TipFixedMultiCode] ";
+	tt_log (fn + TIPLOG_FUN_START);
+	tt_logObj (fn,"IN arObjCode",arObjCode);
+	tt_logObj (fn,"IN objOpt",objOpt);
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_CODE_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	// if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth = TIP_DEF_WIDTH; }
+	if (objOpt.iColNum == undefined){ objOpt.iColNum = TIP_DEF_COL_NUM; }
+	var iTxtAreaWidth = objOpt.iTipWidth - 40; // some space for padding and borders 
+	tt_init(); // init, if not already done
+	// PRETTIFY 
+	var bPrettify = tt_isPrettifyEn();
+	if (bPrettify){
+		/* ONLY_IN_FULL_JSU_START */
+		var szCodeDiv = '<table class="detNoBorder" >\n';
+		var iTextAreaNum = 0;
+		for (var i=0; i < arObjCode.length;i++){
+			var objCode = arObjCode[i];
+			var szWidth = "";
+			var szTbl = '<tr><td><table class="det" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
+			if (objCode.iTipMaxHeight== undefined){
+				objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
+			}
+			if (objCode.bHtml== undefined){
+				objCode.bHtml= false; 
+			}
+			if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; } 
+			tt_log (fn + 'arObjCode[' + i + '] bHtml=' + objCode.bHtml);
+			szTbl+= '  <tr class="detTitle"><td width="100%" class="detTitle">' + objCode.szTitle + '</td></tr>\n';
+			szTbl+= '  <tr class="det"><td class="tipl" width="100%">\n';  	
+			if (objCode.bHtml){
+				if (objCode.iColNum == undefined){
+					objCode.iRowNum = tt_getHtmlRowNum(objCode.szCode);
+				}   
+				// HTML must be put into a TextArea
+				var id = "tipTextArea_" + iTextAreaNum;
+				szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
+				iTextAreaNum ++;
+			}else{	
+				// This Code must be put prettified
+				var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;  
+				szTbl += '     <div id="divTipCode_' + i + '" class="prettyfy" style="width:"' + iWidth + 
+				'"px;max-height:' +  objOpt.iTipMaxHeight + 'px;"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
+			}
+			szTbl+= '   </td></tr></table>\n';
+			szCodeDiv += szTbl;
+			szCodeDiv += '</td></tr>'
+			if (i < (arObjCode.length-1)){
+				// Empty row
+				szCodeDiv += '<tr class="detSep"><td></td></tr>';
+			}
+		}
+    szCodeDiv += '</table>';
+		// tt_logHtml(fn + "szCodeDiv", szCodeDiv);
+    objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
+		TipFixed (szCodeDiv,event,objOpt);
+		prettyPrint();  // Hightlight with with prettyPrint the code between <pre> </pre> 
+		/* ONLY_IN_FULL_JSU_END */
+	}else{
+		// DAFARE
+		TipFixedTextArea(jsCode, event, objOpt);
+	}
+	// NOTE: we have to change the width now. If set during TextArea creation it is not considered
+	if (objOpt.iTipWidth != undefined){
+		var iWidth = objOpt.iTipWidth - 40;
+	  tt_log ("objOpt.iTipWidth=" + objOpt.iTipWidth + " - we set TextArea.width=" + iWidth + " to adapt them to the Div Container");
+	  for (var i=0; i < iTextAreaNum; i++){
+	  	var el = document.getElementById("tipTextArea_" + i);
+	  	el.style.width = iWidth + 'px'; 
+	  }	
+	}
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+
+
+/**
+ * Display whatever Text (also HTML TAGs) in a TextArea of a FixedTip. For Example this function is used to display mixed JS and HTML code  
  * @param szTxt  {String}  szTxt to display, with \n for newline
  * @param event
- * @param [objOpt] {Object} Option: <BR/>   
- *                           - szTitle{String}  default: 'Text'  <BR/>
- *                           - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
- *                           - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
- *                           - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
- * 													 - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
- *													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
- * 													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/>
+ * @param [objOpt] {Object} Option: <ul>    
+ *                           <li> szTitle{String}  default: 'Text'  </li> 
+ *                           <li> iColNum{Number}  default=100 Number of Column for TextArea </li> 
+ *                           <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created) </li> 
+ *                                              Usuallly do not pass iRowNum, so it is automatically calculatd
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
+ *                          </ul>  
  * 	@example
  
 		//This is an example of MIXED Code: JS and also HTML.  
-		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextBoxFixedClick()   
+		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextAreaFixedClick()   
 		
 		//--------------------------------------------------------- JS   
 		var JS_CODE_SORT_SAMPLE=...;  
@@ -542,28 +650,36 @@ function TipFixedCode(jsCode, event, objOpt){
 		//  - value=Text to display in the button 	
 		//  - set whatever unique id   
 		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
-		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
+		//  - objOpt = {iTipMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
 		
 		//--------------------------------------------------------- HTML   
 		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
-		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; 
+		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iTipMaxHeight:300});" /> ; 
 														     
  */
-function TipFixedTextBox(szTxt, event, objOpt){
-	var fn = "[tooltip.js TipFixedTextBox] ";
+function TipFixedTextArea(szTxt, event, objOpt){
+	var fn = "[tooltip.js TipFixedTextArea] ";
 	tt_log (fn + "--- START");
 	tt_logObj (fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_JS_TITLE; }
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_TEXTBOX_TITLE; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
 	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
-	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = TIP_DEF_ROW_NUM; }
+	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = tt_getHtmlRowNum(szTxt) }
 	tt_init(); // init, if not already done
-	var szTxtBox='<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szTxt + '</textarea><BR/>';
-  objOpt.bMsgHtml = false;
+	var szTxtBox='<textarea id="tipTextArea" rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + szTxt + '</textarea><BR/>';
+  objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>
 	TipFixed (szTxtBox,event,objOpt);
+	// NOTE: we have to change the width now. If set during TextArea creation it is not considered
+	if (objOpt.iTipWidth != undefined){
+		var iWidth = objOpt.iTipWidth - 40;
+	  tt_log ("objOpt.iTipWidth=" + objOpt.iTipWidth + " - we set TextArea.width=" + iWidth + " to adapt them to the Div Container");
+	  var el = document.getElementById("tipTextArea");
+	  el.style.width = iWidth + 'px'; 
+	}
+	
 	tt_log (fn + "--- END");
 }
 
@@ -579,9 +695,9 @@ function TipFixedTextBox(szTxt, event, objOpt){
  *                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
  *                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
  *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
- * 													 <li> iWidth {Number}:  TipWidth <li> Default = DEF_TIP_WIDTH = 800 </li> 
- *													 <li> iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  </li>  
- * 													 <li> tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   </li>
+ * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - default TIP_DEF_WIDTH (800) </li> 
+ *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
  *                         </ul> 
  * 	@example
 	//--------------------------------------------------------- JS
@@ -598,7 +714,7 @@ function TipFixedTextBox(szTxt, event, objOpt){
 	     ];
 	  TipFixedGoogleAnal(arObjGoogleAnal,event,{
 	  	szTitle:'JSU Google Analitycs',
-	  	iWidth: 1200
+	  	iTipWidth: 1200
 	  });
 	}	
  //--------------------------------------------------------- HTML   
@@ -606,7 +722,7 @@ function TipFixedTextBox(szTxt, event, objOpt){
 													     
  */
 function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
-	var fn = "[tooltip.js TipFixedTextBox] ";
+	var fn = "[tooltip.js TipFixedGoogleAnal] ";
 
 	tt_log (fn + TIPLOG_FUN_START);
 	tt_logObj (fn + "IN arObjGoogleAnal", arObjGoogleAnal);
@@ -624,8 +740,8 @@ function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
 	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = TIP_DEF_GOOGLE_LONG_URL; }
 	
 	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_DEF_GOOGLE_WIDTH; }
-	if (objOpt.iWidth == undefined){	objOpt.iWidth= TIP_DEF_WIDTH; }
-	tt_googleAnal.iTblWidth = objOpt.iWidth - 30; // -20 for some laterla space
+	if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth= TIP_DEF_WIDTH; }
+	tt_googleAnal.iTblWidth = objOpt.iTipWidth - 30; // -20 for some laterla space
 	tt_googleAnal.bShortUrl = objOpt.bShortUrl;
 	tt_googleAnal.bLongUrl = objOpt.bLongUrl;
 	tt_googleAnal.arObjGoogleAnal = arObjGoogleAnal; // Set in Global
@@ -633,7 +749,7 @@ function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
 	var arCat = new Array();
 	arCat.push (TIP_GOOGLE_FILTER_CAT_ALL);
 	for (var i=0; i< arObjGoogleAnal.length; i++){
-		var szCat = arObjGoogleAnal[i].cat
+		var szCat = arObjGoogleAnal[i].cat;
 		var bPresent = false;
 		for (var k=0;k < arCat.length && !bPresent; k++){
 			if (arCat[k] == szCat){
@@ -1633,7 +1749,7 @@ function tt_MkTipSubDivs()
 		+ '<div id="WzBoDy" style="position:relative;z-index:0;">'
 		+ '<table' + sTbTrTd + 'id="WzBoDyI" style="' + sCss + '">'
 		+ tt_sContent
-// PROVA LEF FOOTER
+// FUTURE FOOTER
 //		+ '</td></tr></tbody></table></div>'
 	+ '</td></tr>'
 //    + (tt_aV[FOOTER].length ?	'<tr><td><' + tt_aV[FOOTER] + '</td></tr>' : '')
@@ -2326,8 +2442,12 @@ function tt_replaceAll (szOrig,szFrom,szTo){
 }
 
 
-
-function tt_str2Html(szMsg){
+/*
+ * Convert NewLine to <BR/>
+ * @param szMsg
+ * @returns
+ */
+function tt_NL2BR(szMsg){
   return  tt_replaceAll (szMsg,"\n","<BR/>");
 }
 
@@ -2407,4 +2527,29 @@ function tt_is_IE(){
   }	
 }  
 
+
+/*
+ * Check if prettify has been loaded and it is enabled (Only in FULL versione there is the code to manage prettify) 
+ * @returns {Boolean}
+ */
+function tt_isPrettifyEn(){
+	var fn = "[tooltip.js tt_isPrettifyEn()] ";
+	var bPrettifyLoaded =  (typeof(prettyPrint) != "undefined");
+	var bPrettifyCode = false; // Code present. Default = false (FREE version)
+	/* FULL_JSU_START */
+	bPrettifyCode = true;   // FULL JSU
+	/* FULL_JSU_END */
+	var bPrettifyEn = (bPrettifyLoaded && bPrettifyCode);  
+	tt_log (fn + "bPrettifyLoaded=" + bPrettifyLoaded + " bPrettifyCode=" + bPrettifyCode + "  RETURN bPrettifyEn=" + bPrettifyEn);
+  return bPrettifyEn;	
+}
+
+function tt_getHtmlRowNum(szHtml){
+	var iRowNum =  1 + (szHtml.match(/\n/g) || []).length;
+	if (iRowNum > TIP_MAX_TEXT_BOX_ROW_NUM){
+		iRowNum	= TIP_MAX_TEXT_BOX_ROW_NUM;
+  } 
+	return iRowNum +1;
+	
+}
 

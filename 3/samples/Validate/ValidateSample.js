@@ -431,9 +431,9 @@ function applyValidateOption(iSample){
  */
 function sample1Js(event){
 	var bParOpt = is_par_opt(); 
-	var iWidth = (bParOpt) ? 600: 700;
-	var iMaxHeight = (bParOpt) ? 610 : 500; 
-	TipFixedJS (JS_CODE_VALIDATE1,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	var iTipWidth = (bParOpt) ? 600: 700;
+	var iTipMaxHeight = (bParOpt) ? 610 : 500; 
+	TipFixedJS (JS_CODE_VALIDATE1,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 
 
@@ -443,9 +443,9 @@ function sample1Js(event){
  */
 function sample2Js(event){
 	var bParOpt = is_par_opt(); 
-	var iWidth = (bParOpt) ? 500: 600;
-	var iMaxHeight = (bParOpt) ? 500 : 400; 
-	TipFixedJS (JS_CODE_VALIDATE2,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	var iTipWidth = (bParOpt) ? 500: 600;
+	var iTipMaxHeight = (bParOpt) ? 500 : 400; 
+	TipFixedJS (JS_CODE_VALIDATE2,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 
 /**
@@ -454,8 +454,8 @@ function sample2Js(event){
  */
 function sample3Js(event){
 	var bParOpt = is_par_opt(); 
-	var iWidth = (bParOpt) ? 500: 600;
-	var iMaxHeight = (bParOpt) ? 500 : 400; 
-	TipFixedJS (JS_CODE_VALIDATE3,event,{iWidth:iWidth,iMaxHeight:iMaxHeight});	
+	var iTipWidth = (bParOpt) ? 500: 600;
+	var iTipMaxHeight = (bParOpt) ? 500 : 400; 
+	TipFixedJS (JS_CODE_VALIDATE3,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 

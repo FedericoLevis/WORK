@@ -49,7 +49,7 @@ var LOADING_DIV_MSG={
 //-------------------------------------------------------------------------------------------------
 var TIP_BTN_CLOSE = "Close";
 var TIP_BTN_CLOSE_TITLE = "Click or ESC to Close the Tooltip";
-var TIP_DEF_JS_TITLE = "JS Source Code";
+var TIP_DEF_CODE_TITLE =  "Source Code";
 
 //============================================ GOOGLE ANALYTICC
 var TIP_DEF_GOOGLE_TITLE = "Google Analitycs";
