@@ -60,7 +60,7 @@ var TIP_GOOGLE_SHORT_URL = "Short URL";
 var TIP_GOOGLE_ANAL = "Google Analytics";
 var TIP_GOOGLE_ANAL_ALL = "ALL Google Analytics";
 
-var TIP_DEF_GOOGLE_HEADER= 'Click the <u><b>Google Analytics</b></u> Link to show the relative <b>Google Analitycs Page</b>, with the <b>statistics of the JSU URL</b>';
+var TIP_DEF_GOOGLE_HEADER= '<u><b>Google Analytics</b></u> Links show the relative <b>Google Analitycs Page</b>, with all the <b>statistics of the JSU URL</b> (e.g. Number of JSU.ZIP FREE Downloads,...)';
 var TIP_DEF_GOOGLE_FOOTER=  '<b>NOTEs about Google Analitycs:</b><ul>' +
     '<li>Only the Pages loaded with the <b><i>ShortUrl</i></b> are counted. The pages loaded with the <b><i>LongUrl</i></b> are not counted</li>' +
     '<li>Recently there is a limitation in Google Analytics and <b>pages loaded by IE are not counted</b>; therefore the real counter should be greater than the ones displayed.</li></ul>';

@@ -1,4 +1,21 @@
-/* JSU prettify-jsu.js theme */
+
+/* 
+========================================================================================= <BR/> 
+<b>File:</b>      core/core.css <BR/>
+<b>Author:</b>        <a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     CSS for JSU prettify=jsu.js  <BR/>   
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+========================================================================================= <BR/> 
+*/
+
+
 
 /* plain text */
 .pln {
@@ -224,8 +241,9 @@ ol.linenums {
     border-collapse: collapse;
 }
 
+/* JSU font */
 div.prettyfy{
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .params .name, .props .name, .name code {

@@ -1,3 +1,24 @@
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/prettify/prettify-jsu.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     JSU prettify API:   prettyPrint   <BR/>   
+<b>REQUIRED:</b>        JSU:  core/prettify/prettify-jsu.css 
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+
 var q = null;
 window.PR_SHOULD_USE_CONTINUATION = !0;
 (function() {
@@ -353,6 +374,14 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                        "Tip,UnTip,TipFixed,TipFixedJS,TipFixedTextBox,TipFixedGoogleAnal," +
                        "Popup," +
                        "alert,"+
+                       // --- CSS FUTURE: To be completed
+                       "img,input,table,tr,td,th," +
+                       "cursor,border,solid," +
+                       "font-weight,font-size," +
+                       "background,url,center,bottom,left,right," + 
+                       "height,width,margin-left," +
+                       "no-repeat," +
+                       //------------------------
                        "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END" +
                 I, J, v
             ],

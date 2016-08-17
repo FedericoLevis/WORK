@@ -399,7 +399,7 @@ function tipChangeValidateOpt(iSample,event){
     szMsg = szMsg.replace (key + 'FALSE_SEL',optVal ? '' : 'selected');
   }
 	
-	TipFixed (szMsg,event,{bCloseBtn:false});
+	TipFix (szMsg,event,{bCloseBtn:false});
 }
 
 /**
@@ -433,7 +433,7 @@ function sample1Js(event){
 	var bParOpt = is_par_opt(); 
 	var iTipWidth = (bParOpt) ? 600: 700;
 	var iTipMaxHeight = (bParOpt) ? 610 : 500; 
-	TipFixedJS (JS_CODE_VALIDATE1,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+	TipFixJS (JS_CODE_VALIDATE1,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 
 
@@ -445,7 +445,7 @@ function sample2Js(event){
 	var bParOpt = is_par_opt(); 
 	var iTipWidth = (bParOpt) ? 500: 600;
 	var iTipMaxHeight = (bParOpt) ? 500 : 400; 
-	TipFixedJS (JS_CODE_VALIDATE2,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+	TipFixJS (JS_CODE_VALIDATE2,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 
 /**
@@ -456,6 +456,6 @@ function sample3Js(event){
 	var bParOpt = is_par_opt(); 
 	var iTipWidth = (bParOpt) ? 500: 600;
 	var iTipMaxHeight = (bParOpt) ? 500 : 400; 
-	TipFixedJS (JS_CODE_VALIDATE3,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+	TipFixJS (JS_CODE_VALIDATE3,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
 }
 

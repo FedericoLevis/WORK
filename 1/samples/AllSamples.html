@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>JSU JS Utility | All Samples | Tip Validate Sort Popup ... </title>
+<title>JS Utility | JSU All Samples | Federico Levis</title>
+<meta charset="utf-8"/>
+<meta name="description" content="JSU utility (JSU) - Link to All Samples: Tooltip, Loading, Validate, SortTable, JSLog, Popup" />
+<meta name="keywords" content="js, utility, JSU, tooltip, popup, validate, sort, loading, log, federico, levis" />
+
 </head>
 <body>
 
@@ -28,7 +31,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table  width="100%">
+<table class="sampleHea" width="100%">
   <tr>
   <td class=tipl"">
      <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
@@ -41,9 +44,13 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
   </td></tr>
 </table>   
 
+<hr>
+<h1 align="center">JS Utility (JSU) - JSU samples</h1>  
+
+
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="5" width="100%">
 	  <tr class="tipTitle">
-		  <th class="tipTitleBig" colspan="6">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixedJSU(event,false);" />
+		  <th class="tipTitleBig" colspan="6">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixJSU(event,false);" />
 		    <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
 		  </th>
 	  </tr>
@@ -106,7 +113,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
   <tr>
     <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_JSLOG);">JSLog Doc</a></td>
     <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/index.html" target="_blank">JS log API</a> </td>
-	  <td class="tipl"><b>Log</b> from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed ...</b></td> 
+	  <td class="tipl"><b>Log</b> from JS Code into an optional Window: log Text, Object, JSON, DOM, Elapsed Time ...</b></td> 
     <td class="tipc"><a href="javascript:showJSUVideojslog()"> 
        <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" 
           title="JSU JSlog Video" width="100" height="20" border="2" /></a>
@@ -125,22 +132,23 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
   </tr>
   <tr>
     <td rowspan="1"><b>JSU JQUERY FEATURE</b><BR/>Required: <b>jquery, jquery-ui</b></label></label> </td> 
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_JQPOPUP);">JS Qopup Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/index.html" target="_blank">JS Qopup API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_JQPOPUP);">JS Popup Doc</a></td>
+    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/index.html" target="_blank">JS Popup API</a> </td>
 	  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function
 	      <BR/>To be used instead of <i>Modal Blocking Popup</i> when you required all Browser Support 
 	      <BR/><b>NOTE:</b> Only for This JSU Features, External Plugin are requires: <b>jquery, jquery-ui</b></td> 
     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> 
        <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" 
-          title="JSU JS Qopup Video" width="100" height="20" border="2" /></a>
+          title="JSU JS Popup Video" width="100" height="20" border="2" /></a>
     </td>  
-    <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JS Qopup Sample</a></td>
+    <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JS Popup Sample</a></td>
   </tr>
 </table>
 
 <!--  USED by jsuGoToURL()  -->
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 <input id="testGoogle" style="display:none;visibility:hidden;" type="button" value="TEST Google Analytics" onclick="onclickTestGoogle();" />
+
 
 
 </body>

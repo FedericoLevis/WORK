@@ -236,19 +236,16 @@ div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
 }
 
 
-/*---
-input.jsuInfo Tip img with 'i'   
----
-
-<b>CSS:</b> ``img.jsuInfo`` ``input.jsuInfo``  usually used with JSU Tooltip API Tip() UnTip()  
+/*----------------------------------------------------
+<b>input.jsuInfo</b> Tip img for info:    
+<b>CSS:</b>  ``input.jsuInfo``  used with JSU Tooltip API Tip() UnTip()  
    - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
-<BR/>For cross browser compatibility we recommend using input.jsuInfo. img.jsuInfo can be used  only in IE. 
 <BR/><BR/><b>Examples:</b>
 ```html
 <input class="jsuInfo" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"/>
 ```
 */
-img.jsuInfo, input.jsuInfo{ /* Info img  */
+input.jsuInfo{ /* Info img  */
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
   background-color: #19E4DD;
   height: 14px;
@@ -261,7 +258,7 @@ img.jsuInfo, input.jsuInfo{ /* Info img  */
 
 
 /*---
-input.jsuTipTip img with QuestionMark    
+input.jsuTip img with QuestionMark    
 ---
 <b>CSS:</b> ``img.jsuTip`` ``input.jsuTip``  usually used with JSU Tooltip API Tip() UnTip()  
    - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
@@ -378,6 +375,7 @@ img.tipFixedJS{ /* tip JS Fixed img with Button Down */
   height: 23px;
   width: 16px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 img.tipFixedJSUp{ /* tip JS Fixed img with Button Up */
@@ -389,7 +387,7 @@ img.tipFixedJSUp{ /* tip JS Fixed img with Button Up */
 }
 
 img.tipArrowFixed{ /* tip Arrow Fixed img with Button Down */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png') center bottom;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
@@ -402,14 +400,6 @@ img.tipArrowFixedUp{ /* tip JS Fixed img with Button Up */
   margin-left: 5px;
 }
 
-input.tipArrowFixed, input.tipArrowFixedUp {
-    height: 20px;
-    padding-right: 30px;
-    border: 1px solid #000;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 input.tipFixedJS, input.tipFixedJSUp{
     height: 21px;
     width: 16px;
@@ -417,6 +407,7 @@ input.tipFixedJS, input.tipFixedJSUp{
     font-weight: bold;
     cursor: pointer;
     margin-left: 4px; 
+    cursor: pointer;
 }
 
 input.tipFixedJS{
@@ -434,6 +425,7 @@ input.tipFixedCode, input.tipFixedCodeUp{
     font-weight: bold;
     cursor: pointer;
     margin-left: 4px; 
+    cursor: pointer;
 }
 
 input.tipFixedCode{
@@ -448,28 +440,36 @@ input.tipFixedCodeUp{
 
 
 
-input.tipFixed, input.tipFixedUp{
+input.tipFixed, input.tipFixedUp{  /* Fields Common for input.tipFixed and input.tipFixedUp */ 
     height: 20px;
     width: 13px;
     border: 1px solid #000;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 4px; 
+    margin-left: 1px; 
+    cursor: pointer;
 }
 
-
-input.tipFixed{
+input.tipFixed{ /* Specific filed of input.tipFixed */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
 }
 
-input.tipFixedUp{
+input.tipFixedUp{ /* Specific filed of input.tipFixedUp : different image */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
 }
 
-input.tipArrowFixed {
+input.tipArrowFixed, input.tipArrowFixedUp {  /* Common fields  */
+    height: 20px;
+    padding-right: 30px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input.tipArrowFixed { /* specific image for tipArrowFixed */ 
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png) no-repeat right center;
 }
-input.tipArrowFixedUp {
+input.tipArrowFixedUp { /* specific image for tipArrowFixedUp */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png) no-repeat right center;
 }
 

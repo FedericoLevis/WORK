@@ -36,7 +36,7 @@ var TIP_TYPE={
 };
 
 /**
- * Optional TipFixedPos
+ * Optional TipFixPos
  */
 var TIP_FIXED_POS={
 		LEFT:"left",     // left of the Clicked Object
@@ -259,7 +259,7 @@ function Tip(tipMsgHtml,tipType,objOpt)
 	
 	tt_init(); // init, if not already done
 	if (tip_type == TIP_TYPE.Fixed){
-		return tt_log ( fn + "Nothing to do: a TipFixed is currently diaplyed" + TIPLOG_FUN_END);
+		return tt_log ( fn + "Nothing to do: a TipFix is currently diaplyed" + TIPLOG_FUN_END);
 	}	
 	
 	if (objOpt == undefined){
@@ -297,9 +297,9 @@ function Tip(tipMsgHtml,tipType,objOpt)
  * 		GLOBAL
  * Set tip_type = tipType
  */
-function TipFixed(tipMsgHtml,event, objOpt)
+function TipFix(tipMsgHtml,event, objOpt)
 {
-	var fn = "[tooltip.js TipFixed] ";
+	var fn = "[tooltip.js TipFix] ";
 	tt_log ( fn + TIPLOG_FUN_START);
 	tt_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
@@ -342,18 +342,18 @@ function TipFixed(tipMsgHtml,event, objOpt)
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
- 		tipMsgHtml = "<div style='" + szMaxHeight + szMaxWidth +    " border: 1px solid; overflow: auto; background-color: white;'>" +
+ 		tipMsgHtml = '<div align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid; overflow: auto; background-color: white;">' +
  		    tipMsgHtml + '</div>';
   	
   	
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFixed()" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
-	var bShow = true; // see if the TipFixed is already disalyed. In this case we Close it because the user has click again t close it
+	var bShow = true; // see if the TipFix is already disalyed. In this case we Close it because the user has click again t close it
 	var tipFixedPos = TIP_FIXED_POS.CENTER; // default
 	if (objOpt != undefined && objOpt.tipFixedPos != undefined){
 		tipFixedPos = objOpt.tipFixedPos;
@@ -366,7 +366,7 @@ function TipFixed(tipMsgHtml,event, objOpt)
 		var className = tipImg.className;
 		var szId = tipImg.id; 
 		if (szId == undefined || szId.length == 0){
-			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFixed must have an id");
+			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFix must have an id");
 		}
 		tt_log ( fn + "classname=" + className);
 		if (className == TIP_CLASS_FIXED.Down ){
@@ -406,7 +406,7 @@ function TipFixed(tipMsgHtml,event, objOpt)
 	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
 		// To manage the case of switch beween different Fixed img
-		tt_UnTipFixed();
+		tt_UnTipFix();
 	}
 	
 	if (bShow && tipImg){
@@ -415,41 +415,15 @@ function TipFixed(tipMsgHtml,event, objOpt)
 		tt_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
 		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
 	}else {
-		tt_UnTipFixed();
+		tt_UnTipFix();
 	}
 	tt_log ( fn + TIPLOG_FUN_END);
 }
 
 
-
-/**
- * @param tipMsgHtml {String}   
- * @param event
- */
-function TipFixedMouseOver(tipMsgHtml,event)
-{
-	var fn = "[tooltip.js TipFixedMouseOver] ";
-	tt_init(); // init, if not already done
-	var bTip = true;
-	var event = event || window.event;
-	var tipImg = event.target || event.srcElement;
-	if (tipImg != undefined){
-		var className = tipImg.className;
-		if (tt_isClassFixed(className)){
-			bTip=false;
-		} 
-		tt_log ( fn + "classname=" + className + " --> Call  Tip()=" + bTip);
-	}
-	//tt_log ( fn + "bShow=" + bShow);
-	if (bTip){
-		Tip(tipMsgHtml,TIP_TYPE.Floating);
-	}
-}
-
-
 /**
  * Call this function to Hide the Tip after Tip() Call <BR/>
- * If currently a TipFixed is displayed, it is not closed (to manage both TipFixed at Click and Tip/Untip
+ * If currently a TipFix is displayed, it is not closed (to manage both TipFix at Click and Tip/Untip
  *  
  * GLOBAL 
  * tip_type Set it to TIP_TYPE.NONE 
@@ -460,7 +434,7 @@ function UnTip()
 	tt_log ( fn + TIPLOG_FUN_START);
   tt_log(fn + "CURRENT tip_type=" + tip_type);
   if (tip_type == TIP_TYPE.Fixed){
-  	return tt_log ( fn + "Nothing to do: a TipFixed is still displayed" +  TIPLOG_FUN_END);
+  	return tt_log ( fn + "Nothing to do: a TipFix is still displayed" +  TIPLOG_FUN_END);
   }
 	tt_init(); // init, if not already done
 	tt_SetCfg(TIP_CFG_FLOATING);
@@ -487,7 +461,7 @@ function UnTip()
  *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
  * </ul>
  * @param szCode  {String}  jsCode to display, with \n for newline. <BR/>
- *                          <label class="tipWarn">szCode with HTML is not supported by this function. To show HTML Code you can use TipFixedMultiCode or TipFixedTextArea</label>
+ *                          <label class="tipWarn">szCode with HTML is not supported by this function. To show HTML Code you can use TipFixMultiCode or TipFixTextArea</label>
  * @param event
  * @param [objOpt] {Object} Option: <ul>    
  *                           <li> szTitle{String}  default:  TIP_DEF_CODE_TITLE   </li> 
@@ -497,8 +471,8 @@ function UnTip()
  * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
  * 													</ul>	     
  */
-function TipFixedCode(szCode, event, objOpt){
-	var fn = "[tooltip.js TipFixedCode] ";
+function TipFixCode(szCode, event, objOpt){
+	var fn = "[tooltip.js TipFixCode] ";
 	tt_log (fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
@@ -511,11 +485,11 @@ function TipFixedCode(szCode, event, objOpt){
 	if (tt_isPrettifyEn()){
 		/* FULL_JSU_START */
 		var szCodeDiv = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
-		TipFixed (szCodeDiv,event,objOpt);
-		prettyPrint();  // Hightlight with with prettyPrint the code between <pre> </pre> 
+		TipFix (szCodeDiv,event,objOpt);
+		prettyPrint();  // Hightlight with prettyPrint the code between <pre> </pre> 
 		/* FULL_JSU_END */
 	}else{
-		TipFixedTextArea(szCode, event, objOpt);
+		TipFixTextArea(szCode, event, objOpt);
 	}
 	tt_log (fn + TIPLOG_FUN_END);
 }
@@ -530,12 +504,19 @@ function TipFixedCode(szCode, event, objOpt){
  *   <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
  *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
  * </ul>
- * @param arObjCode  {Array}  Array of Obj with the info of the code display. See Example below <BR/>
+ * @param arObjCode  {Array}  Array of Obj with the info of the code display. ESech Obj of the Array can have follwoing fields: <ul>
+ * 														 <li> szTitle {String} e.g "JS" - Title of the Section</li>
+ * 														 <li> szCode {String} The Code to diaply in section</li>
+ * 														 <li> bPrettify  {Boolean} [true]  true if szCode must be prettified. If szCode contains HTML Tags you have to set bPrettify=false if you wnat to see the Text with HTMLTags into a TextArea, witout prettify it</li>
+ * 														 <li> iRowNum {Number} [undefined] Only for Obj.bPrettify=false. If it is not present (default), the Rows of TextArea are automatically calculated basing on /n. If passed  iRowNum is used</li>
+ * 			                      </ul> 
+ *                            See example below <BR/>
  * @param event
  * @param [objOpt] {Object} Option: <ul>   
  *                           <li> szTitle{String}  default: 'Source Code'  <li/>
  * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
  * 													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
+ *                           <li> iColNum  {Number}  default: 80 Can be used to change the colnum of all the TextArea of the Tip  <li/>
  *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
  * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
  * 													</ul>	  
@@ -544,11 +525,11 @@ function TipFixedCode(szCode, event, objOpt){
  *    
  *    DAFARE
  */
-function TipFixedMultiCode(arObjCode, event, objOpt){
-	var fn = "[tooltip.js TipFixedMultiCode] ";
+function TipFixMultiCode(arObjCode, event, objOpt){
+	var fn = "[tooltip.js TipFixMultiCode] ";
 	tt_log (fn + TIPLOG_FUN_START);
-	tt_logObj (fn,"IN arObjCode",arObjCode);
-	tt_logObj (fn,"IN objOpt",objOpt);
+	tt_logObj (fn + "IN arObjCode",arObjCode);
+	tt_logObj (fn + "IN objOpt",objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -558,67 +539,64 @@ function TipFixedMultiCode(arObjCode, event, objOpt){
 	if (objOpt.iColNum == undefined){ objOpt.iColNum = TIP_DEF_COL_NUM; }
 	var iTxtAreaWidth = objOpt.iTipWidth - 40; // some space for padding and borders 
 	tt_init(); // init, if not already done
-	// PRETTIFY 
-	var bPrettify = tt_isPrettifyEn();
-	if (bPrettify){
-		/* ONLY_IN_FULL_JSU_START */
-		var szCodeDiv = '<table class="detNoBorder" >\n';
-		var iTextAreaNum = 0;
-		for (var i=0; i < arObjCode.length;i++){
-			var objCode = arObjCode[i];
-			var szWidth = "";
-			var szTbl = '<tr><td><table class="det" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
-			if (objCode.iTipMaxHeight== undefined){
-				objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
-			}
-			if (objCode.bHtml== undefined){
-				objCode.bHtml= false; 
-			}
-			if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; } 
-			tt_log (fn + 'arObjCode[' + i + '] bHtml=' + objCode.bHtml);
-			szTbl+= '  <tr class="detTitle"><td width="100%" class="detTitle">' + objCode.szTitle + '</td></tr>\n';
-			szTbl+= '  <tr class="det"><td class="tipl" width="100%">\n';  	
-			if (objCode.bHtml){
-				if (objCode.iColNum == undefined){
-					objCode.iRowNum = tt_getHtmlRowNum(objCode.szCode);
-				}   
-				// HTML must be put into a TextArea
-				var id = "tipTextArea_" + iTextAreaNum;
-				szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
-				iTextAreaNum ++;
-			}else{	
-				// This Code must be put prettified
-				var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;  
-				szTbl += '     <div id="divTipCode_' + i + '" class="prettyfy" style="width:"' + iWidth + 
-				'"px;max-height:' +  objOpt.iTipMaxHeight + 'px;"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
-			}
-			szTbl+= '   </td></tr></table>\n';
-			szCodeDiv += szTbl;
-			szCodeDiv += '</td></tr>'
+	var bPrettifyEn = tt_isPrettifyEn();
+	var szCodeDiv = '<table class="detNoBorder" >\n';
+	for (var i=0; i < arObjCode.length;i++){
+		var objCode = arObjCode[i];
+		var szWidth = "";
+		var szTbl = '<tr><td><table class="det" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
+		if (objCode.iTipMaxHeight== undefined){
+			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
+		}
+		if (objCode.bPrettify== undefined){
+			objCode.bPrettify= false; 
+		}
+		if (!bPrettifyEn){
+			objCode.bPrettify= false; 
+		}
+		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; } 
+		tt_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
+		szTbl+= '  <tr class="detTitle"><td width="100%" class="detTitle">' + objCode.szTitle + '</td></tr>\n';
+		szTbl+= '  <tr class="det"><td class="tipl" width="100%">\n';  	
+		var id = "tipCode_" + i;
+		if (!objCode.bPrettify){
+			if (objCode.iRowNum == undefined){
+				// if not passed we calculate RowNum basing on /n
+				objCode.iRowNum = tt_getHtmlRowNum(objCode.szCode);
+			}   
+			// HTML must be put into a TextArea
+			szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
+		}else{	
+			// This Code must be put prettified
+			var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;  
+			szTbl += '     <div id="' + id + '" class="prettyfy" style="width:"' + iWidth + 
+			'"px;max-height:' +  objOpt.iTipMaxHeight + 'px;"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
+		}
+		szTbl+= '   </td></tr></table>\n';
+		szCodeDiv += szTbl;
+		szCodeDiv += '</td></tr>'
 			if (i < (arObjCode.length-1)){
 				// Empty row
 				szCodeDiv += '<tr class="detSep"><td></td></tr>';
 			}
-		}
-    szCodeDiv += '</table>';
-		// tt_logHtml(fn + "szCodeDiv", szCodeDiv);
-    objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
-		TipFixed (szCodeDiv,event,objOpt);
-		prettyPrint();  // Hightlight with with prettyPrint the code between <pre> </pre> 
-		/* ONLY_IN_FULL_JSU_END */
-	}else{
-		// DAFARE
-		TipFixedTextArea(jsCode, event, objOpt);
 	}
-	// NOTE: we have to change the width now. If set during TextArea creation it is not considered
-	if (objOpt.iTipWidth != undefined){
-		var iWidth = objOpt.iTipWidth - 40;
-	  tt_log ("objOpt.iTipWidth=" + objOpt.iTipWidth + " - we set TextArea.width=" + iWidth + " to adapt them to the Div Container");
-	  for (var i=0; i < iTextAreaNum; i++){
-	  	var el = document.getElementById("tipTextArea_" + i);
-	  	el.style.width = iWidth + 'px'; 
-	  }	
+	szCodeDiv += '</table>';
+	// tt_logHtml(fn + "szCodeDiv", szCodeDiv);
+	objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
+	TipFix (szCodeDiv,event,objOpt);
+	if (bPrettifyEn){
+		prettyPrint();  // Hightlight with prettyPrint the code between <pre> </pre>
 	}
+	
+	
+	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
+	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
+	var iWidth = iTipWidth - 40; // keep some space for Padding,..
+  tt_log (fn + "TipWidth=" + iTipWidth + " - We set " + arObjCode.length + " CodeEl with width=" + iWidth + " to adapt them to the Div Container");
+	for (var i=0; i < arObjCode.length; i++){
+	 	var el = document.getElementById("tipCode_" + i);
+	 	el.style.width = iWidth + 'px'; 
+	}	
 	tt_log (fn + TIPLOG_FUN_END);
 }
 
@@ -631,8 +609,8 @@ function TipFixedMultiCode(arObjCode, event, objOpt){
  * @param [objOpt] {Object} Option: <ul>    
  *                           <li> szTitle{String}  default: 'Text'  </li> 
  *                           <li> iColNum{Number}  default=100 Number of Column for TextArea </li> 
- *                           <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created) </li> 
- *                                              Usuallly do not pass iRowNum, so it is automatically calculatd
+ *                           <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created).  
+ *                                Usually do not pass iRowNum, so it is automatically calculatd</li>
  *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
  * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
  *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
@@ -657,9 +635,9 @@ function TipFixedMultiCode(arObjCode, event, objOpt){
 		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iTipMaxHeight:300});" /> ; 
 														     
  */
-function TipFixedTextArea(szTxt, event, objOpt){
-	var fn = "[tooltip.js TipFixedTextArea] ";
-	tt_log (fn + "--- START");
+function TipFixTextArea(szTxt, event, objOpt){
+	var fn = "[tooltip.js TipFixTextArea] ";
+	tt_log (fn + TIPLOG_FUN_START);
 	tt_logObj (fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
@@ -671,17 +649,47 @@ function TipFixedTextArea(szTxt, event, objOpt){
 	tt_init(); // init, if not already done
 	var szTxtBox='<textarea id="tipTextArea" rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + szTxt + '</textarea><BR/>';
   objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>
-	TipFixed (szTxtBox,event,objOpt);
+	TipFix (szTxtBox,event,objOpt);
 	// NOTE: we have to change the width now. If set during TextArea creation it is not considered
-	if (objOpt.iTipWidth != undefined){
-		var iWidth = objOpt.iTipWidth - 40;
-	  tt_log ("objOpt.iTipWidth=" + objOpt.iTipWidth + " - we set TextArea.width=" + iWidth + " to adapt them to the Div Container");
-	  var el = document.getElementById("tipTextArea");
-	  el.style.width = iWidth + 'px'; 
-	}
+	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
+	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
+	var iTextAreaWidth = iTipWidth - 40; // keep some space for Padding,..
+	tt_log (fn + "TipWidth=" + iTipWidth + " - We set TextArea with width=" + iTextAreaWidth + " to adapt it to the Div Container");
+  var el = document.getElementById("tipTextArea");
+  el.style.width = iTextAreaWidth + 'px'; 
 	
-	tt_log (fn + "--- END");
+	tt_log (fn + TIPLOG_FUN_END);
 }
+
+
+/**
+ * TipFix with a Video
+ * 
+ * @param event
+ * @param videoEmbedUrl {String} e.g: 
+ * @param [objOpt] {Object} Option: <ul>    
+ *                           <li> szTitle{String}  default: 'Text'  </li> 
+ * 													 <li> iTipWidth {Number}: [800] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
+ *                          </ul>  
+ */
+function TipFixGoogle(videoEmbedUrl, event, objOpt){
+	var Fn = "[tooltip.js TipFixTest] ";
+	tt_init(); // init, if not already done
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	objOpt.NL2BR = false;
+	var szTable  =  '<table class="tip" BORDER="2" cellspacing="0">';
+  var szTip = szTable +
+	  '  <tr>' +
+	  '    <td align="center">' + videoEmbedUrl + '</td>' +
+	  '  </tr></table>'; 
+	TipFixClicked(szTip,event,objOpt);
+}
+
 
 
 /**
@@ -712,7 +720,7 @@ function TipFixedTextArea(szTxt, event, objOpt){
 	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
 	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
 	     ];
-	  TipFixedGoogleAnal(arObjGoogleAnal,event,{
+	  TipFixGoogleAnal(arObjGoogleAnal,event,{
 	  	szTitle:'JSU Google Analitycs',
 	  	iTipWidth: 1200
 	  });
@@ -721,8 +729,8 @@ function TipFixedTextArea(szTxt, event, objOpt){
 	 <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" /> 
 													     
  */
-function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
-	var fn = "[tooltip.js TipFixedGoogleAnal] ";
+function TipFixGoogleAnal(arObjGoogleAnal, event, objOpt){
+	var fn = "[tooltip.js TipFixGoogleAnal] ";
 
 	tt_log (fn + TIPLOG_FUN_START);
 	tt_logObj (fn + "IN arObjGoogleAnal", arObjGoogleAnal);
@@ -777,14 +785,21 @@ function TipFixedGoogleAnal(arObjGoogleAnal, event, objOpt){
   }
 	szTbl += '</table>';
 	// Show Tip With Empty Table
-	TipFixed (szTbl,event,objOpt);
+	TipFix (szTbl,event,objOpt);
 	tt_googleAnalTblShow();
 	tt_log (fn + TIPLOG_FUN_END);
 }
 
 
 
-//==================  LOCAL FUNCTION	 =====================================//
+
+
+
+
+
+/* ==========================================================================================
+																	LOCAL FUNCTION	 
+========================================================================================== */
 
 /*
  * Show the Table with the Link to GoogleAnalytics, basing on current Filter
@@ -883,7 +898,7 @@ function tt_googleAnalTblShow (){
 			}
 			szTr +=	  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
 			  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
-			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref +'" target="_blank">' + TIP_GOOGLE_ANAL + '</a></td> '+
+			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + TIP_GOOGLE_ANAL + '</a></td> '+
 	 	  '</tr>';
 		  szTbl += szTr;	
 			tt_googleAnal.iVisibleLink ++;
@@ -998,11 +1013,11 @@ function tt_onclickGoogleAnalAll(){
 }
 
 /*
- * Internal Use:   call this function to UnTip after TipFixedxx(). E.g in Close Button, ESC,... <BR/>
+ * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
  * 
  */
-function tt_UnTipFixed(){
-	var fn = "[tooltip.js tt_UnTipFixed()] ";
+function tt_UnTipFix(){
+	var fn = "[tooltip.js tt_UnTipFix()] ";
 	
 	tt_log ( fn + TIPLOG_FUN_START);
   tt_log(fn + "CURRENT tip_type=" + tip_type);
@@ -1021,20 +1036,20 @@ function tt_UnTipFixed(){
 
 
 /*
- * Check if szClass is a TipFixed Class
+ * Check if szClass is a TipFix Class
  * @param szClass
  */
 function tt_isClassFixed(szClass){
-  var bTipFixed = false;	
+  var bTipFix = false;	
 	var fn="[tooltip.js tt_isClassFixed()] ";
 	if (szClass == TIP_CLASS_FIXED_JS.Up  || szClass == TIP_CLASS_FIXED.Up  ||
 			szClass == TIP_CLASS_FIXED_CODE.Up  ||
 			szClass == TIP_CLASS_ARROW_FIXED.Up || szClass == TIP_CLASS_BIG_FIXED.Up || 
 			szClass == TIP_CLASS_GOOGLE_FIXED.Up){
-		bTipFixed = true;
+		bTipFix = true;
 	}
-	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFixed=" + bTipFixed);
-  return bTipFixed;	
+	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
+  return bTipFix;	
 	
 }
 
@@ -1378,10 +1393,10 @@ function tt_init()
 		return; // already done
 	}
 	tt_log (fn + "Init tooltip.js");
-	// ESC is considered as UnTip of TipFixed
+	// ESC is considered as UnTip of TipFix
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
-        tt_UnTipFixed();
+        tt_UnTipFix();
     }
   };	
 	
@@ -1740,7 +1755,7 @@ function tt_MkTipSubDivs()
 				+ ';text-align:right;">'
 				+ '<span id="WzClOsE" style="position:relative;left:2px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
-				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFixed()">'
+				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
 				+ tt_aV[CLOSEBTNTEXT]
 				+ '</span></td>')
 				: '')
@@ -2541,7 +2556,9 @@ function tt_isPrettifyEn(){
 	/* FULL_JSU_END */
 	var bPrettifyEn = (bPrettifyLoaded && bPrettifyCode);  
 	tt_log (fn + "bPrettifyLoaded=" + bPrettifyLoaded + " bPrettifyCode=" + bPrettifyCode + "  RETURN bPrettifyEn=" + bPrettifyEn);
-  return bPrettifyEn;	
+  return bPrettifyEn;
+  // TEST
+  // return false;
 }
 
 function tt_getHtmlRowNum(szHtml){

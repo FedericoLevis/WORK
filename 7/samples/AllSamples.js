@@ -30,7 +30,7 @@ function jsu_loaded(){
 
 
 function onclickSortFeature(event){
-	TipFixed (TIP_SORT_FEATURE,event);
+	TipFix (TIP_SORT_FEATURE,event);
 }
 
 

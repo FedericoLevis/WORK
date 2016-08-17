@@ -283,7 +283,7 @@ function showJsuPopupAbout(){
 
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="700px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
-  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src=https://rawgit.com/FedericoLevis/images/master/jsuAboutTitle.png"/></td> ' +
+  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://raw.githubusercontent.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
   '     </tr>' +
   '  <tr class="jsuAboutMsg"><td class="tipl" >' + szTipSect2 + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
@@ -304,8 +304,8 @@ function showJsuPopupAbout(){
  * @param event
  * @param [bShowAllSample] {Boolean} def true
  */
-function aboutTipFixedJSU(event,bShowAllSample){
-	var Fn = "[about.js aboutTipFixedJSU] ";
+function aboutTipFixJSU(event,bShowAllSample){
+	var Fn = "[about.js aboutTipFixJSU] ";
 	if (bShowAllSample == undefined){
 		bShowAllSample = true;
 	}
@@ -355,7 +355,7 @@ function aboutTipFixedJSU(event,bShowAllSample){
   '  <tr class="jsuAboutMsg"><td class="tipl">' + szTipSect2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFixed (szMsg,event,{iTipWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFix (szMsg,event,{iTipWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**
@@ -396,7 +396,7 @@ function aboutTipAuthor(event){
   '  </table> ';
 	
 	
-	TipFixed (szTip,event,{szTitle:'JSU AUTHOR'});	
+	TipFix (szTip,event,{szTitle:'JSU AUTHOR'});	
 }
 
 
@@ -492,7 +492,7 @@ function onclickValidateFeature(event, bShowTrySample){
 	   szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="javascript:showSampleValidate();" target="_blank">Try JSU cValidate Sample</a><BR/>&nbsp; ';
 	}
 	
-	TipFixed (szMsg,event,{szTitle:"JSU cValidate", iTipWidth: 1000,bCloseBtn: true});
+	TipFix (szMsg,event,{szTitle:"JSU cValidate", iTipWidth: 1000,bCloseBtn: true});
 }
 
 
@@ -539,7 +539,7 @@ function onclickLoadingFeature(event, bShowTrySample){
 		szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="' + JSU_URL_SHORT_SAMPLE_LOADING + '" target="_blank">Try JSU cLoading Sample</a><BR/>&nbsp; ';
 	}
 
-	TipFixed (szMsg,event,{szTitle:"JSU cLoading", iTipWidth: 1000,bCloseBtn: true});
+	TipFix (szMsg,event,{szTitle:"JSU cLoading", iTipWidth: 1000,bCloseBtn: true});
 }
 
 
@@ -690,14 +690,14 @@ function downloadTip(event,szDownloadTipType){
 		'		  <td width="12%" class="tipc">Price</td>' +
 		'	  </tr>' +
 		'	  <tr>' +
-		'		  <td class="detTitle"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
+		'		  <td class="detTitle2"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
 		'		  <td class="tipGood">Full access: ALL JSU Features available</td>' +
 		'		  <td class="tipGood">Full access: Code visible with all comments</td>' +
 		'		  <td class="tipGood">Full access: JSDoc HTML with reference to code</td>' +
 		'		  <td class="tipErr">FUTURE (Not still available)</td>' +
 		'	  </tr>' +
 		'	  <tr>' +
-		'		  <td class="detTitle"><input type="button" class="downloadFree"  ' +
+		'		  <td class="detTitle2"><input type="button" class="downloadFree"  ' +
 		'         onclick="location.href=\'https://github.com/FedericoLevis/JSU/archive/master.zip\';" /></td>' +
 		'		  <td class="tipl"><ul><li>AVAILABLE: Tip, SortTable, BlockingPopup</li>' +
 		'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JQPopup</label></li></ul> </td>' +
@@ -706,7 +706,7 @@ function downloadTip(event,szDownloadTipType){
 		'		  <td style="background-color:#008B45; color:white; font-weight:bold;font-size:16">FREE</td>' +
 		'	  </tr>' +
 		'</table>';
-  	TipFixed (szMsg,event,{szTitle:"DOWLOAD OPTIONS", iTipWidth:1000});
+  	TipFix (szMsg,event,{szTitle:"DOWLOAD OPTIONS", iTipWidth:1000});
 	}	
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
 }
@@ -1151,12 +1151,12 @@ function jsuGoogleAnal (event){
      ];
   var bUrl = false;
   if (bUrl){
-    TipFixedGoogleAnal(arObjGoogleAnal,event,{
+    TipFixGoogleAnal(arObjGoogleAnal,event,{
     	szTitle:'JSU Google Analitycs',
     	iTipWidth: 1200  // Tip Width 
     });
   }else{
-    TipFixedGoogleAnal(arObjGoogleAnal,event,{
+    TipFixGoogleAnal(arObjGoogleAnal,event,{
     	bShortUrl: false,
     	bLongUrl: false,
     	szTitle:'JSU Google Analitycs',
@@ -1229,3 +1229,6 @@ function testGoogle(){
 
 
 
+function onclickTest(){
+	alert ('ok');
+}
