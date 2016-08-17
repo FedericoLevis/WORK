@@ -8,19 +8,11 @@ DISCLAIMER
 */
 
 
-h1 {
-  font-family: Elephant;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-  color: black;
-  padding-top:0px;
-  padding-bottom:0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}	
+table.sampleHea { /* the table in sample with HEader (download buttons,... */
+  background-color: #F5F5F5;
+} 
 
-hr {
+hr { /* separator between header ad App */
   border: 1px solid black;
   border-style: ridge;  
   padding-top:0px;
@@ -29,12 +21,13 @@ hr {
   margin-bottom: 0px;
 }
 
-table.sampleHea {
-	background-color: #F5F5F5;
+h1.jsuSample{  /* inside the Title */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Verdana ;
+  font-weight: bold ;
+  font-size: 11pt ;
 }	
-
-
-
 
 
 div.sampleSort, table.sampleSort{

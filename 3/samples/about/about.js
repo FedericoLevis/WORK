@@ -29,11 +29,10 @@ var VIDEO_OPT={
 };
 
 
-//var JSU_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
 var JSU_EMAIL = "federico.levis@virgilio.it";  
-// var JSU_COGNOS = "http://federicolevis.wix.com/cognos";
-//var JSU_GITHUB = "https://github.com/FedericoLevis/JSU";
-//var JSU_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
+var JSU_LONG_URL_COGNOS = "http://federicolevis.wix.com/cognos";
+var JSU_LONG_URL_GITHUB = "https://github.com/FedericoLevis/JSU";
+var JSU_LONG_URL_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
 
 
 var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png";
@@ -68,19 +67,19 @@ var JSU_VIDEO_FRAME_JQPOPUP  =	'<iframe width="600" height="500" src="https://ww
 
 // Samples
 // --------------- FEATURE NOT FREE URL run-time calculated  
-var URL_SHORT_GOOGLE = true;  // Use Google Short URL
+var SHORT_URL_GOOGLE = true;  // Use Google Short URL
 
 var JSU_URL_LONG_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
-//var JSU_URL_SHORT_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.html";
+//var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.html";
 
 var JSU_URL_LONG_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
-//var JSU_URL_SHORT_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html";
+//var JSU_SHORT_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html";
 
 var JSU_URL_LONG_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/jslog/jslogSample.html";
-//var JSU_URL_SHORT_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/jslog/jslogSample.html";
+//var JSU_SHORT_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/WORK/master/5/samples/jslog/jslogSample.html";
 
 var JSU_URL_LONG_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JQPopup/PopupSample.html";
-//var JSU_URL_SHORT_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/7/samples/JQPopup/PopupSample.html";
+//var JSU_SHORT_URL_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/WORK/master/7/samples/JQPopup/PopupSample.html";
 
 
 // ------------------
@@ -92,22 +91,23 @@ var JSU_LONG_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/mast
 
 //----------- goo.gl of FREE Features
 var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
-var JSU_URL_SHORT_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
-var JSU_URL_SHORT_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
-var JSU_URL_SHORT_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
-var JSU_URL_SHORT_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
-var JSU_URL_SHORT_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
-var JSU_URL_SHORT_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
-var JSU_URL_SHORT_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
-var JSU_URL_SHORT_SAMPLE_JQPOPUP  =	"https://goo.gl/09zCLG";
-var JSU_GITHUB = "https://goo.gl/LYDepH";
-var JSU_COGNOS = "http://goo.gl/JZJQPn";
-var JSU_PLSQL = "https://goo.gl/OI3eIo";
-var JSU_LINKEDIN = "https://goo.gl/J9mJfh";  
+var JSU_SHORT_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
+var JSU_SHORT_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
+var JSU_SHORT_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
+var JSU_SHORT_URL_SAMPLE_BLOCKPOPUP  =	"https://goo.gl/u2zTRz";
+var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
+var JSU_SHORT_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
+var JSU_SHORT_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
+var JSU_SHORT_URL_SAMPLE_JQPOPUP  =	"https://goo.gl/09zCLG";
+var JSU_SHORT_URL_GITHUB = "https://goo.gl/LYDepH";
+var JSU_SHORT_URL_COGNOS = "http://goo.gl/JZJQPn";
+var JSU_SHORT_URL_PLSQL = "https://goo.gl/OI3eIo";
+var JSU_SHORT_URL_LINKEDIN = "https://goo.gl/J9mJfh";  
 //---------------------
+var JSU_LONG_URL_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
 
 
-var JSU_URL_SHORT_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/samples/Misc/SampleNotFree.html'
+var JSU_SHORT_URL_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/samples/Misc/SampleNotFree.html'
 // ID sample NOt FREE (see WORK dir)
 var JSU_ID_SAMPLE_LOADING  =	1;
 var JSU_ID_SAMPLE_VALIDATE  =	3;
@@ -132,18 +132,18 @@ var JSU_LONG_URL_DOC_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/
 var JSU_URL_API_DOC  ="https://goo.gl/0PGnZl"
 
 // ---- ggo.gl
-var JSU_URL_DOC  =	"https://goo.gl/JzIXW0";
-var JSU_URL_DOC_TIP  =	"https://goo.gl/AGKlpQ";
-var JSU_URL_DOC_SORT  =	"https://goo.gl/aKR7b2";
-var JSU_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
-var JSU_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
-var JSU_URL_DOC_JSLOG  =	"https://goo.gl/Iobg3a";
-var JSU_URL_DOC_BLOCKPOPUP  =	"https://goo.gl/iWW5cz";
-var JSU_URL_DOC_JQPOPUP  =	"https://goo.gl/iPqUqL";
+var JSU_SHORT_URL_DOC  =	"https://goo.gl/JzIXW0";
+var JSU_SHORT_URL_DOC_TIP  =	"https://goo.gl/AGKlpQ";
+var JSU_SHORT_URL_DOC_SORT  =	"https://goo.gl/aKR7b2";
+var JSU_SHORT_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
+var JSU_SHORT_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
+var JSU_SHORT_URL_DOC_JSLOG  =	"https://goo.gl/Iobg3a";
+var JSU_SHORT_URL_DOC_BLOCKPOPUP  =	"https://goo.gl/iWW5cz";
+var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/iPqUqL";
 
 
 // used as Link for JSU in about
-var JSU_SITE = JSU_URL_DOC; 
+var JSU_SITE = JSU_SHORT_URL_DOC; 
 
 	
 var JSU_TIP_CUR_FEATURE="Click to Show a new Window with the <b>JSDoc HTML</b> of this feature";
@@ -183,49 +183,49 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
 '		  <td class="tipl">Flexible/Powerful HTML Tooltips: Floating/Fixed Tips with otptional GIF, Video, JS Code, ...   </td>' + 
 '		  <td class="tipc"><b>-</b></td>' +
 '     <td class="tipc"><a href="javascript:showJSUVideoTip()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Tooltip Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_LOADING +'" target="_blank">LoadingDiv</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_LOADING +'" target="_blank">LoadingDiv</a> </td>' +
 '		  <td class="tipl"><b>Loading Div</b> for Long Operation with Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideoLoading()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU LoadingDiv Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_VALIDATE +'" target="_blank">Validate</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_VALIDATE +'" target="_blank">Validate</a> </td>' +
 '		  <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideoValidate()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Validate Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
 '		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideoSort()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU SortTable Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JSLOG +'" target="_blank">jslog</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JSLOG +'" target="_blank">jslog</a> </td>' +
 '		  <td class="tipl"><b>Log from JS Code into an optional Window: log Object, JSON, ...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideojslog()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JSlog Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_BLOCKPOPUP +'" target="_blank">Blocking Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_BLOCKPOPUP +'" target="_blank">Blocking Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Blocking Popup</b> designed specially for <b>IE</b><BR/><b>Blocking Code</b>, based on <i>ShowModalDialog</i> (fully supported only by IE) </td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideoBlockPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Blocking Popup Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleBlockPopup();">BlockingPopup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_URL_DOC_JQPOPUP +'" target="_blank">JS Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JQPOPUP +'" target="_blank">JS Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
 '		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JS Popup Video" width="100" height="20" border="2" /></a></td> ' +  
@@ -331,11 +331,11 @@ function aboutTipFixJSU(event,bShowAllSample){
   '          <td  align="left" class="jsuAboutTitle" width="40%"> <img class="jsuAboutTitle" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutTitle.png"/></td> ' +
   '          <td  align="left" class="jsuAboutTitle" width="27%">' +
   '            <table class="tipNoBorder" width="100%">' +
-  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_URL_DOC +'" target="_blank">JSU Feature documentation</a> </td></tr>' +
+  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC +'" target="_blank">JSU Feature documentation</a> </td></tr>' +
   '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_URL_API_DOC +'" target="_blank">JSU API documentation</a> </td></tr>';
 	if (bShowAllSample){
 		szMsg = szMsg +	
-	   '		       <tr><td class="tipl"><a class="tipLink" href="'+ JSU_URL_SHORT_SAMPLE_ALL +'" target="_blank">JSU: All Samples</a> </td></tr>';
+	   '		       <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_SAMPLE_ALL +'" target="_blank">JSU: All Samples</a> </td></tr>';
 	}
 	szMsg = szMsg +  '        </table>' +
   '         </td>' +
@@ -372,23 +372,23 @@ function aboutTipAuthor(event){
   '      <tr><td ><table class="tipNoBorder" width="100%">' +
   '        <tr>' +
   '          <td width="180px" class="tipl"><label class="tipTitle">Linkedin CV: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_LINKEDIN  + '" target="_blank">' + JSU_LINKEDIN +  '</a> </td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_LINKEDIN  + '" target="_blank">' + JSU_SHORT_URL_LINKEDIN +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">Email: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="mailto:' +  JSU_EMAIL  + '" target="_blank">' + JSU_EMAIL +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
-  '          <td class="tipl"><label class="tipTitle">JSU GitHub: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_GITHUB  + '" target="_blank">' + JSU_GITHUB +  '</a> </td>'+
+  '          <td class="tipl"><label class="tipTitle">JSU: </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_DOC  + '" target="_blank">' + JSU_LONG_URL_DOC +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">Cognos CEL Plugin: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_COGNOS  + '" target="_blank">' + JSU_COGNOS +  '</a> </td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_COGNOS  + '" target="_blank">' + JSU_SHORT_URL_COGNOS +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">PL/SQL LOG Package: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href=" 	' +  JSU_PLSQL  + '" target="_blank">' + JSU_PLSQL +  '</a> </td>'+
+  '          <td class="tipl"><a class="tipLink" href=" 	' +  JSU_SHORT_URL_PLSQL  + '" target="_blank">' + JSU_LONG_URL_PLSQL +  '</a> </td>'+
   '        <tr/>' +
   '      </table></td></tr>' +
   '    </table></td> ' +
@@ -396,7 +396,7 @@ function aboutTipAuthor(event){
   '  </table> ';
 	
 	
-	TipFix (szTip,event,{szTitle:'JSU AUTHOR'});	
+	TipFix (szTip,event,{szTitle:'JSU AUTHOR',iTipWidth:800});	
 }
 
 
@@ -536,7 +536,7 @@ function onclickLoadingFeature(event, bShowTrySample){
 	'<li><b>No external dependencies</b> at all (pure JS code)</b></li>'+ 
 	'</ul>';
 	if (bShowTrySample){
-		szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="' + JSU_URL_SHORT_SAMPLE_LOADING + '" target="_blank">Try JSU cLoading Sample</a><BR/>&nbsp; ';
+		szMsg += 	'&nbsp;&nbsp;<a class="tipLink" href="' + JSU_SHORT_URL_SAMPLE_LOADING + '" target="_blank">Try JSU cLoading Sample</a><BR/>&nbsp; ';
 	}
 
 	TipFix (szMsg,event,{szTitle:"JSU cLoading", iTipWidth: 1000,bCloseBtn: true});
@@ -721,45 +721,45 @@ function downloadTip(event,szDownloadTipType){
  * Open window with Validate Documentation
  */
 function jsuDocValidate(){
-	jsuGoToURL(JSU_URL_DOC_VALIDATE);
+	jsuGoToURL(JSU_SHORT_URL_DOC_VALIDATE);
 }
 
 /**
  * Open window with Tip Documentation
  */
 function jsuDocTip(){
-	jsuGoToURL(JSU_URL_DOC_TIP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_TIP);
 }
 /**
  * Open window with SortTable Documentation
  */
 function jsuDocSort(){
-	jsuGoToURL(JSU_URL_DOC_SORT);
+	jsuGoToURL(JSU_SHORT_URL_DOC_SORT);
 }
 /**
  * Open window with Loading Documentation
  */
 function jsuDocLoading(){
-	jsuGoToURL(JSU_URL_DOC_LOADING);
+	jsuGoToURL(JSU_SHORT_URL_DOC_LOADING);
 }
 
 /**
  * Open window with JSLOG Documentation
  */
 function jsuDocJSLog(){
-	jsuGoToURL(JSU_URL_DOC_JSLOG);
+	jsuGoToURL(JSU_SHORT_URL_DOC_JSLOG);
 }
 /**
  * Open window with BlockPopup Documentation
  */
 function jsuDocBlockPopup(){
-	jsuGoToURL(JSU_URL_DOC_BLOCKPOPUP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_BLOCKPOPUP);
 }
 /**
  * Open window with JQPopup Documentation
  */
 function jsuDocJQPopup(){
-	jsuGoToURL(JSU_URL_DOC_JQPOPUP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_JQPOPUP);
 }
 
 
@@ -884,7 +884,7 @@ function is_par_opt (){
  * @return e.g:  https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html 
  */
 function getSampleUrl(szUrl,iId){
-	if (URL_SHORT_GOOGLE){
+	if (SHORT_URL_GOOGLE){
     if (iId == JSU_ID_SAMPLE_LOADING){
    	  return "https://goAALl/j0HZDG".replace ("AAL","o.g");
     }else if (iId == JSU_ID_SAMPLE_VALIDATE){
@@ -922,19 +922,19 @@ function showSampleValidate(){
  * 
  */
 function showSampleSort(){
-	jsuGoToURL(JSU_URL_SHORT_SAMPLE_SORT);
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_SORT);
 }
 /*
  * 
  */
 function showSampleTip(){
-	jsuGoToURL(JSU_URL_SHORT_SAMPLE_TIP);
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_TIP);
 }
 /*
  * 
  */
 function showSampleBlockPopup(){
-	jsuGoToURL(JSU_URL_SHORT_SAMPLE_BLOCKPOPUP);
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_BLOCKPOPUP);
 }
 
 
@@ -986,7 +986,7 @@ function setupState(){
 	var szLocation = window.location + ""; 
 	var bRawGit = szLocation.indexOf ("FedericoLevis") > 0;
 	if (bRawGit){
-	  history.replaceState(null, null,JSU_URL_SHORT_SAMPLE_NOTFREE);
+	  history.replaceState(null, null,JSU_SHORT_URL_SAMPLE_NOTFREE);
 	}  
   window.moveTo(10, 20);
   window.resizeTo(screen.width-20, screen.height-30);
@@ -1128,25 +1128,25 @@ function jsuGoogleAnal (event){
   // In this case we populate all fields
   var arObjGoogleAnal = [
        {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:GA_CAT_SAMPLE_FREE,desc:'Blocking Popup Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:GA_CAT_SAMPLE_FREE,desc:'Blocking Popup Sample'},
        // --------------------------
-       {shortUrl: JSU_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC_FREE,desc:'JSU Documentation'},
-       {shortUrl: JSU_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
-       {shortUrl: JSU_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU LoadingDiv Documentation'},
-       {shortUrl: JSU_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'}
+       {shortUrl: JSU_SHORT_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC_FREE,desc:'JSU Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU LoadingDiv Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'}
        // --------------------------
        /*
-       ,{shortUrl: JSU_URL_SHORT_SAMPLE_LOADING, longUrl: JSU_LONG_URL_SAMPLE_LOADING, cat:GA_CAT_SAMPLE_FULL,desc:'LoadingDiv Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_VALIDATE, longUrl: JSU_LONG_URL_SAMPLE_VALIDATE, cat:GA_CAT_SAMPLE_FULL,desc:'Validate Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE_FULL,desc:'JSLog Sample'},
-       {shortUrl: JSU_URL_SHORT_SAMPLE_JQPOPUP, longUrl: JSU_LONG_URL_SAMPLE_JQPOPUP, cat:GA_CAT_SAMPLE_FULL,desc:'JQ Popup Sample'},
-       {shortUrl: JSU_URL_DOC_VALIDATE, longUrl: JSU_LONG_URL_DOC_VALIDATE, cat:GA_CAT_DOC_FULL,desc:'JSU Validate Doc'},
-       {shortUrl: JSU_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC_FULL,desc:'JSU JSLog Doc'},
-       {shortUrl: JSU_URL_DOC_BLOCKPOPUP, longUrl: JSU_LONG_URL_DOC_BLOCKPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU Blocking Popup Doc'},
-       {shortUrl: JSU_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU JS Popup Doc'}
+       ,{shortUrl: JSU_SHORT_URL_SAMPLE_LOADING, longUrl: JSU_LONG_URL_SAMPLE_LOADING, cat:GA_CAT_SAMPLE_FULL,desc:'LoadingDiv Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_VALIDATE, longUrl: JSU_LONG_URL_SAMPLE_VALIDATE, cat:GA_CAT_SAMPLE_FULL,desc:'Validate Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE_FULL,desc:'JSLog Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_JQPOPUP, longUrl: JSU_LONG_URL_SAMPLE_JQPOPUP, cat:GA_CAT_SAMPLE_FULL,desc:'JQ Popup Sample'},
+       {shortUrl: JSU_SHORT_URL_DOC_VALIDATE, longUrl: JSU_LONG_URL_DOC_VALIDATE, cat:GA_CAT_DOC_FULL,desc:'JSU Validate Doc'},
+       {shortUrl: JSU_SHORT_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC_FULL,desc:'JSU JSLog Doc'},
+       {shortUrl: JSU_SHORT_URL_DOC_BLOCKPOPUP, longUrl: JSU_LONG_URL_DOC_BLOCKPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU Blocking Popup Doc'},
+       {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU JS Popup Doc'}
        */
      ];
   var bUrl = false;
@@ -1204,10 +1204,10 @@ function testGoogle(){
 	var Fn = "[about.js testGoogle()] ";
 	// URL under TEST
 	var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE
-	                 ,JSU_URL_SHORT_SAMPLE_ALL,JSU_URL_SHORT_SAMPLE_TIP,JSU_URL_SHORT_SAMPLE_SORT, JSU_URL_SHORT_SAMPLE_BLOCKPOPUP
-	                 ,JSU_URL_DOC,JSU_URL_DOC_TIP,JSU_URL_DOC_LOADING,JSU_URL_DOC_SORT,JSU_URL_DOC_VALIDATE
-	                 // ,JSU_URL_SHORT_SAMPLE_LOADING,JSU_URL_SHORT_SAMPLE_JSLOG,JSU_URL_SHORT_SAMPLE_JQPOPUP,JSU_URL_SHORT_SAMPLE_VALIDATE
-	                 // ,JSU_URL_DOC_JSLOG, JSU_URL_DOC_BLOCKPOPUP, JSU_URL_DOC_JQPOPUP
+	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_BLOCKPOPUP
+	                 ,JSU_SHORT_URL_DOC,JSU_SHORT_URL_DOC_TIP,JSU_SHORT_URL_DOC_LOADING,JSU_SHORT_URL_DOC_SORT,JSU_SHORT_URL_DOC_VALIDATE
+	                 // ,JSU_SHORT_URL_SAMPLE_LOADING,JSU_SHORT_URL_SAMPLE_JSLOG,JSU_SHORT_URL_SAMPLE_JQPOPUP,JSU_SHORT_URL_SAMPLE_VALIDATE
+	                 // ,JSU_SHORT_URL_DOC_JSLOG, JSU_SHORT_URL_DOC_BLOCKPOPUP, JSU_SHORT_URL_DOC_JQPOPUP
 	                 ];
 	var iTestUrlNum = arTestUrl.length;
 	var i = Math.floor(Math.random() * arTestUrl.length);

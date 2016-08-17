@@ -353,22 +353,55 @@ input.validateInfo{ /* Info img  */
 
 
 /*---
-Tip API and JSU Button - 
-   <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+JSU Tip button for Tooltip API 
 ---
-<b>CSS:</b> (For Browser compatibility we recommend using input instead of img when both are present)<ul>
- <li>``img.tipFixedJS`` ``input.tipFixedJS``    tip JS Fixed img with Button Down </li>
- <li>``img.tipFixedJSUp`` ``input.tipFixedJSUp``  tip JS Fixed img with Button Up </li>
- <li>``input.jsuHelp``  JSU help Button </li>
- <li>...
-</ul> 
-<BR/><b>Examples:</b>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+
 ```html
-<input type="button" class="tipFixedJS" />
-<input type="button" class="tipJSUp" />
-<input type="button" class="jsuHelp" />
+<b>JSU Tip button :</b> <ul>
+ <li> tipFixed button with '?' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixed</b>  <input type="button" class="tipFixed"/> &nbsp;&nbsp; 
+     <b>input.tipFixedUp</b>  <input type="button" class="tipFixedUp" />
+ </li><BR/>
+ <li> tipFixed button with 'JS' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixedJS</b>  <input type="button" class="tipFixedJS"/> &nbsp;&nbsp; 
+     <b>input.tipFixedJSUp</b>  <input type="button" class="tipFixedJSUp" />
+ </li><BR/>
+ <li> tipFixed button with 'Code' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixedCode</b>  <input type="button" class="tipFixedCode"/> &nbsp;&nbsp; 
+     <b>input.tipFixedCodeUp</b>  <input type="button" class="tipFixedCodeUp" />
+ </li><BR/>
+ <li> tipFixed button with Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixedArrow</b>  <input type="button" class="tipFixedArrow"/> &nbsp;&nbsp; 
+     <b>input.tipFixedArrowUp</b>  <input type="button" class="tipFixedArrowUp" />
+ </li><BR/>
+ <li> JSU help Button: &nbsp;&nbsp;  
+     <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
+ </li>
+ <li>... </li>
+</ul> 
 ```
 */
+
+input.tipFixed, input.tipFixedUp{  /* Fields Common for input.tipFixed and input.tipFixedUp */ 
+    height: 20px;
+    width: 13px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 1px; 
+    cursor: pointer;
+}
+
+input.tipFixed{ /* Specific filed of input.tipFixed */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
+}
+
+input.tipFixedUp{ /* Specific filed of input.tipFixedUp : different image */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
+}
+
+
 img.tipFixedJS{ /* tip JS Fixed img with Button Down */
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJS.png') center top;
   /* background-size: contain; */
@@ -386,15 +419,15 @@ img.tipFixedJSUp{ /* tip JS Fixed img with Button Up */
   margin-left: 5px;
 }
 
-img.tipArrowFixed{ /* tip Arrow Fixed img with Button Down */
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png') center bottom;
+img.tipFixArrow{ /* tip Arrow Fixed img with Button Down */
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
 }
 
-img.tipArrowFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png') center bottom;
+img.tipFixArrowUp{ /* tip JS Fixed img with Button Up */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
@@ -429,36 +462,17 @@ input.tipFixedCode, input.tipFixedCodeUp{
 }
 
 input.tipFixedCode{
-    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCode.png) no-repeat center center; */
-    background: #E0E0E0 url(../images/tipFixedCode.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCode.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixedCode.png) no-repeat center center; */
 }
 
 input.tipFixedCodeUp{
-    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCodeUp.png) no-repeat center center; */
-    background: #E0E0E0 url(../images/tipFixedCodeUp.png) no-repeat center center; 
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCodeUp.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixedCodeUp.png) no-repeat center center; */ 
 }
 
 
-
-input.tipFixed, input.tipFixedUp{  /* Fields Common for input.tipFixed and input.tipFixedUp */ 
-    height: 20px;
-    width: 13px;
-    border: 1px solid #000;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 1px; 
-    cursor: pointer;
-}
-
-input.tipFixed{ /* Specific filed of input.tipFixed */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
-}
-
-input.tipFixedUp{ /* Specific filed of input.tipFixedUp : different image */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
-}
-
-input.tipArrowFixed, input.tipArrowFixedUp {  /* Common fields  */
+input.tipFixArrow, input.tipFixArrowUp {  /* Common fields  */
     height: 20px;
     padding-right: 30px;
     border: 1px solid #000;
@@ -466,11 +480,11 @@ input.tipArrowFixed, input.tipArrowFixedUp {  /* Common fields  */
     cursor: pointer;
 }
 
-input.tipArrowFixed { /* specific image for tipArrowFixed */ 
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png) no-repeat right center;
+input.tipFixArrow { /* specific image for tipFixArrow */ 
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png) no-repeat right center;
 }
-input.tipArrowFixedUp { /* specific image for tipArrowFixedUp */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png) no-repeat right center;
+input.tipFixArrowUp { /* specific image for tipFixArrowUp */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center;
 }
 
 
@@ -611,9 +625,9 @@ tr.tipTitle2,th.tipTitle2, tr.tipTitleBig2,th.tipTitleBig2 {
   text-align: center;
   padding: 2px;
   border: 1px solid black;
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 9pt;
+  font-family: Verdana ;
+  font-weight: bold ;
+  font-size: 9pt ;
 }
 
 tr.tipTitle3,th.tipTitle3, tr.tipTitleBig3,th.tipTitleBig3 {

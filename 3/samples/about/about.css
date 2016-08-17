@@ -3,12 +3,38 @@
 File:               about.css
 Author:             Federico Levis
 Last Modification:  Mar 2016   
-Description:        CSS for JSU core JS
+Description:        CSS for About sections used also in doc
 
 DISCLAIMER
 Copyright by Federico Levis http://federicolevis.wix.com/cognos Cognos Tips & Solutions
 All rights reserved: UNAUTHORIZED COPYING, REPRODUCTION, REPUBLISHING, UPLOADING, POSTING, TRANSMITTING OR DUPLICATING IS PROHIBITED
 */
+
+
+
+
+
+
+
+h1.jsuAbout {
+  font-family: Arial-Black;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+  padding-top:0px;
+  padding-bottom:0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+} 
+
+
+table.docSep {
+  border: 2px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}	
+
+
 
 
 /* ================================   About ========================================================== */
