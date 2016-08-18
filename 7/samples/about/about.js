@@ -632,7 +632,7 @@ function featureNotReady(){
  * download All JSU
  * 
  */
-function downloadPay(){
+function downloadPay(event){
 	UnTip();
 	featureNotReady();
 }
@@ -640,7 +640,9 @@ function downloadPay(){
 /**
  * The download BTN in all Pages, that Open the DownLOad Page
  */
-function downloadFree(){
+function downloadFree(event){
+	var fn = "[about.js downloadFree()] ";
+	jslog(JSLOG_DEBUG, fn + JSLOG_FUN_START);
 	UnTip();
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
@@ -653,6 +655,7 @@ function downloadFree(){
 		 bCloseBtn : false
 	 }
 	);
+	jslog(JSLOG_DEBUG, fn + JSLOG_FUN_END);
 	
 }
 
@@ -683,7 +686,6 @@ function downloadTipPay(event){
 function downloadFreeExecute(event){
 	var Fn = "[about.js downloadFreeExecute()] ";
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
-	alert (Fn);
 	UnTip();
 	jslog (JSLOG_JSU,Fn + "URL = " + JSU_GITHUB_DOWNLOAD);
 	jsuGoToURL(JSU_GITHUB_DOWNLOAD, true);
@@ -944,7 +946,7 @@ function manage_par_opt(){
 		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_TEST + "=" + iParTest);
 		var bTest = (iParTest != undefined &&  iParTest != "");
 		jslog (JSLOG_JSU,fn + "bTest=" + bTest);
-		elementShow(getElementById2("testGoogle",true), bTest);
+		elementShow(getElementById2("test",true), bTest);
 		if (bTest){
 			par_test = parseInt(iParTest);
 		}
@@ -1369,27 +1371,33 @@ function tipFixLimitInJSUFree(event){
 /* ---------------------------------------------------------------------------------------------------------------------
  * 					TEST GOOGLE ANALYTICS
 --------------------------------------------------------------------------------------------------------------------- */
-var tmoTest = null;
-// arTestUrl.length;
-var test_cur = 0;
+
+var var_test = {
+		tmoTest: null,
+		iTestCur:  0,
+    bFrame:  false		
+};
+
 
 /**
  * Test Google
- * @param event
+ * @param bFrame  true for Frame
  */
-function onclickTestGoogle(){
+function testStart(bFrame){
 	var Fn = "[about.js  showAllGoogleShort()] ";
-	test_cur =0;
+	var_test.iTestCur =0;
+	var_test.bFrame = bFrame;
 	var iSec = Math.floor((Math.random() * 10) + 1);
 	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
-	getElementById2("testDone",true).value = test_cur;
-	tmoTest = setTimeout (testGoogle,iSec * 1000);
+	getElementById2("testDone",true).value = var_test.iTestCur;
+	getElementById2("testTmo",true).value = iSec;
+	var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
 }
 
 
 
-function testGoogle(){
-	var Fn = "[about.js testGoogle()] ";
+function testExecute(){
+	var Fn = "[about.js testExecute()] ";
 	// URL under TEST
 	var arTestUrl = [JSU_SHORT_URL_DOWNLOAD_FREE
 	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_BLOCKPOPUP
@@ -1399,25 +1407,38 @@ function testGoogle(){
 	                 ];
 	var iTestUrlNum = arTestUrl.length;
 	var i = Math.floor(Math.random() * arTestUrl.length);
-	jslog (JSLOG_DEBUG,Fn + "test_cur=" + test_cur +  " Index under Test i=" + i);
+	jslog (JSLOG_DEBUG,Fn + "var_test.iTestCur=" + var_test.iTestCur +  " Index under Test i=" + i);
 	var szUrl = arTestUrl[i];
 	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
-	jsuGoToURL(szUrl, true);
-	clearTimeout (testGoogle);
-	test_cur++ ;
-	getElementById2("testDone",true).value = test_cur;
-	if (test_cur > par_test){
+	if (var_test.bFrame){
+		UnTip();
+		var szTipFrame =	'<iframe width="1100" height="800" src="' + szUrl + '" ></iframe>'; 
+		TipFix(szTipFrame,null,{
+			 iTipWidth: 1200,
+			 szTitle:szUrl,
+			 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'},  // we pass the Custom Classes used
+			 bCloseBtn : false,
+			 szRefElId : 'downloadFree' 
+		 }
+		);
+		
+	}else {
+		jsuGoToURL(szUrl, true);
+	}
+	clearTimeout (var_test.tmoTest);
+	var_test.iTestCur++ ;
+	getElementById2("testDone",true).value = var_test.iTestCur;
+	getElementById2("testURL",true).value = szUrl;
+	if (var_test.iTestCur > par_test){
 		alert ("FINE Test - Executed=" + par_test);
 	}else {
 		var iSec = Math.floor((Math.random() * par_period) + 1);
+		getElementById2("testTmo",true).value = iSec;
 		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
-		tmoTest = setTimeout (testGoogle,iSec * 1000);
+		var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
 	}
 		
 }
 
 
 
-function onclickTest(){
-	alert ('ok');
-}

@@ -40,9 +40,9 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
         <tr>
             <td class="tipr" ><b>Download Options:</b> </td>
             <td><input type="button"  class="tipFix" id="downloadOption"  onclick="downloadTip(event)" /> </td>
-            <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay(event);" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
-            <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree(event);" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
         </tr>
       </table>  
@@ -75,7 +75,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 	  <td width="15%" class="tipc">Try an Example</td>
   </tr>
   <tr>
-    <td rowspan="6"><b>JSU CORE FEATURE</b><BR/><label class="tipGood">PURE JS Qlugin: No External Plugin Required</label></label> </td> 
+    <td rowspan="6"><b>JSU CORE FEATURE</b><BR/><label class="tipGoodBold">PURE JS Qlugin: No External Plugin Required</label></label> </td> 
     <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_TIP);">Tooltip Doc</a></td>
     <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_blank">Tooltip API</a> </td>
     <td class="tipl">Flexible/Powerful <b>HTML Tooltips</b>: Floating/Fixed Tips with otptional GIF, Video, JS Code, ...  
@@ -155,11 +155,12 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 <!--  USED by jsuGoToURL()  -->
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
-<div id="testGoogle" style="display:none;visibility:hidden;">
-  <input  type="button" value="TEST Google Analytics" onclick="onclickTestGoogle();" /> &nbsp;Execute: <input  id="testDone" readonly value="0" /> 
-  
-</div> 
-
+<!--       TEST -->
+<div id="test" style="display:none;visibility:hidden;">
+  <input  type="button" value="TEST Google Analytics" onclick="testStart(false);" />  &nbsp;&nbsp;  <input  type="button" value="TEST Frame" onclick="testStart(true);" /> 
+  <BR/>
+  Tmo(sec)<input  id="testTmo" readonly value="0" />&nbsp;&nbsp; N.Test Executed <input  id="testDone" readonly value="0" /> &nbsp;&nbsp;Current URL: <input  id="testURL" width="300px" readonly value="0" />
+</div>
 
 </body>
 </html>

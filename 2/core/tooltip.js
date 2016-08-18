@@ -293,7 +293,7 @@ function Tip(tipMsgHtml,tipType,objOpt)
 
 /**
  * @param tipMsgHtml {String}   
- * @param event
+ * @param [event]  {Object}   Usually pass the event of the onclick. if null you have to pass pass objOpt.szRefElId  
  * @param [objOpt] {Object}   Option: <ul>
  *                            <li> szTitle{String}  default: ''   </li> 
  *                            <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
@@ -303,7 +303,8 @@ function Tip(tipMsgHtml,tipType,objOpt)
  * 													  <li> bNL2BR= [true]  if true /n are converted to </li> 
  *                            <li> objClass: {Down: szClassTipFix, Up: szClassTipFixUp}  {Object} Classed that identify The 2 states <BR/>
  *                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
- *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} 
+ *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
+ *                            <li>szRefElId: Id of the Reference ElementImage. can be used instead of event
  *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
@@ -377,8 +378,13 @@ function TipFix(tipMsgHtml,event, objOpt)
 		tipFixedPos = objOpt.tipFixedPos;
 	}
 	tt_log ( fn + "IN: tipFixedPos=" + tipFixedPos);
-	var event = event || window.event;
-	var tipImg = event.target || event.srcElement;
+	var tipImg = null;
+	if (objOpt.szRefElId != undefined && objOpt.szRefElId != ""){
+		tipImg = document.getElementById (objOpt.szRefElId);
+	}else {
+		var event = event || window.event;
+		tipImg = event.target || event.srcElement;
+	}
 	// var deltaY = 35; // Default
 	if (tipImg != undefined){
 		var className = tipImg.className;
