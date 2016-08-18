@@ -84,6 +84,8 @@ var JSU_URL_LONG_SAMPLE_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/
 
 // ------------------
 var JSU_LONG_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
+
+
 var JSU_LONG_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
 var JSU_LONG_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
 var JSU_LONG_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
@@ -647,7 +649,8 @@ function downloadFree(){
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 1070,
 		 szTitle:'Download FREE JSU.zip',
-		 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'}  // we pass the Custom Classes used
+		 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'},  // we pass the Custom Classes used
+		 bCloseBtn : false
 	 }
 	);
 	
@@ -677,8 +680,15 @@ function downloadTipPay(event){
 * @param event
 */
 function downloadFreeExecute(event){
+	var Fn = "[about.js downloadFreeExecute()] ";
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
+	alert (Fn);
 	UnTip();
-  location.href=JSU_GITHUB_DOWNLOAD;
+	jslog (JSLOG_JSU,Fn + "URL = " + JSU_GITHUB_DOWNLOAD);
+	jsuGoToURL(JSU_GITHUB_DOWNLOAD, true);
+	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
+	
+  // location.href=JSU_GITHUB_DOWNLOAD;
 	
 }
 
