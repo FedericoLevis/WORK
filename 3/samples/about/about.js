@@ -674,6 +674,7 @@ function downloadTipPay(event){
 	downloadTip(event,DOWNLOAD_TIP_TYPE.PAY);
 }
 
+
 /**
 * Tip for Button Download Free: make the download
 * 
