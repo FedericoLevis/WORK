@@ -636,12 +636,21 @@ function downloadPay(){
 }
 
 /**
- * download BTN in all Pages
- * We redirect to downloadTageFree
+ * The download BTN in all Pages, that Open the DownLOad Page
  */
 function downloadFree(){
 	UnTip();
+	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
+  */
+	var szTipFrame =	'<iframe width="1030" height="600" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	TipFix(szTipFrame,event,{
+		 iTipWidth: 1070,
+		 szTitle:'Download FREE JSU.zip',
+		 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'}  // we pass the Custom Classes used
+	 }
+	);
+	
 }
 
 /**
@@ -667,7 +676,7 @@ function downloadTipPay(event){
 * 
 * @param event
 */
-function downloadPageFree(event){
+function downloadFreeExecute(event){
 	UnTip();
   location.href=JSU_GITHUB_DOWNLOAD;
 	
@@ -692,7 +701,11 @@ function downloadTip(event,szDownloadTipType){
 	}
 	if (!bTipInfo){
 		if (szDownloadTipType == DOWNLOAD_TIP_TYPE.FREE){
-			szMsg = 'Click to Go to the <b>Download Page of the FREE Version of JSU.ZIP</b> <label class="tipWarnn">(JS Code Obfuscated - Available only Tooltip, SortTable, BlockingPopup Features)</label><BR/><BR/>';
+			szMsg = 'Click to <b>Download the FREE Version of JSU.ZIP</b><BR/> ' + 
+				'<b>NOTE:</b> FREE JSU.zip has some limitation: <div class="tipWarnBold"><ul>' +
+				'  <li>JS Code Obfuscated</li>' +
+				'  <li>It contains only some JSU Features: Tooltip (with Limitation), SortTable and BlockingPopup</li>' +
+				'<ul/><div/>';
 		}else	{
 			szMsg = 'Click to Go to the <b>Download Page of the <label class="tipGood">FULL Version of JSU.ZIP</label></b><BR/><BR/>';
 		}

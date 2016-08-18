@@ -34,8 +34,8 @@
 <div class="jsuLoading" id="jsuLoading"></div> 
 
 
-<!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table class="sampleHea" width="100%" >
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
+<table class="sampleToolbar" width="100%" >
   <tr >
     <td class="tipl" width="30%">
         <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
@@ -44,10 +44,10 @@
      <table valign="bottom" align="right">
         <tr>
             <td class="tipr" ><b>Download Options:</b> </td>
-            <td><input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> </td>
-            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td><input type="button"  class="tipFix" id="downloadOption"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
-            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
         </tr>
       </table>  

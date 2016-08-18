@@ -112,7 +112,7 @@ var GOOGLE_ANAL_PAR_TYPE={
 		two_hours: 'two_hours'
 };
 
-// For GoogleAnal
+// Global For GoogleAnal
 var tt_googleAnal = {
 		arObjGoogleAnalList: null,   // arObjGoogleAnalList received as PAR
 		iTipWidth: 800,
@@ -122,6 +122,11 @@ var tt_googleAnal = {
 		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time  // Current FilterType
 };
 
+//Global For TipFix (see TipFix() objPar)
+var tt_tipFixObjClass= {
+		Down : undefined,
+		Up : undefined
+};
 
 
 
@@ -296,6 +301,9 @@ function Tip(tipMsgHtml,tipType,objOpt)
  * 													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
  * 														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
  * 													  <li> bNL2BR= [true]  if true /n are converted to </li> 
+ *                            <li> objClass: {Down: szClassTipFix, Up: szClassTipFixUp}  {Object} Classed that identify The 2 states <BR/>
+ *                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
+ *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} 
  *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
@@ -315,7 +323,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 	if (objOpt.bNL2BR == undefined || objOpt.bNL2BR){
 		tipMsgHtml = tt_NL2BR (tipMsgHtml);  // Replace /n with <BR/>,...
 	}
-	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	if (objOpt.bCloseBtn == undefined){	
+		objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; 
+	}
+	// set this global var, to be used when they are not undefined
+	tt_tipFixObjClass = objOpt.objClass;
 	
 	var szTitle = "";
   // -- Option
@@ -401,6 +413,15 @@ function TipFix(tipMsgHtml,event, objOpt)
 		}else	if (className == TIP_FIX_CLASS_CODE.Down ){
 			className = TIP_FIX_CLASS_CODE.Up;
 		}	
+		if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+			// Custom Class passed by User
+			if (className == tt_tipFixObjClass.Up){
+			  className = tt_tipFixObjClass.Down;
+			  bShow = false;
+		  }else	if (className == tt_tipFixObjClass.Down ){
+			  className = tt_tipFixObjClass.Up;
+		  }	
+		}
 		tt_log ( fn + "SET New classname=" + className);
 		tipImg.className = className;
 	}
@@ -1110,6 +1131,12 @@ function tt_isClassFixed(szClass){
 			szClass == TIP_FIX_CLASS_GOOGLE.Up){
 		bTipFix = true;
 	}
+	if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+		// Custom Class passed by User
+		if (szClass == tt_tipFixObjClass.Up){
+			bTipFix = true;
+		}  
+	}	
 	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
   return bTipFix;	
 	
@@ -1134,6 +1161,12 @@ function tt_RestoreImgFixed() {
 		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_CODE.Up){
 			szClass = TIP_FIX_CLASS_CODE.Down;
 		}
+		if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+			// Custom Class passed by User
+			if (tip_img_fixed.className == tt_tipFixObjClass.Up){
+				szClass = tt_tipFixObjClass.Down;
+			}
+		}		
 		if (szClass != ""){
 			tt_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
 			tip_img_fixed.className = szClass;
