@@ -211,8 +211,8 @@ config. TextAlign		= 'left';	// 'left', 'right' or 'justify'
 //-------------------------------------------------- TITLE
 config. Title			= TIP_CFG_FLOATING.Title;		// Default title text applied to all tips (no default title: empty string '')
 config. TitleAlign		= 'center';	// 'left' 'center' or 'right' - text alignment inside the title bar
-config. TitleBgColor	= '#F1F1F1'; // #003099  backgroundColor of the Title section . If empty string '', BorderColor will be used
-config. TitleFontColor	= '#000000';	// Color of title text - if '', BgColor (of tooltip body) will be used
+config. TitleBgColor	= '#000000'; // backgroundColor of the Title section . If empty string '', BorderColor will be used
+config. TitleFontColor	= '#ffffff';	// Color of title text - if '', BgColor (of tooltip body) will be used
 config. TitleFontFace	= 'bold';		// If '' use FontFace (boldified)
 config. TitleFontSize	= '13pt';		// If '' use FontSize
 config. TitlePadding	= 1;
@@ -491,7 +491,7 @@ function TipFixCode(szCode, event, objOpt){
 		/* FULL_JSU_START */
 		var szCodeDiv = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
 		TipFix (szCodeDiv,event,objOpt);
-		prettyPrint();  // Hightlight with prettyPrint the code between <pre> </pre> 
+		jsuPrettyPrint()();  // Hightlight with prettify-jsu the code between <pre> </pre> 
 		/* FULL_JSU_END */
 	}else{
 		TipFixTextArea(szCode, event, objOpt);
@@ -573,7 +573,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 			// HTML must be put into a TextArea
 			szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
 		}else{	
-			// This Code must be put prettified
+			// This Code must be prettified
 			var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;
 			var bContainer = false;
 			// check if is required MaxHeight
@@ -618,7 +618,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 	objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
 	TipFix (szCodeDiv,event,objOpt);
 	if (bPrettifyEn){
-		prettyPrint();  // Hightlight with prettyPrint the code between <pre> </pre>
+		jsuPrettyPrint();  // Hightlight with prettify-jsu the code between <pre> </pre>
 	}
 	
 	
@@ -1797,10 +1797,12 @@ function tt_MkTipSubDivs()
 	tt_aElt[0].innerHTML =
 		(''
 		+ (tt_aV[TITLE].length ?
-			('<div id="WzTiTl" style="position:relative;z-index:1;border-width:3px;border-style:solid;border-color:black">'
+			('<div id="WzTiTl" class="ttCaption" style="position:relative;z-index:1;border-width:3px;border-style:solid;border-color:black">'
 			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
 			+  tt_aV[TITLE] 
-			+ '<span><a style="margin-left:15px;" href="http://www.google.com">JSU Demo Version</a></span>'
+			// ONLY_JSU_FREE_START
+			+ '<span><a style="margin-left:15px;" class="tt" href="http://www.google.com">JSU Demo Version</a></span>'
+			// ONLY_JSU_FREE_END
 			+ '</td>'
 			+ (tt_aV[CLOSEBTN] ?
 				('<td align="right" style="' + sCssCloseBtn
@@ -2604,7 +2606,7 @@ function tt_is_IE(){
  */
 function tt_isPrettifyEn(){
 	var fn = "[tooltip.js tt_isPrettifyEn()] ";
-	var bPrettifyLoaded =  (typeof(prettyPrint) != "undefined");
+	var bPrettifyLoaded =  (typeof(jsuPrettyPrint) != "undefined");
 	var bPrettifyCode = false; // Code present. Default = false (FREE version)
 	/* FULL_JSU_START */
 	bPrettifyCode = true;   // FULL JSU

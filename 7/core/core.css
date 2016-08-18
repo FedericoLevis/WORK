@@ -464,12 +464,10 @@ input.tipGoogleAnalList, input.tipGoogleAnalListUp {  /* Button for Google Analy
     cursor: pointer;
 }
 input.tipGoogleAnalList {
-   /*  background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalList.png) no-repeat center center; */
-   background: #FEFEFE url(../images/tipGoogleAnalList.png) no-repeat center center; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalList.png) no-repeat center center; 
 }
 input.tipGoogleAnalListUp {
-   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalListUp.png) no-repeat center center; */
-   background: #FEFEFE url(../images/tipGoogleAnalListUp.png) no-repeat center center; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalListUp.png) no-repeat center center; 
 }
 
 input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button to show 1 page with Google Analytics  */
@@ -481,12 +479,10 @@ input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button to show 1 page with Goog
     margin-left: 2px; 
 }
 input.tipGoogleAnal {
-   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center; */
-   background: #FEFEFE url(../images/tipGoogleAnal.png) no-repeat center center; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center;
 }
 input.tipGoogleAnalUp {
-   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center; */
-   background: #FEFEFE url(../images/tipGoogleAnalUp.png) no-repeat center center; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center; 
 }
 
 input.jsuHelp{	/* Help Button */  
@@ -499,6 +495,17 @@ input.jsuHelp{	/* Help Button */
     
 }
 
+
+
+/*---
+tooltip.js 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+*/
+
+div.ttTitle{  /* default Title */
+	background-color: red;
+}	
 
 
 /*---
@@ -642,20 +649,20 @@ td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipAlr, td.tipOk, , td
 }
 
 
-td.tipc,td.tipcBold {
+.tipc,.tipcBold {
   text-align: center!important;
 }
 
-td.tipcBold,td.tiprBold,td.tiplBold{
+.tipBold,.tipcBold,.tiprBold,.tiplBold{
   font-weight: bold!important;
 }
 
-td.tipr,td.tiprBold{
+td.tipr,td.tiprBold,div.tiprBold{
 	text-align: right !important;
 }
 
 
-td.tipl,td.detl,td.tiplBold {
+td.tipl,td.detl,td.tiplBold,div.tiplBold {
 	text-align: left !important;
 }
 
@@ -669,21 +676,21 @@ td.tipAlr,label.tipAlr {
 	font-weight: bold;
 }
 
-td.tipOk,label.tipOk {
+td.tipOk,label.tipOk,div.tipOk {
 	color: #009900; /* Green */
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 
-td.tipWarn,label.tipWarn {
-	background: yellow; /* Yellow */
-	font-weight: bold;
-	color: red;
+td.tipWarn,label.tipWarn, div.tipWarn {
+	background: #ffffcc; /* Yellow */
+	/* font-weight: bold; */
+	color: black;
 }
 
 td.tipNotPresent,label.tipNotPresent{ /* e.g for JSU Feature not present */
   background: black; /
   font-weight: bold;
-  color: yellow;
+  color: #ffffcc;
 }
 
 
@@ -728,15 +735,24 @@ input.tipBtnClose{
 }	
 
 
-td.tipGood,label.tipGood { /* Good: Green and Boold */
-	font-weight: bold;
+.tipGood,.tipGoodBold  { /* Good: Green  */
 	color: #008B45; /* Dark Green */
 }
 
-td.tipErr,label.tipErr   {
-	color: #CD3333; /* Red */
+.tipGoodBold { /* Good: Green and Bold */
+  font-weight: bold; 
+}
+
+
+.tipErr,.tipErrBold   {
+  color: #CD3333; /* Red */
+}
+
+.tipErrBold   {
 	font-weight: bold;
 }
+
+
 
 a.tipLink{
  font-weight: bold;
@@ -750,15 +766,15 @@ a.tipLink:hover {
 }
 
 
-a.tipLinkJsLog{  /* to be used in JsLog where background is black */
+a.tipLinkJsLog, a.tt{  /* to be used in JsLog where background is black, ot in tt (tooltip) */
  font-weight: bold;
  text-decoration: underline; 
- color: cyan; // 
+ color: #00BFFF; // 
 }
 
-a.tipLinkJsLog:hover {
+a.tipLinkJsLog:hover, a.tt:hover {
  cursor: pointer;
- color:   #E0FFFF; 
+ color:   #00ffff; 
 }
 
 

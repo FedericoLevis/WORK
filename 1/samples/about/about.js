@@ -182,7 +182,7 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
-'		  <td class="tipl">Flexible/Powerful HTML Tooltips: Floating/Fixed Tips with otptional GIF, Video, JS Code, ...   </td>' + 
+'		  <td class="tipl">Flexible/Powerful HTML Tooltips: Floating/Fixed Tips with otptional GIF, Video, Code Highlight (JS, CSS, Java, C++, …)   </td>' + 
 '		  <td class="tipc"><b>-</b></td>' +
 '     <td class="tipc"><a href="javascript:showJSUVideoTip()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Tooltip Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
@@ -249,7 +249,7 @@ var JSU_TIP_SECT2_MSG = '<a class="tipLink" href="'+ JSU_SITE +'" target="_blank
 var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:15px;margin-bottom:15px;">' +
 '<tr>' +
 '  <td width="50%">' + JSU_TIP_SECT2_FEAT + '</td>' +
-'  <td width="50%" style="padding-left:5px;padding-right:5px;">' + JSU_TIP_SECT2_MSG + '</td>' +
+'  <td width="50%" class="tipl"  style="padding-left:5px;padding-right:5px;">' + JSU_TIP_SECT2_MSG + '</td>' +
 '</tr>' +
 '</table>';
 
@@ -1228,6 +1228,35 @@ function jsuGoogleAnalPay(event){
 
 
 
+
+/**
+ * Called by HTML Doc 
+ * @param event
+ */
+function tipFixLimitInJSUFree(event){
+	var szTip="//JS Code to Sort an HTML Table with JSU cSortTable: you need only one JSU API call. \n" +
+	"// 1) create cSortTable related to Table with id='tbl1' \n" +
+	"var cSortTbl1 = new cSortTable('tbl1', \n" +
+	" //Describe how to Sort the Table Columns \n" +
+	"  [{col: 'Country'},  // Default type: SORT_TYPE.STRING \n"+  	
+	"   {col: 'Name'},  // Default type: SORT_TYPE.STRING \n"+
+	"   // For Date we set the FMT_DATETIME_TBL1 = 'NNN dd, yyyy HH:mm:ss' \n"+
+	"   {col:'Date', type: SORT_TYPE.DATETIME, fmt: FMT_DATETIME_TBL1},\n"+
+	"   // For NUMBER  we use default separator (used creating the table)\n"+
+	"   {col: 'Amount', type: SORT_TYPE.NUMBER} ],\n"+  		
+	"   // OPTION \n" +
+	"     {szSortCol:'Name',   // Current SortCol (we have already Popolated the Table order by this col)\n"+
+	"     szSortDir:SORT_DIR.ASC, // Current SortDir (we have Popolated the Table in this way)	\n"+
+	"     bSortApply:false   //  Table is already sorted\n"+
+	"});\n" +
+	"//Now you can Sort the Table by clicking on Colum Header ";
+	
+	TipFixCode(szTip,event,
+				 {iTipWidth:1000,
+			    iTipMaxHeight:600,
+			    szTitle:'TipFixCode Sample - JS Code is not Hightlighted in FREE Version'
+			   });	
+}
 
 /* ---------------------------------------------------------------------------------------------------------------------
  * 					TEST GOOGLE ANALYTICS

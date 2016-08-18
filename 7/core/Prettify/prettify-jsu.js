@@ -4,7 +4,7 @@
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
 <b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
-<b>Description:</b>     JSU prettify API:   prettyPrint   <BR/>   
+<b>Description:</b>     JSU prettify API:   jsuPrettyPrint   <BR/>   
 <b>REQUIRED:</b>        JSU:  core/prettify/prettify-jsu.css 
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
@@ -483,7 +483,7 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
     k(x([], [
         ["str", /^[\S\s]+/]
     ]), ["regex"]);
-    window.prettyPrintOne = function(a, m, e) {
+    window.jsuPrettyPrintOne = function(a, m, e) {
         var h = document.createElement("PRE");
         h.innerHTML = a;
         e && D(h, e);
@@ -494,7 +494,7 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
         });
         return h.innerHTML
     };
-    window.prettyPrint = function(a) {
+    window.jsuPrettyPrint = function(a) {
         function m() {
             for (var e = window.PR_SHOULD_USE_CONTINUATION ? l.now() + 250 : Infinity; p < h.length && l.now() < e; p++) {
                 var n = h[p],

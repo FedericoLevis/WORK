@@ -16,16 +16,41 @@ All rights reserved: UNAUTHORIZED COPYING, REPRODUCTION, REPUBLISHING, UPLOADING
 
 
 
-h1.jsuAbout {
+h1.jsuDoc {  /* JSU Documentation */
   font-family: Arial-Black;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 30px;
   color: black;
-  padding-top:0px;
-  padding-bottom:0px;
+  text-align: center;
+  padding-top:5px;
+  padding-bottom:5px;
+} 
+
+h2.jsuDoc {  /* JSU Documentation */
+  font-family: Arial-Black;
+  font-weight: bold;
+  font-size: 22px;
+  color: black;
+  text-align: left;
+  padding-top:10px;
+  padding-bottom:2px;
   margin-top: 0px;
   margin-bottom: 0px;
 } 
+
+ul {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+li {
+  padding-top:0px;
+  padding-bottom:2px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
 
 h1.jsuDownload{  /* inside the Title */
   margin-top: 0px;
