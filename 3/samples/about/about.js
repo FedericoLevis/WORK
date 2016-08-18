@@ -90,7 +90,7 @@ var JSU_LONG_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samp
 var JSU_LONG_URL_SAMPLE_BLOCKPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/BlockPopup/PopupSample.html";
 
 //----------- goo.gl of FREE Features
-var JSU_URL_DOWNLOAD_PAGE_FREE  =	"https://goo.gl/HnNqnM";
+var JSU_SHORT_URL_DOWNLOAD_FREE  =	"https://goo.gl/HnNqnM";
 var JSU_SHORT_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
 var JSU_SHORT_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
 var JSU_SHORT_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
@@ -146,7 +146,8 @@ var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/iPqUqL";
 var JSU_SITE = JSU_SHORT_URL_DOC; 
 
 	
-var JSU_TIP_CUR_FEATURE="Click to Show a new Window with the <b>JSDoc HTML</b> of this feature";
+var JSU_TIP_CUR_FEATURE="Click to Show a new Window with the <b>JSU Documentation of this feature</b>";
+var JSU_TIP_DOC="Click to Show a new Window with the <b>JSU Feature</b>";
 
 // COMMON for all samples
 var SAMPLE_MAX_NUM=4; // MAX Number of Sample
@@ -155,9 +156,6 @@ var SAMPLE_ALL="ALL";
 var URL_1 = "WORK";
 var URL_2 = "master";
 var URL_SEP = "/";
-
-var JSU_GOOGLE_ANAL_TIP='<div style="width:400px;" align="left">Click to show a Box with Links to the '+
-  '<b>JSU Google Analytics</b>: <BR/>Number of <b>JSU Downloads</b>, Number of <b>access to Samples, Documentation,</b> ...</div>';
 
 
 /* =============================================================================================
@@ -362,9 +360,9 @@ function aboutTipFixJSU(event,bShowAllSample){
  * Tip for Author(title)
  */
 function aboutTipAuthor(event){
-	var szTip = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="850px">' +
+	var szTip = '<div style="width=800px"><table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">' +
   '  <tr>' +
-  '    <td width="250px" align="left"> <img width="290px" src="'  + JSU_PATH_ABOUT_IMG + 'FedericoLevis.jpg"/></td> ' +
+  '    <td width="230px" align="left"> <img width="230px" src="'  + JSU_PATH_ABOUT_IMG + 'FedericoLevis.jpg"/></td> ' +
   '    <td ><table class="tipNoBorder" width="100%">' +
   '      <tr><td align="left"><label class="tipTitleBig">Federico Levis</label></td><tr/>' +
   '      <tr><td align="left">SW Engineer - Developer, Architect & Team Leader specialist in:<BR/>' +
@@ -372,7 +370,7 @@ function aboutTipAuthor(event){
   '      <tr><td ><table class="tipNoBorder" width="100%">' +
   '        <tr>' +
   '          <td width="180px" class="tipl"><label class="tipTitle">Linkedin CV: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_LINKEDIN  + '" target="_blank">' + JSU_SHORT_URL_LINKEDIN +  '</a> </td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_LINKEDIN  + '" target="_blank">' + JSU_LONG_URL_LINKEDIN +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">Email: </label></td>'+
@@ -384,7 +382,7 @@ function aboutTipAuthor(event){
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">Cognos CEL Plugin: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_COGNOS  + '" target="_blank">' + JSU_SHORT_URL_COGNOS +  '</a> </td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_COGNOS  + '" target="_blank">' + JSU_LONG_URL_COGNOS +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">PL/SQL LOG Package: </label></td>'+
@@ -393,10 +391,10 @@ function aboutTipAuthor(event){
   '      </table></td></tr>' +
   '    </table></td> ' +
   '  </tr>' +
-  '  </table> ';
+  '  </table></div> ';
 	
 	
-	TipFix (szTip,event,{szTitle:'JSU AUTHOR',iTipWidth:800});	
+	TipFix (szTip,event,{szTitle:'JSU AUTHOR',iTipWidth:830});	
 }
 
 
@@ -607,7 +605,7 @@ function featureNotReady(){
  */
 function downloadPay(){
 	UnTip();
-	featureNotReady;
+	featureNotReady();
 }
 
 /**
@@ -616,7 +614,7 @@ function downloadPay(){
  */
 function downloadFree(){
 	UnTip();
-  jsuGoToURL(JSU_URL_DOWNLOAD_PAGE_FREE,false);
+  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
 }
 
 /**
@@ -674,31 +672,31 @@ function downloadTip(event,szDownloadTipType){
   	Tip (szMsg);  	
 	}else {
 		// TipInfo
-		var szMsg = szMsg + '<div style="padding:5px 5px 5px 5px">There are 2 DOWLOAD Options: <ul>' +
+		var szMsg = szMsg + '<div align="left" style="padding:5px 5px 5px 5px">There are 2 DOWLOAD Options: <ul>' +
 		'<li><label class="tipGood">JSU.ZIP FULL:</label> Full access to source code, documentation, samples. Required if you want yo modify/customize/investigate JSU code</li>' +
-		'<li><label class="tipWarnn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipWarnn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
+		'<li><label class="tipWarn">JSU.ZIP Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="tipWarnn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.<BR/>You can use JS samples and JSU but their original JS code is not available <i>in clear</i> and all comments have been removed</li>' +
 		'</ul></div>' +
 		'<table style="padding:5px 5px 5px 5px" class="det" BORDER="2" cellspacing="0" cellpadding="2" width="1000px">' +
 		'	  <tr class="detTitle">' +
 		'		  <th class="detTitle" colspan="6">JSU.ZIP DOWLOAD OPTIONS</th>' +
 		'	  </tr>' +
 		'	  <tr class="detTitle2">' +
-		'		  <td width="18%" class="tipc">DOWNLOAD OPTION</td>' +
-		'		  <td width="34%" class="tipc">JSU Features</td>' +
+		'		  <td width="14%" class="tipc">DOWNLOAD OPTION</td>' +
+		'		  <td width="38%" class="tipc">JSU Features</td>' +
 		'		  <td width="18%" class="tipc">JSU and Samples<BR/>JS Source Code</td>' +
 		'		  <td width="18%" class="tipc">JSU Documentation</td>' +
 		'		  <td width="12%" class="tipc">Price</td>' +
 		'	  </tr>' +
 		'	  <tr>' +
-		'		  <td class="detTitle2"><input type="button" class="downloadPay"   onclick="downloadPay()" /></td>' +
+		'		  <td class="tipc"><input type="button" style="margin-left:0px" class="downloadPay"   onclick="downloadPay();" /></td>' +
 		'		  <td class="tipGood">Full access: ALL JSU Features available</td>' +
 		'		  <td class="tipGood">Full access: Code visible with all comments</td>' +
 		'		  <td class="tipGood">Full access: JSDoc HTML with reference to code</td>' +
 		'		  <td class="tipErr">FUTURE (Not still available)</td>' +
 		'	  </tr>' +
 		'	  <tr>' +
-		'		  <td class="detTitle2"><input type="button" class="downloadFree"  ' +
-		'         onclick="location.href=\'https://github.com/FedericoLevis/JSU/archive/master.zip\';" /></td>' +
+		'		  <td class="tipc"><input type="button" style="margin-left:0px" class="downloadFree"  ' +
+		'         onclick="downloadFree();" /></td>' +
 		'		  <td class="tipl"><ul><li>AVAILABLE: Tip, SortTable, BlockingPopup</li>' +
 		'                          <li><label class="tipErr">NOT AVAILABLE: LoadingDiv, Validate, JSLog, JQPopup</label></li></ul> </td>' +
 		'		  <td class="tipErr">JS Obfuscated and without any comments</td>' +
@@ -716,6 +714,14 @@ function downloadTip(event,szDownloadTipType){
 /*=======================================================================================
  *   URl for DOC
 =======================================================================================*/
+
+/**
+ * Open window with JSU Documentation
+ */
+function jsuDoc(){
+	jsuGoToURL(JSU_SHORT_URL_DOC);
+}
+
 
 /**
  * Open window with Validate Documentation
@@ -1114,20 +1120,20 @@ function showJSUVideoValidate(){
  * Show a FixedTip with the Link to JSU Google Analytics
  * @param event
  */
-function jsuGoogleAnal (event){
-	var Fn = "[about.js jsuGoogleAnal()] ";
+function jsuGoogleAnalList (event){
+	var Fn = "[about.js jsuGoogleAnalList()] ";
 	var GA_CAT_DOWN = "JSU DOWNLOAD";
-	var GA_CAT_SAMPLE_FREE = "JSU FREE Version: SAMPLES";
-	var GA_CAT_SAMPLE_FULL = "JSU FULL Version: SAMPLES";
-	var GA_CAT_DOC_FREE = "JSU FREE Version: DOC";
-	var GA_CAT_DOC_FULL = "JSU FULL Version: DOC";
+	var GA_CAT_SAMPLE_FREE = "JSU FREE - SAMPLES";
+	var GA_CAT_SAMPLE_FULL = "JSU FULL - SAMPLES";
+	var GA_CAT_DOC_FREE = "JSU FREE - DOC";
+	var GA_CAT_DOC_FULL = "JSU FULL - DOC";
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
   UnTip(event);	
   
   // Prepare arObjGoogleAnal: Only shortUrl is mandatory (if other fields are not present, they are not displayed). 
   // In this case we populate all fields
-  var arObjGoogleAnal = [
-       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
+  var arObjGoogleAnalList = [
+       {shortUrl: JSU_SHORT_URL_DOWNLOAD_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
@@ -1151,16 +1157,16 @@ function jsuGoogleAnal (event){
      ];
   var bUrl = false;
   if (bUrl){
-    TipFixGoogleAnal(arObjGoogleAnal,event,{
+    TipFixGoogleAnalList(arObjGoogleAnalList,event,{
     	szTitle:'JSU Google Analitycs',
-    	iTipWidth: 1200  // Tip Width 
+    	iTipWidth: 1000  // Tip Width 
     });
   }else{
-    TipFixGoogleAnal(arObjGoogleAnal,event,{
+    TipFixGoogleAnalList(arObjGoogleAnalList,event,{
     	bShortUrl: false,
     	bLongUrl: false,
     	szTitle:'JSU Google Analitycs',
-    	iTipWidth: 800  // Tip Width 
+    	iTipWidth: 1000  // Tip Width  // DAFARE 
     });
   }
   
@@ -1170,12 +1176,56 @@ function jsuGoogleAnal (event){
 }
 
 /**
- * Show GoogleAnalytic FloatingTip
+ * Show GoogleAnalyticList FloatingTip
  * @param event
  */
-function jsuGoogleAnalTip (event){
-	Tip (JSU_GOOGLE_ANAL_TIP);
+function jsuGoogleAnalListTip (event){
+	var szTip='<div style="width:500px;" align="left">Click to show a Box with Links to the '+
+     '<b>JSU Google Analytics</b>: <BR/>Number of <b>JSU Downloads</b>, Number of <b>access to Samples, Documentation,</b> ...</div>';
+	
+	Tip (szTip);
 }
+
+
+/**
+ * Show GoogleAnalytic Free FloatingTip
+ * @param event
+ */
+function jsuGoogleAnalFreeTip (event){
+	var szTip='<div style="width:300px;" align="left">Click to show <b>Google Analytics Page</b><BR/>' + 
+     'with the number of <b>FREE JSU.zip downloads</b></div>';
+	Tip (szTip);
+}
+
+/**
+ * GoTo GoogleAnalytic Page relative to Free download Numbers
+ * @param event
+ */
+function jsuGoogleAnalFree (event){
+	UnTip();
+	jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE +'.info' ,true);
+}
+
+/**
+ * Show GoogleAnalytic Pay FloatingTip
+ * @param event
+ */
+function jsuGoogleAnalPayTip (event){
+	var szTip='<div style="width:300px;" align="left">Click to show <b>Google Analytics Page</b><BR/>' + 
+     'with the number of <b>FULL JSU.zip downloads</b></div>';
+	Tip (szTip);
+}
+
+/**
+ * GoTo GoogleAnalytic Page relative to Pay download Numbers
+ * @param event
+ */
+function jsuGoogleAnalPay(event){
+	UnTip();
+	// jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_PAY +'.info' ,true);
+	featureNotReady();
+}
+
 
 
 
@@ -1195,6 +1245,7 @@ function onclickTestGoogle(){
 	test_cur =0;
 	var iSec = Math.floor((Math.random() * 10) + 1);
 	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+	getElementById2("testDone",true).value = test_cur;
 	tmoTest = setTimeout (testGoogle,iSec * 1000);
 }
 
@@ -1203,7 +1254,7 @@ function onclickTestGoogle(){
 function testGoogle(){
 	var Fn = "[about.js testGoogle()] ";
 	// URL under TEST
-	var arTestUrl = [JSU_URL_DOWNLOAD_PAGE_FREE
+	var arTestUrl = [JSU_SHORT_URL_DOWNLOAD_FREE
 	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_BLOCKPOPUP
 	                 ,JSU_SHORT_URL_DOC,JSU_SHORT_URL_DOC_TIP,JSU_SHORT_URL_DOC_LOADING,JSU_SHORT_URL_DOC_SORT,JSU_SHORT_URL_DOC_VALIDATE
 	                 // ,JSU_SHORT_URL_SAMPLE_LOADING,JSU_SHORT_URL_SAMPLE_JSLOG,JSU_SHORT_URL_SAMPLE_JQPOPUP,JSU_SHORT_URL_SAMPLE_VALIDATE
@@ -1216,9 +1267,10 @@ function testGoogle(){
 	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
 	jsuGoToURL(szUrl, true);
 	clearTimeout (testGoogle);
-	
-	if (++test_cur > par_test){
-		alert ("FINE Test Executed=" + par_test);
+	test_cur++ ;
+	getElementById2("testDone",true).value = test_cur;
+	if (test_cur > par_test){
+		alert ("FINE Test - Executed=" + par_test);
 	}else {
 		var iSec = Math.floor((Math.random() * par_period) + 1);
 		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");

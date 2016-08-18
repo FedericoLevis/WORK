@@ -45,7 +45,6 @@ var TIP_FIXED_POS={
 };
 
 var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
-var TIP_DEF_GOOGLE_ALL_LINK = true; // default: Present the Link to display all the pages of Google analytics together
 var TIP_DEF_WIDTH = 800; // default
 var TIP_DEF_COL_NUM = 100; // default: 100 col for TextArea
 var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextArea
@@ -55,10 +54,13 @@ var TIP_DEF_TEXTBOX_TITLE = "Source Code";
 
 var TIP_MAX_TEXT_BOX_ROW_NUM = 20; // if more there will be scrollbar
 
-// Default GOOGLE 
-var TIP_DEF_GOOGLE_WIDTH = 1300; 
-var TIP_DEF_GOOGLE_SHORT_URL = true;
-var TIP_DEF_GOOGLE_LONG_URL = true;
+// Default GOOGLE
+var TIP_GOOGLE_DEF = {
+		ALL_LINK: true, // default: Present the Link to display all the pages of Google analytics together
+		WIDTH: 1300, 
+		SHORT_URL: false,
+		LONG_URL: false
+};
 
 /*=========================================================================================
  * 					CONFIG CONST
@@ -112,7 +114,7 @@ var GOOGLE_ANAL_PAR_TYPE={
 
 // For GoogleAnal
 var tt_googleAnal = {
-		arObjGoogleAnal: null,   // arObjGoogleAnal received as PAR
+		arObjGoogleAnalList: null,   // arObjGoogleAnalList received as PAR
 		iTipWidth: 800,
 		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
 		iSelFilterCat: 0 , // Current FilterCat
@@ -129,12 +131,11 @@ var tt_googleAnal = {
 
 
 // ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
-var TIP_CLASS_FIXED = {	Down: "tipFixed",		Up: "tipFixedUp"};
-var TIP_CLASS_ARROW_FIXED = {		Down: "tipArrowFixed",		Up: "tipArrowFixedUp"};
-var TIP_CLASS_BIG_FIXED = {		Down: "tipFixedBig",		Up: "tipFixedBigUp"};
-var TIP_CLASS_GOOGLE_FIXED = {		Down: "tipGoogleAnal",		Up: "tipGoogleAnalUp"};
-var TIP_CLASS_FIXED_JS = {	Down: "tipFixedJS",	Up: "tipFixedJSUp"};
-var TIP_CLASS_FIXED_CODE = {	Down: "tipFixedCode",	Up: "tipFixedCodeUp"};
+var TIP_FIX_CLASS = {	Down: "tipFix",		Up: "tipFixUp"};
+var TIP_FIX_CLASS_ARROW = {		Down: "tipFixArrow",		Up: "tipFixArrowUp"};
+var TIP_FIX_CLASS_GOOGLE = {		Down: "tipGoogleAnalList",		Up: "tipGoogleAnalListUp"};
+var TIP_FIX_CLASS_JS = {	Down: "tipFixJS",	Up: "tipFixJSUp"};
+var TIP_FIX_CLASS_CODE = {	Down: "tipFixCode",	Up: "tipFixCodeUp"};
 
 
 
@@ -190,7 +191,7 @@ config. FadeInterval	= 30;		// Duration of each fade step in ms (recommended: 30
 config. Fix				= TIP_CFG_FLOATING.Fix;	// Fixated position, two modes. Mode 1: x- an y-coordinates in brackets, e.g. [210, 480]. Mode 2: Show tooltip at a position related to an HTML element: [ID of HTML element, x-offset, y-offset from HTML element], e.g. ['SomeID', 10, 30]. Value null (default) for no fixated positioning.
 config. FollowMouse		= TIP_CFG_FLOATING.FollowMouse;	// false or true - tooltip follows the mouse
 // --------------------- Default Font (used also for Footer)
-config. FontColor		= '#000044';
+config. FontColor		= '#000000';
 config. FontFace		= 'Verdana';
 config. FontSize		= '8pt';		// E.g. '9pt' or '12px' - unit is mandatory
 config. FontWeight		= 'normal';	// 'normal' or 'bold';
@@ -210,12 +211,11 @@ config. TextAlign		= 'left';	// 'left', 'right' or 'justify'
 //-------------------------------------------------- TITLE
 config. Title			= TIP_CFG_FLOATING.Title;		// Default title text applied to all tips (no default title: empty string '')
 config. TitleAlign		= 'center';	// 'left' 'center' or 'right' - text alignment inside the title bar
-config. TitleBgColor	= '#003099';		// If empty string '', BorderColor will be used
-config. TitleFontColor	= '#FFFFFF';	// Color of title text - if '', BgColor (of tooltip body) will be used
+config. TitleBgColor	= '#F1F1F1'; // #003099  backgroundColor of the Title section . If empty string '', BorderColor will be used
+config. TitleFontColor	= '#000000';	// Color of title text - if '', BgColor (of tooltip body) will be used
 config. TitleFontFace	= 'bold';		// If '' use FontFace (boldified)
 config. TitleFontSize	= '13pt';		// If '' use FontSize
-config. TitlePadding	= 2;
-
+config. TitlePadding	= 1;
 config. Footer			= '';		// Default Footer text applied to all tips (no default title: empty string '')
 
 
@@ -296,6 +296,9 @@ function Tip(tipMsgHtml,tipType,objOpt)
  *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
+ * 
+ * Implementation NOTES:
+ * - all the other tiFixXXX call this funzion
  */
 function TipFix(tipMsgHtml,event, objOpt)
 {
@@ -342,14 +345,14 @@ function TipFix(tipMsgHtml,event, objOpt)
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
- 		tipMsgHtml = '<div align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid; overflow: auto; background-color: white;">' +
+ 		tipMsgHtml = '<div id="divTipContainer" align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid; overflow: auto; background-color: white;">' +
  		    tipMsgHtml + '</div>';
   	
   	
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
@@ -369,36 +372,31 @@ function TipFix(tipMsgHtml,event, objOpt)
 			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFix must have an id");
 		}
 		tt_log ( fn + "classname=" + className);
-		if (className == TIP_CLASS_FIXED.Down ){
-			className = TIP_CLASS_FIXED.Up;
-		}else	if (className == TIP_CLASS_FIXED.Up){
-			className = TIP_CLASS_FIXED.Down;
+		if (className == TIP_FIX_CLASS.Down ){
+			className = TIP_FIX_CLASS.Up;
+		}else	if (className == TIP_FIX_CLASS.Up){
+			className = TIP_FIX_CLASS.Down;
 			bShow = false;
-		}else	if (className == TIP_CLASS_ARROW_FIXED.Up){
-			className = TIP_CLASS_ARROW_FIXED.Down;
+		}else	if (className == TIP_FIX_CLASS_ARROW.Up){
+			className = TIP_FIX_CLASS_ARROW.Down;
 			bShow = false;
-		}else	if (className == TIP_CLASS_ARROW_FIXED.Down ){
-			className = TIP_CLASS_ARROW_FIXED.Up;
-		}else	if (className == TIP_CLASS_BIG_FIXED.Up){
-			className = TIP_CLASS_BIG_FIXED.Down;
+		}else	if (className == TIP_FIX_CLASS_ARROW.Down ){
+			className = TIP_FIX_CLASS_ARROW.Up;
+		}else	if (className == TIP_FIX_CLASS_GOOGLE.Up){			
+			className = TIP_FIX_CLASS_GOOGLE.Down;			
 			bShow = false;
-		}else	if (className == TIP_CLASS_BIG_FIXED.Down ){
-			className = TIP_CLASS_BIG_FIXED.Up;
-		}else	if (className == TIP_CLASS_GOOGLE_FIXED.Up){
-			className = TIP_CLASS_GOOGLE_FIXED.Down;
+		}else	if (className == TIP_FIX_CLASS_GOOGLE.Down ){		
+			className = TIP_FIX_CLASS_GOOGLE.Up;		
+		}	else	if (className == TIP_FIX_CLASS_JS.Up){
+			className = TIP_FIX_CLASS_JS.Down;
 			bShow = false;
-		}else	if (className == TIP_CLASS_GOOGLE_FIXED.Down ){
-			className = TIP_CLASS_GOOGLE_FIXED.Up;
-		}else	if (className == TIP_CLASS_FIXED_JS.Up){
-			className = TIP_CLASS_FIXED_JS.Down;
+		}else	if (className == TIP_FIX_CLASS_JS.Down ){
+			className = TIP_FIX_CLASS_JS.Up;
+		}else	if (className == TIP_FIX_CLASS_CODE.Up){
+			className = TIP_FIX_CLASS_CODE.Down;
 			bShow = false;
-		}else	if (className == TIP_CLASS_FIXED_JS.Down ){
-			className = TIP_CLASS_FIXED_JS.Up;
-		}else	if (className == TIP_CLASS_FIXED_CODE.Up){
-			className = TIP_CLASS_FIXED_CODE.Down;
-			bShow = false;
-		}else	if (className == TIP_CLASS_FIXED_CODE.Down ){
-			className = TIP_CLASS_FIXED_CODE.Up;
+		}else	if (className == TIP_FIX_CLASS_CODE.Down ){
+			className = TIP_FIX_CLASS_CODE.Up;
 		}	
 		tt_log ( fn + "SET New classname=" + className);
 		tipImg.className = className;
@@ -414,6 +412,13 @@ function TipFix(tipMsgHtml,event, objOpt)
 		TIP_CFG_FIXED.Fix = [tipImg.id,tipFixedPos,5];
 		tt_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
 		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
+		
+		var el = document.getElementById ("WzTiTl");
+		var szWidth = el.style.width; 
+		tt_log (fn + "reduce width of the header that was " + szWidth);
+		iWidth = parseInt (szWidth.replace ("px","")) - 6;
+		el.style.width = iWidth + "px";
+		
 	}else {
 		tt_UnTipFix();
 	}
@@ -509,6 +514,7 @@ function TipFixCode(szCode, event, objOpt){
  * 														 <li> szCode {String} The Code to diaply in section</li>
  * 														 <li> bPrettify  {Boolean} [true]  true if szCode must be prettified. If szCode contains HTML Tags you have to set bPrettify=false if you wnat to see the Text with HTMLTags into a TextArea, witout prettify it</li>
  * 														 <li> iRowNum {Number} [undefined] Only for Obj.bPrettify=false. If it is not present (default), the Rows of TextArea are automatically calculated basing on /n. If passed  iRowNum is used</li>
+ * 													   <li> iMaxHeight {Number}:  Only for Obj.bPrettify=true Max Height (px) of the Div - If Undefined there is no max <li/> 
  * 			                      </ul> 
  *                            See example below <BR/>
  * @param event
@@ -568,9 +574,36 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 			szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
 		}else{	
 			// This Code must be put prettified
-			var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;  
-			szTbl += '     <div id="' + id + '" class="prettyfy" style="width:"' + iWidth + 
-			'"px;max-height:' +  objOpt.iTipMaxHeight + 'px;"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
+			var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;
+			var bContainer = false;
+			// check if is required MaxHeight
+			var szMaxHeight = "";
+			var iMaxHeight = objOpt.iTipMaxHeight; // can be undefined
+			if (objCode.iMaxHeight != undefined){
+				iMaxHeight = objCode.iMaxHeight; 
+			} 
+			if (iMaxHeight != undefined && iMaxHeight > 0){
+				bContainer = true;
+			}	
+			//-----------------------
+			if (bContainer){
+				var szMaxHeightCont = 'max-height:' +  iMaxHeight + 'px;';
+				var szWidthCont = 'width:' + iWidth -100 + 'px;';
+				var szWidth = 'width:' + (iWidth -130) + 'px;';
+				// ------
+				tt_log (fn + "For code[" + i + "] we have to put an extra div container - szMaxHeightCont=" + szMaxHeightCont);
+				var szDivPretty = '<div style="' + szMaxHeightCont + szWidthCont + ' border: 1px solid; overflow: auto; background-color: white; ">' + 
+							'    <div id="' + id + '" class="prettyfy" style="' + szWidth + 
+			        '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>' +
+				     '</div>';
+				tt_logHtml (fn + "szDivPretty", szDivPretty);     
+			}else {
+				var szWidth = 'width:' + iWidth + 'px;';
+				var szDivPretty = '    <div id="' + id + '" class="prettyfy" style="' + szWidth + 
+             '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
+				
+			}
+			szTbl += szDivPretty;
 		}
 		szTbl+= '   </td></tr></table>\n';
 		szCodeDiv += szTbl;
@@ -650,7 +683,6 @@ function TipFixTextArea(szTxt, event, objOpt){
 	var szTxtBox='<textarea id="tipTextArea" rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + szTxt + '</textarea><BR/>';
   objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>
 	TipFix (szTxtBox,event,objOpt);
-	// NOTE: we have to change the width now. If set during TextArea creation it is not considered
 	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
 	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
 	var iTextAreaWidth = iTipWidth - 40; // keep some space for Padding,..
@@ -662,46 +694,17 @@ function TipFixTextArea(szTxt, event, objOpt){
 }
 
 
-/**
- * TipFix with a Video
- * 
- * @param event
- * @param videoEmbedUrl {String} e.g: 
- * @param [objOpt] {Object} Option: <ul>    
- *                           <li> szTitle{String}  default: 'Text'  </li> 
- * 													 <li> iTipWidth {Number}: [800] TipWidth  - do not pass it to automatically set it basing on content. </li> 
- *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
- *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
- * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
- *                          </ul>  
- */
-function TipFixGoogle(videoEmbedUrl, event, objOpt){
-	var Fn = "[tooltip.js TipFixTest] ";
-	tt_init(); // init, if not already done
-	if (objOpt == undefined){
-		objOpt = new Object();
-	}
-	objOpt.NL2BR = false;
-	var szTable  =  '<table class="tip" BORDER="2" cellspacing="0">';
-  var szTip = szTable +
-	  '  <tr>' +
-	  '    <td align="center">' + videoEmbedUrl + '</td>' +
-	  '  </tr></table>'; 
-	TipFixClicked(szTip,event,objOpt);
-}
-
-
 
 /**
  * Display in a FixedTip a Table with the Link to Google Analytics . 
- * @param arObjGoogleAnal  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
+ * @param arObjGoogleAnalList  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
  * @param event
  * @param [objOpt] {Object} Option: <ul>   
  *                           <li> szTitle{String}  default: 'Google Analytics'  </li> 
  *                           <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
  *                           <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
- *                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
- *                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
+ *                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE.HEADER] Message to put before the Table of Link to Analytics 
+ *                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE.FOOTER] Message to put after the Table of Link to Analytics 
  *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
  * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - default TIP_DEF_WIDTH (800) </li> 
  *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
@@ -710,9 +713,9 @@ function TipFixGoogle(videoEmbedUrl, event, objOpt){
  * 	@example
 	//--------------------------------------------------------- JS
 	function jsuGoogleAnalTip(event){   
-	  // Prepare arObjGoogleAnal: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
+	  // Prepare arObjGoogleAnalList: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
 	  // In this case we populate all fields
-	  var arObjGoogleAnal = [
+	  var arObjGoogleAnalList = [
 	       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE ,
 	      	              cat:"FREE JSU",desc:'N&ordm; Download <b>JSU.ZIP FREE</b> Obfuscated'},
 	       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:"FREE JSU", desc:'Main JSU Sample'},
@@ -720,7 +723,7 @@ function TipFixGoogle(videoEmbedUrl, event, objOpt){
 	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
 	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
 	     ];
-	  TipFixGoogleAnal(arObjGoogleAnal,event,{
+	  TipFixGoogleAnal(arObjGoogleAnalList,event,{
 	  	szTitle:'JSU Google Analitycs',
 	  	iTipWidth: 1200
 	  });
@@ -729,35 +732,41 @@ function TipFixGoogle(videoEmbedUrl, event, objOpt){
 	 <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" /> 
 													     
  */
-function TipFixGoogleAnal(arObjGoogleAnal, event, objOpt){
-	var fn = "[tooltip.js TipFixGoogleAnal] ";
+function TipFixGoogleAnalList(arObjGoogleAnalList, event, objOpt){
+	var fn = "[tooltip.js TipFixGoogleAnalList] ";
 
 	tt_log (fn + TIPLOG_FUN_START);
-	tt_logObj (fn + "IN arObjGoogleAnal", arObjGoogleAnal);
+	tt_logObj (fn + "IN arObjGoogleAnalList", arObjGoogleAnalList);
 	tt_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_GOOGLE_TITLE; }
-	if (objOpt.bAllGoogleAnalLink == undefined){	objOpt.bAllBtn = TIP_DEF_GOOGLE_ALL_LINK; }
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_GOOGLE.DEF_TITLE; }
+	if (objOpt.bAllGoogleAnalLink == undefined){	objOpt.bAllBtn = TIP_GOOGLE_DEF.ALL_LINK; }
 	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.szHeaderTxt == undefined){	objOpt.szHeaderTxt = TIP_DEF_GOOGLE_HEADER; }
-	if (objOpt.szFooterTxt == undefined){	objOpt.szFooterTxt = TIP_DEF_GOOGLE_FOOTER; }
-	if (objOpt.bShortUrl == undefined){	objOpt.bShortUrl= TIP_DEF_GOOGLE_SHORT_URL; }
-	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = TIP_DEF_GOOGLE_LONG_URL; }
-	
-	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_DEF_GOOGLE_WIDTH; }
+	if (objOpt.szHeaderTxt == undefined){	objOpt.szHeaderTxt = TIP_GOOGLE.DEF_HEADER; }
+	if (objOpt.szFooterTxt == undefined){	objOpt.szFooterTxt = TIP_GOOGLE.DEF_FOOTER; }
+	if (objOpt.bShortUrl == undefined){	objOpt.bShortUrl= TIP_GOOGLE_DEF.SHORT_URL; }
+	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = TIP_GOOGLE_DEF.LONG_URL; }
+	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_GOOGLE.DEF_WIDTH; }
 	if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth= TIP_DEF_WIDTH; }
-	tt_googleAnal.iTblWidth = objOpt.iTipWidth - 30; // -20 for some laterla space
+	
+	if (objOpt.bShortUrl || objOpt.bShortUrl){
+		if (!tt_isFullVersion()){
+			return tt_featNotSupported ("PARAMETERS objOpt.bShortUrl and objOpt.bLongUrl");
+		}
+	} 
+	
+	tt_googleAnal.iTblWidth = objOpt.iTipWidth - 20; // -20 for some lateral space
 	tt_googleAnal.bShortUrl = objOpt.bShortUrl;
 	tt_googleAnal.bLongUrl = objOpt.bLongUrl;
-	tt_googleAnal.arObjGoogleAnal = arObjGoogleAnal; // Set in Global
+	tt_googleAnal.arObjGoogleAnalList = arObjGoogleAnalList; // Set in Global
 	// Get the possible categories, for filter
 	var arCat = new Array();
-	arCat.push (TIP_GOOGLE_FILTER_CAT_ALL);
-	for (var i=0; i< arObjGoogleAnal.length; i++){
-		var szCat = arObjGoogleAnal[i].cat;
+	arCat.push (TIP_GOOGLE.FILTER_CAT_ALL);
+	for (var i=0; i< arObjGoogleAnalList.length; i++){
+		var szCat = arObjGoogleAnalList[i].cat;
 		var bPresent = false;
 		for (var k=0;k < arCat.length && !bPresent; k++){
 			if (arCat[k] == szCat){
@@ -775,24 +784,31 @@ function TipFixGoogleAnal(arObjGoogleAnal, event, objOpt){
 	tt_googleAnal.iSelFilterType = 0; // all_time
 	tt_googleAnal.szSelFilterType = GOOGLE_ANAL_PAR_TYPE.all_time;
 	var szTbl = '<table class="detNoBorder">';
-	if (objOpt.szHeaderTxt != undefined){
-		szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl">' + objOpt.szHeaderTxt + '<BR/></td></tr>';
-  }
+	// --------------------------- HEADER
+	
+	var szCbShowUrl = "";
+	/* FULL_JSU_START */
+	var szShortChecked = (tt_googleAnal.bShortUrl) ? "checked" : "";  
+	var szLongChecked = (tt_googleAnal.bLongUrl) ? "checked" : "";  
+	szCbShowUrl =    '<input type="checkbox" id="cbGoogleShortUrl" ' + szShortChecked + ' onclick="tt_onclickGoogleShortUrl();"/>Show ShortUrl ' +
+       '<input style="margin-left:20px" type="checkbox" id="cbGoogleLongUrl" ' + szLongChecked + ' onclick="tt_onclickGoogleLongUrl();" />Show LongUrl';
+	/* FULL_JSU_END */
+	
+	szTbl += '<tr style="padding-top:5px;">' +
+         '<td class="tiplBold" width="300px" style="padding-bottom:10px">'+ szCbShowUrl +
+         '</td>' +
+	       '<td class="tipr" style="padding-right:10px;padding-bottom:10px">' + objOpt.szHeaderTxt + '</td>' +
+	   '</tr>';
 	// Prepare the div that will contain the GoogleTable
-	szTbl += '<tr><td><div id="divTblGoogle" style="width:' + tt_googleAnal.iTblWidth + 'px;"></div></td></tr>';
-	if (objOpt.szFooterTxt != undefined){
-		szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td class="tipl googleAnalFooter">' + objOpt.szFooterTxt + '</td></tr>';
-  }
+	szTbl += '<tr><td colspan="2"><div id="divTblGoogle" style="width:' + tt_googleAnal.iTblWidth + 'px;"></div></td></tr>';
+	// Footer
+	szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td colspan="2" class="tipl googleAnalFooter">' + objOpt.szFooterTxt + '</td></tr>';
 	szTbl += '</table>';
 	// Show Tip With Empty Table
 	TipFix (szTbl,event,objOpt);
 	tt_googleAnalTblShow();
 	tt_log (fn + TIPLOG_FUN_END);
 }
-
-
-
-
 
 
 
@@ -816,20 +832,20 @@ function tt_googleAnalTblShow (){
 	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
 	var szTblHea = '<tr class="detTitle" >';
 	if (tt_googleAnal.bShortUrl){
-		szTblHea += '<td class="tipc detTitle" width="13%">' + TIP_GOOGLE_SHORT_URL + '</td> ';
+		szTblHea += '<td class="tipc detTitle" width="15%">' + TIP_GOOGLE.SHORT_URL + '</td> ';
 	}
 	if (tt_googleAnal.bLongUrl){
-		szTblHea += '<td class="tipc detTitle" width="34%">' + TIP_GOOGLE_LONG_URL + '</td> ';
+		szTblHea += '<td class="tipc detTitle" width="30%">' + TIP_GOOGLE.LONG_URL + '</td> ';
 	}	
-	szTblHea +=  '<td class="tipc detTitle" width="13%">' + TIP_GOOGLE_CAT + '</td> '+
-	  '<td class="tipc detTitle" width="18%">' + TIP_GOOGLE_DESC + '</td> '+
-	  '<td class="tipc detTitle" width="18%">' + TIP_GOOGLE_ANAL + '</td> '+
+	szTblHea +=  '<td class="tipc detTitle" width="16%">' + TIP_GOOGLE.CAT + '</td> '+
+	  '<td class="tipc detTitle" width="21%">' + TIP_GOOGLE.DESC + '</td> '+
+	  '<td class="tipc detTitle" width="14%">' + TIP_GOOGLE.ANAL + '</td> '+
 	'</tr>';
 	szTbl += szTblHea;
 	
 	// -------------------------- HEADER_2 with Filter e AnalMode 
 	iRowHeader = 2;
-	var szSelectFilter = '<select class="detFilter" id="googleAnalCat" title="' + TIP_GOOGLE_FILTER_CAT_TITLE  + '"  style="width:100%;" onchange="tt_onchangeGoogleAnalCat();">';
+	var szSelectFilter = '<select class="detFilter" id="googleAnalCat" title="' + TIP_GOOGLE.FILTER_CAT_TITLE  + '"  style="width:100%;" onchange="tt_onchangeGoogleAnalCat();">';
 	var arCat = tt_googleAnal.arFilterCat;
 	for (var i=0;i<arCat.length; i++){
 		var szCat = arCat[i];
@@ -839,12 +855,12 @@ function tt_googleAnalTblShow (){
 	}
 	szSelectFilter += '\n</select>';
 	//--- Filter for GoogleAnal Type (day,...)
-	var szSelectType = '<select class="detFilter" id="googleAnalType" title="' + TIP_GOOGLE_FILTER_TYPE_TITLE  + '"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" > ';
-	var arTypeOpt = [{value: GOOGLE_ANAL_PAR_TYPE.all_time, text:TIP_GOOGLE_FILTER_TYPE_ALL},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.month, text:TIP_GOOGLE_FILTER_TYPE_MONTH},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.week, text:TIP_GOOGLE_FILTER_TYPE_WEEK},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.day, text:TIP_GOOGLE_FILTER_TYPE_DAY},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.two_hours,  text:TIP_GOOGLE_FILTER_TYPE_2HOURS}
+	var szSelectType = '<select class="detFilter" id="googleAnalType" title="' + TIP_GOOGLE.FILTER_TYPE_TITLE  + '"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" > ';
+	var arTypeOpt = [{value: GOOGLE_ANAL_PAR_TYPE.all_time, text:TIP_GOOGLE.FILTER_TYPE_ALL},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.month, text:TIP_GOOGLE.FILTER_TYPE_MONTH},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.week, text:TIP_GOOGLE.FILTER_TYPE_WEEK},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.day, text:TIP_GOOGLE.FILTER_TYPE_DAY},
+	                 {value: GOOGLE_ANAL_PAR_TYPE.two_hours,  text:TIP_GOOGLE.FILTER_TYPE_2HOURS}
 	                 ]; 
 	for (var i=0; i<arTypeOpt.length; i++){
 		var objOpt = arTypeOpt[i];
@@ -861,12 +877,12 @@ function tt_googleAnalTblShow (){
 	var szTr = '<tr class="detFilter">';
 	if (iColUrl > 0){
 		szTr += '<td class="detFilter" colSpan="' + iColUrl + '" align="right" style="font-weight:normal;padding-right:5px;">' + 
-		//  TIP_GOOGLE_FILTER_CAT_HEADER + 
+		//  TIP_GOOGLE.FILTER_CAT_HEADER + 
 		'</td>';   
 	}
 	szTr += '<td class="detFilter">' + szSelectFilter + '</td>' +   
 	'<td class="detFilter" align="right"  font-weight:normal;style="padding-right:5px;">' + 
-	//  TIP_GOOGLE_FILTER_TYPE_HEADER + 
+	//  TIP_GOOGLE.FILTER_TYPE_HEADER + 
 	'</td>' +   
 	'<td class="detFilter">' + szSelectType + '</td>' +   
 	'</tr>';
@@ -876,7 +892,7 @@ function tt_googleAnalTblShow (){
 	// Inser only if Filter Match and SET Global .iVisibleLink 	
 	tt_googleAnal.iVisibleLink = 0; // Global
 	tt_logObj (fn , "iSelFilterCat =" + tt_googleAnal.iSelFilterCat);
-	var arObj = tt_googleAnal.arObjGoogleAnal;
+	var arObj = tt_googleAnal.arObjGoogleAnalList;
 	var szCatSel = tt_googleAnal.arFilterCat[tt_googleAnal.iSelFilterCat];
 	tt_logObj (fn + "szCatSel=" + szCatSel + " arFilterCat=", tt_googleAnal.arFilterCat);
 	for (var i=0; i< arObj.length; i++){
@@ -893,12 +909,12 @@ function tt_googleAnalTblShow (){
 			if (tt_googleAnal.bShortUrl){
 				szTr += '<td class="tipc">' + objGoogle.shortUrl + '</td> '; 
 			}
-			if (tt_googleAnal.bShortUrl){
+			if (tt_googleAnal.bLongUrl){
 				szTr += '<td class="tipl">' + objGoogle.longUrl + '</td> '; 
 			}
 			szTr +=	  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
 			  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
-			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + TIP_GOOGLE_ANAL + '</a></td> '+
+			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + TIP_GOOGLE.ANAL + '</a></td> '+
 	 	  '</tr>';
 		  szTbl += szTr;	
 			tt_googleAnal.iVisibleLink ++;
@@ -906,11 +922,11 @@ function tt_googleAnalTblShow (){
 	}
 	if (tt_googleAnal.iVisibleLink > 1){
 		// add TableFooter for All Google Analytics
-		var szFooter = TIP_GOOGLE_ALL_TITLE.replace ('GOOGLE_ANAL_NUM',tt_googleAnal.iVisibleLink);
+		var szFooter = TIP_GOOGLE.ALL_TITLE.replace ('GOOGLE_ANAL_NUM',tt_googleAnal.iVisibleLink);
 		var iColSpan = iColUrl + 2;
 		var szTr = '<tr class="' + szClassFooter + '">' +
 	       '<td class="tipr ' + szClassFooter + '" colSpan="' + iColSpan  + '">' + szFooter + '</td>' +   
-  			  '<td class="tipc ' + szClassFooter + '"><a id="googleAll" class="tipLink" href="javascript:tt_onclickGoogleAnalAll();">' + TIP_GOOGLE_ANAL_ALL + '</a></td> '+
+  			  '<td class="tipc ' + szClassFooter + '"><a id="googleAll" class="tipLink" href="javascript:tt_onclickGoogleAnalAll();">' + TIP_GOOGLE.ANAL_ALL + '</a></td> '+
 		 '</tr>';
 	  szTbl += szTr;	
   }
@@ -923,21 +939,21 @@ function tt_googleAnalTblShow (){
 		tt_log (fn + "Create SortTable bShortUrl=" + tt_googleAnal.bShortUrl + " tt_googleAnal.bLongUrl=" + tt_googleAnal.bLongUrl);
 		var arSortCol = new Array();
 		/*
-		var arSortCol = [  {col: TIP_GOOGLE_SHORT_URL},   
-			         					{col: TIP_GOOGLE_LONG_URL},        
-			         					{col: TIP_GOOGLE_CAT}, 
-			         	        {col:TIP_GOOGLE_DESC}, 
-			         	        {col: TIP_GOOGLE_ANAL}];
+		var arSortCol = [  {col: TIP_GOOGLE.SHORT_URL},   
+			         					{col: TIP_GOOGLE.LONG_URL},        
+			         					{col: TIP_GOOGLE.CAT}, 
+			         	        {col:TIP_GOOGLE.DESC}, 
+			         	        {col: TIP_GOOGLE.ANAL}];
 		*/
 		if (tt_googleAnal.bShortUrl){
-			arSortCol.push({col: TIP_GOOGLE_SHORT_URL});
+			arSortCol.push({col: TIP_GOOGLE.SHORT_URL});
 		}	
 		if (tt_googleAnal.bLongUrl){
-			arSortCol.push({col: TIP_GOOGLE_LONG_URL});
+			arSortCol.push({col: TIP_GOOGLE.LONG_URL});
 		}	
-		arSortCol.push({col: TIP_GOOGLE_CAT});
-		arSortCol.push({col: TIP_GOOGLE_DESC});
-		arSortCol.push({col: TIP_GOOGLE_ANAL});
+		arSortCol.push({col: TIP_GOOGLE.CAT});
+		arSortCol.push({col: TIP_GOOGLE.DESC});
+		arSortCol.push({col: TIP_GOOGLE.ANAL});
 		
 
 		var cSortTbl1 = new cSortTable("tblGoogle",arSortCol,{
@@ -948,6 +964,39 @@ function tt_googleAnalTblShow (){
 			   }); 
 	}
 	
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+
+
+
+/*
+ * onclick in GoogleAnalytics cbGoogleShortUrl
+ * Re design the Table of Google Analitycs basing on the cbGoogleShortUrl selected 
+ */
+function tt_onclickGoogleShortUrl(){
+	var fn = "[tooltip.js tt_onclickGoogleShortUrl] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	// Toggle
+	tt_googleAnal.bShortUrl = (tt_googleAnal.bShortUrl) ? false : true;
+  // redesign Tbl	
+	tt_googleAnalTblShow();
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+/*
+ * onclick in GoogleAnalytics cbGoogleLongUrl
+ * Re design the Table of Google Analitycs basing on the cbGoogleShortUrl selected 
+ */
+function tt_onclickGoogleLongUrl(){
+	var fn = "[tooltip.js tt_onclickGoogleLongUrl] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	// Toggle
+	tt_googleAnal.bLongUrl = (tt_googleAnal.bLongUrl) ? false : true; 
+  // redesign Tbl	
+	tt_googleAnalTblShow();
 	tt_log (fn + TIPLOG_FUN_END);
 }
 
@@ -982,7 +1031,7 @@ function tt_onchangeGoogleAnalType(){
 	tt_googleAnal.szSelFilterType = select[select.selectedIndex].value;
 	tt_log (fn + "iSelFilterType=" + tt_googleAnal.iSelFilterType + " value=" + tt_googleAnal.szSelFilterType);
   //--------------- align href
-	var arObj = tt_googleAnal.arObjGoogleAnal;
+	var arObj = tt_googleAnal.arObjGoogleAnalList;
 	tt_log (fn + "SET href for the " + arObj.length + " URLs");
 	for (var i=0; i< arObj.length; i++){
 		var objGoogle = arObj[i];
@@ -1042,10 +1091,10 @@ function tt_UnTipFix(){
 function tt_isClassFixed(szClass){
   var bTipFix = false;	
 	var fn="[tooltip.js tt_isClassFixed()] ";
-	if (szClass == TIP_CLASS_FIXED_JS.Up  || szClass == TIP_CLASS_FIXED.Up  ||
-			szClass == TIP_CLASS_FIXED_CODE.Up  ||
-			szClass == TIP_CLASS_ARROW_FIXED.Up || szClass == TIP_CLASS_BIG_FIXED.Up || 
-			szClass == TIP_CLASS_GOOGLE_FIXED.Up){
+	if (szClass == TIP_FIX_CLASS_JS.Up  || szClass == TIP_FIX_CLASS.Up  ||
+			szClass == TIP_FIX_CLASS_CODE.Up  ||
+			szClass == TIP_FIX_CLASS_ARROW.Up || 
+			szClass == TIP_FIX_CLASS_GOOGLE.Up){
 		bTipFix = true;
 	}
 	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
@@ -1061,18 +1110,16 @@ function tt_RestoreImgFixed() {
 	if (tip_img_fixed != null){
 		var szClass = "";
 		// Change img of tip_fixed if present
-		if (tip_img_fixed.className == TIP_CLASS_FIXED.Up){
-			szClass = TIP_CLASS_FIXED.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_ARROW_FIXED.Up){
-			szClass = TIP_CLASS_ARROW_FIXED.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_BIG_FIXED.Up){
-			szClass = TIP_CLASS_BIG_FIXED.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_GOOGLE_FIXED.Up){
-			szClass = TIP_CLASS_GOOGLE_FIXED.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_FIXED_JS.Up){
-			szClass = TIP_CLASS_FIXED_JS.Down;
-		}	else if (tip_img_fixed.className == TIP_CLASS_FIXED_CODE.Up){
-			szClass = TIP_CLASS_FIXED_CODE.Down;
+		if (tip_img_fixed.className == TIP_FIX_CLASS.Up){
+			szClass = TIP_FIX_CLASS.Down;
+		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_ARROW.Up){
+			szClass = TIP_FIX_CLASS_ARROW.Down;
+		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_GOOGLE.Up){
+			szClass = TIP_FIX_CLASS_GOOGLE.Down;
+		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_JS.Up){
+			szClass = TIP_FIX_CLASS_JS.Down;
+		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_CODE.Up){
+			szClass = TIP_FIX_CLASS_CODE.Down;
 		}
 		if (szClass != ""){
 			tt_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
@@ -1490,7 +1537,7 @@ function tt_MkMainDiv()
 function tt_MkMainDivHtm()
 {
 	return(
-		'<div id="WzTtDiV"></div>' +
+		'<div id="ttDivContainer"></div>' +
 		(tt_ie56 ? ('<iframe id="WzTtIfRm" src="javascript:false" scrolling="no" frameborder="0" style="filter:Alpha(opacity=0);position:absolute;top:0px;left:0px;display:none;"></iframe>')
 		: '')
 	);
@@ -1499,12 +1546,12 @@ function tt_MkMainDivDom()
 {
 	var el = document.createElement("div");
 	if(el)
-		el.id = "WzTtDiV";
+		el.id = "ttDivContainer";
 	return el;
 }
 function tt_GetMainDivRefs()
 {
-	tt_aElt[0] = tt_GetElt("WzTtDiV");
+	tt_aElt[0] = tt_GetElt("ttDivContainer");
 	if(tt_ie56 && tt_aElt[0])
 	{
 		tt_aElt[tt_aElt.length - 1] = tt_GetElt("WzTtIfRm");
@@ -1739,21 +1786,26 @@ function tt_MkTipContent(a)
 function tt_MkTipSubDivs()
 {
 	var sCss = 'position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:auto;',
-	sCssCloseBtn = 'position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:5px;',
+	sCssCloseBtn = 'position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:10px;',
 	sTbTrTd = ' cellspacing="0" cellpadding="0" border="0" style="' + sCss + '"><tbody style="' + sCss + '"><tr><td ';
-
+  
+	var sHeaCss = 'position:relative;margin:0px;padding:0px;border-width:0px;;left:0px;top:0px;line-height:normal;width:auto;'
+	
+	// JSU LOGO DAFARE
+	// WzTiTl  e` il div che contiene Header	
 	tt_aElt[0].style.width = tt_GetClientW() + "px";
 	tt_aElt[0].innerHTML =
 		(''
 		+ (tt_aV[TITLE].length ?
-			('<div id="WzTiTl" style="position:relative;z-index:1;">'
-			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sCss +  '">'
-			+  tt_aV[TITLE]
+			('<div id="WzTiTl" style="position:relative;z-index:1;border-width:3px;border-style:solid;border-color:black">'
+			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
+			+  tt_aV[TITLE] 
+			+ '<span><a style="margin-left:15px;" href="http://www.google.com">JSU Demo Version</a></span>'
 			+ '</td>'
 			+ (tt_aV[CLOSEBTN] ?
 				('<td align="right" style="' + sCssCloseBtn
 				+ ';text-align:right;">'
-				+ '<span id="WzClOsE" style="position:relative;left:2px;padding-left:2px;padding-right:2px;'
+				+ '<span id="WzClOsE" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
 				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
 				+ tt_aV[CLOSEBTNTEXT]
@@ -1783,6 +1835,9 @@ function tt_MkTipSubDivs()
 	if(tt_t2t && !tt_aV[COPYCONTENT])
 		tt_El2Tip();
 	tt_ExtCallFncs(0, "SubDivsCreated");
+	
+	// tt_logHtml('WzTiTl', tt_aElt[0].innerHTML);
+	
 }
 function tt_GetSubDivRefs()
 {
@@ -2561,12 +2616,43 @@ function tt_isPrettifyEn(){
   // return false;
 }
 
+
+/*
+ * 
+ * @param szHtml
+ * @returns  Number of /n
+ */
 function tt_getHtmlRowNum(szHtml){
 	var iRowNum =  1 + (szHtml.match(/\n/g) || []).length;
 	if (iRowNum > TIP_MAX_TEXT_BOX_ROW_NUM){
 		iRowNum	= TIP_MAX_TEXT_BOX_ROW_NUM;
   } 
-	return iRowNum +1;
-	
+	return iRowNum;
 }
 
+/*
+ *Show an Error because this szFeatNotSupported is not supported
+ * @param szFeatNotSupported
+ */
+function tt_featNotSupported(szFeatNotSupported){
+	var szMsg = "Sorry but this feature is NOT PRESENT in JSU Free Version:\n " + szFeatNotSupported + '\n\n\n' +
+	  "To use this feature download FULL JSU Version";
+	if (typeof (Popup) != "undefined"){
+		Popup (POPUP_TYPE.ERR,szMsg);
+	}else {
+		alert (szMsg);
+	}
+}
+
+
+/* 
+ * Check if it is Full version 
+ * @returns {Boolean}
+ */
+function tt_isFullVersion(){
+	var bFullVersion = false; // default = FreeVersion
+	/* FULL_JSU_START */
+	bFullVersion = true;   // FULL JSU
+	/* FULL_JSU_END */
+	return bFullVersion;
+}

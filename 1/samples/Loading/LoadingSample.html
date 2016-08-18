@@ -32,46 +32,47 @@
 <div class="jsuLoading" id="jsuLoading"></div> 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table  width="100%">
-  <tr>
-  <td class=tipl"">
-     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
-  </td>
-  <td class="tipr">
-  <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
-  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
-  </td></tr>
+<table class="sampleHea" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table>  
+    </td>
+  </tr>
 </table>   
 
 <hr>
-<h1 align="center">JS Utility (JSU) - LoadingDiv</h1>  
+<h1 class="jsuSample">JSU - JS Utility Plugin  - LoadingDiv</h1>
 
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tipTitleBig">
-      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-      </th>
-    </tr>
-    <tr class="tipTitleBig2" >
-      <th class="tipTitleBig2" colspan="4">loadingDiv API Sample - JSU <label class="jsuAPI">loadingDiv API</label>
-              <input type="button" class="jsuHelp" onclick="jsuDocLoading()" 
-             onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
+            <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
-        <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>
             <option value="2">Show DESCRIPTION</option>
             <option value="ALL" selected>Show ALL</option>
         </select> 
       </th>
-      </tr>
-    <tr class="tipTitleBig3" id="tr_sample_0">
+    </tr>
+    <tr class="tipTitleBig2" id="tr_sample_0">
       <td width="65%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
-        <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
+        <select id="selectSample" class="selectSample"style="margin-left:15px" onchange="onchange_sample()">
             <option value="1">Show SAMPLE_1: DEFAULT loadingDiv API</option>
             <option value="2">Show SAMPLE_2: loadingDiv API OPTIONS</option>
             <option value="3">Show SAMPLE_3: CUSTOM loadingDiv API</option>
@@ -103,8 +104,8 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
-               <input type="button" class="tipFixedJS" id="tipJSLoading1" 
-               onclick="tipFixedCode( JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
+               <input type="button" class="tipFixJS" id="tipJSLoading1" 
+               onclick="tipFixCode( JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
            </td></tr>
          </table>
       </td>      
@@ -209,10 +210,10 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-               <input type="button" class="tipFixedJS" id="tipJSLoading2" onclick="tipFixedCode( JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
+               <input type="button" class="tipFixJS" id="tipJSLoading2" onclick="tipFixCode( JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
            </td></tr>
            <tr valign="top"><td>
-               <input type="button" class="tipFixArrow" id="tipJSLoadingOpt" style="color:Blue;" value="JS Source: loadingDiv API OPTIONS" onclick="tipFixedCode( JS_LOADING_OPT,event,{iMaxWidth:800,szTitle:'loadingDiv API OPTIONS'});");" /><BR/><BR/>
+               <input type="button" class="tipFixArrow" id="tipJSLoadingOpt" style="color:Blue;" value="JS Source: loadingDiv API OPTIONS" onclick="tipFixCode( JS_LOADING_OPT,event,{iMaxWidth:800,szTitle:'loadingDiv API OPTIONS'});");" /><BR/><BR/>
            </td></tr>
          </table>
       </td>
@@ -249,7 +250,7 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_3: 
-               <input type="button" class="tipFixedJS" id="tipJSLoading3" onclick="sample3JS (event);" /><BR/><BR/>
+               <input type="button" class="tipFixJS" id="tipJSLoading3" onclick="sample3JS (event);" /><BR/><BR/>
            </td></tr>
          </table>
       </td>     

@@ -27,13 +27,20 @@ h1.jsuAbout {
   margin-bottom: 0px;
 } 
 
+h1.jsuDownload{  /* inside the Title */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Arial-Black ;
+  font-weight: bold ;
+  font-size: 24pt ;
+} 
+
 
 table.docSep {
   border: 2px solid black;
   margin-top: 5px;
   margin-bottom: 5px;
 }	
-
 
 
 
@@ -136,7 +143,8 @@ label.aboutSourceJSUAPI{
 
 
 input.downloadFree, input.downloadPay {  /* common for download buttons*/
-  border: 1px solid #000;
+  border: 2px solid gray;
+  border-style: ridge;
   font-weight: bold;
   cursor: pointer;
   align:left;
@@ -147,7 +155,7 @@ input.downloadFree {
   width: 210px;
   cursor: pointer;
   margin-left:100px;
-  margin-right: 10px;  
+  margin-right: 0px;  
   background: Yellow url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/DownloadFree.png) no-repeat center center;
 }
 
@@ -156,7 +164,7 @@ input.downloadPay {
   width: 165px;
   cursor: pointer;
   margin-left:  50px;
-  margin-right: 10px;  
+  margin-right: 0px;  
   background: cyan url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadPay.png) no-repeat right center;
 }
 

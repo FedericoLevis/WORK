@@ -27,34 +27,41 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 <script type="text/javascript" src="./AllSamples.js" ></script>
 
 
-<!--  NOTE: URL to samples use about.js - URL to doc are fixed  -->
-
+<!--  NOTE: URL to samples are dynamic: they use JS call in about.js -->
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table class="sampleHea" width="100%">
-  <tr>
-  <td class=tipl"">
-     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
-  </td>
-  <td class="tipr">
-  <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
-  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
-  </td></tr>
+<table class="sampleHea" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table>  
+    </td>
+  </tr>
 </table>   
 
 <hr>
-<h1 align="center">JS Utility (JSU) - All Samples</h1>  
+<h1 class="jsuSample">JSU - JS Utility Plugin  - All Samples</h1>
 
-
-<table class="tip" BORDER="2" cellspacing="0" cellpadding="5" width="100%">
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="4" width="100%">
 	  <tr class="tipTitle">
-		  <th class="tipTitleBig" colspan="6">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixJSU(event,false);" />
-		    <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-		  </th>
-	  </tr>
-  <tr class="tipTitle2">
+		  <th class="tipTitleBig" colspan="6">
+            JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event,false);" />
+	        <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
+      
+      
+  <tr class="tipTitleBig2">
 	  <td width="10%" class="tipc">JSU Feature TYPE</td>
 	  <td width="8%" class="tipc">Feature Documentation</td>
     <td width="8%" class="tipc">API Documentation</td>
@@ -147,8 +154,10 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 
 <!--  USED by jsuGoToURL()  -->
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
-<input id="testGoogle" style="display:none;visibility:hidden;" type="button" value="TEST Google Analytics" onclick="onclickTestGoogle();" />
-
+<div id="testGoogle" style="display:none;visibility:hidden;">
+  <input  type="button" value="TEST Google Analytics" onclick="onclickTestGoogle();" /> &nbsp;Execute: <input  id="testDone" readonly value="0" /> 
+  
+</div> 
 
 
 </body>

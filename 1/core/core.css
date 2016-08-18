@@ -359,81 +359,55 @@ JSU Tip button for Tooltip API
 
 ```html
 <b>JSU Tip button :</b> <ul>
- <li> tipFixed button with '?' and Arrow Down/Up: &nbsp;&nbsp;   
-     <b>input.tipFixed</b>  <input type="button" class="tipFixed"/> &nbsp;&nbsp; 
-     <b>input.tipFixedUp</b>  <input type="button" class="tipFixedUp" />
+ <li> tipFix button with '?' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFix</b>  <input type="button" class="tipFix"/> &nbsp;&nbsp; 
+     <b>input.tipFixUp</b>  <input type="button" class="tipFixUp" />
  </li><BR/>
- <li> tipFixed button with 'JS' and Arrow Down/Up: &nbsp;&nbsp;   
-     <b>input.tipFixedJS</b>  <input type="button" class="tipFixedJS"/> &nbsp;&nbsp; 
-     <b>input.tipFixedJSUp</b>  <input type="button" class="tipFixedJSUp" />
+ <li> tipFix button with 'JS' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixJS</b>  <input type="button" class="tipFixJS"/> &nbsp;&nbsp; 
+     <b>input.tipFixJSUp</b>  <input type="button" class="tipFixJSUp" />
  </li><BR/>
- <li> tipFixed button with 'Code' and Arrow Down/Up: &nbsp;&nbsp;   
-     <b>input.tipFixedCode</b>  <input type="button" class="tipFixedCode"/> &nbsp;&nbsp; 
-     <b>input.tipFixedCodeUp</b>  <input type="button" class="tipFixedCodeUp" />
+ <li> tipFix button with 'Code' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixCode</b>  <input type="button" class="tipFixCode"/> &nbsp;&nbsp; 
+     <b>input.tipFixCodeUp</b>  <input type="button" class="tipFixCodeUp" />
  </li><BR/>
- <li> tipFixed button with Arrow Down/Up: &nbsp;&nbsp;   
-     <b>input.tipFixedArrow</b>  <input type="button" class="tipFixedArrow"/> &nbsp;&nbsp; 
-     <b>input.tipFixedArrowUp</b>  <input type="button" class="tipFixedArrowUp" />
+ <li> tipFix button with Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixArrow</b>  <input type="button" class="tipFixArrow"/> &nbsp;&nbsp; 
+     <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
+ </li><BR/>
+ <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
+     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnal"/> &nbsp;&nbsp; 
+     <b>input.tipGoogleAnalListUp</b>  <input type="button" class="tipGoogleAnalListUp" />
+ </li><BR/>
+ <li> tipFix button to Go to the Page of Google Analytics: <BR/>   
+     <b>input.tipGoogleAnal</b>  <input type="button" class="tipGoogleAnal"/> &nbsp;&nbsp; 
+     <b>input.tipGoogleAnalUp</b>  <input type="button" class="tipGoogleAnalUp" />
  </li><BR/>
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
  </li>
- <li>... </li>
 </ul> 
 ```
 */
 
-input.tipFixed, input.tipFixedUp{  /* Fields Common for input.tipFixed and input.tipFixedUp */ 
+input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFixUp */ 
     height: 20px;
     width: 13px;
     border: 1px solid #000;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 1px; 
+    margin-left: 3px; 
+    margin-right: 3px; 
     cursor: pointer;
 }
-
-input.tipFixed{ /* Specific filed of input.tipFixed */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
+input.tipFix{ /* Specific filed of input.tipFix */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center;
+}
+input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixUp.png) no-repeat center center;
 }
 
-input.tipFixedUp{ /* Specific filed of input.tipFixedUp : different image */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
-}
-
-
-img.tipFixedJS{ /* tip JS Fixed img with Button Down */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJS.png') center top;
-  /* background-size: contain; */
-  height: 23px;
-  width: 16px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-img.tipFixedJSUp{ /* tip JS Fixed img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJSUp.png') center top;
-  /* background-size: contain; */ 
-  height: 24px;
-  width: 17px;
-  margin-left: 5px;
-}
-
-img.tipFixArrow{ /* tip Arrow Fixed img with Button Down */
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png') center bottom;
-  height: 17px;
-  width: 18px;
-  margin-left: 5px;
-}
-
-img.tipFixArrowUp{ /* tip JS Fixed img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png') center bottom;
-  height: 17px;
-  width: 18px;
-  margin-left: 5px;
-}
-
-input.tipFixedJS, input.tipFixedJSUp{
+input.tipFixJS, input.tipFixJSUp{
     height: 21px;
     width: 16px;
     border: 1px solid #000;
@@ -442,16 +416,14 @@ input.tipFixedJS, input.tipFixedJSUp{
     margin-left: 4px; 
     cursor: pointer;
 }
-
-input.tipFixedJS{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJS.png) no-repeat center center;
+input.tipFixJS{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixJS.png) no-repeat center center;
+}
+input.tipFixJSUp{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixJSUp.png) no-repeat center center;
 }
 
-input.tipFixedJSUp{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedJSUp.png) no-repeat center center;
-}
-
-input.tipFixedCode, input.tipFixedCodeUp{
+input.tipFixCode, input.tipFixCodeUp{
     height: 26px;
     width: 35px;
     border: 1px solid #000;
@@ -460,15 +432,13 @@ input.tipFixedCode, input.tipFixedCodeUp{
     margin-left: 4px; 
     cursor: pointer;
 }
-
-input.tipFixedCode{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCode.png) no-repeat center center; 
-    /* background: #E0E0E0 url(../images/tipFixedCode.png) no-repeat center center; */
+input.tipFixCode{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCode.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixCode.png) no-repeat center center; */
 }
-
-input.tipFixedCodeUp{
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedCodeUp.png) no-repeat center center; 
-    /* background: #E0E0E0 url(../images/tipFixedCodeUp.png) no-repeat center center; */ 
+input.tipFixCodeUp{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCodeUp.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixCodeUp.png) no-repeat center center; */ 
 }
 
 
@@ -479,7 +449,6 @@ input.tipFixArrow, input.tipFixArrowUp {  /* Common fields  */
     font-weight: bold;
     cursor: pointer;
 }
-
 input.tipFixArrow { /* specific image for tipFixArrow */ 
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png) no-repeat right center;
 }
@@ -487,24 +456,38 @@ input.tipFixArrowUp { /* specific image for tipFixArrowUp */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center;
 }
 
-
-
-input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button for Google Analytics */
-    height: 20px;
-    width: 155px;
-    border: 1px solid #000;
+input.tipGoogleAnalList, input.tipGoogleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
     cursor: pointer;
 }
+input.tipGoogleAnalList {
+   /*  background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalList.png) no-repeat center center; */
+   background: #FEFEFE url(../images/tipGoogleAnalList.png) no-repeat center center; 
+}
+input.tipGoogleAnalListUp {
+   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalListUp.png) no-repeat center center; */
+   background: #FEFEFE url(../images/tipGoogleAnalListUp.png) no-repeat center center; 
+}
 
+input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button to show 1 page with Google Analytics  */
+    height: 23px;
+    width: 27px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+    margin-left: 2px; 
+}
 input.tipGoogleAnal {
-    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center;
+   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center; */
+   background: #FEFEFE url(../images/tipGoogleAnal.png) no-repeat center center; 
 }
 input.tipGoogleAnalUp {
-    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center;
+   /* background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center; */
+   background: #FEFEFE url(../images/tipGoogleAnalUp.png) no-repeat center center; 
 }
-
-
-
 
 input.jsuHelp{	/* Help Button */  
     height: 18px;
@@ -518,36 +501,10 @@ input.jsuHelp{	/* Help Button */
 
 
 
-img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.jpg') center top;
-  background-size: contain;
-  height: 20px;
-  width: 15px;
-  margin-left: 5px;
-}
-
-img.tipFixedBig{ /* Big */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBig.jpg') no-repeat center bottom;
-  height: 30px;
-  width: 20px;
-  margin-left: 5px;
-}
-
-
-img.tipFixedBigUp{ /*  after click : img with Button Up */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBigUp.jpg') no-repeat center bottom;
-  height: 30px;
-  width: 20px;
-  margin-left: 5px;
-}
-
-
-img.jsuSample{ /* Sample img  */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/sample.jpg') no-repeat center bottom;
-  align: bottom;
-  width: 100px;  
-  height: 20px;  
-}
+/*---
+Table with tip 
+---
+*/
 
 
 table.tip, table.jsuHeader, table.jsuFooter {
@@ -717,7 +674,7 @@ td.tipOk,label.tipOk {
 	font-weight: bold;
 }
 
-td.tipwarn,label.tipwarn {
+td.tipWarn,label.tipWarn {
 	background: yellow; /* Yellow */
 	font-weight: bold;
 	color: red;
@@ -766,6 +723,9 @@ label.tipBrown{ /* Brown Bold */
   /* background-color: #CCFFFF; */   
 }
 
+input.tipBtnClose{
+  cursor: pointer;
+}	
 
 
 td.tipGood,label.tipGood { /* Good: Green and Boold */
@@ -909,7 +869,7 @@ td.googleAnalFooter, label.googleAnalFooter {
   font-size: 11pt;
 }	
 
-select.detFilter,option.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
+select.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
   background-color: #D4D0D0;  /* Gray Clear */
   /* background-color: #CCFF99; */  /* Green Clear */
   padding: 0px;
@@ -917,7 +877,7 @@ select.detFilter,option.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalyt
   font-weight: bold;
   font-family: Calibri;
   font-size: 11pt;
-  border: 2px solid #000000; /* Black */
+  border: 1px solid blue; /* Black */
   
 }	
 

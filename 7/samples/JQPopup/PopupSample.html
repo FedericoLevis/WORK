@@ -35,46 +35,46 @@
 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table  width="100%">
-  <tr>
-  <td class=tipl"">
-     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
-  </td>
-  <td class="tipr">
-  <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
-  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
-  </td></tr>
+<table class="sampleHea" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table>  
+    </td>
+  </tr>
 </table>   
 
 <hr>
-<h1 align="center">JS Utility (JSU) - Blocking Popup</h1>  
-
+<h1 class="jsuSample">JSU - JS Utility Plugin  - Tooltip Sample</h1>
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tipTitleBig">
-      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-      </th>
-    </tr>
-    <tr class="tipTitleBg2">
-      <th class="tipTitleBig2" colspan="4">JQ Popup Sample - JSU <label class="jsuAPI">JQPopup.js API</label>
-        <input type="button" class="jsuHelp" onclick="jsuDocJQPopup()" 
-             onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
+            <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
-        <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>
             <option value="2">Show DESCRIPTION</option>
             <option value="ALL" selected>Show ALL</option>
         </select> 
-     </th> 
+      </th>
     </tr>
-    <tr id="tr_sample_0" class="tipTitleBig3">
+    <tr id="tr_sample_0" class="tipTitleBig2">
       <td id="col_0_1" width="50%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
-        <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
+        <select id="selectSample" class="selectSample"style="margin-left:15px" onchange="onchange_sample()">
             <option value="1">Show SAMPLE_1: Text Popup</option>
             <option value="2">Show SAMPLE_2: HTML Popup</option>
             <option value="3">Show SAMPLE_3: Common Popup Option</option>

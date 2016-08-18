@@ -657,6 +657,9 @@ function isLogLevEnable(iLogLev)
 
 
 function jj_getHtmlRowNum(szHtml){
+	if (typeof(szHtml) != "string"){
+		return 0;
+	}
 	var iRowNum =  1 + (szHtml.match(/\n/g) || []).length;
 	if (iRowNum > JSLOG_MAX_TEXT_BOX_ROW_NUM){
 		iRowNum	= JSLOG_MAX_TEXT_BOX_ROW_NUM;

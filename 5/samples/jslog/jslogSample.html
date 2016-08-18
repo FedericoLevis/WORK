@@ -29,45 +29,46 @@
 <body>
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table  width="100%">
-  <tr>
-  <td class=tipl"">
-     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
-  </td>
-  <td class="tipr">
-  <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
-  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
-  </td></tr>
+<table class="sampleHea" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table>  
+    </td>
+  </tr>
 </table>   
 
 <hr>
-<h1 align="center">JS Utility (JSU) - JSLog</h1>  
+<h1 class="jsuSample">JSU - JS Utility Plugin  - Tooltip Sample</h1>
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tipTitleBig">
-      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-      </th>
-    </tr>
-    <tr class="tipTitleBg2">
-      <th class="tipTitleBig2" colspan="4">JS Log - JSU <label class="jsuAPI">jslog.js API</label>
-              <input type="button" class="jsuHelp" onclick="jsuDocJSLog()" 
-             onmouseover="Tip(JSU_TIP_CUR_FEATURE);" onmouseout="UnTip(event)" />
+            <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
-        <select id="selectShowCol" style="display:none; margin-left:15px" onchange="onchangeShowCol()">
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>
             <option value="2">Show DESCRIPTION</option>
             <option value="ALL" selected>Show ALL</option>
         </select> 
       </th>
-     </tr>
-    <tr class="tipTitleBig3">
+    </tr>
+    <tr class="tipTitleBig2">
       <td width="55%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
-        <select id="selectSample" style="margin-left:15px" onchange="onchange_sample()">
+        <select id="selectSample" class="selectSample"style="margin-left:15px" onchange="onchange_sample()">
             <option value="1">Show Sample_1: jslog API</option>
             <option value="2">Show Sample_2: jslog as URL PARAMETER</option>
             <option value="ALL" selected>Show ALL Samples</option>
@@ -175,13 +176,13 @@
          <table >
            <tr><td>
               <ul type="square">
-               <li><b>START jslog:</b> <input type="button" class="tipFixedJS" id="tipJS1jslogStart" onclick="tipFixedCode( JS1_JSLOG_START,event);" />
-                   <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipFixedJS" id="tipJS1jslogEnd" onclick="tipFixedCode( JS1_JSLOG_END,event);" /></li><BR/>
+               <li><b>START jslog:</b> <input type="button" class="tipFixJS" id="tipJS1jslogStart" onclick="tipFixCode( JS1_JSLOG_START,event);" />
+                   <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipFixJS" id="tipJS1jslogEnd" onclick="tipFixCode( JS1_JSLOG_END,event);" /></li><BR/>
                <li><label style="margin-right:30px;"><b>JSlog API sample at various Level: </b></label><BR/><BR/>
-                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipFixedJS" id="tipJS1Lev1" onclick="tipFixedCode( JS1_LEV1,event,{iMaxWidth:800});" /><BR/><BR/>
-                   <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipFixedJS" id="tipJS1Lev2" onclick="tipFixedCode( JS1_LEV2,event);" /> <BR/><BR/>
-                   <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipFixedJS" id="tipJS1Lev4" onclick="tipFixedCode( JS1_LEV4,event);" /><BR/><BR/>
-                   <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipFixedJS" id="tipJS1Lev8" onclick="tipFixedCode( JS1_LEV8,event);" /></li>
+                   <b>Log at Level=1 (JSLOG_INFO):</b> <input type="button" class="tipFixJS" id="tipJS1Lev1" onclick="tipFixCode( JS1_LEV1,event,{iMaxWidth:800});" /><BR/><BR/>
+                   <b>Log JSON at Level=2 (JSLOG_DEBUG):</b><input type="button" class="tipFixJS" id="tipJS1Lev2" onclick="tipFixCode( JS1_LEV2,event);" /> <BR/><BR/>
+                   <b>Log OBJECT at Level=4 (JSLOG_TRACE):</b><input type="button" class="tipFixJS" id="tipJS1Lev4" onclick="tipFixCode( JS1_LEV4,event);" /><BR/><BR/>
+                   <b>Log Two DOM Elements at Level=8 (JSLOG_TEST):</b><input type="button" class="tipFixJS" id="tipJS1Lev8" onclick="tipFixCode( JS1_LEV8,event);" /></li>
                 </ul>
            </td></tr>
          </table>
@@ -234,7 +235,7 @@
       <!--    SAMPLE_2 DESCRIPTION -->
       <td class="sampleDesc"  id="col_2_2" valign="top">
         <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-         <input type="button" class="tipFixedJS" id="tipJS2Start" onclick="tipFixedCode( JS2_START,event);" />
+         <input type="button" class="tipFixJS" id="tipJS2Start" onclick="tipFixCode( JS2_START,event);" />
  
       </td>   
   

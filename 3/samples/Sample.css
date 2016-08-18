@@ -16,18 +16,37 @@ hr { /* separator between header ad App */
   border: 1px solid black;
   border-style: ridge;  
   padding-top:0px;
-  padding-bottom:0px;
+  padding-bottom:px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
 }
 
-h1.jsuSample{  /* inside the Title */
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-family: Verdana ;
-  font-weight: bold ;
-  font-size: 11pt ;
+h1.jsuSample{  /* Title of the samples*/
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 1px;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 20pt ;
 }	
+
+
+
+select.parOption {  /* select that is displayed only when the par otion=1 (only for developers */
+  display:none; 
+  margin-left:15px;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 9px;
+}	
+
+select.selectSample{  /* select The sample */
+  margin-left:15px;
+  font-family: Verdana;
+  font-weight: bold;
+  /* font-size: 9px; */
+  border: 1px solid black;
+} 
 
 
 div.sampleSort, table.sampleSort{
