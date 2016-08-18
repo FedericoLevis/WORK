@@ -8,15 +8,16 @@ DISCLAIMER
 */
 
 
-table.sampleHea { /* the table in sample with HEader (download buttons,... */
+
+
+
+table.sampleToolbar { /* the Toolbar below the Header (download buttons,... */
   background-color: #F5F5F5;
 } 
 
 hr { /* separator between header ad App */
   border: 1px solid black;
   border-style: ridge;  
-  padding-top:0px;
-  padding-bottom:px;
   margin-top: 0px;
   margin-bottom: 4px;
 }

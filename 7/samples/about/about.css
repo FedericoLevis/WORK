@@ -13,6 +13,38 @@ All rights reserved: UNAUTHORIZED COPYING, REPRODUCTION, REPUBLISHING, UPLOADING
 
 
 
+table.jsuHeader, table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 13px;
+  color: black; 
+  background-color: #ffffff;
+  text-align: left;
+  border-spacing: 2px;  
+}	
+
+
+table.jsuHeader {
+  border: 3px solid #858585; /* Dark Gray */
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+
+
+td.jsuHeaderLogo { 
+  height: 80px;
+  width: 300px;
+  align: center;
+	// background: url('https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuLogo.png') center center no-repeat;
+  background: url('../../images/about/jsuLogo.png') center center no-repeat;
+}
 
 
 
@@ -22,21 +54,42 @@ h1.jsuDoc {  /* JSU Documentation */
   font-size: 30px;
   color: black;
   text-align: center;
-  padding-top:5px;
-  padding-bottom:5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 3px;
 } 
 
-h2.jsuDoc {  /* JSU Documentation */
+h2.jsuDoc {  /* JSU Documentation - Main separator (e.g Header and Footer) */
   font-family: Arial-Black;
   font-weight: bold;
   font-size: 22px;
   color: black;
   text-align: left;
-  padding-top:10px;
-  padding-bottom:2px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 3px;
 } 
+
+
+hr.jsuDoc { /* separator between header ad App */
+  border: 2px solid black;
+  border-style: solid;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+hr.h2Sep { /* separator between h2  */
+  border: 1px solid black;
+  border-style: solid;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+
 
 ul {
   padding-top: 2px;
@@ -66,6 +119,41 @@ table.docSep {
   margin-top: 5px;
   margin-bottom: 5px;
 }	
+
+
+
+table.jsuDocHeader, table.jsuDocFooter {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  /* White Gray: default backgound, used for Td */
+  border: 3px solid #858585; /* Dark Gray */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+table.jsuDocFooterNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 5px;  
+}
+
+
+table.jsuDocHeaderNoBorder,table.jsuDocFooterNoBorder { /* used for Header and Footer in Documentation*/ 
+    border-spacing: 5px;  
+  }
+
 
 
 

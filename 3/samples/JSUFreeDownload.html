@@ -12,7 +12,7 @@
 <script>
 var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 
-var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU-master.zip</b>:<BR/> <b>JSU FREE Version <i>Obfuscated</i></b></div>';
+var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU-master.zip</b>:<BR/> <b>JSU FREE Version</b> <i>Obfuscated<i></div>';
 </script>
 <link rel="stylesheet" href="../core/core.css" type="text/css">
 <link rel="stylesheet" href="../core/Popup/Popup.css" type="text/css">
@@ -26,19 +26,19 @@ var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU
 <link rel="stylesheet" href="./Sample.css" type="text/css">
 
 <div width="100%" align="center">
-<table class="det" BORDER="2" cellspacing="0" cellpadding="5" width="1200px">
+<table class="det" BORDER="2" cellspacing="0" cellpadding="0" width="1000px" style="border-spacing: 0px; border-collapse:separate;">
    <tr>
      <td>
-       <table class="detNoborder">   
+       <table class="detNoborder" cellspacing="0" cellpadding="0" style="border-spacing: 0px;border-collapse:separate;">   
 		    <tr>
-		      <td width="350px" align="center" class="jsuAbouTitle"> <img width="320px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-		      <td width="500px" class="tipc tipTitleVeryBig" style="font-size:28px;"><h1 class="jsuDownload">DOWNLOAD<BR/>FREE &nbsp;&nbsp;JSU.ZIP<BR/>Obfuscated</h1></td>
-          <td align="right" class="jsuAboutTitle" width="350">  
+		      <td width="300px" align="center" class="jsuAbouTitle"> <img style="height:80px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+		      <td width="300px" class="tipc tipTitleVeryBig" style="font-size:28px;"><h1 class="jsuDownload">DOWNLOAD<BR/>FREE &nbsp;&nbsp;JSU.ZIP<BR/></h1></td>
+          <td align="right" class="jsuAboutTitle" width="300px" height="80px">  
               <table class="tipNoBorder" width="100%">
                <tr>
-                <td align="right" width="42%"><img class="jsuAboutJust" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutJust.gif"/></td>
-                <td align="center" width="16%"><img class="jsuAboutSimple" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutSimple.gif"/></td>
-                <td align="left" width="42%"><img class="jsuAboutUse" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutUse.gif"/></td>
+                <td align="right" width="33%"><img class="jsuAboutJust" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutJust.gif"/></td>
+                <td align="center" width="34%"><img class="jsuAboutSimple" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutSimple.gif"/></td>
+                <td align="left" width="33%"><img class="jsuAboutUse" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutUse.gif"/></td>
                </tr>
               </table>
           </td> 
@@ -50,52 +50,48 @@ var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU
       <td colspan="3" width="100%">
         <table class="det" BORDER="2" cellspacing="0" cellpadding="5" width="100%">
  		  <tr class="detTitle jsuFeatBig">
-			  <td width="200px" class="detc">JSU Feature</td>
-			  <td width="200px" class="detc">AVAILABLE<BR/>in FREE JSU.ZIP</td>
-        <td width="600px" class="detc">Description</td>
+			  <td width="160px" class="detc">JSU Feature</td>
+			  <td width="160px" class="detc">AVAILABLE<BR/>in FREE JSU.ZIP</td>
+        <td width="680px" class="detc">Description</td>
 		  </tr>
 				  <tr>
-				    <td class="tipc jsuFeatPresentBig">Tooltip</a> </td>
-				    <td class="tipc jsuFeatPresentBig">AVAILABLE</td>
-            <td class="tipl">Flexible/Powerful <b>HTML Tooltips</b>: Floating/Fixed Tips with otptional GIF, Video, Code Highlight (JS, CSS, Java, C++, …)   </td> 
-				  </tr>
-				  <tr>
-				    <td class="tipc jsuFeatAbsentBig">LoadingDiv</a> </td>
-				    <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
-            <td class="tipl"><b>Loading Div</b> for Long Operation with Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b>   </td> 
-				  </tr>
-				  <tr>
-				    <td class="tipc jsuFeatAbsentBig">Validate</a> </td>
-				    <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
-            <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td> 
-				  </tr>
-				  <tr>
 				    <td class="tipc jsuFeatPresentBig">SortTable</a> </td>
-				    <td class="tipc jsuFeatPresentBig">AVAILABLE</td>
+				    <td class="tipc jsuFeatPresentBig">FULLY AVAILABLE<br/>
             <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td> 
 				  </tr>
 				  <tr>
+          <tr>
+            <td class="tipc jsuFeatPresentBig">Blocking Popup</a> </td>
+            <td class="tipc jsuFeatPresentBig">FULLY AVAILABLE</td>
+            <td class="tipl"><b>Modal Blocking Popupe</b> based on <i>ShowModalDialog</i> (fully supported only by IE) </td> 
+          </tr>
+          <tr>
+            <td class="tipc jsuFeatPresentBig">Tooltip</a> </td>
+            <td class="tipc jsuFeatPresentBig">AVAILABLE<BR/>with <a class="tipLink" href="javascript:showJSUVersionParFree();">Limitation</a></td>
+            <td class="tipl">Flexible/Powerful <b>HTML Tooltips</b>: Floating/Fixed Tips with Gif, Video, Google Analytics, Code Highlight (JS, Java, CSS, Shell, ...)    </td> 
+          </tr>
+          <tr>
+            <td class="tipc jsuFeatAbsentBig">LoadingDiv</a> </td>
+            <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
+            <td class="tipl"><b>Loading Div</b> for Long Operation with <b>Gif, Title, Message, ElapsedSec...</b>   </td> 
+          </tr>
+          <tr>
+            <td class="tipc jsuFeatAbsentBig">Validate</a> </td>
+            <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
+            <td class="tipl"><b>Validate Items</b> with many constraints/options; show Validate Errors in Red Items or Section, Popup ...</td> 
+          </tr>
 				   <td class="tipc jsuFeatAbsentBig">JSlog</a> </td>
 				    <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
            <td class="tipl"><b>Log</b> from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed ...</b></td> 
 				  </tr>
 				  <tr>
-				    <td class="tipc jsuFeatPresentBig">Blocking Popup</a> </td>
-				    <td class="tipc jsuFeatPresentBig">AVAILABLE</td>
-            <td class="tipl"><b>Modal Blocking Popup</b> designed specially for <b>IE</b><BR/><b>Blocking Code</b>, based on <i>ShowModalDialog</i> (fully supported only by IE) </td> 
-				  </tr>
-				  <tr>
 				    <td class="tipc jsuFeatAbsentBig">JS Popup</a> </td>
 				    <td class="tipc jsuFeatAbsentBig">NOT AVAILABLE</td>
-            <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function
-                <BR/>To be used instead of <i>Modal Blocking Popup</i> when you required all Browser Support 
-                <BR/><b>NOTE:</b> Only for This JSU Features, External Plugin are requires: <b>jquery, jquery-ui</b></td> 
+            <td class="tipl"><b>Modal Popup for whatever Browser</b>, based on jquery (required) </b></td> 
 				  </tr>
 				  <tr>
 				    <td colspan="4" class="tipl">
-				        <b>NOTE: </b><label class="detwarn">FREE JSU.ZIP is Obfuscated:</label>Only some Features are avalable and everything (JSU and samples) is <label class="detwarn">obfuscated</label>. You can only use JSU as it is, as a <b><i>CLOSE BLACK BOX</i></b>.
-				        You can use JS samples and JSU, but their original JS code is not available <i>in clear</i> and all comments have been removed<BR/><BR/>
-				        If you prefer to get all JSU Featuress and Full access (source code/documentation/samples), instead of </b><label class="warn">FREE JSU.ZIP</label> you have to download <label class="Good">JSU.ZIP FULL</label> 
+				        <b>NOTE: </b><label class="tipWarnBold">FREE JSU.ZIP is Obfuscated</label>&nbsp;For the details see <a class="tipLink" href="javascript:showJSUVersion();">Possible JSU Version to download</a> 
 				    </td>
 				  </tr>
 			 </table>

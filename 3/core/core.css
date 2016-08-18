@@ -542,7 +542,7 @@ table.tipNoBorder,table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
 }
 
 
-table.jsuHeaderNoBorder,table.jsuFooterNoBorder { /* used for Header and Footer in Documentation*/ 
+table.jsuHeaderNoBorder,table.jsuFooterNoBorder {  
     border-spacing: 1px;  
   }
 
@@ -681,11 +681,15 @@ td.tipOk,label.tipOk,div.tipOk {
 	/* font-weight: bold; */
 }
 
-td.tipWarn,label.tipWarn, div.tipWarn {
+.tipWarn,.tipWarnBold {
 	background: #ffffcc; /* Yellow */
-	/* font-weight: bold; */
-	color: black;
+	color: red;
 }
+
+.tipWarnBold {
+  font-weight: bold; 
+}
+
 
 td.tipNotPresent,label.tipNotPresent{ /* e.g for JSU Feature not present */
   background: black; /

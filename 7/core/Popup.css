@@ -37,25 +37,25 @@ td.PopupImgXXX: Popup Image
 ```
 */
 td.PopupImgInfo { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupInfo.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupInfo.png') center center no-repeat;
 }
 td.PopupImgWarning { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupWarning.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupWarning.png') center center no-repeat;
 }
 td.PopupImgError { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupError.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupError.png') center center no-repeat;
 }
 td.PopupImgConfirm { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupConfirm.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupConfirm.png') center center no-repeat;
 }
 td.PopupImgQuestion, td.PopupImgPrompt { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupQuestion.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupQuestion.png') center center no-repeat;
 }
 td.PopupImgChoice { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupChoice.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupChoice.png') center center no-repeat;
 }
 td.PopupImgAlarm { 
-  background: url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupAlarm.gif') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupAlarm.gif') center center no-repeat;
 }
 
 /*---
@@ -230,7 +230,7 @@ input.PopupPromptError: Prompt Input Error
 */
 input.PopupPromptError
 {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images//PopupValidationError.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupValidationError.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }

@@ -234,6 +234,9 @@ tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed too
 // Only for LICENSE Check
 var tt_a2="pe", tt_a1="ty", tt_a3="of";
 
+// ------------- JSU_FREE_START
+var tt_id = 0;
+//------------- JSU_FREE_END
 
 //=====================  PUBLIC  =============================================//
 
@@ -418,6 +421,16 @@ function TipFix(tipMsgHtml,event, objOpt)
 		tt_log (fn + "reduce width of the header that was " + szWidth);
 		iWidth = parseInt (szWidth.replace ("px","")) - 6;
 		el.style.width = iWidth + "px";
+		// JSU_FREE_START
+		// verifco che ci sia l'URL aggiunto contenga href come https://goo.gl/1eIYNm
+		// controlo che non sia stato hakerato il codice
+		tt1234 = getElementById2(tt_id).href;
+		if (tt1234.indexOf('o' + 'o' + '.') < 0){
+			// e` stato hakerato.
+			tt_UnTipFix();
+		}
+		// JSU_FREE_END
+
 		
 	}else {
 		tt_UnTipFix();
@@ -1696,6 +1709,7 @@ function tt_Tip(arg, t2t)
 	tt_AdaptConfig1();
 	tt_MkTipContent(arg);
 	tt_MkTipSubDivs();
+	
 	tt_FormatTip();
 	tt_bJmpVert = false;
 	tt_bJmpHorz = false;
@@ -1794,15 +1808,18 @@ function tt_MkTipSubDivs()
 	// JSU LOGO DAFARE
 	// WzTiTl  e` il div che contiene Header	
 	tt_aElt[0].style.width = tt_GetClientW() + "px";
+	tt_id = "tt" + Math.floor(Math.random() * 10000); // id random
 	tt_aElt[0].innerHTML =
 		(''
 		+ (tt_aV[TITLE].length ?
 			('<div id="WzTiTl" class="ttCaption" style="position:relative;z-index:1;border-width:3px;border-style:solid;border-color:black">'
 			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
 			+  tt_aV[TITLE] 
-			// ONLY_JSU_FREE_START
-			+ '<span><a style="margin-left:15px;" class="tt" href="http://www.google.com">JSU Demo Version</a></span>'
-			// ONLY_JSU_FREE_END
+			// JSU_FREE_START 
+			// non metto in chiaro il nome
+			+ '<span><a style="margin-left:15px;" id="' + tt_id + '" class="tt" href="https://goo.gl/1eIYNm">J' +
+			'S' + 'U' + 'D' + 'e' + 'm' + 'o' + 'V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
+			// JSU_FREE_END
 			+ '</td>'
 			+ (tt_aV[CLOSEBTN] ?
 				('<td align="right" style="' + sCssCloseBtn
