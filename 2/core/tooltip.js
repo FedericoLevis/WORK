@@ -131,7 +131,7 @@ var tt_tipFix = {
 		objIframe : {  // iframe to resize
 			bResize : false, // true if we have to resize iframeEl
 			elIframe: undefined,
-			iHeightOriginal: 0, // Orginal Height to restore at UnTip
+			iHeightOriginal: 0, // Original Height to restore at UnTip - > 0 means that FixTip is already open with bResize=true
 			iiHeightNew: 0      // New Height set during TipFix
 		},
 		tipImg : undefined  // the tipImg where the user has click to show tipFix (can also be undefined)
@@ -373,8 +373,10 @@ function TipFix(tipMsgHtml,event, objOpt)
     if (objOpt.iframeToResize != undefined){
     	try {
       	objIframe.elIframe = objOpt.iframeToResize;
-      	// Get the Size
-      	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
+      	// Get the Size, if not already set by previous TipFix already open (if we have switch form one Tip Open to another)
+      	if (objIframe.iHeightOriginal =  0){
+        	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
+      	}
     		tt_log (fn,"Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
       	objIframe.bResize = true;
     	}catch (e){
@@ -1162,9 +1164,11 @@ function tt_UnTipFix(bIframeResize){
 	
   if (bIframeResize && tt_tipFix.objIframe.bResize){
   	var objIframe = tt_tipFix.objIframe;
-  	if(objIframe.iHeightOriginal < objIframe.iHeightNew){
-  	  tt_log(fn + "SET BACK iHeightOriginal=" + objIframe.iHeightOriginal);
-  	  objIframe.elIframe.height = objIframe.iHeightOriginal; 
+  	var iHorig = objIframe.iHeightOriginal;
+  	if(iHorig>0 && objIframe.iHeightOriginal < objIframe.iHeightNew){
+  	  tt_log(fn + "SET BACK iHeightOriginal=" + iHorig);
+  	  objIframe.elIframe.height = iHorig; 
+  	  objIframe.iHeightOriginal = 0; // Reset to indicate that everything has been restored
   	} 
   } 	
 	

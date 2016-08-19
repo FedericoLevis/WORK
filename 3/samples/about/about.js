@@ -1485,7 +1485,6 @@ function getIframeToResize(){
 	  	var szIframeId = "iframe" + url_par.doc;   // e.g iframe1
 			jslog(JSLOG_DEBUG,fn + "szIframeId=" + szIframeId);
 	  	var iframeEl = window.parent.document.getElementById (szIframeId);
-	  	alert ("iframeEl=" + iframeEl);
 			jslog(JSLOG_DEBUG,fn + "RETURN iframeEl=" + iframeEl);
 	  	return iframeEl;
 	  }
@@ -1513,7 +1512,6 @@ function iframeAdjustHeight(szId)
 	var el = getElementById2 (szId,true);
   //find the height of the internal page
   var h =   el.contentWindow.document.body.scrollHeight;
-  alert (h); 
   //change the height of the iframe
   el.height=  h ;
 }
