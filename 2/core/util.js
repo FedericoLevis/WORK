@@ -24,7 +24,7 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
 // ================================================= LANGUAGE For alert of User Error   (SW ERROR are always in English)
 // can be change with utilSetLanMsg
 
-var SW_DEBUG_ENABLE = 0;  // 1 during SW DEBUG 
+var SW_DEBUG_ENABLE = 1;  // 1 during SW DEBUG 
 
 var LAN_MSG_EN = "EN";
 var LAN_MSG_ITA = "ITA";
@@ -345,7 +345,7 @@ el  if founded
 function getElementById2(Id,bShowErr)
 {
 	if (bShowErr == undefined){
-		bShowErr = true;
+		bShowErr = false;
 	}
     var el = 	document.getElementById(Id);
     if (el == null) {

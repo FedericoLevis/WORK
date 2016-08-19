@@ -927,7 +927,6 @@ function onchange_sample(){
  */
 function manage_par_opt(){
 	var fn = "manage_par_opt() ";
-	
 	try{
 		
 		var szParDoc = urlGetParVal (URL_PAR_DOC);
@@ -968,7 +967,7 @@ function manage_par_opt(){
 		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_TEST + "=" + iParTest);
 		var bTest = (iParTest != undefined &&  iParTest != "");
 		jslog (JSLOG_JSU,fn + "bTest=" + bTest);
-		elementShow(getElementById2("test",true), bTest);
+		elementShow(getElementById2("test",false), bTest);
 		if (bTest){
 			par_test = parseInt(iParTest);
 		}
@@ -1458,9 +1457,21 @@ function testExecute(){
 		getElementById2("testTmo",true).value = iSec;
 		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
 		var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
-	}
-		
+	}		
 }
 
+
+
+
+function iframeAdjustHeight(szId)
+{
+	
+	var el = getElementById2 (szId,true);
+  //find the height of the internal page
+  var h =   el.contentWindow.document.body.scrollHeight;
+  alert (h); 
+  //change the height of the iframe
+  el.height=  h ;
+}
 
 

@@ -626,13 +626,26 @@ function sample3CustomBtn3(){
 /*
  * Popup with a Video  
  */
-function sample4Video(){
+function sample4VideoOk(){
   // Show Popup with Video
 	var szMsg = '<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-  Popup(POPUP_TYPE.INFO, szMsg,
+  
+	
+	Popup(POPUP_TYPE.INFO, szMsg,
       // objOpt
       {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "Video Example"});
 }
+
+
+function sample4Video(){
+  // Show Popup with HTML
+	szMsg = '<iframe  id="ifrmSample_1" width="1100px" height="300px" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=1" ></iframe>';
+	
+	Popup(POPUP_TYPE.INFO, szMsg,
+      // objOpt
+      {bShowImg:false,iWidth:1200,position:{at: "top"}, szTitle: "Video Example"});
+}
+
 
 
 /**
