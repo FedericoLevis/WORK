@@ -374,7 +374,7 @@ function TipFix(tipMsgHtml,event, objOpt)
     	try {
       	objIframe.elIframe = objOpt.iframeToResize;
       	// Get the Size, if not already set by previous TipFix already open (if we have switch form one Tip Open to another)
-      	if (objIframe.iHeightOriginal =  0){
+      	if (objIframe.iHeightOriginal ==  0){
         	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
       	}
     		tt_log (fn,"Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
