@@ -375,7 +375,7 @@ function TipFix(tipMsgHtml,event, objOpt)
       	objIframe.elIframe = objOpt.iframeToResize;
       	// Get the Size
       	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
-    		tt_log (fn,"Resize Option is SET - Original h= " + objIframe.iHeightOriginal);
+    		tt_log (fn,"Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
       	objIframe.bResize = true;
     	}catch (e){
     		tt_log (fn,"cannot Resize iFrame. We Go On.. - " + e.message);
@@ -400,7 +400,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix(true)" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
@@ -466,7 +466,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
 		// To manage the case of switch beween different Fixed img. We untip previous
-		tt_UnTipFix();
+		tt_UnTipFix(false);  // false becuase we do not want to resize: there is alread a new FixedTip Open
 	}
 	
 	if (bShow && tipImg){
@@ -486,11 +486,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 		try {
 			if (getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
 				// e` stato hakerato - esco
-				tt_UnTipFix();
+				tt_UnTipFix(true);
 				tt_logObj ("tt_id", tt_id);
 			}
 		}catch(e) {
-			tt_UnTipFix();
+			tt_UnTipFix(true);
 			tt_logObj ("tt_id " + e.message, tt_id);
 		}	
 		// JSU_FREE_END
@@ -498,12 +498,12 @@ function TipFix(tipMsgHtml,event, objOpt)
 			objIframe.iHeightNew = objIframe.elIframe.contentWindow.document.body.scrollHeight;
 			tt_log (fn,"OriginalH= " + objIframe.iHeightOriginal + " NewH=" + objIframe.iHeightNew);
 			if (objIframe.iHeightNew > objIframe.iHeightOriginal){
-				tt_log (fn,"RESIZE teh iframe. set newH=" + objIframe.iHeightNew);
-				objIframe.elIframe.contentWindow.document.body.scrollHeight = objIframe.iHeightNew; 
+				tt_log (fn,"RESIZE the iframe. set newH=" + objIframe.iHeightNew);
+				objIframe.elIframe.height = objIframe.iHeightNew; 
 			}
 		}
 	}else {
-		tt_UnTipFix();
+		tt_UnTipFix(true);
 	}
 	tt_log ( fn + TIPLOG_FUN_END);
 }
@@ -1147,7 +1147,7 @@ function tt_onclickGoogleAnalAll(){
 /*
  * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
  * 
- * @param bIframeReisise {Boolean} def false. Reszie IFrame if requires
+ * @param bIframeReisise {Boolean} def false. Resize IFrame if requires
  * 
  */
 function tt_UnTipFix(bIframeResize){
@@ -1164,7 +1164,7 @@ function tt_UnTipFix(bIframeResize){
   	var objIframe = tt_tipFix.objIframe;
   	if(objIframe.iHeightOriginal < objIframe.iHeightNew){
   	  tt_log(fn + "SET BACK iHeightOriginal=" + objIframe.iHeightOriginal);
-  	  objIframe.elIframe.contentWindow.document.body.scrollHeight = objIframe.iHeightOriginal; 
+  	  objIframe.elIframe.height = objIframe.iHeightOriginal; 
   	} 
   } 	
 	
@@ -1552,7 +1552,7 @@ function tt_init()
 	// ESC is considered as UnTip of TipFix
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
-        tt_UnTipFix();
+        tt_UnTipFix(true);
     }
   };	
 	
@@ -1926,7 +1926,7 @@ function tt_MkTipSubDivs()
 				+ ';text-align:right;">'
 				+ '<span id="WzClOsE" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
-				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
+				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix(true)">'
 				+ tt_aV[CLOSEBTNTEXT]
 				+ '</span></td>')
 				: '')
