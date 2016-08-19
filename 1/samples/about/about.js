@@ -15,6 +15,16 @@ This file may be freely distributed under the MIT license.
    						CONSTANT
 ============================================================================================= */
 
+//-------------------------- Optional PAR only for debugger 
+var URL_PAR_DOC="doc";  // used by HTML doc to show only one section embedded in a frame. e.g doc=1 to see only sample=1
+
+var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column in Test
+// -- Test google, used only by AllSamples.html
+var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
+var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
+
+
+//---------------------------
 
 var DOWNLOAD_TIP_TYPE={
 		INFO: "INFO",
@@ -44,11 +54,7 @@ var JSU_DISABLED = 'javascript:function() { return false; }';
 var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
 
 var JSU_BUY = JSU_DISABLED; 
-//-------------------------- Optional PAR only for debugger 
-var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column in Test
-// -- Test google, used only by AllSamples.html
-var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
-var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
+
 
 // ---------------------------------------
 var SAMPLE_MAX_NUM=4; // Max sample per Feature in the samples
@@ -921,27 +927,43 @@ function onchange_sample(){
  */
 function manage_par_opt(){
 	var fn = "manage_par_opt() ";
-	var szParOpt = urlGetParVal (URL_PAR_OPT);
-	jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
-	b_par_opt = (szParOpt != ""); 
-	if (b_par_opt){
-		jslog (JSLOG_JSU,fn + "show selectShowCol");
-		elementShow (getElementById2("selectShowCol"),true,"");
-		// URL
-		var szLocation = window.location + ""; 
-		var bJsLog = szLocation.indexOf ("jslogSample") > 0;
-		// set preferred size to prepare YouTube Video 
-		if (bJsLog){
-		  window.moveTo(85, 34);
-		  window.resizeTo(1200, 800);
-		}else{
-		  window.moveTo(85, 34);
-		  window.resizeTo(800+35, 620+170);
-		}
-	}	
+	
+	try{
+		
+		var szParDoc = urlGetParVal (URL_PAR_DOC);
+		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_DOC + "=" + szParDoc);
+		if (szParDoc != ""){
+	    // emebedded in documentation. show only the Sample=szParDoc
+			elementShow (getElementById2("sampleHeader"),false);
+			elementShow (getElementById2("tr_title_1"),false);
+			elementShow (getElementById2("tr_title_2"),false);
+			for (var i=1; i<=SAMPLE_MAX_NUM; i++){
+				if (("" + i) != szParDoc){
+					elementShow (getElementById2("tr_sample_" + i, false),false);
+				}
+			}
+		} 
+ 		//-----------------------------------------------------------
+		var szParOpt = urlGetParVal (URL_PAR_OPT);
+		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
+		b_par_opt = (szParOpt != ""); 
+		if (b_par_opt){
+			jslog (JSLOG_JSU,fn + "show selectShowCol");
+			elementShow (getElementById2("selectShowCol"),true,"");
+			// URL
+			var szLocation = window.location + ""; 
+			var bJsLog = szLocation.indexOf ("jslogSample") > 0;
+			// set preferred size to prepare YouTube Video 
+			if (bJsLog){
+			  window.moveTo(85, 34);
+			  window.resizeTo(1200, 800);
+			}else{
+			  window.moveTo(85, 34);
+			  window.resizeTo(800+35, 620+170);
+			}
+		}	
 	// var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
 	// var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60
-	try {
 		var iParTest = urlGetParVal (URL_PAR_TEST);
 		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_TEST + "=" + iParTest);
 		var bTest = (iParTest != undefined &&  iParTest != "");
@@ -1412,7 +1434,7 @@ function testExecute(){
 	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
 	if (var_test.bFrame){
 		UnTip();
-		var szTipFrame =	'<iframe width="1100" height="800" src="' + szUrl + '" ></iframe>'; 
+		var szTipFrame =	'<iframe width="1200" height="100" src="' + szUrl + '" ></iframe>'; 
 		TipFix(szTipFrame,null,{
 			 iTipWidth: 1200,
 			 szTitle:szUrl,

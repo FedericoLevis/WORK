@@ -239,9 +239,15 @@ tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed too
 // Only for LICENSE Check
 var tt_a2="pe", tt_a1="ty", tt_a3="of";
 
-// ------------- JSU_FREE_START
-var tt_id = 0;
-//------------- JSU_FREE_END
+
+// dynamic id. Used to protect CODE  JSU FULL.
+//  {idVal,acron, rangeMin, rangeMax}
+var tt_id = {
+		js: [0,'tt',1,100],     // 
+		jt: [0,'tt',1000,2000],     // e.g tt57
+		jd: [0,'tt',3000,4000]      
+};
+
 
 //=====================  PUBLIC  =============================================//
 
@@ -361,7 +367,7 @@ function TipFix(tipMsgHtml,event, objOpt)
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
- 		tipMsgHtml = '<div id="divTipContainer" align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid; overflow: auto; background-color: white;">' +
+ 		tipMsgHtml = '<div id="divTipContainer" align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid;background-color: white; overflow: auto; ">' +
  		    tipMsgHtml + '</div>';
   	
   	
@@ -449,13 +455,18 @@ function TipFix(tipMsgHtml,event, objOpt)
 		iWidth = parseInt (szWidth.replace ("px","")) - 6;
 		el.style.width = iWidth + "px";
 		// JSU_FREE_START
-		// verifco che ci sia l'URL aggiunto contenga href come https://goo.gl/1eIYNm
-		// controlo che non sia stato hakerato il codice
-		tt1234 = getElementById2(tt_id).href;
-		if (tt1234.indexOf('o' + 'o' + '.') < 0){
-			// e` stato hakerato.
+		// verifico che ci sia l'URL aggiunto in id tt_id.jt contenga href come https://goo.gl/1eIYNm
+		// controllo che non sia stato hakerato il codice
+		try {
+			if (getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
+				// e` stato hakerato.
+				tt_UnTipFix();
+				tt_logObj ("tt_id", tt_id);
+			}
+		}catch(e) {
 			tt_UnTipFix();
-		}
+			tt_logObj ("tt_id " + e.message, tt_id);
+		}	
 		// JSU_FREE_END
 
 		
@@ -528,11 +539,9 @@ function TipFixCode(szCode, event, objOpt){
 	tt_init(); // init, if not already done
 	// Check if prettify is enabled 
 	if (tt_isPrettifyEn()){
-		/* FULL_JSU_START */
-		var szCodeDiv = '<div id="divTipJS" class="prettyfy" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
+		var szCodeDiv = '<div id="divTipJS" align="left" class="prettify" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
 		TipFix (szCodeDiv,event,objOpt);
-		jsuPrettyPrint()();  // Hightlight with prettify-jsu the code between <pre> </pre> 
-		/* FULL_JSU_END */
+		jsuPrettyPrint();  // Hightlight with prettify-jsu the code between <pre> </pre> 
 	}else{
 		TipFixTextArea(szCode, event, objOpt);
 	}
@@ -590,20 +599,22 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 	for (var i=0; i < arObjCode.length;i++){
 		var objCode = arObjCode[i];
 		var szWidth = "";
-		var szTbl = '<tr><td><table class="det" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
-		if (objCode.iTipMaxHeight== undefined){
-			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
-		}
 		if (objCode.bPrettify== undefined){
 			objCode.bPrettify= false; 
 		}
 		if (!bPrettifyEn){
 			objCode.bPrettify= false; 
 		}
-		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; } 
+		var szClassPrettify = (objCode.bPrettify) ? "prettifyCode" : ""; // extra Class
+		var szTbl = '<tr><td><table class="det ' + szClassPrettify + '" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
+		if (objCode.iTipMaxHeight== undefined){
+			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
+		}
+		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; }
 		tt_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
-		szTbl+= '  <tr class="detTitle"><td width="100%" class="detTitle">' + objCode.szTitle + '</td></tr>\n';
-		szTbl+= '  <tr class="det"><td class="tipl" width="100%">\n';  	
+		
+		szTbl+= '  <tr class="detTitle ' + szClassPrettify + '"><td width="100%" class="detTitle' + szClassPrettify + '">' + objCode.szTitle + '</td></tr>\n';
+		szTbl+= '  <tr class="det ' + szClassPrettify + '" ><td class="tipl ' + szClassPrettify + '" width="100%">\n';  	
 		var id = "tipCode_" + i;
 		if (!objCode.bPrettify){
 			if (objCode.iRowNum == undefined){
@@ -633,13 +644,13 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 				// ------
 				tt_log (fn + "For code[" + i + "] we have to put an extra div container - szMaxHeightCont=" + szMaxHeightCont);
 				var szDivPretty = '<div style="' + szMaxHeightCont + szWidthCont + ' border: 1px solid; overflow: auto; background-color: white; ">' + 
-							'    <div id="' + id + '" class="prettyfy" style="' + szWidth + 
+							'    <div id="' + id + '" class="prettify" style="' + szWidth + 
 			        '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>' +
 				     '</div>';
 				tt_logHtml (fn + "szDivPretty", szDivPretty);     
 			}else {
 				var szWidth = 'width:' + iWidth + 'px;';
-				var szDivPretty = '    <div id="' + id + '" class="prettyfy" style="' + szWidth + 
+				var szDivPretty = '    <div id="' + id + '" class="prettify" style="' + szWidth + 
              '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
 				
 			}
@@ -1847,7 +1858,9 @@ function tt_MkTipSubDivs()
 	// JSU LOGO DAFARE
 	// WzTiTl  e` il div che contiene Header	
 	tt_aElt[0].style.width = tt_GetClientW() + "px";
-	tt_id = "tt" + Math.floor(Math.random() * 10000); // id random
+	tt_getId (tt_id.js); 
+	tt_getId (tt_id.jt); 
+	tt_getId (tt_id.jd); 
 	tt_aElt[0].innerHTML =
 		(''
 		+ (tt_aV[TITLE].length ?
@@ -1855,13 +1868,15 @@ function tt_MkTipSubDivs()
 			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
 			+  tt_aV[TITLE] 
 			// JSU_FREE_START 
-			// non metto in chiaro il nome
-			+ '<span><a style="margin-left:15px;" id="' + tt_id + '" class="tt" href="https://goo.gl/1eIYNm">J' +
-			'S' + 'U' + 'D' + 'e' + 'm' + 'o' + 'V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
+			// tt_id.jt[0]   = id di JSU Title
+			// DAFARE non metto in chiaro il nome
+			+ '<span id="' + tt_id.js[0] +'" ><a style="margin-left:15px;" id="' + tt_id.jt[0] + '" class="tt" href="' +
+			 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
+			'S'+'U' + 'D' + 'e' + 'm' + 'o' + 'V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
 			// JSU_FREE_END
 			+ '</td>'
 			+ (tt_aV[CLOSEBTN] ?
-				('<td align="right" style="' + sCssCloseBtn
+				('<td id="' + tt_id.jd[0] +'" align="right" style="' + sCssCloseBtn
 				+ ';text-align:right;">'
 				+ '<span id="WzClOsE" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
@@ -2674,6 +2689,17 @@ function tt_isPrettifyEn(){
   // return false;
 }
 
+
+/*
+ * For CODE Pretection
+ * 
+ * @param objId    {id, acr, min, max}
+ */
+function tt_getId(objId){
+	var fn = "[tooltip.js tt_getId()]";
+	objId[0] = objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
+  
+}
 
 /*
  * 

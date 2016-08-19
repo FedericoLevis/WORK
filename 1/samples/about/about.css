@@ -60,7 +60,7 @@ h1.jsuDoc {  /* JSU Documentation */
   margin-bottom: 3px;
 } 
 
-h2.jsuDoc {  /* JSU Documentation - Main separator (e.g Header and Footer) */
+h2.jsuDoc {  
   font-family: Arial-Black;
   font-weight: bold;
   font-size: 22px;

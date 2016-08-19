@@ -792,6 +792,12 @@ a.tipLinkDisabled{
  cursor: default;
 }
 
+
+
+.prettifyCode {  /* Extra class to enphasize, if required, Border color of prettified code */
+  border-color: blue !important; 
+}	
+
 /*---
 Detail table (e.g GoogleAnalytics) 
 ---
