@@ -295,6 +295,7 @@ var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:1
 ============================================================================================= */
 //TRUE if there is URL par opt=1
 var b_par_opt = false;
+var par_doc = undefined;
 
 // option to show Video
 var video_opt = VIDEO_OPT.YOU_TUBE;  //default
@@ -924,6 +925,7 @@ function onchange_sample(){
  * 
  * GLOBAL
  *  b_par_opt   set to TRUE if there is URL par opt=1   if 1 we see Optional Columns used to Show/Hide Column in Test
+ *  par_doc     undefined or the par received (called by Dcoumenation)
  */
 function manage_par_opt(){
 	var fn = "manage_par_opt() ";
@@ -941,8 +943,9 @@ function manage_par_opt(){
 					elementShow (getElementById2("tr_sample_" + i, false),false);
 				}
 			}
+			par_doc = parseInt (szParDoc);
 		} 
- 		//-----------------------------------------------------------
+		//-----------------------------------------------------------
 		var szParOpt = urlGetParVal (URL_PAR_OPT);
 		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
 		b_par_opt = (szParOpt != ""); 
@@ -1460,12 +1463,44 @@ function testExecute(){
 	}		
 }
 
+/**
+ * 
+ * @param iSample {Number} 1,2,3 index of the sample
+ * 
+ * @return iFrame {Object}   a) the iFrame that contain the HTML emebedded: e.g when running in JSU documentation
+ * 														  we are in this case when par_doc is set
+ *                           b) undefined if not present
+ */
+function getIframeToResize(iSample){
+	var fn = "[about.js getIframeToResize()] ";
+	try {
+	  if (par_doc == undefined){
+	  	return undefined; //no iFrame in this case
+	  }	else {
+	  	// The HTML is running embedded into iframe
+	  	var szId = "iframe" + isample;
+	  	return window.parent.document.getElementById (szId);
+	  }
+	}catch(e){
+		jslog(JSLOG_ERR,fn + "Exceptipion=" + e.message);
+	}
+}
 
+function iframeAdjustHeight2()
+{
+  alert ("1");
+  var el = window.parent.document.getElementById ('iframe1');
+  var h =   el.contentWindow.document.body.scrollHeight;
+  alert (h); 
+  //change the height of the iframe
+  el.height=  h ;
+
+}
 
 
 function iframeAdjustHeight(szId)
 {
-	
+	// TEST
 	var el = getElementById2 (szId,true);
   //find the height of the internal page
   var h =   el.contentWindow.document.body.scrollHeight;

@@ -123,10 +123,20 @@ var tt_googleAnal = {
 };
 
 //Global For TipFix (see TipFix() objPar)
-var tt_tipFixObjClass= {
-		Down : undefined,
-		Up : undefined
+var tt_tipFix = {
+		objClass : {     // Classes to use for Up/Down
+			Down : undefined,
+			Up : undefined
+		},
+		objIframe : {  // iframe to resize
+			bResize : false, // true if we have to resize iframeEl
+			elIframe: undefined,
+			iHeightOriginal: 0, // Orginal Height to restore at UnTip
+			iiHeightNew: 0      // New Height set during TipFix
+		},
+		tipImg : undefined  // the tipImg where the user has click to show tipFix (can also be undefined)
 };
+
 
 
 
@@ -306,17 +316,20 @@ function Tip(tipMsgHtml,tipType,objOpt)
  * 														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
  * 													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
  * 														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
- * 													  <li> bNL2BR= [true]  if true /n are converted to </li> 
- *                            <li> objClass: {Down: szClassTipFix, Up: szClassTipFixUp}  {Object} Classed that identify The 2 states <BR/>
+ * 													  <li> bNL2BR= [true]  if true /n are converted to </li>
+ * 														<li> -------------------------- FOLLOW FIELDS are for ADVANCED use. Usually they are ever used <li/> 
+ *                            <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
  *                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
  *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
- *                            <li>szRefElId: Id of the Reference ElementImage. can be used instead of event
+ *                            <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
+ *                            <li>iframeToResize: {Object} For example it is used by JSU documentaion to resize the iframe that contain the embedded JSU samples.
+ *                                The container (e.g iframe in documentation) will be resized at Tip Open/Close in the contained sample  
  *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
  * 
  * Implementation NOTES:
- * - all the other tiFixXXX call this funzion
+ * - all the other tiFixXXX call this funcion
  */
 function TipFix(tipMsgHtml,event, objOpt)
 {
@@ -334,9 +347,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 		objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; 
 	}
 	// set this global var, to be used when they are not undefined
-	tt_tipFixObjClass = objOpt.objClass;
+	tt_tipFix.objClass = objOpt.objClass;
 	
 	var szTitle = "";
+	var objIframe = tt_tipFix.objIframe; 
+	objIframe.bResize = false; // default
   // -- Option
   if (objOpt){
   	if (objOpt.szTitle){
@@ -355,6 +370,17 @@ function TipFix(tipMsgHtml,event, objOpt)
   		// only if explicitly required, we se also  width 
    	  szMaxWidth = 'max-width: ' +objOpt.iTipWidth+ 'px; width:' +objOpt.iTipWidth + 'px;';
   	}	
+    if (objOpt.iframeToResize != undefined){
+    	try {
+      	objIframe.elIframe = objOpt.iframeToResize;
+      	// Get the Size
+      	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
+    		tt_log (fn,"Resize Option is SET - Original h= " + objIframe.iHeightOriginal);
+      	objIframe.bResize = true;
+    	}catch (e){
+    		tt_log (fn,"cannot Resize iFrame. We Go On.. - " + e.message);
+    	}
+    }	
   	
  		bDivScroll = true;
   	var szDivHTML = "";
@@ -425,13 +451,13 @@ function TipFix(tipMsgHtml,event, objOpt)
 		}else	if (className == TIP_FIX_CLASS_CODE.Down ){
 			className = TIP_FIX_CLASS_CODE.Up;
 		}	
-		if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 			// Custom Class passed by User
-			if (className == tt_tipFixObjClass.Up){
-			  className = tt_tipFixObjClass.Down;
+			if (className == tt_tipFix.objClass.Up){
+			  className = tt_tipFix.objClass.Down;
 			  bShow = false;
-		  }else	if (className == tt_tipFixObjClass.Down ){
-			  className = tt_tipFixObjClass.Up;
+		  }else	if (className == tt_tipFix.objClass.Down ){
+			  className = tt_tipFix.objClass.Up;
 		  }	
 		}
 		tt_log ( fn + "SET New classname=" + className);
@@ -439,7 +465,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	}
 	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
-		// To manage the case of switch beween different Fixed img
+		// To manage the case of switch beween different Fixed img. We untip previous
 		tt_UnTipFix();
 	}
 	
@@ -459,7 +485,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 		// controllo che non sia stato hakerato il codice
 		try {
 			if (getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
-				// e` stato hakerato.
+				// e` stato hakerato - esco
 				tt_UnTipFix();
 				tt_logObj ("tt_id", tt_id);
 			}
@@ -468,8 +494,14 @@ function TipFix(tipMsgHtml,event, objOpt)
 			tt_logObj ("tt_id " + e.message, tt_id);
 		}	
 		// JSU_FREE_END
-
-		
+		if (objIframe.bResize){
+			objIframe.iHeightNew = objIframe.elIframe.contentWindow.document.body.scrollHeight;
+			tt_log (fn,"OriginalH= " + objIframe.iHeightOriginal + " NewH=" + objIframe.iHeightNew);
+			if (objIframe.iHeightNew > objIframe.iHeightOriginal){
+				tt_log (fn,"RESIZE teh iframe. set newH=" + objIframe.iHeightNew);
+				objIframe.elIframe.contentWindow.document.body.scrollHeight = objIframe.iHeightNew; 
+			}
+		}
 	}else {
 		tt_UnTipFix();
 	}
@@ -1115,13 +1147,27 @@ function tt_onclickGoogleAnalAll(){
 /*
  * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
  * 
+ * @param bIframeReisise {Boolean} def false. Reszie IFrame if requires
+ * 
  */
-function tt_UnTipFix(){
+function tt_UnTipFix(bIframeResize){
 	var fn = "[tooltip.js tt_UnTipFix()] ";
 	
 	tt_log ( fn + TIPLOG_FUN_START);
   tt_log(fn + "CURRENT tip_type=" + tip_type);
+	if (bIframeResize == undefined){
+		bIframeResize = false;
+	}
 	tt_init(); // init, if not already done
+	
+  if (bIframeResize && tt_tipFix.objIframe.bResize){
+  	var objIframe = tt_tipFix.objIframe;
+  	if(objIframe.iHeightOriginal < objIframe.iHeightNew){
+  	  tt_log(fn + "SET BACK iHeightOriginal=" + objIframe.iHeightOriginal);
+  	  objIframe.elIframe.contentWindow.document.body.scrollHeight = objIframe.iHeightOriginal; 
+  	} 
+  } 	
+	
 	tt_SetCfg(TIP_CFG_FLOATING);
 	tt_OpReHref();
 	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
@@ -1148,9 +1194,9 @@ function tt_isClassFixed(szClass){
 			szClass == TIP_FIX_CLASS_GOOGLE.Up){
 		bTipFix = true;
 	}
-	if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+	if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 		// Custom Class passed by User
-		if (szClass == tt_tipFixObjClass.Up){
+		if (szClass == tt_tipFix.objClass.Up){
 			bTipFix = true;
 		}  
 	}	
@@ -1178,10 +1224,10 @@ function tt_RestoreImgFixed() {
 		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_CODE.Up){
 			szClass = TIP_FIX_CLASS_CODE.Down;
 		}
-		if (tt_tipFixObjClass != undefined && tt_tipFixObjClass.Down != undefined && tt_tipFixObjClass.Up != undefined){
+		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 			// Custom Class passed by User
-			if (tip_img_fixed.className == tt_tipFixObjClass.Up){
-				szClass = tt_tipFixObjClass.Down;
+			if (tip_img_fixed.className == tt_tipFix.objClass.Up){
+				szClass = tt_tipFix.objClass.Down;
 			}
 		}		
 		if (szClass != ""){
