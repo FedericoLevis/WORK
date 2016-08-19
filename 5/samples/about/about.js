@@ -294,8 +294,14 @@ var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:1
    						GLOBAL VAR
 ============================================================================================= */
 //TRUE if there is URL par opt=1
-var b_par_opt = false;
-var par_doc = undefined;
+
+var url_par = {
+	doc : undefined,
+	test : 100,
+	period: 60,
+	opt : undefined
+};
+
 
 // option to show Video
 var video_opt = VIDEO_OPT.YOU_TUBE;  //default
@@ -835,38 +841,38 @@ function jsuDocJQPopup(){
  * Open window with Tip API Documentation
  */
 function jsuDocTip(){
-	jsuGoToURL(JSU_SHORT_URL_API_TIP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_TIP);
 }
 /**
  * Open window with SortTable API Documentation
  */
 function jsuDocSort(){
-	jsuGoToURL(JSU_SHORT_URL_API_SORT);
+	jsuGoToURL(JSU_SHORT_URL_DOC_SORT);
 }
 /**
- * Open window with Loading API Documentation
+ * Open window with Loading DOC Documentation
  */
 function jsuDocLoading(){
-	jsuGoToURL(JSU_SHORT_URL_API_LOADING);
+	jsuGoToURL(JSU_SHORT_URL_DOC_LOADING);
 }
 
 /**
- * Open window with JSLOG API Documentation
+ * Open window with JSLOG DOC Documentation
  */
 function jsuDocJSLog(){
-	jsuGoToURL(JSU_SHORT_URL_API_JSLOG);
+	jsuGoToURL(JSU_SHORT_URL_DOC_JSLOG);
 }
 /**
- * Open window with BlockPopup API Documentation
+ * Open window with BlockPopup DOC Documentation
  */
 function jsuDocBlockPopup(){
-	jsuGoToURL(JSU_SHORT_URL_API_BLOCKPOPUP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_BLOCKPOPUP);
 }
 /**
- * Open window with JQPopup API Documentation
+ * Open window with JQPopup DOC Documentation
  */
 function jsuDocJQPopup(){
-	jsuGoToURL(JSU_SHORT_URL_API_JQPOPUP);
+	jsuGoToURL(JSU_SHORT_URL_DOC_JQPOPUP);
 }
 
 
@@ -924,8 +930,7 @@ function onchange_sample(){
  * Manage optional URL PAR show_opt, useful only for developers. Called by all samples
  * 
  * GLOBAL
- *  b_par_opt   set to TRUE if there is URL par opt=1   if 1 we see Optional Columns used to Show/Hide Column in Test
- *  par_doc     undefined or the par received (called by Dcoumenation)
+ *  url_par   set in this routine 
  */
 function manage_par_opt(){
 	var fn = "manage_par_opt() ";
@@ -943,13 +948,13 @@ function manage_par_opt(){
 					elementShow (getElementById2("tr_sample_" + i, false),false);
 				}
 			}
-			par_doc = parseInt (szParDoc);
+			url_par.doc = szParDoc;
 		} 
 		//-----------------------------------------------------------
 		var szParOpt = urlGetParVal (URL_PAR_OPT);
 		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
-		b_par_opt = (szParOpt != ""); 
-		if (b_par_opt){
+		if (szParOpt != ""){
+			url_par.opt = szParOpt;
 			jslog (JSLOG_JSU,fn + "show selectShowCol");
 			elementShow (getElementById2("selectShowCol"),true,"");
 			// URL
@@ -991,7 +996,7 @@ function manage_par_opt(){
  * @returns  b_par_opt {Boolean}  TRUE if there is URL par opt=1
  */
 function is_par_opt (){
-	return b_par_opt;
+	return (url_par.opt != undefined);
 }
 
 
@@ -1155,6 +1160,7 @@ function onchangeVideoOpt(){
  * @returns
  */
 function jsuGoToURL(szUrl,bNewWindow){
+	UnTip(); // UnTip if required
 	if (bNewWindow == undefined){
 		bNewWindow = true;
 	}
@@ -1465,24 +1471,27 @@ function testExecute(){
 
 /**
  * 
- * @param iSample {Number} 1,2,3 index of the sample
- * 
- * @return iFrame {Object}   a) the iFrame that contain the HTML emebedded: e.g when running in JSU documentation
- * 														  we are in this case when par_doc is set
+ * @return iframeEl {Object}   a) the iFrame that contain the HTML emebedded: e.g when running in JSU documentation
+ * 														  we are in this case when url_par.doc is set
  *                           b) undefined if not present
  */
-function getIframeToResize(iSample){
+function getIframeToResize(){
 	var fn = "[about.js getIframeToResize()] ";
 	try {
-	  if (par_doc == undefined){
+	  if (url_par.doc == undefined){
 	  	return undefined; //no iFrame in this case
 	  }	else {
 	  	// The HTML is running embedded into iframe
-	  	var szId = "iframe" + isample;
-	  	return window.parent.document.getElementById (szId);
+	  	var szIframeId = "iframe" + url_par.doc;   // e.g iframe1
+			jslog(JSLOG_DEBUG,fn + "szIframeId=" + szIframeId);
+	  	var iframeEl = window.parent.document.getElementById (szIframeId);
+	  	alert ("iframeEl=" + iframeEl);
+			jslog(JSLOG_DEBUG,fn + "RETURN iframeEl=" + iframeEl);
+	  	return iframeEl;
 	  }
 	}catch(e){
-		jslog(JSLOG_ERR,fn + "Exceptipion=" + e.message);
+		jslog(JSLOG_ERR,fn + "Exceptiion=" + e.message);
+		return undefined;
 	}
 }
 
