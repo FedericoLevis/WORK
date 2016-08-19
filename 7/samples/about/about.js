@@ -939,7 +939,7 @@ function manage_par_opt(){
 		var szParDoc = urlGetParVal (URL_PAR_DOC);
 		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_DOC + "=" + szParDoc);
 		if (szParDoc != ""){
-	    // emebedded in documentation. show only the Sample=szParDoc
+	    // ------------------------  emebedded in documentation. show only the Sample=szParDoc
 			elementShow (getElementById2("sampleHeader"),false);
 			elementShow (getElementById2("tr_title_1"),false);
 			elementShow (getElementById2("tr_title_2"),false);
@@ -949,6 +949,14 @@ function manage_par_opt(){
 				}
 			}
 			url_par.doc = szParDoc;
+			// resize iframe basing on the unique row displayed
+		  var iframeEl = window.parent.document.getElementById ('iframe' + szParDoc);				
+			var trEl = getElementById2("tr_sample_" + szParDoc, false);
+			if (trEl){
+				iframeEl.height = trEl.height; 
+			}
+			// now we show the iframe that was hidden
+			elementShow (iframeEl,true);
 		} 
 		//-----------------------------------------------------------
 		var szParOpt = urlGetParVal (URL_PAR_OPT);
@@ -1494,9 +1502,9 @@ function getIframeToResize(){
 	}
 }
 
+// TEST
 function iframeAdjustHeight2()
 {
-  alert ("1");
   var el = window.parent.document.getElementById ('iframe1');
   var h =   el.contentWindow.document.body.scrollHeight;
   alert (h); 
@@ -1505,7 +1513,7 @@ function iframeAdjustHeight2()
 
 }
 
-
+//TEST
 function iframeAdjustHeight(szId)
 {
 	// TEST
