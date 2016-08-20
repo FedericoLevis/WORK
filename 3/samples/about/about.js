@@ -15,6 +15,8 @@ This file may be freely distributed under the MIT license.
    						CONSTANT
 ============================================================================================= */
 
+var TMO_DOC_EMBED_STARTUP_MS = 200; 
+
 //-------------------------- Optional PAR only for debugger 
 var URL_PAR_DOC="doc";  // used by HTML doc to show only one section embedded in a frame. e.g doc=1 to see only sample=1
 
@@ -948,10 +950,8 @@ function manage_par_opt(){
 				}
 			}
 			url_par.doc = szParDoc;
-			// now we show the iframe that was hidden
-		  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
-		  elementShow (iframeEl,true);
-			tmo_resize = setTimeout (resizeIframe,1000);
+		  // we have to wait a little: here the height are not still correct
+			tmo_resize = setTimeout (resizeIframe,TMO_DOC_EMBED_STARTUP_MS);
 
 		} 
 		//-----------------------------------------------------------
@@ -1521,7 +1521,7 @@ function iframeAdjustHeight(szId)
 }
 
 /*
- * Only for developer: show the height of the rows
+ * We have to wait a little before getting the row size
  */
 function resizeIframe(){
 	clearTimeout (tmo_resize);
@@ -1531,12 +1531,17 @@ function resizeIframe(){
 	// resize iframe basing on the unique row displayed
 	if (trEl){
 		 // Set new height
-		 iframeEl.height = trEl.clientHeight + 5;
+		 iframeEl.height = trEl.clientHeight + 30;
 	}
+	// now we show the iframe that was hidden
+  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
+  elementShow (iframeEl,true);
 	
 }
 
-
+/**
+ * Only for developer: show the height of the rows
+ */
 function showSampleTrHeight(){
 	var szMsg = "";
 
