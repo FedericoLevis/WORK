@@ -15,7 +15,7 @@ This file may be freely distributed under the MIT license.
    						CONSTANT
 ============================================================================================= */
 
-var TMO_DOC_EMBED_STARTUP_MS = 200; 
+var TMO_DOC_EMBED_STARTUP_MS = 1000; 
 
 //-------------------------- Optional PAR only for debugger 
 var URL_PAR_DOC="doc";  // used by HTML doc to show only one section embedded in a frame. e.g doc=1 to see only sample=1
