@@ -1504,7 +1504,7 @@ function getIframeToResize(){
 }
 
 // TEST
-function iframeAdjustHeight2()
+function testResize()
 {
   var el = window.parent.document.getElementById ('iframe1');
   var h =   el.contentWindow.document.body.scrollHeight;
