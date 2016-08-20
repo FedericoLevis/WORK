@@ -137,6 +137,17 @@ function loading2CancelCallback(){
 }
 
 
+function showLoadingDivOpt(event){
+	var szApiUrl = JSU_LONG_URL_API_LOADING.replace('index.html','global.html') + '#loadingDivShow';
+	var szTipFrame =	'<iframe width="1250" height="650" src="' + szApiUrl + '" ></iframe>'; 
+	TipFix(szTipFrame,event,{
+		 iTipWidth: 1300,
+		 iTipMaxHeight: 700,
+		 szTitle:'loadingDivShow API'
+	 }
+	);
+	
+}
 
 /*====================================================================
  *  					SAMPLE_3
@@ -384,7 +395,7 @@ function sample3JS(event){
 	}else {
     szTip = JS_LOADING3_3STATES;
 	}
-  TipFixJS(szTip,event,{iJSMaxHeight: 300, szTitle:"JS Source Code - CUSTOM LoadingDiv Sample: " + szTypeText});
+  TipFixCode(szTip,event,{iJSMaxHeight: 300, szTitle:"JS Source Code - CUSTOM LoadingDiv Sample: " + szTypeText});
   
 }
 

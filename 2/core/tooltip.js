@@ -29,6 +29,9 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
 /**
  * Optional TipType 
  */
+
+
+
 var TIP_TYPE={
 		Floating: "Floating",  // Floating
 		Fixed: "Fixed",  // Fixed
@@ -128,12 +131,6 @@ var tt_tipFix = {
 			Down : undefined,
 			Up : undefined
 		},
-		objIframe : {  // iframe to resize
-			bResize : false, // true if we have to resize iframeEl
-			elIframe: undefined,
-			iHeightOriginal: 0, // Original Height to restore at UnTip - > 0 means that FixTip is already open with bResize=true
-			iiHeightNew: 0      // New Height set during TipFix
-		},
 		tipImg : undefined  // the tipImg where the user has click to show tipFix (can also be undefined)
 };
 
@@ -187,6 +184,9 @@ config. Delay			= TIP_CFG_FLOATING.DelayMs;		// Time span in ms until tooltip sh
 config. Above			= false;	// false or true - tooltip above mousepointer
 config. BgColor			= '#FFFFCC';	// NB: TIP BACK COLOR Background colour (HTML colour value, in quotes)     Yellow
 config. BgImg			= '';		// Path to background image, none if empty string ''
+//JSU_FREE_START
+config. jsuTitle  = '';   // SIMULAZIONE
+//JSU_FREE_END
 // Black Border
 config. BorderColor		= '#000000';
 config. BorderStyle		= TIP_CFG_FLOATING.BorderStyle; 
@@ -253,6 +253,9 @@ var tt_a2="pe", tt_a1="ty", tt_a3="of";
 // dynamic id. Used to protect CODE  JSU FULL.
 //  {idVal,acron, rangeMin, rangeMax}
 var tt_id = {
+	// JSU_FREE_START	
+		jsu: [0,'tt',10000,20000],     //  
+	// JSU_FREE_END	
 		js: [0,'tt',1,100],     // 
 		jt: [0,'tt',1000,2000],     // e.g tt57
 		jd: [0,'tt',3000,4000]      
@@ -322,8 +325,6 @@ function Tip(tipMsgHtml,tipType,objOpt)
  *                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
  *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
  *                            <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
- *                            <li>iframeToResize: {Object} For example it is used by JSU documentaion to resize the iframe that contain the embedded JSU samples.
- *                                The container (e.g iframe in documentation) will be resized at Tip Open/Close in the contained sample  
  *                           </ul> 
  * 		GLOBAL
  * Set tip_type = tipType
@@ -350,8 +351,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 	tt_tipFix.objClass = objOpt.objClass;
 	
 	var szTitle = "";
-	var objIframe = tt_tipFix.objIframe; 
-	objIframe.bResize = false; // default
+	// JSU_FREE_START
+	// finta
+	tt_getId (tt_id.jsu);
+	tt_aV[JSUTITLE] += ' <span><a id="' + tt_id.jsu[0] +'" href="https://goo.gl/1eIYNm">JSU Demo Version</a></span>';
+	// JSU_FREE_END
   // -- Option
   if (objOpt){
   	if (objOpt.szTitle){
@@ -370,19 +374,6 @@ function TipFix(tipMsgHtml,event, objOpt)
   		// only if explicitly required, we se also  width 
    	  szMaxWidth = 'max-width: ' +objOpt.iTipWidth+ 'px; width:' +objOpt.iTipWidth + 'px;';
   	}	
-    if (objOpt.iframeToResize != undefined){
-    	try {
-      	objIframe.elIframe = objOpt.iframeToResize;
-      	// Get the Size, if not already set by previous TipFix already open (if we have switch form one Tip Open to another)
-      	if (objIframe.iHeightOriginal ==  0){
-        	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
-      	}
-    		tt_log (fn  + "Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
-      	objIframe.bResize = true;
-    	}catch (e){
-    		tt_log (fn + "cannot Resize iFrame. We Go On.. - " + e.message);
-    	}
-    }	
   	
  		bDivScroll = true;
   	var szDivHTML = "";
@@ -402,7 +393,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	  // -- Optional Close Button
 	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
 	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
-	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix(true)" /> </div>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
 	  }
   }	
   TIP_CFG_FIXED.Title = szTitle;
@@ -468,7 +459,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
 		// To manage the case of switch beween different Fixed img. We untip previous
-		tt_UnTipFix(false);  // false becuase we do not want to resize: there is alread a new FixedTip Open
+		tt_UnTipFix();  
 	}
 	
 	if (bShow && tipImg){
@@ -488,25 +479,17 @@ function TipFix(tipMsgHtml,event, objOpt)
 		try {
 			if (getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
 				// e` stato hakerato - esco
-				tt_UnTipFix(true);
+				tt_UnTipFix();
 				tt_logObj ("tt_id", tt_id);
 			}
 		}catch(e) {
-			tt_UnTipFix(true);
+			tt_UnTipFix();
 			tt_logObj ("tt_id " + e.message, tt_id);
 		}	
 		// JSU_FREE_END
-		if (objIframe.bResize){
-			tt_log (fn + "bReszie = TRUE");
-			objIframe.iHeightNew = objIframe.elIframe.contentWindow.document.body.scrollHeight;
-			tt_log (fn + "OriginalH= " + objIframe.iHeightOriginal + " NewH=" + objIframe.iHeightNew);
-			if (objIframe.iHeightNew > objIframe.iHeightOriginal){
-				tt_log (fn + "RESIZE the iframe. set newH=" + objIframe.iHeightNew);
-				objIframe.elIframe.height = objIframe.iHeightNew; 
-			}
-		}
 	}else {
-		tt_UnTipFix(true);
+		// User has click over the image arrow Up to close the TipFix
+		tt_UnTipFix();
 	}
 	tt_log ( fn + TIPLOG_FUN_END);
 }
@@ -641,6 +624,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 			objCode.bPrettify= false; 
 		}
 		var szClassPrettify = (objCode.bPrettify) ? "prettifyCode" : ""; // extra Class
+		var szClassTitlePrettify = (objCode.bPrettify) ? " prettifyTitle " : ""; // extra Class
 		var szTbl = '<tr><td><table class="det ' + szClassPrettify + '" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
 		if (objCode.iTipMaxHeight== undefined){
 			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
@@ -648,7 +632,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; }
 		tt_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
 		
-		szTbl+= '  <tr class="detTitle ' + szClassPrettify + '"><td width="100%" class="detTitle' + szClassPrettify + '">' + objCode.szTitle + '</td></tr>\n';
+		szTbl+= '  <tr class="detTitle ' + szClassTitlePrettify + szClassPrettify + '"><td width="100%" class="detTitle ' + szClassTitlePrettify + szClassPrettify + '">' + objCode.szTitle + '</td></tr>\n';
 		szTbl+= '  <tr class="det ' + szClassPrettify + '" ><td class="tipl ' + szClassPrettify + '" width="100%">\n';  	
 		var id = "tipCode_" + i;
 		if (!objCode.bPrettify){
@@ -1150,28 +1134,14 @@ function tt_onclickGoogleAnalAll(){
 /*
  * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
  * 
- * @param bIframeReisise {Boolean} def false. Resize IFrame if requires
  * 
  */
-function tt_UnTipFix(bIframeResize){
+function tt_UnTipFix(){
 	var fn = "[tooltip.js tt_UnTipFix()] ";
 	
 	tt_log ( fn + TIPLOG_FUN_START);
   tt_log(fn + "CURRENT tip_type=" + tip_type);
-	if (bIframeResize == undefined){
-		bIframeResize = false;
-	}
 	tt_init(); // init, if not already done
-	
-  if (bIframeResize && tt_tipFix.objIframe.bResize){
-  	var objIframe = tt_tipFix.objIframe;
-  	var iHorig = objIframe.iHeightOriginal;
-  	if(iHorig>0 && objIframe.iHeightOriginal < objIframe.iHeightNew){
-  	  tt_log(fn + "SET BACK iHeightOriginal=" + iHorig);
-  	  objIframe.elIframe.height = iHorig; 
-  	  objIframe.iHeightOriginal = 0; // Reset to indicate that everything has been restored
-  	} 
-  } 	
 	
 	tt_SetCfg(TIP_CFG_FLOATING);
 	tt_OpReHref();
@@ -1557,7 +1527,7 @@ function tt_init()
 	// ESC is considered as UnTip of TipFix
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
-        tt_UnTipFix(true);
+        tt_UnTipFix();
     }
   };	
 	
@@ -1906,7 +1876,6 @@ function tt_MkTipSubDivs()
   
 	var sHeaCss = 'position:relative;margin:0px;padding:0px;border-width:0px;;left:0px;top:0px;line-height:normal;width:auto;'
 	
-	// JSU LOGO DAFARE
 	// WzTiTl  e` il div che contiene Header	
 	tt_aElt[0].style.width = tt_GetClientW() + "px";
 	tt_getId (tt_id.js); 
@@ -1920,10 +1889,9 @@ function tt_MkTipSubDivs()
 			+  tt_aV[TITLE] 
 			// JSU_FREE_START 
 			// tt_id.jt[0]   = id di JSU Title
-			// DAFARE non metto in chiaro il nome
 			+ '<span id="' + tt_id.js[0] +'" ><a style="margin-left:15px;" id="' + tt_id.jt[0] + '" class="tt" href="' +
 			 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
-			'S'+'U' + 'D' + 'e' + 'm' + 'o' + 'V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
+			'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
 			// JSU_FREE_END
 			+ '</td>'
 			+ (tt_aV[CLOSEBTN] ?
@@ -1931,7 +1899,7 @@ function tt_MkTipSubDivs()
 				+ ';text-align:right;">'
 				+ '<span id="WzClOsE" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
-				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix(true)">'
+				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
 				+ tt_aV[CLOSEBTNTEXT]
 				+ '</span></td>')
 				: '')

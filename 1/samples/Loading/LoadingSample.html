@@ -59,8 +59,9 @@
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tipTitleBig">
       <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
-        <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+        <label class="aboutAuthor">by Federico Levis</label> <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+        <label class="jsuHelp">LoadingDiv Documentation<label>  <input type="button" class="jsuHelp" onclick="jsuDocLoading();"  onmouseover="Tip(JSU_TIP_DOC_LOADING);" onmouseout="UnTip(event)" /> 
+        
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
         <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>
@@ -105,7 +106,7 @@
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
                <input type="button" class="tipFixJS" id="tipJSLoading1" 
-               onclick="tipFixCode( JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
+               onclick="TipFixCode( JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
            </td></tr>
          </table>
       </td>      
@@ -210,10 +211,10 @@
          <table >
            <tr valign="top"><td>
                <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
-               <input type="button" class="tipFixJS" id="tipJSLoading2" onclick="tipFixCode( JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
+               <input type="button" class="tipFixJS" id="tipJSLoading2" onclick="TipFixCode( JS_LOADING2,event,{iMaxWidth:800,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
            </td></tr>
            <tr valign="top"><td>
-               <input type="button" class="tipFixArrow" id="tipJSLoadingOpt" style="color:Blue;" value="JS Source: loadingDiv API OPTIONS" onclick="tipFixCode( JS_LOADING_OPT,event,{iMaxWidth:800,szTitle:'loadingDiv API OPTIONS'});");" /><BR/><BR/>
+               <input type="button" class="tipFixArrow" id="tipJSLoadingOpt" style="color:Blue;" value="JS loadingDiv OPTIONS" onclick="showLoadingDivOpt(event);");" /><BR/><BR/>
            </td></tr>
          </table>
       </td>

@@ -18,7 +18,6 @@ This file may be freely distributed under the MIT license.
 // var TMO_DOC_EMBED_STARTUP_MS = 500; 
 
 //-------------------------- Optional PAR only for debugger 
-var URL_PAR_DOC="doc";  // used by HTML doc to show only one section embedded in a frame. e.g doc=1 to see only sample=1
 
 var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column in Test
 // -- Test google, used only by AllSamples.html
@@ -34,11 +33,6 @@ var DOWNLOAD_TIP_TYPE={
 		PAY: "PAY"
 };
 
-// DO NOT CHANGE:  they are "manually set in videoOpt Options"
-var VIDEO_OPT={
-	YOU_TUBE: "YOU_TUBE",
-	POPUP: "POPUP"
-};
 
 
 var JSU_EMAIL = "federico.levis@virgilio.it";  
@@ -116,7 +110,7 @@ var JSU_SHORT_URL_LINKEDIN = "https://goo.gl/J9mJfh";
 //---------------------
 var JSU_LONG_URL_LINKEDIN = "https://www.linkedin.com/in/federicolevis";  
 
-
+// Used to replace location of sample not free
 var JSU_LONG_URL_SAMPLE_NOTFREE = 'https://rawgit.com/FedericoLevis/JSU/master/samples/Misc/SampleNotFree.html'
 // ID sample NOt FREE (see WORK dir)
 var JSU_ID_SAMPLE_LOADING  =	1;
@@ -181,10 +175,14 @@ var JSU_LONG_URL_VERSION_PAR_FREE  =	JSU_LONG_URL_VERSION + "#free";
 // used as Link for JSU in about
 var JSU_SITE = JSU_SHORT_URL_DOC; 
 
-	
-var JSU_TIP_CUR_FEATURE="Click to Show a new Window with the <b>JSU Documentation of this feature</b>";
-var JSU_TIP_CUR_API="Click to Show a new Window with the <b>JS API Documentation of this feature</b>";
-var JSU_TIP_DOC="Click to Show a new Window with the <b>JSU Feature</b>";
+var JSU_TIP_DOC="Click to Show the <b>JSU Documentation</b>";
+var JSU_TIP_DOC_TIP="Click to Show the <b>JSU Tooltip Documentation</b>";
+var JSU_TIP_DOC_SORT="Click to Show the <b>JSU SortTable Documentation</b>";
+var JSU_TIP_DOC_VALIDATE="Click to Show the <b>JSU Validate Documentation</b>";
+var JSU_TIP_DOC_BLOCKPOPUP="Click to Show the <b>JSU Blocking Popup Documentation</b>";
+var JSU_TIP_DOC_JQPOPUP="Click to Show the <b>JSU JQuery Popup Documentation</b>";
+var JSU_TIP_DOC_LOADING="Click to Show the <b>JSU LoadingDiv Documentation</b>";
+var JSU_TIP_DOC_JSLOG="Click to Show the <b>JSU JSLogDocumentation</b>";
 
 // COMMON for all samples
 var SAMPLE_MAX_NUM=4; // MAX Number of Sample
@@ -209,22 +207,32 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td width="60px" class="tipc">Feature<BR/>Doc</td>' +
 '		  <td width="370px" class="tipc">Description</td>' +
 '		  <td width="60px" class="tipc">Plugin Required</td>' +
-'		  <td width="60px" class="tipc">Video Sample  ' +
-'        <select id="videoOpt" onchange="onchangeVideoOpt();" class="videoOpt" VIDEO_OPT_DISABLED> ' +
-'           <option value="YOU_TUBE" selected>Show in YouTube</option> ' +
-'           <option value="POPUP" >Show in Popup</option> ' +
-'        </select> ' +
+'		  <td width="60px" class="tipc">YouTube<BR/>Video Sample  ' +
 '     </td>' +
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
-'	  <tr>' +
+'	  <tr >' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
-'		  <td class="tipl">Floating/Fixed Tips with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...)     </td>' + 
+'		  <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>     </td>' + 
 '		  <td class="tipc"><b>-</b></td>' +
 '     <td class="tipc"><a href="javascript:showJSUVideoTip()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Tooltip Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
+'		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
+'		  <td class="tipc"><b>-</b></td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideoSort()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU SortTable Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
+'	  </tr>' +
+'	  <tr>' +
+'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_BLOCKPOPUP +'" target="_blank">Blocking Popup</a> </td>' +
+'		  <td class="tipl"><b>Modal/Blocking Popup</b> designed specially for <b>IE</b><BR/><b> </td>' + 
+'		  <td class="tipc"><b>-</b></td>' + 
+'     <td class="tipc"><a href="javascript:showJSUVideoBlockPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Blocking Popup Video" width="100" height="20" border="2" /></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleBlockPopup();">BlockingPopup Sample</a></td>' +
+'	  </tr>' +
+'	  <tr >' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_LOADING +'" target="_blank">Loading Div</a> </td>' +
 '		  <td class="tipl"><b>Loading Div</b> for Long Operation with <b>Loading Gif, Title, Message, ElapsedSec...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
@@ -239,25 +247,11 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
-'		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
-'		  <td class="tipc"><b>-</b></td>' + 
-'     <td class="tipc"><a href="javascript:showJSUVideoSort()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU SortTable Video" width="100" height="20" border="2" /></a></td> ' +  
-'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
-'	  </tr>' +
-'	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JSLOG +'" target="_blank">jslog</a> </td>' +
 '		  <td class="tipl">Log from JS Code into an optional Window: <b>log Object, JSON, DOM ...</b></td>' + 
 '		  <td class="tipc"><b>-</b></td>' + 
 '     <td class="tipc"><a href="javascript:showJSUVideojslog()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU JSlog Video" width="100" height="20" border="2" /></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
-'	  </tr>' +
-'	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_BLOCKPOPUP +'" target="_blank">Blocking Popup</a> </td>' +
-'		  <td class="tipl"><b>Modal/Blocking Popup</b> designed specially for <b>IE</b><BR/><b> </td>' + 
-'		  <td class="tipc"><b>-</b></td>' + 
-'     <td class="tipc"><a href="javascript:showJSUVideoBlockPopup()"><img src="' + JSU_IMG_PLAY_VIDEO + '" title="JSU Blocking Popup Video" width="100" height="20" border="2" /></a></td> ' +  
-'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleBlockPopup();">BlockingPopup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JQPOPUP +'" target="_blank">JS Popup</a> </td>' +
@@ -286,7 +280,7 @@ var JSU_TIP_SECT2_MSG = '<a class="tipLink" href="'+ JSU_SITE +'" target="_blank
 var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:15px;margin-bottom:15px;">' +
 '<tr>' +
 '  <td width="50%">' + JSU_TIP_SECT2_FEAT + '</td>' +
-'  <td width="50%" class="tipl"  style="padding-left:5px;padding-right:5px;">' + JSU_TIP_SECT2_MSG + '</td>' +
+'  <td width="50%" class="tipl"  style="padding-left:5px;padding-right:5px;font-size:11px;">' + JSU_TIP_SECT2_MSG + '</td>' +
 '</tr>' +
 '</table>';
 
@@ -307,8 +301,6 @@ var url_par = {
 
 var tmo_resize = null;
 
-// option to show Video
-var video_opt = VIDEO_OPT.YOU_TUBE;  //default
 
 
 /* =============================================================================================
@@ -320,13 +312,12 @@ var video_opt = VIDEO_OPT.YOU_TUBE;  //default
  * JSU About Popup Example
  */
 function showJsuPopupAbout(){
-	var szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "disabled");
 
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="700px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://raw.githubusercontent.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
   '     </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl" >' + szTipSect2 + '</td></tr> ' +
+  '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2 + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   '    <td ><table class="tipNoBorder" width="100%"><tr>' +
   '      <td align="right" width="40%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
@@ -351,19 +342,9 @@ function aboutTipFixJSU(event,bShowAllSample){
 		bShowAllSample = true;
 	}
 	// for JSUDoc we disable the choice
-	var szLocation = window.location + ""; 
-	var bJSUDoc = szLocation.indexOf ("JSUDoc") >= 0;
+	// var szLocation = window.location + ""; 
+	// var bJSUDoc = szLocation.indexOf ("JSUDoc") >= 0;
 	
-	// depending on BRowser we enable or disable videoOpt 
-	var szTipSect2 = "";
-	if (!bJSUDoc && (isIE() || isFirefox())){
-		// We can show Video also in Popup
-		// select.disabled = false;
-		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "");
-	}else{
-		szTipSect2 = JSU_TIP_SECT2.replace("VIDEO_OPT_DISABLED", "disabled");
-	}	
-	videoOpt = VIDEO_OPT.YOU_TUBE; // INIT
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="1300px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '    <td >' +
@@ -393,7 +374,7 @@ function aboutTipFixJSU(event,bShowAllSample){
   '      </table>' +
   '    </td>' +
   '  </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl">' + szTipSect2  + '</td></tr> ' +
+  '  <tr class="jsuAboutMsg"><td class="tipl">' + JSU_TIP_SECT2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
 	TipFix (szMsg,event,{iTipWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
@@ -838,44 +819,6 @@ function jsuDocJQPopup(){
 }
 
 
-/**
- * Open window with Tip API Documentation
- */
-function jsuDocTip(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_TIP);
-}
-/**
- * Open window with SortTable API Documentation
- */
-function jsuDocSort(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_SORT);
-}
-/**
- * Open window with Loading DOC Documentation
- */
-function jsuDocLoading(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_LOADING);
-}
-
-/**
- * Open window with JSLOG DOC Documentation
- */
-function jsuDocJSLog(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_JSLOG);
-}
-/**
- * Open window with BlockPopup DOC Documentation
- */
-function jsuDocBlockPopup(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_BLOCKPOPUP);
-}
-/**
- * Open window with JQPopup DOC Documentation
- */
-function jsuDocJQPopup(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_JQPOPUP);
-}
-
 
 
 
@@ -937,28 +880,6 @@ function manage_par_opt(){
 	var fn = "manage_par_opt() ";
 	try{
 		
-		var szParDoc = urlGetParVal (URL_PAR_DOC);
-		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_DOC + "=" + szParDoc);
-		if (szParDoc != ""){
-	    // ------------------------  emebedded in documentation. show only the Sample=szParDoc
-			elementShow (getElementById2("sampleHeader"),false);
-			elementShow (getElementById2("tr_title_1"),false);
-			elementShow (getElementById2("tr_title_2"),false);
-			for (var i=1; i<=SAMPLE_MAX_NUM; i++){
-				if (("" + i) != szParDoc){
-					elementShow (getElementById2("tr_sample_" + i, false),false);
-				}
-			}
-			url_par.doc = szParDoc;
-			//  we show now the iframe that was hidden
-		  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
-		  elementShow (iframeEl,true);
-
-			/* Not neautiful with the timer. Removed
-		  // we have to wait a little: here the height are not still correct
-			tmo_resize = setTimeout (resizeIframe,TMO_DOC_EMBED_STARTUP_MS);
-      */
-		} 
 		//-----------------------------------------------------------
 		var szParOpt = urlGetParVal (URL_PAR_OPT);
 		jslog (JSLOG_JSU,fn + "URL PAR " + URL_PAR_OPT + "=" + szParOpt);
@@ -1151,15 +1072,6 @@ function setupState(){
  *  show Video
 ===================================================================================*/
 
-/**
- * onchange for select videoOpt
- * 
- * GLOBAL   OUT: video_opt used by showJSUVideo..
- */
-function onchangeVideoOpt(){
-	video_opt = selectGetSelVal (getElementById2("videoOpt"));
-}
-
 
 /**
  * WE use an Hidden a tag, for compatibility with MObile (instead of using window.open)
@@ -1188,11 +1100,8 @@ function jsuGoToURL(szUrl,bNewWindow){
  * @returns
  */
 function showJSUVideo(szVideoFrame,szTitle,iWidth){
-	if (video_opt == VIDEO_OPT.POPUP){
-	  Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
-	}else{
-		jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
-	}
+	//  Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
+  jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
 
 }
 
@@ -1279,7 +1188,7 @@ function jsuGoogleAnalList (event){
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
   UnTip(event);	
   
-  // Prepare arObjGoogleAnal: Only shortUrl is mandatory (if other fields are not present, they are not displayed). 
+  // Prepare arObjGoogleAnal: only shortUrl is mandatory  
   // In this case we populate all fields
   var arObjGoogleAnalList = [
        {shortUrl: JSU_SHORT_URL_DOWNLOAD_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
@@ -1304,20 +1213,13 @@ function jsuGoogleAnalList (event){
        {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU JS Popup Doc'}
        */
      ];
-  var bUrl = false;
-  if (bUrl){
-    TipFixGoogleAnalList(arObjGoogleAnalList,event,{
+  // show the TipFix with the List of Link
+  TipFixGoogleAnalList(arObjGoogleAnalList,event,{
+    	bShortUrl: false,   // ShortUrl not visible at startup
+    	bLongUrl: false,  // LongUrl not visible at startup
     	szTitle:'JSU Google Analitycs',
-    	iTipWidth: 1000  // Tip Width 
+    	iTipWidth: 1100  // Tip Width   
     });
-  }else{
-    TipFixGoogleAnalList(arObjGoogleAnalList,event,{
-    	bShortUrl: false,
-    	bLongUrl: false,
-    	szTitle:'JSU Google Analitycs',
-    	iTipWidth: 1000  // Tip Width  // DAFARE 
-    });
-  }
   
   
 	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
@@ -1478,82 +1380,4 @@ function testExecute(){
 	}		
 }
 
-/**
- * 
- * @return iframeEl {Object}   a) the iFrame that contain the HTML emebedded: e.g when running in JSU documentation
- * 														  we are in this case when url_par.doc is set
- *                           b) undefined if not present
- */
-function getIframeToResize(){
-	var fn = "[about.js getIframeToResize()] ";
-	try {
-	  if (url_par.doc == undefined){
-	  	return undefined; //no iFrame in this case
-	  }	else {
-	  	// The HTML is running embedded into iframe
-	  	var szIframeId = "iframe" + url_par.doc;   // e.g iframe1
-			jslog(JSLOG_DEBUG,fn + "szIframeId=" + szIframeId);
-	  	var iframeEl = window.parent.document.getElementById (szIframeId);
-			jslog(JSLOG_DEBUG,fn + "RETURN iframeEl=" + iframeEl + " with height = " + iframeEl.height);
-	  	return iframeEl;
-	  }
-	}catch(e){
-		jslog(JSLOG_ERR,fn + "Exceptiion=" + e.message);
-		return undefined;
-	}
-}
-
-// TEST
-function testResize()
-{
-  var el = window.parent.document.getElementById ('iframe1');
-  var h =   el.contentWindow.document.body.scrollHeight;
-  alert (h); 
-  //change the height of the iframe
-  el.height=  h ;
-
-}
-
-//TEST
-function iframeAdjustHeight(szId)
-{
-	// TEST
-	var el = getElementById2 (szId,true);
-  //find the height of the internal page
-  var h =   el.contentWindow.document.body.scrollHeight;
-  //change the height of the iframe
-  el.height=  h ;
-}
-
-/*
- * We have to wait a little before getting the row size
- */
-function resizeIframe(){
-	clearTimeout (tmo_resize);
-  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
-	var trEl = getElementById2("tr_sample_" + url_par.doc, false);
-	// resize iframe basing on the unique row displayed
-	if (trEl){
-		 // Set new height
-		 iframeEl.height = trEl.clientHeight + 30;
-	}
-	// now we show the iframe that was hidden
-  elementShow (iframeEl,true);
-	
-}
-
-/**
- * Only for developer: show the height of the rows
- */
-function showSampleTrHeight(){
-	var szMsg = "";
-
-	for (var i=1; i<=SAMPLE_MAX_NUM; i++){
-		var trEl = getElementById2("tr_sample_" + i, false);
-		if (trEl){
-			szMsg += i + "  Height= " + trEl.clientHeight + "\n";
-		}
-	}
-	alert (szMsg);
-}
 

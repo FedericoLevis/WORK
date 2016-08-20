@@ -214,9 +214,6 @@ img.sample{
   height: 130px;
 }	
 
-label.jsuHelp {  /* e.g Tooltip */
-  margin-left: 30px;  /* Keep some space from the other Items inthe Title */
-}	
 
 label.jsuAPI{  /* e.g cSortTable */
   font-weight: bold;

@@ -169,7 +169,7 @@ var jslogVar ={
 																a) Level=3 to Enable JSLOG_ERR (0), JSLOG_INFO(1) and JSLOG_DEBUG(2)
 																b) Level=4 to Enable JSLOG_ERR (0) JSLOG_TEST(4)
 * 													-	'URL' (JSLOG_LEV_URL_PAR) To get jslog parameter from URL (if absent 0 will be used)				
-	@param [objOpt] {Object}   Optional Option: <ul>
+	@param [objOpt] {Object}   Option: <ul>
 					  <li> .bLogTime	{Boolean}   [def=false] true to log also the Time in format [HH:MM:SS.ms] </li>
 	  			  <li> . szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead of the one configured in conf.js <BR/>
   															Example  "/portalDtct0/images/"    "../../images/" </li>
@@ -339,7 +339,7 @@ function jslogObj(Level,szMsg, obj, bLogCompact)
  * @param iLogLev {Number} JSLOG_INFO, ..
  * @param szMsg  {String} Initial Message
  * @param szHtml  {String} Message To log that can contain HTML TAGs
- * @param [objOpt]  {Object}	  Optional Options: <ul> 
+ * @param [objOpt]  {Object}	  Options: <ul> 
  *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
  *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
  *   											</ul> 
@@ -391,7 +391,7 @@ function jslogHtml(iLogLev,szMsg,szHtml, objOpt)
  * @param iLogLev {Number} JSLOG_INFO, ..
  * @param szMsg  {String} Message To log before DOM Element
  * @param el  {Object} DOM OBJECT To log
- * @param [objOpt]  {Object}	  Optional Options: <ul> 
+ * @param [objOpt]  {Object}	  Options: <ul> 
  *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
  *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
  *    												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>
@@ -495,7 +495,7 @@ function jslogDomEl(iLogLev,szMsg, el, objOpt)
  * @param iLogLev {Number} JSLOG_INFO, ..
  * @param szMsg  {String} Message To log before DOM Element
  * @param el  {Object} DOM OBJECT To log
- * @param [objOpt]  {Object}	  Optional Options: <ul> 
+ * @param [objOpt]  {Object}	  Options: <ul> 
  *    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>
  *    												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>
  *    												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>

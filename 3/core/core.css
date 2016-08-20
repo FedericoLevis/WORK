@@ -20,80 +20,11 @@ This file may be freely distributed under the MIT license.   <BR/>
 ========================================================================================= <BR/> 
 */
 
-/*---
-.jsuAlarmingEl alarm for el   
----
-<b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
-<BR/><b>Examples:</b>
-```html
-<input class="jsuAlarmingEl" width="100px" value="Example of value" />
-```
-*/
-.jsuAlarmingEl {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
-  background-size: contain;
-  z-index: 1000;
-}
 
-/*---
-.jsuAlarmingEl  alarm img near a select   
----
-<b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
-<BR/><b>Examples:</b>
-```html
-<img class="jsuAlarmingImg"/>
-```
-*/
-img.jsuAlarmingImg {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
-  background-size: contain;
-  height: 26px;
-  vertical-align: text-top;
-}
-
-	
-/*---
-.jsuLoadingEl Loading for el   
----
-<b>CSS:</b> ``input.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShowIn1El">util.js loadingShowIn1El()</a>
-<BR/><b>Examples:</b>
-```html
-<input class="jsuLoadingEl" width="100px" value="Example of value" />
-```
-*/
-.jsuLoadingEl {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
-  background-size: contain;
-  z-index: 1000;
-}
-
-/*---
-div.jsuLoadingEl Div with Loading Gif   
----
-<b>CSS:</b> ``div.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
-<BR/><b>Examples:</b>
-```html
-<div class="jsuLoadingEl" height="100px" />
-```
-*/
-div.jsuLoading {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
-  /* background-size: contain; */
-   height: 80px;  /*  
-  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
-  height: 100%; 
-  width: 100%; 
-  z-index: 100; 
-  background-color: white; 
-  position: absolute; 
-  top:0px; 
-  left: 0px;
-  */  
-}
 
 
 /*---
-loadingDivXXX API
+LoadinDiv API: CSS used in loadingDiv.js 
 ---
 <b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
 <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
@@ -237,7 +168,8 @@ div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
 
 
 /*----------------------------------------------------
-<b>input.jsuInfo</b> Tip img for info:    
+Tooltip: Tip with info image
+---    
 <b>CSS:</b>  ``input.jsuInfo``  used with JSU Tooltip API Tip() UnTip()  
    - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
 <BR/><BR/><b>Examples:</b>
@@ -258,7 +190,7 @@ input.jsuInfo{ /* Info img  */
 
 
 /*---
-input.jsuTip img with QuestionMark    
+Tooltip: Tip with info Question Mark
 ---
 <b>CSS:</b> ``img.jsuTip`` ``input.jsuTip``  usually used with JSU Tooltip API Tip() UnTip()  
    - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
@@ -278,82 +210,10 @@ img.jsuTip, input.jsuTip{
 
 
 
-/*---
-Validate API - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
----
-<b>CSS:</b> <ul>
- <li>``validateItemMandatory``     Item to validate: Mandatory </li>
- <li>``validateItemErr``     Item to validate: in Error State </li>
- <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
- <li>``div.validateErrSect``     div Section with all the ERRORS </li>
- <li>``label.validateErr``   label in Error State </li>
-
- <li>...
-</ul> 
-<BR/><b>Examples:</b>
-```html
-<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
-<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
-<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
-```
-*/
-
-
-.validateErrSect{ /* div Section with all the ERRORS  */
-  border: 5px solid red;
-  border-style: ridge; 
-  color: red;
-  display: none; /* default */
-  text-align: left;
-}	
-
-
-
-label.validateErr{ /* item in error State  */
-  border: 2px solid red;
-  color: red;
-}	
-
-input.validateInfo{ /* Info img  */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
-  background-color: #19E4DD;
-  height: 14px;
-  width: 5px;
-  margin-left: 2px; 
-  cursor: pointer;
-  border: 1px solid #000;
-}
-
-
-.validateItemMandatory{ /* Item to validate: Mandatory */
-  border: 2px solid black;
-}	
-
-
-.validateItemErr{ /* Item to validate: in Error State */
-  border: 2px solid;
-  border-color: red !important
-} 
-
-
-.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
-   color: red;
-   font-style: italic;   
-   font-weight: normal;
-   margin-left: 5px;   
-   display: none;  // Default: not Visible
-}
-
-
-
-.validateErrPopup{ /* Error Label in Popup */
-  font-weight: normal;
-  color: red; /* */
-}
 
 
 /*---
-JSU Tip button for Tooltip API 
+Tooltip: button for TipFix 
 ---
 <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
 
@@ -376,12 +236,11 @@ JSU Tip button for Tooltip API
      <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
  </li><BR/>
  <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
-     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnal"/> &nbsp;&nbsp; 
+     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnalList"/> <BR/> 
      <b>input.tipGoogleAnalListUp</b>  <input type="button" class="tipGoogleAnalListUp" />
  </li><BR/>
- <li> tipFix button to Go to the Page of Google Analytics: <BR/>   
-     <b>input.tipGoogleAnal</b>  <input type="button" class="tipGoogleAnal"/> &nbsp;&nbsp; 
-     <b>input.tipGoogleAnalUp</b>  <input type="button" class="tipGoogleAnalUp" />
+ <li> button to Go to the Page of Google Analytics:  
+     &nbsp;&nbsp; <b>input.tipGoogleAnal</b>  <input type="button" class="tipGoogleAnal"/>  
  </li><BR/>
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
@@ -490,7 +349,7 @@ input.jsuHelp{	/* Help Button */
     width: 18px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 4px; 
+    margin-left: 0px; 
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
     
 }
@@ -498,7 +357,7 @@ input.jsuHelp{	/* Help Button */
 
 
 /*---
-tooltip.js 
+Tooltip: CSS used directly inside tooltip.js 
 ---
 <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
 */
@@ -509,10 +368,9 @@ div.ttTitle{  /* default Title */
 
 
 /*---
-Table with tip 
+Tooltip: CSS for tip table 
 ---
 */
-
 
 table.tip, table.jsuHeader, table.jsuFooter {
 	text-align: center;
@@ -797,9 +655,155 @@ a.tipLinkDisabled{
 .prettifyCode {  /* Extra class to enphasize, if required, Border color of prettified code */
   border-color: blue !important; 
 }	
+.prettifyTitle {  /* Extra class to enphasize, if required, Border color of prettified code */
+  color: #99ffff !important; 
+} 
+
+
+
 
 /*---
-Detail table (e.g GoogleAnalytics) 
+Validate API 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
+
+<b>CSS:</b> <ul>
+ <li>``validateItemMandatory``     Item to validate: Mandatory </li>
+ <li>``validateItemErr``     Item to validate: in Error State </li>
+ <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
+ <li>``div.validateErrSect``     div Section with all the ERRORS </li>
+ <li>``label.validateErr``   label in Error State </li>
+
+ <li>...
+</ul> 
+<BR/><b>Examples:</b>
+```html
+<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
+<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
+<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
+```
+*/
+
+
+.validateErrSect{ /* div Section with all the ERRORS  */
+  border: 5px solid red;
+  border-style: ridge; 
+  color: red;
+  display: none; /* default */
+  text-align: left;
+} 
+
+
+
+label.validateErr{ /* item in error State  */
+  border: 2px solid red;
+  color: red;
+} 
+
+input.validateInfo{ /* Info img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+
+.validateItemMandatory{ /* Item to validate: Mandatory */
+  border: 2px solid black;
+} 
+
+
+.validateItemErr{ /* Item to validate: in Error State */
+  border: 2px solid;
+  border-color: red !important
+} 
+
+
+.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
+   color: red;
+   font-style: italic;   
+   font-weight: normal;
+   margin-left: 5px;   
+   display: none;  // Default: not Visible
+}
+
+
+
+.validateErrPopup{ /* Error Label in Popup */
+  font-weight: normal;
+  color: red; /* */
+}
+
+
+
+
+
+/*---
+JSLog API 
+---
+<b>CSS:</b> <ul>
+ <li>``h3.jslog`` `Header with Btn </li>
+ <li>``div.jslogFooter``  Footer with Btn </li>
+ <li>...
+</ul> 
+*/
+
+
+h3.jslog{ /* Header with Btn */
+  background:  #ccc;
+  color : #000;
+  cursor:  pointer;
+  font-size:  14px;
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+}	
+
+
+
+div.jslogFooter{ /* Footer with Btn */
+  font-size:  12px;
+  /* textTransform = uppercase; */
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+} 
+
+.jslogButton{
+  cursor: pointer;
+  font-size:  12px;
+  font-weight:  bold;
+  padding: 0 5px;     		
+}	
+
+label.jslogHeader {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+label.jslogFooter{
+  font-weight: bold;
+  margin-left: 20px;
+  color: white;
+}
+
+
+select.jslog {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+
+/*---
+JSU: Detail table (e.g GoogleAnalList) 
 ---
 <b>CSS:</b> <ul>
  <li>``table.det`` Detail table with border</li>
@@ -890,10 +894,10 @@ tr.detSep, th.detSep,td.detSep { /* Row separator between SubTables*/
 
 
 td.googleAnalFooter, label.googleAnalFooter {
-	font-weight: italic !important;
+  font-weight: italic !important;
   font-family: Calibri;
   font-size: 11pt;
-}	
+} 
 
 select.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
   background-color: #D4D0D0;  /* Gray Clear */
@@ -905,7 +909,7 @@ select.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
   font-size: 11pt;
   border: 1px solid blue; /* Black */
   
-}	
+} 
 
 tr.detFooter, td.detFooter {
   text-align: left;
@@ -920,66 +924,74 @@ tr.detFooter, td.detFooter {
 }
 
 
-
+/*---
+util.js: .jsuAlarmingEl alarm for el   
+---
+<b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
+<BR/><b>Examples:</b>
+```html
+<input class="jsuAlarmingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuAlarmingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
 
 /*---
-jslog API 
+util.js: .jsuAlarmingEl  alarm img near a select   
 ---
-<b>CSS:</b> <ul>
- <li>``h3.jslog`` `Header with Btn </li>
- <li>``div.jslogFooter``  Footer with Btn </li>
- <li>...
-</ul> 
+<b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
+<BR/><b>Examples:</b>
+```html
+<img class="jsuAlarmingImg"/>
+```
 */
-
-
-h3.jslog{ /* Header with Btn */
-  background:  #ccc;
-  color : #000;
-  cursor:  pointer;
-  font-size:  14px;
-  font-weight:  bold;
-  margin:   0 0 2px;
-  lineHeight: 14px;
-}	
-
-
-
-div.jslogFooter{ /* Footer with Btn */
-  font-size:  12px;
-  /* textTransform = uppercase; */
-  font-weight:  bold;
-  margin:   0 0 2px;
-  lineHeight: 14px;
-  position: absolute;
-  bottom: 1px;
-  left: 1px;
-} 
-
-.jslogButton{
-  cursor: pointer;
-  font-size:  12px;
-  font-weight:  bold;
-  padding: 0 5px;     		
-}	
-
-label.jslogHeader {
-  font-weight: bold;
-  margin-left: 10px;
+img.jsuAlarmingImg {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
+  background-size: contain;
+  height: 26px;
+  vertical-align: text-top;
 }
 
-label.jslogFooter{
-  font-weight: bold;
-  margin-left: 20px;
-  color: white;
+  
+/*---
+util.js: .jsuLoadingEl Loading for el   
+---
+<b>CSS:</b> ``input.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShowIn1El">util.js loadingShowIn1El()</a>
+<BR/><b>Examples:</b>
+```html
+<input class="jsuLoadingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuLoadingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
 }
 
-
-select.jslog {
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 12px;
-	margin-left: 10px;
+/*---
+util.js Loading Gif with FillingRing 
+---
+<b>CSS:</b> ``div.jsuLoading``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
+<BR/><b>Examples:</b>
+```html
+<div class="jsuLoading" width="200px" />
+```
+*/
+div.jsuLoading {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
+  /* background-size: contain; */
+   height: 80px;  
+   /*  
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 100%; 
+  width: 100%; 
+  z-index: 100; 
+  background-color: white; 
+  position: absolute; 
+  top:0px; 
+  left: 0px;
+  */  
 }
-
-

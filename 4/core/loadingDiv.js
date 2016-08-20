@@ -35,6 +35,7 @@ var LOADING_DIV_DEF = {
 		iDivWidth: null, // if different from null, set this Div Width instead of using Default Width (CSS)
 		iGifWidth: null, // if different from null, set this Gif  Width instead of using Default Width (CSS)
 		bShowCancel:  false,	//	{Boolean}: [false] show the Cancel Btn 
+		szCancelLabel:  LOADING_DIV_MSG.cancelBtn ,	//	{String}: [""] Label to set to Cancel Button 
 		szBackgroundColor: null, // {String} Div BackgroundColor, if different from null or "", 
 		szDiffMsgHtml: "" // {String} if different from null or '', we show this Msg (HTML) instead of Default 
 };
@@ -49,6 +50,7 @@ var LOADING_DIV_DEF_OPT ={
 		iDivWidth: LOADING_DIV_DEF.iDivWidth, // if different from null, set this Div Width instead of using DEfault Width (CSS)
 		iGifWidth: LOADING_DIV_DEF.iGifWidth, // if different from null, set this Gif Width instead of using DEfault Width (CSS)
 		bShowCancel:  LOADING_DIV_DEF.bShowCancel,	//	{Boolean}: [false] show the Cancel Btn
+		szCancelLabel:  LOADING_DIV_MSG.cancelBtn ,	//	{String}: [""] Label to set to Cancel Button 
 		szBackgroundColor: LOADING_DIV_DEF.szBackgroundColor, // {String} Div BackgroundColor, if different from null or "", 
 		fnCancelCallback: null  // called when click Cancel
 };
@@ -234,18 +236,20 @@ function loadingDivTmo(){
 
 /**
   Show loadingDiv
-  @param [objOpt] 	{Object} Optional Option: <BR/>
-		- szTitleHtml:  {String}: [""] if != "" Show Title  <BR/>
-		- bShowGif:   		{Boolean}: [true] show the Loading Gif  <BR/>
-		- szDiffUrlGif:  	 {String Url}: [null] if different form null use this URL instead of CSS default	 <BR/>
-		- bShowElapsedSec: 	{Boolean} [false] if true show a Footer with Elapsed Time (sec) <BR/>
-		- bResetElapsedSec: {Boolean} [false] if true reset timer <BR/>
-		- szDiffMsgHtml: 	{String} if different from null, show this Msg (HTML) instead of Default <BR/>
-		- iDivWidth: 	 {Number} if different from null, set this Div Width instead of using DEfault Width (CSS) <BR/>
-		- iGifWidth: 		 {Number} if different from null, set this Gif Width instead of using DEfault Width (CSS) <BR/>
-		- bShowCancel:  	{Boolean}: [false] show the Cancel Btn <BR/>
-		- szBackgroundColor:{String} Div BackgroundColor, if different from null or "",  <BR/>
-		- fnCancelCallback: {function} [null]  called when Cancel button is clicked <BR/>
+  @param [objOpt] 	{Object} Option: <ul>
+		<li>szTitleHtml:  {String}: [""] if != "" Show Title  </li>
+		<li>bShowGif:   		{Boolean}: [true] show the Loading Gif  </li>
+		<li>szDiffUrlGif:  	 {String Url}: [null] if different form null use this URL instead of CSS default	 </li>
+		<li>bShowElapsedSec: 	{Boolean} [false] if true show a Footer with Elapsed Time (sec) </li>
+		<li>bResetElapsedSec: {Boolean} [false] if true reset timer </li>
+		<li>szDiffMsgHtml: 	{String} if different from null, show this Msg (HTML) instead of Default </li>
+		<li>iDivWidth: 	 {Number} if different from null, set this Div Width instead of using DEfault Width (CSS) </li>
+		<li>iGifWidth: 		 {Number} if different from null, set this Gif Width instead of using DEfault Width (CSS) </li>
+		<li>bShowCancel:  	{Boolean}: [false] show the Cancel Btn </li>
+		<li>szCancelLabel:  {String} ["Cancel"] Label to set to Cancel Button 
+		<li>szBackgroundColor:{String} Div BackgroundColor, if different from null or "",  </li>
+		<li>fnCancelCallback: {function} [null]  called when Cancel button is clicked </li>
+	</ul>	
  */
 function loadingDivShow(objOpt){
 	var Fn = "[loadingDiv.js loadingDivStart()] ";
@@ -265,6 +269,7 @@ function loadingDivShow(objOpt){
   	if (objOpt.iGifWidth == undefined) {objOpt.iGifWidth = LOADING_DIV_DEF.iGifWidth;}
   	if (objOpt.szBackgroundColor == undefined) {objOpt.szBackgroundColor = LOADING_DIV_DEF.szBackgroundColor;}
   	if (objOpt.bShowCancel== undefined) {objOpt.bShowCancel = LOADING_DIV_DEF.bShowCancel;}
+  	if (objOpt.szCancelLabel== undefined) {objOpt.szCancelLabel = LOADING_DIV_DEF.szCancelLabel;}
   	if (objOpt.szDiffMsgHtml == undefined) {objOpt.szDiffMsgHtml = LOADING_DIV_DEF.szDiffMsgHtml;}
   }	
   var_loading_div.fnCancelCallback = objOpt.fnCancelCallback; 
@@ -300,7 +305,7 @@ function loadingDivShow(objOpt){
 	elMsgHtml.innerHTML = szMsgHtml;
 	//------
 	var elCancelBtn = loading_getElementById2 ("loadingDivBtn");
-	elCancelBtn.value = LOADING_DIV_MSG.cancelBtn;
+	elCancelBtn.value = objOpt.szCancelLabel;
 	loading_elementShow (loading_getElementById2 ("loadingDivBtnTd"),objOpt.bShowCancel,"");
 	//------
 	var elGif = loading_getElementById2 ("loadingDivGif");

@@ -70,6 +70,27 @@ h2.jsuDoc {
   margin-bottom: 3px;
 } 
 
+h3.jsuDoc {  
+  font-family: Arial-Black;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 3px;
+} 
+
+h4.jsuDoc {  
+  font-family: Arial-Black;
+  font-weight: bold;
+  font-size: 16x;
+  color: black;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 3px;
+} 
+
+
 
 hr.jsuDoc { /* separator between header ad App */
   border: 2px solid black;
@@ -85,10 +106,16 @@ hr.h2Sep { /* separator between h2  */
   border-style: solid;  
   padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 0px;
 }
 
+
+table.jsuDocLink{  /* used as Item reference before the sample */
+  margin-top: 5px;
+  margin-bottom: 15px;
+}	
+	
 
 
 ul {
@@ -240,6 +267,12 @@ label.aboutAuthor{
   font-size: 12px;
   font-style: italic;
 }
+
+label.jsuHelp {  /* e.g Tooltip Documentation */
+  margin-left: 30px;  /* Keep some space from the other Items inthe Title */
+  font-size: 12px; 
+} 
+
 
 /* Label near tip  */
 label.aboutSource, label.aboutSourceJSUAPI{

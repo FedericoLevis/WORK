@@ -370,8 +370,8 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                        "cSortTable,setSort,getSortCol,getSortDir,sortApply," +
                        "cValidate,validateApply,setOption," +
                        "jslog,jslog_init,jslog_end,jslogObj,jslogDomEl,jslogDomElById,jslogElapsedTime," +
-                       "loadingDivShow,loadingDivHide" +
-                       "Tip,UnTip,TipFixed,TipFixedJS,TipFixedTextBox,TipFixedGoogleAnal," +
+                       "loadingDivShow,loadingDivHide," +
+                       "Tip,UnTip,TipFix,TipFixCode,TipFixMultiCode,TipFixTextBox,TipFixGoogleAnalList," +
                        "Popup," +
                        "alert,"+
                        // --- CSS FUTURE: To be completed with CSS keyword
