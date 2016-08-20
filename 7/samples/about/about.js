@@ -15,7 +15,7 @@ This file may be freely distributed under the MIT license.
    						CONSTANT
 ============================================================================================= */
 
-var TMO_DOC_EMBED_STARTUP_MS = 1000; 
+// var TMO_DOC_EMBED_STARTUP_MS = 500; 
 
 //-------------------------- Optional PAR only for debugger 
 var URL_PAR_DOC="doc";  // used by HTML doc to show only one section embedded in a frame. e.g doc=1 to see only sample=1
@@ -950,9 +950,14 @@ function manage_par_opt(){
 				}
 			}
 			url_par.doc = szParDoc;
+			//  we show now the iframe that was hidden
+		  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
+		  elementShow (iframeEl,true);
+
+			/* Not neautiful with the timer. Removed
 		  // we have to wait a little: here the height are not still correct
 			tmo_resize = setTimeout (resizeIframe,TMO_DOC_EMBED_STARTUP_MS);
-
+      */
 		} 
 		//-----------------------------------------------------------
 		var szParOpt = urlGetParVal (URL_PAR_OPT);
