@@ -1527,7 +1527,6 @@ function resizeIframe(){
 	clearTimeout (tmo_resize);
   var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
 	var trEl = getElementById2("tr_sample_" + url_par.doc, false);
-	alert (url_par.doc + " - " + trEl.clientHeight);
 	// resize iframe basing on the unique row displayed
 	if (trEl){
 		 // Set new height
