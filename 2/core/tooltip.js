@@ -377,10 +377,10 @@ function TipFix(tipMsgHtml,event, objOpt)
       	if (objIframe.iHeightOriginal ==  0){
         	objIframe.iHeightOriginal = 	objIframe.elIframe.contentWindow.document.body.scrollHeight;
       	}
-    		tt_log (fn,"Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
+    		tt_log (fn  + "Resize is SET - Save Original h= " + objIframe.iHeightOriginal);
       	objIframe.bResize = true;
     	}catch (e){
-    		tt_log (fn,"cannot Resize iFrame. We Go On.. - " + e.message);
+    		tt_log (fn + "cannot Resize iFrame. We Go On.. - " + e.message);
     	}
     }	
   	
