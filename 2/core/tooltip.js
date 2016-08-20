@@ -497,10 +497,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 		}	
 		// JSU_FREE_END
 		if (objIframe.bResize){
+			tt_log (fn + "bReszie = TRUE");
 			objIframe.iHeightNew = objIframe.elIframe.contentWindow.document.body.scrollHeight;
-			tt_log (fn,"OriginalH= " + objIframe.iHeightOriginal + " NewH=" + objIframe.iHeightNew);
+			tt_log (fn + "OriginalH= " + objIframe.iHeightOriginal + " NewH=" + objIframe.iHeightNew);
 			if (objIframe.iHeightNew > objIframe.iHeightOriginal){
-				tt_log (fn,"RESIZE the iframe. set newH=" + objIframe.iHeightNew);
+				tt_log (fn + "RESIZE the iframe. set newH=" + objIframe.iHeightNew);
 				objIframe.elIframe.height = objIframe.iHeightNew; 
 			}
 		}
