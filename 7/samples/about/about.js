@@ -1494,7 +1494,7 @@ function getIframeToResize(){
 	  	var szIframeId = "iframe" + url_par.doc;   // e.g iframe1
 			jslog(JSLOG_DEBUG,fn + "szIframeId=" + szIframeId);
 	  	var iframeEl = window.parent.document.getElementById (szIframeId);
-			jslog(JSLOG_DEBUG,fn + "RETURN iframeEl=" + iframeEl);
+			jslog(JSLOG_DEBUG,fn + "RETURN iframeEl=" + iframeEl + " with height = " + iframeEl.height);
 	  	return iframeEl;
 	  }
 	}catch(e){
@@ -1538,7 +1538,6 @@ function resizeIframe(){
 		 iframeEl.height = trEl.clientHeight + 30;
 	}
 	// now we show the iframe that was hidden
-  var iframeEl = window.parent.document.getElementById ('iframe' + url_par.doc);				
   elementShow (iframeEl,true);
 	
 }
