@@ -180,8 +180,8 @@ var JSU_SHORT_URL_DOC_SORT  =	"https://goo.gl/aKR7b2";
 var JSU_SHORT_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
 var JSU_SHORT_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
 var JSU_SHORT_URL_DOC_JSLOG  =	"https://goo.gl/Iobg3a";
-var JSU_SHORT_URL_DOC_IEPOPUP  =	"https://goo.gl/iWW5cz";
-var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/iPqUqL";
+var JSU_SHORT_URL_DOC_IEPOPUP  =	"https://goo.gl/ZJBCrl";
+var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/hZ5U6M";
 
 
 //
