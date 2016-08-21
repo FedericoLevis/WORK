@@ -9,9 +9,6 @@ var JSLOG_LEV = 7;
 * Called when jsu is loaded
 */
 function jsu_loaded(){
-	/* For sample that are NOT FREE like this one, we have to setup the State
-	 */
-	setupState(); 
   // Init jslog with JSLOG_LEV 
   // jslog_init(JSLOG_LEV);
 	manage_par_opt(); // manage optional PAR show_opt, only for developer
