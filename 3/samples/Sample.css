@@ -51,9 +51,9 @@ select.selectSample{  /* select The sample */
 
 
 div.sampleSort, table.sampleSort{
-  font-family: Verdana;
-  font-weight: normal;
-  font-size: 11px;
+  font-family: Verdana !important;
+  font-weight: normal !important;
+  font-size: 9px !important;
 	float:left;
   width:500px;
   overflow: auto;

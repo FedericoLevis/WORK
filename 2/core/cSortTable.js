@@ -121,32 +121,39 @@ var SORT_CLASSNAME = "sortimg";
   
   @param	{string} szElId      Id of the HTML TABLE to sort - If bCognos=true szElId=spanId that enclose the Cognos List to Sort 
 	@param	{array} arSortCol  Array with the SortCol (See Example below)
-	@param objOpt {Object}   Options: <BR/>
-					- iRowHeader {Number}  Default =1   Number [1,2,..] of Row Header <BR/>
-					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Row where we have to put the Sort Icon. e.g 2 if we have 2 row header and we want to put icon in the second row<BR/>
-					   NOTE: you can also define only one of previous. if you set only iRowHeader=2 also iRowSortHeader will be 2 <BR/>
-					   you can define both for particular cases (e.g iRowHeader=2 iRowSortHeader=1 for Filter presence) <BR/> 
-					- szSortCol	{String}		Current Sort Col to be set.	 <BR/>
+	@param objOpt {Object}   Options: <ul>
+					<li>iRowHeader {Number}  Default =1   Number [1,2,..] of Row Header </li>
+					<li>iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Row where we have to put the Sort Icon. e.g 2 if we have 2 row header and we want to put icon in the second row</li>
+					   NOTE: you can also define only one of previous. if you set only iRowHeader=2 also iRowSortHeader will be 2 </li>
+					   you can define both for particular cases (e.g iRowHeader=2 iRowSortHeader=1 for Filter presence) </li> 
+					<li>szSortCol	{String}		Current Sort Col to be set.	<BR/> 
 																Default. Par is absent and First Col is Set, without applying the Sort (we suppose Table already Sorted) <BR/>
 																To init without any SortCol, pass szSortCol = ""
-																	a) bCognos=false: First Col is Set  <BR/>
-																	b) bCognos=true: Current Col is taken by selectSortCol <BR/>
-					- szSortDir	{String}		Current SortDir: SORT_DIR.ASC, SORT_DIR.DESC, SORT_DIR.NONE . <BR/>
-																Default: par is absent and we use: <BR/>
-																	a) bCognos=false: SORT_DIR.ASC <BR/>
-																	b) bCognos=true: Current Dir is taken by selectSortDir <BR/>
-					- bSortApply {Boolean}	Default=false If true apply the current SortCol/ SortDir 											 <BR/>
-	  			- szFmtDatetime (String}  Fmt to be used for Datetime if the Info is passed for the DATETIME Columns into szSortCol .fmt parameter	 <BR/>
-	  			- szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the default image Path <BR/>
-	  			- iTblRowPerPage {Number}   If present is the limit of Rows displayed in the Table. For Cognos is the Setting of the List properties RowPerPage <BR/>
-	  																When not present (default), we consider all the Table always displayed <BR/>
-	  			- szClassFooter {String}    class that identity the TR and/OR TD Footer rows					 <BR/>
-	  			- bNoStartupSortIco {Boolean} [false] true to avoid setting a default ico sort at startup (in the First col)
-					- bCognos				{Boolean}     default=false . true for Cognos  Sort: in this case szElId identifies the span in front of the Table <BR/>
-					- bCognosGlobalSort {Boolean} Default=false. Only for bCognos=true <BR/>
-																			When The Table is displayed and More than one Page is present we cannot make Local Sort: <BR/>
-																			  a) bCognosGlobalSort=false  LocalSort is Disable (Gray icons) <BR/>
-																			  b) bCognosGlobalSort=false  If Click in Icon we re-execute the Report and mnake Global Sort (it can be Slow) <BR/>
+																<ul>
+																	<li> a) bCognos=false: First Col is Set  </li>
+																	<li> b) bCognos=true: Current Col is taken by selectSortCol </li>
+																</ul>
+															</li>		
+					<li>szSortDir	{String}		Current SortDir: SORT_DIR.ASC, SORT_DIR.DESC, SORT_DIR.NONE . <BR/>
+																Default: par is absent and we use: <ul>
+																	<li>a) bCognos=false: SORT_DIR.ASC </li>
+																	<li> b) bCognos=true: Current Dir is taken by selectSortDir </li>
+															</ul>
+														</li>			
+					<li>bSortApply {Boolean}	Default=false If true apply the current SortCol/ SortDir 											 </li>
+	  			<li>szFmtDatetime (String}  Fmt to be used for Datetime if the Info is passed for the DATETIME Columns into szSortCol .fmt parameter	 </li>
+	  			<li>szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the default image Path </li>
+	  			<li>iTblRowPerPage {Number}   If present is the limit of Rows displayed in the Table. For Cognos is the Setting of the List properties RowPerPage <BR/>
+	  																When not present (default), we consider all the Table always displayed </li>
+	  			<li>szClassFooter {String}    class that identity the TR and/OR TD Footer rows					 </li>
+	  			<li>bNoStartupSortIco {Boolean} [false] true to avoid setting a default ico sort at startup (in the First col)
+					<li>bCognos				{Boolean}     default=false . true for Cognos  Sort: in this case szElId identifies the span in front of the Table </li>
+					<li>bCognosGlobalSort {Boolean} Default=false. Only for bCognos=true <BR/>
+																			When The Table is displayed and More than one Page is present we cannot make Local Sort: <ul>
+																			  <li> a) bCognosGlobalSort=false  LocalSort is Disable (Gray icons) </li>
+																			  <li> b) bCognosGlobalSort=false  If Click in Icon we re-execute the Report and mnake Global Sort (it can be Slow) </li>
+																		<ul>
+																	</li>		  
 
 
 	@example

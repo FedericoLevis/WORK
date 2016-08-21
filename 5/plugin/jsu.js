@@ -18,7 +18,7 @@ var externalPluginVersion = "/Minify";
 
 // ----------------------------------- FIXED
 var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
-var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/Popup/";
+var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/IEPopup/";
 
 
 //----------------------------------- FIXED 
@@ -36,7 +36,7 @@ requirejs.config({
 	// Path relative to baseUrl
     paths: {
         'core': '2/core',
-        'loadingDiv': '4/core/loadingDiv',
+        'loadingDiv': '2/core/loadingDiv',
         'cValidate': '6/core/cValidate',
         'lan': '6/locale/EN',
         'popup': '2/core/BlockPopup'

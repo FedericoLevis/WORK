@@ -122,8 +122,12 @@ var tt_googleAnal = {
 		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
 		iSelFilterCat: 0 , // Current FilterCat
 		iSelFilterType: 0,  // Current FilterType
-		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time  // Current FilterType
+		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time,  // Current FilterType
+		iLinkClickCur:0,  // for Click Simulation in case of OPERA/SAFARI: current index (we have to arrivi till iVisibleLink-1
+		tmoClick: null
 };
+
+var TMO_GOOGLE_CLICK_SIMUL_MS = 200; 
 
 //Global For TipFix (see TipFix() objPar)
 var tt_tipFix = {
@@ -1116,6 +1120,7 @@ function tt_onchangeGoogleAnalType(){
 
 
 /*
+ *  
  * Open all the Google analytics pages
  */
 function tt_onclickGoogleAnalAll(){
@@ -1125,9 +1130,56 @@ function tt_onclickGoogleAnalAll(){
 	for (var i=0; i< tt_googleAnal.iVisibleLink; i++){
 		var szId = "googleAnal_" + i;
 		var aEl = document.getElementById (szId);
-		tt_log (fn + "simulate Click on <a> with id=" + szId + " - href=" + aEl.href); 
-		aEl.click();
+		tt_log (fn + "simulate Click on anchor with id=" + szId + " - href=" + aEl.href); 
+	  if (aEl.click != undefined){
+			tt_log (fn + "a.click is defined. We call it");
+			aEl.click();
+	  }else {
+			tt_log (fn + "a.click is NOT defined in this Browser");
+	  	if(document.createEvent) {
+	  		// e.g SAFARI or OPERA
+				tt_log (fn + "el [" + i + "] of " + tt_googleAnal.iVisibleLink + " - We create the event to simulate the FIRST click. ");
+	      var evt = document.createEvent("MouseEvents"); 
+	      evt.initMouseEvent("click", true, true, window, 
+	          0, 0, 0, 0, 0, false, false, false, false, 0, null); 
+	      var allowDefault = aEl.dispatchEvent(evt);
+	      tt_googleAnal.iLinkClickCur = 0;
+	      if (tt_googleAnal.iVisibleLink == 1){
+	  			tt_log (fn + "Only one anchor. Finish click simulation");
+	      }else {
+	  			tt_log (fn + "Create Timer of " + TMO_GOOGLE_CLICK_SIMUL_MS +" for Next Click Simulate");
+		      tt_googleAnal.tmoClick = setTimeout (tt_timerGoogleAnalClick,TMO_GOOGLE_CLICK_SIMUL_MS);
+	      }
+	      return;
+	    }
+	  }
 	}
+	tt_log (fn + TIPLOG_FUN_END);
+}
+
+
+function tt_timerGoogleAnalClick(){
+	var fn = "[tooltip.js tt_timerGoogleAnalClick()] ";
+
+	tt_log (fn + TIPLOG_FUN_START);
+	clearTimeout (tt_googleAnal.tmoClick );
+	// e.g SAFARI or OPERA
+	tt_googleAnal.iLinkClickCur++;
+	var i = tt_googleAnal.iLinkClickCur; 
+	var szId = "googleAnal_" + i;
+	var aEl = document.getElementById (szId);
+	tt_log (fn + "i=" + i + " - Create the event to simulate the click on anchor with id=" + szId + " - href=" + aEl.href);
+  var evt = document.createEvent("MouseEvents"); 
+  evt.initMouseEvent("click", true, true, window, 
+      0, 0, 0, 0, 0, false, false, false, false, 0, null); 
+  var allowDefault = aEl.dispatchEvent(evt);
+  if (tt_googleAnal.iLinkClickCur >= (tt_googleAnal.iVisibleLink- 1)){
+		tt_log (fn + "Click simulation done for all " + tt_googleAnal.iVisibleLink + " anchors");
+  }else {
+		tt_log (fn + "Create Timer of " + TMO_GOOGLE_CLICK_SIMUL_MS +" for Next Click Simulate");
+    tt_googleAnal.tmoClick = setTimeout (tt_timerGoogleAnalClick,TMO_GOOGLE_CLICK_SIMUL_MS);
+  }
+	
 	tt_log (fn + TIPLOG_FUN_END);
 }
 
