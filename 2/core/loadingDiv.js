@@ -35,7 +35,7 @@ var LOADING_DIV_DEF = {
 		iDivWidth: null, // if different from null, set this Div Width instead of using Default Width (CSS)
 		iGifWidth: null, // if different from null, set this Gif  Width instead of using Default Width (CSS)
 		bShowCancel:  false,	//	{Boolean}: [false] show the Cancel Btn 
-		szCancelLabel:  LOADING_DIV_MSG.cancelBtn ,	//	{String}: [""] Label to set to Cancel Button 
+		szCancelLabel:  "Cancel" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
 		szBackgroundColor: null, // {String} Div BackgroundColor, if different from null or "", 
 		szDiffMsgHtml: "" // {String} if different from null or '', we show this Msg (HTML) instead of Default 
 };
@@ -50,7 +50,7 @@ var LOADING_DIV_DEF_OPT ={
 		iDivWidth: LOADING_DIV_DEF.iDivWidth, // if different from null, set this Div Width instead of using DEfault Width (CSS)
 		iGifWidth: LOADING_DIV_DEF.iGifWidth, // if different from null, set this Gif Width instead of using DEfault Width (CSS)
 		bShowCancel:  LOADING_DIV_DEF.bShowCancel,	//	{Boolean}: [false] show the Cancel Btn
-		szCancelLabel:  LOADING_DIV_MSG.cancelBtn ,	//	{String}: [""] Label to set to Cancel Button 
+		szCancelLabel:  "" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
 		szBackgroundColor: LOADING_DIV_DEF.szBackgroundColor, // {String} Div BackgroundColor, if different from null or "", 
 		fnCancelCallback: null  // called when click Cancel
 };
