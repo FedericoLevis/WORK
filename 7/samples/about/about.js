@@ -118,10 +118,10 @@ var JSU_SHORT_URL_DOWNLOAD_FREE  =	"https://goo.gl/HnNqnM";
 var JSU_SHORT_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
 var JSU_SHORT_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
 var JSU_SHORT_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
-var JSU_SHORT_URL_SAMPLE_IEPOPUP  =	"https://goo.gl/u2zTRz";
-var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://goo.gl/j0HZDG";
+var JSU_SHORT_URL_SAMPLE_IEPOPUP  =	"https://goo.gl/1b2ely";
+var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://goo.gl/jttCME";
 var JSU_SHORT_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
-var JSU_SHORT_URL_SAMPLE_JSLOG  =	"https://goo.gl/OfC2Pf";
+var JSU_SHORT_URL_SAMPLE_JSLOG  =	"https://goo.gl/aAtyxG";
 var JSU_SHORT_URL_SAMPLE_JQPOPUP  =	"https://goo.gl/09zCLG";
 var JSU_SHORT_URL_GITHUB = "https://goo.gl/LYDepH";
 var JSU_SHORT_URL_COGNOS = "http://goo.gl/JZJQPn";
@@ -1180,15 +1180,15 @@ function jsuGoogleAnalList (event){
        {shortUrl: JSU_SHORT_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_LOADING, longUrl: JSU_LONG_URL_SAMPLE_LOADING, cat:GA_CAT_SAMPLE_FREE,desc:'LoadingDiv Sample'},
-       {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE_FREE,desc:'JSLog Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_IEPOPUP, longUrl: JSU_LONG_URL_SAMPLE_IEPOPUP, cat:GA_CAT_SAMPLE_FREE,desc:'IE Popup Sample'},
        // --------------------------
        {shortUrl: JSU_SHORT_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC_FREE,desc:'JSU Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU LoadingDiv Documentation'},
-       {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC_FULL,desc:'JSU JSLog Doc'},
+       {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_IEPOPUP, longUrl: JSU_LONG_URL_DOC_IEPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU IE Popup Doc'}
        // --------------------------
        /*
