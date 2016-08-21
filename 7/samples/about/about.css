@@ -17,7 +17,7 @@ input.browserAll {  /* Compatibility All */
     height: 40px;
     width: 130px;
     border: 0px ;
-    background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAll.png) no-repeat right center;
+    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAll.png) no-repeat center center;
     /* background: white url(../../images/about/browserAll.png) no-repeat center center; */
 }
 
@@ -25,7 +25,7 @@ input.browserAllSmall {  /* Compatibility All - About */
     height: 30px;
     width: 100px;
     border: 0px ;
-    background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAllSmall.png) no-repeat right center;
+    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAllSmall.png) no-repeat center center;
     /* background: white url(../../images/about/browserAllSmall.png) no-repeat center center; */
 }
 
@@ -34,7 +34,7 @@ input.browserIE {  /* Only IE */
     height: 43px;
     width: 130px;
     border: 0px ;
-    background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIE.png) no-repeat right center; */
+    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIE.png) no-repeat center center; */
     /* background: white url(../../images/about/browserIE.png) no-repeat center center; */
 }
 
@@ -42,7 +42,7 @@ input.browserIESmall {  /* Only IE */
     height: 30px;
     width: 100px;
     border: 0px ;
-    background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIESmall.png) no-repeat right center; 
+    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIESmall.png) no-repeat center center; 
     /* background: white url(../../images/about/browserIESmall.png) no-repeat center center; */
 }
 
@@ -52,7 +52,7 @@ input.playVideo {  /* PlayVideo*/
     width: 140px;
     cursor: pointer;
     border: raised black 2px ;
-    background: gray url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png") no-repeat right center;
+    background: gray url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png") no-repeat center center;
     /* background: white url(../../images/about/PlayVideo.png) no-repeat center center; */
 }
 
@@ -61,7 +61,7 @@ input.playVideoSmall {  /* PlayVideo for About */
     width: 100px;
     cursor: pointer;
     border: raised black 2px ;
-    background: gray url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideoSmall.png") no-repeat right center; 
+    background: gray url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideoSmall.png") no-repeat center center; 
     /* background: white url(../../images/about/PlayVideoSmall.png) no-repeat center center; */
 }
 

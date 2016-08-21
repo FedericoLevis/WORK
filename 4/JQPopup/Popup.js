@@ -4,7 +4,7 @@
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
 <b>JSPopup Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html" target="_blank">JSU JSPopup Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
-<b>Description:</b>       JS Popup API, generic for ALL Browsers (IE, Mozilla, Chrome, ..) <BR/>                               
+<b>Description:</b>       JQ Popup API, generic for ALL Browsers (IE, Mozilla, Chrome, ..) <BR/>                               
 <b>REQUIRED:</b>          From JSU: <ul>
                             <li><b>jsu/externalPlugin/jquery:</b> jquery-ui.css jquery.js jquery-ui.js </li>
                             <li><b>CSS:</b> core/core.css core/Popup/Popup.css </li>

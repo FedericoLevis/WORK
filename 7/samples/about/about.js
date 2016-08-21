@@ -161,8 +161,6 @@ var JSU_SHORT_URL_API_JQPOPUP  =	"https://goo.gl/iPqUqL";
 
 
 //----------------------- FEATURE DOC
-
-
 var JSU_LONG_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
 var JSU_LONG_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
 var JSU_LONG_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html";
@@ -224,55 +222,55 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
 '	  <tr >' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_TIP +'" target="_blank">Tooltip</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocTip();">Tooltip</a> </td>' +
 '		  <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>     </td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '		  <td class="tipc tipGoodBold" rowspan="6">No Plugin is required</b></td>' +
 '     <td class="tipc"><a href="javascript:showJSUVideoTip()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
-'	  <tr >' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_LOADING +'" target="_blank">Loading Div</a> </td>' +
+'	  <tr >' + 
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading();">Loading Div</a> </td>' +
 '		  <td class="tipl"><b>Loading Div</b> for Long Operation with <b>Loading Gif, Title, Message, ElapsedSec...</b></td>' +
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:showJSUVideoLoading()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of LoadingDiv Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JSLOG +'" target="_blank">jslog</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJSLog();" target="_blank">jslog</a> </td>' +
 '		  <td class="tipl">Log from JS Code into an optional Window: <b>log Object, JSON, DOM ...</b></td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:showJSUVideoJSLog()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JSLog Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_SORT +'" target="_blank">Table Sort</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuSort();" target="_blank">Table Sort</a> </td>' +
 '		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:showJSUVideoSort()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of SortTable Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_IEPOPUP +'" target="_blank">IE Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuIEPopup();" target="_blank">IE Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal/Blocking Popup</b> designed ONLY for <b>IE</b><BR/><b> </td>' + 
 '     <td class="tipc"><input type="button"  class="browserIESmall" title="' + JSU_TITLE_BROWSER_IEPOPUP + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:showJSUVideoIEPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of IE Popup Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_VALIDATE +'" target="_blank">Validate</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate();" target="_blank">Validate</a> </td>' +
 '		  <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Section, Items, Popup ...</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:showJSUVideoValidate()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Validate Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC_JQPOPUP +'" target="_blank">JS Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup();" target="_blank">JQ Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
-'     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JS Popup Feature"/></a></td> ' +  
-'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JS Popup Sample</a></td>' +
+'     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JQ Popup Feature"/></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>' +
 '	  </tr>' +
 '</table>';
 
@@ -281,7 +279,7 @@ var JSU_TIP_SECT2_MSG = '<a class="tipLink" href="'+ JSU_SITE +'" target="_blank
 '<ul type="square">' +
 '<li><b>Very Easy to Install and try</b>: download JSU ZIP and try jsu/samples/AllSamples.html (that points to all the other samples)</li>'+ 
 '<li><b>Very Simple to include in your project</b> with only one JS file: as displayed in the various JSU samples, the desired JSU modules are loaded with require.js using the proper plugin/jsu.js file </li>'+ 
-'<li><b>No dependencies for most of the JSU Features (Pure JS features):</b> only if you include JS Popup, it is required jquery and jquery-ui</li>'+ 
+'<li><b>No dependencies for most of the JSU Features (Pure JS features):</b> only if you include JQ Popup, it is required jquery and jquery-ui</li>'+ 
 '<li><b>All modern browsers are supported</b>: IE9+, Firefox 3+, Chrome,... </li>'+ 
 '<li><b>Examples provided</b> for each JSU feature, with all the <b> relative JSU code calls explained in Fixed Tips</b></li>'+ 
 '<li><b>Very Powerful and Simple to use</b>: only 1 or 2 JS instructions to get all the power and flexibilty of the JSU feature </li>'+ 
@@ -1195,7 +1193,7 @@ function jsuGoogleAnalList (event){
        {shortUrl: JSU_SHORT_URL_SAMPLE_JQPOPUP, longUrl: JSU_LONG_URL_SAMPLE_JQPOPUP, cat:GA_CAT_SAMPLE_FULL,desc:'JQ Popup Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_VALIDATE, longUrl: JSU_LONG_URL_SAMPLE_VALIDATE, cat:GA_CAT_SAMPLE_FULL,desc:'Validate Sample'},
        {shortUrl: JSU_SHORT_URL_DOC_VALIDATE, longUrl: JSU_LONG_URL_DOC_VALIDATE, cat:GA_CAT_DOC_FULL,desc:'JSU Validate Doc'},
-       {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU JS Popup Doc'}
+       {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU JQ Popup Doc'}
        */
        
        

@@ -129,6 +129,7 @@ var tt_googleAnal = {
 
 var TMO_GOOGLE_CLICK_SIMUL_MS = 200; 
 
+
 //Global For TipFix (see TipFix() objPar)
 var tt_tipFix = {
 		objClass : {     // Classes to use for Up/Down
@@ -316,25 +317,35 @@ function Tip(tipMsgHtml,tipType,objOpt)
 
 /**
  * @param tipMsgHtml {String}   
- * @param [event]  {Object}   Usually pass the event of the onclick. if null you have to pass pass objOpt.szRefElId  
- * @param [objOpt] {Object}   Option: <ul>
- *                            <li> szTitle{String}  default: ''   </li> 
- *                            <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
- * 														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
- * 													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
- * 														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
- * 													  <li> bNL2BR= [true]  if true /n are converted to </li>
- * 														<li> -------------------------- FOLLOW FIELDS are for ADVANCED use. Usually they are ever used <li/> 
- *                            <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
- *                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
- *                            e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
- *                            <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
- *                           </ul> 
- * 		GLOBAL
- * Set tip_type = tipType
- * 
- * Implementation NOTES:
- * - all the other tiFixXXX call this funcion
+ * @param [event]  {Object}   Usually pass the event of the onclick. if null you have to pass pass objOpt.szRefElId
+ * @param [objOpt] {Object}   
+     <table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTION</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+           <li> szTitle{String}  default: ''   </li> 
+           <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
+					 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+				 	 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+					 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
+					 <li> bNL2BR= [true]  if true /n are converted to </li>
+					 ------ <b>FOLLOW FIELDS are for ADVANCED use. Usually they are ever used </b>  
+           <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
+               To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
+               e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
+           <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
+        </ul> 
+        </td></tr>
+     </table>  
+ 
+  <div class="jsDocNote">
+  <b>Implementation NOTES:</b>
+  <ul>
+    <li>GLOBAL VAR:   tt_tipFix </li>
+    <li>All the other tiFixXXX call this funcion</li>
+  </ul>
+  </div> 
+   
  */
 function TipFix(tipMsgHtml,event, objOpt)
 {
@@ -355,6 +366,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	tt_tipFix.objClass = objOpt.objClass;
 	
 	var szTitle = "";
+	
 	// JSU_FREE_START
 	// finta
 	tt_getId (tt_id.jsu);
@@ -378,7 +390,7 @@ function TipFix(tipMsgHtml,event, objOpt)
   		// only if explicitly required, we se also  width 
    	  szMaxWidth = 'max-width: ' +objOpt.iTipWidth+ 'px; width:' +objOpt.iTipWidth + 'px;';
   	}	
-  	
+
  		bDivScroll = true;
   	var szDivHTML = "";
   	/*
@@ -462,8 +474,9 @@ function TipFix(tipMsgHtml,event, objOpt)
 	}
 	tt_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
+		tt_log ( fn + "Particular case: Click to opne a new TipFix while another is still open. So we close the TipFix that was stil open");
 		// To manage the case of switch beween different Fixed img. We untip previous
-		tt_UnTipFix();  
+		tt_UnTipFix();  // false becuase we do not want to resize: there is alread a new FixedTip Open
 	}
 	
 	if (bShow && tipImg){
@@ -491,6 +504,8 @@ function TipFix(tipMsgHtml,event, objOpt)
 			tt_logObj ("tt_id " + e.message, tt_id);
 		}	
 		// JSU_FREE_END
+		
+		
 	}else {
 		// User has click over the image arrow Up to close the TipFix
 		tt_UnTipFix();
@@ -531,7 +546,7 @@ function UnTip()
 
 /**
  * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
- * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
  * See prettify-jsu.js for the detail of supported languages <BR/>
  *   
  *   NOTE:  <ul>
@@ -573,7 +588,7 @@ function TipFixCode(szCode, event, objOpt){
 
 /**
  * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
- * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
  * See prettify-jsu.js for the detail of supported languages <BR/>
  *   
  *   NOTE:  <ul>
@@ -1185,8 +1200,6 @@ function tt_timerGoogleAnalClick(){
 
 /*
  * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
- * 
- * 
  */
 function tt_UnTipFix(){
 	var fn = "[tooltip.js tt_UnTipFix()] ";
@@ -1194,6 +1207,7 @@ function tt_UnTipFix(){
 	tt_log ( fn + TIPLOG_FUN_START);
   tt_log(fn + "CURRENT tip_type=" + tip_type);
 	tt_init(); // init, if not already done
+	
 	
 	tt_SetCfg(TIP_CFG_FLOATING);
 	tt_OpReHref();
@@ -2456,7 +2470,7 @@ function tt_PosFix()
 			if (iXPos == TIP_FIXED_POS.LEFT){
 				iX = iX -tt_w + 25;
 			}else	if (iXPos == TIP_FIXED_POS.CENTER){
-				iX = iX - (tt_w/2) + 20;
+				iX = iX - (tt_w/2) + 20;   
 			}
 		}
 		tt_log (fn + "SET New iX=" + iX);

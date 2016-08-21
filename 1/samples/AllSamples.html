@@ -13,8 +13,7 @@
 <script>
 var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 </script>
-<link rel="stylesheet" href="../core/core.css" type="text/css">
-<link rel="stylesheet" href="../core/Popup.css" type="text/css">
+<link rel="stylesheet" href="../core/jsu.css" type="text/css">
 <script  data-main="../plugin/jsu.js" src="../core/require.js"></script>
 
 <!-- About -->
@@ -55,7 +54,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="4" width="100%">
 	  <tr class="tipTitle">
-		  <th class="tipTitleBig" colspan="9">
+		  <th class="tipTitleBig" colspan="8">
             JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event,false);" />
             <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
             <label class="jsuHelp">JSU Documentation<label>  <input type="button" class="jsuHelp" onclick="jsuDoc();"  onmouseover="Tip(JSU_TIP_DOC);" onmouseout="UnTip(event)" /> 
@@ -63,32 +62,27 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
       
       
   <tr class="tipTitle2" style="font-size:13px">
-	<td width="7%" class="tipc">JSU<BR/>Feature</td>
-    <td width="7%" class="tipc">API<BR/>Doc</td>
+	<td width="10%" class="tipc">JSU Feature</td>
 	<td width="32%" class="tipc">Description</td>
-    <td width="140px" class="tipc">Browser<BR/>Compatibility</td>      
-	<td width="140px" class="tipc">FULL JSU.zip<BR/>Feature<BR/>Availability</td>
-	<td width="140px" class="tipc">FREE JSU.zip<BR/>Feature<BR/>Availability</td>
+    <td width="10%" class="tipc">Browser<BR/>Compatibility</td>      
+	<td width="10%" class="tipc">FULL JSU.zip<BR/>Feature<BR/>Availability</td>
+	<td width="10%" class="tipc">FREE JSU.zip<BR/>Feature<BR/>Availability</td>
     <td width="7%" class="tipc">External<BR/>Plugin<BR/> Required</td>
-    <td width="80px" class="tipc">YouTube<BR/>Video<BR/></td>
+    <td width="8%" class="tipc">YouTube<BR/>Video<BR/></td>
 	<td width="13%" class="tipc">Try an Example</td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_TIP);">Tooltip Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_blank">Tooltip API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocTip();">Tooltip</a></td>
     <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>    </td>
                 <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
-    <td rowspan="6"><label class="tipGoodBold" style="font-size:13px;">PURE JS Plugin<BR/>No External Plugin<BR/> Required</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoTip()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>
+    <td rowspan="6"><label class="tipGoodBold" style="font-size:13px;">PURE JQ Plugin<BR/>No External Plugin<BR/> Required</label> </td> 
+    <td class="tipc"><a href="javascript:showJSUVideoTip()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>  </td>
     <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_LOADING);">LoadingDiv Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/LoadingDiv.js/index.html" target="_blank">LoadingDiv API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading();">LoadingDiv</a></td>
     <td class="tipl"><b>Loading Div</b> for Long Operation with Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b>
     </td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
@@ -98,56 +92,43 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
     <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_JSLOG);">JSLog Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/index.html" target="_blank">JS log API</a> </td>
-	  <td class="tipl"><b>Log</b> from JS Code into an optional Window: log Text, Object, JSON, DOM, Elapsed Time ...</b></td> 
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocJSLog();">JSLog</a></td>
+    <td class="tipl"><b>Log</b> from JS Code into an optional Window: log Text, Object, JSON, DOM, Elapsed Time ...</b></td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideojslog()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>  
+    <td class="tipc"><a href="javascript:showJSUVideojslog()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_SORT);">SortTable Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/index.html" target="_blank">Sort Table API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocSort();">SortTable</a></td>
 	<td class="tipl"><b>Sort HTML Table</b> by clicking column header</td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoSort()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>  
+    <td class="tipc"><a href="javascript:showJSUVideoSort()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_IEPOPUP);">IE Popup Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/index.html" target="_blank">IE Popup API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocIEPopup();">IE Popup</a></td>
     <td class="tipl"><b>Modal Blocking Popup</b> designed only for <b>IE</b><BR/><b>Blocking Code</b>, based on <i>ShowModalDialog</i> (fully supported only by IE) </td> 
     <td class="tipc"><input type="button"  class="browserIE" onmouseover="jsuTipBrowserIEPopup(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoIEPopup()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>  
+    <td class="tipc"><a href="javascript:showJSUVideoIEPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_VALIDATE);">Validate Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html" target="_blank">Validate API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate();">Validate</a></td>
     <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleErr">NOT Available</label></td> 
-    <td class="tipc"><a href="javascript:showJSUVideoValidate()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>  
+    <td class="tipc"><a href="javascript:showJSUVideoValidate()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>
   </tr>
   <tr>
-    <td class="tipc"><a class="tipLink" href="javascript:jsuGoToURL(JSU_URL_DOC_JQPOPUP);">JS Popup Doc</a></td>
-    <td class="tipc"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/index.html" target="_blank">JS Popup API</a> </td>
+    <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup();">JQ Popup</a></td>
 	  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function
 	      <BR/>To be used instead of <i>IE Popup</i> when you required all Browser Compatibility 
 	      <BR/><b>NOTE:</b> Only for This JSU Features, External Plugin are requires: <b>jquery, jquery-ui</b></td> 
@@ -155,10 +136,8 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleErr">NOT Available</label></td> 
     <td rowspan="1" style="font-size:13px"><b>jquery, jquery-ui</b></label></td> 
-    <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> 
-       <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>
-    </td>  
-    <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JS Popup Sample</a></td>
+    <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
+    <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>
   </tr>
 </table>
 
