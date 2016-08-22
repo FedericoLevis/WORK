@@ -236,11 +236,11 @@ Tooltip: button for TipFix
      <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
  </li><BR/>
  <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
-     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnalList"/> <BR/> 
-     <b>input.tipGoogleAnalListUp</b>  <input type="button" class="tipGoogleAnalListUp" />
+     <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
+     <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
  </li><BR/>
  <li> button to Go to the Page of Google Analytics:  
-     &nbsp;&nbsp; <b>input.tipGoogleAnal</b>  <input type="button" class="tipGoogleAnal"/>  
+     &nbsp;&nbsp; <b>input.googleAnal</b>  <input type="button" class="googleAnal"/>  
  </li><BR/>
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
@@ -252,7 +252,6 @@ Tooltip: button for TipFix
 input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFixUp */ 
     height: 20px;
     width: 13px;
-    border: 1px solid #000;
     font-weight: bold;
     cursor: pointer;
     margin-left: 3px; 
@@ -268,8 +267,7 @@ input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
 
 input.tipFixJS, input.tipFixJSUp{
     height: 21px;
-    width: 16px;
-    border: 1px solid #000;
+    width: 20px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 4px; 
@@ -285,7 +283,6 @@ input.tipFixJSUp{
 input.tipFixCode, input.tipFixCodeUp{
     height: 26px;
     width: 35px;
-    border: 1px solid #000;
     font-weight: bold;
     cursor: pointer;
     margin-left: 4px; 
@@ -304,7 +301,6 @@ input.tipFixCodeUp{
 input.tipFixArrow, input.tipFixArrowUp {  /* Common fields  */
     height: 20px;
     padding-right: 30px;
-    border: 1px solid #000;
     font-weight: bold;
     cursor: pointer;
 }
@@ -315,44 +311,77 @@ input.tipFixArrowUp { /* specific image for tipFixArrowUp */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center;
 }
 
-input.tipGoogleAnalList, input.tipGoogleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
+input.googleAnalList, input.googleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
     height: 24px;
     width: 225px;
     border: 2px solid gray;
     border-style: ridge;
     cursor: pointer;
 }
-input.tipGoogleAnalList {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalList.png) no-repeat center center; 
+input.googleAnalList {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalList.png) no-repeat center center; 
 }
-input.tipGoogleAnalListUp {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalListUp.png) no-repeat center center; 
+input.googleAnalListUp {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListUp.png) no-repeat center center; 
 }
 
-input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button to show 1 page with Google Analytics  */
-    height: 23px;
-    width: 27px;
+
+input.googleAnalListJSPopup {  /* Like googleAnalList but thsi one show List in a JSPopu */
+    height: 24px;
+    width: 225px;
     border: 2px solid gray;
     border-style: ridge;
     cursor: pointer;
-    margin-left: 2px; 
-}
-input.tipGoogleAnal {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center;
-}
-input.tipGoogleAnalUp {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center; 
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJSPopup.png) no-repeat center center; 
 }
 
+
+input.googleAnal{  /* Button to show 1 page with Google Analytics  */
+    height: 23px;
+    width: 27px;
+    cursor: pointer;
+    margin-left: 2px; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnal.png) no-repeat center center;
+}
+
+
+
 input.jsuHelp{	/* Help Button */  
-    height: 18px;
-    width: 18px;
-    border: 1px solid #000;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
     margin-left: 0px; 
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
-    
 }
+
+
+input.tipFix,input.tipFixUp,       /* Border in Normal State */ 
+input.tipFixArrow, input.tipFixArrowUp,
+input.tipFixJS, input.tipFixJSUp,
+input.tipFixCode, input.tipFixCodeUp,
+input.googleAnal,
+input.googleAnalListJSPopup,
+input.googleAnalList, input.googleAnalListUp,
+input.jsuHelp
+{
+    border: 2px solid gray;
+    border-style: ridge;
+} 
+
+
+input.tipFix:hover,input.tipFixUp:hover,   /* Border when Mouse is over */ 
+input.tipFixArrow:hover, input.tipFixArrowUp:hover,
+input.tipFixJS:hover, input.tipFixJSUp:hover,
+input.tipFixCode:hover, input.tipFixCodeUp:hover,
+input.googleAnal:hover, 
+input.googleAnalListJSPopup:hover,
+input.googleAnalList:hover, input.googleAnalListUp:hover,
+input.jsuHelp:hover 
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
+
 
 
 

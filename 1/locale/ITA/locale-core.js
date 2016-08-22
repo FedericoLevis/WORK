@@ -52,7 +52,8 @@ var TIP_DEF_JS_TITLE = "Codice Sorgente JS";
 var TIP_BTN_CLOSE_TITLE = "Click o ESC per Chiudere il Tooltip";
 
 
-var TIP_GOOGLE = {
+//GoogleAnal Label
+var GA_LABEL = {
 		DEF_TITLE: "Google Analitycs",
 		DEF_HEADER: 'Click Il Link <b><u>Google Analytics</u></b> per aprire la pagina delle Google Analitycs relative all\'URL selezionato</b>',
 		DEF_FOOTER: '<b>NOTE sulle Google Analitycs:</b><ul>' +

@@ -54,6 +54,7 @@ require([ // First 3 always present
          'core/util',							
          'core/date',							
          'core/tooltip',
+         'core/googleAnal',
          'popup/Popup',
          'loadingDiv',							
          'cValidate'        

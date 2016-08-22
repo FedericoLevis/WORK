@@ -374,13 +374,15 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                        "Tip,UnTip,TipFix,TipFixCode,TipFixMultiCode,TipFixTextBox,TipFixGoogleAnalList," +
                        "Popup," +
                        "alert,"+
-                       // --- CSS FUTURE: To be completed with CSS keyword
+                       // --- JSU CSS FUTURE: could be added also CSS keywords
+                       /*
                        "img,input,table,tr,td,th," +
                        "cursor,border,solid," +
                        "font-weight,font-size," +
                        "background,background-color,color,url,center,bottom,left,right," + 
                        "height,width,margin-left,margin-right,margin-top,margin-bottom," +
                        "no-repeat," +
+                       */
                        //------------------------
                        "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END" +
                 I, J, v

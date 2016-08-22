@@ -962,3 +962,17 @@ function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
 }  
 
 
+
+/**
+ * Return false to indicate to JSU User that this Popup.js Interface is NOT the IEPopup (that works only in IE) <BR/>
+ * The same function is Present in JQPopup/Popup.js where it return true <BR/>
+ * This API is used if the html does not know what popup.js interface is loaded by require.js configuration file, where it can be changed because <BR/>
+ * both IEPopup/Popup.js and JQPopup/Popup.js share the same interface 
+ * 
+ * @returns {Boolean}   false to indicate that This popup.js interfaca is not the IEPopup/popup.js 
+ */
+function isIEPopup(){
+	return false;
+}
+
+

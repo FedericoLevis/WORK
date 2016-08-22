@@ -66,6 +66,36 @@ input.playVideoSmall {  /* PlayVideo for About */
 }
 
 
+
+table.note, table.sampleNote {  /* for the Note (e.g at the begging of the sample */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 12px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 4px;  
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+
+input.note,input.sampleNote{ /* Image for the Note */
+    height: 18px;
+    width: 40px;
+    border: 0px ;
+    /* background: white url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/note.png") no-repeat center center; */ 
+    background: white url(../../images/about/note.png) no-repeat center center; 
+  
+}
+
+	
+
+
 .allSampleGood {
   color: #008B45; /* Dark Green */
   font-weight: bold; 
@@ -361,8 +391,6 @@ label.aboutSourceJSUAPI{
 
 
 input.downloadFree, input.downloadPay {  /* common for download buttons*/
-  border: 2px solid gray;
-  border-style: ridge;
   font-weight: bold;
   cursor: pointer;
   align:left;
@@ -382,7 +410,6 @@ input.downloadFreeUp {  /* Close  the download Page */
   background: Yellow url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFreeUp.png) no-repeat center center;
 }
 
-
 input.downloadPay {
   height: 27px;
   width: 165px;
@@ -399,6 +426,25 @@ input.downloadFreeExecute {  /* button that execute the download */
     cursor: pointer;
     background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFreeExecute.png) no-repeat right center;
 }
+
+
+input.downloadFree,input.downloadFreeUp, 
+input.downloadPay,input.downloadPayUp, 
+input.downloadFreeExecute,input.downloadFreeExecuteUp 
+{
+    border: 2px solid gray;
+    border-style: ridge;
+} 
+
+input.downloadFree:hover, input.downloadFreeUp:hover, 
+input.downloadPay:hover, input.downloadPayUp:hover, 
+input.downloadFreeExecute:hover, input.downloadFreeExecuteUp:hover 
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
+
+
 
 .jsuFeatPresent{ /* FREE */
   font-family: Verdana;
@@ -430,30 +476,318 @@ input.downloadFreeExecute {  /* button that execute the download */
 }
 
 
-.jsuFeatPresent{ /* FREE */
-  font-family: Verdana;
-  color: #000000;
-  background-color: #66FF66;    
-}
-
-.jsuFeatPresentBig{ /* FREE */
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 14px;
-  color: #000000;
-  background-color: #66FF66;    
-}
-
-
-.jsuFeatAbsent{ /* NOT FREE */
-  font-family: Verdana;
-  color: #FFD700;
-  background-color: black;    
-}
 
 .jsuFeatBig{ 
   font-family: Verdana;
   font-weight: bold;
   font-size: 14px !important;
 }
+
+
+td.jsuOptPresent { /* Option present */
+  background-color: #66FF66;
+  width: 60px;    
+}
+
+
+td.jsuOptAbsent{ /* Option absent*/
+  background-color: black;    
+  width: 60px;    
+}
+
+.parDefault{
+  font-weight: normal;
+}	
+.parModified{
+  font-weight: bold;
+  color: blue;
+} 
+
+
+
+table.sampleToolbar { /* the Toolbar below the Header (download buttons,... */
+  background-color: #F5F5F5;
+} 
+
+hr { /* separator between header ad App */
+  border: 1px solid black;
+  border-style: ridge;  
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+h1.jsuSample{  /* Title of the samples*/
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 1px;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 20pt ;
+}	
+
+
+
+select.parOption {  /* select that is displayed only when the par otion=1 (only for developers */
+  display:none; 
+  margin-left:15px;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 9px;
+}	
+
+select.selectSample{  /* select The sample */
+  margin-left:15px;
+  font-family: Verdana;
+  font-weight: bold;
+  /* font-size: 9px; */
+  border: 1px solid black;
+} 
+
+
+div.sampleSort, table.sampleSort{
+  font-family: Verdana !important;
+  font-weight: normal !important;
+  font-size: 9px !important;
+	float:left;
+  width:500px;
+  overflow: auto;
+  max-height: 250px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 2px solid black;  
+}
+td.sampleSort{
+  font-size: 11px;
+}	
+
+
+
+fieldset{
+  border: 1px solid black;  
+	text-align: left;
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+table.sample, table.sampleNoBorder{
+	text-align: left;
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 12px;
+	color: black;    
+	background-color: white;  
+	border: 1px solid black;  
+	border-collapse: collapse;
+	border-spacing: 2px;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:5px;
+  border: 1px solid black;  
+}
+
+table.sample, table.sampleNoBorder{
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 12px;
+  color: black;    
+  background-color: white;  
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:5px;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+table.sample{
+  border: 1px solid black;  
+}
+
+td.sample{
+  text-align: left;
+  font-family: Calibri;
+  font-weight: normal;
+  font-size: 15px;
+  color: black;    
+  background-color: white;  
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+.videoOpt{ /* for select videoOpt */
+  font-family: Calibri;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+label.sampleBrown{ /* Brown Bold */
+  font-family: Calibri;
+  font-weight: bold;
+  font-size: 15px;
+  color: #8B4513;
+  /* background-color: #CCFFFF; */   
+}
+
+
+label.sampleTitle{
+  text-align: center;
+	font-family: Verdana;
+  font-weight: bold;
+  /*text-decoration: underline; */
+  font-size: 14px;
+  color: white;    
+  background-color: black;
+}	
+
+
+table.sampleNoBorder{
+  border: 0px;  
+}
+
+
+td.sampleDesc{
+  text-align: left;
+  font-family: Calibri;
+  font-weight: normal;
+  font-size: 14px;
+  color: black;    
+  background-color: white;  
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+
+tr.header{
+	background-color: #33FFFF; /*  */
+	color:black;  
+  border: 1px solid black;  
+	text-align:center;
+	padding:.5em;border:0px;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 9pt;
+  border: 1px solid black;  
+}
+
+
+td.header,th.header{
+	text-align: center;
+  border: 1px solid black;  
+}
+
+
+/*  N.B: If you class="footer" for table summary, so cSortTable can understand that it must stay to the bottom 
+if you use a different class, pass it to cSortTable */
+tr.footer, tr.myFooter, td.myFooter{
+	background-color: #CECECE; /* Gray */
+	color: blue;  
+	text-align: right;
+  border: 1px solid black;  
+	padding:.5em;border:0px;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+
+img.sample{
+	height: 15px;
+	width: 15px;
+}	
+
+
+/* ================================   Sample ========================================================== */
+
+.jsuSampleTitle, .jsuSampleJust, .jsuSampleSimple, .jsuSampleUse {
+  height: 130px;
+}	
+
+
+label.jsuAPI{  /* e.g cSortTable */
+  font-weight: bold;
+  color: blue !important;
+  background-color: #CCFFFF ;   
+} 
+
+/*  Jsu Sample Title  */
+.jsuSampleTitle {
+  align: center;
+}
+
+/*  Jsu Sample Image: Just */
+.jsuSampleJust{
+  align: right;
+}
+/*  Jsu Sample Image: Simple */
+.jsuSampleSimple{
+  align: center;
+}
+/*  Jsu Sample Image: Use */
+.jsuSampleUse{
+  align: left;
+}
+
+
+/* Sample  */
+table.jsuSample
+{
+  color: #000000; /* Black */
+  border: 3px ;   
+  border-style: groove;
+}
+
+
+tr.jsuSample, tr.jsuSampleMsg
+{
+  color: #000000; /* Black */
+  border: 2px ;
+  border-top:solid;   
+  border-left:solid;   
+  border-right:solid;   
+  border-bottom:solid;   
+}
+
+
+/* Sample Msg */
+tr.jsuSampleMsg
+{
+  background-color: #E5F9FD;  
+}
+
+
+/* Sample Msg */
+table.jsuSampleMsg
+{
+  color: #000000; /* Black */
+  border: 0px ;
+  background-color: #E5F9FD;  
+}
+
+.jsuSampleHea, jsuSampleFooter
+{
+}
+
+
+select.bold{
+    font-weight: bold;
+}
+
+.debug
+{
+  border-style: dotted;
+  border-width: 4px ; /* Top left bottom right*/
+  background: #FFFF00; 
+  border-color: #EEC900; /* Same color of  jsAlertTblMsgWarn */
+  display: none; 
+
+}
+
 

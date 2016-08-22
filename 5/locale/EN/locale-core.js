@@ -53,7 +53,8 @@ var TIP_DEF_CODE_TITLE =  "Source Code";
 
 //============================================ GOOGLE ANALYTICC
 
-var TIP_GOOGLE = {
+// GoogleAnal Label
+var GA_LABEL = {
 		DEF_TITLE: 'Google Analitycs',
 		DEF_HEADER: 'Click <u><b>Google Analytics</b></u> Links to show the relative <b>Google Analitycs Page</b>',
 		DEF_FOOTER: '<b>NOTEs about Google Analitycs:</b><ul>' +

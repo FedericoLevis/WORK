@@ -26,7 +26,7 @@ var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 6
 
 
 var JSU_TIP_PLAY_VIDEO='<div style="width:300px;">Click to Show a <b>YouTube Video of this JSU feature</b>';
-var JSU_TIP_BROWSER_ALL='<div style="width:450px">' +
+var JSU_TIP_BROWSER_ALL='<div style="width:500px">' +
    'This Feature is <b>Fully supported by All Browser</b><BR/>It has been successfully tested in <label class="tipGoodBold">Safari, Chrome, Firefox, Opera, IE, Android</label></div>';
 var JSU_TIP_BROWSER_IE_POPUP='<div style="width:450px">' +
 'IE Popup is designed ONLY for IE:<ul>' +
@@ -1199,7 +1199,7 @@ function jsuGoogleAnalList (event){
        
      ];
   // show the TipFix with the List of Link
-  TipFixGoogleAnalList(arObjGoogleAnalList,event,{
+  googleAnalList(arObjGoogleAnalList,event,{
     	bShortUrl: false,   // ShortUrl not visible at startup
     	bLongUrl: false,  // LongUrl not visible at startup
     	szTitle:'JSU Google Analitycs',

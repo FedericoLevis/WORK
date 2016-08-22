@@ -2,7 +2,7 @@
 ========================================================================================= <BR/> 
 <b>File:</b> 			core/tooltip.js <BR/>
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
-<b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
+<b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>     JSU Tip API:   Tip* UnTip*   <BR/>   
 <b>REQUIRED:</b>        JSU:  core/core.css locale/EN/locale-core.js (or OTHER language instead of <i>EN</i>)
@@ -29,9 +29,6 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
 /**
  * Optional TipType 
  */
-
-
-
 var TIP_TYPE={
 		Floating: "Floating",  // Floating
 		Fixed: "Fixed",  // Fixed
@@ -57,13 +54,6 @@ var TIP_DEF_TEXTBOX_TITLE = "Source Code";
 
 var TIP_MAX_TEXT_BOX_ROW_NUM = 20; // if more there will be scrollbar
 
-// Default GOOGLE
-var TIP_GOOGLE_DEF = {
-		ALL_LINK: true, // default: Present the Link to display all the pages of Google analytics together
-		WIDTH: 1300, 
-		SHORT_URL: false,
-		LONG_URL: false
-};
 
 /*=========================================================================================
  * 					CONFIG CONST
@@ -105,29 +95,6 @@ var TIP_CFG_FIXED={
 		Fix: null, // it will be set run-time: e.g ['tipSortFeature',0,20]	
 		OffsetY: 0   //  it will be set run-time
 };
-
-// Google Analytics parameter
-var GOOGLE_ANAL_PAR_TYPE={
-		all_time:'all_time',
-		month: 'month',
-		week: 'week',
-		day: 'day',
-		two_hours: 'two_hours'
-};
-
-// Global For GoogleAnal
-var tt_googleAnal = {
-		arObjGoogleAnalList: null,   // arObjGoogleAnalList received as PAR
-		iTipWidth: 800,
-		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
-		iSelFilterCat: 0 , // Current FilterCat
-		iSelFilterType: 0,  // Current FilterType
-		szSelFilterType: GOOGLE_ANAL_PAR_TYPE.all_time,  // Current FilterType
-		iLinkClickCur:0,  // for Click Simulation in case of OPERA/SAFARI: current index (we have to arrivi till iVisibleLink-1
-		tmoClick: null
-};
-
-var TMO_GOOGLE_CLICK_SIMUL_MS = 200; 
 
 
 //Global For TipFix (see TipFix() objPar)
@@ -200,7 +167,7 @@ config. CenterMouse		= TIP_CFG_FLOATING.CenterMouse;	// false or true - center t
 config. ClickClose		= false;	// false or true - close tooltip if the user clicks somewhere
 config. ClickSticky		= false;	// false or true - make tooltip sticky if user left-clicks on the hovered element while the tooltip is active
 config. CloseBtn		= TIP_CFG_FLOATING.CloseBtn;	// false or true - closebutton in titlebar
-config. CloseBtnColors	= ['#990000', '#FFFFFF', '#DD3333', '#FFFFFF'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
+config. CloseBtnColors	= ['#DD3333', '#FFFFFF','#FF5858' , '#FFFFFF'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
 config. CloseBtnText	= '&nbsp;X&nbsp;';	// Close button text (may also be an image tag)
 config. CopyContent		= true;	// When converting a HTML element to a tooltip, copy only the element's content, rather than converting the element by its own
 config. Duration		= 0;		// Time span in ms after which the tooltip disappears; 0 for infinite duration, < 0 for delay in ms _after_ the onmouseout until the tooltip disappears
@@ -784,420 +751,10 @@ function TipFixTextArea(szTxt, event, objOpt){
 
 
 
-/**
- * Display in a FixedTip a Table with the Link to Google Analytics . 
- * @param arObjGoogleAnalList  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
- * @param event
- * @param [objOpt] {Object} Option: <ul>   
- *                           <li> szTitle{String}  default: 'Google Analytics'  </li> 
- *                           <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
- *                           <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
- *                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE.HEADER] Message to put before the Table of Link to Analytics 
- *                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE.FOOTER] Message to put after the Table of Link to Analytics 
- *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
- * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - default TIP_DEF_WIDTH (800) </li> 
- *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
- * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
- *                         </ul> 
- * 	@example
-	//--------------------------------------------------------- JS
-	function jsuGoogleAnalTip(event){   
-	  // Prepare arObjGoogleAnalList: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
-	  // In this case we populate all fields
-	  var arObjGoogleAnalList = [
-	       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE ,
-	      	              cat:"FREE JSU",desc:'N&ordm; Download <b>JSU.ZIP FREE</b> Obfuscated'},
-	       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:"FREE JSU", desc:'Main JSU Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:"FREE JSU", desc:'Tooltip Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
-	     ];
-	  TipFixGoogleAnal(arObjGoogleAnalList,event,{
-	  	szTitle:'JSU Google Analitycs',
-	  	iTipWidth: 1200
-	  });
-	}	
- //--------------------------------------------------------- HTML   
-	 <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" /> 
-													     
- */
-function TipFixGoogleAnalList(arObjGoogleAnalList, event, objOpt){
-	var fn = "[tooltip.js TipFixGoogleAnalList] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	tt_logObj (fn + "IN arObjGoogleAnalList", arObjGoogleAnalList);
-	tt_logObj (fn + "IN objOpt", objOpt);
-	tt_init(); // init, if not already done
-	if (objOpt == undefined){
-		objOpt = new Object();
-	}
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_GOOGLE.DEF_TITLE; }
-	if (objOpt.bAllGoogleAnalLink == undefined){	objOpt.bAllBtn = TIP_GOOGLE_DEF.ALL_LINK; }
-	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
-	if (objOpt.szHeaderTxt == undefined){	objOpt.szHeaderTxt = TIP_GOOGLE.DEF_HEADER; }
-	if (objOpt.szFooterTxt == undefined){	objOpt.szFooterTxt = TIP_GOOGLE.DEF_FOOTER; }
-	if (objOpt.bShortUrl == undefined){	objOpt.bShortUrl= TIP_GOOGLE_DEF.SHORT_URL; }
-	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = TIP_GOOGLE_DEF.LONG_URL; }
-	if (objOpt.iGoogleTblWidth == undefined){	objOpt.iGoogleTblWidth = TIP_GOOGLE.DEF_WIDTH; }
-	if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth= TIP_DEF_WIDTH; }
-	
-	if (objOpt.bShortUrl || objOpt.bShortUrl){
-		if (!tt_isFullVersion()){
-			return tt_featNotSupported ("PARAMETERS objOpt.bShortUrl and objOpt.bLongUrl");
-		}
-	} 
-	
-	tt_googleAnal.iTblWidth = objOpt.iTipWidth - 20; // -20 for some lateral space
-	tt_googleAnal.bShortUrl = objOpt.bShortUrl;
-	tt_googleAnal.bLongUrl = objOpt.bLongUrl;
-	tt_googleAnal.arObjGoogleAnalList = arObjGoogleAnalList; // Set in Global
-	// Get the possible categories, for filter
-	var arCat = new Array();
-	arCat.push (TIP_GOOGLE.FILTER_CAT_ALL);
-	for (var i=0; i< arObjGoogleAnalList.length; i++){
-		var szCat = arObjGoogleAnalList[i].cat;
-		var bPresent = false;
-		for (var k=0;k < arCat.length && !bPresent; k++){
-			if (arCat[k] == szCat){
-				bPresent = true;
-			}
-		}
-		tt_log (fn + "szCat=" + szCat + "  bPresent=" + bPresent);
-		if (!bPresent){
-			arCat.push(szCat);
-		}
-	}
-	tt_logObj (fn + "arCat=", arCat);
-	tt_googleAnal.arFilterCat = arCat;
-	tt_googleAnal.iSelFilterCat = 0; // ALL
-	tt_googleAnal.iSelFilterType = 0; // all_time
-	tt_googleAnal.szSelFilterType = GOOGLE_ANAL_PAR_TYPE.all_time;
-	var szTbl = '<table class="detNoBorder">';
-	// --------------------------- HEADER
-	
-	var szCbShowUrl = "";
-	/* FULL_JSU_START */
-	var szShortChecked = (tt_googleAnal.bShortUrl) ? "checked" : "";  
-	var szLongChecked = (tt_googleAnal.bLongUrl) ? "checked" : "";  
-	szCbShowUrl =    '<input type="checkbox" id="cbGoogleShortUrl" ' + szShortChecked + ' onclick="tt_onclickGoogleShortUrl();"/>Show ShortUrl ' +
-       '<input style="margin-left:20px" type="checkbox" id="cbGoogleLongUrl" ' + szLongChecked + ' onclick="tt_onclickGoogleLongUrl();" />Show LongUrl';
-	/* FULL_JSU_END */
-	
-	szTbl += '<tr style="padding-top:5px;">' +
-         '<td class="tiplBold" width="300px" style="padding-bottom:10px">'+ szCbShowUrl +
-         '</td>' +
-	       '<td class="tipr" style="padding-right:10px;padding-bottom:10px">' + objOpt.szHeaderTxt + '</td>' +
-	   '</tr>';
-	// Prepare the div that will contain the GoogleTable
-	szTbl += '<tr><td colspan="2"><div id="divTblGoogle" style="width:' + tt_googleAnal.iTblWidth + 'px;"></div></td></tr>';
-	// Footer
-	szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td colspan="2" class="tipl googleAnalFooter">' + objOpt.szFooterTxt + '</td></tr>';
-	szTbl += '</table>';
-	// Show Tip With Empty Table
-	TipFix (szTbl,event,objOpt);
-	tt_googleAnalTblShow();
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-
-
 
 /* ==========================================================================================
 																	LOCAL FUNCTION	 
 ========================================================================================== */
-
-/*
- * Show the Table with the Link to GoogleAnalytics, basing on current Filter
- * GLOBAL tt_googleAnal
- */
-function tt_googleAnalTblShow (){
-	var fn = "[tooltip.js tt_googleAnalTblShow()] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	var bSort = typeof (cSortTable) != "undefined"; // can we add cSortTable? Is It Loaded?
-	var szClassFooter = "detFooter"; // defined in css
-	
-	var szTbl = '<table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="100%">'; 
-	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
-	var szTblHea = '<tr class="detTitle" >';
-	if (tt_googleAnal.bShortUrl){
-		szTblHea += '<td class="tipc detTitle" width="15%">' + TIP_GOOGLE.SHORT_URL + '</td> ';
-	}
-	if (tt_googleAnal.bLongUrl){
-		szTblHea += '<td class="tipc detTitle" width="30%">' + TIP_GOOGLE.LONG_URL + '</td> ';
-	}	
-	szTblHea +=  '<td class="tipc detTitle" width="16%">' + TIP_GOOGLE.CAT + '</td> '+
-	  '<td class="tipc detTitle" width="21%">' + TIP_GOOGLE.DESC + '</td> '+
-	  '<td class="tipc detTitle" width="14%">' + TIP_GOOGLE.ANAL + '</td> '+
-	'</tr>';
-	szTbl += szTblHea;
-	
-	// -------------------------- HEADER_2 with Filter e AnalMode 
-	iRowHeader = 2;
-	var szSelectFilter = '<select class="detFilter" id="googleAnalCat" title="' + TIP_GOOGLE.FILTER_CAT_TITLE  + '"  style="width:100%;" onchange="tt_onchangeGoogleAnalCat();">';
-	var arCat = tt_googleAnal.arFilterCat;
-	for (var i=0;i<arCat.length; i++){
-		var szCat = arCat[i];
-		var szSelected = (i == tt_googleAnal.iSelFilterCat) ? "selected" : "";
-		var szOpt = '\n<option class="detFilter"  value="' + szCat +'" ' + szSelected + ' >' + szCat + '</option>';
-		szSelectFilter +=szOpt;		
-	}
-	szSelectFilter += '\n</select>';
-	//--- Filter for GoogleAnal Type (day,...)
-	var szSelectType = '<select class="detFilter" id="googleAnalType" title="' + TIP_GOOGLE.FILTER_TYPE_TITLE  + '"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" > ';
-	var arTypeOpt = [{value: GOOGLE_ANAL_PAR_TYPE.all_time, text:TIP_GOOGLE.FILTER_TYPE_ALL},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.month, text:TIP_GOOGLE.FILTER_TYPE_MONTH},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.week, text:TIP_GOOGLE.FILTER_TYPE_WEEK},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.day, text:TIP_GOOGLE.FILTER_TYPE_DAY},
-	                 {value: GOOGLE_ANAL_PAR_TYPE.two_hours,  text:TIP_GOOGLE.FILTER_TYPE_2HOURS}
-	                 ]; 
-	for (var i=0; i<arTypeOpt.length; i++){
-		var objOpt = arTypeOpt[i];
-		var szSelected = (i == tt_googleAnal.iSelFilterType) ? "selected" : "";
-		var szOpt = '\n<option class="detFilter" 	value="' + objOpt.value +'" ' + szSelected + ' >' + objOpt.text + '</option> ';
-		szSelectType +=szOpt;		
-	}
-	szSelectType += '\n</select>';
-	// tt_logHtml (fn + "szSelectType",szSelectType);
-	// ------------------------ add FilterCat
-	var iColUrl = 0;
-	if (tt_googleAnal.bShortUrl){ iColUrl++;}
-	if (tt_googleAnal.bLongUrl){ iColUrl++;}
-	var szTr = '<tr class="detFilter">';
-	if (iColUrl > 0){
-		szTr += '<td class="detFilter" colSpan="' + iColUrl + '" align="right" style="font-weight:normal;padding-right:5px;">' + 
-		//  TIP_GOOGLE.FILTER_CAT_HEADER + 
-		'</td>';   
-	}
-	szTr += '<td class="detFilter">' + szSelectFilter + '</td>' +   
-	'<td class="detFilter" align="right"  font-weight:normal;style="padding-right:5px;">' + 
-	//  TIP_GOOGLE.FILTER_TYPE_HEADER + 
-	'</td>' +   
-	'<td class="detFilter">' + szSelectType + '</td>' +   
-	'</tr>';
-	szTbl += szTr;	
-	
-  // --------------------------------------------- Insert the Link Rows 
-	// Inser only if Filter Match and SET Global .iVisibleLink 	
-	tt_googleAnal.iVisibleLink = 0; // Global
-	tt_logObj (fn , "iSelFilterCat =" + tt_googleAnal.iSelFilterCat);
-	var arObj = tt_googleAnal.arObjGoogleAnalList;
-	var szCatSel = tt_googleAnal.arFilterCat[tt_googleAnal.iSelFilterCat];
-	tt_logObj (fn + "szCatSel=" + szCatSel + " arFilterCat=", tt_googleAnal.arFilterCat);
-	for (var i=0; i< arObj.length; i++){
-		var objGoogle = arObj[i];
-		var szCat = objGoogle.cat;
-		// Check if we haev to show this cat: bFilterCat must be set and the cat must match the Filter (iSelFilterCat=0 means ALL Categories FILTER)  
-		var bShow = (tt_googleAnal.iSelFilterCat == 0 || szCat == szCatSel); 
-		tt_log (fn + "FilterSel=" + szCatSel + "  Cur cat=" + szCat + " --> bShow=" + bShow);
-		if (bShow){
-			var szId = "googleAnal_" + tt_googleAnal.iVisibleLink;
-			// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
-	    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + tt_googleAnal.szSelFilterType;
-			var szTr = '<tr>';
-			if (tt_googleAnal.bShortUrl){
-				szTr += '<td class="tipc">' + objGoogle.shortUrl + '</td> '; 
-			}
-			if (tt_googleAnal.bLongUrl){
-				szTr += '<td class="tipl">' + objGoogle.longUrl + '</td> '; 
-			}
-			szTr +=	  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
-			  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
-			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + TIP_GOOGLE.ANAL + '</a></td> '+
-	 	  '</tr>';
-		  szTbl += szTr;	
-			tt_googleAnal.iVisibleLink ++;
-		}
-	}
-	if (tt_googleAnal.iVisibleLink > 1){
-		// add TableFooter for All Google Analytics
-		var szFooter = TIP_GOOGLE.ALL_TITLE.replace ('GOOGLE_ANAL_NUM',tt_googleAnal.iVisibleLink);
-		var iColSpan = iColUrl + 2;
-		var szTr = '<tr class="' + szClassFooter + '">' +
-	       '<td class="tipr ' + szClassFooter + '" colSpan="' + iColSpan  + '">' + szFooter + '</td>' +   
-  			  '<td class="tipc ' + szClassFooter + '"><a id="googleAll" class="tipLink" href="javascript:tt_onclickGoogleAnalAll();">' + TIP_GOOGLE.ANAL_ALL + '</a></td> '+
-		 '</tr>';
-	  szTbl += szTr;	
-  }
-	szTbl += '</table></td></tr>';
-	var div = document.getElementById('divTblGoogle');
-	div.innerHTML = szTbl;
-	
-	// Create Sort only if cSortTable is loaded
-	if (bSort){
-		tt_log (fn + "Create SortTable bShortUrl=" + tt_googleAnal.bShortUrl + " tt_googleAnal.bLongUrl=" + tt_googleAnal.bLongUrl);
-		var arSortCol = new Array();
-		/*
-		var arSortCol = [  {col: TIP_GOOGLE.SHORT_URL},   
-			         					{col: TIP_GOOGLE.LONG_URL},        
-			         					{col: TIP_GOOGLE.CAT}, 
-			         	        {col:TIP_GOOGLE.DESC}, 
-			         	        {col: TIP_GOOGLE.ANAL}];
-		*/
-		if (tt_googleAnal.bShortUrl){
-			arSortCol.push({col: TIP_GOOGLE.SHORT_URL});
-		}	
-		if (tt_googleAnal.bLongUrl){
-			arSortCol.push({col: TIP_GOOGLE.LONG_URL});
-		}	
-		arSortCol.push({col: TIP_GOOGLE.CAT});
-		arSortCol.push({col: TIP_GOOGLE.DESC});
-		arSortCol.push({col: TIP_GOOGLE.ANAL});
-		
-
-		var cSortTbl1 = new cSortTable("tblGoogle",arSortCol,{
-			   iRowHeader:2,
-			   iRowSortHeader:1,
-			   bNoStartupSortIco:true,
-			   szClassFooter:szClassFooter
-			   }); 
-	}
-	
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-
-
-
-/*
- * onclick in GoogleAnalytics cbGoogleShortUrl
- * Re design the Table of Google Analitycs basing on the cbGoogleShortUrl selected 
- */
-function tt_onclickGoogleShortUrl(){
-	var fn = "[tooltip.js tt_onclickGoogleShortUrl] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	// Toggle
-	tt_googleAnal.bShortUrl = (tt_googleAnal.bShortUrl) ? false : true;
-  // redesign Tbl	
-	tt_googleAnalTblShow();
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-/*
- * onclick in GoogleAnalytics cbGoogleLongUrl
- * Re design the Table of Google Analitycs basing on the cbGoogleShortUrl selected 
- */
-function tt_onclickGoogleLongUrl(){
-	var fn = "[tooltip.js tt_onclickGoogleLongUrl] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	// Toggle
-	tt_googleAnal.bLongUrl = (tt_googleAnal.bLongUrl) ? false : true; 
-  // redesign Tbl	
-	tt_googleAnalTblShow();
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-
-
-/*
- * onchange in GoogleAnalytics FilterCat
- * Re design the Table of Google Analitycs basing on the FilterCat selected 
- */
-function tt_onchangeGoogleAnalCat(){
-	var fn = "[tooltip.js tt_onchangeGoogleAnalCat] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	var select = document.getElementById ("googleAnalCat");
-	tt_googleAnal.iSelFilterCat = select.selectedIndex;
-	tt_log (fn + "iSelFilterCat=" + tt_googleAnal.iSelFilterCat);
-	tt_googleAnalTblShow();
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-/*
- * onchange in GoogleAnalytics FilterType
- * Change global var and align href of the GoogleAnal Links 
- */
-function tt_onchangeGoogleAnalType(){
-	var fn = "[tooltip.js tt_onchangeGoogleAnalTypet] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	var select = document.getElementById ("googleAnalType");
-	tt_googleAnal.iSelFilterType = select.selectedIndex;
-	// e.g week
-	tt_googleAnal.szSelFilterType = select[select.selectedIndex].value;
-	tt_log (fn + "iSelFilterType=" + tt_googleAnal.iSelFilterType + " value=" + tt_googleAnal.szSelFilterType);
-  //--------------- align href
-	var arObj = tt_googleAnal.arObjGoogleAnalList;
-	tt_log (fn + "SET href for the " + arObj.length + " URLs");
-	for (var i=0; i< arObj.length; i++){
-		var objGoogle = arObj[i];
-		var szId = "googleAnal_" + i;
-		var aEl = document.getElementById (szId);
-		// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
-    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + tt_googleAnal.szSelFilterType;
-    aEl.href = szHref;
-	}	
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-
-/*
- *  
- * Open all the Google analytics pages
- */
-function tt_onclickGoogleAnalAll(){
-	var fn = "[tooltip.js tt_onclickGoogleAnalAll()] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	for (var i=0; i< tt_googleAnal.iVisibleLink; i++){
-		var szId = "googleAnal_" + i;
-		var aEl = document.getElementById (szId);
-		tt_log (fn + "simulate Click on anchor with id=" + szId + " - href=" + aEl.href); 
-	  if (aEl.click != undefined){
-			tt_log (fn + "a.click is defined. We call it");
-			aEl.click();
-	  }else {
-			tt_log (fn + "a.click is NOT defined in this Browser");
-	  	if(document.createEvent) {
-	  		// e.g SAFARI or OPERA
-				tt_log (fn + "el [" + i + "] of " + tt_googleAnal.iVisibleLink + " - We create the event to simulate the FIRST click. ");
-	      var evt = document.createEvent("MouseEvents"); 
-	      evt.initMouseEvent("click", true, true, window, 
-	          0, 0, 0, 0, 0, false, false, false, false, 0, null); 
-	      var allowDefault = aEl.dispatchEvent(evt);
-	      tt_googleAnal.iLinkClickCur = 0;
-	      if (tt_googleAnal.iVisibleLink == 1){
-	  			tt_log (fn + "Only one anchor. Finish click simulation");
-	      }else {
-	  			tt_log (fn + "Create Timer of " + TMO_GOOGLE_CLICK_SIMUL_MS +" for Next Click Simulate");
-		      tt_googleAnal.tmoClick = setTimeout (tt_timerGoogleAnalClick,TMO_GOOGLE_CLICK_SIMUL_MS);
-	      }
-	      return;
-	    }
-	  }
-	}
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
-
-function tt_timerGoogleAnalClick(){
-	var fn = "[tooltip.js tt_timerGoogleAnalClick()] ";
-
-	tt_log (fn + TIPLOG_FUN_START);
-	clearTimeout (tt_googleAnal.tmoClick );
-	// e.g SAFARI or OPERA
-	tt_googleAnal.iLinkClickCur++;
-	var i = tt_googleAnal.iLinkClickCur; 
-	var szId = "googleAnal_" + i;
-	var aEl = document.getElementById (szId);
-	tt_log (fn + "i=" + i + " - Create the event to simulate the click on anchor with id=" + szId + " - href=" + aEl.href);
-  var evt = document.createEvent("MouseEvents"); 
-  evt.initMouseEvent("click", true, true, window, 
-      0, 0, 0, 0, 0, false, false, false, false, 0, null); 
-  var allowDefault = aEl.dispatchEvent(evt);
-  if (tt_googleAnal.iLinkClickCur >= (tt_googleAnal.iVisibleLink- 1)){
-		tt_log (fn + "Click simulation done for all " + tt_googleAnal.iVisibleLink + " anchors");
-  }else {
-		tt_log (fn + "Create Timer of " + TMO_GOOGLE_CLICK_SIMUL_MS +" for Next Click Simulate");
-    tt_googleAnal.tmoClick = setTimeout (tt_timerGoogleAnalClick,TMO_GOOGLE_CLICK_SIMUL_MS);
-  }
-	
-	tt_log (fn + TIPLOG_FUN_END);
-}
-
 /*
  * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
  */
@@ -2800,7 +2357,7 @@ function tt_getHtmlRowNum(szHtml){
 }
 
 /*
- *Show an Error because this szFeatNotSupported is not supported
+ * Show an Error because this szFeatNotSupported is not supported
  * @param szFeatNotSupported
  */
 function tt_featNotSupported(szFeatNotSupported){

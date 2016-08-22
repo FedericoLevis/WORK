@@ -287,10 +287,13 @@ function sample2Info(){
     '<li><b>POPUP_TYPE.CONFIRM</b> for Confirmation</li>' +
     '<li><b>POPUP_TYPE.QUESTION</b> to ask a Question with 2 Buttons</li>' +
     '<li><b>POPUP_TYPE.QUESTION_3</b> to ask a Question with 3 Buttons</li>' +
+    '<li><b>POPUP_TYPE.CHOICE</b> to Choose one or more values from a List of values</li>' +
     '<li><b>POPUP_TYPE.PROMPT</b> to Prompt for a value</li>' +
     '</ul>';
   Popup(POPUP_TYPE.INFO,szMsg);
 }
+
+
 
 /*
  *    @param szTitle {String} if it is different from "" or null it is set as Title into Popup, else Default is used (WARNING in this case)

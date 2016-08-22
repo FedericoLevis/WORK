@@ -55,10 +55,12 @@ var POPUP_BROWSER_MODE_ALERT = "ALERT";
 // Popup with Url Parameter for Popup with NoReturnCode: Info, Warning, Err, About, alse ALERT 
 var POPUP_BROWSER_MODE_POPUP_URL = "POPUP_URL";  
 
-//---------------- ENAMPLE/DISAMPLE POPUP in Browser: Popup for IE, Alert for Other
-// var POPUP_BROWSER_MODE_IE = POPUP_BROWSER_MODE_ALERT;
+// ------------------------- IEPopup configuration per BRowser
+//---------------- ENABLE/DISAMPLE POPUP in Browser: Popup ONLY for IE, Alert for Other
 var POPUP_BROWSER_IE_MODE = POPUP_BROWSER_MODE_POPUP;
-var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_POPUP_URL;
+// var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_POPUP_URL;
+//changed to Alert because ShowModalDialg is deprecated in Firefox and it will be removed very soon
+var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_ALERT;  
 var POPUP_BROWSER_OTHER_MODE = POPUP_BROWSER_MODE_ALERT;
 
 
@@ -1196,6 +1198,18 @@ function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
 }  
 
 
+
+/**
+ * Return true to indicate to JSU User that this popup.js Interface is the IEPopup <BR/>
+ * The same function is Present in JQPopup/popup.js where it return false <BR/>
+ * This API is used if the html does not know what popup.js interface is loaded by require.js configuration file, where it can be changed because <BR/>
+ * both IEPopup/Popup.js and JQPopup/Popup.js share the same interface 
+ * 
+ * @returns {Boolean}
+ */
+function isIEPopup(){
+	return true;
+}
 
 
 

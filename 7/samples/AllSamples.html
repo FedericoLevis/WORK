@@ -32,7 +32,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 <table class="sampleToolbar" width="100%" >
   <tr >
     <td class="tipl" width="30%">
-        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
     </td>
     <td class="tipr" width="70%">
      <table valign="bottom" align="right">
@@ -40,9 +40,9 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
             <td class="tipr" ><b>Download Options:</b> </td>
             <td><input type="button"  class="tipFix" id="downloadOption"  onclick="downloadTip(event)" /> </td>
             <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay(event);" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
-            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
             <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree(event);" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
-            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
         </tr>
       </table>  
     </td>
@@ -148,7 +148,9 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
 <div id="test" style="display:none;visibility:hidden;">
   <input  type="button" value="TEST Google Analytics" onclick="testStart(false);" />  &nbsp;&nbsp;  <input  type="button" value="TEST Frame" onclick="testStart(true);" /> 
   <BR/>
-  Tmo(sec)<input  id="testTmo" readonly value="0" />&nbsp;&nbsp; N.Test Executed <input  id="testDone" readonly value="0" /> &nbsp;&nbsp;Current URL: <input  id="testURL" width="300px" readonly value="0" />
+  Tmo(sec):<input  with="50px" id="testTmo" readonly value="0" /><BR>
+  N.Test <input  with="50px" id="testDone" readonly value="0" /><BR>
+  Current Short URL: <input  id="testURL" width="300px" readonly value="0" />
 </div>
 
 </body>
