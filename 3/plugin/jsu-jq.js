@@ -1,3 +1,5 @@
+/* BASE_PATH fisso e punat a dove sono sparpagliati i vari file */
+
 /* the BASE Path: Path of ..../jsu folder. 
  a) Fixed 
  b) relative Path (relative to HTML including this file)
@@ -17,6 +19,8 @@ var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/IEPo
 //----------------------------------- FIXED 
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
+
+var JSU_FREE=true;  // used by samples
 
 
 //Only for TEST during development
@@ -49,6 +53,7 @@ require([ // First 3 always present
          'core/util',							
          'core/date',							
          'core/tooltip',
+         'core/prettify/prettify-jsu',
          'core/googleAnal',
          'popup/Popup',
          'loadingDiv',							

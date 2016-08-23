@@ -1,3 +1,4 @@
+/* BASE_PATH fisso e punat a dove sono sparpagliati i vari file */
 
 
 
@@ -29,6 +30,9 @@ var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 //Only for TEST during development
 //var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
 
+var JSU_FREE=true; // used by samples
+
+
 
 //----------------------------------- MODULE CONFIGURATION
 requirejs.config({
@@ -39,7 +43,7 @@ requirejs.config({
         'loadingDiv': '2/core/loadingDiv',
         'cValidate': '6/core/cValidate',
         'lan': '6/locale/EN',
-        'popup': '2/core/BlockPopup'
+        'popup': '2/core/IEPopup'
     },
     shim: {
       'core/jslog': ['core/dom-drag']
@@ -54,6 +58,7 @@ require([ // First 3 always present
          'core/util',							
          'core/date',							
          'core/tooltip',
+         'core/prettify/prettify-jsu',
          'core/googleAnal',
          'popup/Popup',
          'loadingDiv',							
