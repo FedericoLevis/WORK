@@ -397,16 +397,17 @@ div.ttTitle{  /* default Title */
   border-width:3px;
   border-style:solid;
   border-color:black;
-  color: blue;
 }	
 
-.ttClose {
-  background-color: #C0C0C0 !important;  /* dark gray */
+.ttClose {   /* for close button on Top Right */
   color: #000000 !important;
 /*   font-family: Calibri !important; */
   font-family: Arial Black !important;
   font-weight: bold !important ;
   font-size: 13px !important;
+  background-color: #D4D4D4 !important;  /* dark gray */
+  color: #000000 !important;
+  border-radius: 5px;  
   border-width:2px;
   border-style:solid;
   border-color:#C0C0C0;
@@ -415,7 +416,9 @@ div.ttTitle{  /* default Title */
 
 .ttClose:hover {
 	background-color: #E0E0E0 !important;  /* dark gray */
- }
+  color: #404040 !important;
+  border-color:#A0A0A0;
+}
 
 
  
