@@ -115,11 +115,12 @@ var tt_tipFix = {
 
 
 // ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
-var TIP_FIX_CLASS = {	Down: "tipFix",		Up: "tipFixUp"};
-var TIP_FIX_CLASS_ARROW = {		Down: "tipFixArrow",		Up: "tipFixArrowUp"};
-var TIP_FIX_CLASS_GOOGLE = {		Down: "tipGoogleAnalList",		Up: "tipGoogleAnalListUp"};
-var TIP_FIX_CLASS_JS = {	Down: "tipFixJS",	Up: "tipFixJSUp"};
-var TIP_FIX_CLASS_CODE = {	Down: "tipFixCode",	Up: "tipFixCodeUp"};
+// TOGGLE IMAGES. If the immage is not in these class, NO TOGGLE is done
+var TIP_TOGGLE_CLASS = {	Down: "tipFix",		Up: "tipFixUp"};
+var TIP_TOGGLE_CLASS_ARROW = {		Down: "tipFixArrow",		Up: "tipFixArrowUp"};
+var TIP_TOGGLE_CLASS_GA = {		Down: "googleAnalList",		Up: "googleAnalListUp"};
+var TIP_TOGGLE_CLASS_JS = {	Down: "tipFixJS",	Up: "tipFixJSUp"};
+var TIP_TOGGLE_CLASS_CODE = {	Down: "tipFixCode",	Up: "tipFixCodeUp"};
 
 
 
@@ -154,7 +155,7 @@ var TagsToTip	= true;	// false or true - if true, HTML elements to be converted 
 config. Padding			= 10;			// NB: Spacing between border and content
 config. Delay			= TIP_CFG_FLOATING.DelayMs;		// Time span in ms until tooltip shows up
 config. Above			= false;	// false or true - tooltip above mousepointer
-config. BgColor			= '#FFFFCC';	// NB: TIP BACK COLOR Background colour (HTML colour value, in quotes)     Yellow
+config. BgColor			= '#FFFFCC';	// NB: TIP BACK COLOR Background color (HTML colour value, in quotes)     Yellow
 config. BgImg			= '';		// Path to background image, none if empty string ''
 //JSU_FREE_START
 config. jsuTitle  = '';   // SIMULAZIONE
@@ -167,7 +168,8 @@ config. CenterMouse		= TIP_CFG_FLOATING.CenterMouse;	// false or true - center t
 config. ClickClose		= false;	// false or true - close tooltip if the user clicks somewhere
 config. ClickSticky		= false;	// false or true - make tooltip sticky if user left-clicks on the hovered element while the tooltip is active
 config. CloseBtn		= TIP_CFG_FLOATING.CloseBtn;	// false or true - closebutton in titlebar
-config. CloseBtnColors	= ['#DD3333', '#FFFFFF','#FF5858' , '#FFFFFF'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
+config. CloseBtnColors	= ['	', '#FFFFFF','#FF5858' , '#FFFFFF'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
+// config. CloseBtnColors	= ['#E5E4E4', '#000000','#BFBEBE' , '#000000'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
 config. CloseBtnText	= '&nbsp;X&nbsp;';	// Close button text (may also be an image tag)
 config. CopyContent		= true;	// When converting a HTML element to a tooltip, copy only the element's content, rather than converting the element by its own
 config. Duration		= 0;		// Time span in ms after which the tooltip disappears; 0 for infinite duration, < 0 for delay in ms _after_ the onmouseout until the tooltip disappears
@@ -201,7 +203,7 @@ config. TitleAlign		= 'center';	// 'left' 'center' or 'right' - text alignment i
 config. TitleBgColor	= '#000000'; // backgroundColor of the Title section . If empty string '', BorderColor will be used
 config. TitleFontColor	= '#ffffff';	// Color of title text - if '', BgColor (of tooltip body) will be used
 config. TitleFontFace	= 'bold';		// If '' use FontFace (boldified)
-config. TitleFontSize	= '13pt';		// If '' use FontSize
+config. TitleFontSize	= '12pt';		// If '' use FontSize
 config. TitlePadding	= 1;
 config. Footer			= '';		// Default Footer text applied to all tips (no default title: empty string '')
 
@@ -298,7 +300,7 @@ function Tip(tipMsgHtml,tipType,objOpt)
 					 <li> bNL2BR= [true]  if true /n are converted to </li>
 					 ------ <b>FOLLOW FIELDS are for ADVANCED use. Usually they are ever used </b>  
            <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
-               To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
+               To be used when you have 2 classes not that are not already defined into the TIP_TOGGLE_CLASS_xxx constants of this file <BR/>
                e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
            <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
         </ul> 
@@ -400,43 +402,55 @@ function TipFix(tipMsgHtml,event, objOpt)
 		if (szId == undefined || szId.length == 0){
 			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFix must have an id");
 		}
-		tt_log ( fn + "classname=" + className);
-		if (className == TIP_FIX_CLASS.Down ){
-			className = TIP_FIX_CLASS.Up;
-		}else	if (className == TIP_FIX_CLASS.Up){
-			className = TIP_FIX_CLASS.Down;
+		var bToggled = true; //default
+		//---------------------- TOGGLE IMAGE 
+		tt_log ( fn + "OLD classname=" + className);
+		if (className == TIP_TOGGLE_CLASS.Down ){
+			className = TIP_TOGGLE_CLASS.Up;
+		}else	if (className == TIP_TOGGLE_CLASS.Up){
+			className = TIP_TOGGLE_CLASS.Down;
 			bShow = false;
-		}else	if (className == TIP_FIX_CLASS_ARROW.Up){
-			className = TIP_FIX_CLASS_ARROW.Down;
+		}else	if (className == TIP_TOGGLE_CLASS_ARROW.Up){
+			className = TIP_TOGGLE_CLASS_ARROW.Down;
 			bShow = false;
-		}else	if (className == TIP_FIX_CLASS_ARROW.Down ){
-			className = TIP_FIX_CLASS_ARROW.Up;
-		}else	if (className == TIP_FIX_CLASS_GOOGLE.Up){			
-			className = TIP_FIX_CLASS_GOOGLE.Down;			
+		}else	if (className == TIP_TOGGLE_CLASS_ARROW.Down ){
+			className = TIP_TOGGLE_CLASS_ARROW.Up;
+		}else	if (className == TIP_TOGGLE_CLASS_GA.Up){			
+			className = TIP_TOGGLE_CLASS_GA.Down;			
 			bShow = false;
-		}else	if (className == TIP_FIX_CLASS_GOOGLE.Down ){		
-			className = TIP_FIX_CLASS_GOOGLE.Up;		
-		}	else	if (className == TIP_FIX_CLASS_JS.Up){
-			className = TIP_FIX_CLASS_JS.Down;
+		}else	if (className == TIP_TOGGLE_CLASS_GA.Down ){		
+			className = TIP_TOGGLE_CLASS_GA.Up;		
+		}	else	if (className == TIP_TOGGLE_CLASS_JS.Up){
+			className = TIP_TOGGLE_CLASS_JS.Down;
 			bShow = false;
-		}else	if (className == TIP_FIX_CLASS_JS.Down ){
-			className = TIP_FIX_CLASS_JS.Up;
-		}else	if (className == TIP_FIX_CLASS_CODE.Up){
-			className = TIP_FIX_CLASS_CODE.Down;
+		}else	if (className == TIP_TOGGLE_CLASS_JS.Down ){
+			className = TIP_TOGGLE_CLASS_JS.Up;
+		}else	if (className == TIP_TOGGLE_CLASS_CODE.Up){
+			className = TIP_TOGGLE_CLASS_CODE.Down;
 			bShow = false;
-		}else	if (className == TIP_FIX_CLASS_CODE.Down ){
-			className = TIP_FIX_CLASS_CODE.Up;
-		}	
-		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
-			// Custom Class passed by User
-			if (className == tt_tipFix.objClass.Up){
-			  className = tt_tipFix.objClass.Down;
-			  bShow = false;
-		  }else	if (className == tt_tipFix.objClass.Down ){
-			  className = tt_tipFix.objClass.Up;
-		  }	
+		}else	if (className == TIP_TOGGLE_CLASS_CODE.Down ){
+			className = TIP_TOGGLE_CLASS_CODE.Up;
+		}else {
+			if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
+				tt_logObj ( fn + "CASE of CUSTOM objClass" + tt_tipFix.objClass);
+				// Custom Class passed by User
+				if (className == tt_tipFix.objClass.Up){
+				  className = tt_tipFix.objClass.Down;
+				  bShow = false;
+			  }else	if (className == tt_tipFix.objClass.Down ){
+				  className = tt_tipFix.objClass.Up;
+			  }else {
+			  	bToggled= false; // NOT FOUND
+			  }	
+			}else {
+		  	bToggled= false; // NOT FOUND
+			}
 		}
-		tt_log ( fn + "SET New classname=" + className);
+		if (bToggled){
+			tt_log ( fn + "TOGGLE TO NEW classname=" + className);
+		}	else{
+			tt_logObj ( fn + "WARNING: Current className=" + className + " NOT implemented as TOGGLE IMage: SO NO IMAGE TOGGLE is DONE" );
+		}
 		tipImg.className = className;
 	}
 	tt_log ( fn + "bShow=" + bShow);
@@ -786,10 +800,10 @@ function tt_UnTipFix(){
 function tt_isClassFixed(szClass){
   var bTipFix = false;	
 	var fn="[tooltip.js tt_isClassFixed()] ";
-	if (szClass == TIP_FIX_CLASS_JS.Up  || szClass == TIP_FIX_CLASS.Up  ||
-			szClass == TIP_FIX_CLASS_CODE.Up  ||
-			szClass == TIP_FIX_CLASS_ARROW.Up || 
-			szClass == TIP_FIX_CLASS_GOOGLE.Up){
+	if (szClass == TIP_TOGGLE_CLASS_JS.Up  || szClass == TIP_TOGGLE_CLASS.Up  ||
+			szClass == TIP_TOGGLE_CLASS_CODE.Up  ||
+			szClass == TIP_TOGGLE_CLASS_ARROW.Up || 
+			szClass == TIP_TOGGLE_CLASS_GA.Up){
 		bTipFix = true;
 	}
 	if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
@@ -811,16 +825,16 @@ function tt_RestoreImgFixed() {
 	if (tip_img_fixed != null){
 		var szClass = "";
 		// Change img of tip_fixed if present
-		if (tip_img_fixed.className == TIP_FIX_CLASS.Up){
-			szClass = TIP_FIX_CLASS.Down;
-		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_ARROW.Up){
-			szClass = TIP_FIX_CLASS_ARROW.Down;
-		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_GOOGLE.Up){
-			szClass = TIP_FIX_CLASS_GOOGLE.Down;
-		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_JS.Up){
-			szClass = TIP_FIX_CLASS_JS.Down;
-		}	else if (tip_img_fixed.className == TIP_FIX_CLASS_CODE.Up){
-			szClass = TIP_FIX_CLASS_CODE.Down;
+		if (tip_img_fixed.className == TIP_TOGGLE_CLASS.Up){
+			szClass = TIP_TOGGLE_CLASS.Down;
+		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_ARROW.Up){
+			szClass = TIP_TOGGLE_CLASS_ARROW.Down;
+		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_GA.Up){
+			szClass = TIP_TOGGLE_CLASS_GA.Down;
+		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_JS.Up){
+			szClass = TIP_TOGGLE_CLASS_JS.Down;
+		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_CODE.Up){
+			szClass = TIP_TOGGLE_CLASS_CODE.Down;
 		}
 		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 			// Custom Class passed by User
@@ -1507,7 +1521,7 @@ function tt_MkTipSubDivs()
 	tt_aElt[0].innerHTML =
 		(''
 		+ (tt_aV[TITLE].length ?
-			('<div id="WzTiTl" class="ttCaption" style="position:relative;z-index:1;border-width:3px;border-style:solid;border-color:black">'
+			('<div id="WzTiTl" class="ttTitle" style="position:relative;z-index:1;">'
 			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
 			+  tt_aV[TITLE] 
 			// JSU_FREE_START 
@@ -1517,10 +1531,11 @@ function tt_MkTipSubDivs()
 			'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
 			// JSU_FREE_END
 			+ '</td>'
+			// -------------------- Close Section X
 			+ (tt_aV[CLOSEBTN] ?
 				('<td id="' + tt_id.jd[0] +'" align="right" style="' + sCssCloseBtn
 				+ ';text-align:right;">'
-				+ '<span id="WzClOsE" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
+				+ '<span id="WzClOsE" class="ttClose" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
 				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
 				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
 				+ tt_aV[CLOSEBTNTEXT]

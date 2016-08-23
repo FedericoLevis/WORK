@@ -165,10 +165,14 @@ var JSU_LONG_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html
 var JSU_LONG_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
 var JSU_LONG_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html";
 var JSU_LONG_URL_DOC_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html";
+var JSU_LONG_URL_DOC_GA  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/GoogleAnalytics.html";
 var JSU_LONG_URL_DOC_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html";
 var JSU_LONG_URL_DOC_JSLOG  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/jslog.html";
 var JSU_LONG_URL_DOC_IEPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/IEPopup.html";
 var JSU_LONG_URL_DOC_JQPOPUP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JQPopup.html";
+
+//----------------------- FEATURE DOC - par for FEature Only in FULL version
+var JSU_LONG_URL_DOC_GA_ONLYFULL  =	JSU_LONG_URL_DOC_GA + "#parOnlyFullJsu";
 
 
 // ---- ggo.gl
@@ -185,7 +189,7 @@ var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/hZ5U6M";
 //
 var JSU_SHORT_URL_VERSION  =	"https://goo.gl/1eIYNm";
 var JSU_LONG_URL_VERSION  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUversion.html";
-var JSU_LONG_URL_VERSION_PAR_LIMIT  =	JSU_LONG_URL_VERSION + "#par1.2.1.1";
+var JSU_LONG_URL_VERSION_PAR_LIMIT  =	JSU_LONG_URL_VERSION + "#par1.2.1";
 
 
 // used as Link for JSU in about
@@ -721,11 +725,16 @@ function downloadTip(event,szDownloadTipType){
 	}
 	if (!bTipInfo){
 		if (szDownloadTipType == DOWNLOAD_TIP_TYPE.FREE){
-			szMsg = 'Click to <b>Download the FREE Version of JSU.ZIP</b><BR/> ' + 
-				'<b>NOTE:</b> FREE JSU.zip has some limitation: <div class="tipWarnBold"><ul>' +
-				'  <li>JS Code Obfuscated</li>' +
-				'  <li>It contains only some JSU Features with some limitation: Tooltip, LoadingDiv, SortTable, JSLog, IEPopup</li>' +
-				'<ul/><div/>';
+			szMsg = '<div>Click to <b>Download the FREE Version of JSU.ZIP</b><BR/><BR/> ' +
+			'<table class="tipNote"><tr> ' +
+		  '  <td class="tipNote"><input class="tipNote"></td> ' +
+		  '  <td><label class="tipWarnBold">FREE JSU.zip has some limitation: </label><ul>' +
+			'    <li>JS Code Obfuscated</li>' +
+			'    <li>NOT All Features are present and there are some limitation</li>' +
+			'    <li>JS Code documentation is not completed as in FULL JSU</li>' +
+			'  <ul/> ' +
+			'  </td> ' +
+		  '</tr></table> </div>';
 		}else	{
 			szMsg = 'Click to Go to the <b>Download Page of the <label class="tipGood">FULL Version of JSU.ZIP</label></b><BR/><BR/>';
 		}

@@ -59,7 +59,7 @@ var GA_LABEL = {
 		DEF_HEADER: 'Click <u><b>Google Analytics</b></u> Links to show the relative <b>Google Analitycs Page</b>',
 		DEF_FOOTER: '<b>NOTEs about Google Analitycs:</b><ul>' +
                 '   <li>Only the Pages loaded with the <b><i>ShortUrl</i></b> are counted. The pages loaded with the <b><i>LongUrl</i></b> are not counted</li>' +
-                '   <li>Recently there is a limitation in Google Analytics and <b>pages loaded by IE are not counted</b>; therefore the real counter should be greater than the ones displayed.</li></ul>',
+                '   <li>For Google Analytics limitation the <b>pages loaded by IE are not counted</b>; therefore the real counter should be greater than the ones displayed.</li></ul>',
 		CAT: "Category",
 		DESC: "URL Description",
 		LONG_URL: "Long URL",
@@ -67,21 +67,21 @@ var GA_LABEL = {
 		ANAL: "Google Analytics",
 		ANAL_ALL: "ALL Google Analytics",
 		ALL_LINK: "All Previous Google Analitycs",
-		ALL_TITLE: "Show ALL the <b>GOOGLE_ANAL_NUM Google Analitycs</b> of the Table:",
+		ALL_TITLE: "Show ALL the <b>GOOGLE_ANAL_NUM Google Analitycs</b> of the Table:&nbsp;",
 		SHOW_SHORT_URL: "Show ShortUrl",
     //---------- Filter Cat
 		FILTER_CAT_HEADER: "Categories FILTER:",  // displayed in Header
 		FILTER_CAT_TITLE: "FILTER the Categories to display",  //Filter Tip
 		FILTER_CAT_ALL: "ALL Categories",  // Entry in Filter
 		//---------- Filter Type (last par in https://goo.gl/#analytics/goo.gl/HnNqnM/all_time )
-		FILTER_TYPE_HEADER: "Analytics TYPE: ",  // displayed in Header
-		FILTER_TYPE_TITLE: "Initial Analytics TYPE displayed. Then it can be changed form Google Analitycs page",  //Filter Tip
+		PAR_TIME_HEADER: "Analytics TYPE: ",  // displayed in Header
+		PAR_TIME_TITLE: "Initial Analytics TYPE displayed. Then it can be changed form Google Analitycs page",  //Filter Tip
 		// -- Entries in Filter
-		FILTER_TYPE_ALL: "All Time",
-		FILTER_TYPE_MONTH: "Last Month",
-		FILTER_TYPE_WEEK: "Last Week",
-		FILTER_TYPE_DAY: "Last Day",
-		FILTER_TYPE_2HOURS: "Last 2 Hours"
+		PAR_TIME_ALL: "All Time",
+		PAR_TIME_MONTH: "Last Month",
+		PAR_TIME_WEEK: "Last Week",
+		PAR_TIME_DAY: "Last Day",
+		PAR_TIME_2HOURS: "Last 2 Hours"
 };
 
 

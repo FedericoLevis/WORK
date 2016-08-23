@@ -376,7 +376,7 @@ function jslogHtml(iLogLev,szMsg,szHtml, objOpt)
 	}
 
 	// prepare szTxtArea 
-	var szTxtArea= szMsg + ":<BR\>" + '<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" readonly>' + szHtml + '</textarea><BR\>';
+	var szTxtArea= szMsg + ":<BR\>" + '<textarea rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '">' + szHtml + '</textarea><BR\>';
 	jslog (iLogLev,szTxtArea);
 	return 0;
 

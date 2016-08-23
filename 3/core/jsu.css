@@ -281,7 +281,7 @@ input.tipFixJSUp{
 }
 
 input.tipFixCode, input.tipFixCodeUp{
-    height: 26px;
+    height: 28px;
     width: 35px;
     font-weight: bold;
     cursor: pointer;
@@ -326,13 +326,13 @@ input.googleAnalListUp {
 }
 
 
-input.googleAnalListJSPopup {  /* Like googleAnalList but thsi one show List in a JSPopu */
+input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup insyead of TipFix*/
     height: 24px;
     width: 225px;
     border: 2px solid gray;
     border-style: ridge;
     cursor: pointer;
-    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJSPopup.png) no-repeat center center; 
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopup.png) no-repeat center center; 
 }
 
 
@@ -360,7 +360,7 @@ input.tipFixArrow, input.tipFixArrowUp,
 input.tipFixJS, input.tipFixJSUp,
 input.tipFixCode, input.tipFixCodeUp,
 input.googleAnal,
-input.googleAnalListJSPopup,
+input.googleAnalListJQPopup,
 input.googleAnalList, input.googleAnalListUp,
 input.jsuHelp
 {
@@ -374,7 +374,7 @@ input.tipFixArrow:hover, input.tipFixArrowUp:hover,
 input.tipFixJS:hover, input.tipFixJSUp:hover,
 input.tipFixCode:hover, input.tipFixCodeUp:hover,
 input.googleAnal:hover, 
-input.googleAnalListJSPopup:hover,
+input.googleAnalListJQPopup:hover,
 input.googleAnalList:hover, input.googleAnalListUp:hover,
 input.jsuHelp:hover 
 {
@@ -392,9 +392,33 @@ Tooltip: CSS used directly inside tooltip.js
 */
 
 div.ttTitle{  /* default Title */
-	background-color: red;
+	/* background-color: #606060!important;  /* dark gray */
+  background-color: #000000!important;  /* Black*/
+  border-width:3px;
+  border-style:solid;
+  border-color:black;
+  color: blue;
 }	
 
+.ttClose {
+  background-color: #C0C0C0 !important;  /* dark gray */
+  color: #000000 !important;
+/*   font-family: Calibri !important; */
+  font-family: Arial Black !important;
+  font-weight: bold !important ;
+  font-size: 13px !important;
+  border-width:2px;
+  border-style:solid;
+  border-color:#C0C0C0;
+    
+ }
+
+.ttClose:hover {
+	background-color: #E0E0E0 !important;  /* dark gray */
+ }
+
+
+ 
 
 /*---
 Tooltip: CSS for tip table 
@@ -635,11 +659,11 @@ input.tipBtnClose{
 }
 
 
-.tipErr,.tipErrBold   {
+.tipErr,.tipErrBold,.err,.errBold   {
   color: #CD3333; /* Red */
 }
 
-.tipErrBold   {
+.tipErrBold,.errBold   {
 	font-weight: bold;
 }
 
@@ -666,6 +690,47 @@ a.tipLinkJsLog, a.tt{  /* to be used in JsLog where background is black, ot in t
 a.tipLinkJsLog:hover, a.tt:hover {
  cursor: pointer;
  color:   #00ffff; 
+}
+
+
+
+table.note, table.tipNote {  /* for the Note (e.g at the bottom of the Google Analytics) */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 11px;
+  color: black; /* Black */
+  /* background-color: #ffffff; */
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 4px;  
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+
+td.note,td.tipNote{
+  vertical-align: top;
+  padding-right:5px;
+}	
+
+input.note{ /* Image for the Note */
+    height: 18px;
+    width: 36px;
+    border: 0px ;
+    /* DAFARE */
+    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center; */ 
+    background: #FFFFFF url(../images/note.png) no-repeat center center; 
+}
+input.tipNote{ /* Image for the Note in the Tip */
+    height: 18px;
+    width: 36px;
+    border: 0px ;
+    /* DAFARE */
+    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center; */ 
+    background: #FFFFCC url(../images/tipNote.png) no-repeat center center; 
 }
 
 
@@ -761,7 +826,7 @@ input.validateInfo{ /* Info img  */
 
 
 
-.validateErrPopup{ /* Error Label in Popup */
+.validateErrPopup{ /* Error Label in Popup*/
   font-weight: normal;
   color: red; /* */
 }

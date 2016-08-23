@@ -67,35 +67,6 @@ input.playVideoSmall {  /* PlayVideo for About */
 
 
 
-table.note, table.sampleNote {  /* for the Note (e.g at the begging of the sample */
-  text-align: left;
-  font-family: Verdana;
-  font-weight: normal;
-  font-style: italic;
-  font-size: 12px;
-  color: black; /* Black */
-  background-color: #ffffff;
-  /* White Gray: default backgound, used for Td */
-  border: 0px; /*  */
-  border-collapse: separate;
-  border-spacing: 4px;  
-  padding-top: 2px;
-  padding-bottom: 8px;
-}
-
-
-input.note,input.sampleNote{ /* Image for the Note */
-    height: 18px;
-    width: 40px;
-    border: 0px ;
-    /* background: white url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/note.png") no-repeat center center; */ 
-    background: white url(../../images/about/note.png) no-repeat center center; 
-  
-}
-
-	
-
-
 .allSampleGood {
   color: #008B45; /* Dark Green */
   font-weight: bold; 
@@ -175,7 +146,7 @@ h2.jsuDoc {
 h3.jsuDoc {  
   font-family: Arial-Black;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: black;
   text-align: left;
   margin-top: 20px;
@@ -185,7 +156,7 @@ h3.jsuDoc {
 h4.jsuDoc {  
   font-family: Arial-Black;
   font-weight: bold;
-  font-size: 16x;
+  font-size: 18x;
   color: black;
   text-align: left;
   margin-top: 20px;
@@ -476,7 +447,6 @@ input.downloadFreeExecute:hover, input.downloadFreeExecuteUp:hover
 }
 
 
-
 .jsuFeatBig{ 
   font-family: Verdana;
   font-weight: bold;
@@ -486,22 +456,37 @@ input.downloadFreeExecute:hover, input.downloadFreeExecuteUp:hover
 
 td.jsuOptPresent { /* Option present */
   background-color: #66FF66;
-  width: 60px;    
+  width: 30px;    
 }
 
 
 td.jsuOptAbsent{ /* Option absent*/
   background-color: black;    
-  width: 60px;    
+  width: 30px;    
 }
 
-.parDefault{
+
+
+.errSample{ /* Error = e.g For using Free JSU */
+  font-weight: normal;
+  color: red; /* */
+}
+
+
+
+td.parDefault{
   font-weight: normal;
 }	
-.parModified{
+td.parModified{
   font-weight: bold;
-  color: blue;
+  background-color: #66FF66;
 } 
+
+td.parNotAllowed{  
+  font-weight: bold;
+  background-color: Yellow !important;
+} 
+
 
 
 
@@ -524,7 +509,6 @@ h1.jsuSample{  /* Title of the samples*/
   font-weight: bold;
   font-size: 20pt ;
 }	
-
 
 
 select.parOption {  /* select that is displayed only when the par otion=1 (only for developers */

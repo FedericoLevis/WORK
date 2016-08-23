@@ -66,20 +66,20 @@ var GA_LABEL = {
 		ANAL: "Google Analytics",
 		ANAL_ALL: "TUTTE le Google Analytics",
 		ALL_LINK:"Tutte le Google Analitycs",
-		ALL_TITLE: "Mostra TUTTE le <b>GOOGLE_ANAL_NUM Google Analitycs</b> della Tabella:",
+		ALL_TITLE: "Mostra TUTTE le <b>GOOGLE_ANAL_NUM Google Analitycs</b> della Tabella:&nbsp ",
 		//---------- Filter Cat
 		FILTER_CAT_ALL: "TUTTE le Categorie", // For Filter
 		FILTER_CAT_TITLE: "FILTRO delle Categorie:",
 		FILTER_CAT_HEADER: "FILTRA le Categorie  da mostrare",
 		//---------- Filter Type (last par in https://goo.gl/#analytics/goo.gl/HnNqnM/all_time )
-		FILTER_TYPE_HEADER: "Analytics: ",  // displayed in Header
-		FILTER_TYPE_TITLE: "Tipo di  Google Analytics da visualizzare. Poi puo` esseer cambiato dalla Google Analitycs page",  //Filter Tip
+		PAR_TIME_HEADER: "Analytics: ",  // displayed in Header
+		PAR_TIME_TITLE: "Tipo di  Google Analytics da visualizzare. Poi puo` esseer cambiato dalla Google Analitycs page",  //Filter Tip
 		// -- Entries in Filter
-		FILTER_TYPE_ALL: "Tutto il periodo",
-		FILTER_TYPE_MONTH: "Ultimo Mese",
-		FILTER_TYPE_WEEK: "Ultima Settimana",
-		FILTER_TYPE_DAY: "Ultimo Giorno",
-		FILTER_TYPE_2HOURS: "Ultime 2 ore"
+		PAR_TIME_ALL: "Tutto il periodo",
+		PAR_TIME_MONTH: "Ultimo Mese",
+		PAR_TIME_WEEK: "Ultima Settimana",
+		PAR_TIME_DAY: "Ultimo Giorno",
+		PAR_TIME_2HOURS: "Ultime 2 ore"
 };
 
 
