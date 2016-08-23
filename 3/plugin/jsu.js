@@ -43,7 +43,8 @@ requirejs.config({
         'loadingDiv': '2/core/loadingDiv',
         'cValidate': '6/core/cValidate',
         'lan': '6/locale/EN',
-        'popup': '2/core/IEPopup'
+        'popup': '2/core/IEPopup',
+        'prettify': '2/core/prettify'
     },
     shim: {
       'core/jslog': ['core/dom-drag']
@@ -58,7 +59,7 @@ require([ // First 3 always present
          'core/util',							
          'core/date',							
          'core/tooltip',
-         'core/prettify/prettify-jsu',
+         'prettify/prettify-jsu',
          'core/googleAnal',
          'popup/Popup',
          'loadingDiv',							

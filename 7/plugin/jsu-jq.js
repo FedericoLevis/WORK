@@ -37,6 +37,7 @@ requirejs.config({
 			  'cValidate': '6/core/cValidate',
 			  'lan': '6/locale/EN',
         'popup': '4/JQPopup',
+        'prettify': '2/core/prettify',
         'jquery': '7/externalPlugin/jquery' + externalPluginVersion
     },
     shim: {
@@ -53,7 +54,7 @@ require([ // First 3 always present
          'core/util',							
          'core/date',							
          'core/tooltip',
-         'core/prettify/prettify-jsu',
+         'prettify/prettify-jsu',
          'core/googleAnal',
          'popup/Popup',
          'loadingDiv',							
