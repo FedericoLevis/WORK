@@ -1,0 +1,298 @@
+
+/* 
+========================================================================================= <BR/> 
+<b>File:</b>      core/core.css <BR/>
+<b>Author:</b>        <a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     CSS for JSU prettify=jsu.js  <BR/>   
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+========================================================================================= <BR/> 
+*/
+
+
+
+/* plain text */
+.pln {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* string content */
+.str {
+  color: blue;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a keyword */
+.kwd {
+  color: red;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* a comment */
+.com {
+  color: #006633;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* a type name */
+.typ {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a literal value */
+.lit {
+  color: #6600CC;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* punctuation */
+.pun {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* lisp open bracket */
+.opn {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* lisp close bracket */
+.clo {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* a markup tag name */
+.tag {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a markup attribute name */
+.atn {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a markup attribute value */
+.atv {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a declaration */
+.dec {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* a variable name */
+.var {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* a function name */
+.fun {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.important
+{
+    font-weight: bold;
+    color: #950B02;
+}
+
+.yes-def {
+    text-indent: -1000px;
+}
+
+.type-signature {
+    color: #aaa;
+}
+
+.name, .signature {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.details { margin-top: 14px; border-left: 2px solid #DDD; }
+.details dt { width: 120px; float: left; padding-left: 10px;  padding-top: 6px; }
+.details dd { margin-left: 70px; }
+.details ul { margin: 0; }
+.details ul { list-style-type: none; }
+.details li { margin-left: 30px; padding-top: 6px; }
+.details pre.prettyprint { margin: 0 }
+.details .object-value { padding-top: 0; }
+
+.description {
+    margin-bottom: 1em; 
+    margin-top: 1em; 
+}
+
+.code-caption
+{
+    font-style: italic;
+    font-size: 107%;
+    margin: 0;
+}
+
+/* The Div
+*/
+.prettyprint
+{
+    border: 0px;
+    width: 100%;
+    overflow: no;  /* auto */
+}
+
+.prettyprint.source {
+    width: inherit;
+}
+
+.prettyprint code
+{
+    font-size: 100%;
+    line-height: 18px;
+    display: block;
+    padding: 4px 12px;
+    margin: 0;
+    background-color: #fff;
+    color: #4D4E53;
+}
+
+.prettyprint code span.line
+{
+  display: inline-block;
+}
+
+.prettyprint.linenums
+{
+  padding-left: 70px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prettyprint.linenums ol
+{
+  padding-left: 0;
+}
+
+.prettyprint.linenums li
+{
+  border-left: 3px #ddd solid;
+}
+
+.prettyprint.linenums li.selected,
+.prettyprint.linenums li.selected *
+{
+  background-color: lightyellow;
+}
+
+.prettyprint.linenums li *
+{
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.params, .props
+{
+    border-spacing: 0;
+    border: 0;
+    border-collapse: collapse;
+}
+
+/* JSU font */
+div.prettyfy{
+    font-size: 13px;
+}
+
+.params .name, .props .name, .name code {
+    color: #4D4E53;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 100%;
+}
+
+.params td, .params th, .props td, .props th
+{
+    border: 1px solid #ddd;
+    margin: 0px;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 6px;
+    display: table-cell;
+}
+
+.params thead tr, .props thead tr
+{
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.params .params thead tr, .props .props thead tr
+{
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.params th, .props th { border-right: 1px solid #aaa; }
+.params thead .last, .props thead .last { border-right: 1px solid #ddd; }
+
+.params td.description > p:first-child,
+.props td.description > p:first-child
+{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.params td.description > p:last-child,
+.props td.description > p:last-child
+{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.disabled {
+    color: #454545;
+}
+
+
