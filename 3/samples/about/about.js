@@ -658,7 +658,7 @@ function downloadFree(event){
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var szTipFrame =	'<iframe width="1030" height="600" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	var szTipFrame =	'<iframe width="1030" height="650" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 1070,
 		 szTitle:'Download FREE JSU.zip',
@@ -731,7 +731,7 @@ function downloadTip(event,szDownloadTipType){
 		  '  <td><label class="tipWarnBold">FREE JSU.zip has some limitation: </label><ul>' +
 			'    <li>JS Code Obfuscated</li>' +
 			'    <li>NOT All Features are present and there are some limitation</li>' +
-			'    <li>JS Code documentation is not completed as in FULL JSU</li>' +
+			'    <li>JS Code documentation is not so detailed and completed like FULL JSU</li>' +
 			'  <ul/> ' +
 			'  </td> ' +
 		  '</tr></table> </div>';

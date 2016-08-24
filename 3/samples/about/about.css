@@ -217,7 +217,7 @@ h1.jsuDownload{  /* inside the Title */
   margin-bottom: 0px;
   font-family: Arial-Black ;
   font-weight: bold ;
-  font-size: 24pt ;
+  font-size: 18pt ;
 } 
 
 
@@ -430,7 +430,7 @@ input.downloadFree:hover, input.downloadPay:hover,input.downloadFreeExecute:hove
 .jsuFeatPresentBig{ /* FREE */
   font-family: Verdana;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 13px;
   color: #000000;
   background-color: #66FF66;    
 }
@@ -445,7 +445,7 @@ input.downloadFree:hover, input.downloadPay:hover,input.downloadFreeExecute:hove
 .jsuFeatAbsentBig{ /* NOT FREE */
   font-family: Verdana;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   color: #FFD700;
   background-color: black;    
 }
@@ -454,7 +454,7 @@ input.downloadFree:hover, input.downloadPay:hover,input.downloadFreeExecute:hove
 .jsuFeatBig{ 
   font-family: Verdana;
   font-weight: bold;
-  font-size: 14px !important;
+  font-size: 13px !important;
 }
 
 
