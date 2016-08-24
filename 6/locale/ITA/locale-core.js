@@ -37,7 +37,7 @@ var VALIDATE_MSG={
 var LOADING_DIV_MSG={
 	cancelBtn: "Annulla",	
   working: "<b>In Esecuzione</b></BR>Attendere Prego...",
-  sec: " sec"
+  sec: " sec",
   startTime: "Partenza alle: ",
   elapsed: " - Trascorsi: ",
   sec: " sec"
@@ -50,6 +50,37 @@ var LOADING_DIV_MSG={
 var TIP_BTN_CLOSE = "Chiudi"; 
 var TIP_DEF_JS_TITLE = "Codice Sorgente JS";
 var TIP_BTN_CLOSE_TITLE = "Click o ESC per Chiudere il Tooltip";
+
+
+//GoogleAnal Label
+var GA_LABEL = {
+		DEF_TITLE: "Google Analitycs",
+		DEF_HEADER: 'Click Il Link <b><u>Google Analytics</u></b> per aprire la pagina delle Google Analitycs relative all\'URL selezionato</b>',
+		DEF_FOOTER: '<b>NOTE sulle Google Analitycs:</b><ul>' +
+		'<li>Sole le pagine caricate tramite lo <b><i>Short URL</i></b> sono conteggiate. Le pagine caricate con il <b><i>LongUrl</i></b> non vengono conteggiate</li>' +
+		'<li>Sembra che sia presente un <i>Defect</i> nella Google Analytics: <b>le pagine caricate con IE non vengono conteggiate</b>, quindi in valore reale dei contatori e` piu` elevato di quanto visualizzato.</li></ul>',
+		CAT: "Categoria",
+		DESC: "Descrizione URL",
+		LONG_URL: "Long URL",
+		SHORT_URL: "Short URL",
+		ANAL: "Google Analytics",
+		ANAL_ALL: "TUTTE le Google Analytics",
+		ALL_LINK:"Tutte le Google Analitycs",
+		ALL_TITLE: "Mostra TUTTE le <b>GOOGLE_ANAL_NUM Google Analitycs</b> della Tabella:&nbsp ",
+		//---------- Filter Cat
+		FILTER_CAT_ALL: "TUTTE le Categorie", // For Filter
+		FILTER_CAT_TITLE: "FILTRO delle Categorie:",
+		FILTER_CAT_HEADER: "FILTRA le Categorie  da mostrare",
+		//---------- Filter Type (last par in https://goo.gl/#analytics/goo.gl/HnNqnM/all_time )
+		PAR_TIME_HEADER: "Analytics: ",  // displayed in Header
+		PAR_TIME_TITLE: "Tipo di  Google Analytics da visualizzare. Poi puo` esseer cambiato dalla Google Analitycs page",  //Filter Tip
+		// -- Entries in Filter
+		PAR_TIME_ALL: "Tutto il periodo",
+		PAR_TIME_MONTH: "Ultimo Mese",
+		PAR_TIME_WEEK: "Ultima Settimana",
+		PAR_TIME_DAY: "Ultimo Giorno",
+		PAR_TIME_2HOURS: "Ultime 2 ore"
+};
 
 
 //---------------- SORT

@@ -44,10 +44,46 @@ var LOADING_DIV_MSG={
   	
 };  	
 
-//----------------------------------------- TOOLTIP
+//-------------------------------------------------------------------------------------------------
+//								TOOLTIP
+//-------------------------------------------------------------------------------------------------
 var TIP_BTN_CLOSE = "Close";
 var TIP_BTN_CLOSE_TITLE = "Click or ESC to Close the Tooltip";
-var TIP_DEF_JS_TITLE = "JS Source Code";
+var TIP_DEF_CODE_TITLE =  "Source Code";
+
+//============================================ GOOGLE ANALYTICC
+
+// GoogleAnal Label
+var GA_LABEL = {
+		DEF_TITLE: 'Google Analitycs',
+		DEF_HEADER: 'Click <u><b>Google Analytics</b></u> Links to show the relative <b>Google Analitycs Page</b>',
+		DEF_FOOTER: '<b>NOTEs about Google Analitycs:</b><ul>' +
+                '   <li>Only the Pages loaded with the <b><i>ShortUrl</i></b> are counted. The pages loaded with the <b><i>LongUrl</i></b> are not counted</li>' +
+                '   <li>For Google Analytics limitation the <b>pages loaded by IE are not counted</b>; therefore the real counter should be greater than the ones displayed.</li></ul>',
+		CAT: "Category",
+		DESC: "URL Description",
+		LONG_URL: "Long URL",
+		SHORT_URL: "Short URL",
+		ANAL: "Google Analytics",
+		ANAL_ALL: "ALL Google Analytics",
+		ALL_LINK: "All Previous Google Analitycs",
+		ALL_TITLE: "Show ALL the <b>GOOGLE_ANAL_NUM Google Analitycs</b> of the Table:&nbsp;",
+		SHOW_SHORT_URL: "Show ShortUrl",
+    //---------- Filter Cat
+		FILTER_CAT_HEADER: "Categories FILTER:",  // displayed in Header
+		FILTER_CAT_TITLE: "FILTER the Categories to display",  //Filter Tip
+		FILTER_CAT_ALL: "ALL Categories",  // Entry in Filter
+		//---------- Filter Type (last par in https://goo.gl/#analytics/goo.gl/HnNqnM/all_time )
+		PAR_TIME_HEADER: "Analytics TYPE: ",  // displayed in Header
+		PAR_TIME_TITLE: "Initial Analytics TYPE displayed. Then it can be changed form Google Analitycs page",  //Filter Tip
+		// -- Entries in Filter
+		PAR_TIME_ALL: "All Time",
+		PAR_TIME_MONTH: "Last Month",
+		PAR_TIME_WEEK: "Last Week",
+		PAR_TIME_DAY: "Last Day",
+		PAR_TIME_2HOURS: "Last 2 Hours"
+};
+
 
 
 //----------------------------------------- SORT

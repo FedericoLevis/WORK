@@ -1212,7 +1212,7 @@ function jsuGoogleAnalList (event){
     	bShortUrl: false,   // ShortUrl not visible at startup
     	bLongUrl: false,  // LongUrl not visible at startup
     	szTitle:'JSU Google Analitycs',
-    	iTipWidth: 1100  // Tip Width   
+    	iWidth: 1100  // Tip Width   
     });
   
   
