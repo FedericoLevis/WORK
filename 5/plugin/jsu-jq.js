@@ -37,7 +37,7 @@ requirejs.config({
 			  'cValidate': '6/core/cValidate',
 			  'lan': '6/locale/EN',
         'popup': '4/JQPopup',
-        'prettify': '2/core/prettify',
+        'prettify': '2/core',
         'jquery': '7/externalPlugin/jquery' + externalPluginVersion
     },
     shim: {

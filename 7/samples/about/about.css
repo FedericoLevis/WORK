@@ -77,13 +77,20 @@ input.playVideoSmall {  /* PlayVideo for About */
   font-weight: bold; 
   font-size: 13px;    
 } 
-.allSampleLimit {
+.allSampleLimit { /* Link about Feature Limit */
   color: blue; 
   font-weight: bold; 
   font-size: 10px;
   /* background-color: yellow !important; */
 }      
  
+.featSampleLimit { /* Link about Feature Limit */
+  color: blue; 
+  font-weight: bold; 
+  font-size: 12px;
+  align: left;
+  /* background-color: yellow !important; */
+}      
 
 
 table.jsuHeader, table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
@@ -361,55 +368,52 @@ label.aboutSourceJSUAPI{
 }
 
 
-input.downloadFree, input.downloadPay {  /* common for download buttons*/
+input.downloadFree, input.downloadFreeUp, input.downloadPay {  /* common for download buttons*/
   font-weight: bold;
   cursor: pointer;
-  align:left;
+  width: 146px;
+  height: 27px;
+  cursor: pointer;
 }
 
-input.downloadFree,input.downloadFreeUp {  /* Go to the download Page */
-  height: 27px;
-  width: 210px;
-  cursor: pointer;
+input.downloadFree, input.downloadFreeUp   {  /* common for download buttons*/
   margin-left:100px;
   margin-right: 0px;  
-}
-input.downloadFree{
-  background: Yellow url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFree.png) no-repeat center center;
-}
-input.downloadFreeUp {  /* Close  the download Page */
-  background: Yellow url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFreeUp.png) no-repeat center center;
+}  
+
+input.downloadFree  {  
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFree.png) no-repeat right center;  
 }
 
+input.downloadFreeUp  {  
+ background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFreeUp.png) no-repeat right center; 
+ /* background: gray url(../../images/about/downloadFreeUp.png) no-repeat center center; */
+}
+
+
 input.downloadPay {
-  height: 27px;
-  width: 165px;
-  cursor: pointer;
+  width: 150px;
   margin-left:  50px;
   margin-right: 0px;  
-  background: cyan url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadPay.png) no-repeat right center;
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadPay.png) no-repeat right center;
 }
 
 
 input.downloadFreeExecute {  /* button that execute the download */
-    height: 80px;
-    width: 485px;
+    height: 69px;
+    width: 342px;
     cursor: pointer;
     background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFreeExecute.png) no-repeat right center;
 }
 
 
-input.downloadFree,input.downloadFreeUp, 
-input.downloadPay,input.downloadPayUp, 
-input.downloadFreeExecute,input.downloadFreeExecuteUp 
+input.downloadFree, input.downloadFreeUp, input.downloadPay,input.downloadFreeExecute
 {
     border: 2px solid gray;
     border-style: ridge;
 } 
 
-input.downloadFree:hover, input.downloadFreeUp:hover, 
-input.downloadPay:hover, input.downloadPayUp:hover, 
-input.downloadFreeExecute:hover, input.downloadFreeExecuteUp:hover 
+input.downloadFree:hover, input.downloadPay:hover,input.downloadFreeExecute:hover, input.downloadFreeUp:hover 
 {
     border: 2px solid #e0e0e0;
     border-style: ridge;

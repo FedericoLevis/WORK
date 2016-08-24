@@ -1,4 +1,4 @@
-/* BASE_PATH fisso e punat a dove sono sparpagliati i vari file */
+/* BASE_PATH fisso e punta a dove sono sparpagliati i vari file */
 
 
 
@@ -44,7 +44,7 @@ requirejs.config({
         'cValidate': '6/core/cValidate',
         'lan': '6/locale/EN',
         'popup': '2/core/IEPopup',
-        'prettify': '2/core/prettify'
+        'prettify': '2/core'
     },
     shim: {
       'core/jslog': ['core/dom-drag']

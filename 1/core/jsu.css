@@ -22,151 +22,6 @@ This file may be freely distributed under the MIT license.   <BR/>
 
 
 
-
-/*---
-LoadinDiv API: CSS used in loadingDiv.js 
----
-<b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
-<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
-<b>CSS:</b> <ul>
- <li>``div.loadingDivContainer``   The Main DivContainer </li>
- <li>``div.loadingDiv``   The loadingDiv in The Middle of the Page, with the Border </li>
- <li>``div.loadingDivContainer``   The Main DivContainer </li>
- <li>``table.loadingDiv``   The Main loadingDiv Table </li>
- <li>``div.loadingDivGif`` /The Loading Gif on the Left in the Box </li>
- <li>...
-</ul> 
-
-<BR/><b>Examples:</b>
-```html
-<div id="loadingDivContainer" class="loadingDivContainer" >  
-  <table width="100%" height="100%">  
-    <tr> <td align="center">  
-      <div  id="loadingDiv" class="loadingDiv">  
-         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">  
-            <tr class="loadingDivTitle">  
-              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>  
-            </tr>  
-            <tr>   
-              <td id="loadingDivTdGif" align="left" width="80px">  
-                <div id="loadingDivGif" class="loadingDivGif" > </div>  
-              </td>   
-              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">  
-                 <b>Working</b></BR>Please Wait...  
-              </td>  
-            </tr>  
-            <tr>  
-               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >  
-                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />  
-               </td>  
-            </tr>  
-            <tr>  
-               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter">  
-                 Elapsed Time: 10 sec  
-               </td>  
-            </tr>  
-        </table>  
-      </div>  
-    </td> </tr>  
-  </table>  
-</div> 
-```
-
-*/
-
-
-div.loadingDivContainer { /* The Main DivContainer that cover the Window*/
-  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
-  height: 110%;  /* DEFAULT */
-  width: 110%; 
-  z-index: 100; 
-  background-color: white;
-  position: absolute; 
-  top:0px; 
-  left: 0px;  
-  z-index: 100;
-}
-
-/* Overlays TEST */
-div.overlayTest { /* The Main DivContainer that cover the Window*/
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #aaaaaa;
-  opacity: .3;
-  filter: Alpha(Opacity=30); /* support: IE8 */
-}  
-
-
-
-
-div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
-  z-index: 101;
-  width: 300px; 
-  border-style:groove;
-  border-width:5px;
-  background-color: #EBEBEB; 
-  display: block;
-  z-index: 101;
-}
-
-
-
-table.loadingDiv{ /* The Main loadingDiv Table  */
-  text-align: left;
-  font-family: Verdana;
-  font-weight: normal;
-  font-size: 13px;
-  color: black; /* Black */
-  background-color: #EBEBEB;
-  border: 0px; 
-  border-collapse: collapse;
-  border-spacing: 0px;  
-  z-index: 102;
-}	
-
-tr.loadingDivTitle {
-  background-color: #0033FF; /* Blue */
-  color: #FFFFFF; /* White */
-  text-align: center;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-td.loadingDivTitle {
-	border-bottom: 2px solid black;  
-}
-
-td.loadingDivMsg{
-  color: blue; /* Black*/
-  text-align: left;
-  font-size: 12px;
-}
-
-
-td.loadingDivBtn {
-	padding-top: 10px;
-  padding-bottom: 10px; 
-}
-
-
-td.loadingDivFooter { /* Footer with Elapsed sec */
-	padding-left: 5px;
-	border-top: 1px solid black;  
-  background-color: #BABABA; 
-  color: black; /* Black */
-}
-
-div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
-  width: 110px;
-	height: 110px;
-	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
-	z-index: 110;  
-}
-
-
 /*----------------------------------------------------
 Tooltip: Tip with info image
 ---    
@@ -235,13 +90,6 @@ Tooltip: button for TipFix
      <b>input.tipFixArrow</b>  <input type="button" class="tipFixArrow"/> &nbsp;&nbsp; 
      <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
  </li><BR/>
- <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
-     <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
-     <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
- </li><BR/>
- <li> button to Go to the Page of Google Analytics:  
-     &nbsp;&nbsp; <b>input.googleAnal</b>  <input type="button" class="googleAnal"/>  
- </li><BR/>
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
  </li>
@@ -282,7 +130,7 @@ input.tipFixJSUp{
 
 input.tipFixCode, input.tipFixCodeUp{
     height: 28px;
-    width: 35px;
+    width: 40px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 4px; 
@@ -311,38 +159,6 @@ input.tipFixArrowUp { /* specific image for tipFixArrowUp */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center;
 }
 
-input.googleAnalList, input.googleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
-    height: 24px;
-    width: 225px;
-    border: 2px solid gray;
-    border-style: ridge;
-    cursor: pointer;
-}
-input.googleAnalList {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalList.png) no-repeat center center; 
-}
-input.googleAnalListUp {
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListUp.png) no-repeat center center; 
-}
-
-
-input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup insyead of TipFix*/
-    height: 24px;
-    width: 225px;
-    border: 2px solid gray;
-    border-style: ridge;
-    cursor: pointer;
-    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopup.png) no-repeat center center; 
-}
-
-
-input.googleAnal{  /* Button to show 1 page with Google Analytics  */
-    height: 23px;
-    width: 27px;
-    cursor: pointer;
-    margin-left: 2px; 
-   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnal.png) no-repeat center center;
-}
 
 
 
@@ -402,7 +218,7 @@ div.ttTitle{  /* default Title */
 .ttClose {   /* for close button on Top Right */
   color: #000000 !important;
 /*   font-family: Calibri !important; */
-  font-family: Arial Black !important;
+  font-family: "Arial Black", Gadget, sans-serif !important;
   font-weight: bold !important ;
   font-size: 13px !important;
   background-color: #D4D4D4 !important;  /* dark gray */
@@ -756,148 +572,201 @@ a.tipLinkDisabled{
   color: #99ffff !important; 
 } 
 
-
-
-
 /*---
-Validate API 
+Google Analytics button  
 ---
-<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html">JSU Tooltip API Doc</a>
 
-<b>CSS:</b> <ul>
- <li>``validateItemMandatory``     Item to validate: Mandatory </li>
- <li>``validateItemErr``     Item to validate: in Error State </li>
- <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
- <li>``div.validateErrSect``     div Section with all the ERRORS </li>
- <li>``label.validateErr``   label in Error State </li>
-
- <li>...
-</ul> 
-<BR/><b>Examples:</b>
 ```html
-<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
-<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
-<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
+<b>JSU GoogleAnalytics buttons :</b> <ul>
+ <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
+     <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
+     <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
+ </li><BR/>
+ <li> button to Go to the Page of Google Analytics:  
+     &nbsp;&nbsp; <b>input.googleAnal</b>  <input type="button" class="googleAnal"/>  
+ </li><BR/>
+
+</ul> 
 ```
 */
 
-
-.validateErrSect{ /* div Section with all the ERRORS  */
-  border: 5px solid red;
-  border-style: ridge; 
-  color: red;
-  display: none; /* default */
-  text-align: left;
-} 
-
-
-
-label.validateErr{ /* item in error State  */
-  border: 2px solid red;
-  color: red;
-} 
-
-input.validateInfo{ /* Info img  */
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
-  background-color: #19E4DD;
-  height: 14px;
-  width: 5px;
-  margin-left: 2px; 
-  cursor: pointer;
-  border: 1px solid #000;
+input.googleAnalList, input.googleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+}
+input.googleAnalList {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalList.png) no-repeat center center; 
+}
+input.googleAnalListUp {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListUp.png) no-repeat center center; 
 }
 
 
-.validateItemMandatory{ /* Item to validate: Mandatory */
-  border: 2px solid black;
-} 
-
-
-.validateItemErr{ /* Item to validate: in Error State */
-  border: 2px solid;
-  border-color: red !important
-} 
-
-
-.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
-   color: red;
-   font-style: italic;   
-   font-weight: normal;
-   margin-left: 5px;   
-   display: none;  // Default: not Visible
+input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup insyead of TipFix*/
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopup.png) no-repeat center center; 
 }
 
 
-
-.validateErrPopup{ /* Error Label in Popup*/
-  font-weight: normal;
-  color: red; /* */
+input.googleAnal{  /* Button to show 1 page with Google Analytics  */
+    height: 23px;
+    width: 27px;
+    cursor: pointer;
+    margin-left: 2px; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnal.png) no-repeat center center;
 }
-
-
-
 
 
 /*---
-JSLog API 
+LoadinDiv API: CSS used in loadingDiv.js 
 ---
+<b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
 <b>CSS:</b> <ul>
- <li>``h3.jslog`` `Header with Btn </li>
- <li>``div.jslogFooter``  Footer with Btn </li>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``div.loadingDiv``   The loadingDiv in The Middle of the Page, with the Border </li>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``table.loadingDiv``   The Main loadingDiv Table </li>
+ <li>``div.loadingDivGif`` /The Loading Gif on the Left in the Box </li>
  <li>...
 </ul> 
+
+<BR/><b>Examples:</b>
+```html
+<div id="loadingDivContainer" class="loadingDivContainer" >  
+  <table width="100%" height="100%">  
+    <tr> <td align="center">  
+      <div  id="loadingDiv" class="loadingDiv">  
+         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">  
+            <tr class="loadingDivTitle">  
+              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>  
+            </tr>  
+            <tr>   
+              <td id="loadingDivTdGif" align="left" width="80px">  
+                <div id="loadingDivGif" class="loadingDivGif" > </div>  
+              </td>   
+              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">  
+                 <b>Working</b></BR>Please Wait...  
+              </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >  
+                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />  
+               </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter">  
+                 Elapsed Time: 10 sec  
+               </td>  
+            </tr>  
+        </table>  
+      </div>  
+    </td> </tr>  
+  </table>  
+</div> 
+```
+
 */
 
 
-h3.jslog{ /* Header with Btn */
-  background:  #ccc;
-  color : #000;
-  cursor:  pointer;
-  font-size:  14px;
-  font-weight:  bold;
-  margin:   0 0 2px;
-  lineHeight: 14px;
+div.loadingDivContainer { /* The Main DivContainer that cover the Window*/
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 110%;  /* DEFAULT */
+  width: 110%; 
+  z-index: 100; 
+  background-color: white;
+  position: absolute; 
+  top:0px; 
+  left: 0px;  
+  z-index: 100;
+}
+
+/* Overlays TEST */
+div.overlayTest { /* The Main DivContainer that cover the Window*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  opacity: .3;
+  filter: Alpha(Opacity=30); /* support: IE8 */
+}  
+
+
+
+
+div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
+  z-index: 101;
+  width: 300px; 
+  border-style:groove;
+  border-width:5px;
+  background-color: #EBEBEB; 
+  display: block;
+  z-index: 101;
+}
+
+
+
+table.loadingDiv{ /* The Main loadingDiv Table  */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 13px;
+  color: black; /* Black */
+  background-color: #EBEBEB;
+  border: 0px; 
+  border-collapse: collapse;
+  border-spacing: 0px;  
+  z-index: 102;
 }	
 
-
-
-div.jslogFooter{ /* Footer with Btn */
-  font-size:  12px;
-  /* textTransform = uppercase; */
-  font-weight:  bold;
-  margin:   0 0 2px;
-  lineHeight: 14px;
-  position: absolute;
-  bottom: 1px;
-  left: 1px;
-} 
-
-.jslogButton{
-  cursor: pointer;
-  font-size:  12px;
-  font-weight:  bold;
-  padding: 0 5px;     		
-}	
-
-label.jslogHeader {
+tr.loadingDivTitle {
+  background-color: #0033FF; /* Blue */
+  color: #FFFFFF; /* White */
+  text-align: center;
   font-weight: bold;
-  margin-left: 10px;
+  font-size: 14px;
 }
 
-label.jslogFooter{
-  font-weight: bold;
-  margin-left: 20px;
-  color: white;
+td.loadingDivTitle {
+	border-bottom: 2px solid black;  
+}
+
+td.loadingDivMsg{
+  color: blue; /* Black*/
+  text-align: left;
+  font-size: 12px;
 }
 
 
-select.jslog {
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 12px;
-	margin-left: 10px;
+td.loadingDivBtn {
+	padding-top: 10px;
+  padding-bottom: 10px; 
 }
 
+
+td.loadingDivFooter { /* Footer with Elapsed sec */
+	padding-left: 5px;
+	border-top: 1px solid black;  
+  background-color: #BABABA; 
+  color: black; /* Black */
+}
+
+div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
+  width: 110px;
+	height: 110px;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
+	z-index: 110;  
+}
 
 
 
@@ -1332,7 +1201,148 @@ td.PopupError,label.PopupError{
 
 
 /*---
-JSU: Detail table (e.g GoogleAnalList) 
+Validate API 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
+
+<b>CSS:</b> <ul>
+ <li>``validateItemMandatory``     Item to validate: Mandatory </li>
+ <li>``validateItemErr``     Item to validate: in Error State </li>
+ <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
+ <li>``div.validateErrSect``     div Section with all the ERRORS </li>
+ <li>``label.validateErr``   label in Error State </li>
+
+ <li>...
+</ul> 
+<BR/><b>Examples:</b>
+```html
+<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
+<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
+<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
+```
+*/
+
+
+.validateErrSect{ /* div Section with all the ERRORS  */
+  border: 5px solid red;
+  border-style: ridge; 
+  color: red;
+  display: none; /* default */
+  text-align: left;
+} 
+
+
+
+label.validateErr{ /* item in error State  */
+  border: 2px solid red;
+  color: red;
+} 
+
+input.validateInfo{ /* Info img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+
+.validateItemMandatory{ /* Item to validate: Mandatory */
+  border: 2px solid black;
+} 
+
+
+.validateItemErr{ /* Item to validate: in Error State */
+  border: 2px solid;
+  border-color: red !important
+} 
+
+
+.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
+   color: red;
+   font-style: italic;   
+   font-weight: normal;
+   margin-left: 5px;   
+   display: none;  // Default: not Visible
+}
+
+
+
+.validateErrPopup{ /* Error Label in Popup*/
+  font-weight: normal;
+  color: red; /* */
+}
+
+
+
+
+
+/*---
+JSLog API 
+---
+<b>CSS:</b> <ul>
+ <li>``h3.jslog`` `Header with Btn </li>
+ <li>``div.jslogFooter``  Footer with Btn </li>
+ <li>...
+</ul> 
+*/
+
+
+h3.jslog{ /* Header with Btn */
+  background:  #ccc;
+  color : #000;
+  cursor:  pointer;
+  font-size:  14px;
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+}	
+
+
+
+div.jslogFooter{ /* Footer with Btn */
+  font-size:  12px;
+  /* textTransform = uppercase; */
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+} 
+
+.jslogButton{
+  cursor: pointer;
+  font-size:  12px;
+  font-weight:  bold;
+  padding: 0 5px;     		
+}	
+
+label.jslogHeader {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+label.jslogFooter{
+  font-weight: bold;
+  margin-left: 20px;
+  color: white;
+}
+
+
+select.jslog {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+
+
+/*---
+JSU core: Detail table (e.g GoogleAnalytics) 
 ---
 <b>CSS:</b> <ul>
  <li>``table.det`` Detail table with border</li>
@@ -1454,7 +1464,7 @@ tr.detFooter, td.detFooter {
 
 
 /*---
-util.js: .jsuAlarmingEl alarm for el   
+JSU core - util.js: .jsuAlarmingEl alarm for el   
 ---
 <b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
 <BR/><b>Examples:</b>
@@ -1469,7 +1479,7 @@ util.js: .jsuAlarmingEl alarm for el
 }
 
 /*---
-util.js: .jsuAlarmingEl  alarm img near a select   
+JSU core util.js: .jsuAlarmingEl  alarm img near a select   
 ---
 <b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
 <BR/><b>Examples:</b>
@@ -1486,7 +1496,7 @@ img.jsuAlarmingImg {
 
   
 /*---
-util.js: .jsuLoadingEl Loading for el   
+JSU core util.js: .jsuLoadingEl Loading for el   
 ---
 <b>CSS:</b> ``input.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShowIn1El">util.js loadingShowIn1El()</a>
 <BR/><b>Examples:</b>
@@ -1501,7 +1511,7 @@ util.js: .jsuLoadingEl Loading for el
 }
 
 /*---
-util.js Loading Gif with FillingRing 
+JSU core util.js Loading Gif with FillingRing 
 ---
 <b>CSS:</b> ``div.jsuLoading``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
 <BR/><b>Examples:</b>
@@ -1527,3 +1537,345 @@ div.jsuLoading {
 
 
 
+/*---
+prettify-jsu  JSU FEATURE to Hightlight Code
+---
+*/
+
+
+
+/* ---
+ prettify-jsu: plain text
+---
+*/
+.pln {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: string content
+---
+*/
+.str {
+  color: blue;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a keyword
+---
+*/
+.kwd {
+  color: red;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a comment
+---
+*/
+.com {
+  color: #006633;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ---
+ prettify-jsu: a type name
+---
+*/
+.typ {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a literal value
+---
+*/
+.lit {
+  color: #6600CC;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: punctuation
+---
+*/
+.pun {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: lisp open bracket
+---
+*/
+.opn {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: lisp close bracket
+---
+*/
+.clo {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a markup tag name
+---
+*/
+.tag {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a markup attribute name
+---
+*/
+.atn {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a markup attribute value
+---
+*/
+.atv {
+  color: #006400;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a declaration
+---
+*/
+.dec {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a variable name
+---
+*/
+.var {
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: a function name
+---
+*/
+.fun {
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ---
+ prettify-jsu: Specify class=linenums on a pre to get line numbering
+---
+*/
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.important
+{
+    font-weight: bold;
+    color: #950B02;
+}
+
+.yes-def {
+    text-indent: -1000px;
+}
+
+.type-signature {
+    color: #aaa;
+}
+
+.name, .signature {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.details { margin-top: 14px; border-left: 2px solid #DDD; }
+.details dt { width: 120px; float: left; padding-left: 10px;  padding-top: 6px; }
+.details dd { margin-left: 70px; }
+.details ul { margin: 0; }
+.details ul { list-style-type: none; }
+.details li { margin-left: 30px; padding-top: 6px; }
+.details pre.prettyprint { margin: 0 }
+.details .object-value { padding-top: 0; }
+
+.description {
+    margin-bottom: 1em; 
+    margin-top: 1em; 
+}
+
+.code-caption
+{
+    font-style: italic;
+    font-size: 107%;
+    margin: 0;
+}
+
+/* ---
+ prettify-jsu: The Div
+*/
+.prettyprint
+{
+    border: 0px;
+    width: 100%;
+    overflow: no;  /* ---
+ prettify-jsu: auto
+---
+*/
+}
+
+.prettyprint.source {
+    width: inherit;
+}
+
+.prettyprint code
+{
+    font-size: 100%;
+    line-height: 18px;
+    display: block;
+    padding: 4px 12px;
+    margin: 0;
+    background-color: #fff;
+    color: #4D4E53;
+}
+
+.prettyprint code span.line
+{
+  display: inline-block;
+}
+
+.prettyprint.linenums
+{
+  padding-left: 70px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prettyprint.linenums ol
+{
+  padding-left: 0;
+}
+
+.prettyprint.linenums li
+{
+  border-left: 3px #ddd solid;
+}
+
+.prettyprint.linenums li.selected,
+.prettyprint.linenums li.selected *
+{
+  background-color: lightyellow;
+}
+
+.prettyprint.linenums li *
+{
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.params, .props
+{
+    border-spacing: 0;
+    border: 0;
+    border-collapse: collapse;
+}
+
+/* ---
+ prettify-jsu: JSU font
+---
+*/
+div.prettyfy{
+    font-size: 13px;
+}
+
+.params .name, .props .name, .name code {
+    color: #4D4E53;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 100%;
+}
+
+.params td, .params th, .props td, .props th
+{
+    border: 1px solid #ddd;
+    margin: 0px;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 6px;
+    display: table-cell;
+}
+
+.params thead tr, .props thead tr
+{
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.params .params thead tr, .props .props thead tr
+{
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.params th, .props th { border-right: 1px solid #aaa; }
+.params thead .last, .props thead .last { border-right: 1px solid #ddd; }
+
+.params td.description > p:first-child,
+.props td.description > p:first-child
+{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.params td.description > p:last-child,
+.props td.description > p:last-child
+{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.disabled {
+    color: #454545;
+}
+
+
+
