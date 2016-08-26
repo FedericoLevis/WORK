@@ -70,7 +70,7 @@ var JSU_SORT_CODE_H = 220;
 
 var JSU_DISABLED = 'javascript:function() { return false; }';
 
-var JSU_GITHUB_DOWNLOAD = "https://github.com/FedericoLevis/JSU/archive/master.zip";
+var JSU_FREE_ZIP = "https://github.com/FedericoLevis/JSU/archive/master.zip";
 
 var JSU_BUY = JSU_DISABLED; 
 
@@ -655,11 +655,18 @@ function downloadPay(event){
 function downloadFree(event){
 	var fn = "[about.js downloadFree()] ";
 	jslog(JSLOG_DEBUG, fn + JSLOG_FUN_START);
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'DownloadFree',
+	  eventAction: 'BtnView',
+	  eventLabel: 'OpenPage'
+	});
+
 	UnTip();
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var szTipFrame =	'<iframe width="1030" height="650" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	var szTipFrame =	'<iframe width="1030" height="580" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 1070,
 		 szTitle:'Download FREE JSU.zip',
@@ -691,19 +698,30 @@ function downloadTipPay(event){
 
 
 /**
-* Tip for Button Download Free: make the download
+* Tip for Button Download Free: Execute the download of JSU.zip
 * 
 * @param event
 */
 function downloadFreeExecute(event){
 	var Fn = "[about.js downloadFreeExecute()] ";
-	jslog (JSLOG_JSU,Fn + JSLOG_FUN_START);
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_START);
 	UnTip();
-	jslog (JSLOG_JSU,Fn + "URL = " + JSU_GITHUB_DOWNLOAD);
-	jsuGoToURL(JSU_GITHUB_DOWNLOAD, true);
-	jslog (JSLOG_JSU,Fn + JSLOG_FUN_END);
+	jslog (JSLOG_DEBUG,Fn + "send event ");
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'DownloadFree',
+	  eventAction: 'master.zip',
+	  eventLabel: 'master.zip'
+	});
+
+	ga('send', 'pageView',JSU_FREE_ZIP);
 	
-  // location.href=JSU_GITHUB_DOWNLOAD;
+	
+	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_FREE_ZIP);
+	jsuGoToURL(JSU_FREE_ZIP, true);
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
+	
+  // location.href=JSU_FREE_ZIP;
 	
 }
 
