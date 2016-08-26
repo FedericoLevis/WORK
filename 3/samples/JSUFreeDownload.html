@@ -5,8 +5,6 @@
 <meta charset="utf-8"/>
 <meta name="description" content="JSU utility (JSU) - Download FREE JSU.zip: Tooltip SortTable, Popup" />
 <meta name="keywords" content="js, utility, JSU, download, free, tooltip, popup, sort, table, federico, levis" />
-</head>
-<body>
 
 <!-- JSUtility   -->
 <script>
@@ -24,20 +22,37 @@ var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU
 <!--  This sample  -->
 <link rel="stylesheet" href="./Sample.css" type="text/css">
 
+ <!-- ONLY for  GOOGLE ANALYTICS -  this part can be removed --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  if (typeof (JSU_GA_EN) != "undefined" && JSU_GA_EN){
+      ga('create', 'UA-83225633-1', 'auto');
+      ga('send', 'pageview');
+  } 
+</script>
+
+</head>
+<body>
+
+
 <div width="100%" align="center">
-<table class="det" BORDER="2" cellspacing="0" cellpadding="0" width="850px" style="border-spacing: 0px; border-collapse:separate;">
+<table class="det" BORDER="2" cellspacing="0" cellpadding="0" width="1000px" style="border-spacing: 0px; border-collapse:separate;">
    <tr>
      <td>
        <table class="detNoborder" cellspacing="0" cellpadding="0" style="border-spacing: 0px;border-collapse:separate;">   
 		    <tr>
-		      <td width="300px" align="center" class="jsuAbouTitle"> <img style="height:80px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+		      <td width="375px" align="center" class="jsuAbouTitle"> <img style="height:80px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
 		      <td width="250px" class="tipc tipTitle"><h1 class="jsuDownload">DOWNLOAD<BR/>FREE &nbsp;&nbsp;JSU.ZIP<BR/></h1></td>
-          <td align="right" class="jsuAboutTitle" width="300px" height="80px">  
+          <td align="center" class="jsuAboutTitle" width="375px" height="80px">  
               <table class="tipNoBorder" width="100%">
                <tr>
-                <td align="right" width="33%"><img class="jsuAboutJust" style="height:60px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutJust.gif"/></td>
-                <td align="center" width="34%"><img class="jsuAboutSimple" style="height:60px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutSimple.gif"/></td>
-                <td align="left" width="33%"><img class="jsuAboutUse" style="height:60px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutUse.gif"/></td>
+                <td align="center" width="33%"><img class="jsuAboutJust" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutJust.gif"/></td>
+                <td align="center" width="34%"><img class="jsuAboutSimple" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutSimple.gif"/></td>
+                <td align="center" width="33%"><img class="jsuAboutUse" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutUse.gif"/></td>
                </tr>
               </table>
           </td> 
@@ -85,7 +100,7 @@ var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU
     <td><label class="allSampleErr">NOT Available</label></td> 
   </tr>
   <tr>
-     <td colspan="2" class="tipl"> <BR/>
+     <td colspan="2" class="tipl tipNote"> <BR/>
 		<table class="tipNote"><tr> 
 		  <td class="tipNote"><input class="tipNote"></td> 
 		  <td><label class="tipWarnBold">FREE JSU is not Completed as FULL JSU</label><BR/>FREE JSU has JS obfuscated, some feature are missing and the features present can have <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitation</a>
@@ -98,7 +113,7 @@ var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU
 </table>
 </td>
 		<tr>
-		  <td class="detc" style="padding-top:20px;padding-bottom:20px;">
+		  <td class="detc" style="padding-top:20px;padding-bottom:20px;background-color:#ECECEC;">
 		     <a href="https://github.com/FedericoLevis/JSU/archive/master.zip" target="_blank"> 
               <input type="button" class="downloadFreeExecute" onmouseover="Tip(TIP_JSU_ZIP);" onmouseout="UnTip(event)"  />   
         	 </a> 

@@ -533,7 +533,11 @@ table.note, table.tipNote {  /* for the Note (e.g at the bottom of the Google An
 td.note,td.tipNote{
   vertical-align: top;
   padding-right:5px;
-}	
+}
+
+td.tipNote{
+  background-color: #ffffCC;
+}
 
 input.note{ /* Image for the Note */
     height: 18px;

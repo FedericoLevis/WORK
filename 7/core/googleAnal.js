@@ -26,7 +26,19 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
  * 					GLOBAl CONST
  ========================================================================================= */
 
-// Google Analytics parameter
+
+
+
+/**
+ *  Parameter szParTime of googleAnali.js API: 
+ *         <ul>
+ *            <li>GA_PAR_TIME.all_time</li>
+ *            <li>GA_PAR_TIME.month</li>
+ *            <li>GA_PAR_TIME.week</li>
+ *            <li>GA_PAR_TIME.day</li>
+ *            <li>GA_PAR_TIME.two_hours</li>
+ *       	 </ul>	     
+ */
 var GA_PAR_TIME={
 		all_time:'all_time',
 		month: 'month',
@@ -35,13 +47,9 @@ var GA_PAR_TIME={
 		two_hours: 'two_hours'
 };
 
-
-/*=========================================================================================
- * 					LOCAL  CONST
- ========================================================================================= */
-var TMO_GA_CLICK_SIMUL_MS = 200; 
-
-//Default GOOGLE
+/**
+ * Default Value of googleAnal.js par
+ */
 var GA_DEF = {
 		JSPOPUP: false,
 		ALL_LINK: true, // default: Present the Link to display all the pages of Google analytics together
@@ -51,6 +59,13 @@ var GA_DEF = {
 		LONG_URL: false,
 		PAR_TIME: GA_PAR_TIME.all_time
 };
+
+
+
+/*=========================================================================================
+ * 					LOCAL  CONST
+ ========================================================================================= */
+var TMO_GA_CLICK_SIMUL_MS = 200; 
 
 
 // Global For GoogleAnal
@@ -74,27 +89,39 @@ var GA_LINK_SEP="&nbsp;&nbsp;&nbsp;";
  * Display in a FixedTip/JQPopup an UserFriendly Table with the Link to Google Analytics. The Table is UserFriendly (Sort, Filters, Show/Hide Columns,..) 
  * @param arObjGoogleAnalList  {Array}   Array of Object that identify the Google Analytics. See Exmple Below  
  * @param event
- * @param [objOpt] {Object} Option: <ul>   
- *       <li> bJQPopup {Boolean} [false] true if the Box must be open inside a JQPopup. Else TipFix will be used (deafult) </li> 
- *       <li> szTitle{String}  default: 'Google Analytics'  </li> 
- *       <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
- *       <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
- *       <li> szHeaderTxt {String}: [DEF_GA_LABEL.HEADER] Message to put before the Table of Link to Analytics. You can set "" to remove it 
- *       <li> szFooterTxt {String}: [DEF_GA_LABEL.FOOTER] Message to put after the Table of Link to Analytics. You can set "" to remove it 
- *       <li> iWidth {Number}: [GA_DEF.WIDTH] Width  default GA_DEF.WIDTH (1200) </li> 
- *       <li> iTblMaxHeight {Number}:  [GA_DEF.TBL_MAX_HEIGHT] You can set this max-height of the Tbl to limit the Height of the Box, that is automatically.    </li>
- *       <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup: 
- *         <ul>
- *            <li>GA_PAR_TIME.all_time</li>
- *            <li>GA_PAR_TIME.month</li>
- *            <li>GA_PAR_TIME.week</li>
- *            <li>GA_PAR_TIME.day</li>
- *            <li>GA_PAR_TIME.two_hours</li>
- *       	 </ul>	     
- *       </li>
- *									  
- *    </ul> 
- * 	@example
+ * @param [objOpt] {Object}   
+     <table class="jsDocGood" border="3" cellpadding="2" cellspacing="2">
+        <tr ><td class="jsDocTitleGood">OPTION Always Available (FREE and FULL JSU)</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+	        <li> iWidth {Number}: [GA_DEF.WIDTH] Width  default GA_DEF.WIDTH (1200) </li> 
+	        <li> iTblMaxHeight {Number}:  [GA_DEF.TBL_MAX_HEIGHT] You can set this max-height of the Tbl to limit the Height of the Box, that is automatically.    </li>
+        </ul> 
+        </td></tr>
+     </table>
+     <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2">
+        <tr ><td class="jsDocTitleWarn">OPTION Available ONLY in FULL JSU</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+	        <li> bJQPopup {Boolean} [false] 
+	        <ul>
+		        <li> false: with his default value, the Box will be open in a FixedTip</li> 
+		        <li> true: the Box will be open inside a JQPopup  </li>
+	        </ul> 
+	        
+	        <li> szTitle{String}  default: 'Google Analytics'  </li> 
+	        <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
+	        <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
+	        <li> szHeaderTxt {String}: [DEF_GA_LABEL.HEADER] Message to put before the Table of Link to Analytics. You can set "" to remove it 
+	        <li> szFooterTxt {String}: [DEF_GA_LABEL.FOOTER] Message to put after the Table of Link to Analytics. You can set "" to remove it 
+	        <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup. 
+	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
+	        </li>
+        </ul> 
+        </td></tr>
+     </table>
+     
+  	@example
 	//--------------------------------------------------------- JS
 	function jsuGoogleAnalTip(event){   
 	  // Prepare arObjGoogleAnalList: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
@@ -122,26 +149,48 @@ function googleAnalList(arObjGoogleAnalList, event, objOpt){
 	ga_log (fn + TIPLOG_FUN_START);
 	ga_logObj (fn + "IN arObjGoogleAnalList", arObjGoogleAnalList);
 	ga_logObj (fn + "IN objOpt", objOpt);
+	// -------- FREE/FULL JSU Management -  only some Options are available in FREE Version: iWidth iTblMaxWidth
+	// We Setup objOptTmp with default values, useful for FREE JSU case
+	var objOptSet = {
+		iTipWidth: GA_DEF.WIDTH,
+		iWidth: GA_DEF.WIDTH,
+		// --- only in FULL
+		bJQPopup: GA_DEF.JSPOPUP,
+		szTitle: GA_LABEL.DEF_TITLE,
+	  bAllBtn : GA_DEF.ALL_LINK,
+	  szHeaderTxt : GA_LABEL.DEF_HEADER,
+	  szFooterTxt : GA_LABEL.DEF_FOOTER,
+	  bShortUrl: GA_DEF.SHORT_URL,
+	  bLongUrl : GA_DEF.LONG_URL,
+	  iTblMaxHeight : GA_DEF.TBL_MAX_HEIGHT,
+	  szParTime : GA_DEF.PAR_TIME
+	} 
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
-	// ------------- Common Fields for Popup and TipFix
-	if (objOpt.szTitle == undefined){	objOpt.szTitle = GA_LABEL.DEF_TITLE; }
-	if (objOpt.bJQPopup == undefined){objOpt.bJQPopup = GA_DEF.JSPOPUP; }
-	if (objOpt.bAllGoogleAnalLink == undefined){	objOpt.bAllBtn = GA_DEF.ALL_LINK; }
-	if (objOpt.szHeaderTxt == undefined){	objOpt.szHeaderTxt = GA_LABEL.DEF_HEADER; }
-	if (objOpt.szFooterTxt == undefined){	objOpt.szFooterTxt = GA_LABEL.DEF_FOOTER; }
-	if (objOpt.bShortUrl == undefined){	objOpt.bShortUrl= GA_DEF.SHORT_URL; }
-	if (objOpt.bLongUrl == undefined){	objOpt.bLongUrl = GA_DEF.LONG_URL; }
-	if (objOpt.iTblMaxHeight == undefined){	objOpt.iTblMaxHeight = GA_DEF.TBL_MAX_HEIGHT; }
-	if (objOpt.iWidth == undefined){
+	//----------- Set Fields Available also in FREE JSU
+	if (objOpt.iTblMaxHeight != undefined){	objOptSet.iTblMaxHeight = objOpt.iTblMaxHeight; }
+	if (objOpt.iWidth != undefined){
 		// set the 2 different fields
-		objOpt.iTipWidth= GA_DEF.WIDTH;
-		objOpt.iWidth= GA_DEF.WIDTH;
+		objOptSet.iTipWidth= objOpt.iWidth;
+		objOptSet.iWidth= objOpt.iWidth;
 	}
-	if (objOpt.szParTime == undefined){	objOpt.szParTime = GA_DEF.PAR_TIME; }
+	// ---------------- Fields avalialble only in FULL Version (This code will be removed in FREE JSU)
+	// ********************** FULL_JSU_START
+	if (objOpt.szTitle != undefined){	objOptSet.szTitle = objOpt.szTitle; }
+	if (objOpt.bJQPopup != undefined){objOptSet.bJQPopup = objOpt.bJQPopup; }
+	if (objOpt.bAllGoogleAnalLink != undefined){	objOptSet.bAllBtn = objOpt.bAllBtn; }
+	if (objOpt.szHeaderTxt != undefined){	objOptSet.szHeaderTxt = objOpt.szHeaderTxt; }
+	if (objOpt.szFooterTxt != undefined){	objOptSet.szFooterTxt = objOpt.szFooterTxt; }
+	if (objOpt.bShortUrl != undefined){	objOptSet.bShortUrl= objOpt.bShortUrl; }
+	if (objOpt.bLongUrl != undefined){	objOptSet.bLongUrl = objOpt.bLongUrl; }
+	if (objOpt.szParTime != undefined){	objOptSet.szParTime = objOpt.szParTime; }
+	// ********************** FULL_JSU_END
+	ga_logObj (fn + "objOptSet", objOptSet);
+
 	
-	if (objOpt.bJQPopup){
+	
+	if (objOptSet.bJQPopup){
 		// ------------- Specific options for Popup
 		// First of ALL: we check if Popup can be used:
 		if (typeof(Popup) == undefined || isIEPopup()){
@@ -150,22 +199,17 @@ function googleAnalList(arObjGoogleAnalList, event, objOpt){
 		ga_log ("JQPopup MODE is required. Popup() will be open");
 	}else{
 		// ------------- Specific options for TipFix
-		objOpt.bCloseBtn = true; 
-    objOpt.iTipWidth = objOpt.iWidth; 		
+		objOptSet.bCloseBtn = true; 
+    objOptSet.iTipWidth = objOptSet.iWidth; 		
 	}
-	if (objOpt.bShortUrl || objOpt.bShortUrl){
-		if (!ga_isFullVersion()){
-			return ga_featNotSupported ("PARAMETERS objOpt.bShortUrl and objOpt.bLongUrl");
-		}
-	} 
 	UnTip(event);  // Untip (if a Tip was currently displayed)	
 	ga_log ("Prepare HTML Msg with the Box Layout that will be displayed...");
 	// Set Global var
-	ga_googleAnal.iTblWidth = objOpt.iWidth - 20; // -20 for some lateral space
-	ga_googleAnal.iTblMaxHeight = objOpt.iTblMaxHeight;  
-	ga_googleAnal.bShortUrl = objOpt.bShortUrl;
-	ga_googleAnal.bLongUrl = objOpt.bLongUrl;
-	ga_googleAnal.szParTime = objOpt.szParTime;
+	ga_googleAnal.iTblWidth = objOptSet.iWidth - 20; // -20 for some lateral space
+	ga_googleAnal.iTblMaxHeight = objOptSet.iTblMaxHeight;  
+	ga_googleAnal.bShortUrl = objOptSet.bShortUrl;
+	ga_googleAnal.bLongUrl = objOptSet.bLongUrl;
+	ga_googleAnal.szParTime = objOptSet.szParTime;
 	ga_googleAnal.arObjGoogleAnalList = arObjGoogleAnalList; // Set in Global
 	// Get the possible categories, for filter
 	var arCat = new Array();
@@ -184,50 +228,52 @@ function googleAnalList(arObjGoogleAnalList, event, objOpt){
 		}
 	}
 	ga_logObj (fn + "arCat=", arCat);
-	ga_googleAnal.bJQPopup = objOpt.bJQPopup;
+	ga_googleAnal.bJQPopup = objOptSet.bJQPopup;
 	ga_googleAnal.arFilterCat = arCat;
 	ga_googleAnal.iSelFilterCat = 0; // ALL
 	var szTbl = '<table class="detNoBorder">';
 	// --------------------------- HEADER
 	
 	var szCbShowUrl = "";
-	/* FULL_JSU_START */
+	// ********************** FULL_JSU_START
 	var szShortChecked = (ga_googleAnal.bShortUrl) ? "checked" : "";  
 	var szLongChecked = (ga_googleAnal.bLongUrl) ? "checked" : "";  
 	szCbShowUrl =    '<input type="checkbox" id="cbShortUrl" ' + szShortChecked + ' onclick="ga_onclickShortUrl();"/>Show ShortUrl ' +
        '<input style="margin-left:20px" type="checkbox" id="cbLongUrl" ' + szLongChecked + ' onclick="ga_onclickLongUrl();" />Show LongUrl';
-	/* FULL_JSU_END */
+	// ********************** FULL_JSU_START
 	
 	szTbl += '<tr style="padding-top:5px;">' +
          '<td class="tiplBold" width="300px" style="padding-bottom:10px">'+ szCbShowUrl +
          '</td>' +
-	       '<td class="tipr" style="padding-right:10px;padding-bottom:10px">' + objOpt.szHeaderTxt + '</td>' +
+	       '<td class="tipr" style="padding-right:10px;padding-bottom:10px">' + objOptSet.szHeaderTxt + '</td>' +
 	   '</tr>';
 	// Prepare the div that will contain the GoogleTable
 	szTbl += '<tr><td colspan="2"> <div id="divTblGA" style="width:' + ga_googleAnal.iTblWidth + 'px;max-height:' 
-	   + ga_googleAnal.iTblMaxHeight + 'px;overflow:auto"></div></td></tr>';
+	   + ga_googleAnal.iTblMaxHeight + 'px;overflow:auto;border: 1px solid;"></div></td></tr>' +
+	  // Row for All Google Analytics Link  
+	  '<tr><td colspan="2"> <div id="divAllGA" align="left" width="100%" style="width:100%;margin-top:10px;"></div></td></tr>'; 
 	// Footer if present
-	if (objOpt.szFooterTxt != ""){
+	if (objOptSet.szFooterTxt != ""){
 		var szTblNote =		  '<table class="note googleAnalFooter"><tr> ' +
         '  <td><input class="note"></td> ' +
-        '  <td> ' + objOpt.szFooterTxt +'</td> ' +
+        '  <td> ' + objOptSet.szFooterTxt +'</td> ' +
         ' </tr></table> '; 
 	  szTbl += '<tr style="padding-top:7px;padding-bottom:7px;"><td colspan="2" class="tipl">' + szTblNote + '</td></tr>';
 	}  
  	szTbl += '</table>';
-	if (objOpt.bJQPopup){
-		// {szTitle: objOpt.szTitle}
+	if (objOptSet.bJQPopup){
+		// ********************** FULL_JSU_START
 		Popup (POPUP_TYPE.INFO,szTbl,{
 			  bShowImg:false, // always false
-			  szTitle: objOpt.szTitle, 
-			  iWidth: objOpt.iWidth+30  // +30 for best layout and avoid scroolbar
+			  szTitle: objOptSet.szTitle, 
+			  iWidth: objOptSet.iWidth+30  // +30 for best layout and avoid scroolbar
 			  });
+		// ********************** FULL_JSU_END
 	}
 	else{
 		// Show Tip With Empty Table
-		TipFix (szTbl,event,objOpt);
+		TipFix (szTbl,event,objOptSet);
 	}
-	// DAFARE rimettere
 	ga_googleAnalTblShow();
 	ga_log (fn + TIPLOG_FUN_END);
 }
@@ -341,17 +387,17 @@ function ga_googleAnalTblShow (){
 		}
 	}
 	szTbl += '</table></td></tr>';
+	var div = document.getElementById('divTblGA');
+	div.innerHTML = szTbl;
 
 	if (ga_googleAnal.iVisibleLink > 1){
 		// Add Div  with ALL Google Analytics
 		var szLabel = GA_LABEL.ALL_TITLE.replace ('GOOGLE_ANAL_NUM',ga_googleAnal.iVisibleLink);
-		var szLinkAll = '<div align="left" width="100%" style="width:100%;margin-top:10px;"> ' +
-		  '<label><b>' + szLabel +'</b></label>' +
-		  '<a id="a_gaAll" class="tipLink" href="javascript:ga_onclickAll();">' + GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_googleAnal.szParTime + '</a></div>';
-	  szTbl += szLinkAll;	
+		var szLinkAll =  '<label><b>' + szLabel +'</b></label>' +
+		  '<a id="a_gaAll" class="tipLink" href="javascript:ga_onclickAll();">' + GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_googleAnal.szParTime + '</a>';
+		var div = document.getElementById('divAllGA');
+		div.innerHTML = szLinkAll;
   }
-	var div = document.getElementById('divTblGA');
-	div.innerHTML = szTbl;
 	
 	// Create Sort only if cSortTable is loaded
 	if (bSort){
@@ -487,7 +533,7 @@ function ga_onclickAll(){
 }
 
 
-/**
+/*
  * Simulate a Click on anchor
  * 
  * @param iLink  0,1...
@@ -518,7 +564,7 @@ function ga_clickSimulate(iLink){
 }
 
 
-/**
+/*
  * Timer Elapsed
  */
 function ga_timerClickSimul(){

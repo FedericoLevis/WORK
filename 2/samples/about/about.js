@@ -140,6 +140,7 @@ var JSU_ID_SAMPLE_JQPOPUP  =	7;
 //----------------------- API DOC
 var JSU_LONG_URL_API  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html";
 var JSU_LONG_URL_API_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html";
+var JSU_LONG_URL_API_GA  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html";
 var JSU_LONG_URL_API_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/loadingDiv.js/index.html";
 var JSU_LONG_URL_API_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/index.html";
 var JSU_LONG_URL_API_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html";
@@ -1460,3 +1461,27 @@ function jsuGoToURL(szUrl,bNewWindow){
 
 
 
+
+
+/**
+ * Show SEc withh Error for apr not present in FREE JSU
+ * 
+ * @param iSample  1,2,    idex of Sample
+ * @param szErr
+ * @param szUrlDoc  Url of Document to go to see Feature
+ */
+function errFreeJsu(iSample,szErr){
+	var szSectMsg = '<table width="100%"><tr>' +
+  '  <td class="PopupImgWarning" width="80px"></td>' +
+  '  <td class="tipl errSample">' + szErr + '</td>' +
+  '</tr>' +
+  '<tr>' +
+  ' <td></td>' +
+  ' <td style="color:black">' +
+  '  For the details see: ' +
+   '<a class="tipLink" href="javascript:showJSUVersionParLimit();"><label class="featSampleLimit">JSU Options available only in FULL Version</label></a>' +  
+  ' </td></tr></table>';
+	var elErrSect = getElementById2('divSampleErr' + iSample,true);
+	elErrSect.innerHTML = szSectMsg;
+	elementShow (elErrSect,true);
+}
