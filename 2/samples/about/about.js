@@ -714,7 +714,7 @@ function downloadFreeExecute(event){
 	  eventLabel: 'master.zip'
 	});
 
-	ga('send', 'pageView',JSU_FREE_ZIP);
+	// ga('send', 'pageView',JSU_FREE_ZIP);
 	
 	
 	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_FREE_ZIP);
