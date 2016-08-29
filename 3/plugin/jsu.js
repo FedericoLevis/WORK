@@ -30,7 +30,6 @@ var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 //Only for TEST during development
 //var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
 
-var JSU_FREE=true; // used by samples
 var JSU_GA_EN = true; // Enable GoogleAnaltycs
 
 
@@ -57,7 +56,7 @@ requirejs.config({
 require([ // First 3 always present
          'lan/locale-core', 
          'core/jslog',            
-         'core/util',							
+         'core/jsuCmn','core/util',							
          'core/date',							
          'core/tooltip',
          'prettify/prettify-jsu',

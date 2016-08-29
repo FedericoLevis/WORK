@@ -2,10 +2,9 @@
 ========================================================================================= <BR/> 
 <b>File:</b> 			core/prettify/prettify-jsu.js <BR/>
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
-<b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>     JSU prettify API:   jsuPrettyPrint   <BR/>   
-<b>REQUIRED:</b>        JSU:  core/prettify/prettify-jsu.css 
+<b>REQUIRED:</b>        JSU:  prettify-jsu.css 
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
@@ -371,7 +370,8 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                        "cValidate,validateApply,setOption," +
                        "jslog,jslog_init,jslog_end,jslogObj,jslogDomEl,jslogDomElById,jslogElapsedTime," +
                        "loadingDivShow,loadingDivHide," +
-                       "Tip,UnTip,TipFix,TipFixCode,TipFixMultiCode,TipFixTextBox,TipFixGoogleAnalList," +
+                       "Tip,UnTip,TipFix,TipFixCode,TipFixMultiCode,TipFixTextBox," +
+                       "gaShortUrlList,gaShortUrlPage," +
                        "Popup," +
                        "alert,"+
                        // --- JSU CSS FUTURE: could be added also CSS keywords

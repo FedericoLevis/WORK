@@ -79,6 +79,10 @@ var JSU_BUY = JSU_DISABLED;
 var SAMPLE_MAX_NUM=4; // Max sample per Feature in the samples
 var SAMPLE_COL_ALL="ALL";
 
+
+var JSU_URL_VIDEO_TIP= "https://youtu.be/wpo2oM_L3ds";
+
+
 // NOTE: embed is visible in the Ember Tab of Youtube Video  
 
 var JSU_VIDEO_FRAME_TIP  =	'<iframe width="750" height="600" src="https://www.youtube.com/embed/wpo2oM_L3ds?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
@@ -109,6 +113,7 @@ var JSU_LONG_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/mas
 var JSU_LONG_URL_SAMPLE_ALL  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html";
 var JSU_LONG_URL_SAMPLE_SORT  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Sort/SortSample.html";
 var JSU_LONG_URL_SAMPLE_TIP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html";
+var JSU_LONG_URL_SAMPLE_GA  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html";
 var JSU_LONG_URL_SAMPLE_IEPOPUP  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/IEPopup/PopupSample.html";
 var JSU_LONG_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Loading/LoadingSample.html";
 var JSU_LONG_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/jslog/jslogSample.html";
@@ -117,6 +122,7 @@ var JSU_LONG_URL_SAMPLE_JSLOG  =	"https://rawgit.com/FedericoLevis/JSU/master/sa
 var JSU_SHORT_URL_DOWNLOAD_FREE  =	"https://goo.gl/HnNqnM";
 var JSU_SHORT_URL_SAMPLE_ALL  =	"https://goo.gl/MoY5nK";
 var JSU_SHORT_URL_SAMPLE_TIP  =	"https://goo.gl/1e6ju7";
+var JSU_SHORT_URL_SAMPLE_GA  =	"http://goo.gl/UzfnFK";
 var JSU_SHORT_URL_SAMPLE_SORT  = "https://goo.gl/hJm8vV";
 var JSU_SHORT_URL_SAMPLE_IEPOPUP  =	"https://goo.gl/1b2ely";
 var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://goo.gl/jttCME";
@@ -207,6 +213,13 @@ var URL_2 = "master";
 var URL_SEP = "/";
 
 
+//Div with hidden anchor
+var JSU_DIV_HIDDEN_ID = "jsuDivHidden";
+var JSU_HREF_HIDDEN_ID = "jsuHrefHidden";
+// init to whatver href, then it will be changed run-time
+var JSU_HREF_HIDDEN = '<a id="' + JSU_HREF_HIDDEN_ID +'" target="_blank" style="display:none" href="https://goo.gl/HnNqnM" >HIDDEN</a>'; 
+
+
 /* =============================================================================================
     			MAIN JSU TIP:  JSU_TIP_SECT2 
  ============================================================================================= */
@@ -227,54 +240,61 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
 '	  <tr >' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocTip();">Tooltip</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocTip(true);">Tooltip</a> </td>' +
 '		  <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>     </td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'		  <td class="tipc tipGoodBold" rowspan="6">No Plugin is required</b></td>' +
-'     <td class="tipc"><a href="javascript:showJSUVideoTip()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a></td> ' +  
+'		  <td class="tipc tipGoodBold" rowspan="7">No Plugin is required</b></td>' +
+'     <td class="tipc"><a href="javascript:jsuVideoTip()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
+'	  <tr >' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocGA(true);">Google Analytics</a> </td>' +
+'		  <td class="tipl">JSU API to build in few minutes a User Friendly List of Links to <b>Google Analytics</b></td>' + 
+'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
+'     <td class="tipc"><a href="javascript:jsuVideoGA()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Google Analytics Feature"/></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleGA();">Google Analytics Sample</a></td>' +
+'	  </tr>' +
 '	  <tr >' + 
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading();">Loading Div</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading(true);">Loading Div</a> </td>' +
 '		  <td class="tipl"><b>Loading Div</b> for Long Operation with <b>Loading Gif, Title, Message, ElapsedSec...</b></td>' +
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'     <td class="tipc"><a href="javascript:showJSUVideoLoading()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of LoadingDiv Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of LoadingDiv Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJSLog();" target="_blank">jslog</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJSLog(true);" target="_blank">jslog</a> </td>' +
 '		  <td class="tipl">Log from JS Code into an optional Window: <b>log Object, JSON, DOM ...</b></td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'     <td class="tipc"><a href="javascript:showJSUVideoJSLog()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JSLog Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoJSLog()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JSLog Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuSort();" target="_blank">Table Sort</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuSort(true);" target="_blank">Table Sort</a> </td>' +
 '		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'     <td class="tipc"><a href="javascript:showJSUVideoSort()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of SortTable Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoSort()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of SortTable Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuIEPopup();" target="_blank">IE Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuIEPopup(true);" target="_blank">IE Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal/Blocking Popup</b> designed ONLY for <b>IE</b><BR/><b> </td>' + 
 '     <td class="tipc"><input type="button"  class="browserIESmall" title="' + JSU_TITLE_BROWSER_IEPOPUP + '"/> </td> ' +
-'     <td class="tipc"><a href="javascript:showJSUVideoIEPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of IE Popup Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoIEPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of IE Popup Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate();" target="_blank">Validate</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate(true);" target="_blank">Validate</a> </td>' +
 '		  <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Section, Items, Popup ...</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'     <td class="tipc"><a href="javascript:showJSUVideoValidate()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Validate Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoValidate()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Validate Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup();" target="_blank">JQ Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup(true);" target="_blank">JQ Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
 '     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
-'     <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JQ Popup Feature"/></a></td> ' +  
+'     <td class="tipc"><a href="javascript:jsuVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JQ Popup Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>' +
 '	  </tr>' +
 '</table>';
@@ -333,7 +353,7 @@ function showJsuPopupAbout(){
 	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="1250px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '    <td><table class="tipNoBorder" width="100%"><tr>' +
-  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://raw.githubusercontent.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
+  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
   '      <td ><table class="tipNoBorder" width="100%"><tr>' +
   '        <td align="right" width="40%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
   '        <td align="center" width="20%"><img class="jsuAboutSimple" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutSimple.gif"/></td>' +
@@ -370,6 +390,7 @@ function aboutTipFixJSU(event,bShowAllSample){
   '          <td  align="left" class="jsuAboutTitle" width="40%"> <img class="jsuAboutTitle" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutTitle.png"/></td> ' +
   '          <td  align="left" class="jsuAboutTitle" width="27%">' +
   '            <table class="tipNoBorder" width="100%">' +
+  '		           <tr><td class="tipl jsuVersion">' + JSU_VERSION +  '</td></tr>' +
   '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC +'" target="_blank">JSU Feature documentation</a> </td></tr>' +
   '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_API +'" target="_blank">JSU API documentation</a> </td></tr>';
 	if (bShowAllSample){
@@ -807,55 +828,87 @@ function downloadTip(event,szDownloadTipType){
 
 /**
  * Open window with JSU Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDoc(){
-	jsuGoToURL(JSU_SHORT_URL_DOC);
+function jsuDoc(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC,bNewWindow);
 }
 
 
 /**
  * Open window with Validate Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocValidate(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_VALIDATE);
+function jsuDocValidate(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_VALIDATE,bNewWindow);
 }
 
 /**
  * Open window with Tip Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocTip(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_TIP);
+function jsuDocTip(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_TIP,bNewWindow);
 }
 /**
  * Open window with SortTable Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocSort(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_SORT);
+function jsuDocSort(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_SORT,bNewWindow);
 }
 /**
  * Open window with Loading Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocLoading(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_LOADING);
+function jsuDocLoading(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_LOADING,bNewWindow);
 }
 
 /**
  * Open window with JSLOG Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocJSLog(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_JSLOG);
+function jsuDocJSLog(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_JSLOG,bNewWindow);
 }
 /**
  * Open window with IEPopup Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocIEPopup(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_IEPOPUP);
+function jsuDocIEPopup(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_IEPOPUP,bNewWindow);
 }
 /**
  * Open window with JQPopup Documentation
+ * @param [bNewWindow] {Boolean} default true
  */
-function jsuDocJQPopup(){
-	jsuGoToURL(JSU_SHORT_URL_DOC_JQPOPUP);
+function jsuDocJQPopup(bNewWindow){
+	if (bNewWindow == undefined){
+		bNewWindow = true;
+	}
+	jsuGoToURL(JSU_SHORT_URL_DOC_JQPOPUP,bNewWindow);
 }
 
 
@@ -911,13 +964,15 @@ function onchange_sample(){
 
 
 /*
- * Manage optional URL PAR show_opt, useful only for developers. Called by all samples
- * 
+ * Common init par all samples, Called by all samples
+ *  - Manage optional URL PAR show_opt, useful only for developers. 
+ *  - show label of FREE Limits if we are in FREE JSU
+ *  - ....
  * GLOBAL
  *  url_par   set in this routine 
  */
-function manage_par_opt(){
-	var fn = "manage_par_opt() ";
+function initSampleCmn(){
+	var fn = "initSampleCmn() ";
 	try{
 		
 		//-----------------------------------------------------------
@@ -954,6 +1009,15 @@ function manage_par_opt(){
 		if (iParPeriod != undefined &&  iParPeriod != ""){
 			par_period = parseInt(iParPeriod);
 		}
+		// ----------------------------
+		if (isJsuFree()){
+		 // show Label with Limitition for FREE JSU
+	  		var el = getElementById2("sample_limit", false);
+	  		if (el != 0){
+		    	elementShow (el, true,"block");
+	  		}
+		}
+		
 	}catch (e) {
 		jslog (JSLOG_ERR,fn + "Exception: " + e.message);
 	}
@@ -1019,48 +1083,55 @@ function showSampleJQPopup(){
 /*
  * 
  */
-function showSampleLoading(){
-	jsuGoToURL(JSU_SHORT_URL_SAMPLE_LOADING);
+function showSampleLoading(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_LOADING,bNewWindow);
 }
 
 
 /*
  * 
  */
-function showSampleSort(){
-	jsuGoToURL(JSU_SHORT_URL_SAMPLE_SORT);
+function showSampleSort(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_SORT,bNewWindow);
 }
 /*
  * 
  */
-function showSampleTip(){
-	jsuGoToURL(JSU_SHORT_URL_SAMPLE_TIP);
-}
-
-/*
- * 
- */
-function showSampleJSlog(){
-	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JSLOG);
+function showSampleTip(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_TIP,bNewWindow);
 }
 
 /*
  * 
  */
-function showSampleIEPopup(){
-	jsuGoToURL(JSU_SHORT_URL_SAMPLE_IEPOPUP);
+function showSampleGA(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_GA,bNewWindow);
+}
+
+/*
+ * 
+ */
+function showSampleJSlog(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JSLOG,bNewWindow);
+}
+
+/*
+ * 
+ */
+function showSampleIEPopup(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_SAMPLE_IEPOPUP,bNewWindow);
 }
 
 
-function showJSUVersion(){
-	jsuGoToURL(JSU_SHORT_URL_VERSION);
+function showJSUVersion(bNewWindow){
+	jsuGoToURL(JSU_SHORT_URL_VERSION,bNewWindow);
 }
 
 /**
  * Go to the Page.par Free
  */
-function showJSUVersionParLimit(){
-	jsuGoToURL(JSU_LONG_URL_VERSION_PAR_LIMIT);
+function showJSUVersionParLimit(bNewWindow){
+	jsuGoToURL(JSU_LONG_URL_VERSION_PAR_LIMIT,bNewWindow);
 }
 
 
@@ -1117,18 +1188,18 @@ function setupState(){
  * @param iWidth
  * @returns
  */
-function showJSUVideo(szVideoFrame,szTitle,iWidth){
-	//  Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
-  jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
+function jsuVideo(szVideoFrame,szTitle,iWidth){
+	Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
+  // jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
 
 }
 
-function showJSUVideoTip(){
-	showJSUVideo (JSU_VIDEO_FRAME_TIP,"Tooltip Sample",800);
+function jsuVideoTip(bNewWindow){
+	jsuGoToURL(JSU_URL_VIDEO_TIP,bNewWindow);
 }
 
 
-function showJSUVideoLoading(){
+function jsuVideoLoading(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_LOADING,
@@ -1137,7 +1208,7 @@ function showJSUVideoLoading(){
 }
 
 
-function showJSUVideoSort(){
+function jsuVideoSort(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_SORT,
@@ -1148,7 +1219,7 @@ function showJSUVideoSort(){
 
 
 
-function showJSUVideojslog(){
+function jsuVideojslog(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSLOG,
@@ -1158,7 +1229,7 @@ function showJSUVideojslog(){
 
 
 
-function showJSUVideoJQPopup(){
+function jsuVideoJQPopup(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JQPOPUP,
@@ -1166,7 +1237,7 @@ function showJSUVideoJQPopup(){
   */    
 }
 
-function showJSUVideoIEPopup(){
+function jsuVideoIEPopup(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_IEPOPUP,
@@ -1175,7 +1246,7 @@ function showJSUVideoIEPopup(){
 }
 
 
-function showJSUVideoValidate(){
+function jsuVideoValidate(bNewWindow){
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_VALIDATE,
@@ -1201,10 +1272,11 @@ function jsuGoogleAnalList (event){
   
   // Prepare arObjGoogleAnal: only shortUrl is mandatory  
   // In this case we populate all fields
-  var arObjGoogleAnalList = [
+  var arObjGaList = [
        {shortUrl: JSU_SHORT_URL_DOWNLOAD_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_GA, longUrl: JSU_LONG_URL_SAMPLE_GA,cat:GA_CAT_SAMPLE_FREE, desc:'Google Analytics Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_LOADING, longUrl: JSU_LONG_URL_SAMPLE_LOADING, cat:GA_CAT_SAMPLE_FREE,desc:'LoadingDiv Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE_FREE,desc:'JSLog Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
@@ -1212,7 +1284,8 @@ function jsuGoogleAnalList (event){
        // --------------------------
        {shortUrl: JSU_SHORT_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC_FREE,desc:'JSU Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
-       {shortUrl: JSU_SHORT_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU LoadingDiv Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_GA, longUrl: JSU_LONG_URL_DOC_GA, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU Google Analytics Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC_FULL,desc:'JSU JSLog Doc'},
        {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_IEPOPUP, longUrl: JSU_LONG_URL_DOC_IEPOPUP, cat:GA_CAT_DOC_FULL,desc:'JSU IE Popup Doc'}
@@ -1227,7 +1300,7 @@ function jsuGoogleAnalList (event){
        
      ];
   // show the TipFix with the List of Link
-  googleAnalList(arObjGoogleAnalList,event,{
+  gaShortUrlList(arObjGaList,event,{
     	bShortUrl: false,   // ShortUrl not visible at startup
     	bLongUrl: false,  // LongUrl not visible at startup
     	szTitle:'JSU Google Analitycs',
@@ -1368,8 +1441,8 @@ function testExecute(){
 	var Fn = "[about.js testExecute()] ";
 	// URL under TEST
 	var arTestUrl = [JSU_SHORT_URL_DOWNLOAD_FREE
-	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_IEPOPUP
-	                 ,JSU_SHORT_URL_DOC,JSU_SHORT_URL_DOC_TIP,JSU_SHORT_URL_DOC_LOADING,JSU_SHORT_URL_DOC_SORT,JSU_SHORT_URL_DOC_VALIDATE
+	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_GA,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_IEPOPUP
+	                 ,JSU_SHORT_URL_DOC,JSU_SHORT_URL_DOC_TIP,JSU_SHORT_URL_DOC_GA,JSU_SHORT_URL_DOC_LOADING,JSU_SHORT_URL_DOC_SORT,JSU_SHORT_URL_DOC_VALIDATE
 	                 // ,JSU_SHORT_URL_SAMPLE_LOADING,JSU_SHORT_URL_SAMPLE_JSLOG,JSU_SHORT_URL_SAMPLE_JQPOPUP,JSU_SHORT_URL_SAMPLE_VALIDATE
 	                 // ,JSU_SHORT_URL_DOC_JSLOG, JSU_SHORT_URL_DOC_IEPOPUP, JSU_SHORT_URL_DOC_JQPOPUP
 	                 ];
@@ -1438,7 +1511,7 @@ function fakeClick(event, anchorObj) {
  * WE use an Hidden a tag, for compatibility with MObile (instead of using window.open)
  * 
  * @param szUrl
- * @param [bNewWindow] {Boolean} default true
+ * @param [bNewWindow] {Boolean} default false
  * @returns
  */
 function jsuGoToURL(szUrl,bNewWindow){
@@ -1450,7 +1523,15 @@ function jsuGoToURL(szUrl,bNewWindow){
 			bNewWindow = true;
 		}
 		jslog (JSLOG_JSU,fn + "bNewWindow=" + bNewWindow);
-		var aEl = getElementById2("href_hidden");
+		var aEl = document.getElementById(JSU_HREF_HIDDEN_ID);
+		if (aEl == undefined){
+			jslog(JSLOG_DEBUG,fn + "add " + JSU_HREF_HIDDEN_ID + " HIDDEN div and anchor to document.body");
+			divHidden = document.createElement("div");
+			divHidden.id = JSU_DIV_HIDDEN_ID;		
+			divHidden.innerHTML = JSU_HREF_HIDDEN;
+			document.body.appendChild(divHidden);
+			aEl = document.getElementById(JSU_HREF_HIDDEN_ID);
+		}
 		aEl.href = szUrl;
 		jslog (JSLOG_JSU,fn + "aEl.href=" + aEl.href);
 		aEl.target = (bNewWindow)? "_blank" : "_self";
@@ -1484,22 +1565,22 @@ function jsuGoToURL(szUrl,bNewWindow){
 /**
  * Show SEc withh Error for apr not present in FREE JSU
  * 
- * @param iSample  1,2,    idex of Sample
+ * @param szIdSectErr       Id of Sect Err to display
  * @param szErr
  * @param szUrlDoc  Url of Document to go to see Feature
  */
-function errFreeJsu(iSample,szErr){
+function errFreeJsu(szIdSectErr,szErr){
 	var szSectMsg = '<table width="100%"><tr>' +
-  '  <td class="PopupImgWarning" width="80px"></td>' +
+  '  <td class="PopupImgWarning" style="padding-top:10px;" width="80px"></td>' +
   '  <td class="tipl errSample">' + szErr + '</td>' +
   '</tr>' +
   '<tr>' +
   ' <td></td>' +
   ' <td style="color:black">' +
   '  For the details see: ' +
-   '<a class="tipLink" href="javascript:showJSUVersionParLimit();"><label class="featSampleLimit">JSU Options available only in FULL Version</label></a>' +  
+   '<a class="tipLink" href="javascript:showJSUVersionParLimit();">JSU Options available only in FULL Version</a>' +  
   ' </td></tr></table>';
-	var elErrSect = getElementById2('divSampleErr' + iSample,true);
+	var elErrSect = getElementById2(szIdSectErr,true);
 	elErrSect.innerHTML = szSectMsg;
 	elementShow (elErrSect,true);
 }

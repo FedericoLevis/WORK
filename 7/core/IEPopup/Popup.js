@@ -38,7 +38,7 @@ var POPUP_HTML="Popup.html";
 
 // Default Number of Item to disaplay in selectChoice for Multi. It can be changed with Opt
 var POPUP_DEF_MULTICHOICE_SIZE = 5;
-var POPUP_MAX_HEIGHT = 800;  
+var POPUP_MAX_HEIGHT = 900;  
 // var POPUP_MIN_HEIGHT = 160;  
 
 // ---------------------------------------- BROWSER
@@ -58,9 +58,12 @@ var POPUP_BROWSER_MODE_POPUP_URL = "POPUP_URL";
 // ------------------------- IEPopup configuration per BRowser
 //---------------- ENABLE/DISAMPLE POPUP in Browser: Popup ONLY for IE, Alert for Other
 var POPUP_BROWSER_IE_MODE = POPUP_BROWSER_MODE_POPUP;
-// var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_POPUP_URL;
 //changed to Alert because ShowModalDialg is deprecated in Firefox and it will be removed very soon
-var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_ALERT;  
+// Can be change for TEST
+var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_POPUP_URL;
+//var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_ALERT;  
+
+
 var POPUP_BROWSER_OTHER_MODE = POPUP_BROWSER_MODE_ALERT;
 
 
@@ -73,6 +76,11 @@ var POPUP_DEF_SHOW_TITLE = true;
 var POPUP_DEF_RESIZE = false;
 var POPUP_DEF_PROMPT_NUMBER_W = 50;
 var POPUP_DEF_PROMPT_STRING_W = 200;
+
+
+//---- log
+var PPLOG_FUN_START = "-------------- START";
+var PPLOG_FUN_END = "-------------- END";
 
 
  /* ====================================================================================================
@@ -173,12 +181,12 @@ var popup_bScroll = false;
 function pp_show(szPopupType,szMsgHtml,objOpt){
   var Fn = "[Popup.js pp_show] ";
   
-  pp_log (Fn + "------------------- START");
-  pp_log (Fn + "IN: szPopupType=" + szPopupType);
-  pp_logObj (Fn + "IN: objOpt=", objOpt);
+  jsu_log (Fn + "------------------- START");
+  jsu_log (Fn + "IN: szPopupType=" + szPopupType);
+  jsu_logObj (Fn + "IN: objOpt=", objOpt);
   var szBrowser = pp_getBrowser();
   var szBrowserMode = pp_getBrowserMode(szBrowser); 
-  pp_log (Fn + " szBrowser=" + szBrowser + "  szBrowserMode=" + szBrowserMode);
+  jsu_log (Fn + " szBrowser=" + szBrowser + "  szBrowserMode=" + szBrowserMode);
   if (szBrowserMode == POPUP_BROWSER_MODE_ALERT){
     return pp_showAlert(szPopupType,szMsgHtml);
   }
@@ -195,6 +203,9 @@ function pp_show(szPopupType,szMsgHtml,objOpt){
   if (objOpt != null){
     if (objOpt.iWidth != undefined && objOpt.iWidth != null && objOpt.iWidth){
       iWidth = objOpt.iWidth;
+    }
+    if (objOpt.iHeight != undefined && objOpt.iHeight != null && objOpt.iHeight){
+      iHeight = objOpt.iHeight;
     }
     if (objOpt.bScroll != undefined && objOpt.bScroll != null && objOpt.bScroll){
       szScroll = "scroll=yes;";  
@@ -219,17 +230,17 @@ function pp_show(szPopupType,szMsgHtml,objOpt){
   	
   
   var url = popupPathHtml + POPUP_HTML;
-  pp_logObj ("parIn",parIn);
+  jsu_logObj ("parIn",parIn);
   // Change Opacity of Underline Window, if required
   if (POPUP_OPACITY != 1){
     var body = document.getElementsByTagName("BODY")[0];
     var iOpacity = body .style.opacity;
-    pp_log ("From iOpacity=" + iOpacity + " To " + POPUP_OPACITY);
+    jsu_log ("From iOpacity=" + iOpacity + " To " + POPUP_OPACITY);
     body.style.opacity = POPUP_OPACITY ;
   }
   //============================================== 
   if (szBrowserMode == POPUP_BROWSER_MODE_POPUP){
-    pp_log ( Fn + szBrowser + " url=" + url + " szFeatures=" + szFeatures);
+    jsu_log ( Fn + szBrowser + " url=" + url + " szFeatures=" + szFeatures);
     loadingShow (true); 
     parIn.elLoading = loadingGetEl(); // Loading bElement (if Present, else 0)
     var retObj = window.showModalDialog(url, parIn, szFeatures);
@@ -250,7 +261,7 @@ function pp_show(szPopupType,szMsgHtml,objOpt){
       "directories:no;titlebar:no;toolbar:no;location:no;status:no;menubar:no;scroll=no;resizable=" + szResize +";";
     // ------------------- 
     url = url +  obj2URIQueryString(parIn);
-    pp_log ( Fn + szBrowser + "\nurl=" + url + "\nszFeatures=" + szFeatures);
+    jsu_log ( Fn + szBrowser + "\nurl=" + url + "\nszFeatures=" + szFeatures);
     var retObj = window.showModalDialog(url, window, szFeatures);
     if (retObj == undefined){
       // Close with x on Window
@@ -258,37 +269,16 @@ function pp_show(szPopupType,szMsgHtml,objOpt){
       retObj.retBtn   = POPUP_BTN.CLOSE;
     }
   }
-  pp_logObj ("retObj", retObj);
+  jsu_logObj ("retObj", retObj);
   // Restore original opacity
   if (POPUP_OPACITY != 1 && body != undefined){
-    pp_log ("Restore iOpacity=" + iOpacity);
+    jsu_log ("Restore iOpacity=" + iOpacity);
     body.style.opacity = iOpacity ;
   }  
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
   return retObj;
 }  
 
-
-/*
- * call jslog if it is defined
- * @param msg
- */
-function pp_log(msg){
-	if (typeof(jslog) == "function"){
-		jslog (JSLOG_JSU, msg);
-	}
-	//	alert (msg);
-}
-
-/*
- * call jslogObj if it is defined
- * @param msg
- */
-function pp_logObj(msg,obj){
-	if (typeof(jslogObj) == "function"){
-		jslogObj (JSLOG_JSU, msg,obj);
-	}
-}
 
 
 
@@ -311,7 +301,7 @@ function pp_showAlert(szPopupType,szMsgHtml){
   
   retObj.retBtn   = POPUP_BTN.CLOSE; // DEFAULT
   
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
   var szMsg =  msgHtml2Str (szMsgHtml);
   if (szPopupType == POPUP_TYPE.INFO || szPopupType == POPUP_TYPE.CONFIRM || szPopupType == POPUP_TYPE.ERR || szPopupType == POPUP_TYPE.WARN){
     alert (szMsg);       
@@ -349,7 +339,7 @@ function pp_getBrowser(){
       ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){     
     szBrowser = POPUP_BROWSER_TYPE_IE;
   }  
-  pp_log (Fn + "szBrowser=" + szBrowser + " -  navigator.appCodeName=" + navigator.appCodeName + "  navigator.appName=" + navigator.appName);
+  jsu_log (Fn + "szBrowser=" + szBrowser + " -  navigator.appCodeName=" + navigator.appCodeName + "  navigator.appName=" + navigator.appName);
   return szBrowser;
 }
 
@@ -379,7 +369,7 @@ function pp_getBrowserMode(szBrowser){
  */
 function pp_classInit(szPopupType){
   var Fn = "[Popup.js pp_classInit] ";
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
 
   // Get Class
   var szClassId = szPopupType;
@@ -388,17 +378,17 @@ function pp_classInit(szPopupType){
   }
   //---------------
   var szTitleClassName = POPUP_TITLE_CLASS_PREFIX + szClassId;
-  pp_log (Fn + "set PopupTblHea className=" + szTitleClassName);
+  jsu_log (Fn + "set PopupTblHea className=" + szTitleClassName);
   getElementById2("PopupTblHea").className = szTitleClassName;
   //---------------
   var szImgClassName = POPUP_IMG_CLASS_PREFIX + szClassId;
-  pp_log (Fn + "set PopupImg className=" + szImgClassName);
+  jsu_log (Fn + "set PopupImg className=" + szImgClassName);
   getElementById2("PopupImg").className = szImgClassName;
   //---------------
   var szTblMsgClassName = POPUP_TBLMSG_CLASS_PREFIX + szClassId;
-  pp_log (Fn + "set PopupTblMsg className=" + szTblMsgClassName);
+  jsu_log (Fn + "set PopupTblMsg className=" + szTblMsgClassName);
   getElementById2("PopupTblMsg").className = szTblMsgClassName;
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
 }
 
 
@@ -426,7 +416,6 @@ function pp_idIsVisible (szId){
  */
 function pp_elShow (el, bShow){
   if (bShow){
-    // DAFARE capire
     el.style.display= "inline";
     el.style.visibility="visible";
   }else{
@@ -442,7 +431,7 @@ function pp_elShow (el, bShow){
 function pp_idShow (szId, bShow){
   var Fn = "[Popup.js pp_idShow] ";
 
-  pp_log (Fn + "szId=" + szId  + " bShow=" + bShow);
+  jsu_log (Fn + "szId=" + szId  + " bShow=" + bShow);
   var el = getElementById2(szId);
   if (el == null){
     return alert (Fn + "SW ERROR szId=" + szId + "   NOT FOUND");
@@ -469,7 +458,7 @@ function pp_idHideIfRequired (szId, bShow){
  */
 function pp_btnInit(parIn){
   var Fn = "[Popup.js pp_btnInit] ";
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
   var elBtnConfirm = getElementById2("PopupConfirm");
   var elBtnNo= getElementById2("PopupNo");
   var elBtnCancel = getElementById2("PopupCancel");
@@ -480,7 +469,7 @@ function pp_btnInit(parIn){
   var szConfirmLabel = (bQuestion) ?  POPUP_BTN_LABEL. QUESTION_CONFIRM :  POPUP_BTN_LABEL. CONFIRM; 
   var szNoLabel =  POPUP_BTN_LABEL. QUESTION_NO;
   var szCancelLabel =  POPUP_BTN_LABEL. QUESTION_CANCEL;
-  pp_log (Fn + "Default Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
+  jsu_log (Fn + "Default Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
   var objOpt = parIn.objOpt;
   if (objOpt != null){
     if (objOpt.szConfirmLabel != undefined && objOpt.szConfirmLabel != ""){
@@ -503,14 +492,14 @@ function pp_btnInit(parIn){
       elBtnCancel.style.width = objOpt.iCancelWidth + "px"; 
     }
   }
-  pp_log (Fn + "SET BTN  Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
+  jsu_log (Fn + "SET BTN  Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
   elBtnConfirm.value = szConfirmLabel; 
   elBtnNo.value = szNoLabel; 
   elBtnCancel.value = szCancelLabel; 
-  pp_log (Fn + "Set Btn Visibility");
+  jsu_log (Fn + "Set Btn Visibility");
   pp_elShow (elBtnNo,bQuestion);
   pp_elShow (elBtnCancel,bQuestion3);
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
 }  
 
 
@@ -520,14 +509,14 @@ function pp_btnInit(parIn){
  */
 function pp_optChoiceInit(parIn){
   var Fn = "[Popup.js pp_optChoiceInit] ";
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
   var objOpt = parIn.objOpt;
   if (objOpt != null){
   	if (objOpt.bChoiceMultiSel == undefined){
   		objOpt.bChoiceMultiSel = false;
   	}
     szId =  objOpt.bChoiceMultiSel ? "PopupChoiceMulti" : "PopupChoiceSingle";
-    pp_log (Fn + "objOpt.bChoiceMultiSel=" + objOpt.bChoiceMultiSel + "  szId=" + szId);
+    jsu_log (Fn + "objOpt.bChoiceMultiSel=" + objOpt.bChoiceMultiSel + "  szId=" + szId);
     pp_idShow (szId + "Sect", true);
     getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
     // Populate selectChoice
@@ -558,10 +547,10 @@ function pp_optChoiceInit(parIn){
       iWidth = POPUP_CHOICE_FS_MIN_WIDTH;
     }
     elFS.style.width = iWidth + "px";
-    pp_log (Fn + "We have SET elFS.style.width=" + elFS.style.width);
+    jsu_log (Fn + "We have SET elFS.style.width=" + elFS.style.width);
     
   }
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + "-------------------");
 }  
 
 
@@ -571,23 +560,29 @@ function pp_optChoiceInit(parIn){
  */
 function pp_optLayoutInit(parIn){
   var Fn = "[Popup.js pp_optChoiceInit] ";
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + PPLOG_FUN_START);
   // Default
   var bShowTitle = POPUP_DEF_SHOW_TITLE;
   var bShowImg = POPUP_DEF_SHOW_IMG;
+  var bShowBtnSect = true;
   var objOpt = parIn.objOpt;
   if (objOpt != null){
-    pp_logObj (Fn + "There are Custom Option:", objOpt);
+    jsu_logObj (Fn + "There are Custom Option:", objOpt);
     if (objOpt.bShowTitle != undefined && objOpt.bShowTitle != null){
       bShowTitle = objOpt.bShowTitle;
     }
     if (objOpt.bShowImg != undefined && objOpt.bShowImg != null){
       bShowImg = objOpt.bShowImg;
     }    
+    if (objOpt.bShowBtnSect != undefined && objOpt.bShowBtnSect != null){
+    	bShowBtnSect = objOpt.bShowBtnSect;
+    }    
   }
   pp_idHideIfRequired ("PopupTblHea", bShowTitle);
   pp_idHideIfRequired ("PopupImg", bShowImg);
-  pp_log (Fn + "-------------------");
+  pp_idHideIfRequired ("PopupDivBtn", bShowBtnSect);
+  
+  jsu_log (Fn + PPLOG_FUN_END);
 }  
 
 /*
@@ -597,7 +592,7 @@ function pp_optLayoutInit(parIn){
  */
 function pp_promptInit(szPopupType, objOpt){
   var Fn = "[Popup.js pp_promptInit] ";
-  pp_log(Fn + "-------------------");
+  jsu_log(Fn + "-------------------");
   pp_idShow ("PopupPromptSect", false);
   if (szPopupType == POPUP_TYPE.PROMPT){
     pp_idShow ("PopupPromptSect", true);
@@ -607,7 +602,7 @@ function pp_promptInit(szPopupType, objOpt){
       }
       var elInput = getElementById2("PopupPromptInput");
       if (objOpt.szPromptValue && objOpt.szPromptValue.length){
-        pp_log(Fn + "Set Default PromptValue=" + objOpt.szPromptValue);
+        jsu_log(Fn + "Set Default PromptValue=" + objOpt.szPromptValue);
         elInput.value = objOpt.szPromptValue;
       }
       szPromptType = (objOpt.szPromptType) ? objOpt.szPromptType : PROMPT_TYPE.STRING;
@@ -656,7 +651,7 @@ function pp_promptInit(szPopupType, objOpt){
       elInput.setAttribute ("title",szTitle);
     }
   }  
-  pp_log(Fn + "-------------------");
+  jsu_log(Fn + "-------------------");
 }  
 
 
@@ -676,7 +671,7 @@ function pp_getHeight() { // crossbrowser version
   var clientTop = docEl.clientTop || body.clientTop || 0;
   var top  = box.top +  scrollTop - clientTop;
   var iDlgH = Math.round(top) +  elDivBtn.clientHeight;
-  pp_log ( Fn + "Current iDlgH=" + iDlgH);
+  jsu_log ( Fn + "Current iDlgH=" + iDlgH);
   return iDlgH;
 
 }
@@ -752,9 +747,9 @@ function pp_getTitle(parIn){
  */
 function pp_ValidateInput(elInput){
   var Fn = "[Popup.js pp_ValidateInput] ";
-  pp_log(Fn + "-------------------");
+  jsu_log(Fn + "-------------------");
   var promptValue = elInput.value;
-  pp_log(Fn + "Prompt=" + promptValue);
+  jsu_log(Fn + "Prompt=" + promptValue);
   // Is required Validation?
   var szType =  elInput.getAttribute ("type");
   var bNumber = (szType == PROMPT_TYPE.NUMBER);
@@ -768,23 +763,23 @@ function pp_ValidateInput(elInput){
   }
   var bErr = false;
   if (bNumber){
-    pp_log(Fn + "VALIDATION is required for PROMPT NUMBER - We check that promptValue=" + promptValue + "  is a NUMBER");
+    jsu_log(Fn + "VALIDATION is required for PROMPT NUMBER - We check that promptValue=" + promptValue + "  is a NUMBER");
     bErr = (isNaN(promptValue)); 
   }
   if (!bErr && iMin){
-    pp_log(Fn + "VALIDATION required for iMin=" + iMin + " - PROMPT szType=" + szType);
+    jsu_log(Fn + "VALIDATION required for iMin=" + iMin + " - PROMPT szType=" + szType);
     if (bNumber && iMin > promptValue){ bErr = true;}
     if (!bNumber && iMin > iLen){ bErr = true;}
   }
   if (!bErr && iMax){
-    pp_log(Fn + "VALIDATION required for iMax=" + iMax + " - PROMPT szType=" + szType);
+    jsu_log(Fn + "VALIDATION required for iMax=" + iMax + " - PROMPT szType=" + szType);
     if (bNumber && iMax < promptValue){ bErr = true;}
     if (!bNumber && iMax < iLen){ bErr = true;}
   }
   if (bErr){
     // Show the Error Element
     var szTitle = elInput.getAttribute ("title");
-    pp_log(Fn + "VALIDATION ERROR for promptValue=" + promptValue + " Show Err: " + szTitle);
+    jsu_log(Fn + "VALIDATION ERROR for promptValue=" + promptValue + " Show Err: " + szTitle);
     var elErr = getElementById2("PopupPromptError");
     elErr.innerHTML = szTitle;
     elementShow(elErr,true,"inline");
@@ -792,7 +787,7 @@ function pp_ValidateInput(elInput){
     elInput.setAttribute ("class","PopupPromptError");  // Change class to show alarm gif
     return 1;
   }
-  return pp_log(Fn + "-------------------");
+  return jsu_log(Fn + "-------------------");
 }
 
 
@@ -809,10 +804,10 @@ function pp_ValidateInput(elInput){
 function pp_close(retObj){
   var Fn = "[Popup.js pp_close] ";
 
-  pp_log(Fn + "-------------------");
+  jsu_log(Fn + "-------------------");
   // true if clicked on OK Button
   var bConfirm = (retObj && retObj.retBtn   == POPUP_BTN.CONFIRM);
-  pp_log(Fn + "bConfirm=" + bConfirm );
+  jsu_log(Fn + "bConfirm=" + bConfirm );
   if (bConfirm){
     // -------------- Check if Prompt is Visible
     var bPrompt = pp_idIsVisible("PopupPromptSect");
@@ -827,7 +822,7 @@ function pp_close(retObj){
     var bChoiceSingle = pp_idIsVisible("PopupChoiceSingleSect");
     var bChoiceMulti = pp_idIsVisible("PopupChoiceMultiSect");
     if   (bChoiceSingle || bChoiceMulti){
-      pp_log(Fn + "Get Choice Selection");
+      jsu_log(Fn + "Get Choice Selection");
       var szEl = (bChoiceSingle) ? "PopupChoiceSingleSelect" : "PopupChoiceMultiSelect";
       var selectChoice = getElementById2(szEl);
       // Read All and prepare arChoice
@@ -857,8 +852,8 @@ function pp_close(retObj){
     }
   }  
   window.returnValue = retObj;
-  pp_logObj (Fn + "window.returnValue", window.returnValue);
-  pp_log (Fn + "-------------------");
+  jsu_logObj (Fn + "window.returnValue", window.returnValue);
+  jsu_log (Fn + "-------------------");
   window.close();  
 }
 
@@ -910,14 +905,14 @@ function pp_onResize(){
   var w = window.outerWidth;
   var h = window.outerHeight;
   if (w != undefined && h != undefined){
-    // pp_log (Fn + "Window size: width=" + w + ", height=" + h);
+    // jsu_log (Fn + "Window size: width=" + w + ", height=" + h);
     var divPopup = document.getElementById ('PopupDiv');
-    // pp_log (Fn + "divPopup .width=" + divPopup.clientWidth + " .height=" + divPopup.clientHeight);
+    // jsu_log (Fn + "divPopup .width=" + divPopup.clientWidth + " .height=" + divPopup.clientHeight);
     var iDivW = w-16;
     if (popup_bScroll){
       iDivW -=20;
     }
-    pp_log (Fn + "Change divPopup width from =" + divPopup.clientWidth + " to =" + iDivW);
+    jsu_log (Fn + "Change divPopup width from =" + divPopup.clientWidth + " to =" + iDivW);
     divPopup.style.width = iDivW + "px";
   }   
 }
@@ -993,7 +988,7 @@ function pp_onLoad(){
     objOpt.szPathImg = szPathImg;
     jslog_init(objJslogOpt.iLogLev ,objOpt);
   } 
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + PPLOG_FUN_START);
   var objOpt = parIn.objOpt; 
   // ----------------------------- bCloseOnEscape 
   var bCloseOnEscape = POPUP_DEF_CLOSE_ON_ESCAPE;
@@ -1010,27 +1005,28 @@ function pp_onLoad(){
 	}
   // ----------------------------- bResize 
   var bResize = POPUP_DEF_RESIZE;
+  jsu_log (Fn + "bResize=" + bResize);
   if (objOpt && objOpt.bResize != undefined){
   	bResize = objOpt.bResize; 
 	}
 	if (bResize){
-    pp_log (Fn + "SET onresize");
+    jsu_log (Fn + "SET onresize");
 		document.body.onresize = function(){
 			pp_onResize();			
 		}
 	}
   //-------------------------------------------------------
   if (parIn.elLoading != undefined && parIn.elLoading){
-    pp_log (Fn + "Hide Loading in Parent");
+    jsu_log (Fn + "Hide Loading in Parent");
     loadingShowByEl (parIn.elLoading,false);    
   }  
   // NB: Reset elLoading before jslogObj that does not support DOM El
   parIn.elLoading = null;
-  pp_logObj (Fn + "parIn", parIn);
-  pp_log (Fn +"set Dlg Layout -------");
+  jsu_logObj (Fn + "parIn", parIn);
+  jsu_log (Fn +"set Dlg Layout -------");
   var szTitle = pp_getTitle (parIn);
   var objOpt = parIn.objOpt;
-  pp_log (Fn + "Set Title=" + szTitle);
+  jsu_log (Fn + "Set Title=" + szTitle);
   document.title = szTitle;
   getElementById2("PopupTitle").innerHTML = szTitle; 
   //
@@ -1047,7 +1043,13 @@ function pp_onLoad(){
   elMsg.innerHTML = parIn.szMsgHtml;
   var szMsgHtml = parIn.szMsgHtml;
   //  ------------------------------------------ H
-  var iDlgH= pp_getHeight ();
+  var iDlgH= POPUP_DEF_HEIGHT;
+  if (objOpt && objOpt.iHeight){
+  	iDlgH = objOpt.iHeight;
+  }else {
+    iDlgH= pp_getHeight ();
+  }
+  
   if (iDlgH > POPUP_MAX_HEIGHT){
     iDlgH =POPUP_MAX_HEIGHT;
   }  
@@ -1057,14 +1059,14 @@ function pp_onLoad(){
   }  
 */
   if (szBrowser == POPUP_BROWSER_TYPE_IE){
-    pp_log (Fn + szBrowser +" set iDlgH=" + iDlgH);
+    jsu_log (Fn + szBrowser +" set iDlgH=" + iDlgH);
     window.dialogHeight= iDlgH + "px"; 
   }else{
     // We have to add in Firerfox, or we see Scroolbar
     iDlgH += 8;  
-    pp_log (Fn + "NOT IE set iDlgH=" + iDlgH);
+    jsu_log (Fn + "NOT IE set iDlgH=" + iDlgH);
     if (window.innerHeight != undefined){
-      pp_log (Fn + szBrowser + " Firefox set innerHeight=" + iDlgH);
+      jsu_log (Fn + szBrowser + " Firefox set innerHeight=" + iDlgH);
       window.innerHeight = iDlgH ;
     } 
     // Center
@@ -1083,16 +1085,16 @@ function pp_onLoad(){
     // We have to get some size for the SBVert pr we will see also the SBHor
     var divPopup = document.getElementById ('PopupDiv');
     var iWidth = divPopup.clientWidth;
-    pp_log (Fn + "divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
+    jsu_log (Fn + "divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
     iWidth -=20;
     divPopup.style.width = iWidth + "px";
-    pp_log (Fn + "SET divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
+    jsu_log (Fn + "SET divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
     iDlgH +=20;
   }  
-  pp_log (Fn + "set iDlgH=" + iDlgH);
+  jsu_log (Fn + "set iDlgH=" + iDlgH);
   window.dialogHeight= iDlgH + "px"; 
   
-  pp_log (Fn + "-------------------");
+  jsu_log (Fn + PPLOG_FUN_END);
 }
 
 
@@ -1145,8 +1147,10 @@ function PopupSetPathHtml(szPathHtml){
  *           iNoWidth:   {Number}      Width of No Button  <BR/>
  *           szTitle:    {String}      change default Title <BR/>
  *           iWidth:  {Number}      Optional Width: if it passed it is used - If 0 or null or undefined, Default Width is used <BR/>
+ *           iHeight:  {Number}      Optional Height: if it passed it is used - If 0 or null or undefined, Height is automatically calculated<BR/>
  *           bShowTitle: {Boolean}     true to show Title  (Default=true) <BR/>
  *           bShowImg:    {Boolean}     true to show Image  (Default=true) <BR/>
+ *           bShowBtnSect:    {Boolean} [true] false to hide all the Button Section (used in embedded HTML pages) <BR/>
  *           bScroll:    {Boolean}      true to show ScroolBar  (Default=false)    <BR/>
  *           bResize:    {Boolean}     true to allow Resize Dialog  (Default=false)    <BR/>
  *           bCloseOnEscape: {Boolean}  Default true   
@@ -1190,10 +1194,10 @@ function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
     objOpt = new Array();
   }
   // Create the Option for Choice and push it into objOpt
-	pp_log(fn + "szChoiceLabel=" + szChoiceLabel);
+	jsu_log(fn + "szChoiceLabel=" + szChoiceLabel);
   objOpt.szChoiceLabel = szChoiceLabel;
   objOpt.arChoice = arChoice;
-	pp_logObj(fn + "objOpt", objOpt);
+	jsu_logObj(fn + "objOpt", objOpt);
   return pp_show (POPUP_TYPE.CHOICE,szMsgHtml,objOpt);
 }  
 

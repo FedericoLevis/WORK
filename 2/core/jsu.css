@@ -93,12 +93,16 @@ Tooltip: button for TipFix
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
  </li>
+ </li><BR/>
+ <li> JSU Option Button: &nbsp;&nbsp;  
+     <b>input.jsuOpt</b>  <input type="button" class="jsuOpt"/>
+ </li>
 </ul> 
 ```
 */
 
 input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFixUp */ 
-    height: 20px;
+    height: 22px;
     width: 13px;
     font-weight: bold;
     cursor: pointer;
@@ -114,7 +118,7 @@ input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
 }
 
 input.tipFixJS, input.tipFixJSUp{
-    height: 21px;
+    height: 23px;
     width: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -129,7 +133,7 @@ input.tipFixJSUp{
 }
 
 input.tipFixCode, input.tipFixCodeUp{
-    height: 28px;
+    height: 30px;
     width: 40px;
     font-weight: bold;
     cursor: pointer;
@@ -170,15 +174,23 @@ input.jsuHelp{	/* Help Button */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
 }
 
+input.jsuOpt, input.jsuOptUp{  /* Option Button (we use the same also for Up)*/  
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    margin-left: 0px; 
+    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/option.png) no-repeat center center; */
+    background: #E0E0E0 url(../images/option.png) no-repeat center center;
+}
+
+
+
 
 input.tipFix,input.tipFixUp,       /* Border in Normal State */ 
 input.tipFixArrow, input.tipFixArrowUp,
 input.tipFixJS, input.tipFixJSUp,
 input.tipFixCode, input.tipFixCodeUp,
-input.googleAnal,
-input.googleAnalListJQPopup,
-input.googleAnalList, input.googleAnalListUp,
-input.jsuHelp
+input.jsuHelp, input.jsuOpt, input.jsuOptUp
 {
     border: 2px solid gray;
     border-style: ridge;
@@ -189,15 +201,11 @@ input.tipFix:hover,input.tipFixUp:hover,   /* Border when Mouse is over */
 input.tipFixArrow:hover, input.tipFixArrowUp:hover,
 input.tipFixJS:hover, input.tipFixJSUp:hover,
 input.tipFixCode:hover, input.tipFixCodeUp:hover,
-input.googleAnal:hover, 
-input.googleAnalListJQPopup:hover,
-input.googleAnalList:hover, input.googleAnalListUp:hover,
-input.jsuHelp:hover 
+input.jsuHelp:hover, input.jsuOpt:hover, input.jsuOptUp:hover    
 {
     border: 2px solid #e0e0e0;
     border-style: ridge;
 } 
-
 
 
 
@@ -543,17 +551,13 @@ input.note{ /* Image for the Note */
     height: 18px;
     width: 36px;
     border: 0px ;
-    /* DAFARE */
-    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center; */ 
-    background: #FFFFFF url(../images/note.png) no-repeat center center; 
+    background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center;  
 }
 input.tipNote{ /* Image for the Note in the Tip */
     height: 18px;
     width: 36px;
     border: 0px ;
-    /* DAFARE */
-    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center; */ 
-    background: #FFFFCC url(../images/tipNote.png) no-repeat center center; 
+    background: #FFFFCC url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center;  
 }
 
 
@@ -579,13 +583,17 @@ a.tipLinkDisabled{
 /*---
 Google Analytics button  
 ---
-<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html">JSU Tooltip API Doc</a>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html">JSU Google Analytics API Doc</a>
 
 ```html
 <b>JSU GoogleAnalytics buttons :</b> <ul>
- <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
+ <li> button to show a TipFix with a List of Google Analytics URLs: <BR/>   
      <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
      <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
+ </li><BR/>
+ <li> button to show a JQPopup with a List of Google Analytics URLs: <BR/>   
+     <b>input.googleAnalListJQPopup</b>  <input type="button" class="googleAnalListJQPopup"/> <BR/> 
+     <b>input.googleAnalListJQPopupDisabled</b>  <input type="button" class="googleAnalListJQPopupDisabled" />
  </li><BR/>
  <li> button to Go to the Page of Google Analytics:  
      &nbsp;&nbsp; <b>input.googleAnal</b>  <input type="button" class="googleAnal"/>  
@@ -610,13 +618,21 @@ input.googleAnalListUp {
 }
 
 
-input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup insyead of TipFix*/
+input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup instead of TipFix*/
     height: 24px;
     width: 225px;
     border: 2px solid gray;
     border-style: ridge;
     cursor: pointer;
     background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopup.png) no-repeat center center; 
+}
+input.googleAnalListJQPopupDisabled {  /* Like googleAnalList but in a JQPopup instead of TipFix - status = disabled*/
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopupDisabled.png) no-repeat center center; 
 }
 
 
@@ -627,6 +643,24 @@ input.googleAnal{  /* Button to show 1 page with Google Analytics  */
     margin-left: 2px; 
    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnal.png) no-repeat center center;
 }
+
+
+input.googleAnalListJQPopup,input.googleAnalListJQPopupDisabled, /* Border when Mouse is over */
+input.googleAnal,/* Border in Normal State */
+input.googleAnalList, input.googleAnalListUp
+{
+    border: 2px solid gray;
+    border-style: ridge;
+} 
+
+
+input.googleAnalListJQPopup:hover, /* Border when Mouse is over */
+input.googleAnal:hover, 
+input.googleAnalList:hover, input.googleAnalListUp:hover
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
 
 
 /*---
@@ -757,6 +791,11 @@ td.loadingDivBtn {
   padding-bottom: 10px; 
 }
 
+input.loadingDivBtn {
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 100px;
+}
 
 td.loadingDivFooter { /* Footer with Elapsed sec */
 	padding-left: 5px;
@@ -768,7 +807,7 @@ td.loadingDivFooter { /* Footer with Elapsed sec */
 div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
   width: 110px;
 	height: 110px;
-	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
 	z-index: 110;  
 }
 
@@ -1063,7 +1102,7 @@ input.PopupBtn{ /* Button OK */
   font-family: Arial;
 	font-weight: bold !important;
   font-size: 14px !important;
-	width: 100px;
+	min-width: 100px;
 	margin-top:10px !important;
 	margin-bottom:10px !important;
   margin-left:20px !important;	
@@ -1202,6 +1241,36 @@ td.PopupError,label.PopupError{
 
 
 
+/// PROVA
+
+
+
+/*  Change  .jquery CSS */
+.ui-dialog .ui-dialog-buttonpane {
+  text-align: left;
+  background-color: #BABABA !important;  /* Gray*/    
+  border-width: 1px 1px 1px 1px;
+  background-image: none;
+  margin-top: .1em;
+  padding: .1em 1em .1em .1em;
+}
+
+.ui-dialog-buttonpane {
+  text-align: center !important;
+}
+
+.ui-dialog-buttonpane, .ui-dialog-buttonset {
+  float: none !important;
+}
+
+.ui-dialog-buttonset{
+	min-width: 100px;
+}	
+
+.ui-button-text{
+  min-width: 100px !important;
+  font-weight: bold ! important;
+}	
 
 
 /*---

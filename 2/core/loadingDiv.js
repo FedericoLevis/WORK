@@ -5,8 +5,8 @@
 <b>LoadingDiv Doc:</b>   <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html" target="_blank">JSU LoadingDiv Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>    JSU LoadingDiv API:  loadingDivShow loadingDivHide <BR/>
-<b>REQUIRE:</b>          JSU core/core.css <BR/>  
-<b>OPTIONAL:</b>         jslog.js, dom-drag.js to use also jslog <BR/>
+<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js <BR/>
+<b>OPTIONAL:</b>        JSU: jslog.js, dom-drag.js to use also jslog <BR/>
 <b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
@@ -37,7 +37,8 @@ var LOADING_DIV_DEF = {
 		bShowCancel:  false,	//	{Boolean}: [false] show the Cancel Btn 
 		szCancelLabel:  "Cancel" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
 		szBackgroundColor: null, // {String} Div BackgroundColor, if different from null or "", 
-		szDiffMsgHtml: "" // {String} if different from null or '', we show this Msg (HTML) instead of Default 
+		szDiffMsgHtml: "", // {String} if different from null or '', we show this Msg (HTML) instead of Default 
+		bRecalcBestPos: false	// bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement
 };
 
 var LOADING_DIV_DEF_OPT ={
@@ -52,7 +53,8 @@ var LOADING_DIV_DEF_OPT ={
 		bShowCancel:  LOADING_DIV_DEF.bShowCancel,	//	{Boolean}: [false] show the Cancel Btn
 		szCancelLabel:  "" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
 		szBackgroundColor: LOADING_DIV_DEF.szBackgroundColor, // {String} Div BackgroundColor, if different from null or "", 
-		fnCancelCallback: null  // called when click Cancel
+		fnCancelCallback: null,  // called when click Cancel
+		bRecalcBestPos: false	// bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement
 };
 
 
@@ -90,9 +92,9 @@ var JSU_LOADING_DIV = '<div id="loadingDivContainer" class="loadingDivContainer"
 '</div>'; 
 
 // Global var with current status
-var var_loading_div = {
+var var_ld_div = {
 		elFooter: null, // td el with Footer
-		tmoElapsedSec : null,  // tmo for loading_div to update ElapsedSec
+		tmoElapsedSec : null,  // tmo for ld_div to update ElapsedSec
 		iElapsedSec : 0,  // elapsed sec
 		fnCancelCallback: null,  // called when click Cancel
 		// PREV Values to restore
@@ -115,96 +117,26 @@ var LOADING_APP_NAME_IE_11="Netscape";   // IE 11
 /*
  * Different object to be used if IE/Firefox or Chrome
  */
-function loading_getScrollEl(){
-	var Fn = "[loadingDiv.js loading_getScrollEl()] ";
+function ld_getScrollEl(){
+	var Fn = "[loadingDiv.js ld_getScrollEl()] ";
 	// For Firefox or IE
 	if  ((typeof InstallTrigger !== 'undefined')  ||
 			 (navigator.appName == LOADING_APP_NAME_IE) || 
       ((navigator.appName == LOADING_APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
-		loading_log(Fn + "Firefox/IE");
+		jsu_log(Fn + "Firefox/IE");
 		return document.documentElement;
   } else { // NOT Firefox/IE (e.g CHROME)
-  	loading_log(Fn + "NOT Firefox/IE (e.g CHROME)");
+  	jsu_log(Fn + "NOT Firefox/IE (e.g CHROME)");
   	return document.body;
   } 	
 }
 
 
 
-/*
-Show/Hide an Element (and its Children)
- * @param El
- * @param bShow  true if I want to show it -false if I want to hide it
- * @param [szDisplayIfVisible] {String}  display to set if bShow=true e.g "inline" (default= "block")  
- */
-function loading_elementShow(El,bShow,szDisplayIfVisible) {
-  var Fn = "[loadingDiv.js loading_elementShow ]";
-  
-  if (El == 0 || El == undefined){
-    return;
-  }
-  if (szDisplayIfVisible == undefined){
-  	szDisplayIfVisible = "block";
-  }
-  if (bShow){
-  	El.style.visibility="visible";
-    /* El.style.display="block"; */
-    El.style.display=szDisplayIfVisible;
-  }else {
-    El.style.visibility="hidden";
-    El.style.display="none";
-  }
-}
-
-
-/*-----------------------------------------------------------
-Get Element By ID and Show Error if required
-      PAR
-Id        in
-[bShowErr]  in   true (default) if I want to show Error
-                false if don't want to show Error
-      RETURN
-el  if founded
-0   if not founded
------------------------------------------------------------*/
-function loading_getElementById2(Id,bShowErr)
-{
-	if (bShowErr == undefined){
-		// bShowErr = true;
-		bShowErr = false;
-	}
-    var el = 	document.getElementById(Id);
-    if (el == null) {
-        if (bShowErr){
-          alert("SW ERROR [loading_getElementById2] NOT FOUND Id=" +  Id) ;
-        }
-        return 0;  // Not Found
-    }
-    return el;
-}
 
 
 
-/*
- * call jslog if it is defined
- * @param msg
- */
-function loading_log(msg){
-	if (typeof(jslog) == "function"){
-		jslog (JSLOG_JSU, msg);
-	}
-	//	alert (msg);
-}
 
-/*
- * call jslogObj if it is defined
- * @param msg
- */
-function loading_logObj(msg,obj){
-	if (typeof(jslogObj) == "function"){
-		jslogObj (JSLOG_JSU, msg,obj);
-	}
-}
 
 
 
@@ -213,8 +145,8 @@ function loading_logObj(msg,obj){
  */
 function loadingDivCancel(){
 	loadingDivHide();	
-	if (var_loading_div.fnCancelCallback != undefined){
-		var_loading_div.fnCancelCallback();
+	if (var_ld_div.fnCancelCallback != undefined){
+		var_ld_div.fnCancelCallback();
 	}
 }
 
@@ -224,8 +156,8 @@ function loadingDivCancel(){
 function loadingDivTmo(){
 	
 	var dEnd = new Date();  	
-	var iElapsedSec= Math.round((dEnd.getTime() - var_loading_div.iStartTime)/1000);
-	var_loading_div.elFooter.innerHTML = LOADING_DIV_MSG.startTime + var_loading_div.szStartTime +  LOADING_DIV_MSG.elapsed + iElapsedSec + LOADING_DIV_MSG.sec;
+	var iElapsedSec= Math.round((dEnd.getTime() - var_ld_div.iStartTime)/1000);
+	var_ld_div.elFooter.innerHTML = LOADING_DIV_MSG.startTime + var_ld_div.szStartTime +  LOADING_DIV_MSG.elapsed + iElapsedSec + LOADING_DIV_MSG.sec;
 	
 }	  
 
@@ -249,13 +181,14 @@ function loadingDivTmo(){
 		<li>szCancelLabel:  {String} ["Cancel"] Label to set to Cancel Button 
 		<li>szBackgroundColor:{String} Div BackgroundColor, if different from null or "",  </li>
 		<li>fnCancelCallback: {function} [null]  called when Cancel button is clicked </li>
+		<li>bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement </li>
 	</ul>	
  */
 function loadingDivShow(objOpt){
 	var Fn = "[loadingDiv.js loadingDivStart()] ";
-	loading_log(Fn + "------------------- START");
-	if (var_loading_div.tmoElapsedSec){
-		clearTimeout (var_loading_div.tmoElapsedSec);
+	jsu_log(Fn + JSU_LOG_FUN_START);
+	if (var_ld_div.tmoElapsedSec){
+		clearTimeout (var_ld_div.tmoElapsedSec);
 	}
   if (objOpt == undefined){
   	var objOpt = LOADING_DIV_DEF_OPT; 
@@ -271,30 +204,31 @@ function loadingDivShow(objOpt){
   	if (objOpt.bShowCancel== undefined) {objOpt.bShowCancel = LOADING_DIV_DEF.bShowCancel;}
   	if (objOpt.szCancelLabel== undefined) {objOpt.szCancelLabel = LOADING_DIV_DEF.szCancelLabel;}
   	if (objOpt.szDiffMsgHtml == undefined) {objOpt.szDiffMsgHtml = LOADING_DIV_DEF.szDiffMsgHtml;}
+  	if (objOpt.bRecalcBestPos == undefined) {objOpt.bRecalcBestPos = LOADING_DIV_DEF.bRecalcBestPos;}
   }	
-  var_loading_div.fnCancelCallback = objOpt.fnCancelCallback; 
-	loading_logObj(Fn + "objOpt",objOpt);
-	var divMain = loading_getElementById2 ("loadingDivMain",false);
+  var_ld_div.fnCancelCallback = objOpt.fnCancelCallback; 
+	jsu_logObj(Fn + "objOpt",objOpt);
+	var divMain = jsu_getElementById2 ("loadingDivMain",false);
 	if (divMain){
 		document.body.removeChild (divMain);
 	}	
-	loading_log(Fn + "add JSU_LOADING_DIV to document.body");
+	jsu_log(Fn + "add JSU_LOADING_DIV to document.body");
 	divMain = document.createElement("div");
   divMain.id = "loadingDivMain";		
 	divMain.innerHTML = JSU_LOADING_DIV;
 	document.body.appendChild(divMain);
 	
-	var loadingDiv = loading_getElementById2 ("loadingDiv");
+	var loadingDiv = jsu_getElementById2 ("loadingDiv");
 	if (objOpt.iDivWidth != null){
 		loadingDiv.style.width = objOpt.iDivWidth + "px";  
 	}
-	loading_log( Fn + "Set Visible element depending on objOpt");
-	var elTitle = loading_getElementById2 ("loadingDivTitle");
+	jsu_log( Fn + "Set Visible element depending on objOpt");
+	var elTitle = jsu_getElementById2 ("loadingDivTitle");
 	var bTitle = (objOpt.szTitleHtml && objOpt.szTitleHtml != ""); 
-	loading_elementShow (elTitle,bTitle,"");
+	jsu_elementShow (elTitle,bTitle,"");
 	if (bTitle){elTitle.innerHTML = objOpt.szTitleHtml;}
 	//------
-	var elMsgHtml = loading_getElementById2 ("loadingDivMsg",false);
+	var elMsgHtml = jsu_getElementById2 ("loadingDivMsg",false);
 	if (!elMsgHtml){
 		return; // WorkAround
 	}
@@ -304,11 +238,11 @@ function loadingDivShow(objOpt){
 	}
 	elMsgHtml.innerHTML = szMsgHtml;
 	//------
-	var elCancelBtn = loading_getElementById2 ("loadingDivBtn");
+	var elCancelBtn = jsu_getElementById2 ("loadingDivBtn");
 	elCancelBtn.value = objOpt.szCancelLabel;
-	loading_elementShow (loading_getElementById2 ("loadingDivBtnTd"),objOpt.bShowCancel,"");
+	jsu_elementShow (jsu_getElementById2 ("loadingDivBtnTd"),objOpt.bShowCancel,"");
 	//------
-	var elGif = loading_getElementById2 ("loadingDivGif");
+	var elGif = jsu_getElementById2 ("loadingDivGif");
 	if (objOpt.szDiffUrlGif != undefined && objOpt.szDiffUrlGif != ""){
 		elGif.style.backgroundImage = "url('" + objOpt.szDiffUrlGif + "')"; 
 	}
@@ -316,79 +250,81 @@ function loadingDivShow(objOpt){
 		elGif.style.width = objOpt.iGifWidth + "px";  
 	}
 	
-	loading_elementShow (loading_getElementById2 ("loadingDivTdGif"),objOpt.bShowGif,"");
+	jsu_elementShow (jsu_getElementById2 ("loadingDivTdGif"),objOpt.bShowGif,"");
 	//------
 	if (objOpt.szBackgroundColor && objOpt.szBackgroundColor != ""){
 		loadingDiv.style.backgroundColor = objOpt.szBackgroundColor; 
-		loading_getElementById2 ("loadingDivMsg").style.backgroundColor = objOpt.szBackgroundColor;
-		loading_getElementById2 ("loadingDivTdGif").style.backgroundColor = objOpt.szBackgroundColor;
-		loading_getElementById2 ("loadingDivBtnTd").style.backgroundColor = objOpt.szBackgroundColor;		
+		jsu_getElementById2 ("loadingDivMsg").style.backgroundColor = objOpt.szBackgroundColor;
+		jsu_getElementById2 ("loadingDivTdGif").style.backgroundColor = objOpt.szBackgroundColor;
+		jsu_getElementById2 ("loadingDivBtnTd").style.backgroundColor = objOpt.szBackgroundColor;		
 	}	
 	//------------------
 	var bShowElapsedSec = (objOpt.bShowElapsedSec != undefined && objOpt.bShowElapsedSec); 
-	loading_elementShow (elTitle,bTitle,"");
-	var_loading_div.elFooter = loading_getElementById2 ("loadingDivFooter");
-	loading_elementShow (var_loading_div.elFooter ,bShowElapsedSec,"");
+	jsu_elementShow (elTitle,bTitle,"");
+	var_ld_div.elFooter = jsu_getElementById2 ("loadingDivFooter");
+	jsu_elementShow (var_ld_div.elFooter ,bShowElapsedSec,"");
 	if (bShowElapsedSec){
 		if (objOpt.bResetElapsedSec){
-			loading_log( Fn + "Start Timeout for Elapsedsec");
+			jsu_log( Fn + "Start Timeout for Elapsedsec");
 			var dStart = new Date();  	
-			var_loading_div.iStartTime = dStart.getTime();
-			var_loading_div.szStartTime = num2StrPad(dStart.getHours(),'0',2) + ":" + 
+			var_ld_div.iStartTime = dStart.getTime();
+			var_ld_div.szStartTime = num2StrPad(dStart.getHours(),'0',2) + ":" + 
 		   num2StrPad(dStart.getMinutes(),'0',2) + ":" +  num2StrPad(dStart.getSeconds(),'0',2); 
 		}
 		loadingDivTmo(); // simulate Tmo to show currente Elapsed Time
-		var_loading_div.tmoElapsedSec =  setInterval(loadingDivTmo,1000);
+		var_ld_div.tmoElapsedSec =  setInterval(loadingDivTmo,1000);
 	}
 	
-	// Set the Size
-	var divContainer = loading_getElementById2 ("loadingDivContainer",true);
+	// ---------------------------------- Set the Size if Required
+	if (objOpt.bRecalcBestPos){
+		jsu_log(Fn + "Recalculate Best Postion");
+		var divContainer = jsu_getElementById2 ("loadingDivContainer",true);
+		
+		var bd = ld_getScrollEl();
 	
-	var bd = loading_getScrollEl();
+		// Scroll = total dimensione, also if some is not bvisible
+		var hScroll= bd.scrollHeight;
+		var wScroll= bd.scrollWidth;
+		var xScroll= bd.scrollLeft;
+		var yScroll= bd.scrollTop;
+		// Visible part
+		var wClient= window.innerWidth;
+		var hClient= window.innerHeight;
+		jsu_log(Fn + "scroll: xScroll=" + xScroll + " yScroll=" + yScroll + " wScroll=" + wScroll + " hScroll="+hScroll);
+		jsu_log(Fn + "Client: wClient=" + wClient + " hClient="+hClient);
+		
+		divContainer.style.height = hScroll + 100+ "px";
+		divContainer.style.width = wScroll + 100 + "px";
+		var xScrollNew = (100 + wScroll - wClient)/2 ; 
+		var yScrollNew = (100 + hScroll -  hClient)/2 ; 
+		jsu_log(Fn + "SET NEW SCROLL =" + xScrollNew + " y=" + yScrollNew);
+		if (xScrollNew > 0){
+			var_ld_div.prev.scrollLeft = bd.scrollLeft; // Value to restore 
+			bd.scrollLeft = xScrollNew;
+		}else {
+			var_ld_div.prev.scrollLeft = -1;  // Nothing to restore 
+		}
+		if (yScrollNew > 0){
+			var_ld_div.prev.scrollTop = bd.scrollTop; // Value to restore 
+		  bd.scrollTop = yScrollNew;
+		}else{
+			var_ld_div.prev.scrollTop = -1;  // Nothing to restore 
+		}  
+		// Save previous value
+		var_ld_div.prev.scroll = bd.scroll; // IE Only
+	  bd.scroll = "no"; // ie only	
+		if (document.documentElement != undefined){
+			var_ld_div.prev.overflow = document.documentElement.style.overflow; // Firefox, Chrome
+			document.documentElement.style.overflow = 'hidden';  // firefox, chrome		
+		}else {
+			var_ld_div.prev.overflow = null;
+		}
+	}
+	jsu_elementShow (divMain,true);
+	jsu_elementShow (loadingDiv,true);
 
-	// Scroll = total dimensione, also if some is not bvisible
-	var hScroll= bd.scrollHeight;
-	var wScroll= bd.scrollWidth;
-	var xScroll= bd.scrollLeft;
-	var yScroll= bd.scrollTop;
-	// Visible part
-	var wClient= window.innerWidth;
-	var hClient= window.innerHeight;
-	loading_log(Fn + "scroll: xScroll=" + xScroll + " yScroll=" + yScroll + " wScroll=" + wScroll + " hScroll="+hScroll);
-	loading_log(Fn + "Client: wClient=" + wClient + " hClient="+hClient);
 	
-	divContainer.style.height = hScroll + 100+ "px";
-	divContainer.style.width = wScroll + 100 + "px";
-	var xScrollNew = (100 + wScroll - wClient)/2 ; 
-	var yScrollNew = (100 + hScroll -  hClient)/2 ; 
-	loading_log(Fn + "SET NEW SCROLL =" + xScrollNew + " y=" + yScrollNew);
-	if (xScrollNew > 0){
-		var_loading_div.prev.scrollLeft = bd.scrollLeft; // Value to restore 
-		bd.scrollLeft = xScrollNew;
-	}else {
-		var_loading_div.prev.scrollLeft = -1;  // Nothing to restore 
-	}
-	if (yScrollNew > 0){
-		var_loading_div.prev.scrollTop = bd.scrollTop; // Value to restore 
-	  bd.scrollTop = yScrollNew;
-	}else{
-		var_loading_div.prev.scrollTop = -1;  // Nothing to restore 
-	}  
-	// Save previous value
-	var_loading_div.prev.scroll = bd.scroll; // IE Only
-  bd.scroll = "no"; // ie only	
-	if (document.documentElement != undefined){
-		var_loading_div.prev.overflow = document.documentElement.style.overflow; // Firefox, Chrome
-		document.documentElement.style.overflow = 'hidden';  // firefox, chrome		
-	}else {
-		var_loading_div.prev.overflow = null;
-	}
-	
-	loading_elementShow (divMain,true);
-	loading_elementShow (loadingDiv,true);
-
-	
-	loading_log(Fn + "------------------- END");
+	jsu_log(Fn + JSU_LOG_FUN_END);
 
 }	  
 
@@ -397,29 +333,29 @@ function loadingDivShow(objOpt){
  */
 function loadingDivHide(){
 	var Fn = "[loadingDiv.js loadingDivHide()] ";
-	loading_log(Fn + "------------------- START");
+	jsu_log(Fn + JSU_LOG_FUN_START);
 	
-	if (var_loading_div.tmoElapsedSec){
-		clearTimeout (var_loading_div.tmoElapsedSec);
+	if (var_ld_div.tmoElapsedSec){
+		clearTimeout (var_ld_div.tmoElapsedSec);
 	}
-	var bd = loading_getScrollEl(); 
-	if (var_loading_div.prev.scrollLeft != -1){
-		loading_log(Fn + "RESTORE scrollLeft=" + var_loading_div.prev.scrollLeft);
-		bd.scrollLeft = var_loading_div.prev.scrollLeft;
+	var bd = ld_getScrollEl(); 
+	if (var_ld_div.prev.scrollLeft != -1){
+		jsu_log(Fn + "RESTORE scrollLeft=" + var_ld_div.prev.scrollLeft);
+		bd.scrollLeft = var_ld_div.prev.scrollLeft;
 	}
-	if (var_loading_div.prev.scrollTop != -1){
-		loading_log(Fn + "RESTORE scrollTop=" + var_loading_div.prev.scrollTop);
-		bd.scrollTop = var_loading_div.prev.scrollTop;
+	if (var_ld_div.prev.scrollTop != -1){
+		jsu_log(Fn + "RESTORE scrollTop=" + var_ld_div.prev.scrollTop);
+		bd.scrollTop = var_ld_div.prev.scrollTop;
 	}
 
-	bd.scroll = var_loading_div.prev.scroll; // IE Only 
-	if (var_loading_div.prev.overflow != null && document.documentElement != undefined){
-		document.documentElement.style.overflow = var_loading_div.prev.overflow ; // Firefox, Chrome 
+	bd.scroll = var_ld_div.prev.scroll; // IE Only 
+	if (var_ld_div.prev.overflow != null && document.documentElement != undefined){
+		document.documentElement.style.overflow = var_ld_div.prev.overflow ; // Firefox, Chrome 
 	}
 	
 	
-	var divContainer = loading_getElementById2 ("loadingDivContainer",false);
-	loading_elementShow (divContainer,false);
-	loading_log(Fn + "------------------- END");
+	var divContainer = jsu_getElementById2 ("loadingDivContainer",false);
+	jsu_elementShow (divContainer,false);
+	jsu_log(Fn + JSU_LOG_FUN_END);
 }	  
 

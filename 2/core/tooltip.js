@@ -5,9 +5,9 @@
 <b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html" target="_blank">JSU Tip Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
 <b>Description:</b>     JSU Tip API:   Tip* UnTip*   <BR/>   
-<b>REQUIRED:</b>        JSU:  core/core.css locale/EN/locale-core.js (or OTHER language instead of <i>EN</i>)
-<b>OPTIONAL:</b>        JSU:  core/prettify: prettify-jsu.js prettify-jsu.css if you want shw JS Hightlighted with TipJSFixedClick <BR/> 
-<b>OPTIONAL:</b>        JSU: core/jslog.js core/dom-drag.js if you want to use jslog <BR/> 
+<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js <BR/>
+<b>OPTIONAL:</b>        JSU:  prettify: prettify-jsu.js prettify-jsu.css if you want show JS Hightlighted <BR/> 
+<b>OPTIONAL:</b>        JSU:  jslog.js dom-drag.js if you want to use jslog <BR/> 
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
@@ -116,11 +116,14 @@ var tt_tipFix = {
 
 // ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
 // TOGGLE IMAGES. If the immage is not in these class, NO TOGGLE is done
-var TIP_TOGGLE_CLASS = {	Down: "tipFix",		Up: "tipFixUp"};
-var TIP_TOGGLE_CLASS_ARROW = {		Down: "tipFixArrow",		Up: "tipFixArrowUp"};
-var TIP_TOGGLE_CLASS_GA = {		Down: "googleAnalList",		Up: "googleAnalListUp"};
-var TIP_TOGGLE_CLASS_JS = {	Down: "tipFixJS",	Up: "tipFixJSUp"};
-var TIP_TOGGLE_CLASS_CODE = {	Down: "tipFixCode",	Up: "tipFixCodeUp"};
+var tt_arToggleClass = [
+     {  Down: "tipFix",		Up: "tipFixUp"},
+     {	Down: "tipFixArrow",		Up: "tipFixArrowUp"},
+     {	Down: "googleAnalList",		Up: "googleAnalListUp"},
+     {	Down: "tipFixJS",	Up: "tipFixJSUp"},
+     {	Down: "tipFixCode",	Up: "tipFixCodeUp"},
+     {	Down: "jsuOpt",	Up: "jsuOptUp"}
+     ];
 
 
 
@@ -157,9 +160,9 @@ config. Delay			= TIP_CFG_FLOATING.DelayMs;		// Time span in ms until tooltip sh
 config. Above			= false;	// false or true - tooltip above mousepointer
 config. BgColor			= '#FFFFCC';	// NB: TIP BACK COLOR Background color (HTML colour value, in quotes)     Yellow
 config. BgImg			= '';		// Path to background image, none if empty string ''
-//JSU_FREE_START
+/* JSU_FREE_START ---------------------
 config. jsuTitle  = '';   // SIMULAZIONE
-//JSU_FREE_END
+JSU_FREE_END -----------------------*/
 // Black Border
 config. BorderColor		= '#000000';
 config. BorderStyle		= TIP_CFG_FLOATING.BorderStyle; 
@@ -227,9 +230,9 @@ var tt_a2="pe", tt_a1="ty", tt_a3="of";
 // dynamic id. Used to protect CODE  JSU FULL.
 //  {idVal,acron, rangeMin, rangeMax}
 var tt_id = {
-	// JSU_FREE_START	
+/* JSU_FREE_START ---------------------
 		jsu: [0,'tt',10000,20000],     //  
-	// JSU_FREE_END	
+JSU_FREE_END -----------------------*/
 		js: [0,'tt',1,100],     // 
 		jt: [0,'tt',1000,2000],     // e.g tt57
 		jd: [0,'tt',3000,4000]      
@@ -256,11 +259,11 @@ var tt_id = {
 function Tip(tipMsgHtml,tipType,objOpt)
 {
 	var fn = "[tooltip.js Tip()] ";
-	tt_log ( fn + TIPLOG_FUN_START);
+	jsu_log ( fn + TIPLOG_FUN_START);
 	
 	tt_init(); // init, if not already done
 	if (tip_type == TIP_TYPE.Fixed){
-		return tt_log ( fn + "Nothing to do: a TipFix is currently diaplyed" + TIPLOG_FUN_END);
+		return jsu_log ( fn + "Nothing to do: a TipFix is currently diaplyed" + TIPLOG_FUN_END);
 	}	
 	
 	if (objOpt == undefined){
@@ -274,14 +277,14 @@ function Tip(tipMsgHtml,tipType,objOpt)
 		tipType = TIP_TYPE.Floating; 
 	}
 	tip_type = tipType;
-	tt_log (fn + "SET tip_type=" + tip_type);
+	jsu_log (fn + "SET tip_type=" + tip_type);
 	//---------- set config Option
 	var objCfg = (tip_type == TIP_TYPE.Fixed) ? TIP_CFG_FIXED : TIP_CFG_FLOATING;
 	tt_SetCfg (objCfg);
 	//---------------------
 	tt_showTip(tipMsgHtml);
 	tip_type = tipType; // workaround. we have to set again this global var because tt_Hide has resetted it
-	tt_log ( fn + TIPLOG_FUN_END);
+	jsu_log ( fn + TIPLOG_FUN_END);
 }
 
 /**
@@ -319,8 +322,8 @@ function Tip(tipMsgHtml,tipType,objOpt)
 function TipFix(tipMsgHtml,event, objOpt)
 {
 	var fn = "[tooltip.js TipFix] ";
-	tt_log ( fn + TIPLOG_FUN_START);
-	tt_logObj (fn + "IN objOpt", objOpt);
+	jsu_log ( fn + TIPLOG_FUN_START);
+	jsu_logObj (fn + "IN objOpt", objOpt);
 	tt_init(); // init, if not already done
 	if (objOpt == undefined){
 		var objOpt = {bNL2BR: true};
@@ -336,11 +339,11 @@ function TipFix(tipMsgHtml,event, objOpt)
 	
 	var szTitle = "";
 	
-	// JSU_FREE_START
-	// finta
+/* JSU_FREE_START ---------------------
+    // Finta
 	tt_getId (tt_id.jsu);
 	tt_aV[JSUTITLE] += ' <span><a id="' + tt_id.jsu[0] +'" href="https://goo.gl/1eIYNm">JSU Demo Version</a></span>';
-	// JSU_FREE_END
+JSU_FREE_END -----------------------*/
   // -- Option
   if (objOpt){
   	if (objOpt.szTitle){
@@ -367,7 +370,7 @@ function TipFix(tipMsgHtml,event, objOpt)
   		szMaxWidth = 'max-width: ' + tt_w + 'px;';
   	}	
   	*/
-		tt_log ( fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
+		jsu_log ( fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
   	
  		// Add Div for scroll
  		// e.g "<div style='max-height: 200px;overflow: auto;'>"
@@ -387,7 +390,7 @@ function TipFix(tipMsgHtml,event, objOpt)
 	if (objOpt != undefined && objOpt.tipFixedPos != undefined){
 		tipFixedPos = objOpt.tipFixedPos;
 	}
-	tt_log ( fn + "IN: tipFixedPos=" + tipFixedPos);
+	jsu_log ( fn + "IN: tipFixedPos=" + tipFixedPos);
 	var tipImg = null;
 	if (objOpt.szRefElId != undefined && objOpt.szRefElId != ""){
 		tipImg = document.getElementById (objOpt.szRefElId);
@@ -402,60 +405,44 @@ function TipFix(tipMsgHtml,event, objOpt)
 		if (szId == undefined || szId.length == 0){
 			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFix must have an id");
 		}
-		var bToggled = true; //default
+		var bToggled = false; //default
 		//---------------------- TOGGLE IMAGE 
-		tt_log ( fn + "OLD classname=" + className);
-		if (className == TIP_TOGGLE_CLASS.Down ){
-			className = TIP_TOGGLE_CLASS.Up;
-		}else	if (className == TIP_TOGGLE_CLASS.Up){
-			className = TIP_TOGGLE_CLASS.Down;
-			bShow = false;
-		}else	if (className == TIP_TOGGLE_CLASS_ARROW.Up){
-			className = TIP_TOGGLE_CLASS_ARROW.Down;
-			bShow = false;
-		}else	if (className == TIP_TOGGLE_CLASS_ARROW.Down ){
-			className = TIP_TOGGLE_CLASS_ARROW.Up;
-		}else	if (className == TIP_TOGGLE_CLASS_GA.Up){			
-			className = TIP_TOGGLE_CLASS_GA.Down;			
-			bShow = false;
-		}else	if (className == TIP_TOGGLE_CLASS_GA.Down ){		
-			className = TIP_TOGGLE_CLASS_GA.Up;		
-		}	else	if (className == TIP_TOGGLE_CLASS_JS.Up){
-			className = TIP_TOGGLE_CLASS_JS.Down;
-			bShow = false;
-		}else	if (className == TIP_TOGGLE_CLASS_JS.Down ){
-			className = TIP_TOGGLE_CLASS_JS.Up;
-		}else	if (className == TIP_TOGGLE_CLASS_CODE.Up){
-			className = TIP_TOGGLE_CLASS_CODE.Down;
-			bShow = false;
-		}else	if (className == TIP_TOGGLE_CLASS_CODE.Down ){
-			className = TIP_TOGGLE_CLASS_CODE.Up;
-		}else {
-			if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
-				tt_logObj ( fn + "CASE of CUSTOM objClass" + tt_tipFix.objClass);
+		jsu_log ( fn + "OLD classname=" + className);
+		for (i=0; i< tt_arToggleClass.length; i++){
+			var objToggle = tt_arToggleClass[i];
+			if (className == objToggle.Down){
+				className = objToggle.Up;
+				bToggled = true;
+				jsu_log ( fn + "TOGGLE From " + objToggle.Down + " TO " + objToggle.Up);
+			}else	if (className == objToggle.Up){
+				className = objToggle.Down;
+				jsu_log ( fn + "TOGGLE From " + objToggle.Up + " TO " + objToggle.Down);
+				bShow = false;
+				bToggled = true;
+			}
+		}
+		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
+				jsu_logObj ( fn + "CASE of CUSTOM objClass" + tt_tipFix.objClass);
 				// Custom Class passed by User
 				if (className == tt_tipFix.objClass.Up){
 				  className = tt_tipFix.objClass.Down;
+					bToggled = true;
 				  bShow = false;
 			  }else	if (className == tt_tipFix.objClass.Down ){
 				  className = tt_tipFix.objClass.Up;
-			  }else {
-			  	bToggled= false; // NOT FOUND
-			  }	
-			}else {
-		  	bToggled= false; // NOT FOUND
-			}
-		}
+					bToggled = true;
+			  }
+		}		
 		if (bToggled){
-			tt_log ( fn + "TOGGLE TO NEW classname=" + className);
+			jsu_log ( fn + "TOGGLE TO NEW classname=" + className);
 		}	else{
-			tt_logObj ( fn + "WARNING: Current className=" + className + " NOT implemented as TOGGLE IMage: SO NO IMAGE TOGGLE is DONE" );
+			jsu_logObj ( fn + "WARNING: Current className=" + className + " NOT implemented as TOGGLE IMage: SO NO IMAGE TOGGLE is DONE" );
 		}
 		tipImg.className = className;
 	}
-	tt_log ( fn + "bShow=" + bShow);
+	jsu_log ( fn + "bShow=" + bShow);
 	if (bShow && tip_img_fixed){
-		tt_log ( fn + "Particular case: Click to opne a new TipFix while another is still open. So we close the TipFix that was stil open");
+		jsu_log ( fn + "Particular case: Click to opne a new TipFix while another is still open. So we close the TipFix that was stil open");
 		// To manage the case of switch beween different Fixed img. We untip previous
 		tt_UnTipFix();  // false becuase we do not want to resize: there is alread a new FixedTip Open
 	}
@@ -463,35 +450,34 @@ function TipFix(tipMsgHtml,event, objOpt)
 	if (bShow && tipImg){
 		tip_img_fixed = tipImg; // save in global
 		TIP_CFG_FIXED.Fix = [tipImg.id,tipFixedPos,5];
-		tt_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
+		jsu_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
 		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
 		
 		var el = document.getElementById ("WzTiTl");
 		var szWidth = el.style.width; 
-		tt_log (fn + "reduce width of the header that was " + szWidth);
+		jsu_log (fn + "reduce width of the header that was " + szWidth);
 		iWidth = parseInt (szWidth.replace ("px","")) - 6;
 		el.style.width = iWidth + "px";
-		// JSU_FREE_START
+/* JSU_FREE_START ---------------------
 		// verifico che ci sia l'URL aggiunto in id tt_id.jt contenga href come https://goo.gl/1eIYNm
 		// controllo che non sia stato hakerato il codice
 		try {
 			if (getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
 				// e` stato hakerato - esco
 				tt_UnTipFix();
-				tt_logObj ("tt_id", tt_id);
+				jsu_logObj ("tt_id", tt_id);
 			}
 		}catch(e) {
 			tt_UnTipFix();
-			tt_logObj ("tt_id " + e.message, tt_id);
+			jsu_logObj ("tt_id " + e.message, tt_id);
 		}	
-		// JSU_FREE_END
-		
-		
+JSU_FREE_END -----------------------*/
+        
 	}else {
 		// User has click over the image arrow Up to close the TipFix
 		tt_UnTipFix();
 	}
-	tt_log ( fn + TIPLOG_FUN_END);
+	jsu_log ( fn + TIPLOG_FUN_END);
 }
 
 
@@ -505,10 +491,10 @@ function TipFix(tipMsgHtml,event, objOpt)
 function UnTip()
 {
 	var fn = "[tooltip.js UnTip()] ";
-	tt_log ( fn + TIPLOG_FUN_START);
-  tt_log(fn + "CURRENT tip_type=" + tip_type);
+	jsu_log ( fn + TIPLOG_FUN_START);
+  jsu_log(fn + "CURRENT tip_type=" + tip_type);
   if (tip_type == TIP_TYPE.Fixed){
-  	return tt_log ( fn + "Nothing to do: a TipFix is still displayed" +  TIPLOG_FUN_END);
+  	return jsu_log ( fn + "Nothing to do: a TipFix is still displayed" +  TIPLOG_FUN_END);
   }
 	tt_init(); // init, if not already done
 	tt_SetCfg(TIP_CFG_FLOATING);
@@ -519,7 +505,7 @@ function UnTip()
 		tt_HideInit();
 	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
 	tip_type = TIP_TYPE.NONE;
-	tt_log ( fn + TIPLOG_FUN_END);
+	jsu_log ( fn + TIPLOG_FUN_END);
 }
 
 
@@ -547,7 +533,7 @@ function UnTip()
  */
 function TipFixCode(szCode, event, objOpt){
 	var fn = "[tooltip.js TipFixCode] ";
-	tt_log (fn + TIPLOG_FUN_START);
+	jsu_log (fn + TIPLOG_FUN_START);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -563,7 +549,7 @@ function TipFixCode(szCode, event, objOpt){
 	}else{
 		TipFixTextArea(szCode, event, objOpt);
 	}
-	tt_log (fn + TIPLOG_FUN_END);
+	jsu_log (fn + TIPLOG_FUN_END);
 }
 
 
@@ -600,9 +586,9 @@ function TipFixCode(szCode, event, objOpt){
  */
 function TipFixMultiCode(arObjCode, event, objOpt){
 	var fn = "[tooltip.js TipFixMultiCode] ";
-	tt_log (fn + TIPLOG_FUN_START);
-	tt_logObj (fn + "IN arObjCode",arObjCode);
-	tt_logObj (fn + "IN objOpt",objOpt);
+	jsu_log (fn + TIPLOG_FUN_START);
+	jsu_logObj (fn + "IN arObjCode",arObjCode);
+	jsu_logObj (fn + "IN objOpt",objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -630,7 +616,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
 		}
 		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; }
-		tt_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
+		jsu_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
 		
 		szTbl+= '  <tr class="detTitle ' + szClassTitlePrettify + szClassPrettify + '"><td width="100%" class="detTitle ' + szClassTitlePrettify + szClassPrettify + '">' + objCode.szTitle + '</td></tr>\n';
 		szTbl+= '  <tr class="det ' + szClassPrettify + '" ><td class="tipl ' + szClassPrettify + '" width="100%">\n';  	
@@ -661,12 +647,12 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 				var szWidthCont = 'width:' + iWidth -100 + 'px;';
 				var szWidth = 'width:' + (iWidth -130) + 'px;';
 				// ------
-				tt_log (fn + "For code[" + i + "] we have to put an extra div container - szMaxHeightCont=" + szMaxHeightCont);
+				jsu_log (fn + "For code[" + i + "] we have to put an extra div container - szMaxHeightCont=" + szMaxHeightCont);
 				var szDivPretty = '<div style="' + szMaxHeightCont + szWidthCont + ' border: 1px solid; overflow: auto; background-color: white; ">' + 
 							'    <div id="' + id + '" class="prettify" style="' + szWidth + 
 			        '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>' +
 				     '</div>';
-				tt_logHtml (fn + "szDivPretty", szDivPretty);     
+				jsu_logHtml (fn + "szDivPretty", szDivPretty);     
 			}else {
 				var szWidth = 'width:' + iWidth + 'px;';
 				var szDivPretty = '    <div id="' + id + '" class="prettify" style="' + szWidth + 
@@ -684,7 +670,7 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 			}
 	}
 	szCodeDiv += '</table>';
-	// tt_logHtml(fn + "szCodeDiv", szCodeDiv);
+	// jsu_logHtml(fn + "szCodeDiv", szCodeDiv);
 	objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
 	TipFix (szCodeDiv,event,objOpt);
 	if (bPrettifyEn){
@@ -695,12 +681,12 @@ function TipFixMultiCode(arObjCode, event, objOpt){
 	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
 	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
 	var iWidth = iTipWidth - 40; // keep some space for Padding,..
-  tt_log (fn + "TipWidth=" + iTipWidth + " - We set " + arObjCode.length + " CodeEl with width=" + iWidth + " to adapt them to the Div Container");
+  jsu_log (fn + "TipWidth=" + iTipWidth + " - We set " + arObjCode.length + " CodeEl with width=" + iWidth + " to adapt them to the Div Container");
 	for (var i=0; i < arObjCode.length; i++){
 	 	var el = document.getElementById("tipCode_" + i);
 	 	el.style.width = iWidth + 'px'; 
 	}	
-	tt_log (fn + TIPLOG_FUN_END);
+	jsu_log (fn + TIPLOG_FUN_END);
 }
 
 
@@ -740,8 +726,8 @@ function TipFixMultiCode(arObjCode, event, objOpt){
  */
 function TipFixTextArea(szTxt, event, objOpt){
 	var fn = "[tooltip.js TipFixTextArea] ";
-	tt_log (fn + TIPLOG_FUN_START);
-	tt_logObj (fn + "IN objOpt", objOpt);
+	jsu_log (fn + TIPLOG_FUN_START);
+	jsu_logObj (fn + "IN objOpt", objOpt);
 	if (objOpt == undefined){
 		objOpt = new Object();
 	}
@@ -756,11 +742,11 @@ function TipFixTextArea(szTxt, event, objOpt){
 	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
 	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
 	var iTextAreaWidth = iTipWidth - 40; // keep some space for Padding,..
-	tt_log (fn + "TipWidth=" + iTipWidth + " - We set TextArea with width=" + iTextAreaWidth + " to adapt it to the Div Container");
+	jsu_log (fn + "TipWidth=" + iTipWidth + " - We set TextArea with width=" + iTextAreaWidth + " to adapt it to the Div Container");
   var el = document.getElementById("tipTextArea");
   el.style.width = iTextAreaWidth + 'px'; 
 	
-	tt_log (fn + TIPLOG_FUN_END);
+	jsu_log (fn + TIPLOG_FUN_END);
 }
 
 
@@ -775,8 +761,8 @@ function TipFixTextArea(szTxt, event, objOpt){
 function tt_UnTipFix(){
 	var fn = "[tooltip.js tt_UnTipFix()] ";
 	
-	tt_log ( fn + TIPLOG_FUN_START);
-  tt_log(fn + "CURRENT tip_type=" + tip_type);
+	jsu_log ( fn + TIPLOG_FUN_START);
+  jsu_log(fn + "CURRENT tip_type=" + tip_type);
 	tt_init(); // init, if not already done
 	
 	
@@ -788,7 +774,7 @@ function tt_UnTipFix(){
 		tt_HideInit();
 	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
 	tip_type = TIP_TYPE.NONE;
-	tt_log ( fn + TIPLOG_FUN_END);
+	jsu_log ( fn + TIPLOG_FUN_END);
 
 }
 
@@ -800,11 +786,10 @@ function tt_UnTipFix(){
 function tt_isClassFixed(szClass){
   var bTipFix = false;	
 	var fn="[tooltip.js tt_isClassFixed()] ";
-	if (szClass == TIP_TOGGLE_CLASS_JS.Up  || szClass == TIP_TOGGLE_CLASS.Up  ||
-			szClass == TIP_TOGGLE_CLASS_CODE.Up  ||
-			szClass == TIP_TOGGLE_CLASS_ARROW.Up || 
-			szClass == TIP_TOGGLE_CLASS_GA.Up){
-		bTipFix = true;
+	for (i=0; i< tt_arToggleClass.length; i++){
+		if (tt_arToggleClass[i].Up == szClass){
+			bTipFix = true;
+		}
 	}
 	if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 		// Custom Class passed by User
@@ -812,7 +797,7 @@ function tt_isClassFixed(szClass){
 			bTipFix = true;
 		}  
 	}	
-	tt_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
+	jsu_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
   return bTipFix;	
 	
 }
@@ -825,16 +810,10 @@ function tt_RestoreImgFixed() {
 	if (tip_img_fixed != null){
 		var szClass = "";
 		// Change img of tip_fixed if present
-		if (tip_img_fixed.className == TIP_TOGGLE_CLASS.Up){
-			szClass = TIP_TOGGLE_CLASS.Down;
-		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_ARROW.Up){
-			szClass = TIP_TOGGLE_CLASS_ARROW.Down;
-		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_GA.Up){
-			szClass = TIP_TOGGLE_CLASS_GA.Down;
-		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_JS.Up){
-			szClass = TIP_TOGGLE_CLASS_JS.Down;
-		}	else if (tip_img_fixed.className == TIP_TOGGLE_CLASS_CODE.Up){
-			szClass = TIP_TOGGLE_CLASS_CODE.Down;
+		for (i=0; i< tt_arToggleClass.length; i++){
+			if (tt_arToggleClass[i].Up == tip_img_fixed.className){
+				szClass = tt_arToggleClass[i].Down ;
+			}
 		}
 		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
 			// Custom Class passed by User
@@ -843,7 +822,7 @@ function tt_RestoreImgFixed() {
 			}
 		}		
 		if (szClass != ""){
-			tt_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
+			jsu_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
 			tip_img_fixed.className = szClass;
 		}
 		tip_img_fixed = null;
@@ -882,43 +861,14 @@ function tt_getElementById2(Id,bShowErr)
 
 
 
-/*
- * call jslog if it is defined
- * @param msg
- */
-function tt_log(msg){
-	if (typeof(jslog) == "function"){
-		jslog (JSLOG_JSU, msg);
-	}
-}
-
-/*
- * call jslogObj if it is defined
- * @param msg
- */
-function tt_logObj(msg,obj){
-	if (typeof(jslogObj) == "function"){
-		jslogObj (JSLOG_JSU, msg,obj);
-	}
-}
-
-/*
- * call jslogHtml if it is defined
- * @param msg
- */
-function tt_logHtml(msg,szHtml){
-	if (typeof(jslogHtml) == "function"){
-		jslogHtml (JSLOG_JSU, msg,szHtml);
-	}
-}
 
 
 function tt_showTip()
 {
 	var fn = "[tooltip.js tt_showTip()] ";
-	tt_log ( fn + TIPLOG_FUN_START);
+	jsu_log ( fn + TIPLOG_FUN_START);
 	tt_Tip(arguments, null);
-	tt_log ( fn + TIPLOG_FUN_END);
+	jsu_log ( fn + TIPLOG_FUN_END);
 }
 
 function TagToTip()
@@ -975,7 +925,7 @@ function tt_SetTipPos(x, y)
 	var css = tt_aElt[0].style;
 	//if x is too left or to right to set porperly the tip,  we adljust it
 	if (x <TIP_X_MIN){
-		tt_log (fn + "change x from" + x + " to xMin=" + TIP_X_MIN);
+		jsu_log (fn + "change x from" + x + " to xMin=" + TIP_X_MIN);
 		x = TIP_X_MIN;
 	}else {
 		var xRight = x + tt_w -20;
@@ -986,7 +936,7 @@ function tt_SetTipPos(x, y)
 			if (x <TIP_X_MIN){
 				x = TIP_X_MIN;
 			}
-			tt_log (fn + "x was too on the right. Set x=" + x);
+			jsu_log (fn + "x was too on the right. Set x=" + x);
 		}
 	}
 	
@@ -1030,7 +980,7 @@ function tt_HideInit()
 function tt_Hide()
 {
 	var fn = "[tooltip.js tt_tt_Hide()] ";
-	tt_log (fn + TIPLOG_FUN_START);
+	jsu_log (fn + TIPLOG_FUN_START);
 	
 	if(tt_db && tt_iState)
 	{
@@ -1062,7 +1012,7 @@ function tt_Hide()
 		if(tt_aElt[tt_aElt.length - 1])
 			tt_aElt[tt_aElt.length - 1].style.display = "none";
 	}
-	tt_log (fn + TIPLOG_FUN_END);
+	jsu_log (fn + TIPLOG_FUN_END);
 	
 }
 function tt_GetElt(id)
@@ -1160,7 +1110,7 @@ function tt_init()
 	if (tt_init_done){
 		return; // already done
 	}
-	tt_log (fn + "Init tooltip.js");
+	jsu_log (fn + "Init tooltip.js");
 	// ESC is considered as UnTip of TipFix
 	document.onkeydown = function(e){
     if(e.keyCode === 27){
@@ -1293,7 +1243,7 @@ function tt_GetMainDivRefs()
 function tt_ResetMainDiv()
 {
 	var fn = "[tooltip.js tt_ResetMainDiv()] ";
-	// tt_log (fn + "Called");
+	// jsu_log (fn + "Called");
 	tt_SetTipPos(0, 0);
 	tt_aElt[0].innerHTML = "";
 	tt_aElt[0].style.width = "0px";
@@ -1524,12 +1474,13 @@ function tt_MkTipSubDivs()
 			('<div id="WzTiTl" class="ttTitle" style="position:relative;z-index:1;">'
 			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
 			+  tt_aV[TITLE] 
-			// JSU_FREE_START 
+            
+/* JSU_FREE_START ---------------------
 			// tt_id.jt[0]   = id di JSU Title
 			+ '<span id="' + tt_id.js[0] +'" ><a style="margin-left:15px;" id="' + tt_id.jt[0] + '" class="tt" href="' +
 			 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
 			'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
-			// JSU_FREE_END
+JSU_FREE_END -----------------------*/
 			+ '</td>'
 			// -------------------- Close Section X
 			+ (tt_aV[CLOSEBTN] ?
@@ -1566,7 +1517,7 @@ function tt_MkTipSubDivs()
 		tt_El2Tip();
 	tt_ExtCallFncs(0, "SubDivsCreated");
 	
-	// tt_logHtml('WzTiTl', tt_aElt[0].innerHTML);
+	// jsu_logHtml('WzTiTl', tt_aElt[0].innerHTML);
 	
 }
 function tt_GetSubDivRefs()
@@ -2022,7 +1973,7 @@ function tt_PosFix()
 			el = tt_aV[FIX][0];
 		iXPos = tt_aV[FIX][1];
 		bXPosRelative = (iXPos == TIP_FIXED_POS.LEFT || iXPos == TIP_FIXED_POS.CENTER || iXPos == TIP_FIXED_POS.RIGHT);  
-		tt_log (fn + "iXPos=" + iXPos + " bXPosRelative=" + bXPosRelative);
+		jsu_log (fn + "iXPos=" + iXPos + " bXPosRelative=" + bXPosRelative);
 		if (!bXPosRelative){
 			iX=iXPos;
 		}
@@ -2037,7 +1988,7 @@ function tt_PosFix()
 		}
 		//
 		if (bXPosRelative){
-			tt_log (fn + "iXPos=" + iXPos + " Calculate new iX From iX=" + iX+ " tt_w=" + tt_w);
+			jsu_log (fn + "iXPos=" + iXPos + " Calculate new iX From iX=" + iX+ " tt_w=" + tt_w);
 			// +25 for workaround to align better
 			if (iXPos == TIP_FIXED_POS.LEFT){
 				iX = iX -tt_w + 25;
@@ -2045,7 +1996,7 @@ function tt_PosFix()
 				iX = iX - (tt_w/2) + 20;   
 			}
 		}
-		tt_log (fn + "SET New iX=" + iX);
+		jsu_log (fn + "SET New iX=" + iX);
 	}
 	// For a fixed tip positioned above the mouse, use the bottom edge as anchor
 	// (recommended by Christophe Rebeschini, 31.1.2008)
@@ -2340,7 +2291,7 @@ function tt_isPrettifyEn(){
 	bPrettifyCode = true;   // FULL JSU
 	/* FULL_JSU_END */
 	var bPrettifyEn = (bPrettifyLoaded && bPrettifyCode);  
-	tt_log (fn + "bPrettifyLoaded=" + bPrettifyLoaded + " bPrettifyCode=" + bPrettifyCode + "  RETURN bPrettifyEn=" + bPrettifyEn);
+	jsu_log (fn + "bPrettifyLoaded=" + bPrettifyLoaded + " bPrettifyCode=" + bPrettifyCode + "  RETURN bPrettifyEn=" + bPrettifyEn);
   return bPrettifyEn;
   // TEST
   // return false;

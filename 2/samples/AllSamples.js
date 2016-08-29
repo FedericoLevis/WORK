@@ -25,7 +25,7 @@ function jsu_loaded(){
 		var select = getElementById2("videoOpt");
 		select.disabled = false;
 	}	
-	manage_par_opt();
+	initSampleCmn();
 };
 
 
