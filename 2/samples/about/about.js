@@ -758,6 +758,7 @@ function downloadFreeExecute(event){
 	  eventLabel: 'master.zip'
 	});
 
+	ga('send', 'pageview');  // Send now the pageview click
 	// ga('send', 'pageView',JSU_FREE_ZIP);
 	
 	

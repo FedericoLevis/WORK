@@ -30,7 +30,10 @@ var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 //Only for TEST during development
 //var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
 
-var JSU_GA_EN = true; // Enable GoogleAnaltycs
+if (typeof (JSU_GA_EN) == "undefined"){
+	// DEFAULT:  Enable GoogleAnaltycs
+	var JSU_GA_EN = true; 
+}
 
 
 

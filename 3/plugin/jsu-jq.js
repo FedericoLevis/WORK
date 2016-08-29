@@ -20,7 +20,10 @@ var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/IEPo
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 
-var JSU_GA_EN = true; // Enable GoogleAnaltycs
+if (typeof (JSU_GA_EN) == "undefined"){
+	// DEFAULT:  Enable GoogleAnaltycs
+	var JSU_GA_EN = true; 
+}
 
 
 //Only for TEST during development
@@ -79,7 +82,7 @@ require([ // First 3 always present
 
   if (typeof (JSU_GA_EN) != "undefined" && JSU_GA_EN){
   	  if (typeof (JSU_GA_TRACKING_ID) == "undefined"){
-  	  	// we use the default TrackingId theat identify FREE JSU
+  	  	// we use the default TrackingId that identify FREE JSU
   	  	var JSU_GA_TRACKING_ID = 'UA-83225633-1'; 
   	  }
       ga('create',JSU_GA_TRACKING_ID , 'auto');
