@@ -51,8 +51,7 @@ input.browserTipIESmall {  /* Only IE in Tip */
     width: 20px;
     padding-left: 10px;
     border: 0px ;
-    /* background: 0xffffcc url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserTipIESmall.png) no-repeat center center; */ 
-    background: yellow url(../../images/about/browserTipIESmall.png) no-repeat center center;
+    background: 0xffffcc url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserTipIESmall.png) no-repeat center center;  
 }
 
 
@@ -117,8 +116,7 @@ td.jsuHeaderLogo {
   height: 80px;
   width: 300px;
   align: center;
-	// background: url('https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuLogo.png') center center no-repeat;
-  background: url('../../images/about/jsuLogo.png') center center no-repeat;
+	background: url('https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuLogo.png') center center no-repeat;
 }
 
 
@@ -846,7 +844,6 @@ input.sampleLimitBig{ /* Image for the Limit*/
     width: 42px;
     border: 0px ;
     background: #FFFFCC  url('https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuLimitBig.png') center center no-repeat;
-    background: #FFFFCC url(../../images/about/jsuLimitBig.png) no-repeat center center; 
 }
 
 
