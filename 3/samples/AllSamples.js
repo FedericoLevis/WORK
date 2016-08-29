@@ -3,6 +3,8 @@
    						CONSTANT
 ============================================================================================= */
 
+
+
 var JSLOG_LEV = 0;
 
 
@@ -27,6 +29,8 @@ function jsu_loaded(){
 	}	
 	initSampleCmn();
 };
+
+
 
 
 function onclickSortFeature(event){
