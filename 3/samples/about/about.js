@@ -130,7 +130,7 @@ var JSU_SHORT_URL_SAMPLE_VALIDATE =	"https://goo.gl/F3r4lP";
 var JSU_SHORT_URL_SAMPLE_JSLOG  =	"https://goo.gl/aAtyxG";
 var JSU_SHORT_URL_SAMPLE_JQPOPUP  =	"https://goo.gl/09zCLG";
 var JSU_SHORT_URL_GITHUB = "https://goo.gl/LYDepH";
-var JSU_SHORT_URL_COGNOS = "http://goo.gl/JZJQPn";
+var JSU_SHORT_URL_COGNOS = "http://goo.gl/JZJSPn";
 var JSU_SHORT_URL_PLSQL = "https://goo.gl/OI3eIo";
 var JSU_SHORT_URL_LINKEDIN = "https://goo.gl/J9mJfh";  
 //---------------------
@@ -185,6 +185,7 @@ var JSU_LONG_URL_DOC_GA_ONLYFULL  =	JSU_LONG_URL_DOC_GA + "#parOnlyFullJsu";
 // ---- ggo.gl
 var JSU_SHORT_URL_DOC  =	"https://goo.gl/JzIXW0";
 var JSU_SHORT_URL_DOC_TIP  =	"https://goo.gl/AGKlpQ";
+var JSU_SHORT_URL_DOC_GA  =	"http://goo.gl/UYJ5Zv";
 var JSU_SHORT_URL_DOC_SORT  =	"https://goo.gl/aKR7b2";
 var JSU_SHORT_URL_DOC_VALIDATE  =	"https://goo.gl/M7LT4v";
 var JSU_SHORT_URL_DOC_LOADING  =	"https://goo.gl/0tIOIJ";
