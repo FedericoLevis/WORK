@@ -36,24 +36,13 @@ function sampleInit(){
   }
   onchangeSampleType1(); // simulate to init
   onchangeSample2(); // simulate to init
-  // ---------------
+  // ------------------------------------------ OPT disable in DEMO Version
   if (isJsuFree()){
-  	jslog (JSLOG_DEBUG,"JSU FREE: mark some Option as not enabled");
-  	var arDis= ["bModal", "szTitle"];
-  	var arOpt = ["bModalOpt", "szTitleOpt"];
-  	for (var i=0; i< arDis.length; i++){
-  		var el = getElementById2(arDis[i], true);
-  		if (el){
-    		el.disabled = true;
-  		}
-  	}
-  	for (var i=0; i< arOpt.length; i++){
-  		var el = getElementById2(arOpt[i], true);
-  		if (el){
-  		  classAdd (el,'jsuParAbsent',true);
-  		}  
-  	}
-  	
+  	jsuOptDisable (["bModal", "szTitle","szPromptLabel","iPromptMin","iPromptMax","iChoiceMultiSize"], // Opt to disable
+  	            ["bModalOpt", "szTitleOpt","szPromptLabelOpt","iPromptMinOpt","iPromptMaxOpt","iChoiceMultiSizeOpt"],  // Opt with label
+  	            ["PopupOptCustomLayout","PopupPromptOpt","PopupChoiceOpt"],  // URL to see all Option
+  	            true // bDemo 
+  	  	);
   }
 }
 
@@ -345,8 +334,8 @@ function sample1Choice(){
   var szMsgHtml = "";
   if (bChoiceMultiSel){
     // Get the optional Size
-    var selectChoiceSize = getElementById2('selectChoiceSize');
-    var iChoiceMultiSize = parseInt(selectChoiceSize[selectChoiceSize.selectedIndex].value);
+    var iChoiceMultiSize = getElementById2('iChoiceMultiSize');
+    var iChoiceMultiSize = parseInt(iChoiceMultiSize[iChoiceMultiSize.selectedIndex].value);
     szMsgHtml = 'Example of <b>Multi Selection Choice</b> with:<ul>' + 
         '<li>' + CHOICE_NUM + ' items </li>' + 
         '<li>First 5 Items pre-selected</li>' +
@@ -423,8 +412,8 @@ function showSampleChoice(){
   var iChoiceMultiSize = null;
   if (bChoiceMultiSel){
     // Get the optional Size
-    var selectChoiceSize = getElementById2('selectChoiceSize');
-    var iChoiceMultiSize = parseInt(selectChoiceSize[selectChoiceSize.selectedIndex].value);
+    var iChoiceMultiSize = getElementById2('iChoiceMultiSize');
+    var iChoiceMultiSize = parseInt(iChoiceMultiSize[iChoiceMultiSize.selectedIndex].value);
   }
   var szMsgHtml = bChoiceMultiSel ? "Example of <b>Multi Selection Choice</b> with First 5 Items pre-selected." 
                   : "Example of <b>Single Selection Choice</b> with Item 10 pre-selected."; 

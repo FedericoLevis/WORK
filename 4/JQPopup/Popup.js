@@ -968,12 +968,14 @@ function pp_OnResize(event, ui){
   </table>  
  
  <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
-   <tr ><td class="jsDocTitleWarn">Limitations is JSU DEMO Version</td></tr>
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
    <tr><td>
 		  <div class="jsDocNote">
 		  <b>JSU DEMO Version has some limitations:</b>
 		  <ul>
-		    <li>Some Options are not available in JSU DEMO Version: szTitle, bModal, ...</li>
+		    <li>Some Options are not available in JSU DEMO Version: 
+		       <label class="jsDocWarn">szTitle, bModal, szPromptLabel,szPromptValue, iPromptWidth, iChoiceMultiSize </label>
+		    </li>
 		    <li>Near the Default Title there is also a Link to JSU</li>
 		  </ul>
 		  </div>

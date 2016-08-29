@@ -49,17 +49,17 @@
   </tr>
 </table>   
 
-<hr>
+<hr>    
 <h1 class="jsuSample">JSU - JS Utility Plugin  - JQ Popup Sample</h1>
 
 <!--   TIP Warning for Limitations -->
 <div style="width:100%;" id="sample_limit" align="center">
-  <table class="tipNoBorder" width="280px" >
+  <table class="tipNoBorder" width="400px" >
     <tr><td>
              <table class="sampleLimit" align="left"><tr>
                 <td class="sampleLimit" style="vertical-align:middle;"><input class="sampleLimit"></td>
                 <td class="tipl">
-                  <label class="tipWarnBold">DEMO JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
+                  <label class="tipWarnBold">This is a DEMO JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
                 </td>
              </tr>
              </table>
@@ -140,13 +140,13 @@
           </tr>
         </table>
         <table class="sampleNoBorder">
-          <!--=========================================   OPTION for Choice -->
+          <!--=========================================   OPTION for PopupChoice -->
           <tr>
             <td>
               <div id="optChoice" style="display:none;">
 	              <table class="det" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
 	                 <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_blank">PopupChoice Options</a> for Custom Layout </td>
+                    <td colspan="4"> <a id="PopupChoiceOpt" class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_blank">PopupChoice Options</a></td>
 	                </tr>
 	                 <tr class="detTitle2">
 	                  <td>OPTION</td>
@@ -166,11 +166,11 @@
 	                  <td class="tipl"><b>true:</b> Multiple Selection - <b>false:</b> Single Selection</td>
 	                </tr>
 	                <tr>
-	                  <td class="tipcBold">iChoiceMultiSize</td>
+	                  <td class="tipcBold" id="iChoiceMultiSizeOpt">iChoiceMultiSize</td>
                     <td class="tipr">10</td>
 	                  <td class="tiprBold">
 							        <div id="divChoiceSize" style="display:none">               
-							          <select id="selectChoiceSize" style="font-weight:bold;width:60px;margin-left:5px" >  
+							          <select id="iChoiceMultiSize" style="font-weight:bold;width:60px;margin-left:5px" >  
 							                          <option value="5">5</option> 
 							                          <option value="10" selected>10</option> 
 							                          <option value="15">15</option> 
@@ -184,13 +184,13 @@
               </div> 
             </td>  
           </tr>
-          <!--   OPTION for Prompt -->
+          <!--   OPTION for PopupPrompt -->
           <tr>
             <td colspan="2">
               <div id="optPrompt" style="display:none;">
                 <table class="det" BORDER="2" width="600px" cellspacing="0" cellpadding="3">
                    <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_blank">PopupPrompt Options</a> for Custom Layout </td>
+                    <td colspan="4"> <a id="PopupPromptOpt" class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_blank">PopupPrompt Options</a></td>
                   </tr>
                    <tr class="detTitle2">
                     <td>OPTION</td>
@@ -199,7 +199,7 @@
                     <td>Description</td>
                   </tr>
                   <tr>
-                    <td class="tipcBold">szPromptLabel</td>
+                    <td class="tipcBold" id="szPromptLabelOpt">szPromptLabel</td>
                     <td class="tipr"></td>
                     <td class="tiprBold">
                       <input id="szPromptLabel" style="font-weight:bold;width:90px;" title="Label in front of the Prompt Item"/>
@@ -218,7 +218,7 @@
                     <td class="tipl">Prompt Type:<b>number</b> or <b>string</b></td>
                   </tr>
                   <tr>
-                    <td class="tipcBold">iPromptMin</td>
+                    <td class="tipcBold" id="iPromptMinOpt">iPromptMin</td>
                     <td class="tipr"></td>
                     <td class="tiprBold">
                       <input id="iPromptMin" style="font-weight:bold;width:40px;"/>
@@ -226,7 +226,7 @@
                     <td class="tipl">if number: <b>Min Value</b> - if string: <b>Min Length</b></td>
                   </tr>
                   <tr>
-                    <td class="tipcBold">iPromptMax</td>
+                    <td class="tipcBold" id="iPromptMaxOpt">iPromptMax</td>
                     <td class="tipr"></td>
                     <td class="tiprBold">
                       <input id="iPromptMax" style="font-weight:bold;width:40px;"/>
@@ -303,7 +303,7 @@
               <div id="optLayout" style="display:none;">
                 <table class="det" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
                    <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_blank">Popup Options</a> for Custom Layout </td>
+                    <td colspan="4"> <a id="PopupOptCustomLayout" class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_blank">Popup Options</a> for Custom Layout </td>
                   </tr>
                    <tr class="detTitle2">
                     <td>OPTION</td>

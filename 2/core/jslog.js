@@ -265,6 +265,16 @@ function jslogSetSize(szLogSize)
 
 
 /**
+Clear jslog Window
+*/
+function jslogClear(){
+	if (jslogVar.console){
+		jslogVar.console.clearWindow();
+	}
+}
+
+
+/**
 Get jslogLev
 @return jslogVar.iLogLev {Number}     Current jslogLev
       GLOBAL
@@ -293,6 +303,8 @@ function jslogGetOpt()
 		szPathImg: jslogVar.szPathImg
 	};
 }
+
+
 
 /**
  * LOG OBJECT: <BR/>

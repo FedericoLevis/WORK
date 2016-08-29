@@ -23,6 +23,7 @@ var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column 
 // -- Test google, used only by AllSamples.html
 var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
 var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
+var URL_PAR_POS="pos"; //Possibilitybfrequence 1=100% 2 =50% 
 
 
 var JSU_TIP_PLAY_VIDEO='<div style="width:300px;">Click to Show a <b>YouTube Video of this JSU feature</b>';
@@ -35,6 +36,26 @@ var JSU_TIP_BROWSER_IE_POPUP='<div style="width:450px">' +
 '</ul>' +
 'In the browser not supported IE Popup will simply display an Alert instead of the HTML Popup'
 '</div>';
+
+// --- Tip for Option disable in DEMO JSU
+var JSU_TIP_OPT_DEMO='<div style="width:400px;">This <b>Option is NOT PRESENT in this DEMO Version:</b><BR/>' +
+    'this is only a <label class="tipWarnBold">DEMO JSU Version with Limitations</label><BR/><BR/>' +
+    'You can click the Link in Table Header to see <b>All the OPTIONS details</b>';
+
+var JSU_TIP_URL_OPT_DEMO='<div style="width:400px;">' +
+'Click to see <b>All the OPTIONS details</b><BR/><BR/>'+
+'This is only a <label class="tipWarnBold">DEMO JSU Version with Limitations</label> and <BR/><label class="tipWarnBold">some Options are NOT PRESENT</label>';
+
+//--- Tip for Option disable in FREE JSU
+var JSU_TIP_OPT_FREE='<div style="width:400px;">This <b>Option is NOT PRESENT in this FREE Version:</b><BR/>' +
+    'this is only a <label class="tipWarnBold">FREE JSU Version with Limitations</label><BR/><BR/>' +
+    'You can click the Link in Table Header to see <b>All the OPTIONS details</b>';
+
+var JSU_TIP_URL_OPT_FREE='<div style="width:400px;">' +
+'Click to see <b>All the OPTIONS details</b><BR/><BR/>'+
+'This is only a <label class="tipWarnBold">FREE JSU Version with Limitations</label> and <BR/><label class="tipWarnBold">some Options are NOT PRESENT</label>';
+
+
 
 var JSU_TIP_DOC="Click to Show the <b>JSU Documentation</b>";
 var JSU_TIP_DOC_TIP="Click to Show the <b>JSU Tooltip Documentation</b>";
@@ -331,8 +352,9 @@ var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:1
 
 var url_par = {
 	doc : undefined,
-	test : 100,
-	period: 60,
+	test : 1000,
+	pos: 4, // 1..  freq of possbility for the test with random presence 1=100% 2 = 50% ...
+	period: 40,
 	opt : undefined
 };
 
@@ -1003,13 +1025,19 @@ function initSampleCmn(){
 		jslog (JSLOG_JSU,fn + "bTest=" + bTest);
 		elementShow(getElementById2("test",false), bTest);
 		if (bTest){
-			par_test = parseInt(iParTest);
+			url_par.test = parseInt(iParTest);
 		}
 		var iParPeriod = urlGetParVal (URL_PAR_PERIOD);
 		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_PERIOD + "=" + iParPeriod );
 		if (iParPeriod != undefined &&  iParPeriod != ""){
-			par_period = parseInt(iParPeriod);
+			url_par.period = parseInt(iParPeriod);
 		}
+		var iParPos = urlGetParVal (URL_PAR_POS);
+		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_POS + "=" + iParPos );
+		if (iParPos != undefined &&  iParPos != ""){
+			url_par.pos = parseInt(iParPos);
+		}
+		
 		// ----------------------------
 		if (isJsuFree()){
 		 // show Label with Limitition for FREE JSU
@@ -1378,7 +1406,55 @@ function jsuTipBrowserAll(event){
 function jsuTipBrowserIEPopup(event){
 	Tip (JSU_TIP_BROWSER_IE_POPUP);
 }
+function jsuTipOptDemo(event){
+	Tip (JSU_TIP_OPT_DEMO);
+}
+function jsuTipUrlOptDemo(event){
+	Tip (JSU_TIP_URL_OPT_DEMO);
+}
+function jsuTipOptFree(event){
+	Tip (JSU_TIP_OPT_FREE);
+}
+function jsuTipUrlOptFree(event){
+	Tip (JSU_TIP_URL_OPT_FREE);
+}
 
+
+/**
+ * 
+ * @param arDis
+ * @param arOpt
+ * @param arUrlOpt
+ * @param bDemo  {Boolean}  True for Demo, falkse for FREE Versione 
+ */
+function jsuOptDisable(arDis,arOpt, arUrlOpt,bDemo){
+	var fn = "[about.js jsuOptDisable] ";
+	jslog (JSLOG_DEBUG,fn + "JSU FREE: mark some Option as not enabled");
+	for (var i=0; i< arDis.length; i++){
+		var el = getElementById2(arDis[i], true);
+		if (el){
+  		el.disabled = true;
+  		el.onmouseover = ((bDemo) ? jsuTipOptDemo : jsuTipOptFree);
+  		el.onmouseout = UnTip;
+		}
+	}
+	for (var i=0; i< arOpt.length; i++){
+		var el = getElementById2(arOpt[i], true);
+		if (el){
+		  el.className = 'jsuParAbsent';
+  		el.onmouseover = ((bDemo) ? jsuTipOptDemo : jsuTipOptFree);
+  		el.onmouseout = UnTip;
+		}  
+	}
+	for (var i=0; i< arUrlOpt.length; i++){
+		var el = getElementById2(arUrlOpt[i], true);
+		if (el){
+  		el.onmouseover = ((bDemo) ? jsuTipUrlOptDemo : jsuTipUrlOptFree) ;
+  		el.onmouseout = UnTip;
+		}
+	}
+	
+}
 
 
 /**
@@ -1410,80 +1486,6 @@ function tipFixLimitInJSUFree(event){
 			   });	
 }
 
-/* ---------------------------------------------------------------------------------------------------------------------
- * 					TEST GOOGLE ANALYTICS
---------------------------------------------------------------------------------------------------------------------- */
-
-var var_test = {
-		tmoTest: null,
-		iTestCur:  0,
-    bFrame:  false		
-};
-
-
-/**
- * Test Google
- * @param bFrame  true for Frame
- */
-function testStart(bFrame){
-	var Fn = "[about.js  showAllGoogleShort()] ";
-	var_test.iTestCur =0;
-	var_test.bFrame = bFrame;
-	var iSec = Math.floor((Math.random() * 10) + 1);
-	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
-	getElementById2("testDone",true).value = var_test.iTestCur;
-	getElementById2("testTmo",true).value = iSec;
-	var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
-}
-
-
-
-function testExecute(){
-	var Fn = "[about.js testExecute()] ";
-	// URL under TEST
-	var arTestUrl = [JSU_SHORT_URL_DOWNLOAD_FREE
-	                 ,JSU_SHORT_URL_SAMPLE_ALL,JSU_SHORT_URL_SAMPLE_TIP,JSU_SHORT_URL_SAMPLE_GA,JSU_SHORT_URL_SAMPLE_SORT, JSU_SHORT_URL_SAMPLE_IEPOPUP
-	                 ,JSU_SHORT_URL_DOC,JSU_SHORT_URL_DOC_TIP,JSU_SHORT_URL_DOC_GA,JSU_SHORT_URL_DOC_LOADING,JSU_SHORT_URL_DOC_SORT,JSU_SHORT_URL_DOC_VALIDATE
-	                 // ,JSU_SHORT_URL_SAMPLE_LOADING,JSU_SHORT_URL_SAMPLE_JSLOG,JSU_SHORT_URL_SAMPLE_JQPOPUP,JSU_SHORT_URL_SAMPLE_VALIDATE
-	                 // ,JSU_SHORT_URL_DOC_JSLOG, JSU_SHORT_URL_DOC_IEPOPUP, JSU_SHORT_URL_DOC_JQPOPUP
-	                 ];
-	var iTestUrlNum = arTestUrl.length;
-	var i = Math.floor(Math.random() * arTestUrl.length);
-	jslog (JSLOG_DEBUG,Fn + "var_test.iTestCur=" + var_test.iTestCur +  " Index under Test i=" + i);
-	var szUrl = arTestUrl[i];
-	jslog (JSLOG_DEBUG,Fn + "LAUNCH szUrl=" + szUrl);
-	if (var_test.bFrame){
-		UnTip();
-		var szTipFrame =	'<iframe width="1200" height="100" src="' + szUrl + '" ></iframe>'; 
-		TipFix(szTipFrame,null,{
-			 iTipWidth: 1200,
-			 szTitle:szUrl,
-			 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'},  // we pass the Custom Classes used
-			 bCloseBtn : false,
-			 szRefElId : 'downloadFree' 
-		 }
-		);
-		
-	}else {
-		jsuGoToURL(szUrl, true);
-	}
-	clearTimeout (var_test.tmoTest);
-	var_test.iTestCur++ ;
-	getElementById2("testDone",true).value = var_test.iTestCur;
-	getElementById2("testURL",true).value = szUrl;
-	if (var_test.iTestCur > par_test){
-		alert ("FINE Test - Executed=" + par_test);
-	}else {
-		var iSec = Math.floor((Math.random() * par_period) + 1);
-		getElementById2("testTmo",true).value = iSec;
-		jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
-		var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
-	}		
-}
-
-
-
-
 
 
 /*===================================================================================
@@ -1493,7 +1495,7 @@ function testExecute(){
 
 function fakeClick(event, anchorObj) {
   if (anchorObj.click) {
-    anchorObj.click()
+    anchorObj.click();
   } else if(document.createEvent) {
     if(event.target !== anchorObj) {
       var evt = document.createEvent("MouseEvents"); 
@@ -1585,3 +1587,149 @@ function errFreeJsu(szIdSectErr,szErr){
 	elErrSect.innerHTML = szSectMsg;
 	elementShow (elErrSect,true);
 }
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------
+ * 					TEST 
+--------------------------------------------------------------------------------------------------------------------- */
+
+var var_test = {
+		tmoTest: null,
+		iTestCur:  0,
+    bFrame:  false		
+};
+
+
+/**
+ * Test Google
+ * @param bFrame  true for Frame
+ */
+function testStart(bFrame){
+	var Fn = "[about.js  showAllGoogleShort()] ";
+	var_test.iTestCur =0;
+	var_test.bFrame = bFrame;
+	// random enable
+  for (i=0; i < ar_test.length; i++){
+  	var el = ar_test[i];
+		jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
+  	if (!el.bPresent){
+  		var iRandom = Math.floor(Math.random() * url_par.pos);
+  		jslog (Fn + "[" + i + "] iRandom=" + iRandom);
+  		if (iRandom == 0){
+  			el.bPresent = true;
+  		}
+  		
+  	}
+  }	
+	
+	var iSec = Math.floor((Math.random() * url_par.period) + 1);
+	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");
+	getElementById2("testDone",true).value = var_test.iTestCur;
+	getElementById2("testTmo",true).value = iSec;
+	var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
+}
+
+
+
+
+function testExecute(){
+	var Fn = "[about.js testExecute()] ";
+	// URL under TEST
+	// iCountReq determina la frequenza. Piu` e` alto meno e` frequente
+	var szUrl = testGetNext();
+	if (var_test.bFrame){
+		UnTip();
+		var szTipFrame =	'<iframe width="1200" height="100" src="' + szUrl + '" ></iframe>'; 
+		TipFix(szTipFrame,null,{
+			 iTipWidth: 1200,
+			 szTitle:szUrl,
+			 objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'},  // we pass the Custom Classes used
+			 bCloseBtn : false,
+			 szRefElId : 'downloadFree' 
+		 }
+		);
+		
+	}else {
+		jsuGoToURL(szUrl, true);
+	}
+	clearTimeout (var_test.tmoTest);
+	var_test.iTestCur++ ;
+	getElementById2("testDone",true).value = var_test.iTestCur;
+	getElementById2("testURL",true).value = szUrl;
+	if (var_test.iTestCur > url_par.test){
+		alert ("FINE Test - Executed=" + var_test.iTestCur);
+	}else {
+		var iSec = Math.floor((Math.random() * url_par.period) + 1);
+		getElementById2("testTmo",true).value = iSec;
+		var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
+	}		
+}
+
+// quelli con bPresent=false possono essere presnti rundomicamente con 1 possilita su par.pos
+var ar_test = [{iCountReq:2,bPresent:true,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
+              {iCountReq:4,bPresent:true,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
+              {iCountReq:5,bPresent:false,szName:'SampleTIP',szURL:JSU_SHORT_URL_SAMPLE_TIP, iCountCur:0, iClickDone:0},
+              {iCountReq:5,bPresent:false, szName:'SampleGA',szURL:JSU_SHORT_URL_SAMPLE_GA, iCountCur:0, iClickDone:0},
+              {iCountReq:7,bPresent:false, szName:'SampleLOADING',szURL:JSU_SHORT_URL_SAMPLE_LOADING, iCountCur:0, iClickDone:0},
+              {iCountReq:9,bPresent:false, szName:'SampleSORT',szURL:JSU_SHORT_URL_SAMPLE_SORT, iCountCur:0, iClickDone:0},
+              {iCountReq:10,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              {iCountReq:12,bPresent:true, szName:'DocAll',szURL:JSU_SHORT_URL_DOC, iCountCur:0, iClickDone:0},
+              {iCountReq:11,bPresent:false, szName:'DocTIP',szURL:JSU_SHORT_URL_DOC_TIP, iCountCur:0, iClickDone:0},
+              {iCountReq:15,bPresent:false, szName:'DocGA',szURL:JSU_SHORT_URL_DOC_GA, iCountCur:0, iClickDone:0},
+              {iCountReq:16,bPresent:false, szName:'DocLOADING',szURL:JSU_SHORT_URL_DOC_LOADING, iCountCur:0, iClickDone:0},
+              {iCountReq:18,bPresent:false, szName:'DocSORT',szURL:JSU_SHORT_URL_DOC_SORT, iCountCur:0, iClickDone:0},
+              {iCountReq:22,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              ];
+
+
+/**
+ * 
+ */
+function testGetNext(){
+
+	
+	var fn = "[about.js testGetNext()] ";
+	for (;;){
+		var i = Math.floor(Math.random() * ar_test.length); // get number in range [0..arTestUrl.length]
+		var el = ar_test[i];
+		if (el.bPresent){
+			if (++el.iCountCur >= el.iCountReq){
+				el.iClickDone++;
+				el.iCountCur=0;
+				// jslogClear ();
+				//jslogObj (JSLOG_DEBUG,"Current=" +i, el);
+				// jslogObj (JSLOG_DEBUG,"arTest", ar_test);
+				// PRINT
+				var szTbl = '<table class="det" width="500px">' +
+				  '<tr class= "detTitle">' +
+				  '  <td width="20px" class="tipl">Index</td>' +
+				  '  <td width="120px" class="tipl">Name</td>' +
+				  '  <td width="50px" class="tipl">CLICK</td>' +
+				  '  <td width="40pxpx" class="tipl">Count</td>' +
+				  '  <td width="40pxpx" class="tipl">Req</td>' +
+				  '</tr>';
+				for (var k=0; k< ar_test.length; k++){
+					var el = ar_test[k];
+					if (el.bPresent){
+						
+					var szRow = '<td class="tipr">' + k + '</td>' +
+					'<td class="tipl">' + el.szName + '</td>' +
+				  '  <td class="tipr">' + el.iClickDone + '</td>' +
+				  '  <td class="tipr">' + el.iCountCur + '</td>' +
+				  '  <td class="tipr">' + el.iCountReq + '</td>' +
+				  '</tr>';
+					szTbl += szRow;
+					}
+				}
+				szTbl += '</tr></table>';
+				var div = getElementById2 ('divTestOut');
+				divTestOut.innerHTML = szTbl;
+				return el.szURL;
+			}
+		}	
+	}
+}
+

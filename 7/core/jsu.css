@@ -1610,6 +1610,19 @@ div.jsuLoading {
 
 
 
+input.jsuButton{  /* Button */ 
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-style: ridge;
+}
+
+
+input.jsuButton:hover 
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
 /*---
 prettify-jsu  JSU FEATURE to Hightlight Code
 ---
