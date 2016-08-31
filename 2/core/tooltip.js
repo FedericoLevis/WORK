@@ -2304,8 +2304,7 @@ function tt_isPrettifyEn(){
  * @param objId    {id, acr, min, max}
  */
 function tt_getId(objId){
-	var fn = "[tooltip.js tt_getId()]";
-	objId[0] = objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
   
 }
 

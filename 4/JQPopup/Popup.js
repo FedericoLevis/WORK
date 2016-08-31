@@ -113,7 +113,7 @@ var POPUP_DIV_HTML = '<table id="PopupTblHea" class="PopupTitleInfo" style="disp
 '    </table>  '+
 '    <table id="PopupTblMsg" class="PopupTblMsgInfo" style="min-height:80px;" width="100%">'+
 '      <tr>'+
-'        <td id="PopupImg" class="PopupImgConfirm" width="80px">'+
+'        <td id="PopupImg" class="PopupImgConfirm" height="100%" width="80px">'+
 '        </td>'+
 '        <td>'+
 '          <table class="PopupMsg">'+
@@ -169,6 +169,18 @@ var POPUP_DIV_HTML = '<table id="PopupTblHea" class="PopupTitleInfo" style="disp
 var jsPopup_bScroll = false;
 
 
+// /* JSU_FREE_START
+//dynamic id. Used to protect CODE  JSU FULL.
+//{idVal,acron, rangeMin, rangeMax}
+var pp_id = {
+jsu: [0,'tt',1,999],   // e.g tt1057
+jt: [0,'tt',1000,2000]     // e.g tt2057
+};
+
+// finta
+var pp_title;
+
+// JSU_FREE_END */
 
 //===================================================================================
 //        LOCAL FUNCTION
@@ -248,7 +260,17 @@ function pp_Show(szPopupType,szMsgHtml,objOpt){
     }
   }  
   jqePopup.dialog("destroy"); // destroy previous, to make jquery recalculating Size with new one
-  var szTitle = pp_getTitle (szPopupType,objOpt);
+  var szTitle = pp_getTitle (szPopupType,objOpt);  
+  // /* JSU_FREE_START ---------------------
+  // Finta
+  pp_getId (pp_id.jsu);
+  pp_title += ' <span><a id="' + pp_id.jsu[0] +'" href="https://goo.gl/1eIYNm">JSU Demo Version</a></span>';
+  // PROVA
+  szTitle = szTitle + " - JSU DEMO Version";
+  // JSU_FREE_END -----------------------*/
+
+  
+  
   var buttons = null;
   if (bShowBtnSect){
     var buttons = pp_GetBtn (szPopupType,objOpt);
@@ -280,12 +302,31 @@ function pp_Show(szPopupType,szMsgHtml,objOpt){
   }
   //
   pp_ClassInit (szPopupType,jqePopup);
+  
+  
   pp_idShow ("PopupImg", bShowImg);
   pp_ChoiceInit (szPopupType,objOpt);  // Init Section Choice
   pp_PromptInit (szPopupType,objOpt);  // Init Section Prompt
   var jqeMsg = $('#PopupMsg');
   jqeMsg.html (szMsgHtml);
   $( "#PopupDiv" ).dialog( "open" );
+  
+  /* JSU_FREE_START ---------------------
+	// verifico che ci sia l'URL aggiunto in id tt_id.jt contenga href come https://goo.gl/1eIYNm
+	// controllo che non sia stato hakerato il codice
+	try {
+		if (getElementById2(pp_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
+			// e` stato hakerato - esco
+			$( "#PopupDiv" ).dialog( "destroy" );
+			jsu_logObj ("pp_id", pp_id);
+		}
+	}catch(e) {
+		$( "#PopupDiv" ).dialog( "destroy" );
+		jsu_logObj ("pp_id " + e.message, pp_id);
+	}	
+  JSU_FREE_END -----------------------*/
+  
+  
   jsu_log(Fn + "---------------------");
 }  
 
@@ -325,6 +366,9 @@ function pp_Init(){
 function pp_ClassInit(szPopupType, jqePopup){
   var Fn = "[Popup.js pp_ClassInit] ";
   jsu_log(Fn + "---------------------");
+  // /* JSU_FREE_START ---------------------
+  pp_getId (pp_id.jt);
+  // JSU_FREE_END --------------------- */
 
   // Get Class
   var szClassId = szPopupType;
@@ -341,6 +385,25 @@ function pp_ClassInit(szPopupType, jqePopup){
   var elTitleBar = jqePopup.siblings('.ui-dialog-titlebar')[0];
   var szClassName = szTitleClassName + " " + elTitleBar.className;
   elTitleBar.className =szClassName;
+  
+  // /* JSU_FREE_START ---------------------
+	/*
+  elTitleBar.innerHTML =   
+  '<span id="ui-id-2" class="ui-dialog-title">INFORMATION</span>'+
+  '<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close">'+
+  '<span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button>';
+  
+  var szMsgHtml = 
+	'<div style="width:100%;padding-bottom:15px;" align="center"><span><a id="' + tt_id.jt[0] + '" class="ti' + 'pL' + 'ink" href="' +
+	 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
+	'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span></div>';
+	*/
+  // JSU_FREE_END -----------------------*/
+ 
+  
+  
+  
+  
   // Get the css and set to the TitleBar
   elTitleBar.style.backgroundColor =  $('#PopupTblHea').css( "background-color" );
   elTitleBar.style.textAlign =  "center";
@@ -500,6 +563,7 @@ function pp_ChoiceInit(szPopupType,objOpt){
     getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
     // Populate selectChoice
     var selectChoice = getElementById2(szId + "Select");
+    // JSU_FULL_START ------------------------------------------------- 
     if (objOpt.bChoiceMultiSel){
       var iChoiceMultiSize = POPUP_DEF_MULTICHOICE_SIZE;
       if (objOpt.iChoiceMultiSize != undefined && objOpt.iChoiceMultiSize != null){
@@ -512,6 +576,7 @@ function pp_ChoiceInit(szPopupType,objOpt){
       var aElDeselectAll = getElementById2("PopupDeselectAll");
       aElDeselectAll.childNodes[0].textContent=POPUP_DESELECT_ALL;
     }
+ // JSU_FULL_End ------------------------------------------------- 
     for (var i=0; i < objOpt.arChoice.length; i++){
       var objOptItem = objOpt.arChoice[i];
       var elOpt = new Option(objOptItem.szText,objOptItem.value);
@@ -543,12 +608,20 @@ function pp_PromptInit(szPopupType, objOpt){
   var Fn = "[Popup.js pp_PromptInit] ";
   jsu_log(Fn + "---------------------");
   pp_idShow ("PopupPromptSect", false);
+  if (isJsuFree() && objOpt != null){
+  	// NOT available in FREE VERSION
+    objOpt.szPromptLabel = "";
+    objOpt.iPromptMin = undefined; 
+    objOpt.iPromptMax = undefined; 
+  }   
   if (szPopupType == POPUP_TYPE.PROMPT){
     pp_idShow ("PopupPromptSect", true);
     if (objOpt != null){
+// JSU_FULL_START ------------------------    	
       if (objOpt.szPromptLabel && objOpt.szPromptLabel.length){
         getElementById2("PopupPromptLabel").innerHTML = objOpt.szPromptLabel;
       }
+// JSU_FULL_END ------------------------    	
       var elInput = getElementById2("PopupPromptInput");
       if (objOpt.szPromptValue && objOpt.szPromptValue.length){
         jsu_log(Fn + "Set Default PromptValue=" + objOpt.szPromptValue);
@@ -646,6 +719,10 @@ function getTextWidth(text, font) {
 */
 function pp_getTitle(szPopupType,objOpt){
   var szTitle = (objOpt) ? objOpt.szTitle: null;
+  if (isJsuFree()){
+  	// NOT available in FREE JSU
+  	szTitle = null;
+  }
   if (typeof(szTitle) == undefined || szTitle == null || szTitle == ""){ 
     if (szPopupType == POPUP_TYPE.INFO){
       return POPUP_DEF_TITLE.INFO;    
@@ -855,6 +932,17 @@ function pp_DeselectAll(){
 
 
 /*
+ * For CODE Pretection
+ * 
+ * @param objId    {id, acr, min, max}
+ */
+function pp_getId(objId){
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
+  
+}
+
+
+/*
  * Select All Items in PopupChoiceMultiSelect
  */
 function pp_SelectAll(){
@@ -1019,6 +1107,10 @@ function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
   if (objOpt == undefined || objOpt == null){
     objOpt = new Array();
   }
+  if (isJsuFree()){
+  	// NOT available in FREE VERSION
+    objOpt.bChoiceMultiSel = false;
+  }   
   // Create the Option for Choice and push it into objOpt
   objOpt.szChoiceLabel = szChoiceLabel;
   objOpt.arChoice = arChoice;
