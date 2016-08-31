@@ -1,0 +1,80 @@
+
+
+
+/*---
+Validate API 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
+
+<b>CSS:</b> <ul>
+ <li>``validateItemMandatory``     Item to validate: Mandatory </li>
+ <li>``validateItemErr``     Item to validate: in Error State </li>
+ <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
+ <li>``div.validateErrSect``     div Section with all the ERRORS </li>
+ <li>``label.validateErr``   label in Error State </li>
+
+ <li>...
+</ul> 
+<BR/><b>Examples:</b>
+```html
+<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
+<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
+<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
+```
+*/
+
+
+.validateErrSect{ /* div Section with all the ERRORS  */
+  border: 5px solid red;
+  border-style: ridge; 
+  color: red;
+  display: none; /* default */
+  text-align: left;
+} 
+
+
+
+label.validateErr{ /* item in error State  */
+  border: 2px solid red;
+  color: red;
+} 
+
+input.validateInfo{ /* Info img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+
+.validateItemMandatory{ /* Item to validate: Mandatory */
+  border: 2px solid black;
+} 
+
+
+.validateItemErr{ /* Item to validate: in Error State */
+  border: 2px solid;
+  border-color: red !important
+} 
+
+
+.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
+   color: red;
+   font-style: italic;   
+   font-weight: normal;
+   margin-left: 5px;   
+   display: none;  // Default: not Visible
+}
+
+
+
+.validateErrPopup{ /* Error Label in Popup*/
+  font-weight: normal;
+  color: red; /* */
+}
+
+
+

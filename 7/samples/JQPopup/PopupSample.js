@@ -62,13 +62,13 @@ function callbackQuestion(objRet){
   
   var retBtn   = objRet.retBtn  ; 
   if (retBtn   == POPUP_BTN.CONFIRM){
-    Popup(POPUP_TYPE.CONFIRM,'<label class="PopupGood">Your answer was YES</label>',  {szTitle: "GOOD ANSWER!"});
+    Popup(POPUP_TYPE.CONFIRM,'<label class="PopupGood">Your answer was YES</label>',  {szTitle: "GOOD ANSWER!", iWidth: 300});
   }else if (retBtn   == POPUP_BTN.NO){
-    Popup(POPUP_TYPE.ERR,'<label class="PopupError">Your answer was NO</label>',  {szTitle: "WHY DON'T WOUT LIKE IT?"});
+    Popup(POPUP_TYPE.ERR,'<label class="PopupError">Your answer was NO</label>',  {szTitle: "WHY DON'T WOUT LIKE IT?", iWidth: 300});
   }else if (retBtn   == POPUP_BTN.CANCEL){
-    Popup(POPUP_TYPE.INFO,'<label class="PopupWarning">You have clicked CANCEL Button</label>');
+    Popup(POPUP_TYPE.INFO,'<label class="PopupWarning">You have clicked CANCEL Button</label>',{iWidth: 400});
   }else if (retBtn   == POPUP_BTN.CLOSE){
-    Popup(POPUP_TYPE.INFO,'You have close the Window without any Choice');
+    Popup(POPUP_TYPE.INFO,'You have close the Window without any Choice',{iWidth: 400});
   }
 }
 
@@ -242,7 +242,10 @@ function sample1Warn(szTitle){
 }
 
 function sample1Err(){
-  Popup(POPUP_TYPE.ERR,'<label class="PopupError">This is an ERROR!</label><BR/>But dont worrie it is only an example<BR/><label class="PopupGood">Everything is still working properly :o)</label>');
+  Popup(POPUP_TYPE.ERR,
+  		  '<label class="PopupError">This is an ERROR!</label><BR/>But dont worrie it is only an example<BR/><label class="PopupGood">Everything is still working properly :o)</label>',
+  		  {iWidth: 450}
+  		 );
 }
 
 
@@ -250,7 +253,10 @@ function sample1Alarm(){
   var szMsg =  '<label class="PopupError">The CPU temperature is critically hight!!!</label>' +  
         '<img src="' +  JSU_PATH_ABOUT_IMG +  'ComputerFire.gif" width="70" height="70"  />' + 
        '<BR/>But dont worrie, it is only an example.' ;
-  Popup(POPUP_TYPE.ALARM,szMsg );
+  Popup(POPUP_TYPE.ALARM,
+  		szMsg,
+		  {iWidth: 450}
+  		);
 }
 
 
@@ -259,7 +265,13 @@ function sample1Alarm(){
  * Question with 2 or 3 Buttons
  */
 function sample1Question(szPopupType){
-  Popup(szPopupType,'Do you like <b>Popup API</b>?',{fnCallback: callbackQuestion});
+  Popup(szPopupType,
+  		'Do you like <b>Popup API</b>?',
+  		{ 
+  	   iWidth: 400,
+  	   fnCallback: callbackQuestion
+  	   }
+  );
 }
 
 
@@ -486,14 +498,14 @@ function sample2Layout(){
     '   <li><b>bModal: </b>' +  objOpt.bModal+  '</li>' +
     '   <li><b>iWidth: </b>' +  objOpt.iWidth+  '</li>' +
     '  </ul>';
-  Popup(POPUP_TYPE.INFO,szMsg, objOpt);
+  Popup(POPUP_TYPE.INFO,szMsg, objOpt,{iWidth:300});
 
 }
 
 
 
 /**
- * SAMPLE_3: HTML Popup
+ * SAMPLE_2: Custom JQ Popup
  */
 function sample2(){
   var szType =  selectGetSelVal(getElementById2('type2'));
@@ -513,8 +525,8 @@ function sample2(){
  * Custom Btn Confirm = "CONTINUE"  
  */
 function sample2CustomBtn1(){
-  var szMsg = '<b>1 Custom Button</b><BR/><BR/>Popup Option:<ul><li><b>szConfirmLabel</b>: "CONTINUE"</li></ul>';
-  Popup(POPUP_TYPE.ERR,szMsg,{szConfirmLabel: "CONTINUE"});
+  var szMsg = 'Example<BR><b>1 Custom Button with a different Label</b><BR/><BR/>Popup Option:<ul><li><b>szConfirmLabel</b>: "CONTINUE"</li></ul>';
+  Popup(POPUP_TYPE.INFO,szMsg,{szConfirmLabel: "CONTINUE", iWidth:400});
 }
 
 
@@ -522,7 +534,7 @@ function sample2CustomBtn1(){
  * 2 Custom Btn, change also Btn Width  
  */
 function sample2CustomBtn2(){
-  var szMsg = '<b>2 Custom Button</b><BR/><BR/>Popup Option:<ul>' +
+  var szMsg = '<b>Example<BR>2 Custom Button with different Label and Width</b><BR/><BR/>Popup Option:<ul>' +
    '<li><b>szConfirmLabel</b>: "YES I Like it!"</li>' +
    '<li><b>iConfirmWidth</b>: 200</li>' +
    '<li><b>szNoLabel</b>: "NO I don\'t LIKE IT"</li>' +
@@ -531,16 +543,18 @@ function sample2CustomBtn2(){
    'Do you like <b>Popup API</b>?';
   Popup(POPUP_TYPE.QUESTION,szMsg,
       {fnCallback: callbackQuestion,
-       szConfirmLabel: "YES I Like it!",iConfirmWidth:200,
-       szNoLabel: "NO I don't LIKE IT",iNoWidth:200 }
-        );
+       szConfirmLabel: "YES I Like it!",iConfirmWidth:160,
+       szNoLabel: "NO I don't LIKE IT",iNoWidth:160, 
+       iWidth: 450
+       }
+    );
 }
 
 /*
  * 3 Custom Btn, change also Width  
  */
 function sample2CustomBtn3(){
-  var szMsg = '<b>3 Custom Button</b><BR/><BR/>Popup Option:<ul>' +
+  var szMsg = 'Example<BR><b>3 Custom Button, each one with different Label and Width</b><BR/><BR/>Popup Option:<ul>' +
   '<li><b>szConfirmLabel</b>: "YES It is Very Interesting"</li>' +
   '<li><b>iConfirmWidth</b>: 280</li>' +
   '<li><b>szNoLabel</b>: "NOT Very Much"</li>' +
@@ -551,10 +565,11 @@ function sample2CustomBtn3(){
   'Do you like <b>Popup API</b>?';
   Popup(POPUP_TYPE.QUESTION_3, szMsg,
       {fnCallback: callbackQuestion,
-  	   iWidth: 700,
-       szConfirmLabel: "YES It is Very Interesting",iConfirmWidth:250,
-        szNoLabel: "NOT Very Much",iNoWidth:160, 
-        szCancelLabel: "INDIFFERENT",iCancelWidth:160}
+  	   iWidth: 560,
+       szConfirmLabel: "YES It is Super",iConfirmWidth:150,
+        szNoLabel: "NOT Very Much",iNoWidth:150, 
+        szCancelLabel: "INDIFFERENT",iCancelWidth:150
+        }
   );
 }
 

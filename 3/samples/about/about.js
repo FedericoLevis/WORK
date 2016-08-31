@@ -352,6 +352,7 @@ var JSU_TIP_SECT2 = '<table class="jsuAboutMsg" width="100%" style="margin-top:1
 
 var url_par = {
 	doc : undefined,
+	bTest: false, // TRUE if we are in Test mode
 	test : 1000,
 	pos: 2, // 1..  freq of possbility for the test with random presence 1=100% 2 = 50% ...
 	period: 40,
@@ -1025,10 +1026,10 @@ function initSampleCmn(){
 	// var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60
 		var iParTest = urlGetParVal (URL_PAR_TEST);
 		jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_TEST + "=" + iParTest);
-		var bTest = (iParTest != undefined &&  iParTest != "");
-		jslog (JSLOG_JSU,fn + "bTest=" + bTest);
-		elementShow(getElementById2("test",false), bTest);
-		if (bTest){
+		url_par.bTest = (iParTest != undefined &&  iParTest != "");
+		jslog (JSLOG_JSU,fn + "url_par.bTest=" + url_par.bTest);
+		elementShow(getElementById2("test",false), url_par.bTest);
+		if (url_par.bTest){
 			url_par.test = parseInt(iParTest);
 		}
 		var iParPeriod = urlGetParVal (URL_PAR_PERIOD);
@@ -1070,8 +1071,6 @@ function is_par_opt (){
 /*===================================================================================
  *  FOR SAMPLES NOT FREE
 ===================================================================================*/
-
- 
 
 
 /*
@@ -1385,7 +1384,8 @@ function jsuGoogleAnalFree (event){
 	UnTip();
 	
 	// if test mode we show last 2 hours else all time
-	var szParTime = (url_par.test > 0 ) ? GA_PAR_TIME.two_hours:  GA_PAR_TIME.all_time;
+	var szParTime = (url_par.bTest ) ? GA_PAR_TIME.two_hours:  GA_PAR_TIME.all_time;
+	jslog(JSLOG_DEBUG,fn + "url_par.bTest=" + url_par.bTest + " szParTime="+ szParTime);
 	gaShortUrlPage (JSU_SHORT_URL_DOWNLOAD_FREE ,
 			{
 		  bNewWindow: true,
@@ -1645,16 +1645,16 @@ function testStart(bFrame){
 	// random enable
   for (i=0; i < ar_test.length; i++){
   	var el = ar_test[i];
-		jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
+		// jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
   	if (!el.bPresent){
   		var iRandom = Math.floor(Math.random() * url_par.pos);
-  		jslog (Fn + "[" + i + "] iRandom=" + iRandom);
   		if (iRandom == 0){
   			el.bPresent = true;
   		}
-  		
+  		jslog (JSLOG_DEBUG, Fn + "[" + i + "].bPresent=" + el.bPresent + " - url_par.pos="+ url_par.pos + "  iRandom=" + iRandom );
   	}
   }	
+	jslogObj (JSLOG_DEBUG,Fn + "ar_test",ar_test);
 	
 	var iSec = Math.floor((Math.random() * url_par.period) + 1);
 	jslog (JSLOG_DEBUG,Fn + "START tmo " + iSec + " sec");

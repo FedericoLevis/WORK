@@ -14,6 +14,9 @@
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
 This file may be freely distributed under the MIT license.   <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
+<b>IMPLEMENTATION NOTES</b>  <BR/>
+There is few additional Code (marked with JSU_FREE_ JSU_FULL_ )to implement <a class="tipLink" href="javascript:showJSUVersionParLimit();">FREE JSU Limitations</a>
+<BR/>-----------------------------------------------------------------------------------<BR/>
 <b>JSDoc NOTES</b>  <BR/>
 In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
 ========================================================================================= <BR/> 
@@ -54,6 +57,8 @@ var GA_DEF = {
 		ALL_LINK: true, // default: Present the Link to display all the pages of Google analytics together
 		WIDTH: 1100, // Box Width
 		TBL_MAX_HEIGHT: 300,  // if more lines there will be scroolbar
+		SHOW_CB_SHORT_URL: true,   // Show CB
+		SHOW_CB_LONG_URL: true,    // Show CB
 		SHORT_URL: false,
 		LONG_URL: false,
 		PAR_TIME: GA_PAR_TIME.all_time,
@@ -69,8 +74,10 @@ var TMO_GA_CLICK_SIMUL_MS = 200;
 
 
 // Global For GoogleAnal
-var ga_ga = {
+var ga_var = {
 		arObjGaList: null,   // arObjGaList received as PAR
+		bShortUrl: false,
+		bLongUrl: false,
 		iTipWidth: 800,
 		iVisibleLink: 0,  //used  by onclickBtnAllGoogle
 		iSelFilterCat: 0 , // Current FilterCat
@@ -121,8 +128,10 @@ var GA_HREF_HIDDEN = '<a id="' + GA_HREF_HIDDEN_ID +'" target="_blank" style="di
 	        </ul> 
 	        
 	        <li> szTitle{String}  default: 'Google Analytics'  </li> 
-	        <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
-	        <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
+	        <li> bShowCbShortUrl {Boolean} [true] CheckBox to Show the column with ShortUrl: if true the CheckBox is visible  
+	        <li> bShowCbLongUrl {Boolean} [true] CheckBox to Show Show the colum with LongUrl: if true the CheckBox is visible
+	        <li> bShortUrl {Boolean} [false] Initial value of the CheckBox to Show the column with ShortUrl  
+	        <li> bLongUrl {Boolean} [false] Initial value of the CheckBox to Show the column with ShortUrl
 	        <li> szHeaderTxt {String}: [DEF_GA_LABEL.HEADER] Message to put before the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szFooterTxt {String}: [DEF_GA_LABEL.FOOTER] Message to put after the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup. 
@@ -167,8 +176,8 @@ var GA_HREF_HIDDEN = '<a id="' + GA_HREF_HIDDEN_ID +'" target="_blank" style="di
     	iWidth: opt_ga_list.iWidth,  // Width of the Box
     	iTblMaxHeight: opt_ga_list.iTblMaxHeight,  // Max Height	 of the Table with the LIst of Google Analitycs Links
     	szParTime: opt_ga_list.szParTime,   // Initial Par Time
-    	bShortUrl: opt_ga_list.bShortUrl,   // ShortUrl visible or not at startup
-    	bLongUrl: opt_ga_list.bLongUrl  // LongUrl visible or not at startup
+    	bShortUrl: opt_ga_list.bShortUrl,   // ShortUrl true or False
+    	bLongUrl: opt_ga_list.bLongUrl  // LongUrl true or False
     });
  }   
 													     
@@ -190,6 +199,10 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 	  bAllBtn : GA_DEF.ALL_LINK,
 	  szHeaderTxt : GA_LABEL.DEF_HEADER,
 	  szFooterTxt : GA_LABEL.DEF_FOOTER,
+	  bShowCbShortUrl: GA_DEF.SHOW_CB_SHORT_URL,
+	  bShowCbLongUrl : GA_DEF.SHOW_CB_LONG_URL,
+	  bShortUrl: GA_DEF.SHORT_URL,
+	  bLongUrl : GA_DEF.LONG_URL,
 	  bShortUrl: GA_DEF.SHORT_URL,
 	  bLongUrl : GA_DEF.LONG_URL,
 	  iTblMaxHeight : GA_DEF.TBL_MAX_HEIGHT,
@@ -206,7 +219,7 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 		objOptSet.iWidth= objOpt.iWidth;
 	}
 	// ---------------- Fields avalialble only in FULL Version (This code will be removed in FREE JSU)
-// JSU_FULL_START ------------------------------------------------- 
+/* JSU_FULL_START **------------------------------------------------ 
 	if (objOpt.szTitle != undefined){	objOptSet.szTitle = objOpt.szTitle; }
 	if (objOpt.bJQPopup != undefined){objOptSet.bJQPopup = objOpt.bJQPopup; }
 	if (objOpt.bAllGoogleAnalLink != undefined){	objOptSet.bAllBtn = objOpt.bAllBtn; }
@@ -214,11 +227,13 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 	if (objOpt.szFooterTxt != undefined){	objOptSet.szFooterTxt = objOpt.szFooterTxt; }
 	if (objOpt.bShortUrl != undefined){	objOptSet.bShortUrl= objOpt.bShortUrl; }
 	if (objOpt.bLongUrl != undefined){	objOptSet.bLongUrl = objOpt.bLongUrl; }
+	if (objOpt.bShowCbShortUrl != undefined){	objOptSet.bShowCbShortUrl= objOpt.bShowCbShortUrl; }
+	if (objOpt.bShowCbLongUrl != undefined){	objOptSet.bShowCbLongUrl = objOpt.bShowCbLongUrl; }
 	if (objOpt.szParTime != undefined){	objOptSet.szParTime = objOpt.szParTime; }
-// JSU_FULL_END --------------------------------------------------
+  JSU_FULL_END */ // -------------------------------------------------
+	
 	jsu_logObj (fn + "objOptSet", objOptSet);
 
-	
 	
 	if (objOptSet.bJQPopup){
 		// ------------- Specific options for Popup
@@ -235,12 +250,14 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 	UnTip(event);  // Untip (if a Tip was currently displayed)	
 	jsu_log ("Prepare HTML Msg with the Box Layout that will be displayed...");
 	// Set Global var
-	ga_ga.iTblWidth = objOptSet.iWidth - 20; // -20 for some lateral space
-	ga_ga.iTblMaxHeight = objOptSet.iTblMaxHeight;  
-	ga_ga.bShortUrl = objOptSet.bShortUrl;
-	ga_ga.bLongUrl = objOptSet.bLongUrl;
-	ga_ga.szParTime = objOptSet.szParTime;
-	ga_ga.arObjGaList = arObjGaList; // Set in Global
+	ga_var.iTblWidth = objOptSet.iWidth - 20; // -20 for some lateral space
+	ga_var.iTblMaxHeight = objOptSet.iTblMaxHeight;
+//JSU_FULL_START -------------------------------------------------
+	ga_var.bShortUrl = objOptSet.bShortUrl;
+	ga_var.bLongUrl = objOptSet.bLongUrl;
+//JSU_FULL_END ------------------------------------------------- 
+	ga_var.szParTime = objOptSet.szParTime;
+	ga_var.arObjGaList = arObjGaList; // Set in Global
 	// Get the possible categories, for filter
 	var arCat = new Array();
 	arCat.push (GA_LABEL.FILTER_CAT_ALL);
@@ -258,28 +275,35 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 		}
 	}
 	jsu_logObj (fn + "arCat=", arCat);
-	ga_ga.bJQPopup = objOptSet.bJQPopup;
-	ga_ga.arFilterCat = arCat;
-	ga_ga.iSelFilterCat = 0; // ALL
+	ga_var.bJQPopup = objOptSet.bJQPopup;
+	ga_var.arFilterCat = arCat;
+	ga_var.iSelFilterCat = 0; // ALL
 	var szTbl = '<table class="detNoBorder">';
 	// --------------------------- HEADER
 	
-	var szCbShowUrl = "";
-// JSU_FULL_START ------------------------------------------------- 
-	var szShortChecked = (ga_ga.bShortUrl) ? "checked" : "";  
-	var szLongChecked = (ga_ga.bLongUrl) ? "checked" : "";  
-	szCbShowUrl =    '<input type="checkbox" id="cbShortUrl" ' + szShortChecked + ' onclick="ga_onclickShortUrl();"/>Show ShortUrl ' +
-       '<input style="margin-left:20px" type="checkbox" id="cbLongUrl" ' + szLongChecked + ' onclick="ga_onclickLongUrl();" />Show LongUrl';
-// JSU_FULL_END ------------------------------------------------- 
-	
+	var szCbShortUrl = "";
+	var szCbLongUrl = "";
+/* JSU_FULL_START **------------------------------------------------
+	// in FREE Version these CB are never visible
+	jsu_log ("Prepare CB Short URL - bShowCbShortUrl=" + objOptSet.bShowCbShortUrl);
+	if (objOptSet.bShowCbShortUrl){
+		var szShortChecked = (ga_var.bShortUrl) ? "checked" : "";  
+		szCbShortUrl =    '<input type="checkbox" id="cbShortUrl" ' + szShortChecked + ' onclick="ga_onclickShortUrl();"/>Show ShortUrl ';
+	}
+	jsu_log ("Prepare CB Short URL - bShowCbLongUrl=" + objOptSet.bShowCbLongUrl);
+	if (objOptSet.bShowCbLongUrl){
+		var szLongChecked = (ga_var.bLongUrl) ? "checked" : "";  
+		szCbLongUrl =  '<input style="margin-left:20px" type="checkbox" id="cbLongUrl" ' + szLongChecked + ' onclick="ga_onclickLongUrl();" />Show LongUrl';
+	}	
+  JSU_FULL_END */ // ------------------------------------------------ 
 	szTbl += '<tr style="padding-top:5px;">' +
-         '<td class="tiplBold" width="300px" style="padding-bottom:10px">'+ szCbShowUrl +
+         '<td class="tiplBold" width="300px" style="padding-bottom:10px">'+ szCbShortUrl + szCbLongUrl +
          '</td>' +
 	       '<td class="tipr" style="padding-right:10px;padding-bottom:10px">' + objOptSet.szHeaderTxt + '</td>' +
 	   '</tr>';
 	// Prepare the div that will contain the GoogleTable
-	szTbl += '<tr><td colspan="2"> <div id="divTblGA" style="width:' + ga_ga.iTblWidth + 'px;max-height:' 
-	   + ga_ga.iTblMaxHeight + 'px;overflow:auto;border: 1px solid;"></div></td></tr>' +
+	szTbl += '<tr><td colspan="2"> <div id="divTblGA" style="width:' + ga_var.iTblWidth + 'px;max-height:' 
+	   + ga_var.iTblMaxHeight + 'px;overflow:auto;border: 1px solid;"></div></td></tr>' +
 	  // Row for All Google Analytics Link  
 	  '<tr><td colspan="2"> <div id="divAllGA" align="left" width="100%" style="width:100%;margin-top:10px;"></div></td></tr>'; 
 	// Footer if present
@@ -292,19 +316,19 @@ function gaShortUrlList(arObjGaList, event, objOpt){
 	}  
  	szTbl += '</table>';
 	if (objOptSet.bJQPopup){
-	// JSU_FULL_START ------------------------------------------------- 
+	/* JSU_FULL_START **------------------------------------------------ 
 		Popup (POPUP_TYPE.INFO,szTbl,{
 			  bShowImg:false, // always false
 			  szTitle: objOptSet.szTitle, 
 			  iWidth: objOptSet.iWidth+30  // +30 for best layout and avoid scroolbar
 			  });
-	// JSU_FULL_END ------------------------------------------------- 
+	  JSU_FULL_END */ // ------------------------------------------------ 
 	}
 	else{
 		// Show Tip With Empty Table
 		TipFix (szTbl,event,objOptSet);
 	}
-	ga_gaTblShow();
+	ga_varTblShow();
 	jsu_log (fn + GALOG_FUN_END);
 }
 
@@ -357,10 +381,10 @@ function gaShortUrlPage(szShortUrl, objOpt){
 
 /*
  * Show the Table with the Link to GoogleAnalytics, basing on current Filter
- * GLOBAL ga_ga
+ * GLOBAL ga_var
  */
-function ga_gaTblShow (){
-	var fn = "[googleAnal.js ga_gaTblShow()] ";
+function ga_varTblShow (){
+	var fn = "[googleAnal.js ga_varTblShow()] ";
 
 	jsu_log (fn + GALOG_FUN_START);
 	var bSort = typeof (cSortTable) != "undefined"; // can we add cSortTable? Is It Loaded?
@@ -368,10 +392,10 @@ function ga_gaTblShow (){
 	var szTbl = '<table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="100%">'; 
 	// Table with COLUMN Desc, Long URL, Short URL, Go To Google Analytics
 	var szTblHea = '<tr class="detTitle" >';
-	if (ga_ga.bShortUrl){
+	if (ga_var.bShortUrl){
 		szTblHea += '<td class="tipc detTitle" width="15%">' + GA_LABEL.SHORT_URL + '</td> ';
 	}
-	if (ga_ga.bLongUrl){
+	if (ga_var.bLongUrl){
 		szTblHea += '<td class="tipc detTitle" width="30%">' + GA_LABEL.LONG_URL + '</td> ';
 	}	
 	szTblHea +=  '<td class="tipc detTitle" width="16%">' + GA_LABEL.CAT + '</td> '+
@@ -383,10 +407,10 @@ function ga_gaTblShow (){
 	// -------------------------- HEADER_2 with Filter e AnalMode 
 	iRowHeader = 2;
 	var szSelectFilter = '<select class="detFilter" id="gaCat" title="' + GA_LABEL.FILTER_CAT_TITLE  + '"  style="width:100%;" onchange="ga_onchangeCat();">';
-	var arCat = ga_ga.arFilterCat;
+	var arCat = ga_var.arFilterCat;
 	for (var i=0;i<arCat.length; i++){
 		var szCat = arCat[i];
-		var szSelected = (i == ga_ga.iSelFilterCat) ? "selected" : "";
+		var szSelected = (i == ga_var.iSelFilterCat) ? "selected" : "";
 		var szOpt = '\n<option class="detFilter"  value="' + szCat +'" ' + szSelected + ' >' + szCat + '</option>';
 		szSelectFilter +=szOpt;		
 	}
@@ -401,7 +425,7 @@ function ga_gaTblShow (){
 	                 ]; 
 	for (var i=0; i<arTypeOpt.length; i++){
 		var objOpt = arTypeOpt[i];
-		var szSelected = (objOpt.value == ga_ga.szParTime) ? "selected" : "";
+		var szSelected = (objOpt.value == ga_var.szParTime) ? "selected" : "";
 		var szOpt = '\n<option class="detFilter" 	value="' + objOpt.value +'" ' + szSelected + ' >' + objOpt.text + '</option> ';
 		szSelectParTime +=szOpt;		
 	}
@@ -409,8 +433,8 @@ function ga_gaTblShow (){
 	// jsu_logHtml (fn + "szSelectParTime",szSelectParTime);
 	// ------------------------ add FilterCat
 	var iColUrl = 0;
-	if (ga_ga.bShortUrl){ iColUrl++;}
-	if (ga_ga.bLongUrl){ iColUrl++;}
+	if (ga_var.bShortUrl){ iColUrl++;}
+	if (ga_var.bLongUrl){ iColUrl++;}
 	var szTr = '<tr class="detFilter">';
 	if (iColUrl > 0){
 		szTr += '<td class="detFilter" colSpan="' + iColUrl + '" align="right" style="font-weight:normal;padding-right:5px;">' + 
@@ -427,52 +451,52 @@ function ga_gaTblShow (){
 	
   // --------------------------------------------- Insert the Link Rows 
 	// Inser only if Filter Match and SET Global .iVisibleLink 	
-	ga_ga.iVisibleLink = 0; // Global
-	jsu_logObj (fn , "iSelFilterCat =" + ga_ga.iSelFilterCat);
-	var arObj = ga_ga.arObjGaList;
-	var szCatSel = ga_ga.arFilterCat[ga_ga.iSelFilterCat];
-	jsu_logObj (fn + "szCatSel=" + szCatSel + " arFilterCat=", ga_ga.arFilterCat);
+	ga_var.iVisibleLink = 0; // Global
+	jsu_logObj (fn , "iSelFilterCat =" + ga_var.iSelFilterCat);
+	var arObj = ga_var.arObjGaList;
+	var szCatSel = ga_var.arFilterCat[ga_var.iSelFilterCat];
+	jsu_logObj (fn + "szCatSel=" + szCatSel + " arFilterCat=", ga_var.arFilterCat);
 	for (var i=0; i< arObj.length; i++){
 		var objGoogle = arObj[i];
 		var szCat = objGoogle.cat;
 		// Check if we haev to show this cat: bFilterCat must be set and the cat must match the Filter (iSelFilterCat=0 means ALL Categories FILTER)  
-		var bShow = (ga_ga.iSelFilterCat == 0 || szCat == szCatSel); 
+		var bShow = (ga_var.iSelFilterCat == 0 || szCat == szCatSel); 
 		jsu_log (fn + "FilterSel=" + szCatSel + "  Cur cat=" + szCat + " --> bShow=" + bShow);
 		if (bShow){
-			var szId = "a_ga" + ga_ga.iVisibleLink;
+			var szId = "a_ga" + ga_var.iVisibleLink;
 			// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
-	    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + ga_ga.szParTime;
+	    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + ga_var.szParTime;
 			var szTr = '<tr>';
-			if (ga_ga.bShortUrl){
+			if (ga_var.bShortUrl){
 				szTr += '<td class="tipc">' + objGoogle.shortUrl + '</td> '; 
 			}
-			if (ga_ga.bLongUrl){
+			if (ga_var.bLongUrl){
 				szTr += '<td class="tipl">' + objGoogle.longUrl + '</td> '; 
 			}
 			szTr +=	  '<td class="tipcBold">' + objGoogle.cat + '</td> '+
 			  '<td class="tiplBold">' + objGoogle.desc + '</td> '+
-			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + GA_LABEL.ANAL + GA_LINK_SEP + ga_ga.szParTime + '</a></td> '+
+			  '<td class="tipc"><a id="' + szId + '" class="tipLink" href="'+ szHref + '" target="_blank" >' + GA_LABEL.ANAL + GA_LINK_SEP + ga_var.szParTime + '</a></td> '+
 	 	  '</tr>';
 		  szTbl += szTr;	
-			ga_ga.iVisibleLink ++;
+			ga_var.iVisibleLink ++;
 		}
 	}
 	szTbl += '</table></td></tr>';
 	var div = document.getElementById('divTblGA');
 	div.innerHTML = szTbl;
 
-	if (ga_ga.iVisibleLink > 1){
+	if (ga_var.iVisibleLink > 1){
 		// Add Div  with ALL Google Analytics
-		var szLabel = GA_LABEL.ALL_TITLE.replace ('GOOGLE_ANAL_NUM',ga_ga.iVisibleLink);
+		var szLabel = GA_LABEL.ALL_TITLE.replace ('GOOGLE_ANAL_NUM',ga_var.iVisibleLink);
 		var szLinkAll =  '<label><b>' + szLabel +'</b></label>' +
-		  '<a id="a_gaAll" class="tipLink" href="javascript:ga_onclickAll();">' + GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_ga.szParTime + '</a>';
+		  '<a id="a_gaAll" class="tipLink" href="javascript:ga_onclickAll();">' + GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_var.szParTime + '</a>';
 		var div = document.getElementById('divAllGA');
 		div.innerHTML = szLinkAll;
   }
 	
 	// Create Sort only if cSortTable is loaded
 	if (bSort){
-		jsu_log (fn + "Create SortTable bShortUrl=" + ga_ga.bShortUrl + " ga_ga.bLongUrl=" + ga_ga.bLongUrl);
+		jsu_log (fn + "Create SortTable bShortUrl=" + ga_var.bShortUrl + " ga_var.bLongUrl=" + ga_var.bLongUrl);
 		var arSortCol = new Array();
 		/*
 		var arSortCol = [  {col: GA_LABEL.SHORT_URL},   
@@ -481,10 +505,10 @@ function ga_gaTblShow (){
 			         	        {col:GA_LABEL.DESC}, 
 			         	        {col: GA_LABEL.ANAL}];
 		*/
-		if (ga_ga.bShortUrl){
+		if (ga_var.bShortUrl){
 			arSortCol.push({col: GA_LABEL.SHORT_URL});
 		}	
-		if (ga_ga.bLongUrl){
+		if (ga_var.bLongUrl){
 			arSortCol.push({col: GA_LABEL.LONG_URL});
 		}	
 		arSortCol.push({col: GA_LABEL.CAT});
@@ -514,9 +538,9 @@ function ga_onclickShortUrl(){
 
 	jsu_log (fn + GALOG_FUN_START);
 	// Toggle
-	ga_ga.bShortUrl = (ga_ga.bShortUrl) ? false : true;
+	ga_var.bShortUrl = (ga_var.bShortUrl) ? false : true;
   // redesign Tbl	
-	ga_gaTblShow();
+	ga_varTblShow();
 	jsu_log (fn + GALOG_FUN_END);
 }
 
@@ -529,9 +553,9 @@ function ga_onclickLongUrl(){
 
 	jsu_log (fn + GALOG_FUN_START);
 	// Toggle
-	ga_ga.bLongUrl = (ga_ga.bLongUrl) ? false : true; 
+	ga_var.bLongUrl = (ga_var.bLongUrl) ? false : true; 
   // redesign Tbl	
-	ga_gaTblShow();
+	ga_varTblShow();
 	jsu_log (fn + GALOG_FUN_END);
 }
 
@@ -546,9 +570,9 @@ function ga_onchangeCat(){
 
 	jsu_log (fn + GALOG_FUN_START);
 	var select = document.getElementById ("gaCat");
-	ga_ga.iSelFilterCat = select.selectedIndex;
-	jsu_log (fn + "iSelFilterCat=" + ga_ga.iSelFilterCat);
-	ga_gaTblShow();
+	ga_var.iSelFilterCat = select.selectedIndex;
+	jsu_log (fn + "iSelFilterCat=" + ga_var.iSelFilterCat);
+	ga_varTblShow();
 	jsu_log (fn + GALOG_FUN_END);
 }
 
@@ -562,23 +586,23 @@ function ga_onchangeTime(){
 	jsu_log (fn + GALOG_FUN_START);
 	var select = document.getElementById ("gaFilterTime");
 	// e.g week
-	ga_ga.szParTime = select[select.selectedIndex].value;
-	ga_ga.szParTimeText = select[select.selectedIndex].text;
-	jsu_log (fn + "szParTime=" + ga_ga.szParTime + " szParTimeText=" + ga_ga.szParTimeText);
+	ga_var.szParTime = select[select.selectedIndex].value;
+	ga_var.szParTimeText = select[select.selectedIndex].text;
+	jsu_log (fn + "szParTime=" + ga_var.szParTime + " szParTimeText=" + ga_var.szParTimeText);
   //--------------- align href
-	var arObj = ga_ga.arObjGaList;
+	var arObj = ga_var.arObjGaList;
 	jsu_log (fn + "SET href for the " + arObj.length + " URLs");
 	for (var i=0; i< arObj.length; i++){
 		var objGoogle = arObj[i];
 		var szId = "a_ga" + i;
 		var aEl = document.getElementById (szId);
 		// e.g From  https://goo.gl/HnNqnM to   https://goo.gl/#analytics/goo.gl/HnNqnM/week 
-    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + ga_ga.szParTime;
+    var szHref = objGoogle.shortUrl.replace('goo.gl','goo.gl/#analytics/goo.gl') + '/' + ga_var.szParTime;
     aEl.href = szHref;
-    aEl.innerHTML = GA_LABEL.ANAL + GA_LINK_SEP + ga_ga.szParTimeText;
+    aEl.innerHTML = GA_LABEL.ANAL + GA_LINK_SEP + ga_var.szParTimeText;
 	}	
 	var aEl = document.getElementById ('a_gaAll');
-  aEl.innerHTML = GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_ga.szParTimeText;
+  aEl.innerHTML = GA_LABEL.ANAL_ALL + GA_LINK_SEP + ga_var.szParTimeText;
 	
 	jsu_log (fn + GALOG_FUN_END);
 }
@@ -592,13 +616,13 @@ function ga_onclickAll(){
 	var fn = "[googleAnal.js ga_onclickAll()] ";
 
 	jsu_log (fn + GALOG_FUN_START);
-	ga_ga.iLinkClickCur = 0;
-	ga_clickSimulate(ga_ga.iLinkClickCur);
-	if (ga_ga.iVisibleLink == 1){
+	ga_var.iLinkClickCur = 0;
+	ga_clickSimulate(ga_var.iLinkClickCur);
+	if (ga_var.iVisibleLink == 1){
 		jsu_log (fn + "Only one anchor. Finish click simulation");
 	}else {
 		jsu_log (fn + "Create Timer of " + TMO_GA_CLICK_SIMUL_MS +" for Next Click Simulate");
-		ga_ga.tmoClick = setTimeout (ga_timerClickSimul,TMO_GA_CLICK_SIMUL_MS);
+		ga_var.tmoClick = setTimeout (ga_timerClickSimul,TMO_GA_CLICK_SIMUL_MS);
 	}
 	jsu_log (fn + GALOG_FUN_END);
 }
@@ -623,7 +647,7 @@ function ga_clickSimulate(iLink){
   	jsu_log (fn + "a.click is NOT defined in this Browser");
   	if(document.createEvent) {
   		// e.g SAFARI or OPERA
-  		jsu_log (fn + "el [" + i + "] of " + ga_ga.iVisibleLink + " - We create the event to simulate the FIRST click. ");
+  		jsu_log (fn + "el [" + i + "] of " + ga_var.iVisibleLink + " - We create the event to simulate the FIRST click. ");
   		var evt = document.createEvent("MouseEvents"); 
   		evt.initMouseEvent("click", true, true, window, 
   				0, 0, 0, 0, 0, false, false, false, false, 0, null);
@@ -642,14 +666,14 @@ function ga_timerClickSimul(){
 	var fn = "[googleAnal.js ga_timerClickSimul()] ";
 
 	jsu_log (fn + GALOG_FUN_START);
-	clearTimeout (ga_ga.tmoClick ); // for security.
+	clearTimeout (ga_var.tmoClick ); // for security.
 	// e.g SAFARI or OPERA
-	ga_clickSimulate(++ga_ga.iLinkClickCur);
-  if (ga_ga.iLinkClickCur >= (ga_ga.iVisibleLink- 1)){
-		jsu_log (fn + "Click simulation COMPLETED for all " + ga_ga.iVisibleLink + " anchors");
+	ga_clickSimulate(++ga_var.iLinkClickCur);
+  if (ga_var.iLinkClickCur >= (ga_var.iVisibleLink- 1)){
+		jsu_log (fn + "Click simulation COMPLETED for all " + ga_var.iVisibleLink + " anchors");
   }else {
 		jsu_log (fn + "Create Timer of " + TMO_GA_CLICK_SIMUL_MS +" for Next Click Simulate");
-    ga_ga.tmoClick = setTimeout (ga_timerClickSimul,TMO_GA_CLICK_SIMUL_MS);
+    ga_var.tmoClick = setTimeout (ga_timerClickSimul,TMO_GA_CLICK_SIMUL_MS);
   }
 	
 	jsu_log (fn + GALOG_FUN_END);

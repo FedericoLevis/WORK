@@ -1,0 +1,210 @@
+
+/*---
+JSU core: Detail table (e.g GoogleAnalytics) 
+---
+<b>CSS:</b> <ul>
+ <li>``table.det`` Detail table with border</li>
+ <li>``table.detNoBorder``  Detail table with border </li>
+ <li>...
+</ul> 
+*/
+
+
+table.det {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 3px solid #858585; /* Dark Gray */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+table.detNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 5px;  
+}
+
+
+tr.detTitle,th.detTitle, td.detTitle, tr.detTitleBig,th.detTitleBig { /* Detail Table (e.g GoogleAnalytics */
+  background-color: #606060; 
+  border: 2px solid #858585; /* Dark Gray */
+  color: #FFFFFF; /*#CCFFFF cyan */
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+tr.detTitle,th.detTitle{
+  font-size: 10pt;
+  padding: 2px;
+}
+tr.detTitleBig,th.detTitleBig{
+  font-size: 12pt;
+}
+
+.detTitleVeryBig{
+  font-size: 20pt;
+  font-weight: bold;  
+}
+
+tr.detTitle2,th.detTitle2, tr.detTitleBig2,th.detTitleBig2 {
+  background-color: #D4D0D0; /* Gray Clear */
+  color: black; 
+  text-align: center;
+  padding: 2px;
+  border: 2px solid #858585; 
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+tr.detFilter,th.detFilter { /* e.g. Header2 with Filter in GoogleAnalytics */  
+  background-color: #D4D0D0;  /* Gray Clear */
+  color: black; 
+  text-align: center;
+  padding: 0px;
+  border: 2px solid #858585; 
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+tr.detSep, th.detSep,td.detSep { /* Row separator between SubTables*/
+  height: 1px;
+  border-style: none;
+  border: 0px; 
+  padding: 0px;
+  border-collapse: separate;
+  font-size: 1px;
+}
+
+
+td.googleAnalFooter, label.googleAnalFooter {
+  font-weight: italic !important;
+  font-family: Calibri;
+  font-size: 11pt;
+} 
+
+select.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
+  background-color: #D4D0D0;  /* Gray Clear */
+  /* background-color: #CCFF99; */  /* Green Clear */
+  padding: 0px;
+  color: #000000; 
+  font-weight: bold;
+  font-family: Calibri;
+  font-size: 11pt;
+  border: 1px solid blue; /* Black */
+  
+} 
+
+tr.detFooter, td.detFooter {
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 10pt;
+  color: #0000CC;
+  border: 2px solid #858585; /* Dark Gray */
+  background-color: #CCFFFF;
+  /* border-collapse: collapse;
+  border-spacing: 0px; */
+}
+
+
+/*---
+JSU core - util.js: .jsuAlarmingEl alarm for el   
+---
+<b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
+<BR/><b>Examples:</b>
+```html
+<input class="jsuAlarmingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuAlarmingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*---
+JSU core util.js: .jsuAlarmingEl  alarm img near a select   
+---
+<b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
+<BR/><b>Examples:</b>
+```html
+<img class="jsuAlarmingImg"/>
+```
+*/
+img.jsuAlarmingImg {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
+  background-size: contain;
+  height: 26px;
+  vertical-align: text-top;
+}
+
+  
+/*---
+JSU core util.js: .jsuLoadingEl Loading for el   
+---
+<b>CSS:</b> ``input.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShowIn1El">util.js loadingShowIn1El()</a>
+<BR/><b>Examples:</b>
+```html
+<input class="jsuLoadingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuLoadingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*---
+JSU core util.js Loading Gif with FillingRing 
+---
+<b>CSS:</b> ``div.jsuLoading``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
+<BR/><b>Examples:</b>
+```html
+<div class="jsuLoading" width="200px" />
+```
+*/
+div.jsuLoading {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
+  /* background-size: contain; */
+   height: 80px;  
+   /*  
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 100%; 
+  width: 100%; 
+  z-index: 100; 
+  background-color: white; 
+  position: absolute; 
+  top:0px; 
+  left: 0px;
+  */  
+}
+
+
+
+input.jsuButton{  /* Button */ 
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-style: ridge;
+}
+
+
+input.jsuButton:hover 
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 

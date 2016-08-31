@@ -1,6 +1,20 @@
-/* BASE_PATH fisso e punta a dove sono sparpagliati i vari file */
-
-
+/* =========================================================================================
+@File:     				jsu.js
+@Author:   				Federico Levis
+@Since:  					Apr 2016   
+Description: 			require.js Definition for jsu with ModalPopup
+Option:					  - JSU_PATH_BASE can be defined in the html that include this file:
+									  EXAMPLE:
+										  var JSU_BASE_URL = "/ibmcognos/jsu";  // FOR COGNOS
+										  var JSU_PATH_BASE = '../..';   // FOR samples
+									- If JSU_PATH_BASE is not already  defined, it is defined here
+						  - JSU_LOADED_TMO_MS
+						    In very rare case we need to wait a little before accessing the DOM in jsu_loaded. 
+                In these case you can define JSU_LOADED_TMO_MS to be called after this TMO, instead of be calling immediatly after loading all JS						  
+DISCLAIMER
+Copyright by Federico Levis - JSUtily https://github.com/FedericoLevis/JSU
+This file may be freely distributed/modified under the MIT license. 
+========================================================================================= */
 
 /* the BASE Path: Path of ..../jsu folder. 
  a) Fixed 
@@ -8,27 +22,25 @@
 */  
 
 if (typeof (JSU_PATH_BASE) == "undefined"){
-  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/WORK/master";
+    // ONLY for LOCAL DEVELOPMENT
+	var JSU_PATH_BASE = '../..';  // Default: it is the setting for the JSU sample
+    // GIT
+    // var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
 }
 
-
-
 // ===================================== OPTION: JSU with Comment or Minified   
+// decomment only the jsuVersion version that you want to use
+var jsuVersion ="";       // JSU with Comment (or Obfuscated in the Free version)
+// var jsuVersion = "/Minify"      // JSU Minified
 //----- ExternalPlugin (jquery, jquery-ui)
 var externalPluginVersion = "/Minify";
 
-// ----------------------------------- FIXED
-var JSU_PATH_IMG =   "https://rawgit.com/FedericoLevis/JSU/master/images/";
-var JSU_PATH_POPUP_HTML = "https://rawgit.com/FedericoLevis/JSU/master/core/IEPopup/";
-
-
+// ----------------------------------- FIXED, depending on JSU_PATH_BASE
+var JSU_PATH_IMG =   JSU_PATH_BASE + "/images/";
+var JSU_PATH_POPUP_HTML = JSU_PATH_BASE +  "/core/IEPopup/";
 //----------------------------------- FIXED 
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
-
-
-//Only for TEST during development
-//var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
 
 if (typeof (JSU_GA_EN) == "undefined"){
 	// DEFAULT:  Enable GoogleAnaltycs
@@ -36,21 +48,23 @@ if (typeof (JSU_GA_EN) == "undefined"){
 }
 
 
+//Only for TEST during development
+//var JSU_PATH_ABOUT_IMG = JSU_PATH_IMG +"about/";
+
 
 //----------------------------------- MODULE CONFIGURATION
 requirejs.config({
     baseUrl: JSU_PATH_BASE,
 	// Path relative to baseUrl
     paths: {
-        'core': '2/core',
-        'loadingDiv': '2/core/loadingDiv',
-        'cValidate': '6/core/cValidate',
-        'lan': '6/locale/EN',
-        'popup': '2/core/IEPopup',
-        'prettify': '2/core'
+        'core': 'core' + jsuVersion,
+        'lan': 'locale/EN',
+//      'lan': 'locale/ITA',     // For Italian Language
+        'popup': 'core/IEPopup' + jsuVersion
     },
     shim: {
-      'core/jslog': ['core/dom-drag']
+      'core/jslog': ['core/dom-drag'],
+      'core/cSortTable': ['core/date']
     }    
 });
 
@@ -60,13 +74,14 @@ require([ // First 3 always present
          'lan/locale-core', 
          'core/jslog',            
          'core/jsuCmn','core/util',							
-         'core/date',							
          'core/tooltip',
-         'prettify/prettify-jsu',
+         'core/prettify-jsu',      /* only for code- prettify */
          'core/googleAnal',
+         'core/loadingDiv',							
+         'core/cSortTable',       /* require date */
          'popup/Popup',
-         'loadingDiv',							
-         'cValidate'        
+         'core/loadingDiv',							
+         'core/cValidate'        /* require date, Popup */
 		   ],
     	   function()	{	
 							if (typeof (jslog_init) == "function"){
@@ -91,8 +106,6 @@ if (typeof (JSU_GA_EN) != "undefined" && JSU_GA_EN){
       ga('send', 'pageview');
   } 
 // ------------------------------------------------------------------------------
-
-
 var jsuLoadedTmo = null;   
 
 function jsu_loaded_1(){

@@ -18,7 +18,6 @@ input.browserAll {  /* Compatibility All */
     width: 130px;
     border: 0px ;
     background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAll.png) no-repeat center center;
-    /* background: white url(../../images/about/browserAll.png) no-repeat center center; */
 }
 
 input.browserAllSmall {  /* Compatibility All - About */
@@ -35,15 +34,13 @@ input.browserIE {  /* Only IE */
     width: 130px;
     border: 0px ;
     background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIE.png) no-repeat center center; */
-    /* background: white url(../../images/about/browserIE.png) no-repeat center center; */
 }
 
 input.browserIESmall {  /* Only IE */
     height: 30px;
     width: 100px;
     border: 0px ;
-    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIESmall.png) no-repeat center center; 
-    /* background: white url(../../images/about/browserIESmall.png) no-repeat center center; */
+    background: white url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserIESmall.png") no-repeat center center; 
 }
 
 input.browserTipIESmall {  /* Only IE in Tip */
@@ -51,7 +48,7 @@ input.browserTipIESmall {  /* Only IE in Tip */
     width: 20px;
     padding-left: 10px;
     border: 0px ;
-    background: 0xffffcc url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserTipIESmall.png) no-repeat center center;  
+    background: yellow url("https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserTipIESmall.png") no-repeat center center;  
 }
 
 
@@ -774,7 +771,7 @@ select.bold{
 }
 
 
-table.sampleNote{  */
+table.sampleNote{  /* Note below the specific Sample_X  Title */
   text-align: left;
   font-family: Verdana;
   font-weight: normal;
@@ -805,6 +802,47 @@ input.sampleNote{ /* Image for the Note in the Tip */
     background: #FFFFCC url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center; 
     /* background: #FFFFCC url(../images/tipNote.png) no-repeat center center; */ 
 }
+
+
+
+
+table.sampleNoteOpt{  /* Note in a TipFix showing Sample Option */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 11px;
+  color: black; /* Black */
+  width: 100%;
+  background-color: #ffffff; 
+  border-top: 1px solid black; 
+  border-bottom: 1px solid black; 
+  border-collapse: separate;
+  border-spacing: 2px;  
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+td.sampleNoteOpt{ /* td with image inside */
+  width: 40px;
+  text-align: left;
+  vertical-align: top;
+  padding-right:5px;
+  background-color: #ffffff;
+}
+input.sampleNoteOpt{ /* Image for the Note in the Tip */
+    height: 18px;
+    width: 36px;
+    border: 0px ;
+    background: #FFFFCC url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center; 
+    /* background: #FFFFCC url(../images/tipNote.png) no-repeat center center; */ 
+}
+
+
+
+
+
+
 
 
 

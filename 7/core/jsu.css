@@ -223,7 +223,7 @@ div.ttTitle{  /* default Title */
   border-color:black;
 }	
 
-.ttClose {   /* for close button on Top Right */
+.ttClose {   /* close X button on Top Right of the TipFix Window */
   color: #000000 !important;
 /*   font-family: Calibri !important; */
   font-family: "Arial Black", Gadget, sans-serif !important;
@@ -472,9 +472,21 @@ label.tipBrown{ /* Brown Bold */
   /* background-color: #CCFFFF; */   
 }
 
-input.tipBtnClose{
+input.tipBtnClose{ /* Button Close on the Bottom of the TipFix Window */
   cursor: pointer;
-}	
+  font-weight: bold;
+  border: 2px solid gray;
+  border-style: ridge;
+  min-width: 80px;
+}  
+
+
+input.tipBtnClose:hover /* Border when Mouse is over */
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
+  
 
 
 .tipGood,.tipGoodBold  { /* Good: Green  */
@@ -496,13 +508,14 @@ input.tipBtnClose{
 
 
 
-a.tipLink{
+a.tipLink,a.tls{   /* tipLink and tipLinkS for Small font */
  font-weight: bold;
  text-decoration: underline; 
  color: blue; // 
 }
 
-a.tipLink:hover {
+
+a.tipLink:hover, a.tipLinkS:hover {
  cursor: pointer;
  color: #1E90FF; // dodgerblue
 }
@@ -514,10 +527,22 @@ a.tipLinkJsLog, a.tt{  /* to be used in JsLog where background is black, ot in t
  color: #00BFFF; // 
 }
 
+a.tls, a.tt{   /* tipLinkS for Small font */
+ font-size: 11px !important ;
+ padding-left: 5px;
+ padding-right: 5px;
+ font-family: Calibri !important;
+ font-style: italic !important;
+}
+
+
+
 a.tipLinkJsLog:hover, a.tt:hover {
  cursor: pointer;
  color:   #00ffff; 
 }
+
+
 
 
 

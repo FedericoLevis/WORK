@@ -1,0 +1,63 @@
+
+
+/*---
+JSLog API 
+---
+<b>CSS:</b> <ul>
+ <li>``h3.jslog`` `Header with Btn </li>
+ <li>``div.jslogFooter``  Footer with Btn </li>
+ <li>...
+</ul> 
+*/
+
+
+h3.jslog{ /* Header with Btn */
+  background:  #ccc;
+  color : #000;
+  cursor:  pointer;
+  font-size:  14px;
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+}	
+
+
+
+div.jslogFooter{ /* Footer with Btn */
+  font-size:  12px;
+  /* textTransform = uppercase; */
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+} 
+
+.jslogButton{
+  cursor: pointer;
+  font-size:  12px;
+  font-weight:  bold;
+  padding: 0 5px;     		
+}	
+
+label.jslogHeader {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+label.jslogFooter{
+  font-weight: bold;
+  margin-left: 20px;
+  color: white;
+}
+
+
+select.jslog {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+

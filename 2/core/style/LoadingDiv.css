@@ -1,0 +1,150 @@
+
+
+/*---
+LoadinDiv API: CSS used in loadingDiv.js 
+---
+<b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
+<b>CSS:</b> <ul>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``div.loadingDiv``   The loadingDiv in The Middle of the Page, with the Border </li>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``table.loadingDiv``   The Main loadingDiv Table </li>
+ <li>``div.loadingDivGif`` /The Loading Gif on the Left in the Box </li>
+ <li>...
+</ul> 
+
+<BR/><b>Examples:</b>
+```html
+<div id="loadingDivContainer" class="loadingDivContainer" >  
+  <table width="100%" height="100%">  
+    <tr> <td align="center">  
+      <div  id="loadingDiv" class="loadingDiv">  
+         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">  
+            <tr class="loadingDivTitle">  
+              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>  
+            </tr>  
+            <tr>   
+              <td id="loadingDivTdGif" align="left" width="80px">  
+                <div id="loadingDivGif" class="loadingDivGif" > </div>  
+              </td>   
+              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">  
+                 <b>Working</b></BR>Please Wait...  
+              </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >  
+                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />  
+               </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter">  
+                 Elapsed Time: 10 sec  
+               </td>  
+            </tr>  
+        </table>  
+      </div>  
+    </td> </tr>  
+  </table>  
+</div> 
+```
+
+*/
+
+
+div.loadingDivContainer { /* The Main DivContainer that cover the Window*/
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 110%;  /* DEFAULT */
+  width: 110%; 
+  z-index: 100; 
+  background-color: white;
+  position: absolute; 
+  top:0px; 
+  left: 0px;  
+  z-index: 100;
+}
+
+/* Overlays TEST */
+div.overlayTest { /* The Main DivContainer that cover the Window*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  opacity: .3;
+  filter: Alpha(Opacity=30); /* support: IE8 */
+}  
+
+
+
+
+div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
+  z-index: 101;
+  width: 300px; 
+  border-style:groove;
+  border-width:5px;
+  background-color: #EBEBEB; 
+  display: block;
+  z-index: 101;
+}
+
+
+
+table.loadingDiv{ /* The Main loadingDiv Table  */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 13px;
+  color: black; /* Black */
+  background-color: #EBEBEB;
+  border: 0px; 
+  border-collapse: collapse;
+  border-spacing: 0px;  
+  z-index: 102;
+}	
+
+tr.loadingDivTitle {
+  background-color: #0033FF; /* Blue */
+  color: #FFFFFF; /* White */
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+td.loadingDivTitle {
+	border-bottom: 2px solid black;  
+}
+
+td.loadingDivMsg{
+  color: blue; /* Black*/
+  text-align: left;
+  font-size: 12px;
+}
+
+
+td.loadingDivBtn {
+	padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+input.loadingDivBtn {
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+td.loadingDivFooter { /* Footer with Elapsed sec */
+	padding-left: 5px;
+	border-top: 1px solid black;  
+  background-color: #BABABA; 
+  color: black; /* Black */
+}
+
+div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
+  width: 110px;
+	height: 110px;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
+	z-index: 110;  
+}
+

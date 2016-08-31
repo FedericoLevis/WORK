@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="common"/>
+	<classpathentry excluding="ITA/|EN/" kind="src" path="etc"/>
+	<classpathentry kind="src" path="etc/EN"/>
+	<classpathentry kind="src" path="etc/ITA"/>
+	<classpathentry kind="src" path="locale"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

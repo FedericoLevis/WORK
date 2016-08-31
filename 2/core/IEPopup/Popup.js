@@ -379,15 +379,15 @@ function pp_classInit(szPopupType){
   //---------------
   var szTitleClassName = POPUP_TITLE_CLASS_PREFIX + szClassId;
   jsu_log (Fn + "set PopupTblHea className=" + szTitleClassName);
-  getElementById2("PopupTblHea").className = szTitleClassName;
+  jsu_getElementById2("PopupTblHea").className = szTitleClassName;
   //---------------
   var szImgClassName = POPUP_IMG_CLASS_PREFIX + szClassId;
   jsu_log (Fn + "set PopupImg className=" + szImgClassName);
-  getElementById2("PopupImg").className = szImgClassName;
+  jsu_getElementById2("PopupImg").className = szImgClassName;
   //---------------
   var szTblMsgClassName = POPUP_TBLMSG_CLASS_PREFIX + szClassId;
   jsu_log (Fn + "set PopupTblMsg className=" + szTblMsgClassName);
-  getElementById2("PopupTblMsg").className = szTblMsgClassName;
+  jsu_getElementById2("PopupTblMsg").className = szTblMsgClassName;
   jsu_log (Fn + "-------------------");
 }
 
@@ -401,7 +401,7 @@ function pp_classInit(szPopupType){
  */
 function pp_idIsVisible (szId){
   var Fn = "[Popup.js pp_idIsVisible] ";
-  var el = getElementById2(szId);
+  var el = jsu_getElementById2(szId);
   if (el == null){
     return alert (Fn + "SW ERROR szId=" + szId + "   NOT FOUND");
   }
@@ -432,7 +432,7 @@ function pp_idShow (szId, bShow){
   var Fn = "[Popup.js pp_idShow] ";
 
   jsu_log (Fn + "szId=" + szId  + " bShow=" + bShow);
-  var el = getElementById2(szId);
+  var el = jsu_getElementById2(szId);
   if (el == null){
     return alert (Fn + "SW ERROR szId=" + szId + "   NOT FOUND");
   }
@@ -459,9 +459,9 @@ function pp_idHideIfRequired (szId, bShow){
 function pp_btnInit(parIn){
   var Fn = "[Popup.js pp_btnInit] ";
   jsu_log (Fn + "-------------------");
-  var elBtnConfirm = getElementById2("PopupConfirm");
-  var elBtnNo= getElementById2("PopupNo");
-  var elBtnCancel = getElementById2("PopupCancel");
+  var elBtnConfirm = jsu_getElementById2("PopupConfirm");
+  var elBtnNo= jsu_getElementById2("PopupNo");
+  var elBtnCancel = jsu_getElementById2("PopupCancel");
   var szPopupType = parIn.szPopupType; 
   var bQuestion = (szPopupType == POPUP_TYPE.QUESTION || szPopupType == POPUP_TYPE.QUESTION_3); 
   var bQuestion3 = (szPopupType == POPUP_TYPE.QUESTION_3); 
@@ -518,9 +518,9 @@ function pp_optChoiceInit(parIn){
     szId =  objOpt.bChoiceMultiSel ? "PopupChoiceMulti" : "PopupChoiceSingle";
     jsu_log (Fn + "objOpt.bChoiceMultiSel=" + objOpt.bChoiceMultiSel + "  szId=" + szId);
     pp_idShow (szId + "Sect", true);
-    getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
+    jsu_getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
     // Populate selectChoice
-    var selectChoice = getElementById2(szId + "Select");
+    var selectChoice = jsu_getElementById2(szId + "Select");
     if (objOpt.bChoiceMultiSel){
       var iChoiceMultiSize = POPUP_DEF_MULTICHOICE_SIZE;
       if (objOpt.iChoiceMultiSize != undefined && objOpt.iChoiceMultiSize != null){
@@ -528,9 +528,9 @@ function pp_optChoiceInit(parIn){
       } 
       selectChoice.size = iSize;
       // Label
-      var aElSelectAll = getElementById2("PopupSelectAll");
+      var aElSelectAll = jsu_getElementById2("PopupSelectAll");
       aElSelectAll.childNodes[0].textContent = POPUP_SELECT_ALL;
-      var aElDeselectAll = getElementById2("PopupDeselectAll");
+      var aElDeselectAll = jsu_getElementById2("PopupDeselectAll");
       aElDeselectAll.childNodes[0].textContent=POPUP_DESELECT_ALL;
     }
     for (var i=0; i < objOpt.arChoice.length; i++){
@@ -541,7 +541,7 @@ function pp_optChoiceInit(parIn){
       selectChoice[selectChoice.length] = elOpt;
     }
     // ------------- adjust width
-    var elFS= getElementById2("PopupChoiceMultiFS");
+    var elFS= jsu_getElementById2("PopupChoiceMultiFS");
     var iWidth = selectChoice.clientWidth + 15;
     if (iWidth < POPUP_CHOICE_FS_MIN_WIDTH){
       iWidth = POPUP_CHOICE_FS_MIN_WIDTH;
@@ -598,9 +598,9 @@ function pp_promptInit(szPopupType, objOpt){
     pp_idShow ("PopupPromptSect", true);
     if (objOpt != null){
       if (objOpt.szPromptLabel && objOpt.szPromptLabel.length){
-        getElementById2("PopupPromptLabel").innerHTML = objOpt.szPromptLabel;
+        jsu_getElementById2("PopupPromptLabel").innerHTML = objOpt.szPromptLabel;
       }
-      var elInput = getElementById2("PopupPromptInput");
+      var elInput = jsu_getElementById2("PopupPromptInput");
       if (objOpt.szPromptValue && objOpt.szPromptValue.length){
         jsu_log(Fn + "Set Default PromptValue=" + objOpt.szPromptValue);
         elInput.value = objOpt.szPromptValue;
@@ -780,7 +780,7 @@ function pp_ValidateInput(elInput){
     // Show the Error Element
     var szTitle = elInput.getAttribute ("title");
     jsu_log(Fn + "VALIDATION ERROR for promptValue=" + promptValue + " Show Err: " + szTitle);
-    var elErr = getElementById2("PopupPromptError");
+    var elErr = jsu_getElementById2("PopupPromptError");
     elErr.innerHTML = szTitle;
     elementShow(elErr,true,"inline");
     // 
@@ -812,7 +812,7 @@ function pp_close(retObj){
     // -------------- Check if Prompt is Visible
     var bPrompt = pp_idIsVisible("PopupPromptSect");
     if (bPrompt){
-      var elInput = getElementById2("PopupPromptInput");
+      var elInput = jsu_getElementById2("PopupPromptInput");
       if (pp_ValidateInput (elInput)){
         return;
       }
@@ -824,7 +824,7 @@ function pp_close(retObj){
     if   (bChoiceSingle || bChoiceMulti){
       jsu_log(Fn + "Get Choice Selection");
       var szEl = (bChoiceSingle) ? "PopupChoiceSingleSelect" : "PopupChoiceMultiSelect";
-      var selectChoice = getElementById2(szEl);
+      var selectChoice = jsu_getElementById2(szEl);
       // Read All and prepare arChoice
       var arChoice = new Array();
       var szChoiceValue = "";
@@ -879,7 +879,7 @@ function pp_onClickConfirm(){
  * Deselect All Items in PopupChoiceMultiSelect
  */
 function pp_deselectAll(){
-  var selectChoice = getElementById2("PopupChoiceMultiSelect");
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
   for (var iOpt=0; iOpt < selectChoice.options.length; iOpt ++){
     selectChoice.options[iOpt].selected = false;
   }
@@ -890,7 +890,7 @@ function pp_deselectAll(){
  * Select All Items in PopupChoiceMultiSelect
  */
 function pp_SelectAll(){
-  var selectChoice = getElementById2("PopupChoiceMultiSelect");
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
   for (var iOpt=0; iOpt < selectChoice.options.length; iOpt ++){
     selectChoice.options[iOpt].selected = true;
   }
@@ -1028,7 +1028,7 @@ function pp_onLoad(){
   var objOpt = parIn.objOpt;
   jsu_log (Fn + "Set Title=" + szTitle);
   document.title = szTitle;
-  getElementById2("PopupTitle").innerHTML = szTitle; 
+  jsu_getElementById2("PopupTitle").innerHTML = szTitle; 
   //
   var szPopupType = parIn.szPopupType;
   pp_classInit (szPopupType);
@@ -1039,7 +1039,7 @@ function pp_onLoad(){
   pp_optLayoutInit (parIn);  // Init Option Show if present and Set Show/Hide of Sections basing on Default
   pp_promptInit (szPopupType,objOpt);  // Init Section Prompt
   
-  var elMsg = getElementById2("PopupMsg");
+  var elMsg = jsu_getElementById2("PopupMsg");
   elMsg.innerHTML = parIn.szMsgHtml;
   var szMsgHtml = parIn.szMsgHtml;
   //  ------------------------------------------ H
