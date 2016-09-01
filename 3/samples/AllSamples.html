@@ -97,7 +97,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
     </td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitations</a></label> </td> 
+    <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>
   </tr>
@@ -130,7 +130,7 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
   </tr>
   <tr>
     <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate();">Validate</a></td>
-    <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td> 
+    <td class="tipl">One single function for both <b>Item Validation </b> and <b>Presentation of Validation Errors</b> (in Items, Section, Popup)</td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleErr">NOT Available</label></td> 
@@ -150,18 +150,6 @@ var JSU_PATH_BASE="..";   // Path of jsu relative of this html
   </tr>
 </table>
 
-<!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
-
-<!--       TEST -->
-<div id="test" style="display:none;visibility:hidden;">
-  <input  type="button" value="TEST Google Analytics" onclick="testStart(false);" />  &nbsp;&nbsp;  <input  type="button" value="TEST Frame" onclick="testStart(true);" /> 
-  <BR/>
-  
-  Tmo(sec):<input  with="50px" id="testTmo" readonly value="0" />&nbsp; Test <input  with="50px" id="testDone" readonly value="0" /><BR>&nbsp;URL:<input  with="50px" id="testURL" readonly width="100px" />
-  <div id="divTestOut">
-  </div>
- </div>
 
 </body>
 </html>

@@ -515,13 +515,13 @@ a.tipLink,a.tls{   /* tipLink and tipLinkS for Small font */
 }
 
 
-a.tipLink:hover, a.tipLinkS:hover {
+a.tipLink:hover, a.tls:hover {
  cursor: pointer;
  color: #1E90FF; // dodgerblue
 }
 
 
-a.tipLinkJsLog, a.tt{  /* to be used in JsLog where background is black, ot in tt (tooltip) */
+a.tipLinkJsLog,a.tipLinkClear, a.tt{  /* to be used in JsLog where background is black, ot in tt (tooltip) */
  font-weight: bold;
  text-decoration: underline; 
  color: #00BFFF; // 
@@ -537,7 +537,7 @@ a.tls, a.tt{   /* tipLinkS for Small font */
 
 
 
-a.tipLinkJsLog:hover, a.tt:hover {
+a.tipLinkJsLog:hover, a.tipLinkClear:hover, a.tt:hover {
  cursor: pointer;
  color:   #00ffff; 
 }
