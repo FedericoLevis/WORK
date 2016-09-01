@@ -1,0 +1,1000 @@
+
+/* 
+========================================================================================= <BR/> 
+<b>File:</b>      core/core.css <BR/>
+<b>Author:</b>        <a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>     CSS for JSU CORE Features <BR/>   
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<b> NOTE:</b> The url path points to https://raw.github.com/FedericoLevis/JSU/master/images/ <BR/>
+If you want to the local jsu/images directory (e.g. to modify images) you have to replace: <BR/>
+    https://raw.github.com/FedericoLevis/JSU/master/images/     <BR/>
+  with          <BR/>
+    ../images         <BR/>
+
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+========================================================================================= <BR/> 
+*/
+
+
+
+
+/*---
+LoadinDiv API: CSS used in loadingDiv.js 
+---
+<b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
+<b>CSS:</b> <ul>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``div.loadingDiv``   The loadingDiv in The Middle of the Page, with the Border </li>
+ <li>``div.loadingDivContainer``   The Main DivContainer </li>
+ <li>``table.loadingDiv``   The Main loadingDiv Table </li>
+ <li>``div.loadingDivGif`` /The Loading Gif on the Left in the Box </li>
+ <li>...
+</ul> 
+
+<BR/><b>Examples:</b>
+```html
+<div id="loadingDivContainer" class="loadingDivContainer" >  
+  <table width="100%" height="100%">  
+    <tr> <td align="center">  
+      <div  id="loadingDiv" class="loadingDiv">  
+         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">  
+            <tr class="loadingDivTitle">  
+              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>  
+            </tr>  
+            <tr>   
+              <td id="loadingDivTdGif" align="left" width="80px">  
+                <div id="loadingDivGif" class="loadingDivGif" > </div>  
+              </td>   
+              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">  
+                 <b>Working</b></BR>Please Wait...  
+              </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >  
+                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />  
+               </td>  
+            </tr>  
+            <tr>  
+               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter">  
+                 Elapsed Time: 10 sec  
+               </td>  
+            </tr>  
+        </table>  
+      </div>  
+    </td> </tr>  
+  </table>  
+</div> 
+```
+
+*/
+
+
+div.loadingDivContainer { /* The Main DivContainer that cover the Window*/
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 110%;  /* DEFAULT */
+  width: 110%; 
+  z-index: 100; 
+  background-color: white;
+  position: absolute; 
+  top:0px; 
+  left: 0px;  
+  z-index: 100;
+}
+
+/* Overlays TEST */
+div.overlayTest { /* The Main DivContainer that cover the Window*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #aaaaaa;
+  opacity: .3;
+  filter: Alpha(Opacity=30); /* support: IE8 */
+}  
+
+
+
+
+div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
+  z-index: 101;
+  width: 300px; 
+  border-style:groove;
+  border-width:5px;
+  background-color: #EBEBEB; 
+  display: block;
+  z-index: 101;
+}
+
+
+
+table.loadingDiv{ /* The Main loadingDiv Table  */
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 13px;
+  color: black; /* Black */
+  background-color: #EBEBEB;
+  border: 0px; 
+  border-collapse: collapse;
+  border-spacing: 0px;  
+  z-index: 102;
+}	
+
+tr.loadingDivTitle {
+  background-color: #0033FF; /* Blue */
+  color: #FFFFFF; /* White */
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+td.loadingDivTitle {
+	border-bottom: 2px solid black;  
+}
+
+td.loadingDivMsg{
+  color: blue; /* Black*/
+  text-align: left;
+  font-size: 12px;
+}
+
+
+td.loadingDivBtn {
+	padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+
+td.loadingDivFooter { /* Footer with Elapsed sec */
+	padding-left: 5px;
+	border-top: 1px solid black;  
+  background-color: #BABABA; 
+  color: black; /* Black */
+}
+
+div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
+  width: 110px;
+	height: 110px;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
+	z-index: 110;  
+}
+
+
+/*----------------------------------------------------
+Tooltip: Tip with info image
+---    
+<b>CSS:</b>  ``input.jsuInfo``  used with JSU Tooltip API Tip() UnTip()  
+   - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+<BR/><BR/><b>Examples:</b>
+```html
+<input class="jsuInfo" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"/>
+```
+*/
+input.jsuInfo{ /* Info img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+
+
+/*---
+Tooltip: Tip with info Question Mark
+---
+<b>CSS:</b> ``img.jsuTip`` ``input.jsuTip``  usually used with JSU Tooltip API Tip() UnTip()  
+   - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+<BR/>For cross browser compatibility we recommend using input.jsuInfo. img.jsuInfo can be used  only in IE. 
+<BR/><BR/><b>Examples:</b>
+```html
+<input class="jsuTip" type="button"   onmouseover="Tip('Example of Tip')"   onmouseout="UnTip(event)"/>
+```
+
+*/
+img.jsuTip, input.jsuTip{
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center center;
+  height: 20x;
+  width: 20x;
+  marging-left: 5px;
+}
+
+
+
+
+
+/*---
+Tooltip: button for TipFix 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+
+```html
+<b>JSU Tip button :</b> <ul>
+ <li> tipFix button with '?' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFix</b>  <input type="button" class="tipFix"/> &nbsp;&nbsp; 
+     <b>input.tipFixUp</b>  <input type="button" class="tipFixUp" />
+ </li><BR/>
+ <li> tipFix button with 'JS' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixJS</b>  <input type="button" class="tipFixJS"/> &nbsp;&nbsp; 
+     <b>input.tipFixJSUp</b>  <input type="button" class="tipFixJSUp" />
+ </li><BR/>
+ <li> tipFix button with 'Code' and Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixCode</b>  <input type="button" class="tipFixCode"/> &nbsp;&nbsp; 
+     <b>input.tipFixCodeUp</b>  <input type="button" class="tipFixCodeUp" />
+ </li><BR/>
+ <li> tipFix button with Arrow Down/Up: &nbsp;&nbsp;   
+     <b>input.tipFixArrow</b>  <input type="button" class="tipFixArrow"/> &nbsp;&nbsp; 
+     <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
+ </li><BR/>
+ <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
+     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnalList"/> <BR/> 
+     <b>input.tipGoogleAnalListUp</b>  <input type="button" class="tipGoogleAnalListUp" />
+ </li><BR/>
+ <li> button to Go to the Page of Google Analytics:  
+     &nbsp;&nbsp; <b>input.tipGoogleAnal</b>  <input type="button" class="tipGoogleAnal"/>  
+ </li><BR/>
+ <li> JSU help Button: &nbsp;&nbsp;  
+     <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
+ </li>
+</ul> 
+```
+*/
+
+input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFixUp */ 
+    height: 20px;
+    width: 13px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 3px; 
+    margin-right: 3px; 
+    cursor: pointer;
+}
+input.tipFix{ /* Specific filed of input.tipFix */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center;
+}
+input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixUp.png) no-repeat center center;
+}
+
+input.tipFixJS, input.tipFixJSUp{
+    height: 21px;
+    width: 16px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 4px; 
+    cursor: pointer;
+}
+input.tipFixJS{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixJS.png) no-repeat center center;
+}
+input.tipFixJSUp{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixJSUp.png) no-repeat center center;
+}
+
+input.tipFixCode, input.tipFixCodeUp{
+    height: 26px;
+    width: 35px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 4px; 
+    cursor: pointer;
+}
+input.tipFixCode{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCode.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixCode.png) no-repeat center center; */
+}
+input.tipFixCodeUp{
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCodeUp.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFixCodeUp.png) no-repeat center center; */ 
+}
+
+
+input.tipFixArrow, input.tipFixArrowUp {  /* Common fields  */
+    height: 20px;
+    padding-right: 30px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+input.tipFixArrow { /* specific image for tipFixArrow */ 
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png) no-repeat right center;
+}
+input.tipFixArrowUp { /* specific image for tipFixArrowUp */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center;
+}
+
+input.tipGoogleAnalList, input.tipGoogleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+}
+input.tipGoogleAnalList {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalList.png) no-repeat center center; 
+}
+input.tipGoogleAnalListUp {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalListUp.png) no-repeat center center; 
+}
+
+input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button to show 1 page with Google Analytics  */
+    height: 23px;
+    width: 27px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+    margin-left: 2px; 
+}
+input.tipGoogleAnal {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center;
+}
+input.tipGoogleAnalUp {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center; 
+}
+
+input.jsuHelp{	/* Help Button */  
+    height: 18px;
+    width: 18px;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left: 0px; 
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
+    
+}
+
+
+
+/*---
+Tooltip: CSS used directly inside tooltip.js 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+*/
+
+div.ttTitle{  /* default Title */
+	background-color: red;
+}	
+
+
+/*---
+Tooltip: CSS for tip table 
+---
+*/
+
+table.tip, table.jsuHeader, table.jsuFooter {
+	text-align: center;
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 11px;
+	color: black; 
+	background-color: #ffffff;
+	/* White Gray: default backgound, used for Td */
+	border: 3px solid #858585; /* Dark Gray */
+	border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px; 	
+}
+
+table.tipNoBorder,table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 5px;  
+}
+
+
+table.jsuHeaderNoBorder,table.jsuFooterNoBorder {  
+    border-spacing: 1px;  
+  }
+
+
+tr.tipTitle,th.tipTitle, tr.tipTitleBig,th.tipTitleBig {
+  background-color: #0033FF; /* Blue */
+  color: #FFFFFF; /* White */
+  text-align: center;
+  border: 0px;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+tr.tipTitle,th.tipTitle{
+  font-size: 9pt;
+  padding: 2px;
+}
+tr.tipTitleBig,th.tipTitleBig{
+  font-size: 13pt;
+}
+
+.tipTitleVeryBig{
+  font-size: 30pt;
+  font-weight: bold;  
+}
+
+
+
+label.tipTitle {
+  font-family: Verdana;
+  font-weight: bold;	
+	font-size: 10pt;
+}
+
+label.tipTitleBig {
+  font-family: Verdana;
+  font-weight: bold;	
+	font-size: 16pt;
+}
+
+tr.tipTitle2,th.tipTitle2, tr.tipTitleBig2,th.tipTitleBig2 {
+  background-color: #66B2FF; 
+  color: black; 
+  text-align: center;
+  padding: 2px;
+  border: 1px solid black;
+  font-family: Verdana ;
+  font-weight: bold ;
+  font-size: 9pt ;
+}
+
+tr.tipTitle3,th.tipTitle3, tr.tipTitleBig3,th.tipTitleBig3 {
+  background-color: #A9C6FC; 
+  color: black; 
+  text-align: center;
+  padding: 2px;
+  border: 1px solid black;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+tr.tipTitleBig2,th.tipTitleBig2,tr.tipTitleBig3,th.tipTitleBig3 {
+  font-size: 11pt !important;
+}
+
+
+th.tip,td.tip {
+	text-align: center;
+	padding: .5em;
+	color: #00;
+	border: 1px solid #404040; /* Black */
+	background-color: #ffffff;
+}
+
+
+th.tip2,td.tip2 { /* for alternate Row BackGround in Rows */
+	text-align: center;
+	padding: .5em;
+	color: #00;
+	border: 1px solid #404040; /* Black */
+	background-color: #f1f1f1;
+}
+
+
+th.tip { /* Header */
+	background: #B8B8B8; /* Gray */
+}
+
+
+th.tipSep { /* Row separator between SubTables*/
+	background: #FFFFCC; /* Yellow*/
+	height: 8pt;
+	border-style: none;
+	text-align: left;
+	font-weight: normal;
+	font-size: 8pt;
+	color: #404040;
+}
+
+td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipAlr, td.tipOk, , td.tipGood, , td.tipErr{
+	padding-right: 5px;
+	border: 1px solid #404040; /* Black */
+}
+
+
+.tipc,.tipcBold {
+  text-align: center!important;
+}
+
+.tipBold,.tipcBold,.tiprBold,.tiplBold{
+  font-weight: bold!important;
+}
+
+td.tipr,td.tiprBold,div.tiprBold{
+	text-align: right !important;
+}
+
+
+td.tipl,td.detl,td.tiplBold,div.tiplBold {
+	text-align: left !important;
+}
+
+td.tiplNoPad {
+	border: 1px solid #404040; /* Black */
+	text-align: left;
+}
+
+td.tipAlr,label.tipAlr {
+	color: #CD3333; /* Red */
+	font-weight: bold;
+}
+
+td.tipOk,label.tipOk,div.tipOk {
+	color: #009900; /* Green */
+	/* font-weight: bold; */
+}
+
+.tipWarn,.tipWarnBold {
+	background: #ffffcc; /* Yellow */
+	color: red;
+}
+
+.tipWarnBold {
+  font-weight: bold; 
+}
+
+
+td.tipNotPresent,label.tipNotPresent{ /* e.g for JSU Feature not present */
+  background: black; /
+  font-weight: bold;
+  color: #ffffcc;
+}
+
+
+td.tipFooter {
+	text-align: left;
+	font-family: Verdana;
+	font-weight: normal;
+	font-size: 8pt;
+	color: #404040;
+	background-color: #E8E8E8;
+	border: 1px solid #858585;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+
+label.tipTitle, td.tipTitle{
+  font-weight: bold;
+  color: black; 
+  text-align: center;
+  font-size: 12px;
+}
+
+
+label.tipBlue{ /*  Blue */
+  font-family: Verdana;
+  font-weight: bold;
+  color: blue; 
+}
+
+
+
+label.tipBrown{ /* Brown Bold */
+  font-family: Verdana;
+  font-weight: bold;
+  color: #8B4513;
+  /* background-color: #CCFFFF; */   
+}
+
+input.tipBtnClose{
+  cursor: pointer;
+}	
+
+
+.tipGood,.tipGoodBold  { /* Good: Green  */
+	color: #008B45; /* Dark Green */
+}
+
+.tipGoodBold { /* Good: Green and Bold */
+  font-weight: bold; 
+}
+
+
+.tipErr,.tipErrBold   {
+  color: #CD3333; /* Red */
+}
+
+.tipErrBold   {
+	font-weight: bold;
+}
+
+
+
+a.tipLink{
+ font-weight: bold;
+ text-decoration: underline; 
+ color: blue; // 
+}
+
+a.tipLink:hover {
+ cursor: pointer;
+ color: #1E90FF; // dodgerblue
+}
+
+
+a.tipLinkJsLog, a.tt{  /* to be used in JsLog where background is black, ot in tt (tooltip) */
+ font-weight: bold;
+ text-decoration: underline; 
+ color: #00BFFF; // 
+}
+
+a.tipLinkJsLog:hover, a.tt:hover {
+ cursor: pointer;
+ color:   #00ffff; 
+}
+
+
+
+
+a.tipLinkDisabled{
+ font-weight: bold;
+ text-decoration: underline; 
+ color: gray; // 
+ pointer-events: none;
+ cursor: default;
+}
+
+
+
+.prettifyCode {  /* Extra class to enphasize, if required, Border color of prettified code */
+  border-color: blue !important; 
+}	
+.prettifyTitle {  /* Extra class to enphasize, if required, Border color of prettified code */
+  color: #99ffff !important; 
+} 
+
+
+
+
+/*---
+Validate API 
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">JSU Validate API Doc</a>
+
+<b>CSS:</b> <ul>
+ <li>``validateItemMandatory``     Item to validate: Mandatory </li>
+ <li>``validateItemErr``     Item to validate: in Error State </li>
+ <li>``validateErrLabel``     Error Label displayed on the Right of Item in case of ERROR  </li>
+ <li>``div.validateErrSect``     div Section with all the ERRORS </li>
+ <li>``label.validateErr``   label in Error State </li>
+
+ <li>...
+</ul> 
+<BR/><b>Examples:</b>
+```html
+<input class="validateItemMandatory"  width="300px" value="Example of item.validateItemMandatory"><BR/><BR/>
+<input class="validateItemErr"  width="300px" value="Example of item.validateItemErr">
+<label class="validateErrLabel" style="display:inline;" width="300px">Example of label.validateErrLabel</label>
+```
+*/
+
+
+.validateErrSect{ /* div Section with all the ERRORS  */
+  border: 5px solid red;
+  border-style: ridge; 
+  color: red;
+  display: none; /* default */
+  text-align: left;
+} 
+
+
+
+label.validateErr{ /* item in error State  */
+  border: 2px solid red;
+  color: red;
+} 
+
+input.validateInfo{ /* Info img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+  background-color: #19E4DD;
+  height: 14px;
+  width: 5px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+
+.validateItemMandatory{ /* Item to validate: Mandatory */
+  border: 2px solid black;
+} 
+
+
+.validateItemErr{ /* Item to validate: in Error State */
+  border: 2px solid;
+  border-color: red !important
+} 
+
+
+.validateErrLabel{ /* Error Label displayed on the Right of Item in case of ERROR   */
+   color: red;
+   font-style: italic;   
+   font-weight: normal;
+   margin-left: 5px;   
+   display: none;  // Default: not Visible
+}
+
+
+
+.validateErrPopup{ /* Error Label in Popup */
+  font-weight: normal;
+  color: red; /* */
+}
+
+
+
+
+
+/*---
+JSLog API 
+---
+<b>CSS:</b> <ul>
+ <li>``h3.jslog`` `Header with Btn </li>
+ <li>``div.jslogFooter``  Footer with Btn </li>
+ <li>...
+</ul> 
+*/
+
+
+h3.jslog{ /* Header with Btn */
+  background:  #ccc;
+  color : #000;
+  cursor:  pointer;
+  font-size:  14px;
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+}	
+
+
+
+div.jslogFooter{ /* Footer with Btn */
+  font-size:  12px;
+  /* textTransform = uppercase; */
+  font-weight:  bold;
+  margin:   0 0 2px;
+  lineHeight: 14px;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+} 
+
+.jslogButton{
+  cursor: pointer;
+  font-size:  12px;
+  font-weight:  bold;
+  padding: 0 5px;     		
+}	
+
+label.jslogHeader {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+label.jslogFooter{
+  font-weight: bold;
+  margin-left: 20px;
+  color: white;
+}
+
+
+select.jslog {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+
+/*---
+JSU: Detail table (e.g GoogleAnalList) 
+---
+<b>CSS:</b> <ul>
+ <li>``table.det`` Detail table with border</li>
+ <li>``table.detNoBorder``  Detail table with border </li>
+ <li>...
+</ul> 
+*/
+
+
+table.det {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 3px solid #858585; /* Dark Gray */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+table.detNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 5px;  
+}
+
+
+tr.detTitle,th.detTitle, td.detTitle, tr.detTitleBig,th.detTitleBig { /* Detail Table (e.g GoogleAnalytics */
+  background-color: #606060; 
+  border: 2px solid #858585; /* Dark Gray */
+  color: #FFFFFF; /*#CCFFFF cyan */
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+tr.detTitle,th.detTitle{
+  font-size: 10pt;
+  padding: 2px;
+}
+tr.detTitleBig,th.detTitleBig{
+  font-size: 12pt;
+}
+
+.detTitleVeryBig{
+  font-size: 20pt;
+  font-weight: bold;  
+}
+
+tr.detTitle2,th.detTitle2, tr.detTitleBig2,th.detTitleBig2 {
+  background-color: #D4D0D0; /* Gray Clear */
+  color: black; 
+  text-align: center;
+  padding: 2px;
+  border: 2px solid #858585; 
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+tr.detFilter,th.detFilter { /* e.g. Header2 with Filter in GoogleAnalytics */  
+  background-color: #D4D0D0;  /* Gray Clear */
+  color: black; 
+  text-align: center;
+  padding: 0px;
+  border: 2px solid #858585; 
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+tr.detSep, th.detSep,td.detSep { /* Row separator between SubTables*/
+  height: 1px;
+  border-style: none;
+  border: 0px; 
+  padding: 0px;
+  border-collapse: separate;
+  font-size: 1px;
+}
+
+
+td.googleAnalFooter, label.googleAnalFooter {
+  font-weight: italic !important;
+  font-family: Calibri;
+  font-size: 11pt;
+} 
+
+select.detFilter,td.detFilter{  /* e.g.: Filter in GoogleAnalytics */
+  background-color: #D4D0D0;  /* Gray Clear */
+  /* background-color: #CCFF99; */  /* Green Clear */
+  padding: 0px;
+  color: #000000; 
+  font-weight: bold;
+  font-family: Calibri;
+  font-size: 11pt;
+  border: 1px solid blue; /* Black */
+  
+} 
+
+tr.detFooter, td.detFooter {
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 10pt;
+  color: #0000CC;
+  border: 2px solid #858585; /* Dark Gray */
+  background-color: #CCFFFF;
+  /* border-collapse: collapse;
+  border-spacing: 0px; */
+}
+
+
+/*---
+util.js: .jsuAlarmingEl alarm for el   
+---
+<b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
+<BR/><b>Examples:</b>
+```html
+<input class="jsuAlarmingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuAlarmingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*---
+util.js: .jsuAlarmingEl  alarm img near a select   
+---
+<b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
+<BR/><b>Examples:</b>
+```html
+<img class="jsuAlarmingImg"/>
+```
+*/
+img.jsuAlarmingImg {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
+  background-size: contain;
+  height: 26px;
+  vertical-align: text-top;
+}
+
+  
+/*---
+util.js: .jsuLoadingEl Loading for el   
+---
+<b>CSS:</b> ``input.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShowIn1El">util.js loadingShowIn1El()</a>
+<BR/><b>Examples:</b>
+```html
+<input class="jsuLoadingEl" width="100px" value="Example of value" />
+```
+*/
+.jsuLoadingEl {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*---
+util.js Loading Gif with FillingRing 
+---
+<b>CSS:</b> ``div.jsuLoading``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
+<BR/><b>Examples:</b>
+```html
+<div class="jsuLoading" width="200px" />
+```
+*/
+div.jsuLoading {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
+  /* background-size: contain; */
+   height: 80px;  
+   /*  
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 100%; 
+  width: 100%; 
+  z-index: 100; 
+  background-color: white; 
+  position: absolute; 
+  top:0px; 
+  left: 0px;
+  */  
+}
+
+
+
