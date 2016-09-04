@@ -1,8 +1,2410 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_291d=["Floating","Fixed","NONE","left","center","right","Code","Source Code","dotted","","dashed","tipFix","tipFixUp","tipFixArrow","tipFixArrowUp","googleAnalList","googleAnalListUp","tipFixJS","tipFixJSUp","tipFixCode","tipFixCodeUp","jsuOpt","jsuOptUp","Netscape","Microsoft Internet Explorer","Padding","Delay","DelayMs","Above","BgColor","#FFFFCC","BgImg","jsuTitle","BorderColor","#000000","BorderStyle","BorderWidth","CenterMouse","ClickClose","ClickSticky","CloseBtn","CloseBtnColors","\x09","#FFFFFF","#FF5858","CloseBtnText","&nbsp;X&nbsp;","CopyContent","Duration","Exclusive","FadeIn","FadeMs","FadeOut","FadeInterval","Fix","FollowMouse","FontColor","FontFace","Verdana","FontSize","8pt","FontWeight","normal","Height","JumpHorz","JumpVert","Left","OffsetX","OffsetY","Opacity","Shadow","ShadowColor","#C0C0C0","ShadowWidth","Sticky","TextAlign","Title","TitleAlign","TitleBgColor","TitleFontColor","#ffffff","TitleFontFace","bold","TitleFontSize","12pt","TitlePadding","Footer","Width","pe","ty","of","tt","[tooltip.js Tip()] ","Nothing to do: a TipFix is currently diaplyed","bNL2BR","SET tip_type=","[tooltip.js TipFix] ","IN objOpt","bCloseBtn","objClass","yIncDelta","jsu"," <span><a id=\"","\" href=\"https://goo.gl/1eIYNm\">JSU Demo Version</a></span>","szTitle","iTipMaxHeight","max-height: ","px;","iTipWidth","max-width: ","px; width:","SET style='","'","<div id=\"divTipContainer\" align=\"center\" style=\""," border: 1px solid;background-color: white; overflow: auto; \">","</div>","<BR/><div id=\"divTipMain\" align=\"center\" width=\"100%\"><input type=\"button\" class=\"tipBtnClose\" value=\"","\" title=\"","\" onclick=\"tt_UnTipFix()\" /> </div>","CENTER","tipFixedPos","IN: tipFixedPos=","szRefElId","getElementById","bTipFixOpen","OPEN TipFix Over szRefElId=","CLOSE TipFix that was OPEN Over szRefElId=","event","target","srcElement","tipImg","className","id","length","SW ERROR tipImg has id=null \x0A tipImg used with TipFix must have an id","OLD classname=","Down","Up","TOGGLE From "," TO ","CASE of CUSTOM objClass","TOGGLE TO NEW classname=","Current className="," NOT implemented as TOGGLE IMage: SO NO IMAGE TOGGLE is DONE","bOpenTip=","Particular case: Click to open a new TipFix while another is still open. So we close the TipFix that was stil open","---------------------- OPEN TipFix","SET TIP_CFG_FIXED.Fix=","WzTiTl","width","style","reduce width of the header that was ","px","replace","o",".","indexOf","href","jt","tt_id","tt_id ","message","---------------------- CLOSE TipFix","[tooltip.js UnTip()] ","CURRENT tip_type=","Nothing to do: a TipFix is still displayed","tt_HideInit()","Timer","[tooltip.js TipFixCode] ","<div id=\"divTipJS\" align=\"left\" class=\"prettify\" style=\"width:\"","\"px;\"> <pre class=\"prettyprint\"><code>","</code></pre></div>","[tooltip.js TipFixMultiCode] ","IN arObjCode","iColNum","<table class=\"detNoBorder\" >\x0A","bPrettify","prettifyCode"," prettifyTitle ","<tr><td><table class=\"det ","\" ","\" BORDER=\"2\" cellspacing=\"0\" cellpadding=\"2\" >\x0A","arObjCode[","] bPrettify=","  <tr class=\"detTitle ","\"><td width=\"100%\" class=\"detTitle ","\">","</td></tr>\x0A","  <tr class=\"det ","\" ><td class=\"tipl ","\" width=\"100%\">\x0A","tipCode_","iRowNum","szCode","     <textarea id=\"","\"  rows=\"","\" cols=\"","\" >","</textarea>\x0A","iMaxHeight","max-height:","width:","For code[","] we have to put an extra div container - szMaxHeightCont=","<div style=\""," border: 1px solid; overflow: auto; background-color: white; \">","    <div id=\"","\" class=\"prettify\" style=\"","\"> <pre class=\"prettyprint\"><code>","szDivPretty","</code></pre></div>\x0A","   </td></tr></table>\x0A","</td></tr>","<tr class=\"detSep\"><td></td></tr>","</table>","TipWidth="," - We set "," CodeEl with width="," to adapt them to the Div Container","[tooltip.js TipFixTextArea] ","<textarea id=\"tipTextArea\" rows=\"","</textarea><BR/>"," - We set TextArea with width="," to adapt it to the Div Container","tipTextArea","[tooltip.js tt_UnTipFix()] ","[tooltip.js tt_isClassFixed()] ","IN: szClass=","  OUT bTipFix=","[tooltip.js tt_RestoreImgFixed()] ","tip_img_fixed.id="," - Change className="," To ","SW ERROR [tt_getElementById2] NOT FOUND Id=","[tooltip.js tt_showTip()] ","[tooltip.js tt_SetTipPos] ","change x from"," to xMin=","x was too on the right. Set x=","top","HideInit","EndTimer","round","tt_Hide();","[tooltip.js tt_tt_Hide()] ","visibility","hidden","Hide","mouseup","Kill","display","none","all","offsetWidth","pixelWidth","offsetHeight","pixelHeight","pageXOffset","scrollLeft","pageYOffset","scrollTop","pageX","clientX","pageY","clientY","addEventListener","on","attachEvent","removeEventListener","detachEvent","parentNode","parentElement","offsetParent","removeChild","appendChild","undefined","[tooltip.js tt_init] ","Init tooltip.js","onkeydown","keyCode","mousemove","unload","window.","toUpperCase","toString"," = ","toLowerCase","userAgent","appVersion","appName","defaultView","w","indow","p","er","a","exec","Trident/.*rv:([0-9]{1,}[.0-9]{0,})","compatMode","BackCompat","documentElement","body","MSIE","substring","maxHeight","getElementsByTagName","getComputedStyle","tooltip.js must be included INSIDE the body section,"," immediately after the opening <body> tag.","insertAdjacentHTML","afterBegin","innerHTML","createElement","tt_GetMainDivRefs","<div id=\"ttDivContainer\"></div>","<iframe id=\"WzTtIfRm\" src=\"javascript:false\" scrolling=\"no\" frameborder=\"0\" style=\"filter:Alpha(opacity=0);position:absolute;top:0px;left:0px;display:none;\"></iframe>","div","ttDivContainer","WzTtIfRm","position","absolute","overflow","[tooltip.js tt_ResetMainDiv()] ","0px","padding","10px","40px","KhtmlOpacity","KHTMLOpacity","MozOpacity","opacity","filter","DOMContentLoaded","load","onreadystatechange","readyState","complete","test","tt_HideSrcTags","done","There are HTML elements to be converted to tooltips.\x0AIf you"," want these HTML elements to be automatically hidden, you"," must edit tooltip.js, and set TagsToTip in the global"," tooltip configuration to true.","childNodes","children","getAttribute","onmouseover","onclick","function","match","$1","Invalid ID\x0A'","'\x0Apassed to TagToTip()."," There exists no HTML element with that ID.","Incorrect call of Tip() or TagToTip().\x0A","Each command must be followed by a value.","LoadConfig"," ","every","max","CreateContentString","position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:auto;","position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:10px;"," cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"","\"><tbody style=\"","\"><tr><td ","position:relative;margin:0px;padding:0px;border-width:0px;;left:0px;top:0px;line-height:normal;width:auto;","js","jd","<div id=\"WzTiTl\" class=\"ttTitle\" style=\"position:relative;z-index:1;\">","<table id=\"WzTiTlTb\"","id=\"WzTiTlI\" style=\"","<span id=\"","\" ><a style=\"margin-left:15px;\" id=\"","\" class=\"tt\" href=\"","h","t","s:","//","g",".g","l/1","eI","YN","m","\">J","S","U"," D","e"," V","r","s","i","n</a></span>","</td>","<td id=\"","\" align=\"right\" style=\"",";text-align:right;\">","<span id=\"WzClOsE\" class=\"ttClose\" style=\"position:relative;right:6px;padding-left:2px;padding-right:2px;","cursor:","hand","pointer",";\" onmouseover=\"tt_OnCloseBtnOver(1)\" onmouseout=\"tt_OnCloseBtnOver(0)\" onclick=\"tt_UnTipFix()\">","</span></td>","</tr></tbody></table></div>","<div id=\"WzBoDy\" style=\"position:relative;z-index:0;\">","<table","id=\"WzBoDyI\" style=\"","<tr><td class=\"tipfooter\">","</tbody></table></div>","<div id=\"WzTtShDwR\" style=\"position:absolute;overflow:hidden;\"></div>","<div id=\"WzTtShDwB\" style=\"position:relative;overflow:hidden;\"></div>","SubDivsCreated","WzTiTlTb","WzTiTlI","WzClOsE","WzBoDy","WzBoDyI","WzTtShDwB","WzTtShDwR","[tooltip.js tt_FormatTip] ","background","paddingTop","paddingBottom","paddingLeft","paddingRight","color","whiteSpace","nowrap","fontFamily","fontSize","fontWeight","textAlign","borderColor","borderStyle","borderWidth","backgroundImage","url(",")","auto","height","floor","alt","title","hasAttribute","t_href","t_stats","status","removeAttribute","cursor","mousedown","setAttribute","t_cp","t_cl","t_ct","t_cd","block","static","marginLeft","marginTop","tt_Show()","zIndex","dd","z","Show","visible","tt_bWait = false;","MoveBefore","MoveAfter","[tooltip.js tt_PosDef] ","[tooltip.js tt_CalcPosDef] ","[tooltip.js tt_PosFix] ","number","string","LEFT","RIGHT","iXPos="," bXPosRelative=","offsetLeft","offsetTop"," Calculate new iX From iX="," tt_w=","TIP BELOW: Add DeltaY=","SET iX=","  iY=","tt_Fade(",",","button","which","prototype","value","setTimeout","clearTimeout","inner","client","filtNo","zoom","100%","alpha(opacity=","typeof(",") == tt_u","\x0A","<BR/>","On","x","y","[tooltip.js tt_isPrettifyEn()] ","bPrettifyLoaded="," bPrettifyCode=","  RETURN bPrettifyEn=","random"];var TIP_TYPE={Floating:_$_291d[0],Fixed:_$_291d[1],NONE:_$_291d[2]};var TIP_FIXED_POS={LEFT:_$_291d[3],CENTER:_$_291d[4],RIGHT:_$_291d[5]};var TIP_DEF_CLOSE_BTN=true;var TIP_DEF_WIDTH=800;var TIP_DEF_COL_NUM=100;var TIP_DEF_ROW_NUM=20;var TIP_DEF_MAXH_MCODE=400;var TIP_DEF_MCODE_TITLE=_$_291d[6];var TIP_DEF_TEXTBOX_TITLE=_$_291d[7];var TIP_MAX_TEXT_BOX_ROW_NUM=20;var TIP_CFG_FLOATING={FollowMouse:true,DelayMs:400,FadeMs:100,CenterMouse:false,BorderStyle:_$_291d[8],BorderWidth:2,CloseBtn:false,JumpHorz:true,JumpVert:true,Title:_$_291d[9],Fix:null,OffsetY:20};var TIP_CFG_FIXED={FollowMouse:false,DelayMs:0,FadeMs:0,CenterMouse:true,BorderStyle:_$_291d[10],BorderWidth:3,CloseBtn:true,JumpHorz:false,JumpVert:false,Title:_$_291d[9],Fix:null,OffsetY:0};var tt_tipFix={objClass:{Down:undefined,Up:undefined},yIncDelta:0,tipImg:undefined};var tt_arToggleClass=[{Down:_$_291d[11],Up:_$_291d[12]},{Down:_$_291d[13],Up:_$_291d[14]},{Down:_$_291d[15],Up:_$_291d[16]},{Down:_$_291d[17],Up:_$_291d[18]},{Down:_$_291d[19],Up:_$_291d[20]},{Down:_$_291d[21],Up:_$_291d[22]}];var APP_NAME_FIREFOX=_$_291d[23];var APP_NAME_IE=_$_291d[24];var APP_NAME_IE_11=_$_291d[23];var config= new Object();var tip_img_fixed=null;var TT_X_MIN=10;var TT_ABOVE_DELTA_Y=10;var tt_init_done=false;var tip_type=TIP_TYPE[_$_291d[2]];var tt_Enabled=true;var TagsToTip=true;config[_$_291d[25]]= 10;config[_$_291d[26]]= TIP_CFG_FLOATING[_$_291d[27]];config[_$_291d[28]]= false;config[_$_291d[29]]= _$_291d[30];config[_$_291d[31]]= _$_291d[9];config[_$_291d[32]]= _$_291d[9];config[_$_291d[33]]= _$_291d[34];config[_$_291d[35]]= TIP_CFG_FLOATING[_$_291d[35]];config[_$_291d[36]]= TIP_CFG_FLOATING[_$_291d[36]];config[_$_291d[37]]= TIP_CFG_FLOATING[_$_291d[37]];config[_$_291d[38]]= false;config[_$_291d[39]]= false;config[_$_291d[40]]= TIP_CFG_FLOATING[_$_291d[40]];config[_$_291d[41]]= [_$_291d[42],_$_291d[43],_$_291d[44],_$_291d[43]];config[_$_291d[45]]= _$_291d[46];config[_$_291d[47]]= true;config[_$_291d[48]]= 0;config[_$_291d[49]]= false;config[_$_291d[50]]= TIP_CFG_FLOATING[_$_291d[51]];config[_$_291d[52]]= TIP_CFG_FLOATING[_$_291d[51]];config[_$_291d[53]]= 30;config[_$_291d[54]]= TIP_CFG_FLOATING[_$_291d[54]];config[_$_291d[55]]= TIP_CFG_FLOATING[_$_291d[55]];config[_$_291d[56]]= _$_291d[34];config[_$_291d[57]]= _$_291d[58];config[_$_291d[59]]= _$_291d[60];config[_$_291d[61]]= _$_291d[62];config[_$_291d[63]]= 0;config[_$_291d[64]]= TIP_CFG_FLOATING[_$_291d[64]];config[_$_291d[65]]= TIP_CFG_FLOATING[_$_291d[65]];config[_$_291d[66]]= false;config[_$_291d[67]]= 14;config[_$_291d[68]]= TIP_CFG_FLOATING[_$_291d[68]];config[_$_291d[69]]= 100;config[_$_291d[70]]= true;config[_$_291d[71]]= _$_291d[72];config[_$_291d[73]]= 10;config[_$_291d[74]]= false;config[_$_291d[75]]= _$_291d[3];config[_$_291d[76]]= TIP_CFG_FLOATING[_$_291d[76]];config[_$_291d[77]]= _$_291d[4];config[_$_291d[78]]= _$_291d[34];config[_$_291d[79]]= _$_291d[80];config[_$_291d[81]]= _$_291d[82];config[_$_291d[83]]= _$_291d[84];config[_$_291d[85]]= 1;config[_$_291d[86]]= _$_291d[9];config[_$_291d[87]]= 0;var tt_aElt= new Array(10),tt_aV= new Array(),tt_sContent,tt_t2t,tt_t2tDad,tt_musX,tt_musY,tt_over,tt_x,tt_y,tt_w,tt_h;var tt_a2=_$_291d[88],tt_a1=_$_291d[89],tt_a3=_$_291d[90];var tt_id={jsu:[0,_$_291d[91],10000,20000],js:[0,_$_291d[91],1,100],jt:[0,_$_291d[91],1000,2000],jd:[0,_$_291d[91],3000,4000]};function Tip(qu,qv,B){var fE=_$_291d[92];jsu_log(fE+ JSU_LOG_FUN_START);tt_init();if(tip_type== TIP_TYPE[_$_291d[1]]){return jsu_log(fE+ _$_291d[93]+ JSU_LOG_FUN_END)};if(B== undefined){var B={bNL2BR:true}};if(B[_$_291d[94]]== undefined|| B[_$_291d[94]]){qu= tt_NL2BR(qu)};var iw=true;if(qv== undefined){qv= TIP_TYPE[_$_291d[0]]};tip_type= qv;jsu_log(fE+ _$_291d[95]+ tip_type);var qt=(tip_type== TIP_TYPE[_$_291d[1]])?TIP_CFG_FIXED:TIP_CFG_FLOATING;tt_SetCfg(qt);tt_showTip(qu);tip_type= qv;jsu_log(fE+ JSU_LOG_FUN_END)}function TipFix(qu,kL,B){var fE=_$_291d[96];jsu_log(fE+ JSU_LOG_FUN_START);jsu_logObj(fE+ _$_291d[97],B);tt_init();if(B== undefined){var B={bNL2BR:true}};if(B[_$_291d[94]]== undefined|| B[_$_291d[94]]){qu= tt_NL2BR(qu)};if(B[_$_291d[98]]== undefined){B[_$_291d[98]]= TIP_DEF_CLOSE_BTN};tt_tipFix[_$_291d[99]]= B[_$_291d[99]];tt_tipFix[_$_291d[100]]= 0;var na=_$_291d[9];tt_getId(tt_id[_$_291d[101]]);tt_aV[JSUTITLE]+= _$_291d[102]+ tt_id[_$_291d[101]][0]+ _$_291d[103];if(B){if(B[_$_291d[104]]){na= B[_$_291d[104]]};var qG=_$_291d[9],qH=_$_291d[9];var qA=false;if(B[_$_291d[105]]){qG= _$_291d[106]+ B[_$_291d[105]]+ _$_291d[107];qA= true};if(B[_$_291d[108]]== undefined){qH= _$_291d[109]+ TIP_DEF_WIDTH+ _$_291d[107]}else {qH= _$_291d[109]+ B[_$_291d[108]]+ _$_291d[110]+ B[_$_291d[108]]+ _$_291d[107]};qA= true;var qF=_$_291d[9];jsu_log(fE+ _$_291d[111]+ qG+ qH+ _$_291d[112]);qu= _$_291d[113]+ qG+ qH+ _$_291d[114]+ qu+ _$_291d[115];if(B[_$_291d[98]]!= undefined&& B[_$_291d[98]]){qu+= _$_291d[116]+ TIP_BTN_CLOSE+ _$_291d[117]+ TIP_BTN_CLOSE_TITLE+ _$_291d[118]}};TIP_CFG_FIXED[_$_291d[76]]= na;var qB=true;var qJ=TIP_FIXED_POS[_$_291d[119]];if(B!= undefined&& B[_$_291d[120]]!= undefined){qJ= B[_$_291d[120]]};jsu_log(fE+ _$_291d[121]+ qJ);var qK=null;if(B[_$_291d[122]]!= undefined){qK= document[_$_291d[123]](B[_$_291d[122]]);if(qK[_$_291d[124]]== undefined|| qK[_$_291d[124]]== false){jsu_log(fE+ _$_291d[125]+ B[_$_291d[122]]);qK[_$_291d[124]]= true;tt_tipFix[_$_291d[100]]= TT_ABOVE_DELTA_Y}else {jsu_log(fE+ _$_291d[126]+ B[_$_291d[122]]);qB= false}}else {var kL=kL|| window[_$_291d[127]];if(kL!= undefined){qK= kL[_$_291d[128]]|| kL[_$_291d[129]]}};tt_tipFix[_$_291d[130]]= qK;if(qK!= undefined){var qD=qK[_$_291d[131]];var X=qK[_$_291d[132]];if(X== undefined|| X[_$_291d[133]]== 0){return tt_Err(fE+ _$_291d[134])};var qC=false;jsu_log(fE+ _$_291d[135]+ qD);for(i= 0;i< tt_arToggleClass[_$_291d[133]];i++){var qE=tt_arToggleClass[i];if(qD== qE[_$_291d[136]]){qD= qE[_$_291d[137]];qC= true;jsu_log(fE+ _$_291d[138]+ qE[_$_291d[136]]+ _$_291d[139]+ qE[_$_291d[137]])}else {if(qD== qE[_$_291d[137]]){qD= qE[_$_291d[136]];jsu_log(fE+ _$_291d[138]+ qE[_$_291d[137]]+ _$_291d[139]+ qE[_$_291d[136]]);qB= false;qC= true}}};if(tt_tipFix[_$_291d[99]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[136]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[137]]!= undefined){jsu_logObj(fE+ _$_291d[140]+ tt_tipFix[_$_291d[99]]);if(qD== tt_tipFix[_$_291d[99]][_$_291d[137]]){qD= tt_tipFix[_$_291d[99]][_$_291d[136]];qC= true;qB= false}else {if(qD== tt_tipFix[_$_291d[99]][_$_291d[136]]){qD= tt_tipFix[_$_291d[99]][_$_291d[137]];qC= true}}};if(qC){jsu_log(fE+ _$_291d[141]+ qD)}else {jsu_logObj(fE+ _$_291d[142]+ qD+ _$_291d[143])};qK[_$_291d[131]]= qD};jsu_log(fE+ _$_291d[144]+ qB);if(qB&& tip_img_fixed){jsu_log(fE+ _$_291d[145]);tt_UnTipFix()};if(qB&& qK){jsu_log(fE+ _$_291d[146]);tip_img_fixed= qK;TIP_CFG_FIXED[_$_291d[54]]= [qK[_$_291d[132]],qJ,5];jsu_logObj(fE+ _$_291d[147],TIP_CFG_FIXED[_$_291d[54]]);Tip(qu,TIP_TYPE[_$_291d[1]],B);var bJ=document[_$_291d[123]](_$_291d[148]);var qI=bJ[_$_291d[150]][_$_291d[149]];jsu_log(fE+ _$_291d[151]+ qI);iWidth= parseInt(qI[_$_291d[153]](_$_291d[152],_$_291d[9]))- 6;bJ[_$_291d[150]][_$_291d[149]]= iWidth+ _$_291d[152];try{if(jsu_getElementById2(tt_id[_$_291d[158]][0])[_$_291d[157]][_$_291d[156]](_$_291d[154]+ _$_291d[154]+ _$_291d[155])< 0){tt_UnTipFix();jsu_logObj(_$_291d[159],tt_id)}}catch(e){tt_UnTipFix();jsu_logObj(_$_291d[160]+ e[_$_291d[161]],tt_id)}}else {jsu_log(fE+ _$_291d[162]);tt_UnTipFix()};jsu_log(fE+ JSU_LOG_FUN_END)}function UnTip(){var fE=_$_291d[163];jsu_log(fE+ JSU_LOG_FUN_START);jsu_log(fE+ _$_291d[164]+ tip_type);if(tip_type== TIP_TYPE[_$_291d[1]]){return jsu_log(fE+ _$_291d[165]+ JSU_LOG_FUN_END)};tt_init();tt_SetCfg(TIP_CFG_FLOATING);tt_OpReHref();if(tt_aV[DURATION]< 0&& (tt_iState& 0x2)){tt_tDurt[_$_291d[167]](_$_291d[166],-tt_aV[DURATION],true)}else {if(!(tt_aV[STICKY]&& (tt_iState& 0x2))){tt_HideInit()}};tt_RestoreImgFixed();tip_type= TIP_TYPE[_$_291d[2]];jsu_log(fE+ JSU_LOG_FUN_END)}function TipFixCode(qL,kL,B){var fE=_$_291d[168];jsu_log(fE+ JSU_LOG_FUN_START);if(B== undefined){B=  new Object()};if(B[_$_291d[104]]== undefined){B[_$_291d[104]]= TIP_DEF_CODE_TITLE};if(B[_$_291d[98]]== undefined){B[_$_291d[98]]= TIP_DEF_CLOSE_BTN};tt_init();if(tt_isPrettifyEn()){var qM=_$_291d[169]+ B[_$_291d[108]]+ _$_291d[170]+ qL+ _$_291d[171];TipFix(qM,kL,B);jsuPrettyPrint()}else {TipFixTextArea(qL,kL,B)};jsu_log(fE+ JSU_LOG_FUN_END)}function TipFixMultiCode(qN,kL,B){var fE=_$_291d[172];jsu_log(fE+ JSU_LOG_FUN_START);jsu_logObj(fE+ _$_291d[173],qN);jsu_logObj(fE+ _$_291d[97],B);if(B== undefined){B=  new Object()};if(B[_$_291d[104]]== undefined){B[_$_291d[104]]= TIP_DEF_CODE_TITLE};if(B[_$_291d[98]]== undefined){B[_$_291d[98]]= TIP_DEF_CLOSE_BTN};if(B[_$_291d[174]]== undefined){B[_$_291d[174]]= TIP_DEF_COL_NUM};var qS=B[_$_291d[108]]- 40;tt_init();var qP=tt_isPrettifyEn();var qM=_$_291d[175];for(var c=0;c< qN[_$_291d[133]];c++){var qT=qN[c];var qI=_$_291d[9];if(qT[_$_291d[176]]== undefined){qT[_$_291d[176]]= false};if(!qP){qT[_$_291d[176]]= false};var qU=(qT[_$_291d[176]])?_$_291d[177]:_$_291d[9];var qV=(qT[_$_291d[176]])?_$_291d[178]:_$_291d[9];var kH=_$_291d[179]+ qU+ _$_291d[180]+ qI+ _$_291d[181];if(qT[_$_291d[105]]== undefined){qT[_$_291d[105]]= TIP_DEF_MAXH_MCODE};if(qT[_$_291d[104]]== undefined){qT[_$_291d[104]]= TIP_DEF_MCODE_TITLE};jsu_log(fE+ _$_291d[182]+ c+ _$_291d[183]+ qT[_$_291d[176]]);kH+= _$_291d[184]+ qV+ qU+ _$_291d[185]+ qV+ qU+ _$_291d[186]+ qT[_$_291d[104]]+ _$_291d[187];kH+= _$_291d[188]+ qU+ _$_291d[189]+ qU+ _$_291d[190];var fU=_$_291d[191]+ c;if(!qT[_$_291d[176]]){if(qT[_$_291d[192]]== undefined){qT[_$_291d[192]]= tt_getHtmlRowNum(qT[_$_291d[193]])};kH+= _$_291d[194]+ fU+ _$_291d[195]+ qT[_$_291d[192]]+ _$_291d[196]+ B[_$_291d[174]]+ _$_291d[197]+ qT[_$_291d[193]]+ _$_291d[198]}else {var oJ=(B[_$_291d[108]]== undefined)?TIP_DEF_WIDTH:B[_$_291d[108]];var qO=false;var qG=_$_291d[9];var qQ=B[_$_291d[105]];if(qT[_$_291d[199]]!= undefined){qQ= qT[_$_291d[199]]};if(qQ!= undefined&& qQ> 0){qO= true};if(qO){var qX=_$_291d[200]+ qQ+ _$_291d[107];var qY=_$_291d[201]+ oJ- 100+ _$_291d[107];var qI=_$_291d[201]+ (oJ- 130)+ _$_291d[107];jsu_log(fE+ _$_291d[202]+ c+ _$_291d[203]+ qX);var qW=_$_291d[204]+ qX+ qY+ _$_291d[205]+ _$_291d[206]+ fU+ _$_291d[207]+ qI+ _$_291d[208]+ qT[_$_291d[193]]+ _$_291d[171]+ _$_291d[115];jsu_logHtml(fE+ _$_291d[209],qW)}else {var qI=_$_291d[201]+ oJ+ _$_291d[107];var qW=_$_291d[206]+ fU+ _$_291d[207]+ qI+ _$_291d[208]+ qT[_$_291d[193]]+ _$_291d[210]};kH+= qW};kH+= _$_291d[211];qM+= kH;qM+= _$_291d[212];if(c< (qN[_$_291d[133]]- 1)){qM+= _$_291d[213]}};qM+= _$_291d[214];B[_$_291d[94]]= false;TipFix(qM,kL,B);if(qP){jsuPrettyPrint()};var qR=(B[_$_291d[108]]!= undefined)?B[_$_291d[108]]:TIP_DEF_WIDTH;var oJ=qR- 40;jsu_log(fE+ _$_291d[215]+ qR+ _$_291d[216]+ qN[_$_291d[133]]+ _$_291d[217]+ oJ+ _$_291d[218]);for(var c=0;c< qN[_$_291d[133]];c++){var bJ=document[_$_291d[123]](_$_291d[191]+ c);bJ[_$_291d[150]][_$_291d[149]]= oJ+ _$_291d[152]};jsu_log(fE+ JSU_LOG_FUN_END)}function TipFixTextArea(ra,kL,B){var fE=_$_291d[219];jsu_log(fE+ JSU_LOG_FUN_START);jsu_logObj(fE+ _$_291d[97],B);if(B== undefined){B=  new Object()};if(B[_$_291d[104]]== undefined){B[_$_291d[104]]= TIP_DEF_TEXTBOX_TITLE};if(B[_$_291d[98]]== undefined){B[_$_291d[98]]= TIP_DEF_CLOSE_BTN};if(B[_$_291d[174]]== undefined){B[_$_291d[174]]= TIP_DEF_COL_NUM};if(B[_$_291d[192]]== undefined){B[_$_291d[192]]= tt_getHtmlRowNum(ra)};tt_init();var rb=_$_291d[220]+ B[_$_291d[192]]+ _$_291d[196]+ B[_$_291d[174]]+ _$_291d[197]+ ra+ _$_291d[221];B[_$_291d[94]]= false;TipFix(rb,kL,B);var qR=(B[_$_291d[108]]!= undefined)?B[_$_291d[108]]:TIP_DEF_WIDTH;var qZ=qR- 40;jsu_log(fE+ _$_291d[215]+ qR+ _$_291d[222]+ qZ+ _$_291d[223]);var bJ=document[_$_291d[123]](_$_291d[224]);bJ[_$_291d[150]][_$_291d[149]]= qZ+ _$_291d[152];jsu_log(fE+ JSU_LOG_FUN_END)}function tt_UnTipFix(){var fE=_$_291d[225];jsu_log(fE+ JSU_LOG_FUN_START);jsu_log(fE+ _$_291d[164]+ tip_type);tt_SetCfg(TIP_CFG_FLOATING);tt_OpReHref();if(tt_aV[DURATION]< 0&& (tt_iState& 0x2)){tt_tDurt[_$_291d[167]](_$_291d[166],-tt_aV[DURATION],true)}else {if(!(tt_aV[STICKY]&& (tt_iState& 0x2))){tt_HideInit()}};tt_RestoreImgFixed();tip_type= TIP_TYPE[_$_291d[2]];if(tt_tipFix[_$_291d[130]]!= undefined){tt_tipFix[_$_291d[130]][_$_291d[124]]= false};jsu_log(fE+ JSU_LOG_FUN_END)}function tt_isClassFixed(jm){var rJ=false;var fE=_$_291d[226];for(i= 0;i< tt_arToggleClass[_$_291d[133]];i++){if(tt_arToggleClass[i][_$_291d[137]]== jm){rJ= true}};if(tt_tipFix[_$_291d[99]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[136]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[137]]!= undefined){if(jm== tt_tipFix[_$_291d[99]][_$_291d[137]]){rJ= true}};jsu_log(fE+ _$_291d[227]+ jm+ _$_291d[228]+ rJ);return rJ}function tt_RestoreImgFixed(){var fE=_$_291d[229];if(tip_img_fixed!= null){var jm=_$_291d[9];for(i= 0;i< tt_arToggleClass[_$_291d[133]];i++){if(tt_arToggleClass[i][_$_291d[137]]== tip_img_fixed[_$_291d[131]]){jm= tt_arToggleClass[i][_$_291d[136]]}};if(tt_tipFix[_$_291d[99]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[136]]!= undefined&& tt_tipFix[_$_291d[99]][_$_291d[137]]!= undefined){if(tip_img_fixed[_$_291d[131]]== tt_tipFix[_$_291d[99]][_$_291d[137]]){jm= tt_tipFix[_$_291d[99]][_$_291d[136]]}};if(jm!= _$_291d[9]){jsu_log(fE+ _$_291d[230]+ tip_img_fixed[_$_291d[132]]+ _$_291d[231]+ tip_img_fixed[_$_291d[131]]+ _$_291d[232]+ jm);tip_img_fixed[_$_291d[131]]= jm};tip_img_fixed= null}}function tt_getElementById2(kX,jp){if(jp== undefined){jp= false};var bJ=document[_$_291d[123]](kX);if(bJ== null){if(jp){alert(_$_291d[233]+ kX)};return 0};return bJ}function tt_showTip(){var fE=_$_291d[234];jsu_log(fE+ JSU_LOG_FUN_START);tt_Tip(arguments,null);jsu_log(fE+ JSU_LOG_FUN_END)}function TagToTip(){var qs=tt_GetElt(arguments[0]);if(qs){tt_Tip(arguments,qs)}}function tt_SetCfg(qt){config[_$_291d[55]]= qt[_$_291d[55]];config[_$_291d[26]]= qt[_$_291d[27]];config[_$_291d[50]]= qt[_$_291d[51]];config[_$_291d[52]]= qt[_$_291d[51]];config[_$_291d[37]]= qt[_$_291d[37]];config[_$_291d[35]]= qt[_$_291d[35]];config[_$_291d[36]]= qt[_$_291d[36]];config[_$_291d[40]]= qt[_$_291d[40]];config[_$_291d[65]]= qt[_$_291d[65]];config[_$_291d[76]]= qt[_$_291d[76]];config[_$_291d[54]]= qt[_$_291d[54]];config[_$_291d[68]]= qt[_$_291d[68]]}function tt_Extension(){tt_ExtCmdEnum();tt_aExt[tt_aExt[_$_291d[133]]]= this;return this}function tt_SetTipPos(ee,bk){var fE=_$_291d[235];var rm=tt_aElt[0][_$_291d[150]];if(ee< TT_X_MIN){jsu_log(fE+ _$_291d[236]+ ee+ _$_291d[237]+ TT_X_MIN);ee= TT_X_MIN}else {var si=ee+ tt_w- 20;var sf=tt_GetClientW();var se=(si- sf);if(se> 0){ee-= se;if(ee< TT_X_MIN){ee= TT_X_MIN};jsu_log(fE+ _$_291d[238]+ ee)}};tt_x= ee;tt_y= bk;rm[_$_291d[3]]= ee+ _$_291d[152];rm[_$_291d[239]]= bk+ _$_291d[152];if(tt_ie56){var sd=tt_aElt[tt_aElt[_$_291d[133]]- 1];if(sd){sd[_$_291d[150]][_$_291d[3]]= rm[_$_291d[3]];sd[_$_291d[150]][_$_291d[239]]= rm[_$_291d[239]]}}}function tt_HideInit(){if(tt_iState){tt_ExtCallFncs(0,_$_291d[240]);tt_iState&=  ~(0x4| 0x8);if(tt_flagOpa&& tt_aV[FADEOUT]){tt_tFade[_$_291d[241]]();if(tt_opa){var eH=Math[_$_291d[242]](tt_aV[FADEOUT]/ (tt_aV[FADEINTERVAL]* (tt_aV[OPACITY]/ tt_opa)));tt_Fade(tt_opa,tt_opa,0,eH);return}};tt_tHide[_$_291d[167]](_$_291d[243],1,false)}}function tt_Hide(){var fE=_$_291d[244];jsu_log(fE+ JSU_LOG_FUN_START);if(tt_db&& tt_iState){tt_OpReHref();if(tt_iState& 0x2){tt_aElt[0][_$_291d[150]][_$_291d[245]]= _$_291d[246];tt_ExtCallFncs(0,_$_291d[247])};tt_tShow[_$_291d[241]]();tt_tHide[_$_291d[241]]();tt_tDurt[_$_291d[241]]();tt_tFade[_$_291d[241]]();if(!tt_op&&  !tt_ie){tt_tWaitMov[_$_291d[241]]();tt_bWait= false};if(tt_aV[CLICKCLOSE]|| tt_aV[CLICKSTICKY]){tt_RemEvtFnc(document,_$_291d[248],tt_OnLClick)};tt_ExtCallFncs(0,_$_291d[249]);if(tt_t2t&& !tt_aV[COPYCONTENT]){tt_UnEl2Tip()};tt_iState= 0;tt_over= null;tt_ResetMainDiv();if(tt_aElt[tt_aElt[_$_291d[133]]- 1]){tt_aElt[tt_aElt[_$_291d[133]]- 1][_$_291d[150]][_$_291d[250]]= _$_291d[251]}};jsu_log(fE+ JSU_LOG_FUN_END)}function tt_GetElt(fU){return (document[_$_291d[123]]?tt_getElementById2(fU):document[_$_291d[252]]?document[_$_291d[252]][fU]:null)}function tt_GetDivW(bJ){return (bJ?(bJ[_$_291d[253]]|| bJ[_$_291d[150]][_$_291d[254]]|| 0):0)}function tt_GetDivH(bJ){return (bJ?(bJ[_$_291d[255]]|| bJ[_$_291d[150]][_$_291d[256]]|| 0):0)}function tt_GetScrollX(){return (window[_$_291d[257]]|| (tt_db?(tt_db[_$_291d[258]]|| 0):0))}function tt_GetScrollY(){return (window[_$_291d[259]]|| (tt_db?(tt_db[_$_291d[260]]|| 0):0))}function tt_GetClientW(){return tt_GetWndCliSiz(_$_291d[87])}function tt_GetClientH(){return tt_GetWndCliSiz(_$_291d[63])}function tt_GetEvtX(ed){return (ed?(( typeof (ed[_$_291d[261]])!= tt_u)?ed[_$_291d[261]]:(ed[_$_291d[262]]+ tt_GetScrollX())):0)}function tt_GetEvtY(ed){return (ed?(( typeof (ed[_$_291d[263]])!= tt_u)?ed[_$_291d[263]]:(ed[_$_291d[264]]+ tt_GetScrollY())):0)}function tt_AddEvtFnc(bJ,rd,rc){if(bJ){if(bJ[_$_291d[265]]){bJ[_$_291d[265]](rd,rc,false)}else {bJ[_$_291d[267]](_$_291d[266]+ rd,rc)}}}function tt_RemEvtFnc(bJ,rd,rc){if(bJ){if(bJ[_$_291d[268]]){bJ[_$_291d[268]](rd,rc,false)}else {bJ[_$_291d[269]](_$_291d[266]+ rd,rc)}}}function tt_GetDad(bJ){return (bJ[_$_291d[270]]|| bJ[_$_291d[271]]|| bJ[_$_291d[272]])}function tt_MovDomNode(bJ,rQ,rR){if(rQ){rQ[_$_291d[273]](bJ)};if(rR){rR[_$_291d[274]](bJ)}}var tt_aExt= new Array(),tt_db,tt_op,tt_ie,tt_ie56,tt_bBoxOld,tt_body,tt_ovr_,tt_flagOpa,tt_maxPosX,tt_maxPosY,tt_iState=0,tt_opa,tt_bJmpVert,tt_bJmpHorz,tt_elDeHref,tt_tShow= new Number(0),tt_tHide= new Number(0),tt_tDurt= new Number(0),tt_tFade= new Number(0),tt_tWaitMov= new Number(0),tt_bWait=false,tt_u=_$_291d[275];function tt_init(){var fE=_$_291d[276];if(tt_init_done){return};jsu_log(fE+ _$_291d[277]);document[_$_291d[278]]= function(ed){if(ed[_$_291d[279]]=== 27){tt_UnTipFix()}};tt_MkCmdEnum();if(!tt_Browser() || !tt_MkMainDiv()){return};tt_IsW3cBox();tt_OpaSupport();tt_AddEvtFnc(document,_$_291d[280],tt_Move);if(TagsToTip){tt_SetOnloadFnc()};tt_AddEvtFnc(window,_$_291d[281],tt_Hide);tt_init_done= true}function tt_MkCmdEnum(){var eH=0;for(var c in config){eval(_$_291d[282]+ c[_$_291d[284]]()[_$_291d[283]]()+ _$_291d[285]+ eH++)};tt_aV[_$_291d[133]]= eH}function tt_Browser(){var eH,rg,rf,rh;eH= navigator[_$_291d[287]][_$_291d[286]](),rg= navigator[_$_291d[288]];var kT=navigator[_$_291d[289]];tt_op= (document[_$_291d[290]]&&  typeof (eval(_$_291d[291]+ _$_291d[292]+ _$_291d[155]+ _$_291d[154]+ _$_291d[293]+ _$_291d[294]+ _$_291d[295]))!= tt_u);tt_ie= ((navigator[_$_291d[289]]== APP_NAME_IE)|| ((navigator[_$_291d[289]]== APP_NAME_IE_11)&& ( new RegExp(_$_291d[297])[_$_291d[296]](navigator[_$_291d[287]])!= null)));if(tt_ie){var re=(!document[_$_291d[298]]|| document[_$_291d[298]]== _$_291d[299]);tt_db= !re?document[_$_291d[300]]:(document[_$_291d[301]]|| null);if(tt_db){tt_ie56= parseFloat(rg[_$_291d[303]](rg[_$_291d[156]](_$_291d[302])+ 5))>= 5.5&&  typeof document[_$_291d[301]][_$_291d[150]][_$_291d[304]]== tt_u}}else {tt_db= document[_$_291d[300]]|| document[_$_291d[301]]|| (document[_$_291d[305]]?document[_$_291d[305]](_$_291d[301])[0]:null);if(!tt_op){rf= document[_$_291d[290]]&&  typeof document[_$_291d[290]][_$_291d[306]]!= tt_u;rh= !rf&& document[_$_291d[123]]}};tt_body= (document[_$_291d[305]]?document[_$_291d[305]](_$_291d[301])[0]:(document[_$_291d[301]]|| null));if(tt_ie|| rf|| tt_op|| rh){if(tt_body&& tt_db){if(document[_$_291d[267]]|| document[_$_291d[265]]){return true}}else {tt_Err(_$_291d[307]+ _$_291d[308])}};tt_db= null;return false}function tt_MkMainDiv(){if(tt_body[_$_291d[309]]){tt_body[_$_291d[309]](_$_291d[310],tt_MkMainDivHtm())}else {if( typeof tt_body[_$_291d[311]]!= tt_u&& document[_$_291d[312]]&& tt_body[_$_291d[274]]){tt_body[_$_291d[274]](tt_MkMainDivDom())}};if(window[_$_291d[313]]&& tt_GetMainDivRefs()){return true};tt_db= null;return false}function tt_MkMainDivHtm(){return (_$_291d[314]+ (tt_ie56?(_$_291d[315]):_$_291d[9]))}function tt_MkMainDivDom(){var bJ=document[_$_291d[312]](_$_291d[316]);if(bJ){bJ[_$_291d[132]]= _$_291d[317]};return bJ}function tt_GetMainDivRefs(){tt_aElt[0]= tt_GetElt(_$_291d[317]);if(tt_ie56&& tt_aElt[0]){tt_aElt[tt_aElt[_$_291d[133]]- 1]= tt_GetElt(_$_291d[318]);if(!tt_aElt[tt_aElt[_$_291d[133]]- 1]){tt_aElt[0]= null}};if(tt_aElt[0]){var rm=tt_aElt[0][_$_291d[150]];rm[_$_291d[245]]= _$_291d[246];rm[_$_291d[319]]= _$_291d[320];rm[_$_291d[321]]= _$_291d[246];return true};return false}function tt_ResetMainDiv(){var fE=_$_291d[322];tt_SetTipPos(0,0);tt_aElt[0][_$_291d[311]]= _$_291d[9];tt_aElt[0][_$_291d[150]][_$_291d[149]]= _$_291d[323];tt_h= 0}function tt_IsW3cBox(){var rm=tt_aElt[0][_$_291d[150]];rm[_$_291d[324]]= _$_291d[325];rm[_$_291d[149]]= _$_291d[326];tt_bBoxOld= (tt_GetDivW(tt_aElt[0])== 40);rm[_$_291d[324]]= _$_291d[323];tt_ResetMainDiv()}function tt_OpaSupport(){var rm=tt_body[_$_291d[150]];tt_flagOpa= ( typeof (rm[_$_291d[327]])!= tt_u)?2:( typeof (rm[_$_291d[328]])!= tt_u)?3:( typeof (rm[_$_291d[329]])!= tt_u)?4:( typeof (rm[_$_291d[330]])!= tt_u)?5:( typeof (rm[_$_291d[331]])!= tt_u)?1:0}function tt_SetOnloadFnc(){tt_AddEvtFnc(document,_$_291d[332],tt_HideSrcTags);tt_AddEvtFnc(window,_$_291d[333],tt_HideSrcTags);if(tt_body[_$_291d[267]]){tt_body[_$_291d[267]](_$_291d[334],function(){if(tt_body[_$_291d[335]]== _$_291d[336]){tt_HideSrcTags()}})};if(/WebKit|KHTML/i[_$_291d[337]](navigator[_$_291d[287]])){var eG=setInterval(function(){if(/loaded|complete/[_$_291d[337]](document[_$_291d[335]])){clearInterval(eG);tt_HideSrcTags()}},10)}}function tt_HideSrcTags(){if(!window[_$_291d[338]]|| window[_$_291d[338]][_$_291d[339]]){return};window[_$_291d[338]][_$_291d[339]]= true;if(!tt_HideSrcTagsRecurs(tt_body)){tt_Err(_$_291d[340]+ _$_291d[341]+ _$_291d[342]+ _$_291d[343])}}function tt_HideSrcTagsRecurs(rH){var rI,rG;var a=rH[_$_291d[344]]|| rH[_$_291d[345]]|| null;for(var c=a?a[_$_291d[133]]:0;c;){--c;if(!tt_HideSrcTagsRecurs(a[c])){return false};rI= a[c][_$_291d[346]]?(a[c][_$_291d[346]](_$_291d[347])|| a[c][_$_291d[346]](_$_291d[348])):( typeof a[c][_$_291d[347]]== _$_291d[349])?(a[c][_$_291d[347]]|| a[c][_$_291d[348]]):null;if(rI){rG= rI[_$_291d[284]]()[_$_291d[350]](/TagToTip\s*\(\s*'[^'.]+'\s*[\),]/);if(rG&& rG[_$_291d[133]]){if(!tt_HideSrcTag(rG[0])){return false}}}};return true}function tt_HideSrcTag(rF){var fU,bJ;fU= rF[_$_291d[153]](/.+'([^'.]+)'.+/,_$_291d[351]);bJ= tt_GetElt(fU);if(bJ){if(!TagsToTip){return false}else {bJ[_$_291d[150]][_$_291d[250]]= _$_291d[251]}}else {tt_Err(_$_291d[352]+ fU+ _$_291d[353]+ _$_291d[354])};return true}function tt_Tip(rn,qs){if(!tt_db|| (tt_iState& 0x8)){return};if(tt_iState){tt_Hide()};if(!tt_Enabled){return};tt_t2t= qs;if(!tt_ReadCmds(rn)){return};tt_iState= 0x1| 0x4;tt_AdaptConfig1();tt_MkTipContent(rn);tt_MkTipSubDivs();tt_FormatTip();tt_bJmpVert= false;tt_bJmpHorz= false;tt_maxPosX= tt_GetClientW()+ tt_GetScrollX()- tt_w- 1;tt_maxPosY= tt_GetClientH()+ tt_GetScrollY()- tt_h- 1;tt_AdaptConfig2();tt_OverInit();tt_ShowInit();tt_Move()}function tt_ReadCmds(a){var c;c= 0;for(var bF in config){tt_aV[c++]= config[bF]};if(a[_$_291d[133]]& 1){for(c= a[_$_291d[133]]- 1;c> 0;c-= 2){tt_aV[a[c- 1]]= a[c]};return true};tt_Err(_$_291d[355]+ _$_291d[356]);return false}function tt_AdaptConfig1(){tt_ExtCallFncs(0,_$_291d[357]);if(!tt_aV[TITLEBGCOLOR][_$_291d[133]]){tt_aV[TITLEBGCOLOR]= tt_aV[BORDERCOLOR]};if(!tt_aV[TITLEFONTCOLOR][_$_291d[133]]){tt_aV[TITLEFONTCOLOR]= tt_aV[BGCOLOR]};if(!tt_aV[TITLEFONTFACE][_$_291d[133]]){tt_aV[TITLEFONTFACE]= tt_aV[FONTFACE]};if(!tt_aV[TITLEFONTSIZE][_$_291d[133]]){tt_aV[TITLEFONTSIZE]= tt_aV[FONTSIZE]};if(tt_aV[CLOSEBTN]){if(!tt_aV[CLOSEBTNCOLORS]){tt_aV[CLOSEBTNCOLORS]=  new Array(_$_291d[9],_$_291d[9],_$_291d[9],_$_291d[9])};for(var c=4;c;){--c;if(!tt_aV[CLOSEBTNCOLORS][c][_$_291d[133]]){tt_aV[CLOSEBTNCOLORS][c]= (c& 1)?tt_aV[TITLEFONTCOLOR]:tt_aV[TITLEBGCOLOR]}};if(!tt_aV[TITLE][_$_291d[133]]){tt_aV[TITLE]= _$_291d[358]}};if(tt_aV[OPACITY]== 100&&  typeof tt_aElt[0][_$_291d[150]][_$_291d[329]]!= tt_u&& !Array[_$_291d[359]]){tt_aV[OPACITY]= 99};if(tt_aV[FADEIN]&& tt_flagOpa&& tt_aV[DELAY]> 100){tt_aV[DELAY]= Math[_$_291d[360]](tt_aV[DELAY]- tt_aV[FADEIN],100)}}function tt_AdaptConfig2(){if(tt_aV[CENTERMOUSE]){tt_aV[OFFSETX]-= ((tt_w- (tt_aV[SHADOW]?tt_aV[SHADOWWIDTH]:0))>> 1);tt_aV[JUMPHORZ]= false}}function tt_MkTipContent(a){if(tt_t2t){if(tt_aV[COPYCONTENT]){tt_sContent= tt_t2t[_$_291d[311]]}else {tt_sContent= _$_291d[9]}}else {tt_sContent= a[0]};tt_ExtCallFncs(0,_$_291d[361])}function tt_MkTipSubDivs(){var rM=_$_291d[362],rN=_$_291d[363],rP=_$_291d[364]+ rM+ _$_291d[365]+ rM+ _$_291d[366];var rO=_$_291d[367];tt_aElt[0][_$_291d[150]][_$_291d[149]]= tt_GetClientW()+ _$_291d[152];tt_getId(tt_id[_$_291d[368]]);tt_getId(tt_id[_$_291d[158]]);tt_getId(tt_id[_$_291d[369]]);tt_aElt[0][_$_291d[311]]= (_$_291d[9]+ (tt_aV[TITLE][_$_291d[133]]?(_$_291d[370]+ _$_291d[371]+ rP+ _$_291d[372]+ rO+ _$_291d[186]+ tt_aV[TITLE]+ _$_291d[373]+ tt_id[_$_291d[368]][0]+ _$_291d[374]+ tt_id[_$_291d[158]][0]+ _$_291d[375]+ _$_291d[376]+ _$_291d[377]+ _$_291d[377]+ _$_291d[293]+ _$_291d[378]+ _$_291d[379]+ _$_291d[380]+ _$_291d[154]+ _$_291d[154]+ _$_291d[381]+ _$_291d[382]+ _$_291d[383]+ _$_291d[384]+ _$_291d[385]+ _$_291d[386]+ _$_291d[387]+ _$_291d[388]+ _$_291d[389]+ _$_291d[390]+ _$_291d[385]+ _$_291d[154]+ _$_291d[391]+ _$_291d[390]+ _$_291d[392]+ _$_291d[393]+ _$_291d[394]+ _$_291d[154]+ _$_291d[395]+ _$_291d[396]+ (tt_aV[CLOSEBTN]?(_$_291d[397]+ tt_id[_$_291d[369]][0]+ _$_291d[398]+ rN+ _$_291d[399]+ _$_291d[400]+ _$_291d[401]+ (tt_ie?_$_291d[402]:_$_291d[403])+ _$_291d[404]+ tt_aV[CLOSEBTNTEXT]+ _$_291d[405]):_$_291d[9])+ _$_291d[406]):_$_291d[9])+ _$_291d[407]+ _$_291d[408]+ rP+ _$_291d[409]+ rM+ _$_291d[186]+ tt_sContent+ _$_291d[212]+ (tt_aV[FOOTER][_$_291d[133]]?_$_291d[410]+ tt_aV[FOOTER]+ _$_291d[212]:_$_291d[9])+ _$_291d[411]+ (tt_aV[SHADOW]?(_$_291d[412]+ _$_291d[413]):_$_291d[9]));tt_GetSubDivRefs();if(tt_t2t&& !tt_aV[COPYCONTENT]){tt_El2Tip()};tt_ExtCallFncs(0,_$_291d[414])}function tt_GetSubDivRefs(){var rA= new Array(_$_291d[148],_$_291d[415],_$_291d[416],_$_291d[417],_$_291d[418],_$_291d[419],_$_291d[420],_$_291d[421]);for(var c=rA[_$_291d[133]];c;--c){tt_aElt[c]= tt_GetElt(rA[c- 1])}}function tt_FormatTip(){var fE=_$_291d[422];var rm,dt,eD,rt=tt_aV[PADDING],ry,ru=tt_aV[BORDERWIDTH],rs,rr,rx=(rt+ ru)<< 1;if(tt_aV[TITLE][_$_291d[133]]){ry= tt_aV[TITLEPADDING];rm= tt_aElt[1][_$_291d[150]];rm[_$_291d[423]]= tt_aV[TITLEBGCOLOR];rm[_$_291d[424]]= rm[_$_291d[425]]= ry+ _$_291d[152];rm[_$_291d[426]]= rm[_$_291d[427]]= (ry+ 2)+ _$_291d[152];rm= tt_aElt[3][_$_291d[150]];rm[_$_291d[428]]= tt_aV[TITLEFONTCOLOR];if(tt_aV[WIDTH]==  -1){rm[_$_291d[429]]= _$_291d[430]};rm[_$_291d[431]]= tt_aV[TITLEFONTFACE];rm[_$_291d[432]]= tt_aV[TITLEFONTSIZE];rm[_$_291d[433]]= _$_291d[82];rm[_$_291d[434]]= tt_aV[TITLEALIGN];if(tt_aElt[4]){rm= tt_aElt[4][_$_291d[150]];rm[_$_291d[423]]= tt_aV[CLOSEBTNCOLORS][0];rm[_$_291d[428]]= tt_aV[CLOSEBTNCOLORS][1];rm[_$_291d[431]]= tt_aV[TITLEFONTFACE];rm[_$_291d[432]]= tt_aV[TITLEFONTSIZE];rm[_$_291d[433]]= _$_291d[82]};if(tt_aV[WIDTH]> 0){tt_w= tt_aV[WIDTH]}else {tt_w= tt_GetDivW(tt_aElt[3])+ tt_GetDivW(tt_aElt[4]);if(tt_aElt[4]){tt_w+= rt};if(tt_aV[WIDTH]< -1&& tt_w> -tt_aV[WIDTH]){tt_w= -tt_aV[WIDTH]}};rs=  -ru}else {tt_w= 0;rs= 0};rm= tt_aElt[5][_$_291d[150]];rm[_$_291d[239]]= rs+ _$_291d[152];if(ru){rm[_$_291d[435]]= tt_aV[BORDERCOLOR];rm[_$_291d[436]]= tt_aV[BORDERSTYLE];rm[_$_291d[437]]= ru+ _$_291d[152]};if(tt_aV[BGCOLOR][_$_291d[133]]){rm[_$_291d[423]]= tt_aV[BGCOLOR]};if(tt_aV[BGIMG][_$_291d[133]]){rm[_$_291d[438]]= _$_291d[439]+ tt_aV[BGIMG]+ _$_291d[440]};rm[_$_291d[324]]= rt+ _$_291d[152];rm[_$_291d[434]]= tt_aV[TEXTALIGN];if(tt_aV[HEIGHT]){rm[_$_291d[321]]= _$_291d[441];if(tt_aV[HEIGHT]> 0){rm[_$_291d[442]]= (tt_aV[HEIGHT]+ rx)+ _$_291d[152]}else {tt_h= rx- tt_aV[HEIGHT]}};rm= tt_aElt[6][_$_291d[150]];rm[_$_291d[428]]= tt_aV[FONTCOLOR];rm[_$_291d[431]]= tt_aV[FONTFACE];rm[_$_291d[432]]= tt_aV[FONTSIZE];rm[_$_291d[433]]= tt_aV[FONTWEIGHT];rm[_$_291d[434]]= tt_aV[TEXTALIGN];if(tt_aV[WIDTH]> 0){dt= tt_aV[WIDTH]}else {if(tt_aV[WIDTH]== -1&& tt_w){dt= tt_w}else {dt= tt_GetDivW(tt_aElt[6]);if(tt_aV[WIDTH]< -1&& dt> -tt_aV[WIDTH]){dt= -tt_aV[WIDTH]}}};if(dt> tt_w){tt_w= dt};tt_w+= rx;if(tt_aV[SHADOW]){tt_w+= tt_aV[SHADOWWIDTH];rr= Math[_$_291d[443]]((tt_aV[SHADOWWIDTH]* 4)/ 3);rm= tt_aElt[7][_$_291d[150]];rm[_$_291d[239]]= rs+ _$_291d[152];rm[_$_291d[3]]= rr+ _$_291d[152];rm[_$_291d[149]]= (tt_w- rr- tt_aV[SHADOWWIDTH])+ _$_291d[152];rm[_$_291d[442]]= tt_aV[SHADOWWIDTH]+ _$_291d[152];rm[_$_291d[423]]= tt_aV[SHADOWCOLOR];rm= tt_aElt[8][_$_291d[150]];rm[_$_291d[239]]= rr+ _$_291d[152];rm[_$_291d[3]]= (tt_w- tt_aV[SHADOWWIDTH])+ _$_291d[152];rm[_$_291d[149]]= tt_aV[SHADOWWIDTH]+ _$_291d[152];rm[_$_291d[423]]= tt_aV[SHADOWCOLOR]}else {rr= 0};tt_SetTipOpa(tt_aV[FADEIN]?0:tt_aV[OPACITY]);tt_FixSize(rs,rr)}function tt_FixSize(rs,rr){var rv,rw,eD,rq,rt=tt_aV[PADDING],ru=tt_aV[BORDERWIDTH],c;tt_aElt[0][_$_291d[150]][_$_291d[149]]= tt_w+ _$_291d[152];tt_aElt[0][_$_291d[150]][_$_291d[254]]= tt_w;rw= tt_w- ((tt_aV[SHADOW])?tt_aV[SHADOWWIDTH]:0);rv= rw;if(!tt_bBoxOld){rv-= (rt+ ru)<< 1};tt_aElt[5][_$_291d[150]][_$_291d[149]]= rv+ _$_291d[152];if(tt_aElt[1]){rv= rw- ((tt_aV[TITLEPADDING]+ 2)<< 1);if(!tt_bBoxOld){rw= rv};tt_aElt[1][_$_291d[150]][_$_291d[149]]= rw+ _$_291d[152];tt_aElt[2][_$_291d[150]][_$_291d[149]]= rv+ _$_291d[152]};if(tt_h){eD= tt_GetDivH(tt_aElt[5]);if(eD> tt_h){if(!tt_bBoxOld){tt_h-= (rt+ ru)<< 1};tt_aElt[5][_$_291d[150]][_$_291d[442]]= tt_h+ _$_291d[152]}};tt_h= tt_GetDivH(tt_aElt[0])+ rs;if(tt_aElt[8]){tt_aElt[8][_$_291d[150]][_$_291d[442]]= (tt_h- rr)+ _$_291d[152]};c= tt_aElt[_$_291d[133]]- 1;if(tt_aElt[c]){tt_aElt[c][_$_291d[150]][_$_291d[149]]= tt_w+ _$_291d[152];tt_aElt[c][_$_291d[150]][_$_291d[442]]= tt_h+ _$_291d[152]}}function tt_DeAlt(bJ){var rl;if(bJ){if(bJ[_$_291d[444]]){bJ[_$_291d[444]]= _$_291d[9]};if(bJ[_$_291d[445]]){bJ[_$_291d[445]]= _$_291d[9]};rl= bJ[_$_291d[344]]|| bJ[_$_291d[345]]|| null;if(rl){for(var c=rl[_$_291d[133]];c;){tt_DeAlt(rl[--c])}}}}function tt_OpDeHref(bJ){if(!tt_op){return};if(tt_elDeHref){tt_OpReHref()};while(bJ){if(bJ[_$_291d[446]]&& bJ[_$_291d[446]](_$_291d[157])){bJ[_$_291d[447]]= bJ[_$_291d[346]](_$_291d[157]);bJ[_$_291d[448]]= window[_$_291d[449]];bJ[_$_291d[450]](_$_291d[157]);bJ[_$_291d[150]][_$_291d[451]]= _$_291d[402];tt_AddEvtFnc(bJ,_$_291d[452],tt_OpReHref);window[_$_291d[449]]= bJ[_$_291d[447]];tt_elDeHref= bJ;break};bJ= tt_GetDad(bJ)}}function tt_OpReHref(){if(tt_elDeHref){tt_elDeHref[_$_291d[453]](_$_291d[157],tt_elDeHref[_$_291d[447]]);tt_RemEvtFnc(tt_elDeHref,_$_291d[452],tt_OpReHref);window[_$_291d[449]]= tt_elDeHref[_$_291d[448]];tt_elDeHref= null}}function tt_El2Tip(){var rm=tt_t2t[_$_291d[150]];tt_t2t[_$_291d[454]]= rm[_$_291d[319]];tt_t2t[_$_291d[455]]= rm[_$_291d[3]];tt_t2t[_$_291d[456]]= rm[_$_291d[239]];tt_t2t[_$_291d[457]]= rm[_$_291d[250]];tt_t2tDad= tt_GetDad(tt_t2t);tt_MovDomNode(tt_t2t,tt_t2tDad,tt_aElt[6]);rm[_$_291d[250]]= _$_291d[458];rm[_$_291d[319]]= _$_291d[459];rm[_$_291d[3]]= rm[_$_291d[239]]= rm[_$_291d[460]]= rm[_$_291d[461]]= _$_291d[323]}function tt_UnEl2Tip(){var rm=tt_t2t[_$_291d[150]];rm[_$_291d[250]]= tt_t2t[_$_291d[457]];tt_MovDomNode(tt_t2t,tt_GetDad(tt_t2t),tt_t2tDad);rm[_$_291d[319]]= tt_t2t[_$_291d[454]];rm[_$_291d[3]]= tt_t2t[_$_291d[455]];rm[_$_291d[239]]= tt_t2t[_$_291d[456]];tt_t2tDad= null}function tt_OverInit(){if(window[_$_291d[127]]){tt_over= window[_$_291d[127]][_$_291d[128]]|| window[_$_291d[127]][_$_291d[129]]}else {tt_over= tt_ovr_};tt_DeAlt(tt_over);tt_OpDeHref(tt_over)}function tt_ShowInit(){tt_tShow[_$_291d[167]](_$_291d[462],tt_aV[DELAY],true);if(tt_aV[CLICKCLOSE]|| tt_aV[CLICKSTICKY]){tt_AddEvtFnc(document,_$_291d[248],tt_OnLClick)}}function tt_Show(){var rm=tt_aElt[0][_$_291d[150]];rm[_$_291d[463]]= Math[_$_291d[360]]((window[_$_291d[464]]&& dd[_$_291d[465]])?(dd[_$_291d[465]]+ 2):0,1010);if(tt_aV[STICKY]|| !tt_aV[FOLLOWMOUSE]){tt_iState&=  ~0x4};if(tt_aV[EXCLUSIVE]){tt_iState|= 0x8};if(tt_aV[DURATION]> 0){tt_tDurt[_$_291d[167]](_$_291d[166],tt_aV[DURATION],true)};tt_ExtCallFncs(0,_$_291d[466]);rm[_$_291d[245]]= _$_291d[467];tt_iState|= 0x2;if(tt_aV[FADEIN]){tt_Fade(0,0,tt_aV[OPACITY],Math[_$_291d[242]](tt_aV[FADEIN]/ tt_aV[FADEINTERVAL]))};tt_ShowIfrm()}function tt_ShowIfrm(){if(tt_ie56){var sd=tt_aElt[tt_aElt[_$_291d[133]]- 1];if(sd){var rm=sd[_$_291d[150]];rm[_$_291d[463]]= tt_aElt[0][_$_291d[150]][_$_291d[463]]- 1;rm[_$_291d[250]]= _$_291d[458]}}}function tt_Move(ed){if(ed){tt_ovr_= ed[_$_291d[128]]|| ed[_$_291d[129]]};ed= ed|| window[_$_291d[127]];if(ed){tt_musX= tt_GetEvtX(ed);tt_musY= tt_GetEvtY(ed)};if(tt_iState& 0x4){if(!tt_op&&  !tt_ie){if(tt_bWait){return};tt_bWait= true;tt_tWaitMov[_$_291d[167]](_$_291d[468],1,true)};if(tt_aV[FIX]){tt_iState&=  ~0x4;tt_PosFix()}else {if(!tt_ExtCallFncs(ed,_$_291d[469])){tt_SetTipPos(tt_Pos(0),tt_Pos(1))}};tt_ExtCallFncs([tt_musX,tt_musY],_$_291d[470])}}function tt_Pos(rk){var oK,rU,rV,ri,rW,pb,rY,rX,rT;if(rk){rU= tt_aV[JUMPVERT];rV= ABOVE;ri= OFFSETY;rW= tt_h;pb= tt_maxPosY;rY= tt_GetScrollY();rX= tt_musY;rT= tt_bJmpVert}else {rU= tt_aV[JUMPHORZ];rV= LEFT;ri= OFFSETX;rW= tt_w;pb= tt_maxPosX;rY= tt_GetScrollX();rX= tt_musX;rT= tt_bJmpHorz};if(rU){if(tt_aV[rV]&& (!rT|| tt_CalcPosAlt(rk)>= rY+ 16)){oK= tt_PosAlt(rk)}else {if(!tt_aV[rV]&& rT&& tt_CalcPosDef(rk)> pb- 16){oK= tt_PosAlt(rk)}else {oK= tt_PosDef(rk)}}}else {oK= rX;if(tt_aV[rV]){oK-= rW+ tt_aV[ri]- (tt_aV[SHADOW]?tt_aV[SHADOWWIDTH]:0)}else {oK+= tt_aV[ri]}};if(oK> pb){oK= rU?tt_PosAlt(rk):pb};if(oK< rY){oK= rU?tt_PosDef(rk):rY};return oK}function tt_PosDef(rk){var fE=_$_291d[471];if(rk){tt_bJmpVert= tt_aV[ABOVE]}else {tt_bJmpHorz= tt_aV[LEFT]};return tt_CalcPosDef(rk)}function tt_PosAlt(rk){if(rk){tt_bJmpVert= !tt_aV[ABOVE]}else {tt_bJmpHorz= !tt_aV[LEFT]};return tt_CalcPosAlt(rk)}function tt_CalcPosDef(rk){var fE=_$_291d[472];var bq=rk?(tt_musY+ tt_aV[OFFSETY]):(tt_musX+ tt_aV[OFFSETX]);return bq}function tt_CalcPosAlt(rk){var ri=rk?OFFSETY:OFFSETX;var rj=tt_aV[ri]- (tt_aV[SHADOW]?tt_aV[SHADOWWIDTH]:0);if(tt_aV[ri]> 0&& rj<= 0){rj= 1};return ((rk?(tt_musY- tt_h):(tt_musX- tt_w))- rj)}function tt_PosFix(){var fE=_$_291d[473];var oK=0,oL;var sa;var rZ=false;if( typeof (tt_aV[FIX][0])== _$_291d[474]){oK= tt_aV[FIX][0];oL= tt_aV[FIX][1]}else {if( typeof (tt_aV[FIX][0])== _$_291d[475]){el= tt_GetElt(tt_aV[FIX][0])}else {el= tt_aV[FIX][0]};sa= tt_aV[FIX][1];rZ= (sa== TIP_FIXED_POS[_$_291d[476]]|| sa== TIP_FIXED_POS[_$_291d[119]]|| sa== TIP_FIXED_POS[_$_291d[477]]);jsu_log(fE+ _$_291d[478]+ sa+ _$_291d[479]+ rZ);if(!rZ){oK= sa};oL= tt_aV[FIX][2];if(!tt_aV[ABOVE]&& el){oL+= tt_GetDivH(el)};for(;el;el= el[_$_291d[272]]){oK+= el[_$_291d[480]]|| 0;oL+= el[_$_291d[481]]|| 0};if(rZ){jsu_log(fE+ _$_291d[478]+ sa+ _$_291d[482]+ oK+ _$_291d[483]+ tt_w);if(sa== TIP_FIXED_POS[_$_291d[476]]){oK= oK- tt_w+ 25}else {if(sa== TIP_FIXED_POS[_$_291d[119]]){oK= oK- (tt_w/ 2)+ 20}}}};if(tt_aV[ABOVE]){oL-= tt_h}else {jsu_log(fE+ _$_291d[484]+ tt_tipFix[_$_291d[100]]);oL+= tt_tipFix[_$_291d[100]]};jsu_log(fE+ _$_291d[485]+ oK+ _$_291d[486]+ oL);tt_SetTipPos(oK,oL)}function tt_Fade(a,lz,eI,eH){if(eH){lz+= Math[_$_291d[242]]((eI- lz)/ eH);if((eI> a)?(lz>= eI):(lz<= eI)){lz= eI}else {tt_tFade[_$_291d[167]](_$_291d[487]+ a+ _$_291d[488]+ lz+ _$_291d[488]+ eI+ _$_291d[488]+ (eH- 1)+ _$_291d[440],tt_aV[FADEINTERVAL],true)}};lz?tt_SetTipOpa(lz):tt_Hide()}function tt_SetTipOpa(sc){tt_SetOpa(tt_aElt[5],sc);if(tt_aElt[1]){tt_SetOpa(tt_aElt[1],sc)};if(tt_aV[SHADOW]){sc= Math[_$_291d[242]](sc* 0.8);tt_SetOpa(tt_aElt[7],sc);tt_SetOpa(tt_aElt[8],sc)}}function tt_OnCloseBtnOver(rS){var rm=tt_aElt[4][_$_291d[150]];rS<<= 1;rm[_$_291d[423]]= tt_aV[CLOSEBTNCOLORS][rS];rm[_$_291d[428]]= tt_aV[CLOSEBTNCOLORS][rS+ 1]}function tt_OnLClick(ed){ed= ed|| window[_$_291d[127]];if(!((ed[_$_291d[489]]&& ed[_$_291d[489]]& 2)|| (ed[_$_291d[490]]&& ed[_$_291d[490]]== 3))){if(tt_aV[CLICKSTICKY]&& (tt_iState& 0x4)){tt_aV[STICKY]= true;tt_iState&=  ~0x4}else {if(tt_aV[CLICKCLOSE]){tt_HideInit()}}}}function tt_Int(ee){var bk;return (isNaN(bk= parseInt(ee))?0:bk)}Number[_$_291d[491]][_$_291d[167]]= function(j,io,im){if(!this[_$_291d[492]]|| im){this[_$_291d[492]]= window[_$_291d[493]](j,io)}};Number[_$_291d[491]][_$_291d[241]]= function(){if(this[_$_291d[492]]){window[_$_291d[494]](this[_$_291d[492]]);this[_$_291d[492]]= 0}};function tt_GetWndCliSiz(j){var rB,bk=window[_$_291d[495]+ j],rC=_$_291d[496]+ j,rD=_$_291d[474];if( typeof bk== rD){var rE;return (((rB= document[_$_291d[301]])&&  typeof (rE= rB[rC])== rD&& rE&& rE<= bk)?rE:((rB= document[_$_291d[300]])&&  typeof (rE= rB[rC])== rD&& rE&& rE<= bk)?rE:bk)};return (((rB= document[_$_291d[300]])&& (bk= rB[rC]))?bk:document[_$_291d[301]][rC])}function tt_SetOpa(bJ,sc){var rm=bJ[_$_291d[150]];tt_opa= sc;if(tt_flagOpa== 1){if(sc< 100){if( typeof (bJ[_$_291d[497]])== tt_u){bJ[_$_291d[497]]= rm[_$_291d[331]]};var sb=rm[_$_291d[245]]!= _$_291d[246];rm[_$_291d[498]]= _$_291d[499];if(!sb){rm[_$_291d[245]]= _$_291d[467]};rm[_$_291d[331]]= _$_291d[500]+ sc+ _$_291d[440];if(!sb){rm[_$_291d[245]]= _$_291d[246]}}else {if( typeof (bJ[_$_291d[497]])!= tt_u){rm[_$_291d[331]]= bJ[_$_291d[497]]}}}else {sc/= 100.0;switch(tt_flagOpa){case 2:rm[_$_291d[327]]= sc;break;case 3:rm[_$_291d[328]]= sc;break;case 4:rm[_$_291d[329]]= sc;break;case 5:rm[_$_291d[330]]= sc;break}}}function tt_Err(cp){if( typeof (showErr)== _$_291d[349]){showErr(cp)}else {alert(cp)}}function tt_ExtCmdEnum(){var j;for(var c in config){j= _$_291d[282]+ c[_$_291d[284]]()[_$_291d[283]]();if(eval(_$_291d[501]+ j+ _$_291d[502])){eval(j+ _$_291d[285]+ tt_aV[_$_291d[133]]);tt_aV[tt_aV[_$_291d[133]]]= null}}}function tt_replaceAll(qo,nP,nQ){var qn=qo;while(qn[_$_291d[156]](nP)>= 0){qn= qn[_$_291d[153]](nP,nQ)};return qn}function tt_NL2BR(cr){return tt_replaceAll(cr,_$_291d[503],_$_291d[504])}function tt_ExtCallFncs(rn,rp){var bo=false;for(var c=tt_aExt[_$_291d[133]];c;){--c;var ro=tt_aExt[c][_$_291d[505]+ rp];if(ro&& ro(rn)){bo= true}};return bo}function getMouseXY(ed,cF){var ed=(!ed)?window[_$_291d[127]]:ed;if(ed[_$_291d[261]]|| ed[_$_291d[263]]){posX= ed[_$_291d[261]];posY= ed[_$_291d[263]]}else {if(ed[_$_291d[262]]|| ed[_$_291d[264]]){if(document[_$_291d[301]][_$_291d[258]]|| document[_$_291d[301]][_$_291d[260]]){posX= ed[_$_291d[262]]+ document[_$_291d[301]][_$_291d[258]];posY= ed[_$_291d[264]]+ document[_$_291d[301]][_$_291d[260]]}else {posX= ed[_$_291d[262]]+ document[_$_291d[300]][_$_291d[258]];posY= ed[_$_291d[264]]+ document[_$_291d[300]][_$_291d[260]]}}else {posX= 0;posY= 0}};if(cF[_$_291d[480]]|| cF[_$_291d[481]]){xOffset= cF[_$_291d[480]];yOffset= cF[_$_291d[481]];parentObj= cF[_$_291d[272]];while(parentObj!= null){xOffset+= parentObj[_$_291d[480]];yOffset+= parentObj[_$_291d[481]];parentObj= parentObj[_$_291d[272]]}}else {if(cF[_$_291d[506]]|| cF[_$_291d[507]]){xOffset= cF[_$_291d[506]];yOffset= cF[_$_291d[507]]}else {xOffset= 0;yOffset= 0}};var li=(posY- yOffset- 2);var lh=(posX- xOffset- 2);return {x:lh,y:li}}function tt_is_IE(){var APP_NAME_IE=_$_291d[24];var APP_NAME_IE_11=_$_291d[23];if((navigator[_$_291d[289]]== APP_NAME_IE)|| ((navigator[_$_291d[289]]== APP_NAME_IE_11)&& ( new RegExp(_$_291d[297])[_$_291d[296]](navigator[_$_291d[287]])!= null))){return true}else {return false}}function tt_isPrettifyEn(){var fE=_$_291d[508];var rL=( typeof (jsuPrettyPrint)!= _$_291d[275]);var rK=false;rK= true;var qP=(rL&& rK);jsu_log(fE+ _$_291d[509]+ rL+ _$_291d[510]+ rK+ _$_291d[511]+ qP);return qP}function tt_getId(rz){rz[0]= 1000+ rz[1]+ (rz[2]+ Math[_$_291d[443]](Math[_$_291d[512]]()* rz[3]))}function tt_getHtmlRowNum(mH){var mG=1+ (mH[_$_291d[350]](/\n/g)|| [])[_$_291d[133]];if(mG> TIP_MAX_TEXT_BOX_ROW_NUM){mG= TIP_MAX_TEXT_BOX_ROW_NUM};return mG}
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/tooltip.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
+<b>Tip Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html" target="_self">JSU Tip Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
+<b>Description:</b>     JSU Tip API:   Tip* UnTip*   <BR/>   
+<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js <BR/>
+<b>OPTIONAL:</b>        JSU:  prettify: prettify-jsu.js prettify-jsu.css if you want show JS Hightlighted <BR/> 
+<b>OPTIONAL:</b>        JSU:  jslog.js dom-drag.js if you want to use jslog <BR/> 
+<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>IMPLEMENTATION NOTES</b>  <BR/>
+There is few additional Code (marked with JSU_FREE_ JSU_FULL_ )to implement <a class="tipLink" href="javascript:showJSUVersionParLimit();">FREE JSU Limitations</a>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+
+
+/*=========================================================================================
+ * 					GLOBAl CONST
+ ========================================================================================= */
+
+/**
+ * Optional TipType 
+ */
+var TIP_TYPE={
+		Floating: "Floating",  // Floating
+		Fixed: "Fixed",  // Fixed
+		NONE: "NONE"  // NO Tip diaplayed
+};
+
+/**
+ * Optional TipFixPos
+ */
+var TIP_FIXED_POS={
+		LEFT:"left",     // left of the Clicked Object
+		CENTER: "center",  // center of the Clicked Object (default)
+		RIGHT: "right" // right of the Clicked Object
+};
+
+var TIP_DEF_CLOSE_BTN = true; // default: Close Btn present for FIXED Tip
+var TIP_DEF_WIDTH = 800; // default
+var TIP_DEF_COL_NUM = 100; // default: 100 col for TextArea
+var TIP_DEF_ROW_NUM = 20; // default: 25 rows for TextArea
+var TIP_DEF_MAXH_MCODE = 400; //for MultiCode
+var TIP_DEF_MCODE_TITLE = "Code";
+var TIP_DEF_TEXTBOX_TITLE = "Source Code";
+
+var TIP_MAX_TEXT_BOX_ROW_NUM = 20; // if more there will be scrollbar
+
+
+/*=========================================================================================
+ * 					CONFIG CONST
+ ========================================================================================= */
+
+
+/**
+ * Default Config of Floating Tip
+ */
+var TIP_CFG_FLOATING={
+		FollowMouse: true,  //false or true - tooltip follows the mouse
+		DelayMs: 400,   // Time span in ms until tooltip shows up
+		FadeMs: 100,
+		CenterMouse: false,	// false or true - center the tip horizontally
+		BorderStyle: 'dotted',	// Any permitted CSS value, but I recommend 'solid', 'dotted' or 'dashed'
+		BorderWidth: 2,
+		CloseBtn: false,	// false or true - closebutton in titlebar		
+		JumpHorz: true,     // false or true - jump Horizontal if required
+		JumpVert: true,     // false or true - jump vertically		if required
+		Title: '',		// Default title text applied to all tips (no default title: empty string '')
+    Fix: null,// Fixated position, two modes. Mode 1: x- an y-coordinates in brackets, e.g. [210, 480]. Mode 2: Show tooltip at a position related to an HTML element: [ID of HTML element, x-offset, y-offset from HTML element], e.g. ['SomeID', 10, 30]. Value null (default) for no fixated positioning.
+		OffsetY: 20 // Offset relative to Mouse position
+};
+
+/**
+ * Default Config of Fixed Tip
+ */
+var TIP_CFG_FIXED={
+		FollowMouse: false,  //Must be false
+		DelayMs: 0,   // Time span in ms until tooltip shows up
+		FadeMs: 0,
+		CenterMouse: true,	// false or true - center the tip horizontally
+		BorderStyle: 'dashed',	// Any permitted CSS value, but I recommend 'solid', 'dotted' or 'dashed'
+		BorderWidth: 3,
+		CloseBtn: true,	// false or true - closebutton in titlebar		
+		JumpHorz: false,     // false or true - jump Horizontal if required
+		JumpVert: false,     // Always false: we want the tip always below 
+		Title: '',		// Default title text applied to all tips (no default title: empty string '')
+		Fix: null, // it will be set run-time: e.g ['tipSortFeature',0,20]	
+		OffsetY: 0   //  it is set run-time using other variables. Tis on eis not considered
+};
+
+
+//Global For TipFix (see TipFix() objPar)
+var tt_tipFix = {
+		objClass : {     // Classes to use for Up/Down
+			Down : undefined,
+			Up : undefined
+		},
+		yIncDelta: 0, // can be used for particualar case to inc DeltaOffset 
+		tipImg : undefined  // the tipImg where the user has click to show tipFix (can also be undefined)
+};
+
+
+
+
+/*=========================================================================================
+ * 					LOCAL CONST
+ ========================================================================================= */
+
+
+// ------------------------------ Fixed Up/Down classes. See core.css. To add new class, add similar code referring to another existing class
+// TOGGLE IMAGES. If the immage is not in these class, NO TOGGLE is done
+var tt_arToggleClass = [
+     {  Down: "tipFix",		Up: "tipFixUp"},
+     {	Down: "tipFixArrow",		Up: "tipFixArrowUp"},
+     {	Down: "googleAnalList",		Up: "googleAnalListUp"},
+     {	Down: "tipFixJS",	Up: "tipFixJSUp"},
+     {	Down: "tipFixCode",	Up: "tipFixCodeUp"},
+     {	Down: "jsuOpt",	Up: "jsuOptUp"}
+     ];
+
+
+
+
+var APP_NAME_FIREFOX="Netscape";   // FIREFOX
+var APP_NAME_IE="Microsoft Internet Explorer";   // IE
+var APP_NAME_IE_11="Netscape";   // IE 11
+
+
+var config = new Object();
+var tip_img_fixed = null; // Current tip Img Fixed
+
+
+var TT_X_MIN = 10;
+var TT_ABOVE_DELTA_Y = 10; // DElta Y added when Tip Above, for particular cases
+
+
+//===================  GLOBAL TOOLTIP CONFIGURATION  =========================//
+var tt_init_done=false;
+var tip_type = TIP_TYPE.NONE; // Current Tip displayed
+
+
+var tt_Enabled	= true;	// Allows to (temporarily) suppress tooltips, e.g. by providing the user with a button that sets this global variable to false
+var TagsToTip	= true;	// false or true - if true, HTML elements to be converted to tooltips via TagToTip() are automatically hidden;
+							// if false, you should hide those HTML elements yourself
+
+// For each of the following config variables there exists a command, which is
+// just the variablename in uppercase, to be passed to Tip() or TagToTip() to
+// configure tooltips individually. Individual commands override global
+// configuration. Order of commands is arbitrary.
+// Example: onmouseover="Tip('Tooltip text', LEFT, true, BGCOLOR, '#FF9900', FADEIN, 400)"
+
+config. Padding			= 10;			// NB: Spacing between border and content
+config. Delay			= TIP_CFG_FLOATING.DelayMs;		// Time span in ms until tooltip shows up
+config. Above			= false;	// false or true - tooltip above mousepointer
+config. BgColor			= '#FFFFCC';	// NB: TIP BACK COLOR Background color (HTML colour value, in quotes)     Yellow
+config. BgImg			= '';		// Path to background image, none if empty string ''
+//JSU_FREE_START **-------------------
+config. jsuTitle  = '';   // SIMULAZIONE
+//JSU_FREE_END **---------------------*/
+// Black Border
+config. BorderColor		= '#000000';
+config. BorderStyle		= TIP_CFG_FLOATING.BorderStyle; 
+config. BorderWidth		= TIP_CFG_FLOATING.BorderWidth;        // NB: Border 1 or 2 for example
+config. CenterMouse		= TIP_CFG_FLOATING.CenterMouse;	// false or true - center the tip horizontally below (or above) the mousepointer
+config. ClickClose		= false;	// false or true - close tooltip if the user clicks somewhere
+config. ClickSticky		= false;	// false or true - make tooltip sticky if user left-clicks on the hovered element while the tooltip is active
+config. CloseBtn		= TIP_CFG_FLOATING.CloseBtn;	// false or true - closebutton in titlebar
+config. CloseBtnColors	= ['	', '#FFFFFF','#FF5858' , '#FFFFFF'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
+// config. CloseBtnColors	= ['#E5E4E4', '#000000','#BFBEBE' , '#000000'];	// [Background, text, hovered background, hovered text] - use empty strings '' to inherit title colours
+config. CloseBtnText	= '&nbsp;X&nbsp;';	// Close button text (may also be an image tag)
+config. CopyContent		= true;	// When converting a HTML element to a tooltip, copy only the element's content, rather than converting the element by its own
+config. Duration		= 0;		// Time span in ms after which the tooltip disappears; 0 for infinite duration, < 0 for delay in ms _after_ the onmouseout until the tooltip disappears
+config. Exclusive		= false;	// false or true - no other tooltip can appear until the current one has actively been closed
+config. FadeIn			= TIP_CFG_FLOATING.FadeMs;		// Fade-in duration in ms, e.g. 400; 0 for no animation
+config. FadeOut			= TIP_CFG_FLOATING.FadeMs;
+config. FadeInterval	= 30;		// Duration of each fade step in ms (recommended: 30) - shorter is smoother but causes more CPU-load
+config. Fix				= TIP_CFG_FLOATING.Fix;	// Fixated position, two modes. Mode 1: x- an y-coordinates in brackets, e.g. [210, 480]. Mode 2: Show tooltip at a position related to an HTML element: [ID of HTML element, x-offset, y-offset from HTML element], e.g. ['SomeID', 10, 30]. Value null (default) for no fixated positioning.
+config. FollowMouse		= TIP_CFG_FLOATING.FollowMouse;	// false or true - tooltip follows the mouse
+// --------------------- Default Font (used also for Footer)
+config. FontColor		= '#000000';
+config. FontFace		= 'Verdana';
+config. FontSize		= '8pt';		// E.g. '9pt' or '12px' - unit is mandatory
+config. FontWeight		= 'normal';	// 'normal' or 'bold';
+//
+config. Height			= 0;			// Tooltip height; 0 for automatic adaption to tooltip content, < 0 (e.g. -100) for a maximum for automatic adaption
+config. JumpHorz		= TIP_CFG_FLOATING.JumpHorz;	// false or true - jump horizontally to other side of mouse if tooltip would extend past clientarea boundary
+config. JumpVert		= TIP_CFG_FLOATING.JumpVert;
+config. Left			= false;	// false or true - tooltip on the left of the mouse
+config. OffsetX			= 14;		// Horizontal offset of left-top corner from mousepointer
+config. OffsetY			= TIP_CFG_FLOATING.OffsetY;		// Vertical offset
+config. Opacity			= 100;		// Integer between 0 and 100 - opacity of tooltip in percent
+config. Shadow			= true;	// false or true
+config. ShadowColor		= '#C0C0C0';
+config. ShadowWidth		= 10;
+config. Sticky			= false;	// false or true - fixate tip, ie. don't follow the mouse and don't hide on mouseout
+config. TextAlign		= 'left';	// 'left', 'right' or 'justify'
+//-------------------------------------------------- TITLE
+config. Title			= TIP_CFG_FLOATING.Title;		// Default title text applied to all tips (no default title: empty string '')
+config. TitleAlign		= 'center';	// 'left' 'center' or 'right' - text alignment inside the title bar
+config. TitleBgColor	= '#000000'; // backgroundColor of the Title section . If empty string '', BorderColor will be used
+config. TitleFontColor	= '#ffffff';	// Color of title text - if '', BgColor (of tooltip body) will be used
+config. TitleFontFace	= 'bold';		// If '' use FontFace (boldified)
+config. TitleFontSize	= '12pt';		// If '' use FontSize
+config. TitlePadding	= 1;
+config. Footer			= '';		// Default Footer text applied to all tips (no default title: empty string '')
+
+
+config. Width			= 0;			// Tooltip width; 0 for automatic adaption to tooltip content; < -1 (e.g. -240) for a maximum width for that automatic adaption;
+									// -1: tooltip width confined to the width required for the titlebar
+//=======  END OF TOOLTIP CONFIG, DO NOT CHANGE ANYTHING BELOW  ==============//
+var tt_aElt = new Array(10), // Container DIV, outer title & body DIVs, inner title & body TDs, closebutton SPAN, shadow DIVs, and IFRAME to cover windowed elements in IE
+tt_aV = new Array(),	// Caches and enumerates config data for currently active tooltip
+tt_sContent,			// Inner tooltip text or HTML
+tt_t2t, tt_t2tDad,		// Tag converted to tip, and its DOM parent element
+tt_musX, tt_musY,
+tt_over,
+tt_x, tt_y, tt_w, tt_h; // Position, width and height of currently displayed tooltip
+
+
+// Only for LICENSE Check
+var tt_a2="pe", tt_a1="ty", tt_a3="of";
+
+
+// dynamic id. Used to protect CODE  JSU FULL.
+//  {idVal,acron, rangeMin, rangeMax}
+var tt_id = {
+//JSU_FREE_START **-------------------
+		jsu: [0,'tt',10000,20000],     //  
+//JSU_FREE_END **---------------------*/
+		js: [0,'tt',1,100],     // 
+		jt: [0,'tt',1000,2000],     // e.g tt57
+		jd: [0,'tt',3000,4000]      
+};
+
+
+//=====================  PUBLIC  =============================================//
+
+
+
+/**
+ * GLOBAL USE: Display a FloatingTip. Called by User only with tipType = TIP_TYPE.Floating to disaplay a Floating Tip<BR/>
+ * Call Untip() to Hide the tooltip <BR/>
+ * NOTE: it is also used internally with other tipType 
+ *  
+ * @param tipMsgHtml {String}   
+ * @param [tipType] {String}   [TIP_TYPE.Floating] when called by User
+ * @param [objOpt] Option: <BR/>
+ *                         - bNL2BR [true]  if true convert NewLine to <BR/>
+ * 
+ * 		GLOBAL
+ * Set tip_type = tipType
+ */
+function Tip(tipMsgHtml,tipType,objOpt)
+{
+	var fn = "[tooltip.js Tip()] ";
+	jsu_log ( fn + JSU_LOG_FUN_START);
+	
+	tt_init(); // init, if not already done
+	if (tip_type == TIP_TYPE.Fixed){
+		return jsu_log ( fn + "Nothing to do: a TipFix is currently diaplyed" + JSU_LOG_FUN_END);
+	}	
+	
+	if (objOpt == undefined){
+		var objOpt = {bNL2BR: true};
+	}
+	if (objOpt.bNL2BR == undefined || objOpt.bNL2BR){
+		tipMsgHtml = tt_NL2BR (tipMsgHtml);  // Replace /n with <BR/>,...
+	}
+	var bShow = true;
+	if (tipType == undefined){
+		tipType = TIP_TYPE.Floating; 
+	}
+	tip_type = tipType;
+	jsu_log (fn + "SET tip_type=" + tip_type);
+	//---------- set config Option
+	var objCfg = (tip_type == TIP_TYPE.Fixed) ? TIP_CFG_FIXED : TIP_CFG_FLOATING;
+	tt_SetCfg (objCfg);
+	//---------------------
+	tt_showTip(tipMsgHtml);
+	tip_type = tipType; // workaround. we have to set again this global var because tt_Hide has resetted it
+	jsu_log ( fn + JSU_LOG_FUN_END);
+}
+
+/**
+ * @param tipMsgHtml {String}   
+ * @param [event]  {Object}   Usually pass the event of the onclick. if null you have to pass pass objOpt.szRefElId
+ * @param [objOpt] {Object}   
+     <table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+           <li> szTitle{String}  default: ''   </li> 
+           <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
+					 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+				 	 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+					 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
+					 <li> bNL2BR= [true]  if true /n are converted to </li>
+					 ------ <b>FOLLOW FIELDS are for ADVANCED use. Usually they are ever used </b>  
+           <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
+               To be used when you have 2 classes not that are not already defined into the TIP_TOGGLE_CLASS_xxx constants of this file <BR/>
+               e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
+           <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
+        </ul> 
+        </td></tr>
+     </table>  
+ 
+  <div class="jsDocNote">
+  <b>Implementation NOTES:</b>
+  <ul>
+    <li>GLOBAL VAR:   tt_tipFix </li>
+    <li>All the other tiFixXXX call this funcion</li>
+  </ul>
+  </div> 
+   
+ */
+function TipFix(tipMsgHtml,event, objOpt)
+{
+	var fn = "[tooltip.js TipFix] ";
+	jsu_log ( fn + JSU_LOG_FUN_START);
+	jsu_logObj (fn + "IN objOpt", objOpt);
+	tt_init(); // init, if not already done
+	if (objOpt == undefined){
+		var objOpt = {bNL2BR: true};
+	}
+	if (objOpt.bNL2BR == undefined || objOpt.bNL2BR){
+		tipMsgHtml = tt_NL2BR (tipMsgHtml);  // Replace /n with <BR/>,...
+	}
+	if (objOpt.bCloseBtn == undefined){	
+		objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; 
+	}
+	// set this global var, to be used when they are not undefined
+	tt_tipFix.objClass = objOpt.objClass;
+	tt_tipFix.yIncDelta = 0; // default
+	var szTitle = "";
+	
+//JSU_FREE_START **-------------------
+    // Finta
+	tt_getId (tt_id.jsu);
+	tt_aV[JSUTITLE] += ' <span><a id="' + tt_id.jsu[0] +'" href="https://goo.gl/1eIYNm">JSU Demo Version</a></span>';
+//JSU_FREE_END **---------------------*/
+  // -- Option
+  if (objOpt){
+  	if (objOpt.szTitle){
+  		szTitle = objOpt.szTitle;
+  	}
+  	var szMaxHeight = "", szMaxWidth = "";
+  	var bDivScroll = false;
+  	if (objOpt.iTipMaxHeight){
+  		  szMaxHeight = 'max-height: ' +objOpt.iTipMaxHeight + 'px;';
+  		  bDivScroll = true;
+  	} 
+  	if (objOpt.iTipWidth == undefined ){
+  		// in this case we set only max-width but we do not set width: so it is automatically set basing on content
+   	  szMaxWidth = 'max-width: ' +TIP_DEF_WIDTH+ 'px;';
+  	}else {
+  		// only if explicitly required, we se also  width 
+   	  szMaxWidth = 'max-width: ' +objOpt.iTipWidth+ 'px; width:' +objOpt.iTipWidth + 'px;';
+  	}	
+
+ 		bDivScroll = true;
+  	var szDivHTML = "";
+  	/*
+  	if (!bDivScroll){
+  		szMaxWidth = 'max-width: ' + tt_w + 'px;';
+  	}	
+  	*/
+		jsu_log ( fn + "SET style='" + szMaxHeight + szMaxWidth + "'");
+  	
+ 		// Add Div for scroll
+ 		// e.g "<div style='max-height: 200px;overflow: auto;'>"
+ 		tipMsgHtml = '<div id="divTipContainer" align="center" style="' + szMaxHeight + szMaxWidth +  ' border: 1px solid;background-color: white; overflow: auto; ">' +
+ 		    tipMsgHtml + '</div>';
+  	
+  	
+	  // -- Optional Close Button
+	  if (objOpt.bCloseBtn != undefined && objOpt.bCloseBtn){
+	  	// szTip += '<table class="tipNoBorder" width="100%"><tr><td><input type="button" value="Close" onclick="UnTip(event)" /> </td></tr></table>';
+	  	tipMsgHtml += '<BR/><div id="divTipMain" align="center" width="100%"><input type="button" class="tipBtnClose" value="' + TIP_BTN_CLOSE + '" title="' + TIP_BTN_CLOSE_TITLE +  '" onclick="tt_UnTipFix()" /> </div>';
+	  }
+  }	
+  TIP_CFG_FIXED.Title = szTitle;
+	var bOpenTip = true; // see if the TipFix is already disalyed. In this case we Close it because the user has click again t close it
+	var tipFixedPos = TIP_FIXED_POS.CENTER; // default
+	if (objOpt != undefined && objOpt.tipFixedPos != undefined){
+		tipFixedPos = objOpt.tipFixedPos;
+	}
+	jsu_log ( fn + "IN: tipFixedPos=" + tipFixedPos);
+	var tipImg = null;
+	if (objOpt.szRefElId != undefined){
+		tipImg = document.getElementById (objOpt.szRefElId);
+		if (tipImg.bTipFixOpen == undefined || tipImg.bTipFixOpen== false){
+			jsu_log ( fn + "OPEN TipFix Over szRefElId=" + objOpt.szRefElId);
+		  tipImg.bTipFixOpen = true; // New properties used to identify the Tip Status
+		  tt_tipFix.yIncDelta = TT_ABOVE_DELTA_Y;
+		}else {
+			jsu_log ( fn + "CLOSE TipFix that was OPEN Over szRefElId=" + objOpt.szRefElId);
+		  bOpenTip = false;  // Close
+		}
+	}else {
+		var event = event || window.event;
+		if (event != undefined){
+			tipImg = event.target || event.srcElement;
+		}
+	}
+	tt_tipFix.tipImg = tipImg;
+	// var deltaY = 35; // Default
+	if (tipImg != undefined){
+		// --------------------------------------------------------------------- get Toggle Class if present (it is not mandatory to toggle image)
+		var className = tipImg.className;
+		var szId = tipImg.id; 
+		if (szId == undefined || szId.length == 0){
+			return tt_Err(fn + "SW ERROR tipImg has id=null \n tipImg used with TipFix must have an id");
+		}
+		var bToggled = false; //default
+		//---------------------- TOGGLE IMAGE 
+		jsu_log ( fn + "OLD classname=" + className);
+		for (i=0; i< tt_arToggleClass.length; i++){
+			var objToggle = tt_arToggleClass[i];
+			if (className == objToggle.Down){
+				className = objToggle.Up;
+				bToggled = true;
+				jsu_log ( fn + "TOGGLE From " + objToggle.Down + " TO " + objToggle.Up);
+			}else	if (className == objToggle.Up){
+				className = objToggle.Down;
+				jsu_log ( fn + "TOGGLE From " + objToggle.Up + " TO " + objToggle.Down);
+				bOpenTip = false;
+				bToggled = true;
+			}
+		}
+		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
+				jsu_logObj ( fn + "CASE of CUSTOM objClass" + tt_tipFix.objClass);
+				// Custom Class passed by User
+				if (className == tt_tipFix.objClass.Up){
+				  className = tt_tipFix.objClass.Down;
+					bToggled = true;
+				  bOpenTip = false;
+			  }else	if (className == tt_tipFix.objClass.Down ){
+				  className = tt_tipFix.objClass.Up;
+					bToggled = true;
+			  }
+		}
+		if (bToggled){
+			jsu_log ( fn + "TOGGLE TO NEW classname=" + className);
+		}	else{
+			jsu_logObj ( fn + "Current className=" + className + " NOT implemented as TOGGLE IMage: SO NO IMAGE TOGGLE is DONE" );
+		}
+		tipImg.className = className;
+	}
+	jsu_log ( fn + "bOpenTip=" + bOpenTip);
+	if (bOpenTip && tip_img_fixed){
+		jsu_log ( fn + "Particular case: Click to open a new TipFix while another is still open. So we close the TipFix that was stil open");
+		// To manage the case of switch beween different Fixed img. We untip previous
+		tt_UnTipFix();  // false becuase we do not want to resize: there is alread a new FixedTip Open
+	}
+	
+	if (bOpenTip && tipImg){
+		jsu_log ( fn + "---------------------- OPEN TipFix");
+		tip_img_fixed = tipImg; // save in global
+		TIP_CFG_FIXED.Fix = [tipImg.id,tipFixedPos,5];
+		jsu_logObj ( fn + "SET TIP_CFG_FIXED.Fix=", TIP_CFG_FIXED.Fix);
+		Tip(tipMsgHtml,TIP_TYPE.Fixed, objOpt);
+		
+		var el = document.getElementById ("WzTiTl");
+		var szWidth = el.style.width; 
+		jsu_log (fn + "reduce width of the header that was " + szWidth);
+		iWidth = parseInt (szWidth.replace ("px","")) - 6;
+		el.style.width = iWidth + "px";
+//JSU_FREE_START **-------------------
+		// verifico che ci sia l'URL aggiunto in id tt_id.jt contenga href come https://goo.gl/1eIYNm
+		// controllo che non sia stato hakerato il codice
+		try {
+			if (jsu_getElementById2(tt_id.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
+				// e` stato hakerato - esco
+				tt_UnTipFix();
+				jsu_logObj ("tt_id", tt_id);
+			}
+		}catch(e) {
+			tt_UnTipFix();
+			jsu_logObj ("tt_id " + e.message, tt_id);
+		}	
+//JSU_FREE_END **---------------------*/
+        
+	}else {
+		// User has click over the image arrow Up to close the TipFix
+		jsu_log ( fn + "---------------------- CLOSE TipFix");
+		tt_UnTipFix();
+	}
+	jsu_log ( fn + JSU_LOG_FUN_END);
+}
+
+
+/**
+ * Call this function to Hide the Tip after Tip() Call <BR/>
+ * If currently a TipFix is displayed, it is not closed (to manage both TipFix at Click and Tip/Untip
+ *  
+  <div class="jsDocNote">
+  <b>Implementation NOTES:</b>
+  <ul>
+    <li>tip_type Set it to TIP_TYPE.NONE</li>
+  </ul>
+  </div> 
+ *  
+ */
+function UnTip()
+{
+	var fn = "[tooltip.js UnTip()] ";
+	jsu_log ( fn + JSU_LOG_FUN_START);
+  jsu_log(fn + "CURRENT tip_type=" + tip_type);
+  if (tip_type == TIP_TYPE.Fixed){
+  	return jsu_log ( fn + "Nothing to do: a TipFix is still displayed" +  JSU_LOG_FUN_END);
+  }
+	tt_init(); // init, if not already done
+	tt_SetCfg(TIP_CFG_FLOATING);
+	tt_OpReHref();
+	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
+		tt_tDurt.Timer("tt_HideInit()", -tt_aV[DURATION], true);
+	else if(!(tt_aV[STICKY] && (tt_iState & 0x2)))
+		tt_HideInit();
+	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
+	tip_type = TIP_TYPE.NONE;
+	jsu_log ( fn + JSU_LOG_FUN_END);
+}
+
+
+
+
+/**
+ * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
+ * See prettify-jsu.js for the detail of supported languages <BR/>
+ *   
+ *   NOTE:  <ul>
+ *   <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+ *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
+ * </ul>
+ * @param szCode  {String}  jsCode to display, with \n for newline. <BR/>
+ *                          <label class="tipWarn">szCode with HTML is not supported by this function. To show HTML Code you can use TipFixMultiCode or TipFixTextArea</label>
+ * @param event
+     <table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+                          <li> szTitle{String}  default:  TIP_DEF_CODE_TITLE   </li> 
+ 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ 													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL </li>  
+                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
+        </ul> 
+        </td></tr>
+     </table>
+     
+  @example
+function sample3b(event){
+	var szCode =
+	'public class Factorial   \n'+
+	'{   \n'+
+	'	public static void main(String[] args)   \n'+
+	'	{	final int NUM_FACTS = 100;   \n'+
+	'		for(int i = 0; i < NUM_FACTS; i++)   \n'+
+	'			System.out.println( i + "! is " + factorial(i));   \n'+
+	'	}   \n'+
+	'	   \n'+
+	'	public static int factorial(int n)   \n'+
+	'	{	int result = 1;   \n'+
+	'		for(int i = 2; i <= n; i++)   \n'+
+	'			result *= i;   \n'+
+	'		return result;   \n'+
+	'	} ';
+
+	TipFixCode(szCode,event,
+			 {iTipWidth:1000,
+		    iTipMaxHeight:600,
+		    szTitle:'Tip Sample with Java Code Hightlighted'
+		   });	
+}
+       
+ */
+function TipFixCode(szCode, event, objOpt){
+	var fn = "[tooltip.js TipFixCode] ";
+	jsu_log (fn + JSU_LOG_FUN_START);
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_CODE_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	// if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth = TIP_DEF_WIDTH; }
+	tt_init(); // init, if not already done
+	// Check if prettify is enabled 
+	if (tt_isPrettifyEn()){
+		var szCodeDiv = '<div id="divTipJS" align="left" class="prettify" style="width:"' + objOpt.iTipWidth + '"px;"> <pre class="prettyprint"><code>' + szCode + '</code></pre></div>';
+		TipFix (szCodeDiv,event,objOpt);
+		jsuPrettyPrint();  // Hightlight with prettify-jsu the code between <pre> </pre> 
+	}else{
+		TipFixTextArea(szCode, event, objOpt);
+	}
+	jsu_log (fn + JSU_LOG_FUN_END);
+}
+
+
+/**
+ * Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+ * Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
+ * See prettify-jsu.js for the detail of supported languages <BR/>
+ *   
+ *   NOTE:  <ul>
+ *   <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+ *   <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
+ * </ul>
+ * @param arObjCode  {Array}  Array of Obj with the info of the code display. ESech Obj of the Array can have follwoing fields: <ul>
+ * 														 <li> szTitle {String} e.g "JS" - Title of the Section</li>
+ * 														 <li> szCode {String} The Code to diaply in section</li>
+ * 														 <li> bPrettify  {Boolean} [true]  true if szCode must be prettified. If szCode contains HTML Tags you have to set bPrettify=false if you wnat to see the Text with HTMLTags into a TextArea, witout prettify it</li>
+ * 														 <li> iRowNum {Number} [undefined] Only for Obj.bPrettify=false. If it is not present (default), the Rows of TextArea are automatically calculated basing on /n. If passed  iRowNum is used</li>
+ * 													   <li> iMaxHeight {Number}:  Only for Obj.bPrettify=true Max Height (px) of the Div - If Undefined there is no max <li/> 
+ * 			                      </ul> 
+ *                            See example below <BR/>
+ * @param event
+     <table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+                            <li> szTitle{String}  default: 'Source Code'  <li/>
+  													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+  													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
+                            <li> iColNum  {Number}  default: 80 Can be used to change the colnum of all the TextArea of the Tip  <li/>
+                            <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
+  													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
+  													</ul>	  
+        </td></tr>
+     </table>  
+ 
+     @example
+     
+ function sampleCode1b(event){
+	var JS_CODE_1b_JS = '//Define in JS a constant (e.g. JSU_TIP_HTML) with the MsgHtml to show in the Tip:  \n'+
+	'var JSU_TIP_HTML="<b>Simple Tooltip</b> with <i>HTML tags</i><br/>Tip (You can use <u>whatever HTML TAG</u>";';
+	
+	var JS_CODE_1b_HTML = '// To add whatever HTML FloatingTip to whatever HTML Item: \n'+	 
+	'// - onmouseover="Tip(HtmlMsg);" \n'+	
+	'// - onmouseout="UnTip();" \n'+	
+	'// In This example: \n'+
+	'<input type="text" value="HTML Tip" style="width:60px;" \n' +
+  '  onmouseover="Tip(JSU_TIP_HTML);"  \n'+	
+  '  onmouseout="UnTip(event);"/>'; 
+	
+  // 2 Codes, both contain HTML TAGS
+	TipFixMultiCode([
+ 	      {szTitle:"JS: TipSample.js", szCode: JS_CODE_1b_JS,  bPrettify:false},
+	      {szTitle:"HTML: TipSample.html", szCode: JS_CODE_1b_HTML,  bPrettify:false}
+	    ],
+      event,
+      { szTitle:"SAMPLE_1 HTML Tip - Source Code" , 
+		    iTipWidth: 1000
+		  } );	
+}
+    
+ */
+function TipFixMultiCode(arObjCode, event, objOpt){
+	var fn = "[tooltip.js TipFixMultiCode] ";
+	jsu_log (fn + JSU_LOG_FUN_START);
+	jsu_logObj (fn + "IN arObjCode",arObjCode);
+	jsu_logObj (fn + "IN objOpt",objOpt);
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_CODE_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	// if (objOpt.iTipWidth == undefined){	objOpt.iTipWidth = TIP_DEF_WIDTH; }
+	if (objOpt.iColNum == undefined){ objOpt.iColNum = TIP_DEF_COL_NUM; }
+	var iTxtAreaWidth = objOpt.iTipWidth - 40; // some space for padding and borders 
+	tt_init(); // init, if not already done
+	var bPrettifyEn = tt_isPrettifyEn();
+	var szCodeDiv = '<table class="detNoBorder" >\n';
+	for (var i=0; i < arObjCode.length;i++){
+		var objCode = arObjCode[i];
+		var szWidth = "";
+		if (objCode.bPrettify== undefined){
+			objCode.bPrettify= false; 
+		}
+		if (!bPrettifyEn){
+			objCode.bPrettify= false; 
+		}
+		var szClassPrettify = (objCode.bPrettify) ? "prettifyCode" : ""; // extra Class
+		var szClassTitlePrettify = (objCode.bPrettify) ? " prettifyTitle " : ""; // extra Class
+		var szTbl = '<tr><td><table class="det ' + szClassPrettify + '" ' + szWidth + '" BORDER="2" cellspacing="0" cellpadding="2" >\n';
+		if (objCode.iTipMaxHeight== undefined){
+			objCode.iTipMaxHeight= TIP_DEF_MAXH_MCODE; 
+		}
+		if (objCode.szTitle == undefined){ objCode.szTitle = TIP_DEF_MCODE_TITLE; }
+		jsu_log (fn + 'arObjCode[' + i + '] bPrettify=' + objCode.bPrettify);
+		
+		szTbl+= '  <tr class="detTitle ' + szClassTitlePrettify + szClassPrettify + '"><td width="100%" class="detTitle ' + szClassTitlePrettify + szClassPrettify + '">' + objCode.szTitle + '</td></tr>\n';
+		szTbl+= '  <tr class="det ' + szClassPrettify + '" ><td class="tipl ' + szClassPrettify + '" width="100%">\n';  	
+		var id = "tipCode_" + i;
+		if (!objCode.bPrettify){
+			if (objCode.iRowNum == undefined){
+				// if not passed we calculate RowNum basing on /n
+				objCode.iRowNum = tt_getHtmlRowNum(objCode.szCode);
+			}   
+			// HTML must be put into a TextArea
+			szTbl+='     <textarea id="' + id + '"  rows="' + objCode.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + objCode.szCode + '</textarea>\n';
+		}else{	
+			// This Code must be prettified
+			var iWidth = (objOpt.iTipWidth == undefined) ? TIP_DEF_WIDTH : objOpt.iTipWidth;
+			var bContainer = false;
+			// check if is required MaxHeight
+			var szMaxHeight = "";
+			var iMaxHeight = objOpt.iTipMaxHeight; // can be undefined
+			if (objCode.iMaxHeight != undefined){
+				iMaxHeight = objCode.iMaxHeight; 
+			} 
+			if (iMaxHeight != undefined && iMaxHeight > 0){
+				bContainer = true;
+			}	
+			//-----------------------
+			if (bContainer){
+				var szMaxHeightCont = 'max-height:' +  iMaxHeight + 'px;';
+				var szWidthCont = 'width:' + iWidth -100 + 'px;';
+				var szWidth = 'width:' + (iWidth -130) + 'px;';
+				// ------
+				jsu_log (fn + "For code[" + i + "] we have to put an extra div container - szMaxHeightCont=" + szMaxHeightCont);
+				var szDivPretty = '<div style="' + szMaxHeightCont + szWidthCont + ' border: 1px solid; overflow: auto; background-color: white; ">' + 
+							'    <div id="' + id + '" class="prettify" style="' + szWidth + 
+			        '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>' +
+				     '</div>';
+				jsu_logHtml (fn + "szDivPretty", szDivPretty);     
+			}else {
+				var szWidth = 'width:' + iWidth + 'px;';
+				var szDivPretty = '    <div id="' + id + '" class="prettify" style="' + szWidth + 
+             '"> <pre class="prettyprint"><code>' + objCode.szCode + '</code></pre></div>\n';
+				
+			}
+			szTbl += szDivPretty;
+		}
+		szTbl+= '   </td></tr></table>\n';
+		szCodeDiv += szTbl;
+		szCodeDiv += '</td></tr>'
+			if (i < (arObjCode.length-1)){
+				// Empty row
+				szCodeDiv += '<tr class="detSep"><td></td></tr>';
+			}
+	}
+	szCodeDiv += '</table>';
+	// jsu_logHtml(fn + "szCodeDiv", szCodeDiv);
+	objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>. Everythong is already well formatted
+	TipFix (szCodeDiv,event,objOpt);
+	if (bPrettifyEn){
+		jsuPrettyPrint();  // Hightlight with prettify-jsu the code between <pre> </pre>
+	}
+	
+	
+	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
+	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
+	var iWidth = iTipWidth - 40; // keep some space for Padding,..
+  jsu_log (fn + "TipWidth=" + iTipWidth + " - We set " + arObjCode.length + " CodeEl with width=" + iWidth + " to adapt them to the Div Container");
+	for (var i=0; i < arObjCode.length; i++){
+	 	var el = document.getElementById("tipCode_" + i);
+	 	el.style.width = iWidth + 'px'; 
+	}	
+	jsu_log (fn + JSU_LOG_FUN_END);
+}
+
+
+
+/**
+ * Display whatever Text (also HTML TAGs) in a TextArea of a FixedTip. For Example this function is used to display mixed JS and HTML code  
+ * @param szTxt  {String}  szTxt to display, with \n for newline
+ * @param event
+     <table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+ *                           <li> szTitle{String}  default: 'Text'  </li> 
+ *                           <li> iColNum{Number}  default=100 Number of Column for TextArea </li> 
+ *                           <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created).  
+ *                                Usually do not pass iRowNum, so it is automatically calculatd</li>
+ *                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ * 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ *													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+ * 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
+ *                          </ul>  
+ * 	@example
+ 
+		//This is an example of MIXED Code: JS and also HTML.  
+		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextAreaFixedClick()   
+		
+		//--------------------------------------------------------- JS   
+		var JS_CODE_SORT_SAMPLE=...;  
+		//<input> object with:  
+		//  - class="tipFixed" type="button"   
+		//  - value=Text to display in the button 	
+		//  - set whatever unique id   
+		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
+		//  - objOpt = {iTipMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
+		
+		//--------------------------------------------------------- HTML   
+		 <input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
+		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iTipMaxHeight:300});" /> ; 
+														     
+ */
+function TipFixTextArea(szTxt, event, objOpt){
+	var fn = "[tooltip.js TipFixTextArea] ";
+	jsu_log (fn + JSU_LOG_FUN_START);
+	jsu_logObj (fn + "IN objOpt", objOpt);
+	if (objOpt == undefined){
+		objOpt = new Object();
+	}
+	if (objOpt.szTitle == undefined){	objOpt.szTitle = TIP_DEF_TEXTBOX_TITLE; }
+	if (objOpt.bCloseBtn == undefined){	objOpt.bCloseBtn = TIP_DEF_CLOSE_BTN; }
+	if (objOpt.iColNum == undefined){	objOpt.iColNum = TIP_DEF_COL_NUM; }
+	if (objOpt.iRowNum == undefined){	objOpt.iRowNum = tt_getHtmlRowNum(szTxt) }
+	tt_init(); // init, if not already done
+	var szTxtBox='<textarea id="tipTextArea" rows="' + objOpt.iRowNum + '" cols="' + objOpt.iColNum  + '" >' + szTxt + '</textarea><BR/>';
+  objOpt.bNL2BR = false;  // we do not want to replace \n with <BR/>
+	TipFix (szTxtBox,event,objOpt);
+	// NOTE: we have to change the width of TextArea basing on TipWidth. If set during TextArea creation it is not considered
+	var iTipWidth = (objOpt.iTipWidth != undefined) ? objOpt.iTipWidth : TIP_DEF_WIDTH; 
+	var iTextAreaWidth = iTipWidth - 40; // keep some space for Padding,..
+	jsu_log (fn + "TipWidth=" + iTipWidth + " - We set TextArea with width=" + iTextAreaWidth + " to adapt it to the Div Container");
+  var el = document.getElementById("tipTextArea");
+  el.style.width = iTextAreaWidth + 'px'; 
+	
+	jsu_log (fn + JSU_LOG_FUN_END);
+}
+
+
+
+
+/* ==========================================================================================
+																	LOCAL FUNCTION	 
+========================================================================================== */
+/*
+ * Internal Use:   call this function to UnTip after TipFixxx(). E.g in Close Button, ESC,... <BR/>
+ */
+function tt_UnTipFix(){
+	var fn = "[tooltip.js tt_UnTipFix()] ";
+	
+	jsu_log ( fn + JSU_LOG_FUN_START);
+  jsu_log(fn + "CURRENT tip_type=" + tip_type);
+	tt_SetCfg(TIP_CFG_FLOATING);
+	tt_OpReHref();
+	if(tt_aV[DURATION] < 0 && (tt_iState & 0x2))
+		tt_tDurt.Timer("tt_HideInit()", -tt_aV[DURATION], true);
+	else if(!(tt_aV[STICKY] && (tt_iState & 0x2)))
+		tt_HideInit();
+	tt_RestoreImgFixed();  // Restore previous Image Fixed if required
+	tip_type = TIP_TYPE.NONE;
+	if (tt_tipFix.tipImg != undefined){
+		tt_tipFix.tipImg.bTipFixOpen = false; 
+	}
+
+	jsu_log ( fn + JSU_LOG_FUN_END);
+
+}
+
+
+/*
+ * Check if szClass is a TipFix Class
+ * @param szClass
+ */
+function tt_isClassFixed(szClass){
+  var bTipFix = false;	
+	var fn="[tooltip.js tt_isClassFixed()] ";
+	for (i=0; i< tt_arToggleClass.length; i++){
+		if (tt_arToggleClass[i].Up == szClass){
+			bTipFix = true;
+		}
+	}
+	if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
+		// Custom Class passed by User
+		if (szClass == tt_tipFix.objClass.Up){
+			bTipFix = true;
+		}  
+	}	
+	jsu_log (fn + "IN: szClass=" + szClass + "  OUT bTipFix=" + bTipFix);
+  return bTipFix;	
+	
+}
+
+/*
+ *  Restore the Original Image class (From Up to down) if tip_img_fixed != null 
+ */
+function tt_RestoreImgFixed() {
+	var fn="[tooltip.js tt_RestoreImgFixed()] ";
+	if (tip_img_fixed != null){
+		var szClass = "";
+		// Change img of tip_fixed if present
+		for (i=0; i< tt_arToggleClass.length; i++){
+			if (tt_arToggleClass[i].Up == tip_img_fixed.className){
+				szClass = tt_arToggleClass[i].Down ;
+			}
+		}
+		if (tt_tipFix.objClass != undefined && tt_tipFix.objClass.Down != undefined && tt_tipFix.objClass.Up != undefined){
+			// Custom Class passed by User
+			if (tip_img_fixed.className == tt_tipFix.objClass.Up){
+				szClass = tt_tipFix.objClass.Down;
+			}
+		}		
+		if (szClass != ""){
+			jsu_log (fn + "tip_img_fixed.id=" + tip_img_fixed.id + " - Change className=" + tip_img_fixed.className + " To "  + szClass);
+			tip_img_fixed.className = szClass;
+		}
+		tip_img_fixed = null;
+	}
+	
+}
+
+
+
+/*-----------------------------------------------------------
+Get Element By ID and Show Error if required
+      PAR
+Id        in
+[bShowErr]  in   true (default) if I want to show Error
+                false if don't want to show Error
+      RETURN
+el  if founded
+0   if not founded
+-----------------------------------------------------------*/
+function tt_getElementById2(Id,bShowErr)
+{
+	if (bShowErr == undefined){
+		// bShowErr = true;
+		bShowErr = false;  // use false beacause some fileds are not present
+	}
+    var el = 	document.getElementById(Id);
+    if (el == null) {
+        if (bShowErr){
+          alert("SW ERROR [tt_getElementById2] NOT FOUND Id=" +  Id) ;
+        }
+        return 0;  // Not Found
+    }
+    return el;
+}
+
+
+
+
+
+
+function tt_showTip()
+{
+	var fn = "[tooltip.js tt_showTip()] ";
+	jsu_log ( fn + JSU_LOG_FUN_START);
+	tt_Tip(arguments, null);
+	jsu_log ( fn + JSU_LOG_FUN_END);
+}
+
+function TagToTip()
+{
+	var t2t = tt_GetElt(arguments[0]);
+	if(t2t)
+		tt_Tip(arguments, t2t);
+}
+
+
+
+
+
+
+
+/*
+ * Set some Cfg config specifyc for Floating or Fixed
+ * @param objCfg
+ */
+function tt_SetCfg(objCfg){
+	config.FollowMouse = objCfg.FollowMouse;
+	config.Delay = objCfg.DelayMs;
+	config.FadeIn = objCfg.FadeMs;
+	config.FadeOut = objCfg.FadeMs;
+	config.CenterMouse =objCfg.CenterMouse;
+	config.BorderStyle = objCfg.BorderStyle;
+	config.BorderWidth = objCfg.BorderWidth;
+	config.CloseBtn = objCfg.CloseBtn;
+	config.JumpVert = objCfg.JumpVert;
+	config.Title = objCfg.Title;
+	config.Fix = objCfg.Fix;
+	config.OffsetY = objCfg.OffsetY;
+}
+
+function tt_Extension()
+{
+	tt_ExtCmdEnum();
+	tt_aExt[tt_aExt.length] = this;
+	return this;
+}
+
+
+/*
+ * Set TipPos
+ * 
+ * Modify: Apr 2016  if x is too left or to right to seet porperly the tip,  we adljust it
+ * 
+ * @param x  
+ * @param y
+ */
+function tt_SetTipPos(x, y)
+{
+	var fn = "[tooltip.js tt_SetTipPos] ";
+	var css = tt_aElt[0].style;
+	//if x is too left or to right to set porperly the tip,  we adljust it
+	if (x <TT_X_MIN){
+		jsu_log (fn + "change x from" + x + " to xMin=" + TT_X_MIN);
+		x = TT_X_MIN;
+	}else {
+		var xRight = x + tt_w -20;
+		var xMax = tt_GetClientW();
+		var xDelta = (xRight - xMax);
+		if (xDelta > 0){
+			x -= xDelta;
+			if (x <TT_X_MIN){
+				x = TT_X_MIN;
+			}
+			jsu_log (fn + "x was too on the right. Set x=" + x);
+		}
+	}
+	
+	tt_x = x;
+	tt_y = y;
+	css.left = x + "px";
+	css.top = y + "px";
+	if(tt_ie56)
+	{
+		var ifrm = tt_aElt[tt_aElt.length - 1];
+		if(ifrm)
+		{
+			ifrm.style.left = css.left;
+			ifrm.style.top = css.top;
+		}
+	}
+}
+
+function tt_HideInit()
+{
+	if(tt_iState)
+	{
+		tt_ExtCallFncs(0, "HideInit");
+		tt_iState &= ~(0x4 | 0x8);
+		if(tt_flagOpa && tt_aV[FADEOUT])
+		{
+			tt_tFade.EndTimer();
+			if(tt_opa)
+			{
+				var n = Math.round(tt_aV[FADEOUT] / (tt_aV[FADEINTERVAL] * (tt_aV[OPACITY] / tt_opa)));
+				tt_Fade(tt_opa, tt_opa, 0, n);
+				return;
+			}
+		}
+		tt_tHide.Timer("tt_Hide();", 1, false);
+	}
+}
+
+
+
+function tt_Hide()
+{
+	var fn = "[tooltip.js tt_tt_Hide()] ";
+	jsu_log (fn + JSU_LOG_FUN_START);
+	
+	if(tt_db && tt_iState)
+	{
+		tt_OpReHref();
+		if(tt_iState & 0x2)
+		{
+			tt_aElt[0].style.visibility = "hidden";
+			tt_ExtCallFncs(0, "Hide");
+		}
+		tt_tShow.EndTimer();
+		tt_tHide.EndTimer();
+		tt_tDurt.EndTimer();
+		tt_tFade.EndTimer();
+		if(!tt_op && !tt_ie)
+		{
+			tt_tWaitMov.EndTimer();
+			tt_bWait = false;
+		}
+		if(tt_aV[CLICKCLOSE] || tt_aV[CLICKSTICKY])
+			tt_RemEvtFnc(document, "mouseup", tt_OnLClick);
+		tt_ExtCallFncs(0, "Kill");
+		// In case of a TagToTip tip, hide converted DOM node and
+		// re-insert it into DOM
+		if(tt_t2t && !tt_aV[COPYCONTENT])
+			tt_UnEl2Tip();
+		tt_iState = 0;
+		tt_over = null;
+		tt_ResetMainDiv();
+		if(tt_aElt[tt_aElt.length - 1])
+			tt_aElt[tt_aElt.length - 1].style.display = "none";
+	}
+	jsu_log (fn + JSU_LOG_FUN_END);
+	
+}
+function tt_GetElt(id)
+{
+	return(document.getElementById ? tt_getElementById2(id)
+			: document.all ? document.all[id]
+			: null);
+}
+function tt_GetDivW(el)
+{
+	return(el ? (el.offsetWidth || el.style.pixelWidth || 0) : 0);
+}
+function tt_GetDivH(el)
+{
+	return(el ? (el.offsetHeight || el.style.pixelHeight || 0) : 0);
+}
+function tt_GetScrollX()
+{
+	return(window.pageXOffset || (tt_db ? (tt_db.scrollLeft || 0) : 0));
+}
+function tt_GetScrollY()
+{
+	return(window.pageYOffset || (tt_db ? (tt_db.scrollTop || 0) : 0));
+}
+function tt_GetClientW()
+{
+	return tt_GetWndCliSiz("Width");
+}
+function tt_GetClientH()
+{
+	return tt_GetWndCliSiz("Height");
+}
+function tt_GetEvtX(e)
+{
+	return (e ? ((typeof(e.pageX) != tt_u) ? e.pageX : (e.clientX + tt_GetScrollX())) : 0);
+}
+function tt_GetEvtY(e)
+{
+	return (e ? ((typeof(e.pageY) != tt_u) ? e.pageY : (e.clientY + tt_GetScrollY())) : 0);
+}
+function tt_AddEvtFnc(el, sEvt, PFnc)
+{
+	if(el)
+	{
+		if(el.addEventListener)
+			el.addEventListener(sEvt, PFnc, false);
+		else
+			el.attachEvent("on" + sEvt, PFnc);
+	}
+}
+function tt_RemEvtFnc(el, sEvt, PFnc)
+{
+	if(el)
+	{
+		if(el.removeEventListener)
+			el.removeEventListener(sEvt, PFnc, false);
+		else
+			el.detachEvent("on" + sEvt, PFnc);
+	}
+}
+function tt_GetDad(el)
+{
+	return(el.parentNode || el.parentElement || el.offsetParent);
+}
+function tt_MovDomNode(el, dadFrom, dadTo)
+{
+	if(dadFrom)
+		dadFrom.removeChild(el);
+	if(dadTo)
+		dadTo.appendChild(el);
+}
+
+//======================  PRIVATE  ===========================================//
+var tt_aExt = new Array(),	// Array of extension objects
+
+tt_db, tt_op, tt_ie, tt_ie56, tt_bBoxOld,	// Browser flags
+tt_body,
+tt_ovr_,				// HTML element the mouse is currently over
+tt_flagOpa,				// Opacity support: 1=IE, 2=Khtml, 3=KHTML, 4=Moz, 5=W3C
+tt_maxPosX, tt_maxPosY,
+tt_iState = 0,			// Tooltip active |= 1, shown |= 2, move with mouse |= 4, exclusive |= 8
+tt_opa,					// Currently applied opacity
+tt_bJmpVert, tt_bJmpHorz,// Tip temporarily on other side of mouse
+tt_elDeHref,			// The tag from which we've removed the href attribute
+// Timer
+tt_tShow = new Number(0), tt_tHide = new Number(0), tt_tDurt = new Number(0),
+tt_tFade = new Number(0), tt_tWaitMov = new Number(0),
+tt_bWait = false,
+tt_u = "undefined";
+
+
+function tt_init()
+{
+	var fn = "[tooltip.js tt_init] ";
+	if (tt_init_done){
+		return; // already done
+	}
+	jsu_log (fn + "Init tooltip.js");
+	// ESC is considered as UnTip of TipFix
+	document.onkeydown = function(e){
+    if(e.keyCode === 27){
+        tt_UnTipFix();
+    }
+  };	
+	
+	tt_MkCmdEnum();
+	// Send old browsers instantly to hell
+	if(!tt_Browser() || !tt_MkMainDiv())
+		return;
+	tt_IsW3cBox();
+	tt_OpaSupport();
+	tt_AddEvtFnc(document, "mousemove", tt_Move);
+	// In Debug mode we search for TagToTip() calls in order to notify
+	// the user if they've forgotten to set the TagsToTip config flag
+	if(TagsToTip )
+		tt_SetOnloadFnc();
+	// Ensure the tip be hidden when the page unloads
+	tt_AddEvtFnc(window, "unload", tt_Hide);
+	tt_init_done = true;
+}
+// Creates command names by translating config variable names to upper case
+function tt_MkCmdEnum()
+{
+	var n = 0;
+	for(var i in config)
+		eval("window." + i.toString().toUpperCase() + " = " + n++);
+	tt_aV.length = n;
+}
+
+
+
+
+
+function tt_Browser()
+{
+	var n, nv, n6, w3c;
+
+	n = navigator.userAgent.toLowerCase(),
+	nv = navigator.appVersion;
+  var szAppName = navigator.appName;
+	tt_op = (document.defaultView && typeof(eval("w" + "indow" + "." + "o" + "p" + "er" + "a")) != tt_u);
+	// tt_ie = n.indexOf("msie") != -1 && document.all && !tt_op;
+ 	tt_ie = ((navigator.appName == APP_NAME_IE) || 
+  	    ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null)));
+	
+	if(tt_ie)
+	{
+		var ieOld = (!document.compatMode || document.compatMode == "BackCompat");
+		tt_db = !ieOld ? document.documentElement : (document.body || null);
+		if(tt_db)
+			tt_ie56 = parseFloat(nv.substring(nv.indexOf("MSIE") + 5)) >= 5.5
+					&& typeof document.body.style.maxHeight == tt_u;
+	}
+	else
+	{
+		tt_db = document.documentElement || document.body ||
+				(document.getElementsByTagName ? document.getElementsByTagName("body")[0]
+				: null);
+		if(!tt_op)
+		{
+			n6 = document.defaultView && typeof document.defaultView.getComputedStyle != tt_u;
+			w3c = !n6 && document.getElementById;
+		}
+	}
+	tt_body = (document.getElementsByTagName ? document.getElementsByTagName("body")[0]
+				: (document.body || null));
+	if(tt_ie || n6 || tt_op || w3c)
+	{
+		if(tt_body && tt_db)
+		{
+			if(document.attachEvent || document.addEventListener)
+				return true;
+		}
+		else
+			tt_Err("tooltip.js must be included INSIDE the body section,"
+					+ " immediately after the opening <body> tag.");
+	}
+	tt_db = null;
+	return false;
+}
+function tt_MkMainDiv()
+{
+	// Create the tooltip DIV
+	if(tt_body.insertAdjacentHTML)
+		tt_body.insertAdjacentHTML("afterBegin", tt_MkMainDivHtm());
+	else if(typeof tt_body.innerHTML != tt_u && document.createElement && tt_body.appendChild)
+		tt_body.appendChild(tt_MkMainDivDom());
+	if(window.tt_GetMainDivRefs /* FireFox Alzheimer */ && tt_GetMainDivRefs())
+		return true;
+	tt_db = null;
+	return false;
+}
+function tt_MkMainDivHtm()
+{
+	return(
+		'<div id="ttDivContainer"></div>' +
+		(tt_ie56 ? ('<iframe id="WzTtIfRm" src="javascript:false" scrolling="no" frameborder="0" style="filter:Alpha(opacity=0);position:absolute;top:0px;left:0px;display:none;"></iframe>')
+		: '')
+	);
+}
+function tt_MkMainDivDom()
+{
+	var el = document.createElement("div");
+	if(el)
+		el.id = "ttDivContainer";
+	return el;
+}
+function tt_GetMainDivRefs()
+{
+	tt_aElt[0] = tt_GetElt("ttDivContainer");
+	if(tt_ie56 && tt_aElt[0])
+	{
+		tt_aElt[tt_aElt.length - 1] = tt_GetElt("WzTtIfRm");
+		if(!tt_aElt[tt_aElt.length - 1])
+			tt_aElt[0] = null;
+	}
+	if(tt_aElt[0])
+	{
+		var css = tt_aElt[0].style;
+
+		css.visibility = "hidden";
+		css.position = "absolute";
+		css.overflow = "hidden";
+		return true;
+	}
+	return false;
+}
+function tt_ResetMainDiv()
+{
+	var fn = "[tooltip.js tt_ResetMainDiv()] ";
+	// jsu_log (fn + "Called");
+	tt_SetTipPos(0, 0);
+	tt_aElt[0].innerHTML = "";
+	tt_aElt[0].style.width = "0px";
+	tt_h = 0;
+
+}
+function tt_IsW3cBox()
+{
+	var css = tt_aElt[0].style;
+
+	css.padding = "10px";
+	css.width = "40px";
+	tt_bBoxOld = (tt_GetDivW(tt_aElt[0]) == 40);
+	css.padding = "0px";
+	tt_ResetMainDiv();
+}
+function tt_OpaSupport()
+{
+	var css = tt_body.style;
+
+	tt_flagOpa = (typeof(css.KhtmlOpacity) != tt_u) ? 2
+				: (typeof(css.KHTMLOpacity) != tt_u) ? 3
+				: (typeof(css.MozOpacity) != tt_u) ? 4
+				: (typeof(css.opacity) != tt_u) ? 5
+				: (typeof(css.filter) != tt_u) ? 1
+				: 0;
+}
+// Ported from http://dean.edwards.name/weblog/2006/06/again/
+// (Dean Edwards et al.)
+function tt_SetOnloadFnc()
+{
+	tt_AddEvtFnc(document, "DOMContentLoaded", tt_HideSrcTags);
+	tt_AddEvtFnc(window, "load", tt_HideSrcTags);
+	if(tt_body.attachEvent)
+		tt_body.attachEvent("onreadystatechange",
+			function() {
+				if(tt_body.readyState == "complete")
+					tt_HideSrcTags();
+			} );
+	if(/WebKit|KHTML/i.test(navigator.userAgent))
+	{
+		var t = setInterval(function() {
+					if(/loaded|complete/.test(document.readyState))
+					{
+						clearInterval(t);
+						tt_HideSrcTags();
+					}
+				}, 10);
+	}
+}
+function tt_HideSrcTags()
+{
+	if(!window.tt_HideSrcTags || window.tt_HideSrcTags.done)
+		return;
+	window.tt_HideSrcTags.done = true;
+	if(!tt_HideSrcTagsRecurs(tt_body))
+		tt_Err("There are HTML elements to be converted to tooltips.\nIf you"
+				+ " want these HTML elements to be automatically hidden, you"
+				+ " must edit tooltip.js, and set TagsToTip in the global"
+				+ " tooltip configuration to true.");
+}
+function tt_HideSrcTagsRecurs(dad)
+{
+	var ovr, asT2t;
+	// Walk the DOM tree for tags that have an onmouseover or onclick attribute
+	// containing a TagToTip('...') call.
+	// (.childNodes first since .children is bugous in Safari)
+	var a = dad.childNodes || dad.children || null;
+
+	for(var i = a ? a.length : 0; i;)
+	{--i;
+		if(!tt_HideSrcTagsRecurs(a[i]))
+			return false;
+		ovr = a[i].getAttribute ? (a[i].getAttribute("onmouseover") || a[i].getAttribute("onclick"))
+				: (typeof a[i].onmouseover == "function") ? (a[i].onmouseover || a[i].onclick)
+				: null;
+		if(ovr)
+		{
+			asT2t = ovr.toString().match(/TagToTip\s*\(\s*'[^'.]+'\s*[\),]/);
+			if(asT2t && asT2t.length)
+			{
+				if(!tt_HideSrcTag(asT2t[0]))
+					return false;
+			}
+		}
+	}
+	return true;
+}
+function tt_HideSrcTag(sT2t)
+{
+	var id, el;
+
+	// The ID passed to the found TagToTip() call identifies an HTML element
+	// to be converted to a tooltip, so hide that element
+	id = sT2t.replace(/.+'([^'.]+)'.+/, "$1");
+	el = tt_GetElt(id);
+	if(el)
+	{
+		if(!TagsToTip)
+			return false;
+		else
+			el.style.display = "none";
+	}
+	else
+		tt_Err("Invalid ID\n'" + id + "'\npassed to TagToTip()."
+				+ " There exists no HTML element with that ID.");
+	return true;
+}
+function tt_Tip(arg, t2t)
+{
+	if(!tt_db || (tt_iState & 0x8))
+		return;
+	if(tt_iState)
+		tt_Hide();
+	if(!tt_Enabled)
+		return;
+	tt_t2t = t2t;
+	if(!tt_ReadCmds(arg))
+		return;
+	tt_iState = 0x1 | 0x4;
+	tt_AdaptConfig1();
+	tt_MkTipContent(arg);
+	tt_MkTipSubDivs();
+	
+	tt_FormatTip();
+	tt_bJmpVert = false;
+	tt_bJmpHorz = false;
+	tt_maxPosX = tt_GetClientW() + tt_GetScrollX() - tt_w - 1;
+	tt_maxPosY = tt_GetClientH() + tt_GetScrollY() - tt_h - 1;
+	tt_AdaptConfig2();
+	// Ensure the tip be shown and positioned before the first onmousemove
+	tt_OverInit();
+	tt_ShowInit();
+	tt_Move();
+}
+function tt_ReadCmds(a)
+{
+	var i;
+
+	// First load the global config values, to initialize also values
+	// for which no command is passed
+	i = 0;
+	for(var j in config)
+		tt_aV[i++] = config[j];
+	// Then replace each cached config value for which a command is
+	// passed (ensure the # of command args plus value args be even)
+	if(a.length & 1)
+	{
+		for(i = a.length - 1; i > 0; i -= 2)
+			tt_aV[a[i - 1]] = a[i];
+		return true;
+	}
+	tt_Err("Incorrect call of Tip() or TagToTip().\n"
+			+ "Each command must be followed by a value.");
+	return false;
+}
+function tt_AdaptConfig1()
+{
+	tt_ExtCallFncs(0, "LoadConfig");
+	// Inherit unspecified title formattings from body
+	if(!tt_aV[TITLEBGCOLOR].length)
+		tt_aV[TITLEBGCOLOR] = tt_aV[BORDERCOLOR];
+	if(!tt_aV[TITLEFONTCOLOR].length)
+		tt_aV[TITLEFONTCOLOR] = tt_aV[BGCOLOR];
+	if(!tt_aV[TITLEFONTFACE].length)
+		tt_aV[TITLEFONTFACE] = tt_aV[FONTFACE];
+	if(!tt_aV[TITLEFONTSIZE].length)
+		tt_aV[TITLEFONTSIZE] = tt_aV[FONTSIZE];
+	if(tt_aV[CLOSEBTN])
+	{
+		// Use title colours for non-specified closebutton colours
+		if(!tt_aV[CLOSEBTNCOLORS])
+			tt_aV[CLOSEBTNCOLORS] = new Array("", "", "", "");
+		for(var i = 4; i;)
+		{--i;
+			if(!tt_aV[CLOSEBTNCOLORS][i].length)
+				tt_aV[CLOSEBTNCOLORS][i] = (i & 1) ? tt_aV[TITLEFONTCOLOR] : tt_aV[TITLEBGCOLOR];
+		}
+		// Enforce titlebar be shown
+		if(!tt_aV[TITLE].length)
+			tt_aV[TITLE] = " ";
+	}
+	// Circumvents broken display of images and fade-in flicker in Geckos < 1.8
+	if(tt_aV[OPACITY] == 100 && typeof tt_aElt[0].style.MozOpacity != tt_u && !Array.every)
+		tt_aV[OPACITY] = 99;
+	// Smartly shorten the delay for fade-in tooltips
+	if(tt_aV[FADEIN] && tt_flagOpa && tt_aV[DELAY] > 100)
+		tt_aV[DELAY] = Math.max(tt_aV[DELAY] - tt_aV[FADEIN], 100);
+}
+function tt_AdaptConfig2()
+{
+	if(tt_aV[CENTERMOUSE])
+	{
+		tt_aV[OFFSETX] -= ((tt_w - (tt_aV[SHADOW] ? tt_aV[SHADOWWIDTH] : 0)) >> 1);
+		tt_aV[JUMPHORZ] = false;
+	}
+}
+// Expose content globally so extensions can modify it
+function tt_MkTipContent(a)
+{
+	if(tt_t2t)
+	{
+		if(tt_aV[COPYCONTENT])
+			tt_sContent = tt_t2t.innerHTML;
+		else
+			tt_sContent = "";
+	}
+	else
+		tt_sContent = a[0];
+	tt_ExtCallFncs(0, "CreateContentString");
+}
+function tt_MkTipSubDivs()
+{
+	var sCss = 'position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:auto;',
+	sCssCloseBtn = 'position:relative;margin:0px;padding:0px;border-width:0px;left:0px;top:0px;line-height:normal;width:10px;',
+	sTbTrTd = ' cellspacing="0" cellpadding="0" border="0" style="' + sCss + '"><tbody style="' + sCss + '"><tr><td ';
+  
+	var sHeaCss = 'position:relative;margin:0px;padding:0px;border-width:0px;;left:0px;top:0px;line-height:normal;width:auto;'
+	
+	// WzTiTl  e` il div che contiene Header	
+	tt_aElt[0].style.width = tt_GetClientW() + "px";
+	tt_getId (tt_id.js); 
+	tt_getId (tt_id.jt); 
+	tt_getId (tt_id.jd); 
+	tt_aElt[0].innerHTML =
+		(''
+		+ (tt_aV[TITLE].length ?
+			('<div id="WzTiTl" class="ttTitle" style="position:relative;z-index:1;">'
+			+ '<table id="WzTiTlTb"' + sTbTrTd + 'id="WzTiTlI" style="' + sHeaCss +  '">'
+			+  tt_aV[TITLE] 
+            
+//JSU_FREE_START **-------------------
+			// tt_id.jt[0]   = id di JSU Title
+			+ '<span id="' + tt_id.js[0] +'" ><a style="margin-left:15px;" id="' + tt_id.jt[0] + '" class="tt" href="' +
+			 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
+			'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></span>'
+//JSU_FREE_END **---------------------*/
+			+ '</td>'
+			// -------------------- Close Section X
+			+ (tt_aV[CLOSEBTN] ?
+				('<td id="' + tt_id.jd[0] +'" align="right" style="' + sCssCloseBtn
+				+ ';text-align:right;">'
+				+ '<span id="WzClOsE" class="ttClose" style="position:relative;right:6px;padding-left:2px;padding-right:2px;'
+				+ 'cursor:' + (tt_ie ? 'hand' : 'pointer')
+				+ ';" onmouseover="tt_OnCloseBtnOver(1)" onmouseout="tt_OnCloseBtnOver(0)" onclick="tt_UnTipFix()">'
+				+ tt_aV[CLOSEBTNTEXT]
+				+ '</span></td>')
+				: '')
+			+ '</tr></tbody></table></div>')
+			: '')
+		+ '<div id="WzBoDy" style="position:relative;z-index:0;">'
+		+ '<table' + sTbTrTd + 'id="WzBoDyI" style="' + sCss + '">'
+		+ tt_sContent
+// FUTURE FOOTER
+//		+ '</td></tr></tbody></table></div>'
+	+ '</td></tr>'
+//    + (tt_aV[FOOTER].length ?	'<tr><td><' + tt_aV[FOOTER] + '</td></tr>' : '')
+    + (tt_aV[FOOTER].length ?	'<tr><td class="tipfooter">' + tt_aV[FOOTER] + '</td></tr>' : '')
+	+ '</tbody></table></div>'
+		
+		
+		+ (tt_aV[SHADOW]
+			? ('<div id="WzTtShDwR" style="position:absolute;overflow:hidden;"></div>'
+				+ '<div id="WzTtShDwB" style="position:relative;overflow:hidden;"></div>')
+			: '')
+			
+		);
+	tt_GetSubDivRefs();
+	// Convert DOM node to tip
+	if(tt_t2t && !tt_aV[COPYCONTENT])
+		tt_El2Tip();
+	tt_ExtCallFncs(0, "SubDivsCreated");
+	
+	// jsu_logHtml('WzTiTl', tt_aElt[0].innerHTML);
+	
+}
+function tt_GetSubDivRefs()
+{
+	var aId = new Array("WzTiTl", "WzTiTlTb", "WzTiTlI", "WzClOsE", "WzBoDy", "WzBoDyI", "WzTtShDwB", "WzTtShDwR");
+
+	for(var i = aId.length; i; --i)
+		tt_aElt[i] = tt_GetElt(aId[i - 1]);
+}
+/*
+ * Format the Tip: Calculate width, height,..
+ */
+function tt_FormatTip()
+{
+	var fn = "[tooltip.js tt_FormatTip] ";
+	var css, w, h, pad = tt_aV[PADDING], padT, wBrd = tt_aV[BORDERWIDTH],
+	iOffY, iOffSh, iAdd = (pad + wBrd) << 1;
+
+	//--------- Title DIV ----------
+	if(tt_aV[TITLE].length)
+	{
+		padT = tt_aV[TITLEPADDING];
+		css = tt_aElt[1].style;
+		css.background = tt_aV[TITLEBGCOLOR];
+		css.paddingTop = css.paddingBottom = padT + "px";
+		css.paddingLeft = css.paddingRight = (padT + 2) + "px";
+		css = tt_aElt[3].style;
+		css.color = tt_aV[TITLEFONTCOLOR];
+		if(tt_aV[WIDTH] == -1)
+			css.whiteSpace = "nowrap";
+		css.fontFamily = tt_aV[TITLEFONTFACE];
+		css.fontSize = tt_aV[TITLEFONTSIZE];
+		css.fontWeight = "bold";
+		css.textAlign = tt_aV[TITLEALIGN];
+		// Close button DIV
+		if(tt_aElt[4])
+		{
+			css = tt_aElt[4].style;
+			css.background = tt_aV[CLOSEBTNCOLORS][0];
+			css.color = tt_aV[CLOSEBTNCOLORS][1];
+			css.fontFamily = tt_aV[TITLEFONTFACE];
+			css.fontSize = tt_aV[TITLEFONTSIZE];
+			css.fontWeight = "bold";
+		}
+		if(tt_aV[WIDTH] > 0)
+			tt_w = tt_aV[WIDTH];
+		else
+		{
+			tt_w = tt_GetDivW(tt_aElt[3]) + tt_GetDivW(tt_aElt[4]);
+			// Some spacing between title DIV and closebutton
+			if(tt_aElt[4])
+				tt_w += pad;
+			// Restrict auto width to max width
+			if(tt_aV[WIDTH] < -1 && tt_w > -tt_aV[WIDTH])
+				tt_w = -tt_aV[WIDTH];
+		}
+		// Ensure the top border of the body DIV be covered by the title DIV
+		iOffY = -wBrd;
+	}
+	else
+	{
+		tt_w = 0;
+		iOffY = 0;
+	}
+
+	//-------- Body DIV ------------
+	css = tt_aElt[5].style;
+	css.top = iOffY + "px";
+	if(wBrd)
+	{
+		css.borderColor = tt_aV[BORDERCOLOR];
+		css.borderStyle = tt_aV[BORDERSTYLE];
+		css.borderWidth = wBrd + "px";
+	}
+	if(tt_aV[BGCOLOR].length)
+		css.background = tt_aV[BGCOLOR];
+	if(tt_aV[BGIMG].length)
+		css.backgroundImage = "url(" + tt_aV[BGIMG] + ")";
+	css.padding = pad + "px";
+	css.textAlign = tt_aV[TEXTALIGN];
+	if(tt_aV[HEIGHT])
+	{
+		css.overflow = "auto";
+		if(tt_aV[HEIGHT] > 0)
+			css.height = (tt_aV[HEIGHT] + iAdd) + "px";
+		else
+			tt_h = iAdd - tt_aV[HEIGHT];
+	}
+	// TD inside body DIV
+	css = tt_aElt[6].style;
+	css.color = tt_aV[FONTCOLOR];
+	css.fontFamily = tt_aV[FONTFACE];
+	css.fontSize = tt_aV[FONTSIZE];
+	css.fontWeight = tt_aV[FONTWEIGHT];
+	css.textAlign = tt_aV[TEXTALIGN];
+	if(tt_aV[WIDTH] > 0)
+		w = tt_aV[WIDTH];
+	// Width like title (if existent)
+	else if(tt_aV[WIDTH] == -1 && tt_w)
+		w = tt_w;
+	else
+	{
+		// Measure width of the body's inner TD, as some browsers would expand
+		// the container and outer body DIV to 100%
+		w = tt_GetDivW(tt_aElt[6]);
+		// Restrict auto width to max width
+		if(tt_aV[WIDTH] < -1 && w > -tt_aV[WIDTH])
+			w = -tt_aV[WIDTH];
+	}
+	if(w > tt_w)
+		tt_w = w;
+	tt_w += iAdd;
+
+	//--------- Shadow DIVs ------------
+	if(tt_aV[SHADOW])
+	{
+		tt_w += tt_aV[SHADOWWIDTH];
+		iOffSh = Math.floor((tt_aV[SHADOWWIDTH] * 4) / 3);
+		// Bottom shadow
+		css = tt_aElt[7].style;
+		css.top = iOffY + "px";
+		css.left = iOffSh + "px";
+		css.width = (tt_w - iOffSh - tt_aV[SHADOWWIDTH]) + "px";
+		css.height = tt_aV[SHADOWWIDTH] + "px";
+		css.background = tt_aV[SHADOWCOLOR];
+		// Right shadow
+		css = tt_aElt[8].style;
+		css.top = iOffSh + "px";
+		css.left = (tt_w - tt_aV[SHADOWWIDTH]) + "px";
+		css.width = tt_aV[SHADOWWIDTH] + "px";
+		css.background = tt_aV[SHADOWCOLOR];
+	}
+	else
+		iOffSh = 0;
+
+	//-------- Container DIV -------
+	tt_SetTipOpa(tt_aV[FADEIN] ? 0 : tt_aV[OPACITY]);
+	tt_FixSize(iOffY, iOffSh);
+}
+
+// Fixate the size so it can't dynamically change while the tooltip is moving.
+function tt_FixSize(iOffY, iOffSh)
+{
+	var wIn, wOut, h, add, pad = tt_aV[PADDING], wBrd = tt_aV[BORDERWIDTH], i;
+
+	tt_aElt[0].style.width = tt_w + "px";
+	tt_aElt[0].style.pixelWidth = tt_w;
+	wOut = tt_w - ((tt_aV[SHADOW]) ? tt_aV[SHADOWWIDTH] : 0);
+	// Body
+	wIn = wOut;
+	if(!tt_bBoxOld)
+		wIn -= (pad + wBrd) << 1;
+	tt_aElt[5].style.width = wIn + "px";
+	// Title
+	if(tt_aElt[1])
+	{
+		wIn = wOut - ((tt_aV[TITLEPADDING] + 2) << 1);
+		if(!tt_bBoxOld)
+			wOut = wIn;
+		tt_aElt[1].style.width = wOut + "px";
+		tt_aElt[2].style.width = wIn + "px";
+	}
+	// Max height specified
+	if(tt_h)
+	{
+		h = tt_GetDivH(tt_aElt[5]);
+		if(h > tt_h)
+		{
+			if(!tt_bBoxOld)
+				tt_h -= (pad + wBrd) << 1;
+			tt_aElt[5].style.height = tt_h + "px";
+		}
+	}
+	tt_h = tt_GetDivH(tt_aElt[0]) + iOffY;
+	// Right shadow
+	if(tt_aElt[8])
+		tt_aElt[8].style.height = (tt_h - iOffSh) + "px";
+	i = tt_aElt.length - 1;
+	if(tt_aElt[i])
+	{
+		tt_aElt[i].style.width = tt_w + "px";
+		tt_aElt[i].style.height = tt_h + "px";
+	}
+}
+function tt_DeAlt(el)
+{
+	var aKid;
+
+	if(el)
+	{
+		if(el.alt)
+			el.alt = "";
+		if(el.title)
+			el.title = "";
+		aKid = el.childNodes || el.children || null;
+		if(aKid)
+		{
+			for(var i = aKid.length; i;)
+				tt_DeAlt(aKid[--i]);
+		}
+	}
+}
+// This hack removes the native tooltips over links in Opera
+function tt_OpDeHref(el)
+{
+	if(!tt_op)
+		return;
+	if(tt_elDeHref)
+		tt_OpReHref();
+	while(el)
+	{
+		if(el.hasAttribute && el.hasAttribute("href"))
+		{
+			el.t_href = el.getAttribute("href");
+			el.t_stats = window.status;
+			el.removeAttribute("href");
+			el.style.cursor = "hand";
+			tt_AddEvtFnc(el, "mousedown", tt_OpReHref);
+			window.status = el.t_href;
+			tt_elDeHref = el;
+			break;
+		}
+		el = tt_GetDad(el);
+	}
+}
+function tt_OpReHref()
+{
+	if(tt_elDeHref)
+	{
+		tt_elDeHref.setAttribute("href", tt_elDeHref.t_href);
+		tt_RemEvtFnc(tt_elDeHref, "mousedown", tt_OpReHref);
+		window.status = tt_elDeHref.t_stats;
+		tt_elDeHref = null;
+	}
+}
+function tt_El2Tip()
+{
+	var css = tt_t2t.style;
+
+	// Store previous positioning
+	tt_t2t.t_cp = css.position;
+	tt_t2t.t_cl = css.left;
+	tt_t2t.t_ct = css.top;
+	tt_t2t.t_cd = css.display;
+	// Store the tag's parent element so we can restore that DOM branch
+	// when the tooltip is being hidden
+	tt_t2tDad = tt_GetDad(tt_t2t);
+	tt_MovDomNode(tt_t2t, tt_t2tDad, tt_aElt[6]);
+	css.display = "block";
+	css.position = "static";
+	css.left = css.top = css.marginLeft = css.marginTop = "0px";
+}
+function tt_UnEl2Tip()
+{
+	// Restore positioning and display
+	var css = tt_t2t.style;
+
+	css.display = tt_t2t.t_cd;
+	tt_MovDomNode(tt_t2t, tt_GetDad(tt_t2t), tt_t2tDad);
+	css.position = tt_t2t.t_cp;
+	css.left = tt_t2t.t_cl;
+	css.top = tt_t2t.t_ct;
+	tt_t2tDad = null;
+}
+function tt_OverInit()
+{
+	if(window.event)
+		tt_over = window.event.target || window.event.srcElement;
+	else
+		tt_over = tt_ovr_;
+	tt_DeAlt(tt_over);
+	tt_OpDeHref(tt_over);
+}
+function tt_ShowInit()
+{
+	tt_tShow.Timer("tt_Show()", tt_aV[DELAY], true);
+	if(tt_aV[CLICKCLOSE] || tt_aV[CLICKSTICKY])
+		tt_AddEvtFnc(document, "mouseup", tt_OnLClick);
+}
+function tt_Show()
+{
+	var css = tt_aElt[0].style;
+
+	// Override the z-index of the topmost wz_dragdrop.js D&D item
+	css.zIndex = Math.max((window.dd && dd.z) ? (dd.z + 2) : 0, 1010);
+	if(tt_aV[STICKY] || !tt_aV[FOLLOWMOUSE])
+		tt_iState &= ~0x4;
+	if(tt_aV[EXCLUSIVE])
+		tt_iState |= 0x8;
+	if(tt_aV[DURATION] > 0)
+		tt_tDurt.Timer("tt_HideInit()", tt_aV[DURATION], true);
+	tt_ExtCallFncs(0, "Show");
+	css.visibility = "visible";
+	tt_iState |= 0x2;
+	if(tt_aV[FADEIN])
+		tt_Fade(0, 0, tt_aV[OPACITY], Math.round(tt_aV[FADEIN] / tt_aV[FADEINTERVAL]));
+	tt_ShowIfrm();
+}
+function tt_ShowIfrm()
+{
+	if(tt_ie56)
+	{
+		var ifrm = tt_aElt[tt_aElt.length - 1];
+		if(ifrm)
+		{
+			var css = ifrm.style;
+			css.zIndex = tt_aElt[0].style.zIndex - 1;
+			css.display = "block";
+		}
+	}
+}
+function tt_Move(e)
+{
+	if(e)
+		tt_ovr_ = e.target || e.srcElement;
+	e = e || window.event;
+	if(e)
+	{
+		tt_musX = tt_GetEvtX(e);
+		tt_musY = tt_GetEvtY(e);
+	}
+	if(tt_iState & 0x4)
+	{
+		// Prevent jam of mousemove events
+		if(!tt_op && !tt_ie)
+		{
+			if(tt_bWait)
+				return;
+			tt_bWait = true;
+			tt_tWaitMov.Timer("tt_bWait = false;", 1, true);
+		}
+		if(tt_aV[FIX])
+		{
+			tt_iState &= ~0x4;
+			tt_PosFix();
+		}
+		else if(!tt_ExtCallFncs(e, "MoveBefore"))
+			tt_SetTipPos(tt_Pos(0), tt_Pos(1));
+		tt_ExtCallFncs([tt_musX, tt_musY], "MoveAfter");
+	}
+}
+function tt_Pos(iDim)
+{
+	var iX, bJmpMod, cmdAlt, cmdOff, cx, iMax, iScrl, iMus, bJmp;
+
+	// Map values according to dimension to calculate
+	if(iDim)
+	{
+		bJmpMod = tt_aV[JUMPVERT];
+		cmdAlt = ABOVE;
+		cmdOff = OFFSETY;
+		cx = tt_h;
+		iMax = tt_maxPosY;
+		iScrl = tt_GetScrollY();
+		iMus = tt_musY;
+		bJmp = tt_bJmpVert;
+	}
+	else
+	{
+		bJmpMod = tt_aV[JUMPHORZ];
+		cmdAlt = LEFT;
+		cmdOff = OFFSETX;
+		cx = tt_w;
+		iMax = tt_maxPosX;
+		iScrl = tt_GetScrollX();
+		iMus = tt_musX;
+		bJmp = tt_bJmpHorz;
+	}
+	if(bJmpMod)
+	{
+		if(tt_aV[cmdAlt] && (!bJmp || tt_CalcPosAlt(iDim) >= iScrl + 16))
+			iX = tt_PosAlt(iDim);
+		else if(!tt_aV[cmdAlt] && bJmp && tt_CalcPosDef(iDim) > iMax - 16)
+			iX = tt_PosAlt(iDim);
+		else
+			iX = tt_PosDef(iDim);
+	}
+	else
+	{
+		iX = iMus;
+		if(tt_aV[cmdAlt])
+			iX -= cx + tt_aV[cmdOff] - (tt_aV[SHADOW] ? tt_aV[SHADOWWIDTH] : 0);
+		else
+			iX += tt_aV[cmdOff];
+	}
+	// Prevent tip from extending past clientarea boundary
+	if(iX > iMax)
+		iX = bJmpMod ? tt_PosAlt(iDim) : iMax;
+	// In case of insufficient space on both sides, ensure the left/upper part
+	// of the tip be visible
+	if(iX < iScrl)
+		iX = bJmpMod ? tt_PosDef(iDim) : iScrl;
+	return iX;
+}
+
+function tt_PosDef(iDim)
+{
+	var fn = "[tooltip.js tt_PosDef] ";
+	
+	if(iDim)
+		tt_bJmpVert = tt_aV[ABOVE];
+	else
+		tt_bJmpHorz = tt_aV[LEFT];
+	return tt_CalcPosDef(iDim);
+}
+function tt_PosAlt(iDim)
+{
+	if(iDim)
+		tt_bJmpVert = !tt_aV[ABOVE];
+	else
+		tt_bJmpHorz = !tt_aV[LEFT];
+	return tt_CalcPosAlt(iDim);
+}
+function tt_CalcPosDef(iDim)
+{
+	var fn = "[tooltip.js tt_CalcPosDef] ";
+	
+  var iRet = iDim ? (tt_musY + tt_aV[OFFSETY]) : (tt_musX + tt_aV[OFFSETX]);
+	return iRet;
+}
+function tt_CalcPosAlt(iDim)
+{
+	var cmdOff = iDim ? OFFSETY : OFFSETX;
+	var dx = tt_aV[cmdOff] - (tt_aV[SHADOW] ? tt_aV[SHADOWWIDTH] : 0);
+	if(tt_aV[cmdOff] > 0 && dx <= 0)
+		dx = 1;
+	return((iDim ? (tt_musY - tt_h) : (tt_musX - tt_w)) - dx);
+}
+
+
+/*
+ * JSU Modify
+ */
+function tt_PosFix()
+{
+	var fn = "[tooltip.js tt_PosFix] ";
+	var iX=0, iY;
+	var iXPos;
+	var bXPosRelative = false;
+
+	if(typeof(tt_aV[FIX][0]) == "number")
+	{
+		iX = tt_aV[FIX][0];
+		iY = tt_aV[FIX][1];
+	}
+	else
+	{
+		// -------------- First is id
+		if(typeof(tt_aV[FIX][0]) == "string")
+			el = tt_GetElt(tt_aV[FIX][0]);
+		// First slot in array is direct reference to HTML element
+		else
+			el = tt_aV[FIX][0];
+		iXPos = tt_aV[FIX][1];
+		bXPosRelative = (iXPos == TIP_FIXED_POS.LEFT || iXPos == TIP_FIXED_POS.CENTER || iXPos == TIP_FIXED_POS.RIGHT);  
+		jsu_log (fn + "iXPos=" + iXPos + " bXPosRelative=" + bXPosRelative);
+		if (!bXPosRelative){
+			iX=iXPos;
+		}
+		iY = tt_aV[FIX][2];
+		// By default, vert pos is related to bottom edge of HTML element
+		if(!tt_aV[ABOVE] && el)
+			iY += tt_GetDivH(el);
+		for(; el; el = el.offsetParent)
+		{
+			iX += el.offsetLeft || 0;
+			iY += el.offsetTop || 0;
+		}
+		//
+		if (bXPosRelative){
+			jsu_log (fn + "iXPos=" + iXPos + " Calculate new iX From iX=" + iX+ " tt_w=" + tt_w);
+			// +25 for workaround to align better
+			if (iXPos == TIP_FIXED_POS.LEFT){
+				iX = iX -tt_w + 25;
+			}else	if (iXPos == TIP_FIXED_POS.CENTER){
+				iX = iX - (tt_w/2) + 20;   
+			}
+		}
+	}
+	// For a fixed tip positioned above the mouse, use the bottom edge as anchor
+	if(tt_aV[ABOVE]){
+		iY -= tt_h;
+	}else{
+		jsu_log (fn + "TIP BELOW: Add DeltaY=" + tt_tipFix.yIncDelta);
+		iY += tt_tipFix.yIncDelta;
+	}
+	jsu_log (fn + "SET iX=" + iX + "  iY=" + iY);
+	tt_SetTipPos(iX, iY);
+}
+
+
+function tt_Fade(a, now, z, n)
+{
+	if(n)
+	{
+		now += Math.round((z - now) / n);
+		if((z > a) ? (now >= z) : (now <= z))
+			now = z;
+		else
+			tt_tFade.Timer(
+				"tt_Fade("
+				+ a + "," + now + "," + z + "," + (n - 1)
+				+ ")",
+				tt_aV[FADEINTERVAL],
+				true
+			);
+	}
+	now ? tt_SetTipOpa(now) : tt_Hide();
+}
+function tt_SetTipOpa(opa)
+{
+	// To circumvent the opacity nesting flaws of IE, we set the opacity
+	// for each sub-DIV separately, rather than for the container DIV.
+	tt_SetOpa(tt_aElt[5], opa);
+	if(tt_aElt[1])
+		tt_SetOpa(tt_aElt[1], opa);
+	if(tt_aV[SHADOW])
+	{
+		opa = Math.round(opa * 0.8);
+		tt_SetOpa(tt_aElt[7], opa);
+		tt_SetOpa(tt_aElt[8], opa);
+	}
+}
+function tt_OnCloseBtnOver(iOver)
+{
+	var css = tt_aElt[4].style;
+
+	iOver <<= 1;
+	css.background = tt_aV[CLOSEBTNCOLORS][iOver];
+	css.color = tt_aV[CLOSEBTNCOLORS][iOver + 1];
+}
+function tt_OnLClick(e)
+{
+	//  Ignore right-clicks
+	e = e || window.event;
+	if(!((e.button && e.button & 2) || (e.which && e.which == 3)))
+	{
+		if(tt_aV[CLICKSTICKY] && (tt_iState & 0x4))
+		{
+			tt_aV[STICKY] = true;
+			tt_iState &= ~0x4;
+		}
+		else if(tt_aV[CLICKCLOSE])
+			tt_HideInit();
+	}
+}
+function tt_Int(x)
+{
+	var y;
+
+	return(isNaN(y = parseInt(x)) ? 0 : y);
+}
+Number.prototype.Timer = function(s, iT, bUrge)
+{
+	if(!this.value || bUrge)
+		this.value = window.setTimeout(s, iT);
+};
+Number.prototype.EndTimer = function()
+{
+	if(this.value)
+	{
+		window.clearTimeout(this.value);
+		this.value = 0;
+	}
+};
+function tt_GetWndCliSiz(s)
+{
+	var db, y = window["inner" + s], sC = "client" + s, sN = "number";
+	if(typeof y == sN)
+	{
+		var y2;
+		return(
+			// Gecko or Opera with scrollbar
+			// ... quirks mode
+			((db = document.body) && typeof(y2 = db[sC]) == sN && y2 &&  y2 <= y) ? y2 
+			// ... strict mode
+			: ((db = document.documentElement) && typeof(y2 = db[sC]) == sN && y2 && y2 <= y) ? y2
+			// No scrollbar, or clientarea size == 0, or other browser (KHTML etc.)
+			: y
+		);
+	}
+	// IE
+	return(
+		// document.documentElement.client+s functional, returns > 0
+		((db = document.documentElement) && (y = db[sC])) ? y
+		// ... not functional, in which case document.body.client+s 
+		// is the clientarea size, fortunately
+		: document.body[sC]
+	);
+}
+function tt_SetOpa(el, opa)
+{
+	var css = el.style;
+
+	tt_opa = opa;
+	if(tt_flagOpa == 1)
+	{
+		if(opa < 100)
+		{
+			// Hacks for bugs of IE:
+			// 1.) Once a CSS filter has been applied, fonts are no longer
+			// anti-aliased, so we store the previous 'non-filter' to be
+			// able to restore it
+			if(typeof(el.filtNo) == tt_u)
+				el.filtNo = css.filter;
+			// 2.) A DIV cannot be made visible in a single step if an
+			// opacity < 100 has been applied while the DIV was hidden
+			var bVis = css.visibility != "hidden";
+			// 3.) In IE6, applying an opacity < 100 has no effect if the
+			//	   element has no layout (position, size, zoom, ...)
+			css.zoom = "100%";
+			if(!bVis)
+				css.visibility = "visible";
+			css.filter = "alpha(opacity=" + opa + ")";
+			if(!bVis)
+				css.visibility = "hidden";
+		}
+		else if(typeof(el.filtNo) != tt_u)
+			// Restore 'non-filter'
+			css.filter = el.filtNo;
+	}
+	else
+	{
+		opa /= 100.0;
+		switch(tt_flagOpa)
+		{
+		case 2:
+			css.KhtmlOpacity = opa; break;
+		case 3:
+			css.KHTMLOpacity = opa; break;
+		case 4:
+			css.MozOpacity = opa; break;
+		case 5:
+			css.opacity = opa; break;
+		}
+	}
+}
+function tt_Err(szErr)
+{
+	if (typeof (showErr) == "function"){
+		showErr (szErr);
+	}else{
+		alert(szErr);
+	}
+}
+
+//============  EXTENSION (PLUGIN) MANAGER  ===============//
+function tt_ExtCmdEnum()
+{
+	var s;
+
+	// Add new command(s) to the commands enum
+	for(var i in config)
+	{
+		s = "window." + i.toString().toUpperCase();
+		if(eval("typeof(" + s + ") == tt_u"))
+		{
+			eval(s + " = " + tt_aV.length);
+			tt_aV[tt_aV.length] = null;
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------
+Replace all occurrences of from with to
+@param szOrig in
+@param from in   e.g  "&nbsp;"
+@param to   in   e.g " " 
+@return 
+--------------------------------------------------------------*/
+function tt_replaceAll (szOrig,szFrom,szTo){
+	var szNew = szOrig;
+	while (szNew.indexOf(szFrom) >=0){
+		szNew = szNew.replace (szFrom,szTo);
+	}
+	return szNew;	
+}
+
+
+/*
+ * Convert NewLine to <BR/>
+ * @param szMsg
+ * @returns
+ */
+function tt_NL2BR(szMsg){
+  return  tt_replaceAll (szMsg,"\n","<BR/>");
+}
+
+
+function tt_ExtCallFncs(arg, sFnc)
+{
+	var b = false;
+	for(var i = tt_aExt.length; i;)
+	{--i;
+		var fnc = tt_aExt[i]["On" + sFnc];
+		// Call the method the extension has defined for this event
+		if(fnc && fnc(arg))
+			b = true;
+	}
+	return b;
+}
+
+//
+function getMouseXY(e, obj) {
+  var e = (!e) ? window.event : e;
+  //find mouse coordinates
+  if (e.pageX || e.pageY) {
+     posX = e.pageX;
+     posY = e.pageY;
+  }
+  else if (e.clientX || e.clientY) {
+     if (document.body.scrollLeft || document.body.scrollTop) {
+        posX = e.clientX + document.body.scrollLeft;
+        posY = e.clientY + document.body.scrollTop;
+     }
+     else {
+        posX = e.clientX + document.documentElement.scrollLeft;
+        posY = e.clientY + document.documentElement.scrollTop;
+     }
+  }
+  else {
+     posX = 0;
+     posY = 0;
+  }
+  //find image coordinates
+  if (obj.offsetLeft || obj.offsetTop) {
+     xOffset = obj.offsetLeft;
+     yOffset = obj.offsetTop;
+     parentObj = obj.offsetParent;
+     while(parentObj != null) {
+        xOffset += parentObj.offsetLeft;
+        yOffset += parentObj.offsetTop;
+        parentObj = parentObj.offsetParent;
+     }
+  }
+  else if (obj.x || obj.y) {
+     xOffset = obj.x;
+     yOffset = obj.y;
+  }
+  else {
+     xOffset = 0;
+     yOffset = 0;
+  }
+  var imgPosY = (posY - yOffset - 2);
+  var imgPosX = (posX - xOffset - 2);
+  return {
+  	x: imgPosX,
+  	y: imgPosY
+  };	
+}
+
+
+function tt_is_IE(){
+	var APP_NAME_IE="Microsoft Internet Explorer";   // IE
+	var APP_NAME_IE_11="Netscape";   // IE 11
+	
+  if  ((navigator.appName == APP_NAME_IE) || 
+    ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
+    return true;
+  }else {
+  	return false;
+  }	
+}  
+
+
+/*
+ * Check if prettify has been loaded and it is enabled (Only in FULL versione there is the code to manage prettify) 
+ * @returns {Boolean}
+ */
+function tt_isPrettifyEn(){
+	var fn = "[tooltip.js tt_isPrettifyEn()] ";
+	var bPrettifyLoaded =  (typeof(jsuPrettyPrint) != "undefined");
+	var bPrettifyCode = false; // Code present. Default = false (FREE version)
+	bPrettifyCode = true;  
+	var bPrettifyEn = (bPrettifyLoaded && bPrettifyCode);  
+	jsu_log (fn + "bPrettifyLoaded=" + bPrettifyLoaded + " bPrettifyCode=" + bPrettifyCode + "  RETURN bPrettifyEn=" + bPrettifyEn);
+  return bPrettifyEn;
+}
+
+
+/*
+ * For CODE Pretection
+ * 
+ * @param objId    {id, acr, min, max}
+ */
+function tt_getId(objId){
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
+  
+}
+
+/*
+ * 
+ * @param szHtml
+ * @returns  Number of /n
+ */
+function tt_getHtmlRowNum(szHtml){
+	var iRowNum =  1 + (szHtml.match(/\n/g) || []).length;
+	if (iRowNum > TIP_MAX_TEXT_BOX_ROW_NUM){
+		iRowNum	= TIP_MAX_TEXT_BOX_ROW_NUM;
+  } 
+	return iRowNum;
+}
+

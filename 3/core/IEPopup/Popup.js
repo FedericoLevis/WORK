@@ -1,8 +1,1223 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_38f8=["Popup.html","POPUP","ALERT","POPUP_URL","-------------- START","-------------- END","Info","Confirm","Error","Alarm","Warning","Question","Question_3Btn","Prompt","Choice","CLOSE","CONFIRM","NO","CANCEL","number","string","PopupImg","PopupTblMsg","PopupTitle","IE","Firefox","BrowserUnknown","Netscape","Microsoft Internet Explorer","[Popup.js pp_show] ","------------------- START","IN: szPopupType=","IN: objOpt="," szBrowser=","  szBrowserMode=","\x0A","<BR/>","scroll=no;","resizable=yes;","resizable=no;","function","iWidth","iHeight","bScroll","scroll=yes;","bResize","dialogWidth=","px; dialogHeight=","px; ","center=yes;","szPopupType","szMsgHtml","objOpt","objJslogOpt","parIn","BODY","getElementsByTagName","opacity","style","From iOpacity="," To "," url="," szFeatures=","elLoading","showModalDialog","retBtn","width","screen","height","center=yes;dialogWidth=","px; dialogHeight:","px; dialogTop:","px; dialogLeft:","px;","directories:no;titlebar:no;toolbar:no;location:no;status:no;menubar:no;scroll=no;resizable=",";","\x0Aurl=","\x0AszFeatures=","retObj","Restore iOpacity=","-------------------","INFO","ERR","WARN","QUESTION","ERROR: PopupType="," is NOT SUPPORTED with this Browser.\x0A\x0A","Message was:\x0A","[Popup.js pp_getBrowser] ","appName","undefined","userAgent","exec","Trident/.*rv:([0-9]{1,}[.0-9]{0,})","szBrowser="," -  navigator.appCodeName=","appCodeName","  navigator.appName=","[Popup.js pp_getBrowserMode] ","[Popup.js pp_classInit] ","QUESTION_3","set PopupTblHea className=","className","PopupTblHea","set PopupImg className=","set PopupTblMsg className=","[Popup.js pp_idIsVisible] ","SW ERROR szId=","   NOT FOUND","display","none","inline","visibility","visible","hidden","[Popup.js pp_idShow] ","szId="," bShow=","[Popup.js pp_btnInit] ","PopupConfirm","PopupNo","PopupCancel","QUESTION_CONFIRM","QUESTION_NO","QUESTION_CANCEL","Default Label: szConfirmLabel=","   szNoLabel=","   szCancelLabel=","szConfirmLabel","","szNoLabel","szCancelLabel","iConfirmWidth","px","iNoWidth","iCancelWidth","SET BTN  Label: szConfirmLabel=","value","Set Btn Visibility","[Popup.js pp_optChoiceInit] ","bChoiceMultiSel","PopupChoiceMulti","PopupChoiceSingle","objOpt.bChoiceMultiSel=","  szId=","Sect","innerHTML","Label","szChoiceLabel","Select","iChoiceMultiSize","size","PopupSelectAll","textContent","childNodes","PopupDeselectAll","length","arChoice","szText","dv","selected","bSel","PopupChoiceMultiFS","clientWidth","We have SET elFS.style.width=","There are Custom Option:","bShowTitle","bShowImg","bShowBtnSect","PopupDivBtn","[Popup.js pp_promptInit] ","PopupPromptSect","PROMPT","szPromptLabel","PopupPromptLabel","PopupPromptInput","szPromptValue","Set Default PromptValue=","szPromptType","STRING","NUMBER","type","setAttribute","iPromptWidth","width:","iPromptMax","max","maxlength","removeAttribute","iPromptMin","min","focus","NUMBER_RANGE","STRING_RANGE","[","..","]","..]","title","[Popup.js pp_getHeight] ","getElementById","getBoundingClientRect","body","documentElement","pageYOffset","scrollTop","clientTop","top","round","clientHeight","Current iDlgH=","canvas","createElement","getContext","2d","font","measureText","szTitle","CHOICE","ALARM","[Popup.js pp_ValidateInput] ","Prompt=","getAttribute","VALIDATION is required for PROMPT NUMBER - We check that promptValue=","  is a NUMBER","VALIDATION required for iMin="," - PROMPT szType=","VALIDATION required for iMax=","VALIDATION ERROR for promptValue="," Show Err: ","PopupPromptError","class","[Popup.js pp_close] ","bConfirm=","promptValue","PopupChoiceSingleSect","PopupChoiceMultiSect","Get Choice Selection","PopupChoiceSingleSelect","PopupChoiceMultiSelect","options","text",", ","push","choiceValue","choiceText","returnValue","window.returnValue","close","[Popup.js pp_onClickConfirm] ","[Popup.js pp_onResize] ","outerWidth","outerHeight","PopupDiv","Change divPopup width from ="," to =","[Popup.js pp_onClickNo] ","[Popup.js pp_onLoad] ","search","dialogArguments","<b> This is a Test only For Developers</b><br/>We want to Try what is the minimum Height required for a Message","bDefWidth","iJslogLev","VOTE:","1 - Not Good","2 - Good","3 - Very Good","4 - Excellent","iLogLev","bLogTime","szPathImg","../","indexOf","substr","bCloseOnEscape","onkeydown","keyCode","bResize=","SET onresize","onresize","Hide Loading in Parent","set Dlg Layout -------","Set Title=","PopupMsg"," set iDlgH=","dialogHeight","NOT IE set iDlgH=","innerHeight"," Firefox set innerHeight=","moveTo","divPopup.clientWidth=","  divPopup.style.width=","SET divPopup.clientWidth=","set iDlgH=","[Popup.js PopupChoice] ","szChoiceLabel="];var POPUP_DEF_WIDTH=600;var POPUP_DEF_CLOSE_ON_ESCAPE=true;var POPUP_DEF_RESIZE=false;var POPUP_OPACITY=0.5;var POPUP_HTML=_$_38f8[0];var POPUP_DEF_MULTICHOICE_SIZE=5;var POPUP_MAX_HEIGHT=900;var POPUP_BROWSER_MODE_POPUP=_$_38f8[1];var POPUP_BROWSER_MODE_ALERT=_$_38f8[2];var POPUP_BROWSER_MODE_POPUP_URL=_$_38f8[3];var POPUP_BROWSER_IE_MODE=POPUP_BROWSER_MODE_POPUP;var POPUP_BROWSER_FIREFOX_MODE=POPUP_BROWSER_MODE_POPUP_URL;var POPUP_BROWSER_OTHER_MODE=POPUP_BROWSER_MODE_ALERT;var POPUP_DEF_SHOW_IMG=true;var POPUP_DEF_SHOW_TITLE=true;var POPUP_DEF_RESIZE=false;var POPUP_DEF_PROMPT_NUMBER_W=50;var POPUP_DEF_PROMPT_STRING_W=200;var PPLOG_FUN_START=_$_38f8[4];var PPLOG_FUN_END=_$_38f8[5];var POPUP_TYPE={INFO:_$_38f8[6],CONFIRM:_$_38f8[7],ERR:_$_38f8[8],ALARM:_$_38f8[9],WARN:_$_38f8[10],QUESTION:_$_38f8[11],QUESTION_3:_$_38f8[12],PROMPT:_$_38f8[13],CHOICE:_$_38f8[14]};var POPUP_BTN={CLOSE:_$_38f8[15],CONFIRM:_$_38f8[16],NO:_$_38f8[17],CANCEL:_$_38f8[18]};var PROMPT_TYPE={NUMBER:_$_38f8[19],STRING:_$_38f8[20]};var POPUP_IMG_CLASS_PREFIX=_$_38f8[21];var POPUP_TBLMSG_CLASS_PREFIX=_$_38f8[22];var POPUP_TITLE_CLASS_PREFIX=_$_38f8[23];var POPUP_DEF_HEIGHT=200;var POPUP_BROWSER_TYPE_IE=_$_38f8[24];var POPUP_BROWSER_TYPE_FIREFOX=_$_38f8[25];var POPUP_BROWSER_TYPE_UNKNOWN=_$_38f8[26];var POPUP_CHOICE_FS_MIN_WIDTH=200;var APP_NAME_FIREFOX=_$_38f8[27];var APP_NAME_IE=_$_38f8[28];var APP_NAME_IE_11=_$_38f8[27];var popupPathHtml=JSU_PATH_POPUP_HTML;var popup_bScroll=false;function pp_show(nW,ns,B){var u=_$_38f8[29];jsu_log(u+ _$_38f8[30]);jsu_log(u+ _$_38f8[31]+ nW);jsu_logObj(u+ _$_38f8[32],B);var kU=pp_getBrowser();var oA=pp_getBrowserMode(kU);jsu_log(u+ _$_38f8[33]+ kU+ _$_38f8[34]+ oA);if(oA== POPUP_BROWSER_MODE_ALERT){return pp_showAlert(nW,ns)};ns= strReplaceAll(ns,_$_38f8[35],_$_38f8[36]);var oJ=POPUP_DEF_WIDTH;var pd=POPUP_DEF_HEIGHT;var ph=_$_38f8[37];var pg=(POPUP_DEF_RESIZE)?_$_38f8[38]:_$_38f8[39];if(( typeof (jslog)== _$_38f8[40]&& jslogGetLogLev()> 0)){pg= _$_38f8[38]};if(B!= null){if(B[_$_38f8[41]]!= undefined&& B[_$_38f8[41]]!= null&& B[_$_38f8[41]]){oJ= B[_$_38f8[41]]};if(B[_$_38f8[42]]!= undefined&& B[_$_38f8[42]]!= null&& B[_$_38f8[42]]){pd= B[_$_38f8[42]]};if(B[_$_38f8[43]]!= undefined&& B[_$_38f8[43]]!= null&& B[_$_38f8[43]]){ph= _$_38f8[44]};if(B[_$_38f8[45]]!= undefined&& B[_$_38f8[45]]){pg= _$_38f8[38]}};var pf=_$_38f8[46]+ oJ+ _$_38f8[47]+ pd+ _$_38f8[48]+ ph+ pg+ _$_38f8[49];var of= new Object();of[_$_38f8[50]]= nW;of[_$_38f8[42]]= pd;of[_$_38f8[51]]= ns;of[_$_38f8[52]]= B;of[_$_38f8[41]]= oJ;if( typeof (jslog)== _$_38f8[40]){of[_$_38f8[53]]= jslogGetOpt()}else {of[_$_38f8[53]]= {iLogLev:0}};var fJ=popupPathHtml+ POPUP_HTML;jsu_logObj(_$_38f8[54],of);if(POPUP_OPACITY!= 1){var jG=document[_$_38f8[56]](_$_38f8[55])[0];var pe=jG[_$_38f8[58]][_$_38f8[57]];jsu_log(_$_38f8[59]+ pe+ _$_38f8[60]+ POPUP_OPACITY);jG[_$_38f8[58]][_$_38f8[57]]= POPUP_OPACITY};if(oA== POPUP_BROWSER_MODE_POPUP){jsu_log(u+ kU+ _$_38f8[61]+ fJ+ _$_38f8[62]+ pf);loadingShow(true);of[_$_38f8[63]]= loadingGetEl();var ov=window[_$_38f8[64]](fJ,of,pf);if(ov== undefined){ov=  new Object;ov[_$_38f8[65]]= POPUP_BTN[_$_38f8[15]]};loadingShow(false)}else {if(oA== POPUP_BROWSER_MODE_POPUP_URL){var jM=(window[_$_38f8[67]][_$_38f8[66]]/ 2)- (oJ/ 2);var jP=(window[_$_38f8[67]][_$_38f8[68]]/ 2)- (pd/ 2);pf= _$_38f8[69]+ oJ+ _$_38f8[70]+ pd+ _$_38f8[71]+ jP+ _$_38f8[72]+ jM+ _$_38f8[73]+ _$_38f8[74]+ pg+ _$_38f8[75];fJ= fJ+ obj2URIQueryString(of);jsu_log(u+ kU+ _$_38f8[76]+ fJ+ _$_38f8[77]+ pf);var ov=window[_$_38f8[64]](fJ,window,pf);if(ov== undefined){ov=  new Object;ov[_$_38f8[65]]= POPUP_BTN[_$_38f8[15]]}}};jsu_logObj(_$_38f8[78],ov);if(POPUP_OPACITY!= 1&& jG!= undefined){jsu_log(_$_38f8[79]+ pe);jG[_$_38f8[58]][_$_38f8[57]]= pe};jsu_log(u+ _$_38f8[80]);return ov}function pp_showAlert(nW,ns){var u=_$_38f8[29];var ov= new Object();ov[_$_38f8[65]]= POPUP_BTN[_$_38f8[15]];jsu_log(u+ _$_38f8[80]);var cr=msgHtml2Str(ns);if(nW== POPUP_TYPE[_$_38f8[81]]|| nW== POPUP_TYPE[_$_38f8[16]]|| nW== POPUP_TYPE[_$_38f8[82]]|| nW== POPUP_TYPE[_$_38f8[83]]){alert(cr);return null}else {if(nW== POPUP_TYPE[_$_38f8[84]]){if(confirm(cr)){ov[_$_38f8[65]]= POPUP_BTN[_$_38f8[16]]}else {ov[_$_38f8[65]]= POPUP_BTN[_$_38f8[17]]}}else {alert(_$_38f8[85]+ nW+ _$_38f8[86]+ _$_38f8[87]+ cr)}};return ov}function pp_getBrowser(){var u=_$_38f8[88];var kT=navigator[_$_38f8[89]];var kU=POPUP_BROWSER_TYPE_UNKNOWN;if( typeof InstallTrigger!== _$_38f8[90]){kU= POPUP_BROWSER_TYPE_FIREFOX}else {if((navigator[_$_38f8[89]]== APP_NAME_IE)|| ((navigator[_$_38f8[89]]== APP_NAME_IE_11)&& ( new RegExp(_$_38f8[93])[_$_38f8[92]](navigator[_$_38f8[91]])!= null))){kU= POPUP_BROWSER_TYPE_IE}};jsu_log(u+ _$_38f8[94]+ kU+ _$_38f8[95]+ navigator[_$_38f8[96]]+ _$_38f8[97]+ navigator[_$_38f8[89]]);return kU}function pp_getBrowserMode(kU){var u=_$_38f8[98];var oA;if(kU== POPUP_BROWSER_TYPE_IE){oA= POPUP_BROWSER_IE_MODE}else {if(kU== POPUP_BROWSER_TYPE_FIREFOX){oA= POPUP_BROWSER_FIREFOX_MODE}else {oA= POPUP_BROWSER_OTHER_MODE}};return oA}function pp_classInit(nW){var u=_$_38f8[99];jsu_log(u+ _$_38f8[80]);var oj=nW;if(nW== POPUP_TYPE[_$_38f8[100]]){oj= POPUP_TYPE[_$_38f8[84]]};var om=POPUP_TITLE_CLASS_PREFIX+ oj;jsu_log(u+ _$_38f8[101]+ om);jsu_getElementById2(_$_38f8[103])[_$_38f8[102]]= om;var ok=POPUP_IMG_CLASS_PREFIX+ oj;jsu_log(u+ _$_38f8[104]+ ok);jsu_getElementById2(_$_38f8[21])[_$_38f8[102]]= ok;var ol=POPUP_TBLMSG_CLASS_PREFIX+ oj;jsu_log(u+ _$_38f8[105]+ ol);jsu_getElementById2(_$_38f8[22])[_$_38f8[102]]= ol;jsu_log(u+ _$_38f8[80])}function pp_idIsVisible(X){var u=_$_38f8[106];var bJ=jsu_getElementById2(X);if(bJ== null){return alert(u+ _$_38f8[107]+ X+ _$_38f8[108])};return bJ[_$_38f8[58]][_$_38f8[109]]!= _$_38f8[110]}function pp_elShow(bJ,iw){if(iw){bJ[_$_38f8[58]][_$_38f8[109]]= _$_38f8[111];bJ[_$_38f8[58]][_$_38f8[112]]= _$_38f8[113]}else {bJ[_$_38f8[58]][_$_38f8[109]]= _$_38f8[110];bJ[_$_38f8[58]][_$_38f8[112]]= _$_38f8[114]}}function pp_idShow(X,iw){var u=_$_38f8[115];jsu_log(u+ _$_38f8[116]+ X+ _$_38f8[117]+ iw);var bJ=jsu_getElementById2(X);if(bJ== null){return alert(u+ _$_38f8[107]+ X+ _$_38f8[108])};pp_elShow(bJ,iw)}function pp_idHideIfRequired(X,iw){if(!iw){pp_idShow(X,iw)}}function pp_btnInit(of){var u=_$_38f8[118];jsu_log(u+ _$_38f8[80]);var od=jsu_getElementById2(_$_38f8[119]);var oe=jsu_getElementById2(_$_38f8[120]);var oc=jsu_getElementById2(_$_38f8[121]);var nW=of[_$_38f8[50]];var oa=(nW== POPUP_TYPE[_$_38f8[84]]|| nW== POPUP_TYPE[_$_38f8[100]]);var ob=(nW== POPUP_TYPE[_$_38f8[100]]);var oh=(oa)?POPUP_BTN_LABEL[_$_38f8[122]]:POPUP_BTN_LABEL[_$_38f8[16]];var oi=POPUP_BTN_LABEL[_$_38f8[123]];var og=POPUP_BTN_LABEL[_$_38f8[124]];jsu_log(u+ _$_38f8[125]+ oh+ _$_38f8[126]+ oi+ _$_38f8[127]+ og);var B=of[_$_38f8[52]];if(B!= null){if(B[_$_38f8[128]]!= undefined&& B[_$_38f8[128]]!= _$_38f8[129]){oh= B[_$_38f8[128]]};if(B[_$_38f8[130]]!= undefined&& B[_$_38f8[130]]!= _$_38f8[129]){oi= B[_$_38f8[130]]};if(B[_$_38f8[131]]!= undefined&& B[_$_38f8[131]]!= _$_38f8[129]){og= B[_$_38f8[131]]};if(B[_$_38f8[132]]!= undefined&& B[_$_38f8[132]]!= 0){od[_$_38f8[58]][_$_38f8[66]]= B[_$_38f8[132]]+ _$_38f8[133]};if(B[_$_38f8[134]]!= undefined&& B[_$_38f8[134]]!= 0){oe[_$_38f8[58]][_$_38f8[66]]= B[_$_38f8[134]]+ _$_38f8[133]};if(B[_$_38f8[135]]!= undefined&& B[_$_38f8[135]]!= 0){oc[_$_38f8[58]][_$_38f8[66]]= B[_$_38f8[135]]+ _$_38f8[133]}};jsu_log(u+ _$_38f8[136]+ oh+ _$_38f8[126]+ oi+ _$_38f8[127]+ og);od[_$_38f8[137]]= oh;oe[_$_38f8[137]]= oi;oc[_$_38f8[137]]= og;jsu_log(u+ _$_38f8[138]);pp_elShow(oe,oa);pp_elShow(oc,ob);jsu_log(u+ _$_38f8[80])}function pp_optChoiceInit(of){var u=_$_38f8[139];jsu_log(u+ _$_38f8[80]);var B=of[_$_38f8[52]];if(B!= null){if(B[_$_38f8[140]]== undefined){B[_$_38f8[140]]= false};szId= B[_$_38f8[140]]?_$_38f8[141]:_$_38f8[142];jsu_log(u+ _$_38f8[143]+ B[_$_38f8[140]]+ _$_38f8[144]+ szId);pp_idShow(szId+ _$_38f8[145],true);jsu_getElementById2(szId+ _$_38f8[147])[_$_38f8[146]]= B[_$_38f8[148]];var ox=jsu_getElementById2(szId+ _$_38f8[149]);if(B[_$_38f8[140]]){var oT=POPUP_DEF_MULTICHOICE_SIZE;if(B[_$_38f8[150]]!= undefined&& B[_$_38f8[150]]!= null){iSize= B[_$_38f8[150]]};ox[_$_38f8[151]]= iSize;var oR=jsu_getElementById2(_$_38f8[152]);oR[_$_38f8[154]][0][_$_38f8[153]]= POPUP_SELECT_ALL;var oQ=jsu_getElementById2(_$_38f8[155]);oQ[_$_38f8[154]][0][_$_38f8[153]]= POPUP_DESELECT_ALL};for(var c=0;c< B[_$_38f8[157]][_$_38f8[156]];c++){var oU=B[_$_38f8[157]][c];var mf= new Option(oU[_$_38f8[158]],oU[_$_38f8[137]]);mf[_$_38f8[159]]= oU[_$_38f8[158]];mf[_$_38f8[160]]= oU[_$_38f8[161]];ox[ox[_$_38f8[156]]]= mf};var oS=jsu_getElementById2(_$_38f8[162]);var oJ=ox[_$_38f8[163]]+ 15;if(oJ< POPUP_CHOICE_FS_MIN_WIDTH){oJ= POPUP_CHOICE_FS_MIN_WIDTH};oS[_$_38f8[58]][_$_38f8[66]]= oJ+ _$_38f8[133];jsu_log(u+ _$_38f8[164]+ oS[_$_38f8[58]][_$_38f8[66]])};jsu_log(u+ _$_38f8[80])}function pp_optLayoutInit(of){var u=_$_38f8[139];jsu_log(u+ PPLOG_FUN_START);var oX=POPUP_DEF_SHOW_TITLE;var oW=POPUP_DEF_SHOW_IMG;var oV=true;var B=of[_$_38f8[52]];if(B!= null){jsu_logObj(u+ _$_38f8[165],B);if(B[_$_38f8[166]]!= undefined&& B[_$_38f8[166]]!= null){oX= B[_$_38f8[166]]};if(B[_$_38f8[167]]!= undefined&& B[_$_38f8[167]]!= null){oW= B[_$_38f8[167]]};if(B[_$_38f8[168]]!= undefined&& B[_$_38f8[168]]!= null){oV= B[_$_38f8[168]]}};pp_idHideIfRequired(_$_38f8[103],oX);pp_idHideIfRequired(_$_38f8[21],oW);pp_idHideIfRequired(_$_38f8[169],oV);jsu_log(u+ PPLOG_FUN_END)}function pp_promptInit(nW,B){var u=_$_38f8[170];jsu_log(u+ _$_38f8[80]);pp_idShow(_$_38f8[171],false);if(nW== POPUP_TYPE[_$_38f8[172]]){pp_idShow(_$_38f8[171],true);if(B!= null){if(B[_$_38f8[173]]&& B[_$_38f8[173]][_$_38f8[156]]){jsu_getElementById2(_$_38f8[174])[_$_38f8[146]]= B[_$_38f8[173]]};var ou=jsu_getElementById2(_$_38f8[175]);if(B[_$_38f8[176]]&& B[_$_38f8[176]][_$_38f8[156]]){jsu_log(u+ _$_38f8[177]+ B[_$_38f8[176]]);ou[_$_38f8[137]]= B[_$_38f8[176]]};szPromptType= (B[_$_38f8[178]])?B[_$_38f8[178]]:PROMPT_TYPE[_$_38f8[179]];var pa=(szPromptType== PROMPT_TYPE[_$_38f8[180]]);ou[_$_38f8[182]](_$_38f8[181],szPromptType);var pc=null,pb=null;var oZ=false,oY=false;if(B[_$_38f8[183]]&& !isNaN(B[_$_38f8[183]])){ou[_$_38f8[182]](_$_38f8[58],_$_38f8[184]+ B[_$_38f8[183]]+ _$_38f8[73])}else {ou[_$_38f8[182]](_$_38f8[58],_$_38f8[184]+ (pa?POPUP_DEF_PROMPT_NUMBER_W:POPUP_DEF_PROMPT_STRING_W)+ _$_38f8[73])};if(B[_$_38f8[185]]&& !isNaN(B[_$_38f8[185]])){oY= true;iPromptMax= B[_$_38f8[185]];ou[_$_38f8[182]](_$_38f8[186],iPromptMax);if(!pa){ou[_$_38f8[182]](_$_38f8[187],iPromptMax)}}else {ou[_$_38f8[188]](_$_38f8[186]);ou[_$_38f8[188]](_$_38f8[187])};if(B[_$_38f8[189]]&& !isNaN(B[_$_38f8[189]])){oZ= true;iPromptMin= B[_$_38f8[189]];ou[_$_38f8[182]](_$_38f8[190],iPromptMin)}else {ou[_$_38f8[188]](_$_38f8[190])};ou[_$_38f8[191]]();var na=(pa)?POPUP_PROMPT_TIP[_$_38f8[180]]:POPUP_PROMPT_TIP[_$_38f8[179]];if(oZ|| oY){na= (pa)?POPUP_PROMPT_TIP[_$_38f8[192]]:POPUP_PROMPT_TIP[_$_38f8[193]];if(oZ&& oY){na+= _$_38f8[194]+ iPromptMin+ _$_38f8[195]+ iPromptMax+ _$_38f8[196]}else {if(oY){na+= _$_38f8[194]+ 0+ _$_38f8[195]+ iPromptMax+ _$_38f8[196]}else {if(oZ){na+= _$_38f8[194]+ iPromptMin+ _$_38f8[197]}}}};ou[_$_38f8[182]](_$_38f8[198],na)}};jsu_log(u+ _$_38f8[80])}function pp_getHeight(){var u=_$_38f8[199];var oB=document[_$_38f8[200]](_$_38f8[169]);var jH=oB[_$_38f8[201]]();var jG=document[_$_38f8[202]];var jK=document[_$_38f8[203]];var jO=window[_$_38f8[204]]|| jK[_$_38f8[205]]|| jG[_$_38f8[205]];var jJ=jK[_$_38f8[206]]|| jG[_$_38f8[206]]|| 0;var jP=jH[_$_38f8[207]]+ jO- jJ;var oC=Math[_$_38f8[208]](jP)+ oB[_$_38f8[209]];jsu_log(u+ _$_38f8[210]+ oC);return oC}function getTextWidth(fM,lo){var ln=getTextWidth[_$_38f8[211]]|| (getTextWidth[_$_38f8[211]]= document[_$_38f8[212]](_$_38f8[211]));if(ln== undefined|| ln[_$_38f8[213]]== undefined){return 0};var fz=ln[_$_38f8[213]](_$_38f8[214]);fz[_$_38f8[215]]= lo;var lp=fz[_$_38f8[216]](fM);return lp[_$_38f8[66]]}function pp_getTitle(of){var B=of[_$_38f8[52]];var na=(B)?B[_$_38f8[217]]:null;var nW=of[_$_38f8[50]];if( typeof (na)== undefined|| na== null|| na== _$_38f8[129]){if(nW== POPUP_TYPE[_$_38f8[81]]){return POPUP_DEF_TITLE[_$_38f8[81]]}else {if(nW== POPUP_TYPE[_$_38f8[83]]){return POPUP_DEF_TITLE[_$_38f8[83]]}else {if(nW== POPUP_TYPE[_$_38f8[82]]){return POPUP_DEF_TITLE[_$_38f8[82]]}else {if(nW== POPUP_TYPE[_$_38f8[16]]){return POPUP_DEF_TITLE[_$_38f8[16]]}else {if(nW== POPUP_TYPE[_$_38f8[218]]){return POPUP_DEF_TITLE[_$_38f8[218]]}else {if(nW== POPUP_TYPE[_$_38f8[172]]){return POPUP_DEF_TITLE[_$_38f8[172]]}else {if(nW== POPUP_TYPE[_$_38f8[84]]|| nW== POPUP_TYPE[_$_38f8[100]]){return POPUP_DEF_TITLE[_$_38f8[84]]}else {if(nW== POPUP_TYPE[_$_38f8[219]]){return POPUP_DEF_TITLE[_$_38f8[219]]}else {if(nW== POPUP_TYPE[_$_38f8[172]]){return POPUP_DEF_TITLE[_$_38f8[172]]}}}}}}}}}}else {return na}}function pp_ValidateInput(ou){var u=_$_38f8[220];jsu_log(u+ _$_38f8[80]);var pj=ou[_$_38f8[137]];jsu_log(u+ _$_38f8[221]+ pj);var H=ou[_$_38f8[222]](_$_38f8[181]);var pa=(H== PROMPT_TYPE[_$_38f8[180]]);var iD=(pj)?pj[_$_38f8[156]]:0;var pc=parseInt(ou[_$_38f8[222]](_$_38f8[190]));var pb=parseInt(ou[_$_38f8[222]](_$_38f8[186]));if(isNaN(pc)){pc= null};if(isNaN(pb)){pb= null};if(pa){pj= parseInt(pj)};var ci=false;if(pa){jsu_log(u+ _$_38f8[223]+ pj+ _$_38f8[224]);ci= (isNaN(pj))};if(!ci&& pc){jsu_log(u+ _$_38f8[225]+ pc+ _$_38f8[226]+ H);if(pa&& pc> pj){ci= true};if(!pa&& pc> iD){ci= true}};if(!ci&& pb){jsu_log(u+ _$_38f8[227]+ pb+ _$_38f8[226]+ H);if(pa&& pb< pj){ci= true};if(!pa&& pb< iD){ci= true}};if(ci){var na=ou[_$_38f8[222]](_$_38f8[198]);jsu_log(u+ _$_38f8[228]+ pj+ _$_38f8[229]+ na);var pi=jsu_getElementById2(_$_38f8[230]);pi[_$_38f8[146]]= na;elementShow(pi,true,_$_38f8[111]);ou[_$_38f8[182]](_$_38f8[231],_$_38f8[230]);return 1};return jsu_log(u+ _$_38f8[80])}function pp_close(ov){var u=_$_38f8[232];jsu_log(u+ _$_38f8[80]);var os=(ov&& ov[_$_38f8[65]]== POPUP_BTN[_$_38f8[16]]);jsu_log(u+ _$_38f8[233]+ os);if(os){var ot=pp_idIsVisible(_$_38f8[171]);if(ot){var ou=jsu_getElementById2(_$_38f8[175]);if(pp_ValidateInput(ou)){return};ov[_$_38f8[234]]= ou[_$_38f8[137]]};var or=pp_idIsVisible(_$_38f8[235]);var oq=pp_idIsVisible(_$_38f8[236]);if(or|| oq){jsu_log(u+ _$_38f8[237]);var mS=(or)?_$_38f8[238]:_$_38f8[239];var ox=jsu_getElementById2(mS);var nX= new Array();var oz=_$_38f8[129];var oy=_$_38f8[129];var nd=_$_38f8[129];for(var iP=0;iP< ox[_$_38f8[240]][_$_38f8[156]];iP++){var ix=ox[_$_38f8[240]][iP];var oo={value:ix[_$_38f8[137]],szText:ix[_$_38f8[241]],bSel:ix[_$_38f8[160]]};if(ix[_$_38f8[160]]){oz+= (nd+ ix[_$_38f8[137]]);oy+= (nd+ ix[_$_38f8[241]]);if(nd== _$_38f8[129]){nd= _$_38f8[242]}};nX[_$_38f8[243]](oo)};ov[_$_38f8[244]]= oz;ov[_$_38f8[245]]= oy;ov[_$_38f8[157]]= nX}};window[_$_38f8[246]]= ov;jsu_logObj(u+ _$_38f8[247],window[_$_38f8[246]]);jsu_log(u+ _$_38f8[80]);window[_$_38f8[248]]()}function pp_onClickConfirm(){var u=_$_38f8[249];pp_close({retBtn:POPUP_BTN[_$_38f8[16]]})}function pp_deselectAll(){var ox=jsu_getElementById2(_$_38f8[239]);for(var iP=0;iP< ox[_$_38f8[240]][_$_38f8[156]];iP++){ox[_$_38f8[240]][iP][_$_38f8[160]]= false}}function pp_SelectAll(){var ox=jsu_getElementById2(_$_38f8[239]);for(var iP=0;iP< ox[_$_38f8[240]][_$_38f8[156]];iP++){ox[_$_38f8[240]][iP][_$_38f8[160]]= true}}function pp_onResize(){var u=_$_38f8[250];var dt=window[_$_38f8[251]];var eD=window[_$_38f8[252]];if(dt!= undefined&& eD!= undefined){var oF=document[_$_38f8[200]](_$_38f8[253]);var oP=dt- 16;if(popup_bScroll){oP-= 20};jsu_log(u+ _$_38f8[254]+ oF[_$_38f8[163]]+ _$_38f8[255]+ oP);oF[_$_38f8[58]][_$_38f8[66]]= oP+ _$_38f8[133]}}function pp_onClickNo(){var u=_$_38f8[256];pp_close({retBtn:POPUP_BTN[_$_38f8[17]]})}function pp_onClickCancel(){var u=_$_38f8[256];pp_close({retBtn:POPUP_BTN[_$_38f8[18]]})}function pp_onLoad(){var u=_$_38f8[257];var of=null;var kU=pp_getBrowser();var oO=location[_$_38f8[258]];if(oO[_$_38f8[156]]){of= objFromURIQueryString(oO)}else {of= window[_$_38f8[259]]};if(of== undefined){of=  new Object();of[_$_38f8[51]]= _$_38f8[260];of[_$_38f8[261]]= true;of[_$_38f8[262]]= 7;of[_$_38f8[41]]= POPUP_DEF_WIDTH;of[_$_38f8[50]]= POPUP_TYPE[_$_38f8[218]];of[_$_38f8[52]]= {szChoiceLabel:_$_38f8[263],arChoice:[{value:1,szText:_$_38f8[264],bSel:false},{value:2,szText:_$_38f8[265],bSel:false},{value:3,szText:_$_38f8[266],bSel:true},{value:4,szText:_$_38f8[267],bSel:false}],bChoiceMultiSel:true,iChoiceMultiSize:4}};var oM=of[_$_38f8[53]];if(oM&& oM[_$_38f8[268]]> 0){var B= new Object();B[_$_38f8[269]]= oM[_$_38f8[269]];var oN=oM[_$_38f8[270]];if(oN[_$_38f8[272]](_$_38f8[271])== 0){oN= oN[_$_38f8[273]](3)};B[_$_38f8[270]]= oN;jslog_init(oM[_$_38f8[268]],B)};jsu_log(u+ PPLOG_FUN_START);var B=of[_$_38f8[52]];var oD=POPUP_DEF_CLOSE_ON_ESCAPE;if(B&& B[_$_38f8[274]]!= undefined){oD= B[_$_38f8[274]]};if(oD){document[_$_38f8[275]]= function(ed){if(ed[_$_38f8[276]]=== 27){pp_close({retBtn:POPUP_BTN[_$_38f8[15]]});;}}};var oE=POPUP_DEF_RESIZE;jsu_log(u+ _$_38f8[277]+ oE);if(B&& B[_$_38f8[45]]!= undefined){oE= B[_$_38f8[45]]};if(oE){jsu_log(u+ _$_38f8[278]);document[_$_38f8[202]][_$_38f8[279]]= function(){pp_onResize()}};if(of[_$_38f8[63]]!= undefined&& of[_$_38f8[63]]){jsu_log(u+ _$_38f8[280]);loadingShowByEl(of[_$_38f8[63]],false)};of[_$_38f8[63]]= null;jsu_logObj(u+ _$_38f8[54],of);jsu_log(u+ _$_38f8[281]);var na=pp_getTitle(of);var B=of[_$_38f8[52]];jsu_log(u+ _$_38f8[282]+ na);document[_$_38f8[198]]= na;jsu_getElementById2(_$_38f8[23])[_$_38f8[146]]= na;var nW=of[_$_38f8[50]];pp_classInit(nW);pp_btnInit(of);if(nW== POPUP_TYPE[_$_38f8[218]]){pp_optChoiceInit(of)};pp_optLayoutInit(of);pp_promptInit(nW,B);var oG=jsu_getElementById2(_$_38f8[283]);oG[_$_38f8[146]]= of[_$_38f8[51]];var ns=of[_$_38f8[51]];var oC=POPUP_DEF_HEIGHT;if(B&& B[_$_38f8[42]]){oC= B[_$_38f8[42]]}else {oC= pp_getHeight()};if(oC> POPUP_MAX_HEIGHT){oC= POPUP_MAX_HEIGHT};if(kU== POPUP_BROWSER_TYPE_IE){jsu_log(u+ kU+ _$_38f8[284]+ oC);window[_$_38f8[285]]= oC+ _$_38f8[133]}else {oC+= 8;jsu_log(u+ _$_38f8[286]+ oC);if(window[_$_38f8[287]]!= undefined){jsu_log(u+ kU+ _$_38f8[288]+ oC);window[_$_38f8[287]]= oC};if(window[_$_38f8[67]][_$_38f8[68]]!= undefined&& window[_$_38f8[67]][_$_38f8[66]]!= undefined){var oH=window[_$_38f8[67]][_$_38f8[68]];var oI=window[_$_38f8[67]][_$_38f8[66]];var oL=parseInt((oH- oC)/ 2);var oK=parseInt((oI- of[_$_38f8[41]])/ 2);window[_$_38f8[289]](oK,oL)}};popup_bScroll= (B!= null&& B[_$_38f8[43]]!= undefined&& B[_$_38f8[43]]!= null&& B[_$_38f8[43]]);if(popup_bScroll){var oF=document[_$_38f8[200]](_$_38f8[253]);var oJ=oF[_$_38f8[163]];jsu_log(u+ _$_38f8[290]+ oF[_$_38f8[163]]+ _$_38f8[291]+ oF[_$_38f8[58]][_$_38f8[66]]);oJ-= 20;oF[_$_38f8[58]][_$_38f8[66]]= oJ+ _$_38f8[133];jsu_log(u+ _$_38f8[292]+ oF[_$_38f8[163]]+ _$_38f8[291]+ oF[_$_38f8[58]][_$_38f8[66]]);oC+= 20};jsu_log(u+ _$_38f8[293]+ oC);window[_$_38f8[285]]= oC+ _$_38f8[133];jsu_log(u+ PPLOG_FUN_END)}function PopupSetPathHtml(nZ){popupPathHtml= nZ}function Popup(nW,ns,B){return pp_show(nW,ns,B)}function PopupChoice(ns,nY,nX,B){var fE=_$_38f8[294];if(B== undefined|| B== null){B=  new Array()};jsu_log(fE+ _$_38f8[295]+ nY);B[_$_38f8[148]]= nY;B[_$_38f8[157]]= nX;jsu_logObj(fE+ _$_38f8[52],B);return pp_show(POPUP_TYPE[_$_38f8[218]],ns,B)}function isIEPopup(){return true}
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/Popup/Popup.js  <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>IEPopup Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/IEPopup.html" target="_blank">JSU IEPopup Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Description:</b>       IE Popup API, designed specifically for IE (it uses <b><i>ShowModalDialog API</i></b>) <BR/>   
+<b>REQUIRED:</b>          From JSU: <ul>
+                            <li><b>CSS:</b> core/core.css core/Popup.css </li>
+                            <li><b>JS</b> core/util.js </li>
+                            <li><b>OPTIONAL JS:</b> core/jslog.js, core/dom-drag.js (required only to enable jslog)</li>
+                          </ul>
+<b>First Version:</b>     1.0 Feb 2014  <BR/>
+<b>Current Version:</b>   3.3 Jul 2016    <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+
+
+/* ====================================================================================================
+ *          CONFIGURATION
+ ====================================================================================================*/
+var POPUP_DEF_WIDTH = 600;  
+var POPUP_DEF_CLOSE_ON_ESCAPE = true; // default: close on ESC
+var POPUP_DEF_RESIZE = false; // default
+
+//OPacity that will be set to the underline Window during Popup Dialog Display.  SET to 1.0 to SKIP this Feature
+var POPUP_OPACITY = 0.5;
+
+var POPUP_HTML="Popup.html";
+
+// Default Number of Item to disaplay in selectChoice for Multi. It can be changed with Opt
+var POPUP_DEF_MULTICHOICE_SIZE = 5;
+var POPUP_MAX_HEIGHT = 900;  
+// var POPUP_MIN_HEIGHT = 160;  
+
+// ---------------------------------------- BROWSER
+// ------------------- POssible configuration for the various Browser
+// Always Popup
+var POPUP_BROWSER_MODE_POPUP = "POPUP";   
+//---------------------------------
+
+// NOTE: For ALERT MODE, only Popup mapped to alert are supported
+// Always simple JS alert
+var POPUP_BROWSER_MODE_ALERT = "ALERT"; 
+
+// ONLY Sperimental case, culd be used for Firefox
+// Popup with Url Parameter for Popup with NoReturnCode: Info, Warning, Err, About, alse ALERT 
+var POPUP_BROWSER_MODE_POPUP_URL = "POPUP_URL";  
+
+// ------------------------- IEPopup configuration per BRowser
+//---------------- ENABLE/DISAMPLE POPUP in Browser: Popup ONLY for IE, Alert for Other
+var POPUP_BROWSER_IE_MODE = POPUP_BROWSER_MODE_POPUP;
+//changed to Alert because ShowModalDialg is deprecated in Firefox and it will be removed very soon
+// Can be change for TEST
+var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_POPUP_URL;
+//var POPUP_BROWSER_FIREFOX_MODE = POPUP_BROWSER_MODE_ALERT;  
+
+
+var POPUP_BROWSER_OTHER_MODE = POPUP_BROWSER_MODE_ALERT;
+
+
+// ---------------------------------------- DEFAULT LAYOUT
+// Default: Show Image (Info, Warn,..) On the Left of Message   (set false to hide)
+var POPUP_DEF_SHOW_IMG = true;
+//Default: Show Title Bar on The Top  (set false to hide)
+var POPUP_DEF_SHOW_TITLE = true;
+// Default
+var POPUP_DEF_RESIZE = false;
+var POPUP_DEF_PROMPT_NUMBER_W = 50;
+var POPUP_DEF_PROMPT_STRING_W = 200;
+
+
+//---- log
+var PPLOG_FUN_START = "-------------- START";
+var PPLOG_FUN_END = "-------------- END";
+
+
+ /* ====================================================================================================
+ *          GLOBAL COSTANT
+ ====================================================================================================*/
+// 
+/**
+ * Popup() szPopupType par <BR/>
+ * NOTE: DO NOT Change this values: they are used also to compose the img class e.g PopupInfo, PopupConfirm,..
+ */
+var POPUP_TYPE = {
+    INFO: "Info",
+    CONFIRM: "Confirm",
+    ERR:"Error",
+    ALARM:"Alarm",
+    WARN:"Warning",
+    QUESTION:"Question", // Question with YES NO
+    QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL
+    PROMPT:"Prompt", // Prompt to insert one value
+    CHOICE:"Choice" // Choice in a select
+  };
+
+/**
+ * Popup() return
+ */
+var POPUP_BTN = {
+    CLOSE: "CLOSE",    /* Close on x of Window */
+    CONFIRM: "CONFIRM", /* BTN OK (YES) */
+    NO: "NO", /* BTN NO */ 
+    CANCEL: "CANCEL"  /* BTN CANCEL */
+};
+
+//-----------------
+
+/**
+ * Option iPromptType for POPUP_TYPE.PROMPT
+ */
+var PROMPT_TYPE = {
+    NUMBER: "number",
+    STRING: "string"
+  };
+
+
+
+ /* ====================================================================================================
+ *          INTERNAL CONSTANT
+ ====================================================================================================*/
+var POPUP_IMG_CLASS_PREFIX = "PopupImg";  // e.g PopupImgInfo, PopupImgConfirm,..
+var POPUP_TBLMSG_CLASS_PREFIX = "PopupTblMsg";  // e.g PopupTblMsgInfo, 
+var POPUP_TITLE_CLASS_PREFIX = "PopupTitle";  // e.g PopupTitleInfo, 
+var POPUP_DEF_HEIGHT = 200;  /* It is recalculed by DLG after Display */
+
+
+//-----------
+var POPUP_BROWSER_TYPE_IE = "IE";
+var POPUP_BROWSER_TYPE_FIREFOX = "Firefox";
+var POPUP_BROWSER_TYPE_UNKNOWN = "BrowserUnknown";
+
+var POPUP_CHOICE_FS_MIN_WIDTH=200; // Min width to allow SelectAll DeselectAll
+
+
+//navigator.appName  values
+var APP_NAME_FIREFOX="Netscape";   // FIREFOX
+var APP_NAME_IE="Microsoft Internet Explorer";   // IE
+var APP_NAME_IE_11="Netscape";   // IE 11
+
+
+/* ====================================================================================================
+ *         GLOBAL VAR
+ ====================================================================================================*/
+var popupPathHtml = JSU_PATH_POPUP_HTML;
+// Current Dlg Status
+var popup_bScroll = false;
+
+
+
+//===================================================================================
+//        LOCAL FUNCTION
+//===================================================================================
+
+/*
+ * MAIN Local Function. Depending on BRowser and Configuration. 
+ *    See also PopupOnLoad for Main initialization Event
+ *  a) showModalDialog  (e.g IE) with simple URL
+ *  b) showModalDialog  (e.g Firefox) with URUQueryString
+ *  c) alert
+ * 
+ * 
+* @param szPopupType {String}  POPUP_TYPE.INFO, POPUP_TYPE.WARN, POPUP_TYPE.ERR 
+* @param szMsgHtml {String}  HTML TAG are Accepted (e.g <b>, <br/>,..)   also /n is present is accepted as NewLine
+* @param [objOpt]   [Object]}    Optional Object with the Option - see Popup()
+* * @return {Object}  retObj 
+*                           Example:
+*                           {  
+*                             retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL
+*                           }  
+*/
+function pp_show(szPopupType,szMsgHtml,objOpt){
+  var Fn = "[Popup.js pp_show] ";
+  
+  jsu_log (Fn + "------------------- START");
+  jsu_log (Fn + "IN: szPopupType=" + szPopupType);
+  jsu_logObj (Fn + "IN: objOpt=", objOpt);
+  var szBrowser = pp_getBrowser();
+  var szBrowserMode = pp_getBrowserMode(szBrowser); 
+  jsu_log (Fn + " szBrowser=" + szBrowser + "  szBrowserMode=" + szBrowserMode);
+  if (szBrowserMode == POPUP_BROWSER_MODE_ALERT){
+    return pp_showAlert(szPopupType,szMsgHtml);
+  }
+  szMsgHtml =   strReplaceAll(szMsgHtml,"\n","<BR/>");
+  //  Init
+  var iWidth = POPUP_DEF_WIDTH;
+  var iHeight = POPUP_DEF_HEIGHT;
+  var szScroll = "scroll=no;";  // Default
+  // Default
+  var szResize = (POPUP_DEF_RESIZE) ? "resizable=yes;" : "resizable=no;";
+  if ((typeof(jslog) == "function" && jslogGetLogLev() > 0)){
+    szResize = "resizable=yes;";
+  }
+  if (objOpt != null){
+    if (objOpt.iWidth != undefined && objOpt.iWidth != null && objOpt.iWidth){
+      iWidth = objOpt.iWidth;
+    }
+    if (objOpt.iHeight != undefined && objOpt.iHeight != null && objOpt.iHeight){
+      iHeight = objOpt.iHeight;
+    }
+    if (objOpt.bScroll != undefined && objOpt.bScroll != null && objOpt.bScroll){
+      szScroll = "scroll=yes;";  
+    }
+    if (objOpt.bResize != undefined &&  objOpt.bResize){
+      szResize = "resizable=yes;";  
+    }
+  }  
+  var szFeatures = "dialogWidth=" + iWidth +"px; dialogHeight=" + iHeight + "px; " + szScroll + szResize + "center=yes;" ;
+  //  Pass Obj with Par
+  var parIn = new Object();
+  parIn.szPopupType  = szPopupType;
+  parIn.iHeight= iHeight;
+  parIn.szMsgHtml = szMsgHtml;
+  parIn.objOpt = objOpt;
+  parIn.iWidth = iWidth;
+  if (typeof(jslog) == "function"){
+    parIn.objJslogOpt = jslogGetOpt();
+  }else{
+  	parIn.objJslogOpt ={iLogLev : 0};
+  }
+  	
+  
+  var url = popupPathHtml + POPUP_HTML;
+  jsu_logObj ("parIn",parIn);
+  // Change Opacity of Underline Window, if required
+  if (POPUP_OPACITY != 1){
+    var body = document.getElementsByTagName("BODY")[0];
+    var iOpacity = body .style.opacity;
+    jsu_log ("From iOpacity=" + iOpacity + " To " + POPUP_OPACITY);
+    body.style.opacity = POPUP_OPACITY ;
+  }
+  //============================================== 
+  if (szBrowserMode == POPUP_BROWSER_MODE_POPUP){
+    jsu_log ( Fn + szBrowser + " url=" + url + " szFeatures=" + szFeatures);
+    loadingShow (true); 
+    parIn.elLoading = loadingGetEl(); // Loading bElement (if Present, else 0)
+    var retObj = window.showModalDialog(url, parIn, szFeatures);
+    if (retObj == undefined){
+      // Close with x on Window
+      retObj = new Object;
+      retObj.retBtn   = POPUP_BTN.CLOSE;
+    }
+    loadingShow (false);  
+  }else if (szBrowserMode == POPUP_BROWSER_MODE_POPUP_URL){
+    // Pass par in teh URL
+    //   - center does not work and we have to manually center at startup to avoid bad "Moving Effect" (however we cebnter the Popup after displaying it)
+    //   - we need Global var to pass parameter
+    var left = (window.screen.width/2)-(iWidth/2);
+    var top = (window.screen.height/2)-(iHeight/2);
+    // var szFeatures = "dialogWidth=" + iWidth +"px; dialogHeight=" + iHeight + "px; scroll=no; center=yes; resizable=" + szResize;
+    szFeatures = "center=yes;dialogWidth=" + iWidth +"px; dialogHeight:" + iHeight + "px; dialogTop:" + top + "px; dialogLeft:" + left + "px;" +   
+      "directories:no;titlebar:no;toolbar:no;location:no;status:no;menubar:no;scroll=no;resizable=" + szResize +";";
+    // ------------------- 
+    url = url +  obj2URIQueryString(parIn);
+    jsu_log ( Fn + szBrowser + "\nurl=" + url + "\nszFeatures=" + szFeatures);
+    var retObj = window.showModalDialog(url, window, szFeatures);
+    if (retObj == undefined){
+      // Close with x on Window
+      retObj = new Object;
+      retObj.retBtn   = POPUP_BTN.CLOSE;
+    }
+  }
+  jsu_logObj ("retObj", retObj);
+  // Restore original opacity
+  if (POPUP_OPACITY != 1 && body != undefined){
+    jsu_log ("Restore iOpacity=" + iOpacity);
+    body.style.opacity = iOpacity ;
+  }  
+  jsu_log (Fn + "-------------------");
+  return retObj;
+}  
+
+
+
+
+
+/*
+ *  Show alert
+ * 
+ * 
+* @param szPopupType {String}  POPUP_TYPE.INFO, POPUP_TYPE.WARN, POPUP_TYPE.ERR 
+* @param szMsgHtml {String}  HTML TAG are Accepted (e.g <b>, <br/>,..)   also /n is present is accepted as NewLine
+* @return {Object}  retObj 
+*                           Example:
+*                           {  
+*                             retBtn {String} POPUP_BTN.CLOSE,POPUP_BTN.CONFIRM, POPUP_BTN.NO
+*                           }  
+*/
+function pp_showAlert(szPopupType,szMsgHtml){
+  var Fn = "[Popup.js pp_show] ";
+  var retObj = new Object();
+  
+  retObj.retBtn   = POPUP_BTN.CLOSE; // DEFAULT
+  
+  jsu_log (Fn + "-------------------");
+  var szMsg =  msgHtml2Str (szMsgHtml);
+  if (szPopupType == POPUP_TYPE.INFO || szPopupType == POPUP_TYPE.CONFIRM || szPopupType == POPUP_TYPE.ERR || szPopupType == POPUP_TYPE.WARN){
+    alert (szMsg);       
+    return null;
+  }else if (szPopupType == POPUP_TYPE.QUESTION){
+    if (confirm(szMsg)){
+      retObj.retBtn   = POPUP_BTN.CONFIRM; 
+    }else{
+      retObj.retBtn   = POPUP_BTN.NO; 
+    } 
+  }else {
+    alert ("ERROR: PopupType=" + szPopupType + " is NOT SUPPORTED with this Browser.\n\n" +
+        "Message was:\n" + szMsg);
+  }
+  return retObj;
+}  
+
+
+
+
+
+
+/*
+ * @returns {String}    POPUP_BROWSER_TYPE_IE, POPUP_BROWSER_TYPE_FIREFOX, POPUP_BROWSER_TYPE_OTHER
+ */
+function pp_getBrowser(){
+  var Fn = "[Popup.js pp_getBrowser] ";
+  
+  var szAppName = navigator.appName;
+  var szBrowser = POPUP_BROWSER_TYPE_UNKNOWN; 
+  // if (navigator.appName == APP_NAME_FIREFOX ){
+  if  (typeof InstallTrigger !== 'undefined'){
+    szBrowser = POPUP_BROWSER_TYPE_FIREFOX;
+  } else  if  ((navigator.appName == APP_NAME_IE) || 
+      ((navigator.appName == APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){     
+    szBrowser = POPUP_BROWSER_TYPE_IE;
+  }  
+  jsu_log (Fn + "szBrowser=" + szBrowser + " -  navigator.appCodeName=" + navigator.appCodeName + "  navigator.appName=" + navigator.appName);
+  return szBrowser;
+}
+
+
+
+/*
+ * @param  szBrowser{String}    POPUP_BROWSER_TYPE_IE, POPUP_BROWSER_TYPE_FIREFOX, POPUP_BROWSER_TYPE_OTHER
+ * @returns szBrowserMode{String}    POPUP_BROWSER_MODE_POPUP, POPUP_BROWSER_MODE_ALERT, POPUP_BROWSER_MODE_POPUP_URL
+ */
+function pp_getBrowserMode(szBrowser){
+  var Fn = "[Popup.js pp_getBrowserMode] ";
+  var szBrowserMode;
+  
+  if (szBrowser == POPUP_BROWSER_TYPE_IE){
+    szBrowserMode = POPUP_BROWSER_IE_MODE; 
+  }else if (szBrowser == POPUP_BROWSER_TYPE_FIREFOX){
+    szBrowserMode = POPUP_BROWSER_FIREFOX_MODE; 
+  }else{
+    szBrowserMode = POPUP_BROWSER_OTHER_MODE; 
+  }
+  return szBrowserMode; 
+}
+
+/*
+ * Init Class of Layout Objects
+ * @param szPopupType {String} in  
+ */
+function pp_classInit(szPopupType){
+  var Fn = "[Popup.js pp_classInit] ";
+  jsu_log (Fn + "-------------------");
+
+  // Get Class
+  var szClassId = szPopupType;
+  if (szPopupType == POPUP_TYPE.QUESTION_3){
+    szClassId = POPUP_TYPE.QUESTION; // Mapped to the same Class
+  }
+  //---------------
+  var szTitleClassName = POPUP_TITLE_CLASS_PREFIX + szClassId;
+  jsu_log (Fn + "set PopupTblHea className=" + szTitleClassName);
+  jsu_getElementById2("PopupTblHea").className = szTitleClassName;
+  //---------------
+  var szImgClassName = POPUP_IMG_CLASS_PREFIX + szClassId;
+  jsu_log (Fn + "set PopupImg className=" + szImgClassName);
+  jsu_getElementById2("PopupImg").className = szImgClassName;
+  //---------------
+  var szTblMsgClassName = POPUP_TBLMSG_CLASS_PREFIX + szClassId;
+  jsu_log (Fn + "set PopupTblMsg className=" + szTblMsgClassName);
+  jsu_getElementById2("PopupTblMsg").className = szTblMsgClassName;
+  jsu_log (Fn + "-------------------");
+}
+
+
+
+
+
+/*
+ * @param el
+ * @param bShow
+ */
+function pp_idIsVisible (szId){
+  var Fn = "[Popup.js pp_idIsVisible] ";
+  var el = jsu_getElementById2(szId);
+  if (el == null){
+    return alert (Fn + "SW ERROR szId=" + szId + "   NOT FOUND");
+  }
+  return  el.style.display != "none";
+}
+
+
+
+/*
+ * @param el
+ * @param bShow
+ */
+function pp_elShow (el, bShow){
+  if (bShow){
+    el.style.display= "inline";
+    el.style.visibility="visible";
+  }else{
+    el.style.display= "none";
+    el.style.visibility="hidden";
+  }
+}  
+
+/*
+ * @param szId
+ * @param bShow
+ */
+function pp_idShow (szId, bShow){
+  var Fn = "[Popup.js pp_idShow] ";
+
+  jsu_log (Fn + "szId=" + szId  + " bShow=" + bShow);
+  var el = jsu_getElementById2(szId);
+  if (el == null){
+    return alert (Fn + "SW ERROR szId=" + szId + "   NOT FOUND");
+  }
+  pp_elShow (el,bShow);
+}  
+
+
+/*
+ * Only if bShow = false we Hide szId
+ * @param szId
+ * @param bShow
+ */
+function pp_idHideIfRequired (szId, bShow){
+  if (!bShow){
+    pp_idShow (szId,bShow);
+  }  
+}  
+
+
+/*
+ * Init Btn and its Option if present
+ * @param parIn {Object} in  
+ */
+function pp_btnInit(parIn){
+  var Fn = "[Popup.js pp_btnInit] ";
+  jsu_log (Fn + "-------------------");
+  var elBtnConfirm = jsu_getElementById2("PopupConfirm");
+  var elBtnNo= jsu_getElementById2("PopupNo");
+  var elBtnCancel = jsu_getElementById2("PopupCancel");
+  var szPopupType = parIn.szPopupType; 
+  var bQuestion = (szPopupType == POPUP_TYPE.QUESTION || szPopupType == POPUP_TYPE.QUESTION_3); 
+  var bQuestion3 = (szPopupType == POPUP_TYPE.QUESTION_3); 
+  // Default
+  var szConfirmLabel = (bQuestion) ?  POPUP_BTN_LABEL. QUESTION_CONFIRM :  POPUP_BTN_LABEL. CONFIRM; 
+  var szNoLabel =  POPUP_BTN_LABEL. QUESTION_NO;
+  var szCancelLabel =  POPUP_BTN_LABEL. QUESTION_CANCEL;
+  jsu_log (Fn + "Default Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
+  var objOpt = parIn.objOpt;
+  if (objOpt != null){
+    if (objOpt.szConfirmLabel != undefined && objOpt.szConfirmLabel != ""){
+      szConfirmLabel = objOpt.szConfirmLabel; 
+    }
+    if (objOpt.szNoLabel != undefined && objOpt.szNoLabel != ""){
+      szNoLabel = objOpt.szNoLabel; 
+    }
+    if (objOpt.szCancelLabel != undefined && objOpt.szCancelLabel != ""){
+      szCancelLabel = objOpt.szCancelLabel; 
+    }
+    // ------------ width
+    if (objOpt.iConfirmWidth!= undefined && objOpt.iConfirmWidth != 0){
+      elBtnConfirm.style.width = objOpt.iConfirmWidth + "px"; 
+    }
+    if (objOpt.iNoWidth!= undefined && objOpt.iNoWidth != 0){
+      elBtnNo.style.width = objOpt.iNoWidth + "px"; 
+    }
+    if (objOpt.iCancelWidth!= undefined && objOpt.iCancelWidth != 0){
+      elBtnCancel.style.width = objOpt.iCancelWidth + "px"; 
+    }
+  }
+  jsu_log (Fn + "SET BTN  Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
+  elBtnConfirm.value = szConfirmLabel; 
+  elBtnNo.value = szNoLabel; 
+  elBtnCancel.value = szCancelLabel; 
+  jsu_log (Fn + "Set Btn Visibility");
+  pp_elShow (elBtnNo,bQuestion);
+  pp_elShow (elBtnCancel,bQuestion3);
+  jsu_log (Fn + "-------------------");
+}  
+
+
+/*
+ * Init OptionChoice if present 
+ * @param parIn {Object} in  
+ */
+function pp_optChoiceInit(parIn){
+  var Fn = "[Popup.js pp_optChoiceInit] ";
+  jsu_log (Fn + "-------------------");
+  var objOpt = parIn.objOpt;
+  if (objOpt != null){
+  	if (objOpt.bChoiceMultiSel == undefined){
+  		objOpt.bChoiceMultiSel = false;
+  	}
+    szId =  objOpt.bChoiceMultiSel ? "PopupChoiceMulti" : "PopupChoiceSingle";
+    jsu_log (Fn + "objOpt.bChoiceMultiSel=" + objOpt.bChoiceMultiSel + "  szId=" + szId);
+    pp_idShow (szId + "Sect", true);
+    jsu_getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
+    // Populate selectChoice
+    var selectChoice = jsu_getElementById2(szId + "Select");
+    if (objOpt.bChoiceMultiSel){
+      var iChoiceMultiSize = POPUP_DEF_MULTICHOICE_SIZE;
+      if (objOpt.iChoiceMultiSize != undefined && objOpt.iChoiceMultiSize != null){
+        iSize = objOpt.iChoiceMultiSize; 
+      } 
+      selectChoice.size = iSize;
+      // Label
+      var aElSelectAll = jsu_getElementById2("PopupSelectAll");
+      aElSelectAll.childNodes[0].textContent = POPUP_SELECT_ALL;
+      var aElDeselectAll = jsu_getElementById2("PopupDeselectAll");
+      aElDeselectAll.childNodes[0].textContent=POPUP_DESELECT_ALL;
+    }
+    for (var i=0; i < objOpt.arChoice.length; i++){
+      var objOptItem = objOpt.arChoice[i];
+      var elOpt = new Option(objOptItem.szText,objOptItem.value);
+      elOpt.dv = objOptItem.szText;
+      elOpt.selected = objOptItem.bSel;
+      selectChoice[selectChoice.length] = elOpt;
+    }
+    // ------------- adjust width
+    var elFS= jsu_getElementById2("PopupChoiceMultiFS");
+    var iWidth = selectChoice.clientWidth + 15;
+    if (iWidth < POPUP_CHOICE_FS_MIN_WIDTH){
+      iWidth = POPUP_CHOICE_FS_MIN_WIDTH;
+    }
+    elFS.style.width = iWidth + "px";
+    jsu_log (Fn + "We have SET elFS.style.width=" + elFS.style.width);
+    
+  }
+  jsu_log (Fn + "-------------------");
+}  
+
+
+/*
+ *  Init Option Show if present and Set Show/Hide of Sections basing on Default 
+ * @param parIn {Object} in  
+ */
+function pp_optLayoutInit(parIn){
+  var Fn = "[Popup.js pp_optChoiceInit] ";
+  jsu_log (Fn + PPLOG_FUN_START);
+  // Default
+  var bShowTitle = POPUP_DEF_SHOW_TITLE;
+  var bShowImg = POPUP_DEF_SHOW_IMG;
+  var bShowBtnSect = true;
+  var objOpt = parIn.objOpt;
+  if (objOpt != null){
+    jsu_logObj (Fn + "There are Custom Option:", objOpt);
+    if (objOpt.bShowTitle != undefined && objOpt.bShowTitle != null){
+      bShowTitle = objOpt.bShowTitle;
+    }
+    if (objOpt.bShowImg != undefined && objOpt.bShowImg != null){
+      bShowImg = objOpt.bShowImg;
+    }    
+    if (objOpt.bShowBtnSect != undefined && objOpt.bShowBtnSect != null){
+    	bShowBtnSect = objOpt.bShowBtnSect;
+    }    
+  }
+  pp_idHideIfRequired ("PopupTblHea", bShowTitle);
+  pp_idHideIfRequired ("PopupImg", bShowImg);
+  pp_idHideIfRequired ("PopupDivBtn", bShowBtnSect);
+  
+  jsu_log (Fn + PPLOG_FUN_END);
+}  
+
+/*
+ * Init Section of Prompt 
+ * @param szPopupType {String} in
+ * @param parIn {Object} in  
+ */
+function pp_promptInit(szPopupType, objOpt){
+  var Fn = "[Popup.js pp_promptInit] ";
+  jsu_log(Fn + "-------------------");
+  pp_idShow ("PopupPromptSect", false);
+  if (szPopupType == POPUP_TYPE.PROMPT){
+    pp_idShow ("PopupPromptSect", true);
+    if (objOpt != null){
+      if (objOpt.szPromptLabel && objOpt.szPromptLabel.length){
+        jsu_getElementById2("PopupPromptLabel").innerHTML = objOpt.szPromptLabel;
+      }
+      var elInput = jsu_getElementById2("PopupPromptInput");
+      if (objOpt.szPromptValue && objOpt.szPromptValue.length){
+        jsu_log(Fn + "Set Default PromptValue=" + objOpt.szPromptValue);
+        elInput.value = objOpt.szPromptValue;
+      }
+      szPromptType = (objOpt.szPromptType) ? objOpt.szPromptType : PROMPT_TYPE.STRING;
+      var bNumber = (szPromptType == PROMPT_TYPE.NUMBER);
+      elInput.setAttribute ("type",szPromptType);
+      var iMin=null, iMax=null;
+      var bMin=false, bMax=false;
+      if (objOpt.iPromptWidth && !isNaN(objOpt.iPromptWidth)){
+        elInput.setAttribute ("style","width:" + objOpt.iPromptWidth + "px;");
+      }else {
+        elInput.setAttribute ("style","width:" + 
+            (bNumber ? POPUP_DEF_PROMPT_NUMBER_W : POPUP_DEF_PROMPT_STRING_W )+ 
+            "px;");
+      }  
+      if (objOpt.iPromptMax && !isNaN(objOpt.iPromptMax)){
+        bMax = true;
+        iPromptMax=objOpt.iPromptMax; 
+        elInput.setAttribute ("max",iPromptMax);
+        if (!bNumber){
+          elInput.setAttribute ("maxlength",iPromptMax);
+        }
+      }  else {
+        elInput.removeAttribute ("max");
+        elInput.removeAttribute ("maxlength");
+      }
+      if (objOpt.iPromptMin && !isNaN(objOpt.iPromptMin)){
+        bMin = true;
+        iPromptMin=objOpt.iPromptMin; 
+        elInput.setAttribute ("min",iPromptMin);
+      }else{
+        elInput.removeAttribute ("min");
+      }
+      elInput.focus();
+      // ------------ Tip 
+      var szTitle = (bNumber) ? POPUP_PROMPT_TIP.NUMBER : POPUP_PROMPT_TIP.STRING;
+      if (bMin || bMax) {
+        szTitle = (bNumber) ? POPUP_PROMPT_TIP.NUMBER_RANGE : POPUP_PROMPT_TIP.STRING_RANGE;
+        if (bMin && bMax){
+          szTitle += "[" + iPromptMin + ".." + iPromptMax + "]";
+        }else if (bMax){
+          szTitle += "[" + 0 + ".." + iPromptMax + "]";
+        }else if (bMin){
+          szTitle += "[" + iPromptMin + "..]";
+        }
+      }
+      elInput.setAttribute ("title",szTitle);
+    }
+  }  
+  jsu_log(Fn + "-------------------");
+}  
+
+
+
+
+/*
+ * Get the Dlg Height that we should set in this Moment, basing on current display Message,, Btn,..
+ * @returns iDlgH
+ */
+function pp_getHeight() { // crossbrowser version
+  var Fn = "[Popup.js pp_getHeight] ";
+  var elDivBtn = document.getElementById ("PopupDivBtn");
+  var box = elDivBtn .getBoundingClientRect();
+  var body = document.body;
+  var docEl = document.documentElement;
+  var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+  var clientTop = docEl.clientTop || body.clientTop || 0;
+  var top  = box.top +  scrollTop - clientTop;
+  var iDlgH = Math.round(top) +  elDivBtn.clientHeight;
+  jsu_log ( Fn + "Current iDlgH=" + iDlgH);
+  return iDlgH;
+
+}
+
+
+
+
+/*
+ * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
+ * 
+ * @param {String} text The text to be rendered.
+ * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
+ * 
+ * @see http://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393 
+ */
+function getTextWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    if (canvas == undefined || canvas.getContext == undefined){
+      return 0;
+    }
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+};
+
+
+
+
+
+
+/*====================================================================
+====================================================================*/
+
+
+/*
+ * @param parIn {Object} 
+ * @return szTitle to Use
+*/
+function pp_getTitle(parIn){
+  var objOpt = parIn.objOpt;
+  var szTitle = (objOpt) ? objOpt.szTitle: null;
+  var szPopupType = parIn.szPopupType;
+  if (typeof(szTitle) == undefined || szTitle == null || szTitle == ""){ 
+    if (szPopupType == POPUP_TYPE.INFO){
+      return POPUP_DEF_TITLE.INFO;    
+    }else  if (szPopupType == POPUP_TYPE.WARN){
+      return POPUP_DEF_TITLE.WARN;    
+    }else  if (szPopupType == POPUP_TYPE.ERR){
+      return POPUP_DEF_TITLE.ERR;    
+    }else  if (szPopupType == POPUP_TYPE.CONFIRM){
+      return POPUP_DEF_TITLE.CONFIRM;    
+    }else  if (szPopupType == POPUP_TYPE.CHOICE){
+      return POPUP_DEF_TITLE.CHOICE;    
+    }else  if (szPopupType == POPUP_TYPE.PROMPT){
+      return POPUP_DEF_TITLE.PROMPT;    
+    }else  if (szPopupType == POPUP_TYPE.QUESTION || szPopupType == POPUP_TYPE.QUESTION_3){
+      return POPUP_DEF_TITLE.QUESTION;    
+    }else  if (szPopupType == POPUP_TYPE.ALARM){
+      return POPUP_DEF_TITLE.ALARM;    
+    }else  if (szPopupType == POPUP_TYPE.PROMPT){
+      return POPUP_DEF_TITLE.PROMPT;    
+    }
+  }else {
+    return szTitle; 
+  }
+}  
+
+/*
+ * @param elInput
+ * @return 0 if OK    1 if ERR
+ */
+function pp_ValidateInput(elInput){
+  var Fn = "[Popup.js pp_ValidateInput] ";
+  jsu_log(Fn + "-------------------");
+  var promptValue = elInput.value;
+  jsu_log(Fn + "Prompt=" + promptValue);
+  // Is required Validation?
+  var szType =  elInput.getAttribute ("type");
+  var bNumber = (szType == PROMPT_TYPE.NUMBER);
+  var iLen= (promptValue) ? promptValue.length :0;
+  var iMin =  parseInt(elInput.getAttribute ("min"));
+  var iMax =  parseInt(elInput.getAttribute ("max"));
+  if (isNaN(iMin)){ iMin = null;}
+  if (isNaN(iMax)){ iMax = null;}
+  if (bNumber){
+    promptValue = parseInt (promptValue);
+  }
+  var bErr = false;
+  if (bNumber){
+    jsu_log(Fn + "VALIDATION is required for PROMPT NUMBER - We check that promptValue=" + promptValue + "  is a NUMBER");
+    bErr = (isNaN(promptValue)); 
+  }
+  if (!bErr && iMin){
+    jsu_log(Fn + "VALIDATION required for iMin=" + iMin + " - PROMPT szType=" + szType);
+    if (bNumber && iMin > promptValue){ bErr = true;}
+    if (!bNumber && iMin > iLen){ bErr = true;}
+  }
+  if (!bErr && iMax){
+    jsu_log(Fn + "VALIDATION required for iMax=" + iMax + " - PROMPT szType=" + szType);
+    if (bNumber && iMax < promptValue){ bErr = true;}
+    if (!bNumber && iMax < iLen){ bErr = true;}
+  }
+  if (bErr){
+    // Show the Error Element
+    var szTitle = elInput.getAttribute ("title");
+    jsu_log(Fn + "VALIDATION ERROR for promptValue=" + promptValue + " Show Err: " + szTitle);
+    var elErr = jsu_getElementById2("PopupPromptError");
+    elErr.innerHTML = szTitle;
+    elementShow(elErr,true,"inline");
+    // 
+    elInput.setAttribute ("class","PopupPromptError");  // Change class to show alarm gif
+    return 1;
+  }
+  return jsu_log(Fn + "-------------------");
+}
+
+
+/*
+ * - validate (if POPUP_TYPE.PROMPT)
+ * - Close Dlg and return retObj
+ * @param retObj  {
+ *                  retBtn   {Number or Object} in  Example: {Number} JTPOPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL or whetever Custom NUmber
+ *                                       Example: {Object} Custom Object
+ *                  .......
+ *                 }                      
+ * 
+ */
+function pp_close(retObj){
+  var Fn = "[Popup.js pp_close] ";
+
+  jsu_log(Fn + "-------------------");
+  // true if clicked on OK Button
+  var bConfirm = (retObj && retObj.retBtn   == POPUP_BTN.CONFIRM);
+  jsu_log(Fn + "bConfirm=" + bConfirm );
+  if (bConfirm){
+    // -------------- Check if Prompt is Visible
+    var bPrompt = pp_idIsVisible("PopupPromptSect");
+    if (bPrompt){
+      var elInput = jsu_getElementById2("PopupPromptInput");
+      if (pp_ValidateInput (elInput)){
+        return;
+      }
+      retObj.promptValue = elInput.value;
+    }  
+    // -------------- Check if Choice is Visible
+    var bChoiceSingle = pp_idIsVisible("PopupChoiceSingleSect");
+    var bChoiceMulti = pp_idIsVisible("PopupChoiceMultiSect");
+    if   (bChoiceSingle || bChoiceMulti){
+      jsu_log(Fn + "Get Choice Selection");
+      var szEl = (bChoiceSingle) ? "PopupChoiceSingleSelect" : "PopupChoiceMultiSelect";
+      var selectChoice = jsu_getElementById2(szEl);
+      // Read All and prepare arChoice
+      var arChoice = new Array();
+      var szChoiceValue = "";
+      var szChoiceText= "";
+      var szSep = ""; 
+      for (var iOpt=0; iOpt < selectChoice.options.length; iOpt ++){
+        var Opt = selectChoice.options[iOpt];
+        var arItem = { 
+             value: Opt.value, 
+             szText: Opt.text, 
+             bSel: Opt.selected
+             };
+        if (Opt.selected){
+          szChoiceValue += (szSep + Opt.value);
+          szChoiceText += (szSep + Opt.text);
+          if (szSep == ""){
+            szSep = ", ";
+          }  
+        }
+        arChoice.push(arItem);
+      }
+      retObj.choiceValue = szChoiceValue;
+      retObj.choiceText = szChoiceText;
+      retObj.arChoice = arChoice;
+    }
+  }  
+  window.returnValue = retObj;
+  jsu_logObj (Fn + "window.returnValue", window.returnValue);
+  jsu_log (Fn + "-------------------");
+  window.close();  
+}
+
+
+/*====================================================================
+EVENT FROM Popup Dlg
+====================================================================*/
+
+
+/*
+* Called at click on Button OK or YES
+* - Close Dlg and return retObj.bOk = true 
+*/
+function pp_onClickConfirm(){
+  var Fn = "[Popup.js pp_onClickConfirm] ";
+  
+  pp_close ({retBtn  : POPUP_BTN.CONFIRM});
+  
+}
+
+
+/*
+ * Deselect All Items in PopupChoiceMultiSelect
+ */
+function pp_deselectAll(){
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
+  for (var iOpt=0; iOpt < selectChoice.options.length; iOpt ++){
+    selectChoice.options[iOpt].selected = false;
+  }
+}
+
+
+/*
+ * Select All Items in PopupChoiceMultiSelect
+ */
+function pp_SelectAll(){
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
+  for (var iOpt=0; iOpt < selectChoice.options.length; iOpt ++){
+    selectChoice.options[iOpt].selected = true;
+  }
+}
+
+
+/*
+ * FUTURE
+ */
+function pp_onResize(){
+  var Fn = "[Popup.js pp_onResize] ";
+  var w = window.outerWidth;
+  var h = window.outerHeight;
+  if (w != undefined && h != undefined){
+    // jsu_log (Fn + "Window size: width=" + w + ", height=" + h);
+    var divPopup = document.getElementById ('PopupDiv');
+    // jsu_log (Fn + "divPopup .width=" + divPopup.clientWidth + " .height=" + divPopup.clientHeight);
+    var iDivW = w-16;
+    if (popup_bScroll){
+      iDivW -=20;
+    }
+    jsu_log (Fn + "Change divPopup width from =" + divPopup.clientWidth + " to =" + iDivW);
+    divPopup.style.width = iDivW + "px";
+  }   
+}
+
+
+/*
+* Called at click on Button No or NO
+* - Close Dlg and return retObj.bConfirm = false
+*/
+function pp_onClickNo(){
+  var Fn = "[Popup.js pp_onClickNo] ";
+  
+  pp_close ({retBtn  : POPUP_BTN.NO});
+}
+
+
+/*
+* Called at click on Button3 
+* - Close Dlg and return retObj.bConfirm = false
+*/
+function pp_onClickCancel(){
+  var Fn = "[Popup.js pp_onClickNo] ";
+  
+  pp_close ({retBtn: POPUP_BTN.CANCEL});
+}
+
+
+/*
+* MAIN Initialization Event Called at Startup from Popup Modal Dialog
+* - Setup Dlg Layout
+*/
+function pp_onLoad(){
+  var Fn = "[Popup.js pp_onLoad] ";
+  var parIn = null;
+  var szBrowser = pp_getBrowser();
+  var szUriQueryString = location.search;
+  if (szUriQueryString.length){
+    // parIn has been passed as UriQueryString
+    // alert ("IN szUriQueryString=" + szUriQueryString);
+    parIn = objFromURIQueryString (szUriQueryString);
+  }else{
+    parIn = window.dialogArguments ;
+  }
+  if (parIn == undefined){
+    // DEVELOPER TEST: we suppose that html has been launched directly by the page, only for Developer Test
+    parIn = new Object();
+    parIn.szMsgHtml = "<b> This is a Test only For Developers</b><br/>We want to Try what is the minimum Height required for a Message";
+    parIn.bDefWidth = true;
+    parIn.iJslogLev = 7;
+    parIn.iWidth = POPUP_DEF_WIDTH;
+    // --------- Various Test
+    parIn.szPopupType = POPUP_TYPE.CHOICE;
+    parIn.objOpt = {
+             szChoiceLabel: "VOTE:",
+             arChoice: [{value:1,szText:"1 - Not Good",bSel:false},
+               {value:2,szText:"2 - Good",bSel:false},
+               {value:3,szText:"3 - Very Good",bSel:true},
+               {value:4,szText:"4 - Excellent",bSel:false},
+               ],        
+             bChoiceMultiSel:true,
+             iChoiceMultiSize:4};        
+  }
+  //  --------------- Init  jslog with the same parameter used by parent
+  var objJslogOpt = parIn.objJslogOpt;
+  if (objJslogOpt && objJslogOpt.iLogLev > 0){
+    var objOpt = new Object();
+    objOpt.bLogTime = objJslogOpt.bLogTime;
+    var szPathImg = objJslogOpt.szPathImg; // Default. Absolte
+    if (szPathImg.indexOf ("../") == 0){
+      // Partizcular cases: Relative Path passed e.g.       ../../jsu/images/
+      szPathImg = szPathImg.substr(3);
+    }
+    objOpt.szPathImg = szPathImg;
+    jslog_init(objJslogOpt.iLogLev ,objOpt);
+  } 
+  jsu_log (Fn + PPLOG_FUN_START);
+  var objOpt = parIn.objOpt; 
+  // ----------------------------- bCloseOnEscape 
+  var bCloseOnEscape = POPUP_DEF_CLOSE_ON_ESCAPE;
+  if (objOpt && objOpt.bCloseOnEscape != undefined){
+		bCloseOnEscape = objOpt.bCloseOnEscape; 
+	} 
+	if (bCloseOnEscape){
+		// ESC is considered as Close on X 
+		document.onkeydown = function(e){
+	    if(e.keyCode === 27){
+	    	pp_close ({retBtn: POPUP_BTN.CLOSE});;
+	    }
+	  };	
+	}
+  // ----------------------------- bResize 
+  var bResize = POPUP_DEF_RESIZE;
+  jsu_log (Fn + "bResize=" + bResize);
+  if (objOpt && objOpt.bResize != undefined){
+  	bResize = objOpt.bResize; 
+	}
+	if (bResize){
+    jsu_log (Fn + "SET onresize");
+		document.body.onresize = function(){
+			pp_onResize();			
+		}
+	}
+  //-------------------------------------------------------
+  if (parIn.elLoading != undefined && parIn.elLoading){
+    jsu_log (Fn + "Hide Loading in Parent");
+    loadingShowByEl (parIn.elLoading,false);    
+  }  
+  // NB: Reset elLoading before jslogObj that does not support DOM El
+  parIn.elLoading = null;
+  jsu_logObj (Fn + "parIn", parIn);
+  jsu_log (Fn +"set Dlg Layout -------");
+  var szTitle = pp_getTitle (parIn);
+  var objOpt = parIn.objOpt;
+  jsu_log (Fn + "Set Title=" + szTitle);
+  document.title = szTitle;
+  jsu_getElementById2("PopupTitle").innerHTML = szTitle; 
+  //
+  var szPopupType = parIn.szPopupType;
+  pp_classInit (szPopupType);
+  pp_btnInit (parIn);  // Init Btn and its Options if present
+  if (szPopupType == POPUP_TYPE.CHOICE){
+    pp_optChoiceInit (parIn);  // Init Option Choice if present
+  }
+  pp_optLayoutInit (parIn);  // Init Option Show if present and Set Show/Hide of Sections basing on Default
+  pp_promptInit (szPopupType,objOpt);  // Init Section Prompt
+  
+  var elMsg = jsu_getElementById2("PopupMsg");
+  elMsg.innerHTML = parIn.szMsgHtml;
+  var szMsgHtml = parIn.szMsgHtml;
+  //  ------------------------------------------ H
+  var iDlgH= POPUP_DEF_HEIGHT;
+  if (objOpt && objOpt.iHeight){
+  	iDlgH = objOpt.iHeight;
+  }else {
+    iDlgH= pp_getHeight ();
+  }
+  
+  if (iDlgH > POPUP_MAX_HEIGHT){
+    iDlgH =POPUP_MAX_HEIGHT;
+  }  
+/*
+  if (iDlgH < POPUP_MIN_HEIGHT){
+    iDlgH =POPUP_MIN_HEIGHT;
+  }  
+*/
+  if (szBrowser == POPUP_BROWSER_TYPE_IE){
+    jsu_log (Fn + szBrowser +" set iDlgH=" + iDlgH);
+    window.dialogHeight= iDlgH + "px"; 
+  }else{
+    // We have to add in Firerfox, or we see Scroolbar
+    iDlgH += 8;  
+    jsu_log (Fn + "NOT IE set iDlgH=" + iDlgH);
+    if (window.innerHeight != undefined){
+      jsu_log (Fn + szBrowser + " Firefox set innerHeight=" + iDlgH);
+      window.innerHeight = iDlgH ;
+    } 
+    // Center
+    if (window.screen.height != undefined && window.screen.width != undefined){
+      var iScreenH = window.screen.height;
+      var iScreenW = window.screen.width;
+      var iY = parseInt((iScreenH - iDlgH)/2);
+      var iX = parseInt ((iScreenW -parIn.iWidth)/2); 
+      window.moveTo (iX,iY);
+    }
+  }
+  //--------------------------------------------------- W
+  // Set the Global Var used by Event
+  popup_bScroll = (objOpt!=null && objOpt.bScroll != undefined && objOpt.bScroll != null && objOpt.bScroll);
+  if (popup_bScroll){
+    // We have to get some size for the SBVert pr we will see also the SBHor
+    var divPopup = document.getElementById ('PopupDiv');
+    var iWidth = divPopup.clientWidth;
+    jsu_log (Fn + "divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
+    iWidth -=20;
+    divPopup.style.width = iWidth + "px";
+    jsu_log (Fn + "SET divPopup.clientWidth=" + divPopup.clientWidth + "  divPopup.style.width=" + divPopup.style.width);
+    iDlgH +=20;
+  }  
+  jsu_log (Fn + "set iDlgH=" + iDlgH);
+  window.dialogHeight= iDlgH + "px"; 
+  
+  jsu_log (Fn + PPLOG_FUN_END);
+}
+
+
+
+
+
+
+
+
+
+/*==================================================================================================
+        GLOBAL API  for OPTION
+==================================================================================================*/
+
+/**
+ * Optionally Used when the Path of Dlg is different form the one configured in conf.js (POPUP_PATH_HTML)
+ * 
+ * @param szPathHtml
+ */
+function PopupSetPathHtml(szPathHtml){
+   popupPathHtml = szPathHtml;
+}  
+
+
+/*==================================================================================================
+            GLOBAL API
+==================================================================================================*/
+
+
+/**
+ * @param szPopupType {String}  POPUP_TYPE.INFO,  POPUP_TYPE.CONFIRM, ..    <BR/>
+    POPUP_TYPE:  <BR/>
+        .INFO: "Info", <BR/>
+        .CONFIRM: "Confirm", <BR/>
+        .ERR:"Error", <BR/>
+        .ALARM:"Alarm", <BR/>
+        .WARN:"Warning", <BR/>
+        .QUESTION:"Question", // Question with YES NO <BR/>
+        .QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL <BR/>
+        .PROMPT:"Prompt", // Prompt to insert one value <BR/>
+        .CHOICE:"Choice" // Choice in a select
+ *                                 
+ * @param szMsgHtml {String}  HTML TAG are Accepted (e.g <b>, <br/>,..)    /n if present is converted to <BR/>
+ * @param objOpt    [Object]}    Optional Object to change default Option: <BR/>
+ *          szConfirmLabel:  {String} Label of Confirm Button  <BR/>
+ *          iConfirmWidth:   {Number}  Width of Confirm Button  <BR/>
+ *          szNoLabel:  {String}      Label of No Button  <BR/>
+ *          iNoWidth:   {Number}      Width of No Button  <BR/>
+ *          szNoLabel:  {String}      Label of No Button  <BR/>
+ *           iNoWidth:   {Number}      Width of No Button  <BR/>
+ *           szTitle:    {String}      change default Title <BR/>
+ *           iWidth:  {Number}      Optional Width: if it passed it is used - If 0 or null or undefined, Default Width is used <BR/>
+ *           iHeight:  {Number}      Optional Height: if it passed it is used - If 0 or null or undefined, Height is automatically calculated<BR/>
+ *           bShowTitle: {Boolean}     true to show Title  (Default=true) <BR/>
+ *           bShowImg:    {Boolean}     true to show Image  (Default=true) <BR/>
+ *           bShowBtnSect:    {Boolean} [true] false to hide all the Button Section (used in embedded HTML pages) <BR/>
+ *           bScroll:    {Boolean}      true to show ScroolBar  (Default=false)    <BR/>
+ *           bResize:    {Boolean}     true to allow Resize Dialog  (Default=false)    <BR/>
+ *           bCloseOnEscape: {Boolean}  Default true   
+ *   
+ *   
+ * @return {Object}  retObj  <BR/>
+ *                           Example: <BR/>
+ *                           {   <BR/>
+ *                             retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL <BR/>
+ *                             choiceValue      Only for POPUP_TYPE.CHOICE: Value chosen in selectChoice <BR/>
+ *                             choiceText    Only for POPUP_TYPE.CHOICE: Text chosen in selectChoice <BR/>
+ *                             ......          for POPUP_CUSTOM: you can add your personal memeber   <BR/>
+ *                           }
+*/
+function Popup(szPopupType, szMsgHtml,objOpt){
+  return pp_show (szPopupType,szMsgHtml,objOpt);
+}  
+
+
+/**
+ * Default Btn: POPUP_BTN.CONFIRM, POPUP_BTN.CANCEL
+ * 
+ * @param szMsgHtml {String}  HTML TAG are Accepted (e.g <b>, <br/>,..)    /n if present is converted to <BR/>
+ * @param szChoiceLabel {String} Label of the selectChoice
+ * @param arChoice  {Array}    Array to populate the selectChoice: Example <BR/>
+ *                               [{value:1,szText:"1 - Not Good",bSel:false},                <BR/>
+ *                                  {value:2,szText:"2 - Good",bSel:false}, <BR/>
+ *                                {value:3,szText:"3 - Very Good",bSel:true}]
+ * @param [objOpt]   [Object]    Optional Array of Option to change Button. Use PopupOpt API to generate this par  
+ * @return {Object}  retObj  <BR/>
+ *                           Example: <BR/>
+ *                           {   <BR/>
+ *                             retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.CANCEL <BR/>
+ *                             choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel) <BR/>
+ *                             choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) <BR/>
+ *                             arChoice          like inpout with the bSel=true/false depending on selected state
+*/
+function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
+	var fn="[Popup.js PopupChoice] ";
+  if (objOpt == undefined || objOpt == null){
+    objOpt = new Array();
+  }
+  // Create the Option for Choice and push it into objOpt
+	jsu_log(fn + "szChoiceLabel=" + szChoiceLabel);
+  objOpt.szChoiceLabel = szChoiceLabel;
+  objOpt.arChoice = arChoice;
+	jsu_logObj(fn + "objOpt", objOpt);
+  return pp_show (POPUP_TYPE.CHOICE,szMsgHtml,objOpt);
+}  
+
+
+
+/**
+ * Return true to indicate to JSU User that this popup.js Interface is the IEPopup <BR/>
+ * The same function is Present in JQPopup/popup.js where it return false <BR/>
+ * This API is used if the html does not know what popup.js interface is loaded by require.js configuration file, where it can be changed because <BR/>
+ * both IEPopup/Popup.js and JQPopup/Popup.js share the same interface 
+ * 
+ * @returns {Boolean}
+ */
+function isIEPopup(){
+	return true;
+}
+
+
+
+
+
+
+

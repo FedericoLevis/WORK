@@ -2,12 +2,12 @@
 /** @fileOverview
 ========================================================================================= <BR/> 
 <b>File:</b> 			core/cValidate.js <BR/>
-<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
 <b>Validate Doc:</b>   For Validate Documentation see:<ul>
-                          <li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html" target="_blank">JSU Validate Documentation</a> </li>
-                          <li><a href="http://validatejs.org" target="_blank">validate.js</a> </li>
+                          <li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html" target="_self">JSU Validate Documentation</a> </li>
+                          <li><a href="http://validatejs.org" target="_self">validate.js</a> </li>
                         </ul>
-<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
 <b>Description:</b>      Validate Class <BR/>   
 <b>REQUIRE:</b>          JSU: jsu.js   <BR/>
 <b>First Version:</b>    ver 1.0 - Feb 2015  <BR/>
@@ -20,8 +20,11 @@
   2)  We have added many other features, described in JSU documentation <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
-Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 
 This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>IMPLEMENTATION NOTES</b>  <BR/>
+There is few additional Code (marked with JSU_FREE_ JSU_FULL_ )to implement <a class="tipLink" href="javascript:showJSUVersionParLimit();">FREE JSU Limitations</a>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>JSDoc NOTES</b>  <BR/>
 In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
@@ -78,20 +81,47 @@ var VALIDATE_DEF_OPT ={
 /** 
 @class cValidate 
 
-@param  contraints {Object}   constraints described in <a href="http://validatejs.org" target="_blank">validate.js</a>
-@param  [objOpt]		Options:	 <BR/>
-									  - szDateFmt {String} default is "YYYY-MM-DD" <BR/>
-									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
-									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
-									-------- Possible Option for validation Error case:				 <BR/>
-									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
-									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
-									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
-									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
-									--------  <BR/>
-  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
-									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
-									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/>
+@param  contraints {Object}   JSON <b>constraints</b> described in <a href="http://validatejs.org" target="_self">validate.js</a> <BR/>
+                              In addition there is also the <b>tip</b> field, used to add a JSU 
+                              <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#Tip" target="_self">JSU HTML Tooltip</a> on the right of the Item to Validate
+@param [objOpt] {Object}   
+ <table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
+  <tr><td class="jsDocTitle">OPTIONS</td></tr>
+  <tr><td class="jsDocParam">
+  <ul>
+									  <li> bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/> 
+									--------------------------------------------------------- Possible Option for validation Error case:</li> 
+									  <li> bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  </li> 
+									  <li>	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors </li> 
+									  <li>	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors </li> 
+									  <li>	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item </BR> 
+									----------------------------------------------------------  </li> 
+									  <li> szDateFmt {String} to use for date Validation - default is "yyyy-MM-dd" </li> 
+									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" </li> 
+  									<li> bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item </li> 
+									  <li>	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body </li> 
+									  <li>	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  </li> 
+  </ul> 
+  </td></tr>
+  </table>  
+ 
+ <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
+   <tr><td>
+		  <div class="jsDocNote">
+		  <b>JSU DEMO Version has some limitations:</b>
+		  <ul>
+		    <li>Some Options are not available in JSU DEMO Version: 
+		       <label class="jsDocWarn">szDateFmt, szDateTimeFmt</label>
+		    </li>
+		    <li>Below the Validation Error Messages there is an additional Link to JSU</li>
+		  </ul>
+		  </div>
+	</td></tr>
+ </table>		  
+									  
+									  
+									  
 @example
 	cValidateObj1 = new cValidate ({ 
 		email: { // Mandatory email  
@@ -152,6 +182,20 @@ cValidate = function (constraints,objOpt) {
   		szDateTimeFmt:  VALIDATE_DEF_OPT.szDateTimeFmt   // see date.js
   }; 
   this.setOption(objOpt);
+	/* JSU_FREE_START --------------------- 
+  //dynamic id. Used to protect CODE  JSU FULL.
+  //{idVal,acron, rangeMin, rangeMax}
+  if (typeof(this.arObjId) == 'undefined'){
+    this.arObjId = {
+        jsu: [0,'vv',1,1000],   // e.g 01057
+        jt: [0,'vv',1001,2000]     // e.g 01057
+      };
+    //Simulation
+    this.pp_title;
+    vv_getId(this.arObjId.jt); 
+  }
+  JSU_FREE_END ------------------------ */  
+  
   // add Img, ErrLabel, tip, set Class for Mandatory if bEnphasizeItemBorder
 	for (var i=0; i< this.arValidateEl.length; i++){
       var el = this.arValidateEl[i];
@@ -179,7 +223,8 @@ cValidate = function (constraints,objOpt) {
       	classAdd (el,"validateItemMandatory",true);
       }
       //-------------- add always errLabel (for possible change of validateOpt)
-      this.addErrLabel(el);
+      var bLastItem = (i==(this.arValidateEl.length-1)); // true if last item
+      this.addErrLabel(el,bLastItem);
       // Define onfocus to clear Error state
       var fnOnFocusOrig = el.onfocus;
       if (fnOnFocusOrig != undefined){
@@ -190,24 +235,13 @@ cValidate = function (constraints,objOpt) {
   }
   this.arValidateEl = arValidateEl;
 
-  validate.extend(validate.validators.datetime, {
-    // Check that the format is correct
-    parse: function(value, options) {
-      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
-      var retValue = getTimeFromFormat(value,format);
-      // return undefine dif it is not a Date in the required Format 
-      return (retValue==0) ? undefined : retValue;
-    },
-    format: function(value, options) {
-      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
-      return getTimeFromFormat(value,format);
-    },
-    // these will be added to option passed to parse and format 
-    options: {
-    	szDateFmt: this.validateOpt.szDateFmt, 
-    	szDateTimeFmt : this.validateOpt.szDateTimeFmt
-    } 
-  });
+  /* JSU_FREE_START ---------------------
+  // simulation
+  vv_getId (this.arObjId.jsu);
+  pp_title += ' <span><a id="' + this.arObjId.jsu[0] +'" href="https://goo.gl/1eIYNm">JSU Demo Version</a></span>';
+  JSU_FREE_END -----------------------*/
+  
+  
 	this.setErrSection();
 	
 	jslog(JSLOG_JSU,Fn + JSLOG_FUN_END);
@@ -223,19 +257,41 @@ cValidate = function (constraints,objOpt) {
 /** 
  * 
  * Set Validate Option (that can also be set  in class constructor)
- * @param  objOpt		Options:	 <BR/>
-									  - szDateFmt {String} default is "YYYY-MM-DD" <BR/>
-									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
-									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
-									-------- Possible Option for validation Error case:				 <BR/>
-									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
-									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
-									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
-									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
-									--------  <BR/>
-  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
-									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
-									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/>
+@param objOpt {Object}   
+ <table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
+  <tr><td class="jsDocTitle">OPTIONS</td></tr>
+  <tr><td class="jsDocParam">
+  <ul>
+									  <li> bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/> 
+									--------------------------------------------------------- Possible Option for validation Error case:</li> 
+									  <li> bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  </li> 
+									  <li>	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors </li> 
+									  <li>	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors </li> 
+									  <li>	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item </BR> 
+									----------------------------------------------------------  </li> 
+									  <li> szDateFmt {String} to use for date Validation - default is "yyyy-MM-dd" </li> 
+									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" </li> 
+  									<li> bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item </li> 
+									  <li>	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body </li> 
+									  <li>	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  </li> 
+  </ul> 
+  </td></tr>
+  </table>  
+ 
+ <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
+   <tr><td>
+		  <div class="jsDocNote">
+		  <b>JSU DEMO Version has some limitations:</b>
+		  <ul>
+		    <li>Some Options are not available in JSU DEMO Version: 
+		       <label class="jsDocWarn">szDateFmt, szDateTimeFmt</label>
+		    </li>
+		    <li>Below the Validation Error Messages there is an additional Link to JSU</li>
+		  </ul>
+		  </div>
+	</td></tr>
+ </table>		  
 
  */
 cValidate.prototype.setOption = function (objOpt) {
@@ -245,8 +301,6 @@ cValidate.prototype.setOption = function (objOpt) {
   	jslogObj(JSLOG_JSU,Fn + "IN objOpt:", objOpt);
     var validateOpt = this.validateOpt;
     // IF Option are present we change default value
-    if (objOpt.szDateFmt != undefined){ validateOpt.szDateFmt = objOpt.szDateFmt;}
-    if (objOpt.szDateTimeFmt != undefined){ validateOpt.szDateTimeFmt = objOpt.szDateTimeFmt;}
     if (objOpt.szErrSectId != undefined){ validateOpt.szErrSectId = objOpt.szErrSectId;}
     if (objOpt.bInstantFieldValidation != undefined){ validateOpt.bInstantFieldValidation = objOpt.bInstantFieldValidation ;}
     if (objOpt.bOnErrShowAlarm != undefined){ validateOpt.bOnErrShowAlarm = objOpt.bOnErrShowAlarm;}
@@ -254,9 +308,35 @@ cValidate.prototype.setOption = function (objOpt) {
     if (objOpt.bOnErrShowSect != undefined){ validateOpt.bOnErrShowSect = objOpt.bOnErrShowSect;}
     if (objOpt.bOnErrShowPopup != undefined){ validateOpt.bOnErrShowPopup = objOpt.bOnErrShowPopup;}
     if (objOpt.bEnphasizeItemBorder != undefined){ validateOpt.bEnphasizeItemBorder = objOpt.bEnphasizeItemBorder;}
+    // JSU_FULL_START ----------------------------------------------------------
+    if (objOpt.szDateFmt != undefined){ validateOpt.szDateFmt = objOpt.szDateFmt;}
+    if (objOpt.szDateTimeFmt != undefined){ validateOpt.szDateTimeFmt = objOpt.szDateTimeFmt;}
+    // JSU_FULL_END ----------------------------------------------------------
+    
     this.validateOpt = validateOpt;
   	jslogObj(JSLOG_JSU,Fn + "CURRENT validateOpt:", validateOpt);
   }
+  // We have to change the datetime validators because szdateTime and szDateFmt could be changed
+  validate.extend(validate.validators.datetime, {
+    // Check that the format is correct
+    parse: function(value, options) {
+      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
+  	  jslog (JSLOG_JSU,"parse() date/dateTime  value=" + value + " format=" + format);
+      var retValue = getTimeFromFormat(value,format);
+      // return undefine if it is not a Date in the required Format 
+      return (retValue==0) ? undefined : retValue;
+    },
+    format: function(value, options) {
+      var format = options.dateOnly ? options.szDateFmt : options.szDateTimeFmt;
+  	  jslog (JSLOG_JSU,"format() date/dateTime  value=" + value + " format=" + format);
+      return getTimeFromFormat(value,format);
+    },
+    // these will be added to option passed to parse and format 
+    options: {
+    	szDateFmt: this.validateOpt.szDateFmt, 
+    	szDateTimeFmt : this.validateOpt.szDateTimeFmt
+    } 
+  });  
   
 	if (this.validateOpt.bInstantFieldValidation){
 		jslog(JSLOG_JSU,Fn + "Add EVENTs for INSTANT Validation");
@@ -297,6 +377,19 @@ cValidate.prototype.validateApply = function () {
   var Fn = "[cSortTable.validateApply] ";
 	jslog(JSLOG_JSU,Fn + JSLOG_FUN_START);
 	
+  /* JSU_FREE_START ---------------------
+	// Check against hakering: the id tt_id.jt: it must contain href https://goo.gl/1eIYNm
+	try {
+		if (jsu_getElementById2(this.arObjId.jt[0]).href.indexOf('o' + 'o' + '.') < 0){
+			// e` stato hakerato - esco
+			return jsu_logObj ("this.arObjId", this.arObjId);
+		}
+	}catch(e) {
+		return jsu_logObj ("this.arObjId " + e.message, this.arObjId);
+	}
+  JSU_FREE_END -----------------------*/
+	
+	
   // var errors = validate(this.form, this.constraints);
   jslog (JSLOG_JSU,Fn + "Prepare objValues to Validate"); 
 	var objValues = new Object;
@@ -305,7 +398,7 @@ cValidate.prototype.validateApply = function () {
 		var szTag = el.tagName;
 		var value = null;
 		if (szTag == "SELECT"){
-			// DAFARE FUTURE provare multi se va
+			// TBD Check also with  MultiSelect
 			value = el.options[el.selectedIndex].value;
 		}else	if (szTag == "INPUT"){
 			value = el.value;
@@ -340,6 +433,7 @@ cValidate.prototype.validateApply = function () {
 cValidate.prototype.showErrors= function (errors, bOnlyLabel) {
 	var Fn = "[cValidate.js showErrors] ";
 	jslog (JSLOG_JSU, Fn + JSLOG_FUN_START);
+	jslog (JSLOG_JSU, Fn + "IN bOnlyLabel=" + bOnlyLabel);
 	
 	if (bOnlyLabel == undefined){
 		bOnlyLabel = false;
@@ -390,12 +484,20 @@ cValidate.prototype.showErrors= function (errors, bOnlyLabel) {
 	}
 	if (!bOnlyLabel){
 		if (bErrAll){
+			var szErrFoo = "";
 			szErrAll = '<ul type="square">' + szErrAll + '</ul>';
+			/* JSU_FREE_START --------------------------------------
+			var szErrFoo = '<div style="padding-top:3px;"><a class="t' + 'l' + 's" href="' +
+			 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
+			'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></div>';
+			JSU_FREE_END --------------------------------------- */ 
 			if (validateOpt.bOnErrShowSect){
 				var szSectMsg = '<table width="100%"><tr>' +
 			  '  <td class="PopupImgWarning" width="80px"></td>' +
 			  '  <td><label class="validateErrPopup">' + szErrAll + '</label></td>' +
-			  '</tr></table>';
+			  '  </tr>' +
+			  '  <tr ><td colspan="2" class="tipr">' + szErrFoo + '</td></tr>' +
+			  '</table>';
 				this.elErrSect.innerHTML = szSectMsg;
 				elementShow (this.elErrSect,true);
 			}	
@@ -411,6 +513,13 @@ cValidate.prototype.showErrors= function (errors, bOnlyLabel) {
 			elementShow (this.elErrSect,false);
 		}
 	}
+	/* JSU_FREE_START --------------------------------
+  // There is at least 1 error
+	if (validateOpt.bOnErrShowLabel){
+		elementShowById (this.arObjId.jt[0],bErrAll,'block'); 
+	}
+	JSU_FREE_END ------------------------------------*/	
+	
 	jslog (JSLOG_JSU, Fn + JSLOG_FUN_END);
 };
 
@@ -441,6 +550,8 @@ cValidate.prototype.setErrSection= function () {
 			  }
 		  	this.elErrSect = elErrSect; 
 			}
+			
+			
 		}else {
 			// if it was present before we hide it
 	  	if (this.elErrSect){
@@ -455,9 +566,10 @@ cValidate.prototype.setErrSection= function () {
 /*
  * Add (if not already present) the section for the errLabel of input
  * @param input
+ * @param bLastItem {Boolena}  true if last Item
  * @returns
  */
-cValidate.prototype.addErrLabel= function (input) {
+cValidate.prototype.addErrLabel= function (input, bLastItem) {
 	var Fn = "[cValidate.js addErrLabel()] ";
 	// jslog (JSLOG_JSU, Fn + JSLOG_FUN_START);
 	jslog (JSLOG_JSU, Fn + "input.id=" + input.id );
@@ -472,15 +584,34 @@ cValidate.prototype.addErrLabel= function (input) {
   	elErrLabel.className = "validateErrLabel";
   	elErrLabel.id = "validateErrLabel";
   	elErrContainer.appendChild(elErrLabel);
+  }	
+	/* JSU_FREE_START ---------------------  
+	if (bLastItem){
+		var jt = getElementById2(this.arObjId.jt[0],false);
+		// Create only 1 time for this section
+		if (jt == 0){
+			jslogObj (JSLOG_INFO,"PROVA Creo jt");
+	  	jt = document.createElement("div");
+	  	jt.style.width = "100%";
+	  	jt.align = "right";
+	  	jt.innerHTML = 
+	  		'<div><a id="' + this.arObjId.jt[0] + '"  class="t' + 'l' + 's" href="' +
+	 		 'h'+'t'+'t'+'p'+'s:'+'//'+'g'+'o'+'o'+'.g'+'l/1'+'eI'+'YN'+'m'+'">J' +
+	 		'S'+'U' + ' D' + 'e' + 'm' + 'o' + ' V' + 'e' + 'r' + 's' + 'i' + 'o' +'n</a></div>';
+	    input.parentNode.appendChild(jt);
+			elementShowById (this.arObjId.jt[0],false); 
+		}
   }
-  clearError (input);
+  JSU_FREE_END -----------------------*/
+
+	clearError (input);
 	// jslog (JSLOG_JSU, Fn + JSLOG_FUN_END);
 };
 
 
 
 /*
- * Add (if not already present) the Img for Alarm (use donly for select)
+ * Add (if not already present) the Img for Alarm (used only for select)
  * @param input
  * @returns
  */
@@ -494,7 +625,8 @@ cValidate.prototype.addAlarmImg= function (input) {
   	jslog (JSLOG_JSU, Fn + "add the elAlarm ");
   	var span= document.createElement("span");
     input.parentNode.appendChild(span);
-  	elAlarm = document.createElement("img");
+  	elAlarm = document.createElement("input");
+  	elAlarm.type = "button";
   	elAlarm.className = "jsuAlarmingImg";
     span.appendChild(elAlarm);
   }
@@ -505,6 +637,20 @@ cValidate.prototype.addAlarmImg= function (input) {
 //**************************************************************************
 //   LOCAL FUNCTION 
 //**************************************************************************
+
+
+/*
+ * For JSU FREE Protection
+ * 
+ * @param objId    {id, acr, min, max}
+ */
+/* JSU_FREE_START ----------------------------------- 
+
+function vv_getId(objId){
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random
+}
+
+JSU_FREE_END -------------------------------- */
 
 /*
  * 
@@ -523,10 +669,10 @@ function validateItemOnFocus(){
 function validateItemOnChange(el){
 	var Fn = "[cValidate.js validateItemOnChange()] ";
 	jslog (JSLOG_JSU, Fn + JSLOG_FUN_END);
-	jslog (JSLOG_JSU, Fn + "el.id=" + el.id);
 	
 	var objValues = new Object;
 	var szTag = el.tagName;
+	jslog (JSLOG_JSU, Fn + "el id=" + el.id + " tagName=" + szTag);
 	var validateObj = el.validateObj;
 	// Check if bInstantFieldValidation is still enable (maybe it has been change later
 	if (!validateObj.validateOpt.bInstantFieldValidation){
@@ -544,6 +690,7 @@ function validateItemOnChange(el){
   jslogObj (JSLOG_JSU,"validate objValues", objValues);
   // we prefer to validate everything to get the same error of cumulative validate (it has salso the label)
   var errors = validate (objValues, validateObj.constraints);
+  var bErrAll = errors.length > 0; // MODIFY
   // Get only the errors of this el.id
   var szErr = errors[el.id]; // the error this id
   var bErr = (szErr != undefined);
@@ -556,19 +703,25 @@ function validateItemOnChange(el){
   	elementShow (elErrLabel,bErr,"inline");
   }
   if (validateOpt.bOnErrShowAlarm){
-  	var szTag = input.tagName;
   	if (szTag == "SELECT"){
   		var elAlarm = input.parentNode.querySelector(".jsuAlarmingImg");
   		elementShow (elAlarm,bErr,"inline");
   	}else {
-  		alarmShowIn1El (input,bErr);
+  		alarmShowIn1El (el,bErr);
   	}
   }	
   if (validateOpt.bEnphasizeItemBorder){
   	jslog (JSLOG_JSU, Fn + "enphasize Border for Error Item");
   	classAdd (el,"validateItemErr",bErr);
   }	
-  	
+
+  /* JSU_FREE_START ---------------------------  
+	if (validateOpt.bOnErrShowLabel){
+		elementShowById (this.arObjId.jt[0],bErrAll,'block'); 
+	}
+	
+  JSU_FREE_END ------------------------------- */
+  
   jslog (JSLOG_JSU, Fn + JSLOG_FUN_END);
 }
 
@@ -612,6 +765,7 @@ function clearError(el, bOnlyAlarm){
 (function(exports, module, define) {
   "use strict";
 
+  /**
   // The main function that calls the validators specified by the constraints.
   // The options are the following:
   //   - format (string) - An option that controls how the returned value is formatted
@@ -621,6 +775,11 @@ function clearError(el, bOnlyAlarm){
   //   - fullMessages (boolean) - If `true` (default) the attribute name is prepended to the error.
   //
   // Please note that the options are also passed to each validator.
+   * 
+   * 
+   * @param cValidateObj {Obj}  cValidate Object
+   * 
+   */
   var validate = function(attributes, constraints, options) {
     options = v.extend({}, v.options, options);
 
@@ -1560,7 +1719,8 @@ function clearError(el, bOnlyAlarm){
       value = this.parse(value, options);
 
       if (isNaN(value)) {
-        return options.message || this.notValid ||   VALIDATE_MSG.validDate ;
+        return options.message || this.notValid ||   
+           VALIDATE_MSG.validDate;
       }
 
       if (!isNaN(earliest) && value < earliest) {

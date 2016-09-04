@@ -1,20 +1,30 @@
-/* =========================================================================================
-@File:     				jsu.js
-@Author:   				Federico Levis
-@Since:  					Apr 2016   
-Description: 			require.js Definition for jsu with ModalPopup
-Option:					  - JSU_PATH_BASE can be defined in the html that include this file:
-									  EXAMPLE:
-										  var JSU_BASE_URL = "/ibmcognos/jsu";  // FOR COGNOS
-										  var JSU_PATH_BASE = '../..';   // FOR samples
-									- If JSU_PATH_BASE is not already  defined, it is defined here
-						  - JSU_LOADED_TMO_MS
-						    In very rare case we need to wait a little before accessing the DOM in jsu_loaded. 
-                In these case you can define JSU_LOADED_TMO_MS to be called after this TMO, instead of be calling immediatly after loading all JS						  
-DISCLAIMER
-Copyright by Federico Levis - JSUtily https://github.com/FedericoLevis/JSU
-This file may be freely distributed/modified under the MIT license. 
-========================================================================================= */
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			jsu.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
+<b>Description:</b>    js used to load JSU wiith require.js :  base configuration on,y with PURE JS PLUGIN - this vesrione is USED during LOCAL DEVELPOMENT<BR/>
+<b>OPTIONS:</b>        Before loading this file we can define following JS variable to set JSU Options: 
+
+                       - JSU_PATH_BASE ["../.."]  
+                         can be a fixed path or a path relative to the HTML loading this file                       
+                         Examples: <ul>
+                           var JSU_BASE_URL = https://rawgit.com/FedericoLevis/WORK/master"
+		                   var JSU_BASE_URL = "/ibmcognos/jsu";  // FOR COGNOS     
+						   var JSU_PATH_BASE = '../..';   // cen be used during local development
+						If JSU_PATH_BASE is not already  defined, it is defined here as "../.." (for development)
+                        
+                      - JSU_GA_TRACKING_ID: when defined, this module will load google-analytics and send  a page-view with JSU_GA_TRACKING_ID
+                         
+<b>REQUIRED:</b>        JSU with jquery, jquery-ui <BR/>
+<b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_blank">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+========================================================================================= <BR/> 
+*/
+
 
 /* the BASE Path: Path of ..../jsu folder. 
  a) Fixed 
@@ -42,10 +52,6 @@ var JSU_PATH_POPUP_HTML = JSU_PATH_BASE +  "/core/IEPopup/";
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 
-if (typeof (JSU_GA_EN) == "undefined"){
-	// DEFAULT:  Enable GoogleAnaltycs
-	var JSU_GA_EN = true; 
-}
 
 
 //Only for TEST during development
@@ -91,21 +97,19 @@ require([ // First 3 always present
 						} 
    );
 
-// ----------------------------------  ONLY for  GOOGLE ANALYTICS -  this part can be removed 
-if (typeof (JSU_GA_EN) != "undefined" && JSU_GA_EN){
+//----------------------------------  ONLY for  GOOGLE ANALYTICS -  this part can be removed if you do not use them
+if (typeof (JSU_GA_TRACKING_ID) != "undefined"){
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  	  if (typeof (JSU_GA_TRACKING_ID) == "undefined"){
-  	  	// we use the default TrackingId theat identify FREE JSU
-  	  	var JSU_GA_TRACKING_ID = 'UA-83225633-1'; 
-  	  }
-      ga('create',JSU_GA_TRACKING_ID , 'auto');
-      ga('send', 'pageview');
-  } 
-// ------------------------------------------------------------------------------
+
+    ga('create',JSU_GA_TRACKING_ID , 'auto');
+    ga('send', 'pageview');
+} 
+//------------------------------------------------------------------------------
+
 var jsuLoadedTmo = null;   
 
 function jsu_loaded_1(){

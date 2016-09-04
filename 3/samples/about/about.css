@@ -841,12 +841,18 @@ input.sampleNoteOpt{ /* Image for the Note in the Tip */
 
 
 
+td.sampleOpt{  /* td that contains a jsuOpt Button to setup Options (e.g. see ValidateSample) */
+  border-left: 2px solid black ;
+  vertical-align: top; 
+  text-align: left;
+  padding-left: 10px;
+}
 
 
 
 
 
-table.sampleLimit{  */
+table.sampleLimit{  /* Section that show that sample has Limit */
   text-align: left;
   font-family: Verdana;
   font-weight: normal;

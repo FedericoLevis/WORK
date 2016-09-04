@@ -1,9 +1,9 @@
 /** @fileOverview
 ========================================================================================= <BR/> 
 <b>File:</b> 			JSPopup/Popup.js  <BR/>
-<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
-<b>JSPopup Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html" target="_blank">JSU JSPopup Documentation</a> <BR/>
-<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
+<b>JSPopup Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html" target="_self">JSU JSPopup Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
 <b>Description:</b>       JQ Popup API, generic for ALL Browsers (IE, Mozilla, Chrome, ..) <BR/>                               
 <b>REQUIRED:</b>          From JSU: <ul>
                             <li><b>jsu/externalPlugin/jquery:</b> jquery-ui.css jquery.js jquery-ui.js </li>
@@ -15,7 +15,7 @@
 <b>Current Version:</b>   3.3 Jul 2016    <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
-Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
+Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 
 This file may be freely distributed under the MIT license.   <BR/>
 
 <BR/>-----------------------------------------------------------------------------------<BR/>
@@ -182,7 +182,7 @@ jsu: [0,'pp',1,999],   // e.g tt1057
 jt: [0,'pp',1000,2000]     // e.g tt2057
 };
 
-// finta
+// Simulation
 var pp_title;
 
 //JSU_FREE_END **---------------------------*/
@@ -923,13 +923,12 @@ function pp_DeselectAll(){
 
 
 /*
- * For CODE Pretection
+ * For JSU FREE Protection
  * 
  * @param objId    {id, acr, min, max}
  */
 function pp_getId(objId){
-	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random 
-  
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random   
 }
 
 
@@ -1005,7 +1004,7 @@ function pp_OnResize(event, ui){
  * @param szMsgHtml {String}  HTML TAG are Accepted - Newline if present is converted to HTML Newline
  * @param [objOpt] {Object}   
  <table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
-  <tr><td class="jsDocTitle">OPTION</td></tr>
+  <tr><td class="jsDocTitle">OPTIONS</td></tr>
   <tr><td class="jsDocParam">
   <ul>
     <li> szTitle:    {String}      change default Title </li> 
@@ -1055,7 +1054,7 @@ function pp_OnResize(event, ui){
 		    <li>Some Options are not available in JSU DEMO Version: 
 		       <label class="jsDocWarn">szTitle, bModal, szPromptLabel,szPromptValue, iPromptWidth, iChoiceMultiSize </label>
 		    </li>
-		    <li>Near the Default Title there is also a Link to JSU</li>
+		    <li>Below the Message there is an additional Link to JSU</li>
 		  </ul>
 		  </div>
 	</td></tr>

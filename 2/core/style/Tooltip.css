@@ -156,8 +156,7 @@ input.jsuOpt, input.jsuOptUp{  /* Option Button (we use the same also for Up)*/
     width: 27px;
     cursor: pointer;
     margin-left: 0px; 
-    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/option.png) no-repeat center center; */
-    background: #E0E0E0 url(../images/option.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/option.png) no-repeat center center; 
 }
 
 

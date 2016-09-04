@@ -136,21 +136,25 @@ JSU core - util.js: .jsuAlarmingEl alarm for el
   z-index: 1000;
 }
 
+
 /*---
-JSU core util.js: .jsuAlarmingEl  alarm img near a select   
+JSU core util.js: .jsuAlarmingImg  alarm img near an object (e.g select)
 ---
-<b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
+<b>CSS:</b> ``.jsuAlarmingImg``  used for select (added on the right and show/hide) 
 <BR/><b>Examples:</b>
 ```html
-<img class="jsuAlarmingImg"/>
+<input type="button" class="jsuAlarmingImg"/>
 ```
 */
-img.jsuAlarmingImg {
+.jsuAlarmingImg {
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
   background-size: contain;
-  height: 26px;
+  height: 20px;
+  vertical-align: top;
+  width: 25px;
   vertical-align: text-top;
 }
+
 
   
 /*---
@@ -192,7 +196,6 @@ div.jsuLoading {
   left: 0px;
   */  
 }
-
 
 
 input.jsuButton{  /* Button */ 

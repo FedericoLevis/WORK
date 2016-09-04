@@ -1,8 +1,543 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_80e3=["<div style=\"width:250px;\">Subscribe <b>Duration</b> (Years) must be:","<ul><b><li>Minimum: 1</li><li>Maximum: 10</li></b></ul></div>","<div style=\"width:270px;\">","<B>Password must have:</B>","  <ul type=\"circle\">","    <li> between <b>[4..10] characters</b></li>","    <li>At Least <b>1 Uppercase Alphabet</b></li>","    <li>At Least <b>1 Lowercase Alphabet</b></li>","    <li>At Least <b>1 Number</b></li>","    <li>At Least <b>1 Special character</b></li>","  </ul>","</BR>Example of Valid Password: <label class=\"tipGood\">Example$1</label> </BR></BR>","Example of Wrong Password: <label class=\"tipErr\">Example1</label>","</div>","<div style=\"width:350px;\">","<B>Username must have:</B> ","  <ul type=\"square\">","    <li>Number of characters  <b>between [3..20] characters</b></li>","    <li>Possible characters:  <b>a..z   A..Z   0..9</b></li>","</BR>Example of Valid Username: <label class=\"tipGood\">User01</label></BR></BR>","Example of Wrong Username: <label class=\"tipErr\">_$001</label>","At the moment We have finished <label class=\"tipErr\">SIZE XS and S</label></div>","At the moment <b>We support only following country</b>: ","    <li><label class=\"tipGood\">Italy</label></li>","    <li><label class=\"tipGood\">Spain</label></li>","[ValidateSample.js jsu_loaded()] ","[ValidateSample.js populateCountry()] ","","AF","Afghanistan","AL","Albania","DZ","Algeria","AS","American Samoa","AD","Andorra","AO","Angola","AI","Anguilla","AQ","Antarctica","AG","Antigua and Barbuda","AR","Argentina","AM","Armenia","AW","Aruba","AU","Australia","AT","Austria","AZ","Azerbaijan","BS","Bahamas","BH","Bahrain","BD","Bangladesh","BB","Barbados","BY","Belarus","BE","Belgium","BZ","Belize","BJ","Benin","BM","Bermuda","BT","Bhutan","BO","Bolivia","BA","Bosnia and Herzegovina","BW","Botswana","BV","Bouvet Island","BR","Brazil","IO","British Indian Ocean Territory","BN","Brunei Darussalam","BG","Bulgaria","BF","Burkina Faso","BI","Burundi","KH","Cambodia","CM","Cameroon","CA","Canada","CV","Cape Verde","KY","Cayman Islands","CF","Central African Republic","TD","Chad","CL","Chile","CN","China","CX","Christmas Island","CC","Cocos (Keeling) Islands","CO","Colombia","KM","Comoros","CG","Congo","CK","Cook Islands","CR","Costa Rica","CI","Cote D'ivoire","HR","Croatia","CU","Cuba","CY","Cyprus","CZ","Czech Republic","DK","Denmark","DJ","Djibouti","DM","Dominica","DO","Dominican Republic","EC","Ecuador","EG","Egypt","SV","El Salvador","GQ","Equatorial Guinea","ER","Eritrea","EE","Estonia","ET","Ethiopia","FK","Falkland Islands (Malvinas)","FO","Faroe Islands","FJ","Fiji","FI","Finland","FR","France","GF","French Guiana","PF","French Polynesia","TF","French Southern Territories","GA","Gabon","GM","Gambia","GE","Georgia","DE","Germany","GH","Ghana","GI","Gibraltar","GR","Greece","GL","Greenland","GD","Grenada","GP","Guadeloupe","GU","Guam","GT","Guatemala","GG","Guernsey","GN","Guinea","GW","Guinea-bissau","GY","Guyana","HT","Haiti","HM","Heard Island and Mcdonald Islands","VA","Holy See (Vatican City State)","HN","Honduras","HK","Hong Kong","HU","Hungary","IS","Iceland","IN","India","ID","Indonesia","IR","Iran, Islamic Republic of","IQ","Iraq","IE","Ireland","IM","Isle of Man","IL","Israel","IT","Italy","JM","Jamaica","JP","Japan","JE","Jersey","JO","Jordan","KZ","Kazakhstan","KE","Kenya","KI","Kiribati","KR","Korea, Republic of","KW","Kuwait","KG","Kyrgyzstan","LA","Lao People's Democratic Republic","LV","Latvia","LB","Lebanon","LS","Lesotho","LR","Liberia","LY","Libyan Arab Jamahiriya","LI","Liechtenstein","LT","Lithuania","LU","Luxembourg","MO","Macao","MK","Macedonia","MG","Madagascar","MW","Malawi","MY","Malaysia","MV","Maldives","ML","Mali","MT","Malta","MH","Marshall Islands","MQ","Martinique","MR","Mauritania","MU","Mauritius","YT","Mayotte","MX","Mexico","FM","Micronesia, Federated States of","MD","Moldova, Republic of","MC","Monaco","MN","Mongolia","ME","Montenegro","MS","Montserrat","MA","Morocco","MZ","Mozambique","MM","Myanmar","NA","Namibia","NR","Nauru","NP","Nepal","NL","Netherlands","AN","Netherlands Antilles","NC","New Caledonia","NZ","New Zealand","NI","Nicaragua","NE","Niger","NG","Nigeria","NU","Niue","NF","Norfolk Island","MP","Northern Mariana Islands","NO","Norway","OM","Oman","PK","Pakistan","PW","Palau","PS","Palestinian Territory, Occupied","PA","Panama","PG","Papua New Guinea","PY","Paraguay","PE","Peru","PH","Philippines","PN","Pitcairn","PL","Poland","PT","Portugal","PR","Puerto Rico","QA","Qatar","RE","Reunion","RO","Romania","RU","Russian Federation","RW","Rwanda","SH","Saint Helena","KN","Saint Kitts and Nevis","LC","Saint Lucia","PM","Saint Pierre and Miquelon","VC","Saint Vincent and The Grenadines","WS","Samoa","SM","San Marino","ST","Sao Tome and Principe","SA","Saudi Arabia","SN","Senegal","RS","Serbia","SC","Seychelles","SL","Sierra Leone","SG","Singapore","SK","Slovakia","SI","Slovenia","SB","Solomon Islands","SO","Somalia","ZA","South Africa","ES","Spain","LK","Sri Lanka","SD","Sudan","SR","Suriname","SJ","Svalbard and Jan Mayen","SZ","Swaziland","SE","Sweden","CH","Switzerland","SY","Syrian Arab Republic","TW","Taiwan, Province of China","TJ","Tajikistan","TZ","Tanzania, United Republic of","TH","Thailand","TL","Timor-leste","TG","Togo","TK","Tokelau","TO","Tonga","TT","Trinidad and Tobago","TN","Tunisia","TR","Turkey","TM","Turkmenistan","TC","Turks and Caicos Islands","TV","Tuvalu","UG","Uganda","UA","Ukraine","AE","United Arab Emirates","GB","United Kingdom","US","United States","UM","United States Minor Outlying Islands","UY","Uruguay","UZ","Uzbekistan","VU","Vanuatu","VE","Venezuela","VN","Viet Nam","VG","Virgin Islands, British","VI","Virgin Islands, U.S.","WF","Wallis and Futuna","EH","Western Sahara","YE","Yemen","ZM","Zambia","ZW","Zimbabwe","country","length","[ValidateSample.js initValidate1()] ","errSect1","[ValidateSample.js onclickSubmit1()] ","validateApply","OK","<label class=\"PopupGood\">Validation OK</label>","VALIDATION of SAMPLE_1","[ValidateSample.js initValidate2()] ","[a-z0-9]+","i","can only contain a-z or A-Z or 0-9","must have [4..10] char., At least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number, 1 Special Char.","password","The passwords does not match","errSect2","[ValidateSample.js onclickSubmit2()] ","VALIDATION of SAMPLE_2","XS","S","<b>XS and S</b> are not available at the moment","SP","^Sorry, this service is only for <b>Italy or Spain</b> ","\\d{5}","errSect3","[ValidateSample.js onclickSubmit3()] ","// 1) Init cValidate with Item constraints, tips and options \x0A","function initValidate1(){ \x0A","  cValidateObj1 = new cValidate ({  \x0A","      // Mandatory email   \x0A","      email: {  presence: true,  email: true }, \x0A","      duration: { // Mandatory Integer in range [1..10] with a tip explaining it \x0A","        presence: true, tip: TIP_DURATION,  \x0A","        numericality: { onlyInteger: true,  greaterThanOrEqualTo: 1,  lessThanOrEqualTo: 10 } \x0A","      }, \x0A","      // Optional Birthday in date default format (YYYY-MM-DD) \x0A","      birthdate: { date: {} } \x0A","    }, \x0A","    // OPTION: Id of div to use in case of bOnErrShowSect:true \x0A","    {szErrSectId: \"errSect1\"} \x0A","  ); \x0A","  // Now the item Validation is managed by cValidate.js \x0A","} \x0A"," \x0A"," //  2)  At Submit Button Click: we Validate all the items  \x0A","function onclickSubmit1() { \x0A","  var retCode = cValidateObj1.validateApply(); \x0A","//1) Init cValidate with Item constraints, tips and options\x0A","function initValidate2(){\x0A","  cValidateObj2 = new cValidate ({ // Mandatory username len[3..20] \x0A","    username: {presence: true, tip: TIP_USER, length: { minimum: 3,  maximum: 20 },\x0A","      format: { // reqexp: We allow only  a-z and 0-9, and we ignore (flags=i) if it is uppercase or lowercase \x0A","        pattern: \"[a-z0-9]+\",   flags: \"i\",   message: \"can only contain a-z or A-Z or 0-9\"  }\x0A","    }, // Mandatory password, len [4..10]\x0A","    password: {  presence: true,  tip: TIP_PWD,  length: {  minimum: 4,  maximum: 10  },\x0A","      format: { // pattern=reqexp Format - we described them in message\x0A","        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&]{8,}/ ,   \x0A","        message: \"must have [4..10] char., At least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number, 1 Special Char.\"\x0A","      }    \x0A","    }, // Mandatory conform-password, that must be equal to password\x0A","    \"confirm-password\": { presence: true,  \x0A","         equality: {   attribute: \"password\",   message: \"The passwords does not match\"  }\x0A","    }\x0A","  }, //---------- OPTION\x0A","  {  // Validate all items only at validateApply (Submit button) - Error Section on the Top\x0A","    szErrSectId: \"errSect2\",    \x0A","    bInstantFieldValidation:false, bOnErrShowLabel: false,    bOnErrShowSect:true  }\x0A","  );\x0A","}\x0A","function onclickSubmit2() { \x0A","  var retCode = cValidateObj2.validateApply(); \x0A","function initValidate3(){ \x0A","  cValidateObj3 = new cValidate ({ // Mandatory size, choice exclude XS and S  \x0A","      size: {  presence: true, tip: TIP_SIZE,  exclusion: {   within: [\"XS\",\"S\"],  \x0A","     message: \"<b>XS and S</b> are not available at the moment\"   }  \x0A","      }, // Mandatory country, choice within IT or SP \x0A","      country: {presence: true,  tip: TIP_COUNTRY,  inclusion: {   within: [\"IT\",\"SP\"],  \x0A","     message: \"^Sorry, this service is only for <b>Italy or Spain</b> \"   }  \x0A","      }, // optional ZIP with a Tip, with 5 digit required if inserted \x0A","      zip: { format: {   pattern: \"\\d{5}\"  }  } \x0A","    },// OPTION: Validate all items only at validateApply - Popup Err and Alarm in Items \x0A","    {  szErrSectId: \"errSect3\",  \x0A","      bInstantFieldValidation:false, bOnErrShowLabel: false, bOnErrShowPopup:true, bOnErrShowAlarm:true   \x0A","    } \x0A","function onclickSubmit3() { \x0A","  var retCode = cValidateObj3.validateApply(); \x0A","\x09 <table class=\"tip\" BORDER=\"2\" cellpadding=\"2\" width=\"600px\">","\x09\x09\x09\x09  <tr class=\"tipTitle\"><td colspan=\"4\">cValidate OPTION</td></tr>","\x09\x09\x09\x09  <tr class=\"tipTitle2\">","\x09\x09\x09\x09  <td width =\"10%\">OPTION</td>","\x09\x09\x09\x09  <td width =\"10%\">DEFAULT</td>","\x09\x09\x09\x09  <td width =\"10%\">VALUE</td>","\x09\x09\x09\x09  <td width =\"70%\">DESCRIPTION</td>","     </tr>  ","     <tr class=\"tip\">","\x09\x09\x09\x09  <td><b>bOnErrShowLabel</b></td>","\x09\x09\x09\x09  <td><i>true</i></td>","\x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bOnErrShowLabel\" >  ","\x09\x09\x09       <option value =\"false\" bOnErrShowLabelFALSE_SEL >false</option>  ","\x09\x09\x09       <option value =\"true\" bOnErrShowLabelTRUE_SEL >true</option>  ","\x09\x09\x09\x09      </select> ","\x09\x09\x09\x09  </td>","\x09\x09\x09\x09  <td class=\"tipl\"><b>if true</b>: if <label class=\"jsuAPI\">validateApply</label> generates Validate Errors, it shows an error label on the right of the Item</td>","     </tr>","\x09    <tr class=\"tip\">","\x09\x09\x09\x09  <td><b>bInstantFieldValidation</b></td>","\x09\x09\x09\x09  <td><i>false</i></b></td>","\x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bInstantFieldValidation\">  ","\x09\x09\x09         <option value =\"false\" bInstantFieldValidationFALSE_SEL >false</option>  ","\x09\x09\x09         <option value =\"true\" bInstantFieldValidationTRUE_SEL >true</option>  ","\x09\x09\x09\x09  </select> </td>","\x09\x09\x09\x09  <td class=\"tipl\"><b>If true</b>: Each Item is Instantly validated on the relative onChange Event</td>","\x09\x09\x09\x09</tr>","\x09\x09\x09\x09  <td><b>bOnErrShowSect</b></td>","\x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bOnErrShowSect\">  ","            <option value =\"false\" bOnErrShowSectFALSE_SEL >false</option>  ","             <option value =\"true\" bOnErrShowSectTRUE_SEL >true</option>  ","\x09\x09\x09\x09      </select> </td>","\x09\x09\x09\x09  <td class=\"tipl\"><b>if true</b>: if <label class=\"jsuAPI\">validateApply</label> generates Validate Errors, it shows a Section in The Top will All the Errors</td>","\x09\x09\x09\x09  <td><b>bOnErrShowPopup</b></td>"," \x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bOnErrShowPopup\">  ","\x09\x09\x09         <option value =\"false\" bOnErrShowPopupFALSE_SEL >false</option>  ","\x09\x09\x09         <option value =\"true\" bOnErrShowPopupTRUE_SEL >true</option>  ","\x09\x09\x09\x09  <td class=\"tipl\"><b>If true</b>: if <label class=\"jsuAPI\">validateApply</label> generates Validate Errors, it shows a Popup with the Error Description</td>","\x09\x09\x09\x09  <td><b>bOnErrShowAlarm</b></td>","\x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bOnErrShowAlarm\">  ","\x09\x09\x09         <option value =\"false\" bOnErrShowAlarmFALSE_SEL >false</option>  ","\x09\x09\x09         <option value =\"true\" bOnErrShowAlarmTRUE_SEL >true</option>  ","\x09\x09\x09\x09  <td class=\"tipl\"><b>If true</b>: On Single Item Validate Error, it shows an AlarmGif in the Item</td>","\x09      </tr>","\x09\x09\x09\x09<tr class=\"tip\">","\x09\x09\x09\x09\x09\x09  <td><b>bEnphasizeItemBorder</b></td>","\x09\x09\x09\x09\x09\x09  <td><i>true</i></b></td>","\x09\x09\x09\x09\x09\x09  <td> <select class=\"bold\" id=\"bEnphasizeItemBorder\">  ","\x09\x09\x09         <option value =\"false\" bEnphasizeItemBorderFALSE_SEL >false</option>  ","\x09\x09\x09         <option value =\"true\" bEnphasizeItemBorderTRUE_SEL >true</option>  ","\x09\x09\x09\x09\x09\x09  </select> </td>","\x09\x09\x09\x09\x09\x09  <td class=\"tipl\"><b>If true</b>: Mandatory or Error item are Enphasized with bigger border (Red for Validation Error cases)</td>","\x09\x09\x09\x09\x09\x09</tr>","\x09\x09\x09  </table>","\x09\x09\x09 </td>","\x09\x09</tr>"," <table><tr valign=\"top\"><td>","<label class=\"tipTitle\">You can Try Whatever combination of the </label><label class=\"jsuAPI\">cValidate</label>","<label class=\"tipTitle\"> OPTION of SAMPLE_",":</label>","<ul>","  <li>Select whatever combination of the OPTION Values in the ComboBox below</li>","  <li>Click Button <b>Apply VALIDATE OPTION</b></li>","  <li>Try the SAMPLE_","</li>","</ul>","<tr><td align=\"center\">","  <BR/><input type=\"button\" value=\"Apply VALIDATE OPTION\" onclick=\"applyValidateOption(",");\" />","</td></tr></table>","getOption","validateOpt","TRUE_SEL","selected","replace","FALSE_SEL","bOnErrShowLabel","true","bOnErrShowSect","bOnErrShowPopup","bOnErrShowAlarm","bEnphasizeItemBorder","bInstantFieldValidation","setOption"];var JSLOG_LEV=0;var TIP_DURATION=_$_80e3[0]+ _$_80e3[1];var TIP_PWD=_$_80e3[2]+ _$_80e3[3]+ _$_80e3[4]+ _$_80e3[5]+ _$_80e3[6]+ _$_80e3[7]+ _$_80e3[8]+ _$_80e3[9]+ _$_80e3[10]+ _$_80e3[11]+ _$_80e3[12]+ _$_80e3[13];var TIP_USER=_$_80e3[14]+ _$_80e3[15]+ _$_80e3[16]+ _$_80e3[17]+ _$_80e3[18]+ _$_80e3[10]+ _$_80e3[19]+ _$_80e3[20]+ _$_80e3[13];var TIP_SIZE=_$_80e3[14]+ _$_80e3[21];var TIP_COUNTRY=_$_80e3[14]+ _$_80e3[22]+ _$_80e3[16]+ _$_80e3[23]+ _$_80e3[24]+ _$_80e3[10]+ _$_80e3[13];var cValidateObj1=null;var cValidateObj2=null;var cValidateObj3=null;function jsu_loaded(){var s=_$_80e3[25];jslog(JSLOG_INFO,s+ JSLOG_FUN_START);setupState();initSampleCmn();populateCountry();initValidate1();initValidate2();initValidate3();loadingShow(false);jslog(JSLOG_INFO,s+ JSLOG_FUN_END)}function populateCountry(){var s=_$_80e3[26];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);var bY=[[_$_80e3[27],_$_80e3[27]],[_$_80e3[28],_$_80e3[29]],[_$_80e3[30],_$_80e3[31]],[_$_80e3[32],_$_80e3[33]],[_$_80e3[34],_$_80e3[35]],[_$_80e3[36],_$_80e3[37]],[_$_80e3[38],_$_80e3[39]],[_$_80e3[40],_$_80e3[41]],[_$_80e3[42],_$_80e3[43]],[_$_80e3[44],_$_80e3[45]],[_$_80e3[46],_$_80e3[47]],[_$_80e3[48],_$_80e3[49]],[_$_80e3[50],_$_80e3[51]],[_$_80e3[52],_$_80e3[53]],[_$_80e3[54],_$_80e3[55]],[_$_80e3[56],_$_80e3[57]],[_$_80e3[58],_$_80e3[59]],[_$_80e3[60],_$_80e3[61]],[_$_80e3[62],_$_80e3[63]],[_$_80e3[64],_$_80e3[65]],[_$_80e3[66],_$_80e3[67]],[_$_80e3[68],_$_80e3[69]],[_$_80e3[70],_$_80e3[71]],[_$_80e3[72],_$_80e3[73]],[_$_80e3[74],_$_80e3[75]],[_$_80e3[76],_$_80e3[77]],[_$_80e3[78],_$_80e3[79]],[_$_80e3[80],_$_80e3[81]],[_$_80e3[82],_$_80e3[83]],[_$_80e3[84],_$_80e3[85]],[_$_80e3[86],_$_80e3[87]],[_$_80e3[88],_$_80e3[89]],[_$_80e3[90],_$_80e3[91]],[_$_80e3[92],_$_80e3[93]],[_$_80e3[94],_$_80e3[95]],[_$_80e3[96],_$_80e3[97]],[_$_80e3[98],_$_80e3[99]],[_$_80e3[100],_$_80e3[101]],[_$_80e3[102],_$_80e3[103]],[_$_80e3[104],_$_80e3[105]],[_$_80e3[106],_$_80e3[107]],[_$_80e3[108],_$_80e3[109]],[_$_80e3[110],_$_80e3[111]],[_$_80e3[112],_$_80e3[113]],[_$_80e3[114],_$_80e3[115]],[_$_80e3[116],_$_80e3[117]],[_$_80e3[118],_$_80e3[119]],[_$_80e3[120],_$_80e3[121]],[_$_80e3[122],_$_80e3[123]],[_$_80e3[124],_$_80e3[125]],[_$_80e3[126],_$_80e3[127]],[_$_80e3[128],_$_80e3[129]],[_$_80e3[130],_$_80e3[131]],[_$_80e3[132],_$_80e3[133]],[_$_80e3[134],_$_80e3[135]],[_$_80e3[136],_$_80e3[137]],[_$_80e3[138],_$_80e3[139]],[_$_80e3[140],_$_80e3[141]],[_$_80e3[142],_$_80e3[143]],[_$_80e3[144],_$_80e3[145]],[_$_80e3[146],_$_80e3[147]],[_$_80e3[148],_$_80e3[149]],[_$_80e3[150],_$_80e3[151]],[_$_80e3[152],_$_80e3[153]],[_$_80e3[154],_$_80e3[155]],[_$_80e3[156],_$_80e3[157]],[_$_80e3[158],_$_80e3[159]],[_$_80e3[160],_$_80e3[161]],[_$_80e3[162],_$_80e3[163]],[_$_80e3[164],_$_80e3[165]],[_$_80e3[166],_$_80e3[167]],[_$_80e3[168],_$_80e3[169]],[_$_80e3[170],_$_80e3[171]],[_$_80e3[172],_$_80e3[173]],[_$_80e3[174],_$_80e3[175]],[_$_80e3[176],_$_80e3[177]],[_$_80e3[178],_$_80e3[179]],[_$_80e3[180],_$_80e3[181]],[_$_80e3[182],_$_80e3[183]],[_$_80e3[184],_$_80e3[185]],[_$_80e3[186],_$_80e3[187]],[_$_80e3[188],_$_80e3[189]],[_$_80e3[190],_$_80e3[191]],[_$_80e3[192],_$_80e3[193]],[_$_80e3[194],_$_80e3[195]],[_$_80e3[196],_$_80e3[197]],[_$_80e3[198],_$_80e3[199]],[_$_80e3[200],_$_80e3[201]],[_$_80e3[202],_$_80e3[203]],[_$_80e3[204],_$_80e3[205]],[_$_80e3[206],_$_80e3[207]],[_$_80e3[208],_$_80e3[209]],[_$_80e3[210],_$_80e3[211]],[_$_80e3[212],_$_80e3[213]],[_$_80e3[214],_$_80e3[215]],[_$_80e3[216],_$_80e3[217]],[_$_80e3[218],_$_80e3[219]],[_$_80e3[220],_$_80e3[221]],[_$_80e3[222],_$_80e3[223]],[_$_80e3[224],_$_80e3[225]],[_$_80e3[226],_$_80e3[227]],[_$_80e3[228],_$_80e3[229]],[_$_80e3[230],_$_80e3[231]],[_$_80e3[232],_$_80e3[233]],[_$_80e3[234],_$_80e3[235]],[_$_80e3[236],_$_80e3[237]],[_$_80e3[238],_$_80e3[239]],[_$_80e3[240],_$_80e3[241]],[_$_80e3[242],_$_80e3[243]],[_$_80e3[244],_$_80e3[245]],[_$_80e3[246],_$_80e3[247]],[_$_80e3[248],_$_80e3[249]],[_$_80e3[250],_$_80e3[251]],[_$_80e3[252],_$_80e3[253]],[_$_80e3[254],_$_80e3[255]],[_$_80e3[256],_$_80e3[257]],[_$_80e3[258],_$_80e3[259]],[_$_80e3[260],_$_80e3[261]],[_$_80e3[262],_$_80e3[263]],[_$_80e3[264],_$_80e3[265]],[_$_80e3[266],_$_80e3[267]],[_$_80e3[268],_$_80e3[269]],[_$_80e3[270],_$_80e3[271]],[_$_80e3[272],_$_80e3[273]],[_$_80e3[274],_$_80e3[275]],[_$_80e3[276],_$_80e3[277]],[_$_80e3[278],_$_80e3[279]],[_$_80e3[280],_$_80e3[281]],[_$_80e3[282],_$_80e3[283]],[_$_80e3[284],_$_80e3[285]],[_$_80e3[286],_$_80e3[287]],[_$_80e3[288],_$_80e3[289]],[_$_80e3[290],_$_80e3[291]],[_$_80e3[292],_$_80e3[293]],[_$_80e3[294],_$_80e3[295]],[_$_80e3[296],_$_80e3[297]],[_$_80e3[298],_$_80e3[299]],[_$_80e3[300],_$_80e3[301]],[_$_80e3[302],_$_80e3[303]],[_$_80e3[304],_$_80e3[305]],[_$_80e3[306],_$_80e3[307]],[_$_80e3[308],_$_80e3[309]],[_$_80e3[310],_$_80e3[311]],[_$_80e3[312],_$_80e3[313]],[_$_80e3[314],_$_80e3[315]],[_$_80e3[316],_$_80e3[317]],[_$_80e3[318],_$_80e3[319]],[_$_80e3[320],_$_80e3[321]],[_$_80e3[322],_$_80e3[323]],[_$_80e3[324],_$_80e3[325]],[_$_80e3[326],_$_80e3[327]],[_$_80e3[328],_$_80e3[329]],[_$_80e3[330],_$_80e3[331]],[_$_80e3[332],_$_80e3[333]],[_$_80e3[334],_$_80e3[335]],[_$_80e3[336],_$_80e3[337]],[_$_80e3[338],_$_80e3[339]],[_$_80e3[340],_$_80e3[341]],[_$_80e3[342],_$_80e3[343]],[_$_80e3[344],_$_80e3[345]],[_$_80e3[346],_$_80e3[347]],[_$_80e3[348],_$_80e3[349]],[_$_80e3[350],_$_80e3[351]],[_$_80e3[352],_$_80e3[353]],[_$_80e3[354],_$_80e3[355]],[_$_80e3[356],_$_80e3[357]],[_$_80e3[358],_$_80e3[359]],[_$_80e3[360],_$_80e3[361]],[_$_80e3[362],_$_80e3[363]],[_$_80e3[364],_$_80e3[365]],[_$_80e3[366],_$_80e3[367]],[_$_80e3[368],_$_80e3[369]],[_$_80e3[370],_$_80e3[371]],[_$_80e3[372],_$_80e3[373]],[_$_80e3[374],_$_80e3[375]],[_$_80e3[376],_$_80e3[377]],[_$_80e3[378],_$_80e3[379]],[_$_80e3[380],_$_80e3[381]],[_$_80e3[382],_$_80e3[383]],[_$_80e3[384],_$_80e3[385]],[_$_80e3[386],_$_80e3[387]],[_$_80e3[388],_$_80e3[389]],[_$_80e3[390],_$_80e3[391]],[_$_80e3[392],_$_80e3[393]],[_$_80e3[394],_$_80e3[395]],[_$_80e3[396],_$_80e3[397]],[_$_80e3[398],_$_80e3[399]],[_$_80e3[400],_$_80e3[401]],[_$_80e3[402],_$_80e3[403]],[_$_80e3[404],_$_80e3[405]],[_$_80e3[406],_$_80e3[407]],[_$_80e3[408],_$_80e3[409]],[_$_80e3[410],_$_80e3[411]],[_$_80e3[412],_$_80e3[413]],[_$_80e3[414],_$_80e3[415]],[_$_80e3[416],_$_80e3[417]],[_$_80e3[418],_$_80e3[419]],[_$_80e3[420],_$_80e3[421]],[_$_80e3[422],_$_80e3[423]],[_$_80e3[424],_$_80e3[425]],[_$_80e3[426],_$_80e3[427]],[_$_80e3[428],_$_80e3[429]],[_$_80e3[430],_$_80e3[431]],[_$_80e3[432],_$_80e3[433]],[_$_80e3[434],_$_80e3[435]],[_$_80e3[436],_$_80e3[437]],[_$_80e3[438],_$_80e3[439]],[_$_80e3[440],_$_80e3[441]],[_$_80e3[442],_$_80e3[443]],[_$_80e3[444],_$_80e3[445]],[_$_80e3[446],_$_80e3[447]],[_$_80e3[448],_$_80e3[449]],[_$_80e3[450],_$_80e3[451]],[_$_80e3[452],_$_80e3[453]],[_$_80e3[454],_$_80e3[455]],[_$_80e3[456],_$_80e3[457]],[_$_80e3[458],_$_80e3[459]],[_$_80e3[460],_$_80e3[461]],[_$_80e3[462],_$_80e3[463]],[_$_80e3[464],_$_80e3[465]],[_$_80e3[466],_$_80e3[467]],[_$_80e3[468],_$_80e3[469]],[_$_80e3[470],_$_80e3[471]],[_$_80e3[472],_$_80e3[473]],[_$_80e3[474],_$_80e3[475]],[_$_80e3[476],_$_80e3[477]],[_$_80e3[478],_$_80e3[479]],[_$_80e3[480],_$_80e3[481]],[_$_80e3[482],_$_80e3[483]],[_$_80e3[484],_$_80e3[485]],[_$_80e3[486],_$_80e3[487]],[_$_80e3[488],_$_80e3[489]],[_$_80e3[490],_$_80e3[491]],[_$_80e3[492],_$_80e3[493]],[_$_80e3[494],_$_80e3[495]],[_$_80e3[496],_$_80e3[497]],[_$_80e3[498],_$_80e3[499]],[_$_80e3[500],_$_80e3[501]],[_$_80e3[502],_$_80e3[503]],[_$_80e3[504],_$_80e3[505]],[_$_80e3[506],_$_80e3[507]]];var cb=getElementById2(_$_80e3[508]);for(var ca=0;ca< bY[_$_80e3[509]];ca++){var bZ=bY[ca];appendOptionLast(cb,bZ[1],bZ[0])};jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function initValidate1(){var s=_$_80e3[510];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);cValidateObj1=  new cValidate({email:{presence:true,email:true},duration:{presence:true,tip:TIP_DURATION,numericality:{onlyInteger:true,greaterThanOrEqualTo:1,lessThanOrEqualTo:10}},birthdate:{date:{}}},{szErrSectId:_$_80e3[511]});jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function onclickSubmit1(){var s=_$_80e3[512];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);var bW=cValidateObj1[_$_80e3[513]]();if(bW== VALIDATE_RETCODE[_$_80e3[514]]){showInfo(_$_80e3[515],{szTitle:_$_80e3[516]})};jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function initValidate2(){var s=_$_80e3[517];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);cValidateObj2=  new cValidate({username:{presence:true,tip:TIP_USER,length:{minimum:3,maximum:20},format:{pattern:_$_80e3[518],flags:_$_80e3[519],message:_$_80e3[520]}},password:{presence:true,tip:TIP_PWD,length:{minimum:4,maximum:10},format:{pattern:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/,message:_$_80e3[521]}},"confirm-password":{presence:true,equality:{attribute:_$_80e3[522],message:_$_80e3[523]}}},{szErrSectId:_$_80e3[524],bInstantFieldValidation:false,bOnErrShowLabel:false,bOnErrShowSect:true});jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function onclickSubmit2(){var s=_$_80e3[525];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);var bW=cValidateObj2[_$_80e3[513]]();if(bW== VALIDATE_RETCODE[_$_80e3[514]]){showInfo(_$_80e3[515],{szTitle:_$_80e3[526]})};jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function initValidate3(){var s=_$_80e3[517];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);cValidateObj3=  new cValidate({size:{presence:true,tip:TIP_SIZE,exclusion:{within:[_$_80e3[527],_$_80e3[528]],message:_$_80e3[529]}},country:{presence:true,tip:TIP_COUNTRY,inclusion:{within:[_$_80e3[238],_$_80e3[530]],message:_$_80e3[531]}},zip:{format:{pattern:_$_80e3[532]}}},{szErrSectId:_$_80e3[533],bInstantFieldValidation:false,bOnErrShowLabel:false,bOnErrShowPopup:true,bOnErrShowAlarm:true});jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}function onclickSubmit3(){var s=_$_80e3[534];jslog(JSLOG_DEBUG,s+ JSLOG_FUN_START);var bW=cValidateObj3[_$_80e3[513]]();if(bW== VALIDATE_RETCODE[_$_80e3[514]]){showInfo(_$_80e3[515],{szTitle:_$_80e3[516]})};jslog(JSLOG_DEBUG,s+ JSLOG_FUN_END)}var JS_CODE_VALIDATE1=_$_80e3[535]+ _$_80e3[536]+ _$_80e3[537]+ _$_80e3[538]+ _$_80e3[539]+ _$_80e3[540]+ _$_80e3[541]+ _$_80e3[542]+ _$_80e3[543]+ _$_80e3[544]+ _$_80e3[545]+ _$_80e3[546]+ _$_80e3[547]+ _$_80e3[548]+ _$_80e3[549]+ _$_80e3[550]+ _$_80e3[551]+ _$_80e3[552]+ _$_80e3[553]+ _$_80e3[554]+ _$_80e3[555]+ _$_80e3[551];var JS_CODE_VALIDATE2=_$_80e3[556]+ _$_80e3[557]+ _$_80e3[558]+ _$_80e3[559]+ _$_80e3[560]+ _$_80e3[561]+ _$_80e3[562]+ _$_80e3[563]+ _$_80e3[564]+ _$_80e3[565]+ _$_80e3[566]+ _$_80e3[567]+ _$_80e3[568]+ _$_80e3[569]+ _$_80e3[570]+ _$_80e3[571]+ _$_80e3[572]+ _$_80e3[573]+ _$_80e3[574]+ _$_80e3[575]+ _$_80e3[576]+ _$_80e3[550]+ _$_80e3[577]+ _$_80e3[552]+ _$_80e3[553]+ _$_80e3[578]+ _$_80e3[579]+ _$_80e3[551];var JS_CODE_VALIDATE3=_$_80e3[556]+ _$_80e3[580]+ _$_80e3[581]+ _$_80e3[582]+ _$_80e3[583]+ _$_80e3[584]+ _$_80e3[585]+ _$_80e3[586]+ _$_80e3[587]+ _$_80e3[588]+ _$_80e3[589]+ _$_80e3[590]+ _$_80e3[591]+ _$_80e3[592]+ _$_80e3[549]+ _$_80e3[550]+ _$_80e3[551]+ _$_80e3[552]+ _$_80e3[553]+ _$_80e3[593]+ _$_80e3[594]+ _$_80e3[551];var CHANGE_VALIDATE_OPT=_$_80e3[595]+ _$_80e3[596]+ _$_80e3[597]+ _$_80e3[598]+ _$_80e3[599]+ _$_80e3[600]+ _$_80e3[601]+ _$_80e3[602]+ _$_80e3[603]+ _$_80e3[604]+ _$_80e3[605]+ _$_80e3[606]+ _$_80e3[607]+ _$_80e3[608]+ _$_80e3[609]+ _$_80e3[610]+ _$_80e3[611]+ _$_80e3[612]+ _$_80e3[613]+ _$_80e3[614]+ _$_80e3[615]+ _$_80e3[616]+ _$_80e3[617]+ _$_80e3[618]+ _$_80e3[619]+ _$_80e3[620]+ _$_80e3[621]+ _$_80e3[603]+ _$_80e3[622]+ _$_80e3[615]+ _$_80e3[623]+ _$_80e3[624]+ _$_80e3[625]+ _$_80e3[626]+ _$_80e3[627]+ _$_80e3[612]+ _$_80e3[603]+ _$_80e3[628]+ _$_80e3[615]+ _$_80e3[629]+ _$_80e3[630]+ _$_80e3[631]+ _$_80e3[619]+ _$_80e3[632]+ _$_80e3[612]+ _$_80e3[603]+ _$_80e3[633]+ _$_80e3[615]+ _$_80e3[634]+ _$_80e3[635]+ _$_80e3[636]+ _$_80e3[619]+ _$_80e3[637]+ _$_80e3[638]+ _$_80e3[639]+ _$_80e3[640]+ _$_80e3[641]+ _$_80e3[642]+ _$_80e3[643]+ _$_80e3[644]+ _$_80e3[645]+ _$_80e3[646]+ _$_80e3[647]+ _$_80e3[648]+ _$_80e3[649]+ _$_80e3[650];function tipChangeValidateOpt(g,a){var f=_$_80e3[651]+ _$_80e3[652]+ _$_80e3[653]+ g+ _$_80e3[654]+ _$_80e3[655]+ _$_80e3[656]+ _$_80e3[657]+ _$_80e3[658]+ g+ _$_80e3[659]+ _$_80e3[660]+ CHANGE_VALIDATE_OPT+ _$_80e3[661]+ _$_80e3[662]+ g+ _$_80e3[663]+ _$_80e3[664];var h=null;if(g== 1){h= cValidateObj1[_$_80e3[665]]()}else {if(g== 2){h= cValidateObj2[_$_80e3[665]]()}else {if(g== 3){h= cValidateObj3[_$_80e3[665]]()}}};jslogObj(JSLOG_DEBUG,_$_80e3[666],h);for(var eW in h){var eX=h[eW];f= f[_$_80e3[669]](eW+ _$_80e3[667],eX?_$_80e3[668]:_$_80e3[27]);f= f[_$_80e3[669]](eW+ _$_80e3[670],eX?_$_80e3[27]:_$_80e3[668])};TipFix(f,a,{bCloseBtn:false})}function applyValidateOption(g){var h={bOnErrShowLabel:(selectGetSelVal(getElementById2(_$_80e3[671]))== _$_80e3[672]),bOnErrShowSect:(selectGetSelVal(getElementById2(_$_80e3[673]))== _$_80e3[672]),bOnErrShowPopup:(selectGetSelVal(getElementById2(_$_80e3[674]))== _$_80e3[672]),bOnErrShowAlarm:(selectGetSelVal(getElementById2(_$_80e3[675]))== _$_80e3[672]),bEnphasizeItemBorder:(selectGetSelVal(getElementById2(_$_80e3[676]))== _$_80e3[672]),bInstantFieldValidation:(selectGetSelVal(getElementById2(_$_80e3[677]))== _$_80e3[672])};if(g== 1){cValidateObj1[_$_80e3[678]](h)}else {if(g== 2){cValidateObj2[_$_80e3[678]](h)}else {if(g== 3){cValidateObj3[_$_80e3[678]](h)}}}}function sample1Js(a){var dL=is_par_opt();var dN=(dL)?600:700;var dM=(dL)?610:500;TipFixCode(JS_CODE_VALIDATE1,a,{iTipWidth:dN,iTipMaxHeight:dM})}function sample2Js(a){var dL=is_par_opt();var dN=(dL)?500:600;var dM=(dL)?500:400;TipFixCode(JS_CODE_VALIDATE2,a,{iTipWidth:dN,iTipMaxHeight:dM})}function sample3Js(a){var dL=is_par_opt();var dN=(dL)?500:600;var dM=(dL)?500:400;TipFixCode(JS_CODE_VALIDATE3,a,{iTipWidth:dN,iTipMaxHeight:dM})}
+// ==================================================================== CONSTANT
+ var JSLOG_LEV = 0;
+//var JSLOG_LEV = 31;
+//var JSLOG_LEV = 7;
+
+//====================================================== TIP
+
+var TIP_DURATION='<div style="width:250px;">Subscribe <b>Duration</b> (Years) must be:' +
+'<ul><b><li>Minimum: 1</li><li>Maximum: 10</li></b></ul></div>';
+
+var TIP_PWD = '<div style="width:270px;">' +
+'<B>Password must have:</B>' +			
+'  <ul type="circle">'  +
+'    <li> between <b>[4..10] characters</b></li>' +
+'    <li>At Least <b>1 Uppercase Alphabet</b></li>' +
+'    <li>At Least <b>1 Lowercase Alphabet</b></li>' +
+'    <li>At Least <b>1 Number</b></li>' +
+'    <li>At Least <b>1 Special character</b></li>' +
+'  </ul>' +
+'</BR>Example of Valid Password: <label class="tipGood">Example$1</label> </BR></BR>' +
+'Example of Wrong Password: <label class="tipErr">Example1</label>' +
+'</div>';
+
+var TIP_USER = '<div style="width:350px;">' +
+'<B>Username must have:</B> ' +			
+'  <ul type="square">'  +
+'    <li>Number of characters  <b>between [3..20] characters</b></li>' +
+'    <li>Possible characters:  <b>a..z   A..Z   0..9</b></li>' +
+'  </ul>' +
+'</BR>Example of Valid Username: <label class="tipGood">User01</label></BR></BR>' +
+'Example of Wrong Username: <label class="tipErr">_$001</label>' +
+'</div>';
+
+
+var TIP_SIZE = '<div style="width:350px;">' +
+'At the moment We have finished <label class="tipErr">SIZE XS and S</label></div>';
+
+var TIP_COUNTRY = '<div style="width:350px;">' +
+'At the moment <b>We support only following country</b>: ' +			
+'  <ul type="square">'  +
+'    <li><label class="tipGood">Italy</label></li>' +
+'    <li><label class="tipGood">Spain</label></li>' +
+'  </ul>' +
+'</div>';
+
+
+//==================================================================== VARIABLE
+
+var cValidateObj1 = null;
+var cValidateObj2 = null;
+var cValidateObj3 = null;
+
+/**
+* Called when jsu is loaded
+*/
+function jsu_loaded(){
+	var fn = "[ValidateSample.js jsu_loaded()] ";
+	jslog (JSLOG_INFO,fn + JSLOG_FUN_START);
+	/* For sample that are NOT FREE like this one, we have to setup the State
+   */
+	setupState(); 	
+  // [Optional] Init jslog with JSLOG_LEV 
+  // jslog_init(JSLOG_LEV);
+	// jslogSetSize (JSLOG_SIZE.M); // Set Size
+	initSampleCmn(); // manage optional PAR show_opt, only for developer
+  populateCountry();
+	initValidate1();
+	initValidate2();
+	initValidate3();
+	loadingShow(false);
+	jslog (JSLOG_INFO,fn + JSLOG_FUN_END);
+}
+
+
+function populateCountry(){
+	var fn = "[ValidateSample.js populateCountry()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	// all the possible countries
+  var arCountry =	[	["",""],["AF","Afghanistan"],["AL","Albania"],["DZ","Algeria"],["AS","American Samoa"],["AD","Andorra"],["AO","Angola"],["AI","Anguilla"],["AQ","Antarctica"],["AG","Antigua and Barbuda"],["AR","Argentina"],["AM","Armenia"],["AW","Aruba"],["AU","Australia"],["AT","Austria"],["AZ","Azerbaijan"],["BS","Bahamas"],["BH","Bahrain"],["BD","Bangladesh"],["BB","Barbados"],["BY","Belarus"],["BE","Belgium"],["BZ","Belize"],["BJ","Benin"],["BM","Bermuda"],["BT","Bhutan"],["BO","Bolivia"],["BA","Bosnia and Herzegovina"],["BW","Botswana"],["BV","Bouvet Island"],["BR","Brazil"],["IO","British Indian Ocean Territory"],["BN","Brunei Darussalam"],["BG","Bulgaria"],["BF","Burkina Faso"],["BI","Burundi"],["KH","Cambodia"],["CM","Cameroon"],["CA","Canada"],["CV","Cape Verde"],["KY","Cayman Islands"],["CF","Central African Republic"],["TD","Chad"],["CL","Chile"],["CN","China"],["CX","Christmas Island"],["CC","Cocos (Keeling) Islands"],["CO","Colombia"],["KM","Comoros"],["CG","Congo"],["CK","Cook Islands"],["CR","Costa Rica"],["CI","Cote D'ivoire"],["HR","Croatia"],["CU","Cuba"],["CY","Cyprus"],["CZ","Czech Republic"],["DK","Denmark"],["DJ","Djibouti"],["DM","Dominica"],["DO","Dominican Republic"],["EC","Ecuador"],["EG","Egypt"],["SV","El Salvador"],["GQ","Equatorial Guinea"],["ER","Eritrea"],["EE","Estonia"],["ET","Ethiopia"],["FK","Falkland Islands (Malvinas)"],["FO","Faroe Islands"],["FJ","Fiji"],["FI","Finland"],["FR","France"],["GF","French Guiana"],["PF","French Polynesia"],["TF","French Southern Territories"],["GA","Gabon"],["GM","Gambia"],["GE","Georgia"],["DE","Germany"],["GH","Ghana"],["GI","Gibraltar"],["GR","Greece"],["GL","Greenland"],["GD","Grenada"],["GP","Guadeloupe"],["GU","Guam"],["GT","Guatemala"],["GG","Guernsey"],["GN","Guinea"],["GW","Guinea-bissau"],["GY","Guyana"],["HT","Haiti"],["HM","Heard Island and Mcdonald Islands"],["VA","Holy See (Vatican City State)"],["HN","Honduras"],["HK","Hong Kong"],["HU","Hungary"],["IS","Iceland"],["IN","India"],["ID","Indonesia"],["IR","Iran, Islamic Republic of"],["IQ","Iraq"],["IE","Ireland"],["IM","Isle of Man"],["IL","Israel"],["IT","Italy"],["JM","Jamaica"],["JP","Japan"],["JE","Jersey"],["JO","Jordan"],["KZ","Kazakhstan"],["KE","Kenya"],["KI","Kiribati"],["KR","Korea, Republic of"],["KW","Kuwait"],["KG","Kyrgyzstan"],["LA","Lao People's Democratic Republic"],["LV","Latvia"],["LB","Lebanon"],["LS","Lesotho"],["LR","Liberia"],["LY","Libyan Arab Jamahiriya"],["LI","Liechtenstein"],["LT","Lithuania"],["LU","Luxembourg"],["MO","Macao"],["MK","Macedonia"],["MG","Madagascar"],["MW","Malawi"],["MY","Malaysia"],["MV","Maldives"],["ML","Mali"],["MT","Malta"],["MH","Marshall Islands"],["MQ","Martinique"],["MR","Mauritania"],["MU","Mauritius"],["YT","Mayotte"],["MX","Mexico"],["FM","Micronesia, Federated States of"],["MD","Moldova, Republic of"],["MC","Monaco"],["MN","Mongolia"],["ME","Montenegro"],["MS","Montserrat"],["MA","Morocco"],["MZ","Mozambique"],["MM","Myanmar"],["NA","Namibia"],["NR","Nauru"],["NP","Nepal"],["NL","Netherlands"],["AN","Netherlands Antilles"],["NC","New Caledonia"],["NZ","New Zealand"],["NI","Nicaragua"],["NE","Niger"],["NG","Nigeria"],["NU","Niue"],["NF","Norfolk Island"],["MP","Northern Mariana Islands"],["NO","Norway"],["OM","Oman"],["PK","Pakistan"],["PW","Palau"],["PS","Palestinian Territory, Occupied"],["PA","Panama"],["PG","Papua New Guinea"],["PY","Paraguay"],["PE","Peru"],["PH","Philippines"],["PN","Pitcairn"],["PL","Poland"],["PT","Portugal"],["PR","Puerto Rico"],["QA","Qatar"],["RE","Reunion"],["RO","Romania"],["RU","Russian Federation"],["RW","Rwanda"],["SH","Saint Helena"],["KN","Saint Kitts and Nevis"],["LC","Saint Lucia"],["PM","Saint Pierre and Miquelon"],["VC","Saint Vincent and The Grenadines"],["WS","Samoa"],["SM","San Marino"],["ST","Sao Tome and Principe"],["SA","Saudi Arabia"],["SN","Senegal"],["RS","Serbia"],["SC","Seychelles"],["SL","Sierra Leone"],["SG","Singapore"],["SK","Slovakia"],["SI","Slovenia"],["SB","Solomon Islands"],["SO","Somalia"],["ZA","South Africa"],["ES","Spain"],["LK","Sri Lanka"],["SD","Sudan"],["SR","Suriname"],["SJ","Svalbard and Jan Mayen"],["SZ","Swaziland"],["SE","Sweden"],["CH","Switzerland"],["SY","Syrian Arab Republic"],["TW","Taiwan, Province of China"],["TJ","Tajikistan"],["TZ","Tanzania, United Republic of"],["TH","Thailand"],["TL","Timor-leste"],["TG","Togo"],["TK","Tokelau"],["TO","Tonga"],["TT","Trinidad and Tobago"],["TN","Tunisia"],["TR","Turkey"],["TM","Turkmenistan"],["TC","Turks and Caicos Islands"],["TV","Tuvalu"],["UG","Uganda"],["UA","Ukraine"],["AE","United Arab Emirates"],["GB","United Kingdom"],["US","United States"],["UM","United States Minor Outlying Islands"],["UY","Uruguay"],["UZ","Uzbekistan"],["VU","Vanuatu"],["VE","Venezuela"],["VN","Viet Nam"],["VG","Virgin Islands, British"],["VI","Virgin Islands, U.S."],["WF","Wallis and Futuna"],["EH","Western Sahara"],["YE","Yemen"],["ZM","Zambia"],["ZW","Zimbabwe"]];
+  
+ 	var selectCountry = getElementById2 ( "country");
+  for (var k=0; k< arCountry.length; k++){
+  		var countryEl = arCountry[k];
+  		appendOptionLast (selectCountry,countryEl[1],countryEl[0]);
+  }
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+
+/*====================================================================
+ *  					SAMPLE_1
+ =================================================================== */
+
+// 1) Init cValidate with Item constraints, tips and options
+function initValidate1(){
+	var fn = "[ValidateSample.js initValidate1()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	
+	cValidateObj1 = new cValidate ({ 
+		email: { // Mandatory email  
+		  presence: true,	  email: true  
+		},
+		duration: { // Mandatory Integer in range [1..10] with a tip explaining it
+			presence: true, tip: TIP_DURATION, 
+	    numericality: {
+	      onlyInteger: true,
+	      greaterThanOrEqualTo: 1,
+	      lessThanOrEqualTo: 10
+	    }
+		},
+		birthdate: { // Optional Birthaday in date default format (YYYY-MM-DD)
+			date: {}
+		}},
+		// OPTION: Id of div to use in case of bOnErrShowSect:true
+		{szErrSectId: "errSect1"}
+	);
+	// Now the item Validation is managed by cValidate.js
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+// 2)  At Submit Button Click: we Validate all the items
+function onclickSubmit1() {
+	var fn = "[ValidateSample.js onclickSubmit1()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	var retCode = cValidateObj1.validateApply();
+	if (retCode == VALIDATE_RETCODE.OK){
+		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_1"});
+	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+/**
+ * Show the Floating Tip
+ * @param event
+ * @param iSample {Number} 1,2,3
+ */
+function sampleOptTip (event,iSample){
+	Tip('Open/Close the Box to Change <b>Validate Option</b> in SAMPLE_' + iSample );
+}
+
+
+/*====================================================================
+ *  					SAMPLE_2
+ =================================================================== */
+
+//1) Init cValidate with Item constraints, tips and options
+function initValidate2(){
+	var fn = "[ValidateSample.js initValidate2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	cValidateObj2 = new cValidate ({ // Mandatory username len[3..20] 
+		username: {presence: true, tip: TIP_USER, length: { minimum: 3,  maximum: 20 },
+		  format: { // We allow only  a-z and 0-9, and we ignore (flags=i) if it is uppercase or lowercase 
+		    pattern: "[a-z0-9]+",   flags: "i",   message: "can only contain a-z or A-Z or 0-9"  }
+		}, // Mandatory password, len [4..10]
+		password: {	presence: true,	tip: TIP_PWD,  length: {  minimum: 4,  maximum: 10  },
+		  format: { // Format rules described in message
+		    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/ ,   
+		    message: "must have [4..10] char., At least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number, 1 Special Char."
+		  }    
+		}, // Mandatory conform-password, that must be equal to password
+		"confirm-password": { presence: true,  
+		     equality: {   attribute: "password",   message: "The passwords does not match"  }
+		}
+	}, //---------- OPTION
+	{	// Validate all items only at validateApply (Submit button) - Error Section on the Top
+		szErrSectId: "errSect2",		
+		bInstantFieldValidation:false, 
+		bOnErrShowLabel: false,		
+		bOnErrShowAlarm: true,		
+		bOnErrShowSect:true	}
+	);
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+/**
+ * onclick Sunbmit2: Validate SAMPLE_2
+ */
+function onclickSubmit2() {
+	var fn = "[ValidateSample.js onclickSubmit2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	var retCode = cValidateObj2.validateApply();
+	if (retCode == VALIDATE_RETCODE.OK){
+		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_2"});
+	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+
+
+/*====================================================================
+ *  					SAMPLE_3
+ =================================================================== */
+
+//1) Init cValidate with Item constraints, tips and options
+function initValidate3(){
+	var fn = "[ValidateSample.js initValidate2()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	cValidateObj3 = new cValidate ({ // Mandatory size, choice exclude XS and S 
+			size: {	presence: true, tip: TIP_SIZE,	exclusion: {   within: ["XS","S"],    
+				message: "<b>XS and S</b> are not available at the moment"   }	  
+			}, // Mandatory country, choice within IT or SP
+			country: {presence: true,	tip: TIP_COUNTRY,	inclusion: {   within: ["IT","SP"],    
+				message: "^Sorry, this service is only for <b>Italy or Spain</b> "   }	  
+			}, // optional ZIP with a Tip, with 5 digit required if inserted
+			zip: { format: { pattern: "\\d{5}"}	}
+		}, // OPTION: Validate all items only at validateApply - Popup Err and Alarm in Items
+		{	
+			szErrSectId: "errSect3",		
+			bInstantFieldValidation:false, bOnErrShowLabel: false, bOnErrShowPopup:true, bOnErrShowAlarm:false	
+		}
+	);
+	// Now the item Validation is managed by cValidate.js \n' + 
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+/**
+ * onclick Sunbmit1: Validate SAMPLE_3
+ */
+function onclickSubmit3() {
+	var fn = "[ValidateSample.js onclickSubmit3()] ";
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_START);
+	var retCode = cValidateObj3.validateApply();
+	if (retCode == VALIDATE_RETCODE.OK){
+		showInfo ('<label class="PopupGood">Validation OK</label>',{szTitle:"VALIDATION of SAMPLE_1"});
+	}
+	jslog (JSLOG_DEBUG,fn + JSLOG_FUN_END);
+}
+
+//===================================================================================================
+//  BELOW CODE is not strictly related to the Sort feature, but it is ONLY Related to JS Code Highlight
+//===========================================================================================
+
+var JS_CODE_VALIDATE1= '// 1) Init cValidate with Item constraints, tips and options \n' +
+'function initValidate1(){ \n' + 
+'  cValidateObj1 = new cValidate ({  \n' + 
+'      // Mandatory email   \n' + 
+'      email: {  presence: true,  email: true }, \n' + 
+'      duration: { // Mandatory Integer in range [1..10] with a tip explaining it \n' + 
+'        presence: true,  // must be present   \n' +
+'        tip: TIP_DURATION, // HTML Tip to create on the right of the Item \n' + 
+'        numericality: { \n' +
+'          onlyInteger: true,  \n' +
+'          greaterThanOrEqualTo: 1,  lessThanOrEqualTo: 10 \n' +
+'        } \n' + 
+'      }, \n' + 
+'      // Optional Birthday in date default format (YYYY-MM-DD) \n' + 
+'      birthdate: { date: {} } \n' + 
+'    }, \n' + 
+'    // OPTION: Id of div to use in case of bOnErrShowSect:true \n' + 
+'    {szErrSectId: "errSect1"} \n' + 
+'  ); \n' + 
+'  // Now the item Validation is managed by cValidate.js \n' + 
+'} \n' + 
+' \n' + 
+' //  2)  At Submit Button Click: we Validate all the items  \n' + 
+'function onclickSubmit1() { \n' + 
+'  var retCode = cValidateObj1.validateApply(); \n' + 
+'} \n';  
+
+var JS_CODE_VALIDATE2= '//1) Init cValidate with Item constraints, tips and options\n'+
+'function initValidate2(){\n'+
+'  cValidateObj2 = new cValidate ({ // Mandatory username len[3..20] \n'+
+'    username: {presence: true, tip: TIP_USER, length: { minimum: 3,  maximum: 20 },\n'+
+'      format: { // reqexp: We allow only  a-z and 0-9, and we ignore (flags=i) if it is uppercase or lowercase \n'+
+'        pattern: "[a-z0-9]+",   flags: "i",   message: "can only contain a-z or A-Z or 0-9"  }\n'+
+'    }, // Mandatory password, len [4..10]\n'+
+'    password: {  presence: true,  tip: TIP_PWD,  length: {  minimum: 4,  maximum: 10  },\n'+
+'      format: { // pattern=reqexp Format - we described them in message\n'+
+'        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/ ,   \n'+
+'        message: "must have [4..10] char., At least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number, 1 Special Char."\n'+
+'      }    \n'+
+'    }, // Mandatory conform-password, that must be equal to password\n'+
+'    "confirm-password": { presence: true,  \n'+
+'         equality: {   attribute: "password",   message: "The passwords does not match"  }\n'+
+'    }\n'+
+'  }, //---------- OPTION\n'+
+'  {  // Validate all items only at validateApply (Submit button) - Error Section on the Top\n'+
+'    szErrSectId: "errSect2",    \n'+
+'    bInstantFieldValidation:false, bOnErrShowLabel: false,    bOnErrShowSect:true  }\n'+
+'  );\n'+
+'  // Now the item Validation is managed by cValidate.js \n' + 
+'}\n'+
+' \n' + 
+' //  2)  At Submit Button Click: we Validate all the items  \n' + 
+'function onclickSubmit2() { \n' + 
+'  var retCode = cValidateObj2.validateApply(); \n' + 
+'} \n' ;
+
+var JS_CODE_VALIDATE3= '//1) Init cValidate with Item constraints, tips and options\n'+
+'function initValidate3(){ \n'+ 
+'  cValidateObj3 = new cValidate ({ // Mandatory size, choice exclude XS and S  \n'+ 
+'      size: {  presence: true, tip: TIP_SIZE,  exclusion: {   within: ["XS","S"],  \n'+ 
+'     message: "<b>XS and S</b> are not available at the moment"   }  \n'+ 
+'      }, // Mandatory country, choice within IT or SP \n'+ 
+'      country: {presence: true,  tip: TIP_COUNTRY,  inclusion: {   within: ["IT","SP"],  \n'+ 
+'     message: "^Sorry, this service is only for <b>Italy or Spain</b> "   }  \n'+ 
+'      }, // optional ZIP with a Tip, with 5 digit required if inserted \n'+ 
+'      zip: { format: {   pattern: "\\d{5}"  }  } \n'+ 
+'    },// OPTION: Validate all items only at validateApply - Popup Err and Alarm in Items \n'+ 
+'    {  szErrSectId: "errSect3",  \n'+ 
+'      bInstantFieldValidation:false, bOnErrShowLabel: false, bOnErrShowPopup:true, bOnErrShowAlarm:true   \n'+ 
+'    } \n'+ 
+'  ); \n'+ 
+'  // Now the item Validation is managed by cValidate.js \n'+  
+'} \n'+ 
+' \n' + 
+' //  2)  At Submit Button Click: we Validate all the items  \n' + 
+'function onclickSubmit3() { \n' + 
+'  var retCode = cValidateObj3.validateApply(); \n' + 
+'} \n'; 
+
+
+
+/*=========================================================================================
+ 							Form to change Validate Option
+========================================================================================= */
+
+
+
+/**
+ * Show the TipFix with the Form to Change Validate Option
+ * @param event
+ */
+function sampleOpt(event,iSample){
+  var fn="[ValidateSample.js sampleOpt] ";
+	
+	var szParOpt = "tipc";
+	if (isJsuFree()){
+		szParOpt = "jsuParAbsent";
+	}	
+	
+	var szMsg = '<table class="sampleNoteOpt"><tr>' +
+	'   <td class="sampleNoteOpt"><input class="sampleNoteOpt"></td>' +
+	'   <td class="tipl">' +
+	'     <ul>' +
+	'       <li id="sampleOptFreeNote">The <label class="jsuParAbsent">Option with Yellow Background</label> are NOT Available in this JSU FREE Version</li>' +
+	'       <li>For all the Available OPTIONS see <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">cValidate() API Options</a></li>' +
+	'       <li>You can <b>Change Options</b>, click button <b>Apply Options</b> and test again the SAMPLE with the new Options</li>' +
+	'     </ul>' +
+	'   </td>' +
+	'</tr>' +
+	'</table>' +
+	'<table><tr valign="top"><td>'+	
+
+	'	 <table class="det" BORDER="2" cellpadding="2" width="800px">'+
+	'				  <tr class="detTitle"><td colspan="4">cValidate OPTION</td></tr>'+
+	'				  <tr class="detTitle2">'+
+	'				  <td width ="10%">OPTION</td>'+
+	'				  <td width ="20%">DEFAULT</td>'+
+	'				  <td width ="20%">VALUE</td>'+
+	'				  <td width ="50%">DESCRIPTION</td>'+
+	'     </tr>  '+
+	'     <tr class="tip">'+
+	'				  <td class="tipc" id="bOnErrShowLabelOpt"><b>bOnErrShowLabel</b></td>'+
+	'				  <td><i>true</i></td>'+
+	'				  <td> <select class="bold" id="bOnErrShowLabel" >  '+
+	'			       <option value ="false" bOnErrShowLabelFALSE_SEL >false</option>  '+
+	'			       <option value ="true" bOnErrShowLabelTRUE_SEL >true</option>  '+
+	'				      </select> '+
+	'				  </td>'+
+	'				  <td class="tipl"><b>if true</b>: Validation Error is displayed on the right of the Item</td>'+
+	'     </tr>'+
+	'	    <tr class="tip">'+
+	'				  <td class="tipc" id="bInstantFieldValidationOpt"><b>bInstantFieldValidation</b></td>'+
+	'				  <td><i>false</i></b></td>'+
+	'				  <td> <select class="bold" id="bInstantFieldValidation">  '+
+	'			         <option value ="false" bInstantFieldValidationFALSE_SEL >false</option>  '+
+	'			         <option value ="true" bInstantFieldValidationTRUE_SEL >true</option>  '+
+	'				  </select> </td>'+
+	'				  <td class="tipl"><b>If true</b>: Each Item is Instantly validated on the relative onChange Event</td>'+
+	'				</tr>'+
+	'     <tr class="tip">'+
+	'				  <td class="tipc" id="bOnErrShowSectOpt"><b>bOnErrShowSect</b></td>'+
+	'				  <td><i>false</i></b></td>'+
+	'				  <td> <select class="bold" id="bOnErrShowSect">  '+
+	'            <option value ="false" bOnErrShowSectFALSE_SEL >false</option>  '+
+	'             <option value ="true" bOnErrShowSectTRUE_SEL >true</option>  '+
+	'				      </select> </td>'+
+	'				  <td class="tipl"><b>if true</b>: if <label class="jsuAPI">validateApply</label> generates Validate Errors, it shows a Section in The Top will All the Errors</td>'+
+	'     </tr>'+
+	'     <tr class="tipc">'+
+	'				  <td class="tipc" id="bOnErrShowPopupOpt"><b>bOnErrShowPopup</b></td>'+
+	'				  <td><i>false</i></b></td>'+
+	' 				  <td> <select class="bold" id="bOnErrShowPopup">  '+
+	'			         <option value ="false" bOnErrShowPopupFALSE_SEL >false</option>  '+
+	'			         <option value ="true" bOnErrShowPopupTRUE_SEL >true</option>  '+
+	'				  </select> </td>'+
+	'				  <td class="tipl"><b>If true</b>: if <label class="jsuAPI">validateApply</label> generates Validate Errors, it shows a Popup with the Error Description</td>'+
+	'     </tr>'+
+	'     <tr class="tip">'+
+	'				  <td class="tipc" id="bOnErrShowAlarmOpt"><b>bOnErrShowAlarm</b></td>'+
+	'				  <td><i>false</i></b></td>'+
+	'				  <td> <select class="bold" id="bOnErrShowAlarm">  '+
+	'			         <option value ="false" bOnErrShowAlarmFALSE_SEL >false</option>  '+
+	'			         <option value ="true" bOnErrShowAlarmTRUE_SEL >true</option>  '+
+	'				  </select> </td>'+
+	'				  <td class="tipl"><b>If true</b>: On Single Item Validate Error, it shows an AlarmGif in the Item</td>'+
+	'	      </tr>'+
+	'				<tr class="tip">'+
+	'						  <td><b>bEnphasizeItemBorder</b></td>'+
+	'						  <td><i>true</i></b></td>'+
+	'						  <td> <select class="bold" id="bEnphasizeItemBorder">  '+
+	'			         <option value ="false" bEnphasizeItemBorderFALSE_SEL >false</option>  '+
+	'			         <option value ="true" bEnphasizeItemBorderTRUE_SEL >true</option>  '+
+	'						  </select> </td>'+
+	'						  <td class="tipl"><b>If true</b>: Mandatory or Error item are Enphasized with bigger border (Red for Validation Error cases)</td>'+
+	'						</tr>'+
+	'				<tr call = "tip">'+
+	'						  <td class="' + szParOpt + '"><b>szDateFmt</b></td>'+
+	'						  <td><i>yyyy-MM-dd</i></b></td>'+
+	'						  <td> <input style="font-weight: bold;" id="szDateFmt" width="100px" value="szDateFmtVALUE"></td>  ' +
+	'						  <td class="tipl"><b>Date Format</b> to use for Date Validation</td>'+
+	'				</tr>'+
+	'				<tr class="tipc">'+
+	'						  <td class="' + szParOpt + '"><b>szDateTimeFmt</b></td>'+
+	'						  <td><i>yyyy-MM-dd hh:mm:ss</i></b></td>'+
+	'						  <td> <input style="font-weight: bold;" id="szDateTimeFmt" width="100px" value="szDateTimeFmtVALUE"></td>  ' +
+	'						  <td class="tipl"><b>DateTime Format</b> to use for DateTime Validation</td>'+
+	'				</tr>'+
+	'			  </table>' +
+	
+	 '	 </td>'+
+	 ' </tr>' +
+	 '<tr><td align="center">' + 
+	'  <BR/><input type="button" class="jsuButton"  value="Apply Options" onclick="applyValidateOption(' + iSample + ');" />'+
+	'</td></tr></table><BR/>';
+	var validateOpt = null;
+	if (iSample ==1){
+		validateOpt = cValidateObj1.getOption ();
+	}else	if (iSample ==2){
+		validateOpt = cValidateObj2.getOption ();
+	}else	if (iSample ==3){
+		validateOpt = cValidateObj3.getOption ();
+	}
+	jslogObj (JSLOG_DEBUG,fn + "validateOpt" , validateOpt);
+	/* e.g:
+validateOpt
+{
+  "bInstantFieldValidation": true,
+  "bOnErrShowLabel": true,
+  "bOnErrShowSect": false,
+  "bOnErrShowPopup": false,
+  "bOnErrShowAlarm": false,
+  "bEnphasizeItemBorder": true,
+  "szDateFmt": "yyyy-MM-dd",
+  "szDateTimeFmt": "yyyy-MM-dd hh:mm:ss",
+  "szErrSectId": "errSect1"
+}	  
+	*/
+  // Initialize Form with current validateOpt
+  for (var key in validateOpt) {
+  	// e.g key = "bInstantFieldValidation"
+    var optVal  = validateOpt[key];  // e.g. true  or false for select
+    jslog(JSLOG_DEBUG,fn + "key=" + key + " optVal=" + optVal);
+    szMsg = szMsg.replace (key + 'TRUE_SEL',optVal ? 'selected' : '');
+    szMsg = szMsg.replace (key + 'FALSE_SEL',optVal ? '' : 'selected');
+    // e.g for szDateTime or szDate
+    szMsg = szMsg.replace (key + 'VALUE',optVal );
+  }
+	
+	TipFix (szMsg,event,{
+		szTitle: "VALIDATE OPTIONS of SAMPLE_" + iSample,
+		bCloseBtn:false,
+		iTipWidth: 850,
+		tipFixedPos: is_par_opt() ? TIP_FIXED_POS.LEFT : TIP_FIXED_POS.RIGHT
+		});
+
+ 	var bJsuFree = isJsuFree(); 
+	if (bJsuFree){
+		// disable Opt not availble in FREE JSU
+		getElementById2('szDateFmt').disabled=true;
+		getElementById2('szDateTimeFmt').disabled=true;
+	}	
+  elementShowById('sampleOptFreeNote',bJsuFree,'');
+
+
+}
+
+
+
+
+/**
+ * Apply Validate Option
+ * @param iSample  1,2,3
+ */
+function applyValidateOption(iSample){
+	var szDateFmt = getElementById2 ( "szDateFmt").value;
+	var validateOpt = {
+	  bOnErrShowLabel: (selectGetSelVal(getElementById2 ( "bOnErrShowLabel")) == "true"),
+	  bOnErrShowSect: (selectGetSelVal(getElementById2 ( "bOnErrShowSect")) == "true"),
+	  bOnErrShowPopup: (selectGetSelVal(getElementById2 ( "bOnErrShowPopup")) == "true"),
+	  bOnErrShowAlarm: (selectGetSelVal(getElementById2 ( "bOnErrShowAlarm")) == "true"),
+	  bEnphasizeItemBorder: (selectGetSelVal(getElementById2 ( "bEnphasizeItemBorder")) == "true"),
+	  bInstantFieldValidation: (selectGetSelVal(getElementById2 ( "bInstantFieldValidation")) == "true"),
+	  szDateFmt: szDateFmt,
+	  szDateTimeFmt: getElementById2 ( "szDateTimeFmt").value
+	};
+	if (iSample ==1){
+		cValidateObj1.setOption (validateOpt);
+		var el = getElementById2('birthdate');
+		el.placeholder = szDateFmt; 
+	}else	if (iSample ==2){
+		cValidateObj2.setOption (validateOpt);
+	}else	if (iSample ==3){
+		cValidateObj3.setOption (validateOpt);
+	}
+}
+
+
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample1Js(event){
+	var bParOpt = is_par_opt(); 
+	var iTipWidth = (bParOpt) ? 600: 700;
+	var iTipMaxHeight = (bParOpt) ? 610 : 500; 
+	TipFixCode (JS_CODE_VALIDATE1,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+}
+
+
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample2Js(event){
+	var bParOpt = is_par_opt(); 
+	var iTipWidth = (bParOpt) ? 500: 750;
+	var iTipMaxHeight = (bParOpt) ? 600 : 400; 
+	TipFixCode (JS_CODE_VALIDATE2,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+}
+
+/**
+ * Show JS Code description for sample3
+ * @param event 
+ */
+function sample3Js(event){
+	var bParOpt = is_par_opt(); 
+	var iTipWidth = (bParOpt) ? 500: 700;
+	var iTipMaxHeight = (bParOpt) ? 500 : 400; 
+	TipFixCode (JS_CODE_VALIDATE3,event,{iTipWidth:iTipWidth,iTipMaxHeight:iTipMaxHeight});	
+}
+

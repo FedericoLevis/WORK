@@ -1,8 +1,361 @@
-/***************************************************************************/
-/*                                                                         */
-/*  This obfuscated code was created by Javascript Obfuscator Free Version.*/
-/*  Javascript Obfuscator Free Version can be downloaded here              */
-/*  http://javascriptobfuscator.com                                        */
-/*                                                                         */
-/***************************************************************************/
-var _$_7c85=["","Cancel","szTitle","szMsgHtml","bShowGif","szUrlGif","bShowElapsedSec","bResetElapsedSec","iDivWidth","iGifWidth","bShowCancel","szBackgroundColor","<div id=\"loadingDivContainer\" class=\"loadingDivContainer\" >","  <table width=\"100%\" height=\"100%\">","    <tr> <td align=\"center\" valign=\"center\">","      <div  id=\"loadingDiv\" class=\"loadingDiv\">","         <table id=\"loadingDivTable\" class=\"loadingDiv\" width=\"100%\"  style=\"z-index: 110;\">","            <tr class=\"loadingDivTitle\">","              <td colspan=\"2\" id=\"loadingDivTitle\" class=\"loadingDivTitle\" >Title Test</td>","            </tr>","            <tr> ","              <td id=\"loadingDivTdGif\" align=\"left\" width=\"80px\">","                <div id=\"loadingDivGif\" class=\"loadingDivGif\"> </div>","              </td> ","              <td id=\"loadingDivMsg\" class=\"loadingDivMsg\" align=\"left\" style=\"padding-left:0px\">","                 <b>Working</b></BR>Please Wait...","              </td>","            <tr>","               <td colspan=\"2\" align=\"center\" class=\"loadingDivBtn\" id=\"loadingDivBtnTd\"  >","                 <input type=\"button\" class=\"loadingDivBtn\" id=\"loadingDivBtn\" value=\"Stop\" onclick=\"loadingDivCancel();\" />","               </td>","               <td colspan=\"2\" id=\"loadingDivFooter\" class=\"loadingDivFooter\" style=\"display:none\">","                 Elapsed Time: 10 sec","        </table>","      </div>","    </td> </tr>","  </table>","</div>","auto","Microsoft Internet Explorer","Netscape","[loadingDiv.js ld_getScrollEl()] ","undefined","appName","userAgent","exec","Trident/.*rv:([0-9]{1,}[.0-9]{0,})","Firefox/IE","documentElement","NOT Firefox/IE (e.g CHROME)","body","fnCancelCallback","getTime","iStartTime","round","innerHTML","elFooter","startTime","szStartTime","elapsed","sec","[loadingDiv.js loadingDivStart()] ","tmoElapsedSec","szTitleHtml","szCancelLabel","bRecalcBestPos","objOpt","loadingDivMain","removeChild","add JSU_LOADING_DIV to document.body","div","createElement","id","appendChild","loadingDiv","width","style","px","Set Visible element depending on objOpt","loadingDivTitle","loadingDivMsg","working","loadingDivBtn","value","loadingDivBtnTd","loadingDivGif","backgroundImage","url('","')","loadingDivTdGif","backgroundColor","loadingDivFooter","Start Timeout for Elapsedsec","getHours","0",":","getMinutes","getSeconds","Recalculate Best Postion","loadingDivContainer","scrollHeight","scrollWidth","scrollLeft","scrollTop","innerWidth","innerHeight","scroll: xScroll="," yScroll="," wScroll="," hScroll=","Client: wClient="," hClient=","height","SET NEW SCROLL ="," y=","prev","scroll","no","overflow","hidden","[loadingDiv.js loadingDivHide()] ","RESTORE scrollLeft=","RESTORE scrollTop="];var LOADING_DIV_DEF={szTitleHtml:_$_7c85[0],szMsgHtml:_$_7c85[0],bShowGif:true,szUrlGif:_$_7c85[0],bShowElapsedSec:false,bResetElapsedSec:true,iDivWidth:null,iGifWidth:null,bShowCancel:false,szCancelLabel:_$_7c85[1],szBackgroundColor:null,bRecalcBestPos:false};var LOADING_DIV_DEF_OPT={szTitleHtml:LOADING_DIV_DEF[_$_7c85[2]],szMsgHtml:LOADING_DIV_DEF[_$_7c85[3]],bShowGif:LOADING_DIV_DEF[_$_7c85[4]],szUrlGif:LOADING_DIV_DEF[_$_7c85[5]],bShowElapsedSec:LOADING_DIV_DEF[_$_7c85[6]],bResetElapsedSec:LOADING_DIV_DEF[_$_7c85[7]],iDivWidth:LOADING_DIV_DEF[_$_7c85[8]],iGifWidth:LOADING_DIV_DEF[_$_7c85[9]],bShowCancel:LOADING_DIV_DEF[_$_7c85[10]],szCancelLabel:_$_7c85[0],szBackgroundColor:LOADING_DIV_DEF[_$_7c85[11]],fnCancelCallback:null,bRecalcBestPos:false};var JSU_LOADING_DIV=_$_7c85[12]+ _$_7c85[13]+ _$_7c85[14]+ _$_7c85[15]+ _$_7c85[16]+ _$_7c85[17]+ _$_7c85[18]+ _$_7c85[19]+ _$_7c85[20]+ _$_7c85[21]+ _$_7c85[22]+ _$_7c85[23]+ _$_7c85[24]+ _$_7c85[25]+ _$_7c85[26]+ _$_7c85[19]+ _$_7c85[27]+ _$_7c85[28]+ _$_7c85[29]+ _$_7c85[30]+ _$_7c85[19]+ _$_7c85[27]+ _$_7c85[31]+ _$_7c85[32]+ _$_7c85[30]+ _$_7c85[19]+ _$_7c85[33]+ _$_7c85[34]+ _$_7c85[35]+ _$_7c85[36]+ _$_7c85[37];var var_ld_div={elFooter:null,tmoElapsedSec:null,iElapsedSec:0,fnCancelCallback:null,prev:{scrollLeft:0,scrollTop:0,scroll:0,overflow:_$_7c85[38]}};var LOADING_APP_NAME_IE=_$_7c85[39];var LOADING_APP_NAME_IE_11=_$_7c85[40];function ld_getScrollEl(){var u=_$_7c85[41];if(( typeof InstallTrigger!== _$_7c85[42])|| (navigator[_$_7c85[43]]== LOADING_APP_NAME_IE)|| ((navigator[_$_7c85[43]]== LOADING_APP_NAME_IE_11)&& ( new RegExp(_$_7c85[46])[_$_7c85[45]](navigator[_$_7c85[44]])!= null))){jsu_log(u+ _$_7c85[47]);return document[_$_7c85[48]]}else {jsu_log(u+ _$_7c85[49]);return document[_$_7c85[50]]}}function loadingDivCancel(){loadingDivHide();if(var_ld_div[_$_7c85[51]]!= undefined){var_ld_div[_$_7c85[51]]()}}function loadingDivTmo(){var mW= new Date();var nB=Math[_$_7c85[54]]((mW[_$_7c85[52]]()- var_ld_div[_$_7c85[53]])/ 1000);var_ld_div[_$_7c85[56]][_$_7c85[55]]= LOADING_DIV_MSG[_$_7c85[57]]+ var_ld_div[_$_7c85[58]]+ LOADING_DIV_MSG[_$_7c85[59]]+ nB+ LOADING_DIV_MSG[_$_7c85[60]]}function loadingDivShow(B){var u=_$_7c85[61];jsu_log(u+ JSU_LOG_FUN_START);if(var_ld_div[_$_7c85[62]]){clearTimeout(var_ld_div[_$_7c85[62]])};if(B== undefined){var B=LOADING_DIV_DEF_OPT}else {if(B[_$_7c85[63]]== undefined){B[_$_7c85[63]]= LOADING_DIV_DEF[_$_7c85[63]]};if(B[_$_7c85[4]]== undefined){B[_$_7c85[4]]= LOADING_DIV_DEF[_$_7c85[4]]};if(B[_$_7c85[5]]== undefined){B[_$_7c85[5]]= LOADING_DIV_DEF[_$_7c85[5]]};if(B[_$_7c85[6]]== undefined){B[_$_7c85[6]]= LOADING_DIV_DEF[_$_7c85[6]]};if(B[_$_7c85[7]]== undefined){B[_$_7c85[7]]= LOADING_DIV_DEF[_$_7c85[7]]};if(B[_$_7c85[8]]== undefined){B[_$_7c85[8]]= LOADING_DIV_DEF[_$_7c85[8]]};if(B[_$_7c85[9]]== undefined){B[_$_7c85[9]]= LOADING_DIV_DEF[_$_7c85[9]]};if(B[_$_7c85[11]]== undefined){B[_$_7c85[11]]= LOADING_DIV_DEF[_$_7c85[11]]};if(B[_$_7c85[10]]== undefined){B[_$_7c85[10]]= LOADING_DIV_DEF[_$_7c85[10]]};if(B[_$_7c85[64]]== undefined){B[_$_7c85[64]]= LOADING_DIV_DEF[_$_7c85[64]]};if(B[_$_7c85[3]]== undefined){B[_$_7c85[3]]= LOADING_DIV_DEF[_$_7c85[3]]};if(B[_$_7c85[65]]== undefined){B[_$_7c85[65]]= LOADING_DIV_DEF[_$_7c85[65]]}};var_ld_div[_$_7c85[51]]= B[_$_7c85[51]];jsu_logObj(u+ _$_7c85[66],B);var nk=jsu_getElementById2(_$_7c85[67],false);if(nk){document[_$_7c85[50]][_$_7c85[68]](nk)};jsu_log(u+ _$_7c85[69]);nk= document[_$_7c85[71]](_$_7c85[70]);nk[_$_7c85[72]]= _$_7c85[67];nk[_$_7c85[55]]= JSU_LOADING_DIV;document[_$_7c85[50]][_$_7c85[73]](nk);var nr=jsu_getElementById2(_$_7c85[74]);if(B[_$_7c85[8]]!= null){nr[_$_7c85[76]][_$_7c85[75]]= B[_$_7c85[8]]+ _$_7c85[77]};jsu_log(u+ _$_7c85[78]);var no=jsu_getElementById2(_$_7c85[79]);var nj=(B[_$_7c85[63]]&& B[_$_7c85[63]]!= _$_7c85[0]);jsu_elementShow(no,nj,_$_7c85[0]);if(nj){no[_$_7c85[55]]= B[_$_7c85[63]]};var nn=jsu_getElementById2(_$_7c85[80],false);if(!nn){return};var ns=LOADING_DIV_MSG[_$_7c85[81]];if(B[_$_7c85[3]]&& B[_$_7c85[3]]!= _$_7c85[0]){ns= B[_$_7c85[3]]};nn[_$_7c85[55]]= ns;var nl=jsu_getElementById2(_$_7c85[82]);nl[_$_7c85[83]]= B[_$_7c85[64]];jsu_elementShow(jsu_getElementById2(_$_7c85[84]),B[_$_7c85[10]],_$_7c85[0]);var nm=jsu_getElementById2(_$_7c85[85]);if(B[_$_7c85[5]]!= undefined&& B[_$_7c85[5]]!= _$_7c85[0]){nm[_$_7c85[76]][_$_7c85[86]]= _$_7c85[87]+ B[_$_7c85[5]]+ _$_7c85[88]};if(B[_$_7c85[8]]!= null){nm[_$_7c85[76]][_$_7c85[75]]= B[_$_7c85[9]]+ _$_7c85[77]};jsu_elementShow(jsu_getElementById2(_$_7c85[89]),B[_$_7c85[4]],_$_7c85[0]);if(B[_$_7c85[11]]&& B[_$_7c85[11]]!= _$_7c85[0]){nr[_$_7c85[76]][_$_7c85[90]]= B[_$_7c85[11]];jsu_getElementById2(_$_7c85[80])[_$_7c85[76]][_$_7c85[90]]= B[_$_7c85[11]];jsu_getElementById2(_$_7c85[89])[_$_7c85[76]][_$_7c85[90]]= B[_$_7c85[11]];jsu_getElementById2(_$_7c85[84])[_$_7c85[76]][_$_7c85[90]]= B[_$_7c85[11]]};var ni=(B[_$_7c85[6]]!= undefined&& B[_$_7c85[6]]);jsu_elementShow(no,nj,_$_7c85[0]);var_ld_div[_$_7c85[56]]= jsu_getElementById2(_$_7c85[91]);jsu_elementShow(var_ld_div[_$_7c85[56]],ni,_$_7c85[0]);if(ni){if(B[_$_7c85[7]]){jsu_log(u+ _$_7c85[92]);var bD= new Date();var_ld_div[_$_7c85[53]]= bD[_$_7c85[52]]();var_ld_div[_$_7c85[58]]= num2StrPad(bD[_$_7c85[93]](),_$_7c85[94],2)+ _$_7c85[95]+ num2StrPad(bD[_$_7c85[96]](),_$_7c85[94],2)+ _$_7c85[95]+ num2StrPad(bD[_$_7c85[97]](),_$_7c85[94],2)};loadingDivTmo();var_ld_div[_$_7c85[62]]= setInterval(loadingDivTmo,1000)};if(B[_$_7c85[65]]){jsu_log(u+ _$_7c85[98]);var nh=jsu_getElementById2(_$_7c85[99],true);var ng=ld_getScrollEl();var nq=ng[_$_7c85[100]];var nu=ng[_$_7c85[101]];var nv=ng[_$_7c85[102]];var nz=ng[_$_7c85[103]];var nt=window[_$_7c85[104]];var np=window[_$_7c85[105]];jsu_log(u+ _$_7c85[106]+ nv+ _$_7c85[107]+ nz+ _$_7c85[108]+ nu+ _$_7c85[109]+ nq);jsu_log(u+ _$_7c85[110]+ nt+ _$_7c85[111]+ np);nh[_$_7c85[76]][_$_7c85[112]]= nq+ 100+ _$_7c85[77];nh[_$_7c85[76]][_$_7c85[75]]= nu+ 100+ _$_7c85[77];var nw=(100+ nu- nt)/ 2;var nA=(100+ nq- np)/ 2;jsu_log(u+ _$_7c85[113]+ nw+ _$_7c85[114]+ nA);if(nw> 0){var_ld_div[_$_7c85[115]][_$_7c85[102]]= ng[_$_7c85[102]];ng[_$_7c85[102]]= nw}else {var_ld_div[_$_7c85[115]][_$_7c85[102]]=  -1};if(nA> 0){var_ld_div[_$_7c85[115]][_$_7c85[103]]= ng[_$_7c85[103]];ng[_$_7c85[103]]= nA}else {var_ld_div[_$_7c85[115]][_$_7c85[103]]=  -1};var_ld_div[_$_7c85[115]][_$_7c85[116]]= ng[_$_7c85[116]];ng[_$_7c85[116]]= _$_7c85[117];if(document[_$_7c85[48]]!= undefined){var_ld_div[_$_7c85[115]][_$_7c85[118]]= document[_$_7c85[48]][_$_7c85[76]][_$_7c85[118]];document[_$_7c85[48]][_$_7c85[76]][_$_7c85[118]]= _$_7c85[119]}else {var_ld_div[_$_7c85[115]][_$_7c85[118]]= null}};jsu_elementShow(nk,true);jsu_elementShow(nr,true);jsu_log(u+ JSU_LOG_FUN_END)}function loadingDivHide(){var u=_$_7c85[120];jsu_log(u+ JSU_LOG_FUN_START);if(var_ld_div[_$_7c85[62]]){clearTimeout(var_ld_div[_$_7c85[62]])};var ng=ld_getScrollEl();if(var_ld_div[_$_7c85[115]][_$_7c85[102]]!=  -1){jsu_log(u+ _$_7c85[121]+ var_ld_div[_$_7c85[115]][_$_7c85[102]]);ng[_$_7c85[102]]= var_ld_div[_$_7c85[115]][_$_7c85[102]]};if(var_ld_div[_$_7c85[115]][_$_7c85[103]]!=  -1){jsu_log(u+ _$_7c85[122]+ var_ld_div[_$_7c85[115]][_$_7c85[103]]);ng[_$_7c85[103]]= var_ld_div[_$_7c85[115]][_$_7c85[103]]};ng[_$_7c85[116]]= var_ld_div[_$_7c85[115]][_$_7c85[116]];if(var_ld_div[_$_7c85[115]][_$_7c85[118]]!= null&& document[_$_7c85[48]]!= undefined){document[_$_7c85[48]][_$_7c85[76]][_$_7c85[118]]= var_ld_div[_$_7c85[115]][_$_7c85[118]]};var nh=jsu_getElementById2(_$_7c85[99],false);jsu_elementShow(nh,false);jsu_log(u+ JSU_LOG_FUN_END)}
+/** @fileOverview
+========================================================================================= <BR/> 
+<b>File:</b> 			core/loadingDiv.js <BR/>
+<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
+<b>LoadingDiv Doc:</b>   <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html" target="_self">JSU LoadingDiv Documentation</a> <BR/>
+<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
+<b>Description:</b>    JSU LoadingDiv API:  loadingDivShow loadingDivHide <BR/>
+<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js <BR/>
+<b>OPTIONAL:</b>        JSU: jslog.js, dom-drag.js to use also jslog <BR/>
+<b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
+<b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>DISCLAIMER</b>  <BR/>
+Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_self">JSU</a> <BR/> 
+This file may be freely distributed under the MIT license.   <BR/>
+<BR/>-----------------------------------------------------------------------------------<BR/>
+<b>JSDoc NOTES</b>  <BR/>
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+========================================================================================= <BR/> 
+*/
+
+/*==========================================================================
+ * 							loadingDiv API
+========================================================================== */
+
+/*
+ * LoadingDiv DEFAULT 
+ */
+var LOADING_DIV_DEF = {
+		szTitleHtml:  "",	//	{String}: [""] if != "" Show a Title Section with szTitle 
+		szMsgHtml: "", // {String} [""] if not empty, we will show this Msg (HTML) instead of Default 
+		bShowGif:  true,	//	{Boolean}: [true] show the Loading Gif 
+		szUrlGif:  "",	//	{String Url}: [""] if not empty, it is used this URL instead of CSS default	
+		bShowElapsedSec: false, // {Boolean} [false[ if true show a Footer with Elapsed Time (sec)
+		bResetElapsedSec: true, // {Boolean} [true] if true reset timer
+		iDivWidth: null, // if different from null, set this Div Width instead of using Default Width (CSS)
+		iGifWidth: null, // if different from null, set this Gif  Width instead of using Default Width (CSS)
+		bShowCancel:  false,	//	{Boolean}: [false] show the Cancel Btn 
+		szCancelLabel:  "Cancel" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
+		szBackgroundColor: null, // {String} Div BackgroundColor, if different from null or "", 
+		bRecalcBestPos: false	// bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement
+};
+
+var LOADING_DIV_DEF_OPT ={
+		szTitleHtml:  LOADING_DIV_DEF.szTitle,	//	{String}: [""] if != "" Show Title 
+		szMsgHtml: LOADING_DIV_DEF.szMsgHtml,  // {String} [""] if not empty, we will show this Msg (HTML) instead of Default
+		bShowGif:  LOADING_DIV_DEF.bShowGif,	//	{Boolean}: [true] show the Loading Gif 
+		szUrlGif:  LOADING_DIV_DEF.szUrlGif,	//	{String Url}: [""]if not empty, it is used this URL instead of CSS default	
+		bShowElapsedSec: LOADING_DIV_DEF.bShowElapsedSec, // {Boolean} [false] if true show a Footer with Elapsed Time (sec)
+		bResetElapsedSec: LOADING_DIV_DEF.bResetElapsedSec, // {Boolean} [true] if true reset timer
+		iDivWidth: LOADING_DIV_DEF.iDivWidth, // if different from null, set this Div Width instead of using DEfault Width (CSS)
+		iGifWidth: LOADING_DIV_DEF.iGifWidth, // if different from null, set this Gif Width instead of using DEfault Width (CSS)
+		bShowCancel:  LOADING_DIV_DEF.bShowCancel,	//	{Boolean}: [false] show the Cancel Btn
+		szCancelLabel:  "" ,	//	{String}: [""] Label to set to Cancel Button - default is LOADING_DIV_MSG.cancelBtn 
+		szBackgroundColor: LOADING_DIV_DEF.szBackgroundColor, // {String} Div BackgroundColor, if different from null or "", 
+		fnCancelCallback: null,  // called when click Cancel
+		bRecalcBestPos: false	// bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement
+};
+
+
+
+var JSU_LOADING_DIV = '<div id="loadingDivContainer" class="loadingDivContainer" >' + 
+'  <table width="100%" height="100%">' + 
+'    <tr> <td align="center" valign="center">' + 
+'      <div  id="loadingDiv" class="loadingDiv">' + 
+'         <table id="loadingDivTable" class="loadingDiv" width="100%"  style="z-index: 110;">' + 
+'            <tr class="loadingDivTitle">' + 
+'              <td colspan="2" id="loadingDivTitle" class="loadingDivTitle" >Title Test</td>' + 
+'            </tr>' + 
+'            <tr> ' + 
+'              <td id="loadingDivTdGif" align="left" width="80px">' + 
+'                <div id="loadingDivGif" class="loadingDivGif"> </div>' + 
+'              </td> ' + 
+'              <td id="loadingDivMsg" class="loadingDivMsg" align="left" style="padding-left:0px">' + 
+'                 <b>Working</b></BR>Please Wait...' + 
+'              </td>' + 
+'            </tr>' + 
+'            <tr>' + 
+'               <td colspan="2" align="center" class="loadingDivBtn" id="loadingDivBtnTd"  >' + 
+'                 <input type="button" class="loadingDivBtn" id="loadingDivBtn" value="Stop" onclick="loadingDivCancel();" />' + 
+'               </td>' + 
+'            </tr>' + 
+'            <tr>' + 
+'               <td colspan="2" id="loadingDivFooter" class="loadingDivFooter" style="display:none">' + 
+'                 Elapsed Time: 10 sec' + 
+'               </td>' + 
+'            </tr>' + 
+'        </table>' + 
+'      </div>' + 
+'    </td> </tr>' + 
+'  </table>' + 
+'</div>'; 
+
+// Global var with current status
+var var_ld_div = {
+		elFooter: null, // td el with Footer
+		tmoElapsedSec : null,  // tmo for ld_div to update ElapsedSec
+		iElapsedSec : 0,  // elapsed sec
+		fnCancelCallback: null,  // called when click Cancel
+		// PREV Values to restore
+		prev : {
+			scrollLeft : 0, // Previous Val to Restore
+			scrollTop : 0, // Previous Val to Restore
+			scroll : 0,
+			overflow : "auto"
+    }
+};
+
+
+/*==========================================================================
+ * 							PRIVATE 
+========================================================================== */
+var LOADING_APP_NAME_IE="Microsoft Internet Explorer";   // IE
+var LOADING_APP_NAME_IE_11="Netscape";   // IE 11
+
+
+/*
+ * Different object to be used if IE/Firefox or Chrome
+ */
+function ld_getScrollEl(){
+	var Fn = "[loadingDiv.js ld_getScrollEl()] ";
+	// For Firefox or IE
+	if  ((typeof InstallTrigger !== 'undefined')  ||
+			 (navigator.appName == LOADING_APP_NAME_IE) || 
+      ((navigator.appName == LOADING_APP_NAME_IE_11) && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))){ 		
+		jsu_log(Fn + "Firefox/IE");
+		return document.documentElement;
+  } else { // NOT Firefox/IE (e.g CHROME)
+  	jsu_log(Fn + "NOT Firefox/IE (e.g CHROME)");
+  	return document.body;
+  } 	
+}
+
+
+
+
+
+
+
+
+
+
+/*
+ * Click on Cancel
+ */
+function loadingDivCancel(){
+	loadingDivHide();	
+	if (var_ld_div.fnCancelCallback != undefined){
+		var_ld_div.fnCancelCallback();
+	}
+}
+
+/*
+ * Tmo elapsed
+ */
+function loadingDivTmo(){
+	
+	var dEnd = new Date();  	
+	var iElapsedSec= Math.round((dEnd.getTime() - var_ld_div.iStartTime)/1000);
+	var_ld_div.elFooter.innerHTML = LOADING_DIV_MSG.startTime + var_ld_div.szStartTime +  LOADING_DIV_MSG.elapsed + iElapsedSec + LOADING_DIV_MSG.sec;
+	
+}	  
+
+
+/*==========================================================================
+ * 							loadingDiv API
+========================================================================== */
+
+/**
+  Show loadingDiv
+  @param [objOpt] 	{Object} Option: <ul>
+		<li>szTitleHtml:  {String}: [""] if != "" Show Title  </li>
+		<li>bShowGif:   		{Boolean}: [true] show the Loading Gif  </li>
+		<li>szUrlGif:  	 {String Url}: [null] if different form null use this URL instead of CSS default	 </li>
+		<li>bShowElapsedSec: 	{Boolean} [false] if true show a Footer with Elapsed Time (sec) </li>
+		<li>bResetElapsedSec: {Boolean} [false] if true reset timer </li>
+		<li>szMsgHtml: 	{String} if different from null, show this Msg (HTML) instead of Default </li>
+		<li>iDivWidth: 	 {Number} if different from null, set this Div Width instead of using DEfault Width (CSS) </li>
+		<li>iGifWidth: 		 {Number} if different from null, set this Gif Width instead of using DEfault Width (CSS) </li>
+		<li>bShowCancel:  	{Boolean}: [false] show the Cancel Btn </li>
+		<li>szCancelLabel:  {String} ["Cancel"] Label to set to Cancel Button 
+		<li>szBackgroundColor:{String} Div BackgroundColor, if different from null or "",  </li>
+		<li>fnCancelCallback: {function} [null]  called when Cancel button is clicked </li>
+		<li>bRecalcBestPos: {Boolean} [true] reCalculate BestPosition basing on WindowSize, Scrollbar. You can use false during Window LOad to avoid movement </li>
+	</ul>	
+ */
+function loadingDivShow(objOpt){
+	var Fn = "[loadingDiv.js loadingDivStart()] ";
+	jsu_log(Fn + JSU_LOG_FUN_START);
+	if (var_ld_div.tmoElapsedSec){
+		clearTimeout (var_ld_div.tmoElapsedSec);
+	}
+  if (objOpt == undefined){
+  	var objOpt = LOADING_DIV_DEF_OPT; 
+  }else {
+  	if (objOpt.szTitleHtml == undefined) {objOpt.szTitleHtml = LOADING_DIV_DEF.szTitleHtml;}
+  	if (objOpt.bShowGif == undefined) {objOpt.bShowGif = LOADING_DIV_DEF.bShowGif;}
+  	if (objOpt.szUrlGif == undefined) {objOpt.szUrlGif = LOADING_DIV_DEF.szUrlGif;}
+  	if (objOpt.bShowElapsedSec == undefined) {objOpt.bShowElapsedSec = LOADING_DIV_DEF.bShowElapsedSec;}
+  	if (objOpt.bResetElapsedSec == undefined) {objOpt.bResetElapsedSec = LOADING_DIV_DEF.bResetElapsedSec;}
+  	if (objOpt.iDivWidth == undefined) {objOpt.iDivWidth = LOADING_DIV_DEF.iDivWidth;}
+  	if (objOpt.iGifWidth == undefined) {objOpt.iGifWidth = LOADING_DIV_DEF.iGifWidth;}
+  	if (objOpt.szBackgroundColor == undefined) {objOpt.szBackgroundColor = LOADING_DIV_DEF.szBackgroundColor;}
+  	if (objOpt.bShowCancel== undefined) {objOpt.bShowCancel = LOADING_DIV_DEF.bShowCancel;}
+  	if (objOpt.szCancelLabel== undefined) {objOpt.szCancelLabel = LOADING_DIV_DEF.szCancelLabel;}
+  	if (objOpt.szMsgHtml == undefined) {objOpt.szMsgHtml = LOADING_DIV_DEF.szMsgHtml;}
+  	if (objOpt.bRecalcBestPos == undefined) {objOpt.bRecalcBestPos = LOADING_DIV_DEF.bRecalcBestPos;}
+  }	
+  var_ld_div.fnCancelCallback = objOpt.fnCancelCallback; 
+	jsu_logObj(Fn + "objOpt",objOpt);
+	var divMain = jsu_getElementById2 ("loadingDivMain",false);
+	if (divMain){
+		document.body.removeChild (divMain);
+	}	
+	jsu_log(Fn + "add JSU_LOADING_DIV to document.body");
+	divMain = document.createElement("div");
+  divMain.id = "loadingDivMain";		
+	divMain.innerHTML = JSU_LOADING_DIV;
+	document.body.appendChild(divMain);
+	
+	var loadingDiv = jsu_getElementById2 ("loadingDiv");
+	if (objOpt.iDivWidth != null){
+		loadingDiv.style.width = objOpt.iDivWidth + "px";  
+	}
+	jsu_log( Fn + "Set Visible element depending on objOpt");
+	var elTitle = jsu_getElementById2 ("loadingDivTitle");
+	var bTitle = (objOpt.szTitleHtml && objOpt.szTitleHtml != ""); 
+	jsu_elementShow (elTitle,bTitle,"");
+	if (bTitle){elTitle.innerHTML = objOpt.szTitleHtml;}
+	//------
+	var elMsgHtml = jsu_getElementById2 ("loadingDivMsg",false);
+	if (!elMsgHtml){
+		return; // WorkAround
+	}
+	var szMsgHtml = LOADING_DIV_MSG.working;
+	if (objOpt.szMsgHtml && objOpt.szMsgHtml != ""){
+		szMsgHtml = objOpt.szMsgHtml; 
+	}
+	elMsgHtml.innerHTML = szMsgHtml;
+	//------
+	var elCancelBtn = jsu_getElementById2 ("loadingDivBtn");
+	elCancelBtn.value = objOpt.szCancelLabel;
+	jsu_elementShow (jsu_getElementById2 ("loadingDivBtnTd"),objOpt.bShowCancel,"");
+	//------
+	var elGif = jsu_getElementById2 ("loadingDivGif");
+	if (objOpt.szUrlGif != undefined && objOpt.szUrlGif != ""){
+		elGif.style.backgroundImage = "url('" + objOpt.szUrlGif + "')"; 
+	}
+	if (objOpt.iDivWidth != null){
+		elGif.style.width = objOpt.iGifWidth + "px";  
+	}
+	
+	jsu_elementShow (jsu_getElementById2 ("loadingDivTdGif"),objOpt.bShowGif,"");
+	//------
+	if (objOpt.szBackgroundColor && objOpt.szBackgroundColor != ""){
+		loadingDiv.style.backgroundColor = objOpt.szBackgroundColor; 
+		jsu_getElementById2 ("loadingDivMsg").style.backgroundColor = objOpt.szBackgroundColor;
+		jsu_getElementById2 ("loadingDivTdGif").style.backgroundColor = objOpt.szBackgroundColor;
+		jsu_getElementById2 ("loadingDivBtnTd").style.backgroundColor = objOpt.szBackgroundColor;		
+	}	
+	//------------------
+	var bShowElapsedSec = (objOpt.bShowElapsedSec != undefined && objOpt.bShowElapsedSec); 
+	jsu_elementShow (elTitle,bTitle,"");
+	var_ld_div.elFooter = jsu_getElementById2 ("loadingDivFooter");
+	jsu_elementShow (var_ld_div.elFooter ,bShowElapsedSec,"");
+	if (bShowElapsedSec){
+		if (objOpt.bResetElapsedSec){
+			jsu_log( Fn + "Start Timeout for Elapsedsec");
+			var dStart = new Date();  	
+			var_ld_div.iStartTime = dStart.getTime();
+			var_ld_div.szStartTime = num2StrPad(dStart.getHours(),'0',2) + ":" + 
+		   num2StrPad(dStart.getMinutes(),'0',2) + ":" +  num2StrPad(dStart.getSeconds(),'0',2); 
+		}
+		loadingDivTmo(); // simulate Tmo to show currente Elapsed Time
+		var_ld_div.tmoElapsedSec =  setInterval(loadingDivTmo,1000);
+	}
+	
+	// ---------------------------------- Set the Size if Required
+	if (objOpt.bRecalcBestPos){
+		jsu_log(Fn + "Recalculate Best Postion");
+		var divContainer = jsu_getElementById2 ("loadingDivContainer",true);
+		
+		var bd = ld_getScrollEl();
+	
+		// Scroll = total dimensione, also if some is not bvisible
+		var hScroll= bd.scrollHeight;
+		var wScroll= bd.scrollWidth;
+		var xScroll= bd.scrollLeft;
+		var yScroll= bd.scrollTop;
+		// Visible part
+		var wClient= window.innerWidth;
+		var hClient= window.innerHeight;
+		jsu_log(Fn + "scroll: xScroll=" + xScroll + " yScroll=" + yScroll + " wScroll=" + wScroll + " hScroll="+hScroll);
+		jsu_log(Fn + "Client: wClient=" + wClient + " hClient="+hClient);
+		
+		divContainer.style.height = hScroll + 100+ "px";
+		divContainer.style.width = wScroll + 100 + "px";
+		var xScrollNew = (100 + wScroll - wClient)/2 ; 
+		var yScrollNew = (100 + hScroll -  hClient)/2 ; 
+		jsu_log(Fn + "SET NEW SCROLL =" + xScrollNew + " y=" + yScrollNew);
+		if (xScrollNew > 0){
+			var_ld_div.prev.scrollLeft = bd.scrollLeft; // Value to restore 
+			bd.scrollLeft = xScrollNew;
+		}else {
+			var_ld_div.prev.scrollLeft = -1;  // Nothing to restore 
+		}
+		if (yScrollNew > 0){
+			var_ld_div.prev.scrollTop = bd.scrollTop; // Value to restore 
+		  bd.scrollTop = yScrollNew;
+		}else{
+			var_ld_div.prev.scrollTop = -1;  // Nothing to restore 
+		}  
+		// Save previous value
+		var_ld_div.prev.scroll = bd.scroll; // IE Only
+	  bd.scroll = "no"; // ie only	
+		if (document.documentElement != undefined){
+			var_ld_div.prev.overflow = document.documentElement.style.overflow; // Firefox, Chrome
+			document.documentElement.style.overflow = 'hidden';  // firefox, chrome		
+		}else {
+			var_ld_div.prev.overflow = null;
+		}
+	}
+	jsu_elementShow (divMain,true);
+	jsu_elementShow (loadingDiv,true);
+
+	
+	jsu_log(Fn + JSU_LOG_FUN_END);
+
+}	  
+
+/**
+ * Hide loadindgDiv
+ */
+function loadingDivHide(){
+	var Fn = "[loadingDiv.js loadingDivHide()] ";
+	jsu_log(Fn + JSU_LOG_FUN_START);
+	
+	if (var_ld_div.tmoElapsedSec){
+		clearTimeout (var_ld_div.tmoElapsedSec);
+	}
+	var bd = ld_getScrollEl(); 
+	if (var_ld_div.prev.scrollLeft != -1){
+		jsu_log(Fn + "RESTORE scrollLeft=" + var_ld_div.prev.scrollLeft);
+		bd.scrollLeft = var_ld_div.prev.scrollLeft;
+	}
+	if (var_ld_div.prev.scrollTop != -1){
+		jsu_log(Fn + "RESTORE scrollTop=" + var_ld_div.prev.scrollTop);
+		bd.scrollTop = var_ld_div.prev.scrollTop;
+	}
+
+	bd.scroll = var_ld_div.prev.scroll; // IE Only 
+	if (var_ld_div.prev.overflow != null && document.documentElement != undefined){
+		document.documentElement.style.overflow = var_ld_div.prev.overflow ; // Firefox, Chrome 
+	}
+	
+	
+	var divContainer = jsu_getElementById2 ("loadingDivContainer",false);
+	jsu_elementShow (divContainer,false);
+	jsu_log(Fn + JSU_LOG_FUN_END);
+}	  
+
