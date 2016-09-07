@@ -94,7 +94,7 @@ var POPUP_DEF_RESIZE = true;  // bResize {Boolean}
 var POPUP_DEF_CLOSE_ON_ESCAPE = true; // bCloseOnEscape {Boolean}
 // For DEVELOPER: you can set false
 var POPUP_DEF_MODAL = true;  // bModal {Boolean}
-var POPUP_DEF_POSITION = {at: "center"};     // "center" "top" "left" "right" 
+var POPUP_DEF_POSITION = {my: "center"};     // "center" "top" "left" "right" 
 var POPUP_DEF_PROMPT_NUMBER_W = 50;
 var POPUP_DEF_PROMPT_STRING_W = 200;
 

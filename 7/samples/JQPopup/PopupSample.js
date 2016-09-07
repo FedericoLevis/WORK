@@ -376,18 +376,6 @@ function onchangeChoiceMultiSel(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 function showSampleAbout(){
   
   showJsuAbout({szPathAboutImg: JSU_PATH_ABOUT_IMG});
