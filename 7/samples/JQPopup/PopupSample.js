@@ -223,19 +223,9 @@ function sample1Info(){
     '<li><b>POPUP_TYPE.CHOICE</b> to Choose one or more values from a List of values</li>' +
     '<li><b>POPUP_TYPE.PROMPT</b> to Prompt for a value</li>' +
     '</ul>';
-  
-  Popup(POPUP_TYPE.INFO,szMsg,{position: getPosition(1)});
+  Popup(POPUP_TYPE.INFO,szMsg);
 }
 
-
-function getPosition(iSample){
-	if (isJsuSample()){
-		return {my: "center",at: "center"};
-	}else {
-	  return  { at: "right+400", of: getElementById2('showSample' || iSample)};
-	} 
-	
-}
 
 
 /*
@@ -248,18 +238,13 @@ function sample1Warn(szTitle){
         '<li><label class="PopupWarning">WARNING CODE 001234:</label> This an Example of a long phrase that describe this Warning. This phrase will be automatically splitted by Popup into more lines: we do not have to worrie about inserting newline into the description.</li> ' +
         '<li><label class="PopupWarning">WARNING CODE 1234568:</label> This an Example of this Warning Description</li>' +
       '</ul>';
-    Popup(POPUP_TYPE.WARN,szMsg,{szTitle:szTitle},
-   	   {position: getPosition(1)}  	   
-		
-    );
+    Popup(POPUP_TYPE.WARN,szMsg,{szTitle:szTitle});
 }
 
 function sample1Err(){
   Popup(POPUP_TYPE.ERR,
   		  '<label class="PopupError">This is an ERROR!</label><BR/>But dont worrie it is only an example<BR/><label class="PopupGood">Everything is still working properly :o)</label>',
-  		  {iWidth: 450,
-  	  	 position: getPosition(1)  	   
-        }
+  		  {iWidth: 450}
   		 );
 }
 
@@ -270,11 +255,7 @@ function sample1Alarm(){
        '<BR/>But dont worrie, it is only an example.' ;
   Popup(POPUP_TYPE.ALARM,
   		szMsg,
-		  {
-  	   iWidth: 450,
-  	   position: getPosition(1)  	   
-  	   }
-    
+		  {iWidth: 450}
   		);
 }
 
@@ -288,7 +269,6 @@ function sample1Question(szPopupType){
   		'Do you like <b>Popup API</b>?',
   		{ 
   	   iWidth: 400,
-  	   position: getPosition(1),  	   
   	   fnCallback: callbackQuestion
   	   }
   );
@@ -331,7 +311,7 @@ function sample1Confirm(){
     '    <td class="PopupCenter"><img src="' + JSU_PATH_IMG + 'PopupError.png" width="20" height="20"></td>' +
     '  </tr>' +
     '<table><BR/>';
-  Popup(POPUP_TYPE.CONFIRM,szMsg,{position: getPosition(1)});
+  Popup(POPUP_TYPE.CONFIRM,szMsg);
 }
 
 
@@ -378,8 +358,7 @@ function sample1Choice(){
   var objRet = PopupChoice (szMsgHtml,szChoiceLabel,arChoice,
       {fnCallback:callbackChoice,
        bChoiceMultiSel: bChoiceMultiSel,
-       iChoiceMultiSize: iChoiceMultiSize,
-  	   position: getPosition(1)  	   
+       iChoiceMultiSize: iChoiceMultiSize
       });
 }
 
@@ -394,6 +373,18 @@ function onchangeChoiceMultiSel(){
   
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -535,10 +526,7 @@ function sample2(){
  */
 function sample2CustomBtn1(){
   var szMsg = 'Example<BR><b>1 Custom Button with a different Label</b><BR/><BR/>Popup Option:<ul><li><b>szConfirmLabel</b>: "CONTINUE"</li></ul>';
-  Popup(POPUP_TYPE.INFO,szMsg,{
-  	 szConfirmLabel: "CONTINUE",
-	   position: getPosition(2),  	   
-  	 iWidth:400});
+  Popup(POPUP_TYPE.INFO,szMsg,{szConfirmLabel: "CONTINUE", iWidth:400});
 }
 
 
@@ -557,7 +545,6 @@ function sample2CustomBtn2(){
       {fnCallback: callbackQuestion,
        szConfirmLabel: "YES I Like it!",iConfirmWidth:160,
        szNoLabel: "NO I don't LIKE IT",iNoWidth:160, 
-  	   position: getPosition(2),  	   
        iWidth: 450
        }
     );
@@ -581,7 +568,6 @@ function sample2CustomBtn3(){
   	   iWidth: 560,
        szConfirmLabel: "YES It is Super",iConfirmWidth:150,
         szNoLabel: "NOT Very Much",iNoWidth:150, 
-   	    position: getPosition(2),  	   
         szCancelLabel: "INDIFFERENT",iCancelWidth:150
         }
   );
@@ -615,10 +601,7 @@ function sample3Video(){
   // Show Popup with Video   
   Popup(POPUP_TYPE.INFO, szMsg,
       // objOpt
-      {bShowImg:false,iWidth:650,position:{at: "top"}, 
-  	  szTitle: "Video Example",
- 	    position: getPosition(3)  	   
-  	  });
+      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "Video Example"});
   
 }
 
@@ -635,8 +618,7 @@ function sample3Page(){
   	   iHeight: 690,
   	   bShowBtnSect : false,  // Do Not show Button section on the Bottom of the Popup
   	   position:{at: "top"}, 
-  	   szTitle: "Popup with Embedded HTML Page",
-  	   position: getPosition(3)  	   
+  	   szTitle: "Popup with Embedded HTML Page"
   	  });  
 }
 
