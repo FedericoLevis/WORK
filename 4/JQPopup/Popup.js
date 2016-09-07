@@ -94,7 +94,7 @@ var POPUP_DEF_RESIZE = true;  // bResize {Boolean}
 var POPUP_DEF_CLOSE_ON_ESCAPE = true; // bCloseOnEscape {Boolean}
 // For DEVELOPER: you can set false
 var POPUP_DEF_MODAL = true;  // bModal {Boolean}
-var POPUP_DEF_POSITION = {my: "center"};     // "center" "top" "left" "right" 
+var POPUP_DEF_POSITION = { my: "center", at: "center"};     // "center" "top" "left" "right" 
 var POPUP_DEF_PROMPT_NUMBER_W = 50;
 var POPUP_DEF_PROMPT_STRING_W = 200;
 
@@ -1009,7 +1009,7 @@ function pp_OnResize(event, ui){
   <ul>
     <li> szTitle:    {String}      change default Title </li> 
     <li> fnCallback:  {function}  callback function, called when Popup is closed </li> 
-    <li> position: {Object}    jQuery ui position. Default {at: "center"} Example: {at: "top"} </li> 
+    <li> position: {Object}    jQuery ui position. Default {my: "center", at: "center"} Example: {at: "top"} </li> 
     <li> iWidth:  {Number}      Optional PopupWidth: if it passed it is used <li> Else DEfault is used </li> 
     <li> iHeight:  {Number}     Optional PopupHeight: if it passed it is Set<li> Else is automarically calculated </li> 
     <li> szConfirmLabel:  {String} Label of Confirm Button  </li> 
