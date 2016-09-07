@@ -97,7 +97,9 @@ var VALIDATE_DEF_OPT ={
 									  <li>	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item </BR> 
 									----------------------------------------------------------  </li> 
 									  <li> szDateFmt {String} to use for date Validation - default is "yyyy-MM-dd" </li> 
-									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" </li> 
+									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" <BR/>
+									  <b>NTE</b>szDateFmt and szDateTimeFmt use the Format defined in <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/date.js/index.html" target="_self">JSU core/date.js</a>  
+									  </li> 
   									<li> bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item </li> 
 									  <li>	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body </li> 
 									  <li>	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  </li> 

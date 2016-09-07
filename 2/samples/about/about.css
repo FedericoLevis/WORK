@@ -171,6 +171,17 @@ hr.jsuDoc { /* separator between header and App */
   margin-bottom: 4px;
 }
 
+hr.footerSep { /* separator before Footer */
+  border: 2px solid black;
+  border-style: solid;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 80px;
+  margin-bottom: 4px;
+}
+
+
+
 hr.h2Sep { /* separator between h2  */
   border: 1px solid black;
   border-style: solid;  
