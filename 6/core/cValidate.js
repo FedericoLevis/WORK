@@ -1,5 +1,16 @@
 
 /** @fileOverview
+ <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
+   <tr><td class="tipl">
+		  <div class="jsDocNote">
+		  <b>JSU DEMO Version has some Limitations:</b>
+		  <ul>
+		    <li>Below the Error Validation Messages there is an additional Link to <a class="tipLink" href="https://goo.gl/1eIYNm">JSU Demo Version</a></li>
+		  </ul>
+		  </div>
+	</td></tr>
+ </table>		  
 ========================================================================================= <BR/> 
 <b>File:</b> 			core/cValidate.js <BR/>
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
@@ -81,7 +92,7 @@ var VALIDATE_DEF_OPT ={
 /** 
 @class cValidate 
 
-@param  contraints {Object}   JSON <b>constraints</b> described in <a href="http://validatejs.org" target="_self">validate.js</a> <BR/>
+@param  contraints {Object}   JSON <b>constraints</b> described in <a href="http://validatejs.org#validators" target="_self">Validate.js v. 0.10.0</a> <BR/>
                               In addition there is also the <b>tip</b> field, used to add a JSU 
                               <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#Tip" target="_self">JSU HTML Tooltip</a> on the right of the Item to Validate
 @param [objOpt] {Object}   
@@ -372,7 +383,7 @@ cValidate.prototype.getOption = function () {
 
 
 /** 
- * Apply the Validate constraints. For example call this method in the onclick of "Validate" Button
+ * Apply the Validate constraints. For example you can call this method in the onclick of "Submit" Button
 @return  VALIDATE_RETCODE.OK  or VALIDATE_RETCODE.ERR 
  */
 cValidate.prototype.validateApply = function () {

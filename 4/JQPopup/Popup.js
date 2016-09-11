@@ -1,6 +1,20 @@
 /** @fileOverview
+ <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
+   <tr><td class="tipl">
+		  <div class="jsDocNote">
+		  <b>JSU DEMO Version has some Limitations:</b>
+		  <ul>
+		    <li>Some <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_self">Popup()</a> Options are not available in JSU DEMO Version: 
+		       <label class="jsDocWarn">szTitle, bModal, szPromptLabel,szPromptValue, iPromptWidth, iChoiceMultiSize </label>
+		    </li>
+		    <li>Below the Message there is an additional Link to <a class="tipLink" href="https://goo.gl/1eIYNm">JSU Demo Version</a></li>
+		  </ul>
+		  </div>
+	</td></tr>
+ </table>		  
 ========================================================================================= <BR/> 
-<b>File:</b> 			JSPopup/Popup.js  <BR/>
+<b>File:</b> 			JQPopup/Popup.js  <BR/>
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
 <b>JSPopup Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html" target="_self">JSU JSPopup Documentation</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
@@ -31,16 +45,17 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
  ====================================================================================================*/
 
 /**
- * POPUP_TYPE used in Popup() API as szPopupType par, to identify the PopupType to display:  <ul>  
-<li> POPUP_TYPE.INFO: "Info", </li>
-<li> POPUP_TYPE.CONFIRM: "Confirm", </li>
-<li> POPUP_TYPE.ERR:"Error", </li>
-<li> POPUP_TYPE.ALARM:"Alarm", </li>
-<li> POPUP_TYPE.WARN:"Warning", </li>
-<li> POPUP_TYPE.QUESTION:"Question", // Question with YES NO </li>
-<li> POPUP_TYPE.QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL </li>
-<li> POPUP_TYPE.PROMPT:"Prompt", // Prompt to insert one value </li>
-<li> POPUP_TYPE.CHOICE:"Choice" // Choice in a select </li>
+ * POPUP_TYPE used in Popup() API as szPopupType par, to identify the PopupType to display:  
+<ul>  
+	<li> POPUP_TYPE.INFO: "Info", </li>
+	<li> POPUP_TYPE.CONFIRM: "Confirm", </li>
+	<li> POPUP_TYPE.ERR:"Error", </li>
+	<li> POPUP_TYPE.ALARM:"Alarm", </li>
+	<li> POPUP_TYPE.WARN:"Warning", </li>
+	<li> POPUP_TYPE.QUESTION:"Question", // Question with YES NO </li>
+	<li> POPUP_TYPE.QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL </li>
+	<li> POPUP_TYPE.PROMPT:"Prompt", // Prompt to insert one value </li>
+	<li> POPUP_TYPE.CHOICE:"Choice" // Choice in a select </li>
 </ul>
 
   <div class="jsDocNote">
@@ -65,6 +80,10 @@ var POPUP_TYPE = {
 
 /**
  * Option iPromptType for POPUP_TYPE.PROMPT
+<ul>  
+	<li> PROMPT_TYPE.NUMBER: "number" </li>
+	<li> PROMPT_TYPE.STRING: "string" </li>
+</ul>
  */ 
 var PROMPT_TYPE = {
     NUMBER: "number",
@@ -73,9 +92,14 @@ var PROMPT_TYPE = {
 
 
 /**
- * POPUP_TYPE used in Popup() API as szPopupType par, to identify the PopupType to display<BR/>
- * NOTE: DO NOT Change this values: they are used also to compose the img class e.g PopupInfo, PopupConfirm,..
- */
+ * Return value of Popup() and PopupChoice() API:  POPUP_BTN indicate the Button clicked or ESC or click into x
+<ul>  
+    <li> POPUP_BTN.CLOSE: "CLOSE"    // Close with ESC or x of Window  </li>
+    <li> POPUP_BTN.CONFIRM: "CONFIRM"    // Clicked Confirm Button  </li>
+    <li> POPUP_BTN.NO: "NO"    // Clicked NO Button  </li>
+    <li> POPUP_BTN.CANCEL: "CANCEL"    // Clicked CANCEL Button  </li>
+</ul>
+ */ 
 var POPUP_BTN = {
     CLOSE: "CLOSE",    /* Close on x of Window */
     CONFIRM: "CONFIRM", /* BTN OK (YES) */
@@ -998,8 +1022,8 @@ function pp_OnResize(event, ui){
 
 /**
  * Show the Popup
- * @param szPopupType {String}  POPUP_TYPE.INFO,  POPUP_TYPE.CONFIRM, ..   
- *                              &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_TYPE" target="_self">POPUP_TYPE</a>
+ * @param szPopupType {String}  POPUP_TYPE.INFO,  POPUP_TYPE.WARN, ..   
+                               &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_TYPE" target="_self">POPUP_TYPE</a>
  *                                 
  * @param szMsgHtml {String}  HTML TAG are Accepted - Newline if present is converted to HTML Newline
  * @param [objOpt] {Object}   
@@ -1033,7 +1057,9 @@ function pp_OnResize(event, ui){
 		</li>       
     <li> <b>ONLY For POPUP_TYPE.PROMPT</b>:
       <ul>  
-		    <li> szPromptType: {String}  PROMPT_TYPE.NUMBER  PROMPT_TYPE.STRING default=PROMPT_TYPE.STRING        </li> 
+		    <li> szPromptType: {String}  [PROMPT_TYPE.STRING] PROMPT_TYPE.NUMBER  PROMPT_TYPE.STRING  
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#PROMPT_TYPE" target="_self">PROMPT_TYPE</a>
+        </li> 
 		    <li> szPromptLabel: {String}  Label in Front of Prompt   </li> 
 		    <li> szPromptValue: {String}  Default Value to set        </li> 
 		    <li> iPromptWidth: {Number}  Width (px) of the Prompt Item        </li> 
@@ -1054,21 +1080,29 @@ function pp_OnResize(event, ui){
 		    <li>Some Options are not available in JSU DEMO Version: 
 		       <label class="jsDocWarn">szTitle, bModal, szPromptLabel,szPromptValue, iPromptWidth, iChoiceMultiSize </label>
 		    </li>
-		    <li>Below the Message there is an additional Link to JSU</li>
+		    <li>Below the Message there is an additional Link to <a class="tipLink" href="https://goo.gl/1eIYNm">JSU Demo Version</a></li>
 		  </ul>
 		  </div>
 	</td></tr>
  </table>		  
 		   
  *   
- * @return {Object}  retObj  <BR/>
- *                           Example: <BR/>
- *                           {   <BR/>
- *                             - retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL <BR/>
- *                             - choiceValue      Only for POPUP_TYPE.CHOICE: Value chosen in selectChoice <BR/>
- *                             - choiceText    Only for POPUP_TYPE.CHOICE: Text chosen in selectChoice <BR/>
- *                             ......          for POPUP_CUSTOM: you can add your personal memeber   <BR/>
- *                           } <BR/>*/
+ * @return {Object}  retObj  <BR/>                           Example: <ul>
+ *                           {  <BR/>
+ *                             <li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN</a>
+                               </li>  
+                               <li> <b>ONLY For POPUP_TYPE.CHOICE</b>:
+                               <ul>
+	 *                             <li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)</li>
+	 *                             <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>
+	 *                             <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>
+	 *                             <li> arChoice          like input with the bSel=true/false depending on selected state </li>
+	 *                           </ul>
+	 *                           </li>  
+ *                           } <BR/>
+ *                           </ul>
+ *                           */
 function Popup(szPopupType, szMsgHtml,objOpt){
   return pp_Show (szPopupType,szMsgHtml,objOpt);
 }  
@@ -1085,14 +1119,22 @@ function Popup(szPopupType, szMsgHtml,objOpt){
  *                                {value:3,szText:"3 - Very Good",bSel:true}] <BR/>
  * @param [objOpt]   {Object}    OPTIONS
  *                              &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_self">Popup()</a>
- * @return {Object}  retObj  <BR/>
- *                           Example: <BR/>
- *                           {   <BR/>
- *                             retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.CANCEL <BR/>
- *                             choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel) <BR/>
- *                             choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) <BR/>
- *                             arChoice          like inpout with the bSel=true/false depending on selected state <BR/>
- */
+ * @return {Object}  retObj  <BR/>                           Example: <ul>
+ *                           {  <BR/>
+ *                             <li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN</a>
+                               </li>  
+                               <li> <b>ONLY For POPUP_TYPE.CHOICE</b>:
+                               <ul>
+	 *                             <li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)</li>
+	 *                             <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>
+	 *                             <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>
+	 *                             <li> arChoice          like input with the bSel=true/false depending on selected state </li>
+	 *                           </ul>
+	 *                           </li>  
+ *                           } <BR/>
+ *                           </ul>
+ *                           */
 function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
   if (objOpt == undefined || objOpt == null){
     objOpt = new Array();
