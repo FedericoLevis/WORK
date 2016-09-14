@@ -26,7 +26,7 @@
                             <li><b>OPTIONAL JS:</b> jslog.js, dom-drag.js (required only to enable jslog)</li>
                           </ul>
 <b>First Version:</b>     1.0 Jan 2015  <BR/>
-<b>Current Version:</b>   3.3 Jul 2016    <BR/>
+<b>Current Version:</b>   1.8 Jul 2016    <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 

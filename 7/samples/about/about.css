@@ -372,7 +372,6 @@ label.aboutSourceJSUAPI{
 
 input.downloadFree, input.downloadFreeUp, input.downloadPay {  /* common for download buttons*/
   font-weight: bold;
-  cursor: pointer;
   width: 146px;
   height: 27px;
   cursor: pointer;
@@ -519,10 +518,11 @@ h1.jsuSample{  /* Title of the samples*/
 
 select.parOption {  /* select that is displayed only when the par otion=1 (only for developers */
   display:none; 
-  margin-left:15px;
+  margin-left:30px;
+  width: 160px;
   font-family: Verdana;
   font-weight: bold;
-  font-size: 9px;
+  font-size: 11px;
 }	
 
 select.selectSample{  /* select The sample */
@@ -933,3 +933,21 @@ label.featSampleLimit{  /* below the sample Title  when FREE JSU with Limitation
  }	
 
 
+iframe.jsuDoc {   /* iframe in jsu Doc */
+  margin-top:10px;
+  margin-bottom:10px;
+  border: 6px solid gray;
+  border-style: ridge;
+  width: 95%;
+}
+
+
+textarea.jsuCode {  /* Code in jsuDoc */
+  font-family: Calibri;
+  font-size: 13px;
+  background-color: #E8E8E8;
+  color: black;		
+  margin-top:10px;	
+  border: 2px solid gray;
+  border-style: ridge;
+}

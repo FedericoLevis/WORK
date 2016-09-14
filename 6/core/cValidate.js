@@ -22,7 +22,7 @@
 <b>Description:</b>      Validate Class <BR/>   
 <b>REQUIRE:</b>          JSU: jsu.js   <BR/>
 <b>First Version:</b>    ver 1.0 - Feb 2015  <BR/>
-<b>Current Version:</b>  ver 3.3 - Jul 2016  <BR/>
+<b>Current Version:</b>  ver 1.8 - Jul 2016  <BR/>
 <b>NOTES:</b> <BR/>
   1) Incorporated and Modified validate.js by Nicklas Ansman http://validatejs.org: <BR/>
      -  add LOCALE Support. <BR/>

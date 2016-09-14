@@ -128,11 +128,20 @@ td.loadingDivBtn {
   padding-bottom: 10px; 
 }
 
-input.loadingDivBtn {
-  font-weight: bold;
-  cursor: pointer;
-  min-width: 100px;
+
+input.loadingDivBtn{  /* Button */ 
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-style: ridge;
+    min-width: 100px;
 }
+input.loadingDivBtn:hover 
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
+
 
 td.loadingDivFooter { /* Footer with Elapsed sec */
 	padding-left: 5px;
